@@ -240,6 +240,8 @@ function Show-Options([string]$InitialPath){
  foreach($pair in @(@('0',0),@('100',623))){$l=New-Object Windows.Forms.Label;$l.Text=$pair[0];$l.Location=New-Object Drawing.Point($pair[1],28);$l.AutoSize=$true;$sliderPanel.Controls.Add($l)}
  $instructions="Select train.exe and choose features, then Apply. Settings take effect after restarting MSTS."
  $message=Label-At $instructions 430 62
+ $selectAll=New-Object Windows.Forms.Button;$selectAll.Text='Select All';$selectAll.Location=New-Object Drawing.Point(238,502);$selectAll.Size=New-Object Drawing.Size(100,34);$selectAll.Enabled=$false;$form.Controls.Add($selectAll)
+ $selectAll.Add_Click({foreach($control in $form.Controls){if($control -is [Windows.Forms.CheckBox] -and $control.Enabled){$control.Checked=$true}}})
  $apply=New-Object Windows.Forms.Button;$apply.Text='Apply';$apply.Location=New-Object Drawing.Point(346,502);$apply.Size=New-Object Drawing.Size(100,34);$form.Controls.Add($apply)
  $restore=New-Object Windows.Forms.Button;$restore.Text='Uninstall';$restore.Location=New-Object Drawing.Point(454,502);$restore.Size=New-Object Drawing.Size(106,34);$form.Controls.Add($restore)
  $close=New-Object Windows.Forms.Button;$close.Text='Close';$close.Location=New-Object Drawing.Point(568,502);$close.Size=New-Object Drawing.Size(108,34);$close.Add_Click({$form.Close()});$form.Controls.Add($close)
@@ -278,7 +280,7 @@ function Show-Options([string]$InitialPath){
  $anchorLabel.Text='HUD:';$anchor.Location=New-Object Drawing.Point(48,0);$anchor.Width=170
  $slider.AutoSize=$false;$slider.Top=30;$slider.Height=34
  $space.Top=478;$space.Height=36;$message.Top=518;$message.Height=34
- foreach($button in @($apply,$restore,$close)){$button.Top=558;$button.Height=32}
+ foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=558;$button.Height=32}
  $credit.Top=598;$credit.Height=20;$github.Top=622;$github.Height=22;$icon.Top=621
  $form.AutoScroll=$true
  $ui=@{info=$null;loading=$false}
@@ -287,7 +289,7 @@ function Show-Options([string]$InitialPath){
  $crawl.Add_CheckedChanged({if($crawl.Checked -and -not $ui.loading){$timeout.Checked=$true};& $refresh})
  $timeout.Add_CheckedChanged({if(-not $timeout.Checked -and -not $ui.loading){$crawl.Checked=$false}})
  $load={param([string]$p)
-  $ui.info=$null;$ui.loading=$true;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p;$cabBox.Enabled=$false;$cabBox.Checked=$false;$backgroundBox.Checked=$false;$redBox.Checked=$false;$skipMovieBox.Checked=$false;$movieFocusBox.Checked=$true
+  $ui.info=$null;$ui.loading=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p;$cabBox.Enabled=$false;$cabBox.Checked=$false;$backgroundBox.Checked=$false;$redBox.Checked=$false;$skipMovieBox.Checked=$false;$movieFocusBox.Checked=$true
   try{$i=Get-MstsImage $p;$m=Get-CrawlInstallation $i.Path;$ui.info=$i;$pathText.Text=$i.Path;$version.Text='Valid train.exe version: '+$i.Version;$version.ForeColor=[Drawing.Color]::FromArgb(0,170,0)
    $anchor.SelectedIndex=if($m -and $m.crawlHUDAnchor -eq "BottomRight"){0}else{1}
    $cabBox.Enabled=$i.Widescreen
@@ -308,18 +310,18 @@ function Show-Options([string]$InitialPath){
    $fps.Checked=($m -and $m.enabled -and $m.unlockFPS);$verbose.Checked=($m -and $m.enabled -and $m.verboseLoading);$startupLogBox.Checked=($m -and $m.enabled -and $m.startupLog)
    $window.Checked=if($m -and $null -ne $m.windowFeatures){$m.enabled -and $m.windowFeatures}else{$true}
    $timeout.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.preventEnd}else{$i.TimeoutPatched};$camera.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.unlockCameras}else{$i.CameraPatched};$crawl.Checked=($null -ne $m -and $m.enabled -and ($m.runtime -ne 'nemt-native' -or $m.crawl));$slider.Value=if($m){[Math]::Max(0,[Math]::Min(100,[int]$m.strength))}else{10}
-   $apply.Enabled=$true;$restore.Enabled=$true;$message.ForeColor=[Drawing.Color]::DimGray;$message.Text=$instructions
+   $selectAll.Enabled=$true;$apply.Enabled=$true;$restore.Enabled=$true;$message.ForeColor=[Drawing.Color]::DimGray;$message.Text=$instructions
   }catch{$version.Text='Unsupported executable selected. Please ensure your MSTS installation is updated to at least MSTS Bin 1.8';$version.ForeColor=[Drawing.Color]::FromArgb(204,0,0);$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
   finally{$ui.loading=$false;& $refresh}
  }
  $browse.Add_Click({$d=New-Object Windows.Forms.OpenFileDialog;$d.Filter='Train executable (*.exe)|*.exe';try{if($d.ShowDialog($form) -eq 'OK'){& $load $d.FileName}}finally{$d.Dispose()}})
  $save={param([bool]$clear)
-  if(-not $ui.info){return};$form.UseWaitCursor=$true;$apply.Enabled=$false;$restore.Enabled=$false;$browse.Enabled=$false
+  if(-not $ui.info){return};$form.UseWaitCursor=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$browse.Enabled=$false
   try{$t=if($clear){$false}else{$timeout.Checked};$c=if($clear){$false}else{$camera.Checked};$r=if($clear){$false}else{$crawl.Checked};$w=if($clear){$false}else{$window.Checked}
    $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -CrawlHUD $r -CrawlHUDAnchor $(if($anchor.SelectedIndex -eq 1){"BottomLeft"}else{"BottomRight"}) -FixCabDials ((-not $clear) -and $cabBox.Enabled -and $cabBox.Checked) -BackgroundAudio ((-not $clear) -and $backgroundBox.Checked) -IgnoreRedSignal ((-not $clear) -and $redBox.Checked) -SkipStartupMovie ((-not $clear) -and $skipMovieBox.Checked) -RestoreMovieFocus ((-not $clear) -and $movieFocusBox.Checked) -Confirm:$false
    & $load $result.Path;$message.ForeColor=[Drawing.Color]::FromArgb(20,120,55);$message.Text=if($clear){'Toolkit removed. Widescreen and LAA were preserved.'}else{'Settings saved. Restart MSTS to apply changes. Windowed mode is used unless fullscreen is requested.'}
   }catch{$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
-  finally{$form.UseWaitCursor=$false;$browse.Enabled=$true;$apply.Enabled=($null -ne $ui.info);$restore.Enabled=($null -ne $ui.info)}
+  finally{$form.UseWaitCursor=$false;$browse.Enabled=$true;$selectAll.Enabled=($null -ne $ui.info);$apply.Enabled=($null -ne $ui.info);$restore.Enabled=($null -ne $ui.info)}
  }
  $apply.Add_Click({& $save $false});$restore.Add_Click({& $save $true})
  $drag={param($s,$e)if($e.Data.GetDataPresent([Windows.Forms.DataFormats]::FileDrop)){$e.Effect='Copy'}}

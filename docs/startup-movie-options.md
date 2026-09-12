@@ -1,6 +1,6 @@
 # Startup movie options
 
-Open NEMT.vbs, select train.exe, choose the options and click Apply. Restart MSTS afterward.
+Open NEMT.vbs, select train.exe, choose the options and click Apply. Restart MSTS afterward. **Select All**, to the left of Apply, checks every available checkbox. It leaves disabled options unchecked and keeps the current thrust slider value.
 
 - **Skip startup movie** bypasses the clip before MSTS opens it. The change lasts only for the running process. NEMT does not write the movie preference to the registry or rename GLOBAL/startup.mpg. This option is initially unchecked.
 - **Restore keyboard control after movie** keeps the input recovery that passed host tests after both normal completion and skipping during playback. It is initially checked in the form. It does not bring MSTS forward when another application has focus.
