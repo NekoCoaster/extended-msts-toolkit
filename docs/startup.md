@@ -4,18 +4,20 @@ Open **NEMT.vbs**, select `train.exe`, choose the options and Apply with MSTS cl
 
 - **Show verbose startup and activity loading details** replaces the native loading-screen text with the latest observed file or directory scan. Long paths show their trailing portion to fit the existing text area.
 - **Write startup diagnostic log** records file-open and directory-search attempts and their results in `NEMT/startup.log`. It is off by default and works independently of the display option.
-- **Unlock FPS limit (forces -noclamp launch parameter)** adds MSTS's existing `-noclamp` option to its private startup command line. Shortcuts need no edits. Existing resolution/window arguments are preserved, and an existing `-noclamp` token is not duplicated. Disabling the option does not remove a parameter explicitly supplied by the user.
+- **Unlock FPS limit (forces -noclamp launch parameter)** adds MSTS's existing `-noclamp` option to its private startup command line. Shortcuts need no edits. Existing resolution/window arguments are preserved, and an existing `-noclamp` token is not duplicated. Disabling the option does not remove a parameter explicitly supplied on the command line.
 
 ```ini
 [Startup]
 VerboseLoading=true
 WriteLog=false
 UnlockFPS=false
+MaxLogSizeKB=8192
+MaxBackupLogs=0
 ```
 
 Restart MSTS after changing settings. Missing flags default off. The initial splash image is unchanged. The display updates when MSTS redraws its native loading screen; it is not an independently animated monitor, and it may hold its last message while a long operation runs. The first version reports actual file API activity rather than inventing names for untraced parsing or registry operations. It does not report file reads made privately inside other DLLs.
 
-Initial startup tracking stops at the first main event-loop frame. Activity loading reactivates display tracking until loading fails or the first driving frame begins, including subsequent activities. Activity tracking does not reopen the startup log. An enabled log is replaced on each fresh launch, capped at 8 MiB, and closed at startup completion. Disabling logging leaves an existing log untouched. The installer does not create this optional fourth file; Uninstall retains it as a diagnostic record. Regular OS writes are used, without per-record flush-to-disk calls. Logging has some startup I/O cost, and the last record is not guaranteed to survive a machine/power failure.
+Initial startup tracking stops at the first main event-loop frame. Activity loading reactivates display tracking until loading fails or the first driving frame begins, including subsequent activities. Activity tracking does not reopen the startup log. With zero backups, an enabled log starts fresh on each launch. Size and retention are configurable as described below; the log closes at startup completion. Disabling logging leaves an existing log untouched. The installer does not create this optional fourth file; Uninstall retains it as a diagnostic record. Regular OS writes are used, without per-record flush-to-disk calls. Logging has some startup I/O cost, and the last record is not guaranteed to survive a machine/power failure.
 
 ## Reading a log
 
@@ -33,7 +35,7 @@ The early command-line stage now also runs when no video-mode argument was suppl
 
 ## Validation
 
-Historical startup-only VM smoke-test DLL SHA-256: `5b9cef7975fa389c95639ac6857089d3d8d63395afc982e3c83d063fe3780d6c` (38,400 bytes). Normal `train.exe -vm:w` launch, no Frida. The recorded run reached the menu, counted 18 text substitutions and 346 file/directory operations, and closed the log at the first event-loop frame. The main menu was visually inspected and MSTS exited normally. These counts describe this installation and run, not a benchmark or universal startup sequence. The fast loading-screen text itself was not captured visually; the owner subsequently confirmed the startup text was visible and working.
+Historical startup-only VM smoke-test DLL SHA-256: `5b9cef7975fa389c95639ac6857089d3d8d63395afc982e3c83d063fe3780d6c` (38,400 bytes). Normal `train.exe -vm:w` launch, no Frida. The recorded run reached the menu, counted 18 text substitutions and 346 file/directory operations, and closed the log at the first event-loop frame. The main menu was visually inspected and MSTS exited normally. These counts describe this installation and run, not a benchmark or universal startup sequence. The fast loading-screen text itself was not captured visually; subsequent host testing confirmed the startup text was visible and working.
 
 Automated tests cover argument preservation and `-noclamp` deduplication, compatibility redirect chaining, native window sizing, startup API result/error preservation, bounded text, post-startup bypass, and 60 startup/HUD installer combinations across four executable variants. Original call-site bytes are checked against the supplied base/widescreen fixtures. Existing native physics, lifecycle and mutation tests remain separate regressions. No game binaries or raw research exports ship in the package.
 
@@ -43,7 +45,7 @@ Automated tests cover argument preservation and `-noclamp` deduplication, compat
 2. At the main menu, confirm `startup.log` ends with `STARTUP COMPLETE`. Enter an activity and check its size/modified time stays unchanged.
 3. Disable the log and restart. Confirm the previous file stays unchanged while verbose text still works.
 4. Enable the FPS option and launch without manually adding `-noclamp`. Compare with the known explicit-parameter behavior; rendering/CPU limits can still constrain FPS.
-5. Retest `-vm:bw`, a custom resolution and Alt+Tab. The prior host-validated borderless checkpoint remains available as `nemt-borderless-host-tested`.
+5. Retest the borderless checkbox with `-vm:w`, a custom resolution and Alt+Tab. The prior host-validated borderless checkpoint remains available as `nemt-borderless-host-tested`.
 
 ## Terrain-buffer progress and remaining time
 
@@ -61,13 +63,13 @@ For a repeatable route test, inventory the untouched route before its first load
 
 Final DLL `6e257dc1f58bba74175acfe5b46fc520fb05754ad4c2379aa8c1adf8b41d09b0` (44,544 bytes) was tested with a fresh installed LGVMed 3.0 copy. The original route was inventoried by relative path, size and SHA-256 before launch, and preserved separately. Startup crashed before reaching the menu or terrain generation. A second normal windowed launch with NEMT's DLL temporarily removed crashed at the same `train.exe` offset `0x002f4c5a`, exception `0xc0000005`. This reproduces the failure without NEMT, but does not identify its underlying cause.
 
-The logged run had progressed beyond LGVMed's paths before its last observed open, `routes/USA2/Marias.tdb`. That last file is not proof of fault. Post-run comparison found zero added, removed or content-modified route files, so no generated buffers required rollback. NEMT was restored and the test route copy moved out of active Routes into local scratch; the user's original route copy was untouched. Live terrain-percentage/ETA verification remains blocked by this independent startup failure. Inventories, crash events and logs remain local under work/ and are excluded from the release.
+The logged run had progressed beyond LGVMed's paths before its last observed open, `routes/USA2/Marias.tdb`. That last file is not proof of fault. Post-run comparison found zero added, removed or content-modified route files, so no generated buffers required rollback. NEMT was restored and the test route copy moved out of active Routes into local scratch; the original route copy was untouched. Live terrain-percentage/ETA verification remains blocked by this independent startup failure. Inventories, crash events and logs remain local under work/ and are excluded from the release.
 
 After moving the LGVMED test copy out, the final build reached the main menu normally: 346 observed operations, 18 text substitutions, and a closed startup log. The menu was visually inspected and MSTS exited normally.
 
 ## Host follow-up
 
-The owner confirmed terrain generation completed successfully and supplied a screenshot showing 46.0% with an estimated five seconds remaining. They identified LGVMed’s documented Xtracks 3.10 requirement and reported that installing Xtracks resolved the host startup crash. The supplied VM comparison package is Xtracks Standard Edition 3.22. These host reports supersede the earlier blocked terrain test, without turning the earlier VM failure into a successful measurement.
+Host testing confirmed successful terrain generation, with a screenshot recording 46.0% and an estimated five seconds remaining. Installing Xtracks to satisfy LGVMed’s documented 3.10 requirement resolved the host startup crash. The supplied VM comparison package is Xtracks Standard Edition 3.22. These host reports supersede the earlier blocked terrain test, without turning the earlier VM failure into a successful measurement.
 
 ## Generation counts and the following pause
 
@@ -78,3 +80,9 @@ Two checked argument-load instructions now supply exact counts to the existing w
 The code immediately following generation selects the environment file (`0x4935af`) and initializes route/activity assets. No distinct post-generation terrain-validation loop with a measurable total was identified. The new checked call redirect at `0x494bc1` displays `Preparing route assets...`, clears generation mode and forwards to the original environment selection routine. It intentionally does not invent a validation count, percentage or ETA. Later native redraws continue to show observed file activity.
 
 VM build `4a0d061070a7af6c14b241604dba85d77038c8ff0e8c0bf1fbd1d0c973e5d34d` showed 56/232 jobs, 24% and approximately eight seconds remaining at 640×480, then entered LGVMed successfully. Only the 464 previously inventoried generated files were moved aside for this repeat, after checking every hash and path; original route files were preserved. The brief transition message was not captured visually in that run; its forwarding and generation-state reset have automated coverage. These observations do not imply every post-generation delay has been identified.
+
+## Log rotation in 1.0.0
+
+`[Startup] MaxLogSizeKB` accepts 4–65536 (default 8192). `MaxBackupLogs` accepts 0–20 (default 0). Invalid values reject configuration. With backups enabled, each new launch archives the prior log; reaching the size limit during startup also rotates before the next record. Files are `startup.log`, `startup.1.log` (newest backup), and so on. Zero backups discards the previous content on launch/size rollover. Recording continues after a size rotation.
+
+Changing the backup count prunes the recognized numbered backups above that count when logging next starts. Previously recorded backups may reflect an earlier, larger size limit until replaced. Logging disabled leaves existing logs untouched. Rotation failures disable further logging without stopping the simulator. There are no per-frame log writes; activity loading does not reopen the startup log.

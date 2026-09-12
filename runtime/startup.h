@@ -18,12 +18,13 @@ static Hook startup_hooks[13];
 static U (__fastcall *loading_begin_original)(U)=(void*)0x401c53;
 static void (*loading_end_original)(void)=(void*)0x4014d3;
 static int activity_loading;
+#include "startup-log.h"
 static void startup_write(const char *operation,const char *name,DWORD number){
  char line[1024];DWORD written;int n;
  if(startup_file==INVALID_HANDLE_VALUE)return;
  n=snprintf(line,sizeof(line),"%lu ms | %s | %lu | %.700s\r\n",GetTickCount()-startup_started,operation,number,name?name:"");
  if(n<=0||n>=sizeof(line))return;
- if(startup_bytes+(DWORD)n>8*1024*1024){const char *end="Log size limit reached; further records omitted.\r\n";WriteFile(startup_file,end,strlen(end),&written,NULL);CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;return;}
+ if(startup_bytes+(DWORD)n>max_log_bytes&&!startup_open_log())return;
  if(!WriteFile(startup_file,line,n,&written,NULL)||written!=(DWORD)n){CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;return;}
  startup_bytes+=written;
 }
@@ -104,6 +105,6 @@ static int install_startup_hooks(void){
  startup_call(&startup_hooks[12],0x494bc1,0x401357,(U)loading_assets);
  InitializeCriticalSection(&startup_lock);startup_started=GetTickCount();startup_active=1;
  if(!prepare_hooks(startup_hooks,13)||!install_hooks(startup_hooks,13)){startup_active=0;return 0;}
- if(startup_log){wcscpy(path,runtime_dir);wcscat(path,L"startup.log");startup_file=CreateFileW(path,GENERIC_WRITE,FILE_SHARE_READ,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);startup_write("STARTUP BEGIN","File API activity; not a crash-cause diagnosis. Paths use Windows ANSI encoding.",0);}
+ if(startup_log&&startup_open_log())startup_write("STARTUP BEGIN","File API activity; not a crash-cause diagnosis. Paths use Windows ANSI encoding.",0);
  return 1;
 }

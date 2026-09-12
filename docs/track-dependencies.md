@@ -2,7 +2,7 @@
 
 NEMT checks route track databases once during normal startup, before MSTS loads them. If a supported text database references a section absent from both GLOBAL/tsection.dat and the route’s local dynamic definitions, it displays a dialog identifying the route and missing section, then closes MSTS when acknowledged. No Frida attachment is used.
 
-For the known LGVMed directory, the dialog identifies Xtracks based on the author’s requirement provided by the owner: LGVMed 3.0 requires Xtracks 3.10. Other routes receive a generic missing-track-definition warning directing users to their author’s README. A shared global tsection.dat can include multiple track add-ons, so this is not an installed-Xtracks version detector. It does not recommend overwriting a newer global database with an older one.
+For the known LGVMed directory, the dialog identifies Xtracks based on the author’s requirement recorded during development: LGVMed 3.0 requires Xtracks 3.10. Other routes receive a generic missing-track-definition warning directing users to their author’s README. A shared global tsection.dat can include multiple track add-ons, so this is not an installed-Xtracks version detector. It does not recommend overwriting a newer global database with an older one.
 
 ## Detection and limits
 

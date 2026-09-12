@@ -18,7 +18,7 @@ VM smoke build `f66e0b23e31ab945421980fe87ea38ad49ebfc5560eec48310458567ab60c8af
 
 Host checks: inspect white F5 while crawling, pause/resume, end the activity and enter another. Check placement at your usual resolution with your other overlays.
 
-The owner confirmed the earlier white F5 display on the host. The latest right alignment and signed-force changes have automated coverage and still need host visual confirmation.
+Host testing confirmed the earlier white F5 display on the host. The latest right alignment and signed-force changes have automated coverage and still need host visual confirmation.
 
 VM build `9d06d47e3cc9a76fd68c996bab844ff6c1cd6a19d21633faec6d291ee356ca66` was subsequently verified in LGVMed at 640×480: all three lines end at the bottom-right margin, including the paused state. The native font width call executed successfully. Signed nonzero force is covered by synthetic tests; this live run remained on rails.
 

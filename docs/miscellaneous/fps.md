@@ -4,7 +4,7 @@ The NEMT form can now add the existing parameter automatically through **Unlock 
 
 ## Recommended first step: use `-noclamp`
 
-MSTS already has a `-noclamp` launch parameter that disables the game-side frame limiter identified in this investigation. The user tested it on their host machine and reported that it provided the desired higher-frame-rate behavior, with performance still constrained by CPU throughput. For that goal, **prefer this existing option over reverse engineering or patching the executable**.
+MSTS already has a `-noclamp` launch parameter that disables the game-side frame limiter identified in this investigation. Host testing established the desired higher-frame-rate behavior, with performance still constrained by CPU throughput. For that goal, **prefer this existing option over reverse engineering or patching the executable**.
 
 For a windowed launch from the MSTS installation directory, use:
 
@@ -12,7 +12,7 @@ For a windowed launch from the MSTS installation directory, use:
 .\train.exe -vm:w -noclamp
 ```
 
-Alternatively, append `-noclamp` after the executable path in an existing shortcut's Target field. This removes the identified game-side restriction; it does not guarantee 300 FPS or remove other rendering, synchronization, or hardware limits. The host result is user-reported, not a controlled benchmark or comprehensive high-frame-rate physics validation.
+Alternatively, append `-noclamp` after the executable path in an existing shortcut's Target field. This removes the identified game-side restriction; it does not guarantee 300 FPS or remove other rendering, synchronization, or hardware limits. This host test was not a controlled benchmark or comprehensive high-frame-rate physics validation.
 
 ## Historical reverse-engineering experiments
 
@@ -30,6 +30,6 @@ The roughly 57 FPS observation was traced to a nominal 60 FPS game-side limiter,
 
 At high rates, the original minimum 0.005-second simulation step could advance the game too quickly. The corrected experiment changed both step and reciprocal-rate limits consistently; it did not demonstrate sustained 300 FPS. The scene was a stationary single HHP-8 with low geometry and a software-rendering wrapper in the VM. These are instrumentation measurements, not general hardware benchmark claims.
 
-The limiter enable global was `0x829900`, the interval `0x829904`, and the startup interval immediate at file offset `0x2BA004`. The parser's `noclamp` option cleared the enable flag. The user later reported that `-noclamp` met the desired host-machine behavior and closed this investigation.
+The limiter enable global was `0x829900`, the interval `0x829904`, and the startup interval immediate at file offset `0x2BA004`. The parser's `noclamp` option cleared the enable flag. Later host testing confirmed that `-noclamp` met the desired host-machine behavior and closed this investigation.
 
 No permanent FPS or timestep patch is installed by MSTS Derailment. Moving collisions, AI, accelerated simulation and long-running timer precision were not comprehensively tested at high frame rates. All exploratory changes were restored after measurement.

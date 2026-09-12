@@ -1,6 +1,6 @@
 # dgVoodoo and borderless mode
 
-**Recommended comparison baseline.** Borderless operation has been validated by the owner on their host; the exact final dgVoodoo configuration was not captured. The native borderless test build implements `-vm:bw`; follow the [visual checklist](borderless.md).
+**Recommended comparison baseline.** Borderless operation has been validated on the host; the exact final dgVoodoo configuration was not captured. Version 1.0.0 uses the borderless checkbox with ordinary `-vm:w`; follow the [visual checklist](borderless.md).
 
 For a toolkit-managed window, start with:
 

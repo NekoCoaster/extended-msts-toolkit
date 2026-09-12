@@ -1,20 +1,20 @@
 # Neko's Extended MSTS Toolkit — NEMT
 
-A small native toolkit for Microsoft Train Simulator. This first migration brings MEDS's activity-end prevention, camera access and connected-engine crawling into one configurable `DINPUT.dll`.
+A small native toolkit for Microsoft Train Simulator. Activity-end prevention, camera access and connected-engine crawling share one configurable `DINPUT.dll`.
 
-**Loading and HUD test build:** single-line verbose text now covers startup and activity loading, with terrain-buffer progress and estimated remaining time. An automatically included crawl [extended F5 HUD](docs/crawl-hud.md) shows crawl controls and applied thrust without diagnostic file writes. See the [loading guide and validation limits](docs/startup.md). The owner validated the earlier startup display; the owner has also confirmed terrain generation completed and the F5 HUD was visible. The latest HUD alignment/sign and dependency preflight changes still need host validation.
+Version **1.0.0**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
 
-**Borderless foundation:** native `-vm:bw` support and optional window centering are now included. The owner confirmed activity transitions, Alt+Tab and resolution changes; see the [validation and launch guide](docs/borderless.md). The existing MEDS releases remain unchanged. This is a separate local repository; it has not been published to a new GitHub repository.
+Source: [NekoCoaster/extended-msts-toolkit](https://github.com/NekoCoaster/extended-msts-toolkit).
 
 ## Install or migrate
 
 1. Close MSTS and extract the whole package.
 2. Open **NEMT.vbs**, or drag your `train.exe` onto it. Registry detection and Browse remain available.
-3. Select features and click **Apply**. Enable the window option and use `-vm:bw` for borderless, or `-vm:w` for ordinary windowed mode.
+3. Select features and click **Apply**. Check Enable borderless for a borderless window, or uncheck it for a normal frame. Existing `-vm:w` shortcuts work in either case; launches without display arguments default to windowed. Use `-vm:WIDTH,HEIGHT,32` for fullscreen.
 
 Supports the identified MSTS Bin **1.8.052113** base, widescreen, LAA and widescreen + LAA images. Exact image checks reject other modifications.
 
-On a clean supported executable, the installer does not change `train.exe`. Migrating an existing MEDS executable creates a verified backup and restores only its two known feature patches. Widescreen/LAA modifications are preserved. All subsequent feature changes are configuration-only; the DLL applies gameplay features to process memory after the driving scene becomes ready. The separate window module initializes during normal startup.
+The installer leaves `train.exe` unchanged. Restore previously patched executables with their original patcher before installing NEMT. Supported widescreen/LAA variants are preserved. Features are configured through settings; gameplay changes apply to process memory after the driving scene becomes ready. The window module initializes during normal startup.
 
 The installer upgrades only an owned, hash-matching `DINPUT.dll`. Existing dgVoodoo graphics DLLs and configuration are left alone. There is no Frida, Python, network listener or separate helper required during play.
 
@@ -22,13 +22,15 @@ The installer upgrades only an owned, hash-matching `DINPUT.dll`. Existing dgVoo
 
 ## Settings
 
-`NEMT/native.ini`:
+`NEMT/settings.ini`:
 
 ```ini
 [Startup]
 VerboseLoading=false
 WriteLog=false
 UnlockFPS=false
+MaxLogSizeKB=8192
+MaxBackupLogs=0
 
 [Window]
 Enabled=true
@@ -48,19 +50,23 @@ CrawlHUDAnchor=BottomLeft
 
 Settings take effect after restarting MSTS. Crawling requires `PreventActivityEnd=true`; the form enforces this. Invalid manual configuration prevents feature installation. Missing feature flags default off. Thrust ranges from 0–100×; zero disables added thrust while retaining the selected throttle-dependent collision/animation effects.
 
-Use **Uninstall** to remove the owned DLL and configuration. The clean executable remains unchanged. Migration backups and ownership/diagnostic records are retained. To return to MEDS, uninstall NEMT, then apply the preserved MEDS package to the clean executable.
+Use **Uninstall** to remove the owned DLL and configuration. The executable remains unchanged. Ownership records and diagnostic files are retained.
 
 ## Documentation
 
-- [Architecture and migration](docs/native-runtime.md)
+- [Native architecture](docs/native-runtime.md)
 - [Installed files](docs/installed-files.md)
-- [Validation and limits](docs/release-validation.md)
+- [Current validation and limits](docs/release-1.0.0.md)
+- [Historical migration validation](docs/release-validation.md)
 - [Borderless launch guide and implementation](docs/borderless.md)
 - [dgVoodoo borderless settings](docs/dgvoodoo.md)
 - [Inherited physics equations](docs/physics.md) and [identified patch locations](docs/patches.md)
 - [Research history](docs/discovery.md)
+- [Widescreen and in-game options investigation](docs/future-features.md)
 - [FPS: prefer the existing -noclamp option](docs/miscellaneous/fps.md)
 
 Developed and Tested by NekoCoaster, Powered by Codex — 2026 | [MIT License](LICENSE). See [third-party notices](THIRD-PARTY.md).
 
 NEMT now checks supported text route track databases for missing section definitions before startup. [Dependency checks and limits](docs/track-dependencies.md) explains the Xtracks warning and what it can detect.
+
+Earlier development NEMT configuration is not supported: reapply this package with the desired selections. It writes `settings.ini`; older configuration files are not read. The old `-vm:bw` spelling is no longer supported.

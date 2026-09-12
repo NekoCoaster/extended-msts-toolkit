@@ -1,6 +1,6 @@
 # Executable identification and permanent patches
 
-The supported executable family is the exact MSTS Bin 1.8.052113 image used during this investigation. User-supplied filenames included `train.vanilla1.4.exe`; that filename alone is not a version identifier. Support does not extend to every stock MSTS 1.4 executable.
+The supported executable family is the exact MSTS Bin 1.8.052113 image used during this investigation. Development fixture filenames included `train.vanilla1.4.exe`; that filename alone is not a version identifier. Support does not extend to every stock MSTS 1.4 executable.
 
 All accepted images are 4,091,953 bytes, PE32, with preferred image base `0x400000`. Identification normalizes only the two known feature patches and the LAA header bit, then checks the entire image's SHA-256. An unknown modification is rejected before any write.
 

@@ -70,13 +70,14 @@ static LPSTR WINAPI toolkit_command_line(void){
    slash[1]=0;
    if(wcslen(root)+45<MAX_PATH&&supported_image()){
     /* This runs from the EXE's CRT entry, outside DllMain/loader lock. */
-    read_config();if(config_valid)track_check_startup(root);normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+12);
+    read_config();if(config_valid)track_check_startup(root);normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+32);
     if(normalized_command_line){
-     normalize_launch(actual,normalized_command_line,config_valid&&unlock_fps);
+     if(config_valid)normalize_launch(actual,normalized_command_line,unlock_fps);else strcpy(normalized_command_line,actual);
+     requested_window_mode=normalize_vm(normalized_command_line,NULL);
      if(config_valid)install_startup_hooks();
      if(config_valid)install_hud_hook();
-     if(config_valid&&window_features&&(requested_window_mode==2||(requested_window_mode==1&&center_windowed))){
-      window_mode=requested_window_mode;if(!install_window_hooks())window_mode=0;
+     if(config_valid&&requested_window_mode==1&&(window_features||center_windowed)){
+      window_mode=window_features?2:1;if(!install_window_hooks())window_mode=0;
      }
     }
    }

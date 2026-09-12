@@ -1,4 +1,4 @@
-param([string]$BaseExe,[string]$WidescreenExe,[string]$Scratch,[string[]]$LegacyPatchers)
+param([string]$BaseExe,[string]$WidescreenExe,[string]$Scratch)
 $ErrorActionPreference='Stop'
 . (Join-Path (Split-Path $PSScriptRoot) 'NEMT.ps1')
 function Assert($c,$m){if(-not $c){throw $m}}
@@ -28,18 +28,11 @@ foreach($wide in @($false,$true)){foreach($laa in @($false,$true)){
  Assert $rejected 'Unrelated input wrapper accepted'
  Assert ([IO.File]::ReadAllText((Join-Path $dir 'DINPUT.dll')) -eq 'unrelated input wrapper') 'Unrelated input wrapper overwritten'
 }}
-foreach($legacy in $LegacyPatchers){
- $dir=[IO.Path]::GetFullPath((Join-Path $Scratch ([Guid]::NewGuid().ToString('N'))));[void][IO.Directory]::CreateDirectory($dir);$file=Join-Path $dir 'train.exe';[IO.File]::Copy((Resolve-Path $BaseExe),$file)
- & $legacy -Action Apply -ExePath $file -RemoveEndMessage -UnlockCameras -Crawl | Out-Null
- $patchedHash=(Get-MstsImage $file).SHA256
- Invoke-Options $file $true $true $true 10 -Confirm:$false | Out-Null
- $i=Get-MstsImage $file;Assert (-not $i.TimeoutPatched -and -not $i.CameraPatched) 'Legacy bytes were not restored'
- $backup=$file+'.nemt-migration.'+$patchedHash.Substring(0,16)+'.bak';Assert ((Get-MstsHash ([IO.File]::ReadAllBytes($backup))) -eq $patchedHash) 'Migration backup mismatch'
- Assert ((Get-CrawlInstallation $file).product -eq 'NEMT') 'Toolkit ownership not established'
- foreach($folder in @('MEDS','MSTS-Derailment')){foreach($name in @('native.ini','MstsCrawl.dll','crawl.js','MstsCrawl.config')){Assert (-not (Test-Path (Join-Path $dir "$folder/$name"))) 'Active legacy payload remains'}}
- $cleanHash=$i.SHA256;Invoke-Options $file $false $true $false 0 -Confirm:$false | Out-Null
- Assert ((Get-MstsImage $file).SHA256 -eq $cleanHash) 'Changing settings rewrote executable'
- Invoke-Options $file $false $false $false -Confirm:$false | Out-Null
- Assert ((Get-MstsImage $file).SHA256 -eq $cleanHash) 'Uninstall rewrote clean executable'
+foreach($feature in @('Timeout','Camera')){
+ $b=[IO.File]::ReadAllBytes((Resolve-Path $BaseExe));Set-PatchBytes $b $script:Specs[$feature] $true
+ $file=Join-Path $Scratch ('modified-'+$feature+'.exe');[IO.File]::WriteAllBytes($file,$b);$hash=Get-MstsHash $b
+ $rejected=$false;try{Invoke-Options $file $true $true $true -Confirm:$false | Out-Null}catch{$rejected=$true}
+ Assert $rejected 'Previously patched executable accepted'
+ Assert ((Get-MstsHash ([IO.File]::ReadAllBytes($file))) -eq $hash) 'Rejected executable changed'
 }
-Write-Output "PASS $count feature/variant cases; clean EXE invariant; migration from $($LegacyPatchers.Count) releases; backup, settings, uninstall, dry-run and wrapper preservation."
+Write-Output "PASS $count feature/variant cases; immutable EXE; prior patches rejected; settings, uninstall, dry-run and wrapper preservation."

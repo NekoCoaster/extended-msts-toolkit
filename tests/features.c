@@ -6,7 +6,7 @@ static unsigned char *globals,*patches;
 int main(int argc,char **argv){
  char full[MAX_PATH],config[512];WCHAR dir[MAX_PATH],ini[MAX_PATH];HANDLE f;DWORD n;int bits,i,ok;
  assert(argc==3);bits=atoi(argv[2]);assert(GetFullPathNameA(argv[1],MAX_PATH,full,NULL));mbstowcs(root,full,MAX_PATH);wcscat(root,L"\\");
- wcscpy(dir,root);wcscat(dir,L"NEMT");assert(CreateDirectoryW(dir,NULL));wcscpy(ini,dir);wcscat(ini,L"\\native.ini");
+ wcscpy(dir,root);wcscat(dir,L"NEMT");assert(CreateDirectoryW(dir,NULL));wcscpy(ini,dir);wcscat(ini,L"\\settings.ini");
  snprintf(config,sizeof(config),"[Derailment]\r\nPreventActivityEnd=%s\r\nUnlockCameras=%s\r\nEnableCrawl=%s\r\nCrawlStrength=10\r\n[Diagnostics]\r\nWriteStatusJson=false\r\n",bits&1?"true":"false",bits&2?"true":"false",bits&4?"true":"false");
  if(bits==8)strcpy(config,"[Derailment]\r\nPreventActivityEnd=invalid\r\n");
  if(bits==9)strcpy(config,"[Derailment]\r\nCrawlStrength=101\r\n");

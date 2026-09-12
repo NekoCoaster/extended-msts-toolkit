@@ -8,7 +8,7 @@ foreach($source in @($BaseExe,$WidescreenExe)){foreach($laa in @($false,$true)){
  Invoke-Options $file $false $false $false -WindowFeatures $true -Confirm:$false | Out-Null
  $manifest=Get-CrawlInstallation $file
  if(-not $manifest.windowFeatures -or $manifest.crawl -or $manifest.preventEnd -or $manifest.unlockCameras){throw 'Window-only flags mismatch'}
- $ini=Join-Path $dir 'NEMT/native.ini';$text=[IO.File]::ReadAllText($ini)
+ $ini=Join-Path $dir 'NEMT/settings.ini';$text=[IO.File]::ReadAllText($ini)
  if($text -notmatch '\[Window\]\s+Enabled=true\s+CenterWindowed=true'){throw 'Window configuration missing'}
  [IO.File]::WriteAllText($ini,$text.Replace('CenterWindowed=true','CenterWindowed=false'))
  Invoke-Options $file $true $true $true -WindowFeatures $true -Confirm:$false | Out-Null

@@ -4,7 +4,7 @@ NEMT derives from MEDS commit `1b7760f`. One x86 `DINPUT.dll` forwards seven Dir
 
 ## Configuration and stages
 
-`runtime/config.h` reads restart-only feature flags from `NEMT/native.ini`. Missing feature flags default off. Invalid booleans, invalid strength or crawling without activity-end prevention reject feature installation. `runtime/loader.c` verifies the normalized whole executable and requires the two legacy MEDS patches to be absent on disk.
+`runtime/config.h` reads restart-only feature flags from `NEMT/settings.ini`. Missing feature flags default off. Invalid booleans, invalid strength or crawling without activity-end prevention reject feature installation. `runtime/loader.c` verifies the normalized whole executable and requires the two legacy MEDS patches to be absent on disk.
 
 The current gameplay stage waits for a stable train/head/body backlink, valid controls and an advancing simulation clock across about five seconds. Startup menus therefore remain unmodified. Settings load normally. This delay also means features are not available in the first moments of an activity. Initially paused activities wait for resume.
 
@@ -31,9 +31,9 @@ flowchart TD
 
 The activity-end and camera instructions remain configured until process exit. Crawl eligibility is cleared on activity exit and recovered for a later activity. The DLL never saves its in-memory patches back to `train.exe`.
 
-## Installer migration
+## Installer ownership
 
-The form retains drag-and-drop, registry discovery, compatibility verification and Uninstall. It saves feature flags rather than toggling disk instructions. A one-time migration normalizes only the two identified MEDS patches, after making and checking an exact backup. It verifies owned DLL/payload hashes and retires known legacy runtime files. Unrelated wrappers and unknown folders are not replaced. Rollback snapshots cover changed configuration, ownership records, DLL and legacy payloads.
+The form supports drag-and-drop, registry discovery, executable verification and Uninstall. It saves feature flags without writing executable instructions. Previously patched executables must be restored with their original patcher first. Only the current NEMT ownership record is recognized. Unrelated wrappers and unknown folders are not replaced. Rollback snapshots cover configuration, ownership records and the DLL.
 
 ## Build
 

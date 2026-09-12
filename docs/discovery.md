@@ -10,4 +10,4 @@ No Frida probe was used for this migration's live smoke check. External reads us
 
 The original VM issue where the Derailments checkbox did not persist was observed again before gameplay patches were installed. The cause is not established; it is not attributed to the toolkit. Tests explicitly enabled the setting before starting the activity.
 
-See [validation](release-validation.md) for exact scope and [architecture](native-runtime.md) for ownership and startup constraints. Borderless mode remains separate future work. dgVoodoo already offers relevant window options; compare that baseline before introducing new window hooks.
+See [validation](release-validation.md) for exact scope and [architecture](native-runtime.md) for ownership and startup constraints. Borderless mode is implemented; the current launch rules are documented in the window guide.
