@@ -124,7 +124,7 @@ function Invoke-Options {
   $payload=[IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'runtime/DINPUT.dll'))
   if((Get-MstsHash $payload) -ne $integrity.'DINPUT.dll'){throw 'Release DLL integrity mismatch.'}
  }
- $printStatus='false';$centerWindowed='true';$maxLogSizeKB=8192;$maxBackupLogs=0;$cabNeedle='false'
+ $printStatus='false';$centerWindowed='true';$maxLogSizeKB=8192;$maxBackupLogs=0;$cabNeedle='false';$restoreMovieFocus='true';$systemMovieDecoder='true'
  foreach($record in $records){
   $ini=Join-Path $record.Directory 'settings.ini'
   if(Test-Path -LiteralPath $ini){
@@ -132,6 +132,8 @@ function Invoke-Options {
    foreach($line in [IO.File]::ReadAllLines($ini)){
     if($line -match '^\s*\[([^]]+)\]\s*$'){$section=$Matches[1]}
     elseif($section -ieq 'Cab' -and $line -match '^\s*CorrectNeedleAspect\s*=\s*(.*?)\s*$'){$cabNeedle=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
+    elseif($section -ieq 'Startup' -and $line -match '^\s*UseSystemMovieDecoder\s*=\s*(.*?)\s*$'){$systemMovieDecoder=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
+    elseif($section -ieq 'Startup' -and $line -match '^\s*RestoreMovieFocus\s*=\s*(.*?)\s*$'){$restoreMovieFocus=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
     elseif($section -ieq 'Startup' -and $line -match '^\s*MaxLogSizeKB\s*=\s*(\d+)\s*$'){if([long]$Matches[1] -ge 4 -and [long]$Matches[1] -le 65536){$maxLogSizeKB=[int]$Matches[1]}}
     elseif($section -ieq 'Startup' -and $line -match '^\s*MaxBackupLogs\s*=\s*(\d+)\s*$'){if([long]$Matches[1] -le 20){$maxBackupLogs=[int]$Matches[1]}}
     elseif($section -ieq 'Window' -and $line -match '^\s*CenterWindowed\s*=\s*(.*?)\s*$'){$centerWindowed=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
@@ -152,7 +154,7 @@ function Invoke-Options {
  try{
   if($install){
    if(-not (Test-Path -LiteralPath $target)){[void][IO.Directory]::CreateDirectory($target);$createdDir=$true}
-   $config="[Startup]`r`nVerboseLoading=$($VerboseLoading.ToString().ToLowerInvariant())`r`nWriteLog=$($StartupLog.ToString().ToLowerInvariant())`r`nUnlockFPS=$($UnlockFPS.ToString().ToLowerInvariant())`r`nMaxLogSizeKB=$maxLogSizeKB`r`nMaxBackupLogs=$maxBackupLogs`r`n`r`n[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`nShowCrawlHUD=$($CrawlHUD.ToString().ToLowerInvariant())`r`nCrawlHUDAnchor=$CrawlHUDAnchor`r`n"
+   $config="[Startup]`r`nVerboseLoading=$($VerboseLoading.ToString().ToLowerInvariant())`r`nWriteLog=$($StartupLog.ToString().ToLowerInvariant())`r`nUnlockFPS=$($UnlockFPS.ToString().ToLowerInvariant())`r`nUseSystemMovieDecoder=$systemMovieDecoder`r`nRestoreMovieFocus=$restoreMovieFocus`r`nMaxLogSizeKB=$maxLogSizeKB`r`nMaxBackupLogs=$maxBackupLogs`r`n`r`n[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`nShowCrawlHUD=$($CrawlHUD.ToString().ToLowerInvariant())`r`nCrawlHUDAnchor=$CrawlHUDAnchor`r`n"
    $config+="`r`n[Cab]`r`nCorrectNeedleAspect=$cabNeedle`r`n"
    $config+="`r`n[Audio]`r`nUnmuteInBackground=$($BackgroundAudio.ToString().ToLowerInvariant())`r`n`r`n[Activity]`r`nIgnoreRedSignal=$($IgnoreRedSignal.ToString().ToLowerInvariant())`r`n"
    [IO.File]::WriteAllText((Join-Path $target 'settings.ini'),$config,(New-Object Text.UTF8Encoding($false)))
@@ -216,7 +218,7 @@ function Resolve-MstsStartupPath([string]$Path) {
 function Show-Options([string]$InitialPath){
  Add-Type -AssemblyName System.Windows.Forms;Add-Type -AssemblyName System.Drawing
  [Windows.Forms.Application]::EnableVisualStyles()
- $form=New-Object Windows.Forms.Form;$form.Text="Neko's Extended MSTS Toolkit - v$script:ToolkitVersion";$form.ClientSize=New-Object Drawing.Size(760,([Math]::Max(500,[Math]::Min(812,[Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height-70))))
+ $form=New-Object Windows.Forms.Form;$form.Text="Neko's Extended MSTS Toolkit - v$script:ToolkitVersion";$form.ClientSize=New-Object Drawing.Size(760,([Math]::Max(500,[Math]::Min(648,[Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height-48))))
  $form.StartPosition='CenterScreen';$form.FormBorderStyle='FixedDialog';$form.MaximizeBox=$false;$form.AutoScaleMode='Dpi';$form.AutoScaleDimensions=New-Object Drawing.SizeF(96,96)
  $form.Font=New-Object Drawing.Font('Segoe UI',10);$form.BackColor=[Drawing.Color]::White
  function Label-At([string]$Text,[int]$Y,[int]$Height=28){$l=New-Object Windows.Forms.Label;$l.UseMnemonic=$false;$l.Text=$Text;$l.Location=New-Object Drawing.Point(24,$Y);$l.Size=New-Object Drawing.Size(712,$Height);$form.Controls.Add($l);return $l}
@@ -249,22 +251,35 @@ function Show-Options([string]$InitialPath){
  $icon=New-Object Windows.Forms.PictureBox;$icon.Location=New-Object Drawing.Point(24,577);$icon.Size=New-Object Drawing.Size(20,20);$icon.SizeMode='Zoom'
  $iconPath=Join-Path $PSScriptRoot 'docs\assets\github.png'
  if(Test-Path -LiteralPath $iconPath){$icon.Image=[Drawing.Image]::FromFile($iconPath)};$form.Controls.Add($icon)
- foreach($control in $form.Controls){if($control -ne $window -and $control.Location.Y -ge 165){$control.Top+=36}}
- $window.Top=165
- foreach($control in $form.Controls){if($control.Top -ge 201){$control.Top+=96}}
  $fps=Check-At 'Unlock FPS limit (-noclamp + corrected timing) (Potentially unstable)' 201
  $verbose=Check-At 'Show verbose startup and activity loading details' 233
  $startupLogBox=Check-At 'Write startup diagnostic log (optional; NEMT\startup.log)' 265
- foreach($control in $form.Controls){if($control.Top -ge 297){$control.Top+=128}}
  $cabBox=Check-At 'Fix cabview dials for widescreen displays' 297;$cabBox.Enabled=$false
  $wideLink=New-Object Windows.Forms.LinkLabel;$wideLink.Text='Requires the MSTS widescreen patch - installation guide';$wideLink.Location=New-Object Drawing.Point(45,329);$wideLink.Size=New-Object Drawing.Size(650,28)
  $wideLink.Add_LinkClicked({Start-Process 'https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/'});$form.Controls.Add($wideLink)
  $backgroundBox=Check-At 'Unmute while in background' 361
  $redBox=Check-At 'Continue after passing a red signal (show failure message)' 393
- foreach($control in $form.Controls){if($control.Top -ge $sliderPanel.Bottom){$control.Top+=36}}
  $anchorPanel=New-Object Windows.Forms.Panel;$anchorPanel.Location=New-Object Drawing.Point(24,($sliderPanel.Bottom+2));$anchorPanel.Size=New-Object Drawing.Size(652,32);$form.Controls.Add($anchorPanel)
  $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text="Crawl HUD position:";$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
  $anchor=New-Object Windows.Forms.ComboBox;$anchor.DropDownStyle="DropDownList";$anchor.Location=New-Object Drawing.Point(160,0);$anchor.Size=New-Object Drawing.Size(170,28);[void]$anchor.Items.AddRange(@("Bottom right","Bottom left"));$anchor.SelectedIndex=1;$anchorPanel.Controls.Add($anchor)
+ # Compact layout: all options and actions fit at 100% on a 768px display.
+ # Scrolling remains an accessibility fallback for smaller/high-DPI desktops.
+ $title.Top=8;$title.Height=34;$pathText.Top=48;$browse.Top=45
+ $version.Top=79;$version.Height=38
+ $optionY=118
+ foreach($option in @($window,$fps,$verbose,$startupLogBox,$cabBox,$backgroundBox,$redBox,$timeout,$camera,$crawl)){
+  $option.Top=$optionY;$option.Height=24;$option.Width=712;$optionY+=24
+ }
+ $cabBox.Width=410;$wideLink.Text='Widescreen patch guide';$wideLink.Location=New-Object Drawing.Point(445,230);$wideLink.Size=New-Object Drawing.Size(270,22)
+ $crawlHint.Top=360;$crawlHint.Height=22
+ $sliderPanel.Top=386;$sliderPanel.Height=64
+ $form.Controls.Remove($anchorPanel);$sliderPanel.Controls.Add($anchorPanel)
+ $anchorPanel.Location=New-Object Drawing.Point(426,0);$anchorPanel.Size=New-Object Drawing.Size(226,28)
+ $anchorLabel.Text='HUD:';$anchor.Location=New-Object Drawing.Point(48,0);$anchor.Width=170
+ $slider.AutoSize=$false;$slider.Top=30;$slider.Height=34
+ $space.Top=454;$space.Height=36;$message.Top=496;$message.Height=44
+ foreach($button in @($apply,$restore,$close)){$button.Top=548;$button.Height=32}
+ $credit.Top=591;$credit.Height=20;$github.Top=615;$github.Height=22;$icon.Top=614
  $form.AutoScroll=$true
  $ui=@{info=$null;loading=$false}
  $refresh={ $anchorPanel.Visible=$crawl.Checked;$sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }

@@ -11,7 +11,7 @@ Enable **Continue after passing a red signal (show failure message)**. Load **No
 3. If practical, pass another red signal: it should still warn. End/restart the activity and repeat the first violation to check that remembered signals reset.
 4. Note any missing text, unexpected pause, repeated notice or activity exit. Widget addons may change the native popup controls and need separate testing.
 
-The earlier bypass already passed an initial host continuation test. This revised native popup and repeat suppression have automated coverage but are awaiting these in-game checks. See [implementation details](red-signal-repeat.md).
+Alpha.3 subsequently passed host testing, including the native popup and repeat suppression. These steps remain useful for regression checks. See [implementation details](red-signal-repeat.md).
 
 ## Background audio
 

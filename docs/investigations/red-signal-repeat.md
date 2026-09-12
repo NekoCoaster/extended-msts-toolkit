@@ -1,6 +1,6 @@
 # Repeated red-signal warnings
 
-The first host test confirmed that the bypass allows continued driving after dismissal, but required dismissing the Windows notification twice. Alpha.3 replaces that Windows notification with a native MSTS alert; the revised native alert still needs host validation.
+The first host test confirmed that the bypass allows continued driving after dismissal, but required dismissing the Windows notification twice. Alpha.3 replaces that Windows notification with a native MSTS alert; the revised native alert and repeat suppression subsequently passed host validation.
 
 ## Confirmed instruction behavior
 
@@ -24,4 +24,4 @@ The text says “Activity failed -- ignored red light.” This is a gameplay not
 
 Automated checks execute the actual x86 notification adapter 10,000 times and cover repeated monitoring, duplicate referenced objects, a later signal, aspect changes, leaving and reapproaching, activity initialization, deferred notices and preservation of other failure bits. Native GUI calls are mocked in these tests: they do not prove on-screen rendering, pause/resume or real-route signal identity behavior.
 
-Host testing of the earlier Windows-dialog build confirmed continued driving but observed two notices. That evidence does not validate this new native-dialog build. Use [Train Rescue checks](quality-host-test.md) for the follow-up.
+Host testing of the earlier Windows-dialog build confirmed continued driving but observed two notices. A subsequent alpha.3 host test confirmed the native-dialog build working well. Use [Train Rescue checks](quality-host-test.md) for regression testing.

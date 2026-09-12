@@ -56,6 +56,7 @@ finish:
 #include "cab.h"
 #include "signal.h"
 #include "audio.h"
+#include "movie.h"
 #include "hud.h"
 #include "tracks.h"
 #include "window.h"

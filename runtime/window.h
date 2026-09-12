@@ -81,6 +81,7 @@ static LPSTR WINAPI toolkit_command_line(void){
      requested_window_mode=normalize_vm(normalized_command_line,NULL);
      if(config_valid)install_startup_hooks();
      if(config_valid)install_hud_hook();
+     if(config_valid&&!install_movie_hook())MessageBoxW(NULL,L"The startup movie fixes could not be installed. Original movie behavior remains enabled.",L"NEMT feature unavailable",MB_OK|MB_ICONWARNING);
      if(config_valid&&!install_signal_hook())MessageBoxW(NULL,L"The red-signal continuation hook could not be installed. The original activity-end behavior remains enabled.",L"NEMT feature unavailable",MB_OK|MB_ICONWARNING);
      if(config_valid&&!install_audio_hook())MessageBoxW(NULL,L"The background audio option could not be installed. Original audio behavior remains enabled.",L"NEMT feature unavailable",MB_OK|MB_ICONWARNING);
      if(config_valid&&requested_window_mode==1&&(window_features||center_windowed)){
