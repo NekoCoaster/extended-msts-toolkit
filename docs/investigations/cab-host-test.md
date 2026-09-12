@@ -4,7 +4,7 @@ This development build adds an opt-in needle correction. It is not the stable re
 
 ## Install and compare
 
-1. Pull branch `codex/settings-cab-investigation`, close MSTS, then run its `NEMT.vbs` installer and apply the existing selected options. The form title must show `1.1.0-alpha.1`.
+1. Pull branch `codex/settings-cab-investigation`, close MSTS, then run its `NEMT.vbs` installer and apply the existing selected options. The cab experiment is included from `1.1.0-alpha.1` onward; `1.1.0-alpha.2` also adds optional timing tests.
 2. In the installed `NEMT/settings.ini`, set the following existing section (do not add a duplicate section):
 
    ```ini

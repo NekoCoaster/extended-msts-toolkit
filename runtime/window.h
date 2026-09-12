@@ -70,7 +70,12 @@ static LPSTR WINAPI toolkit_command_line(void){
    slash[1]=0;
    if(wcslen(root)+45<MAX_PATH&&supported_image()){
     /* This runs from the EXE's CRT entry, outside DllMain/loader lock. */
-    read_config();if(config_valid)track_check_startup(root);normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+32);
+    read_config();if(config_valid)track_check_startup(root);
+    if(config_valid&&unlock_fps&&!install_timing_hooks()){
+     unlock_fps=0;
+     MessageBoxW(NULL,L"The experimental timing hooks could not be installed. NEMT will not add -noclamp. If your shortcut includes it, remove it before retrying.",L"NEMT timing unavailable",MB_OK|MB_ICONWARNING);
+    }
+    normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+32);
     if(normalized_command_line){
      if(config_valid)normalize_launch(actual,normalized_command_line,unlock_fps);else strcpy(normalized_command_line,actual);
      requested_window_mode=normalize_vm(normalized_command_line,NULL);

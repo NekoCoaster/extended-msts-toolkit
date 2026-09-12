@@ -2,7 +2,7 @@
 
 A small native toolkit for Microsoft Train Simulator. Activity-end prevention, camera access and connected-engine crawling share one configurable `DINPUT.dll`.
 
-Development version **1.1.0-alpha.1** adds an opt-in cab-needle experiment. Follow the [host comparison guide](docs/investigations/cab-host-test.md). In-game settings controls are not implemented. The stable release remains **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
+Development version **1.1.0-alpha.2** adds experimental high-FPS timing and retains the opt-in cab-needle correction. Follow the [timing test guide](docs/investigations/timing-host-test.md) and [cab comparison guide](docs/investigations/cab-host-test.md). In-game settings controls are out of scope. The stable release remains **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
 
 Source: [NekoCoaster/extended-msts-toolkit](https://github.com/NekoCoaster/extended-msts-toolkit).
 

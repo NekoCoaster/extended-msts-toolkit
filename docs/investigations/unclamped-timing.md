@@ -1,6 +1,6 @@
 # Unclamped timing — follow-up investigation
 
-Host testing reports that `-noclamp` speeds up simulation time and makes time acceleration unreliable. No timing correction is enabled in the current alpha. The needle correction received positive host feedback; its five-second delay is inherited from the gameplay readiness gate, not required by its geometry calculation. In-game settings integration has been dropped because of widget-addon compatibility concerns.
+Host testing reports that `-noclamp` speeds up simulation time and makes time acceleration unreliable. Alpha.2 adds an opt-in correction through the FPS checkbox; see the [test guide](timing-host-test.md). Its automated checks pass, but live timing validation is pending. The needle correction received positive host feedback; its five-second delay is inherited from the gameplay readiness gate, not required by its geometry calculation. In-game settings integration has been dropped because of widget-addon compatibility concerns.
 
 ## Confirmed static findings
 

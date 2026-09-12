@@ -52,6 +52,7 @@ finish:
 }
 #include "crawl.c"
 #include "startup.h"
+#include "timing.h"
 #include "cab.h"
 #include "hud.h"
 #include "tracks.h"

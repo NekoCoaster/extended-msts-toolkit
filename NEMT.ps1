@@ -248,7 +248,7 @@ function Show-Options([string]$InitialPath){
  foreach($control in $form.Controls){if($control -ne $window -and $control.Location.Y -ge 165){$control.Top+=36}}
  $window.Top=165
  foreach($control in $form.Controls){if($control.Top -ge 201){$control.Top+=96}}
- $fps=Check-At 'Unlock FPS limit (forces -noclamp launch parameter)' 201
+ $fps=Check-At 'Unlock FPS limit (-noclamp + corrected internal timing) (Unstable!)' 201
  $verbose=Check-At 'Show verbose startup and activity loading details' 233
  $startupLogBox=Check-At 'Write startup diagnostic log (optional; NEMT\startup.log)' 265
  foreach($control in $form.Controls){if($control.Top -ge $sliderPanel.Bottom){$control.Top+=36}}

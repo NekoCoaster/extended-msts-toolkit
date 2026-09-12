@@ -4,7 +4,7 @@ Open **NEMT.vbs**, select `train.exe`, choose the options and Apply with MSTS cl
 
 - **Show verbose startup and activity loading details** replaces the native loading-screen text with the latest observed file or directory scan. Long paths show their trailing portion to fit the existing text area.
 - **Write startup diagnostic log** records file-open and directory-search attempts and their results in `NEMT/startup.log`. It is off by default and works independently of the display option.
-- **Unlock FPS limit (forces -noclamp launch parameter)** adds MSTS's existing `-noclamp` option to its private startup command line. Shortcuts need no edits. Existing resolution/window arguments are preserved, and an existing `-noclamp` token is not duplicated. Disabling the option does not remove a parameter explicitly supplied on the command line.
+- **Unlock FPS limit (-noclamp + corrected internal timing) (Unstable!)** adds MSTS's existing `-noclamp` option and enables experimental high-resolution timing in `1.1.0-alpha.2`. Shortcuts need no edits. Existing resolution/window arguments are preserved, and an existing `-noclamp` token is not duplicated. Disabling the option also disables timing correction, but does not remove a parameter explicitly supplied on the command line. See the [timing comparison guide](investigations/timing-host-test.md).
 
 ```ini
 [Startup]
@@ -31,7 +31,7 @@ The localized `Loading...` string is resource 308 in `string.dll`. The initial `
 
 The game's `CreateFileA` and `FindFirstFileA` imports at `0x84db34` and `0x84dc98` are chained to record activity, preserving the original arguments, handle and `GetLastError` result. Tracking uses bounded buffers and a critical section; it never recursively invokes the renderer from a file operation. The first event-loop frame call at `0x6ba175` closes tracking and forwards to `0x6ad020`. Thirteen checked raw mutations use the existing transaction/claim mechanism; no executable gateway allocation is needed for these changes.
 
-The early command-line stage now also runs when no video-mode argument was supplied. It retains exact image-header and normalized whole-image validation and the compatibility-import chaining fix. Configuration and file I/O run outside `DllMain`. The optional `-noclamp` addition uses the game's parser; limiter instructions and timing equations are not patched. See the [historical FPS investigation](miscellaneous/fps.md).
+The early command-line stage also runs when no video-mode argument was supplied. It retains exact image-header and normalized whole-image validation and the compatibility-import chaining fix. Configuration and file I/O run outside `DllMain`. The optional `-noclamp` addition uses the game's parser. Starting with alpha.2, the FPS option also installs four checked timing instruction changes in memory; executable files remain unchanged. See the [historical FPS investigation](miscellaneous/fps.md).
 
 ## Validation
 
