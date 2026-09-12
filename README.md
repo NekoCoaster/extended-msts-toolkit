@@ -2,11 +2,11 @@
 
 A small native toolkit for Microsoft Train Simulator. Activity-end prevention, camera access and connected-engine crawling share one configurable `DINPUT.dll`.
 
-Version **1.0.0**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
+Version **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
 
 Source: [NekoCoaster/extended-msts-toolkit](https://github.com/NekoCoaster/extended-msts-toolkit).
 
-## Install or migrate
+## Install
 
 1. Close MSTS and extract the whole package.
 2. Open **NEMT.vbs**, or drag your `train.exe` onto it. Registry detection and Browse remain available.
