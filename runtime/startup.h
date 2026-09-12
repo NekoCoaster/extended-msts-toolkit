@@ -9,6 +9,7 @@ static StartupFindFn startup_find_original;
 static StartupStringFn startup_string_original=(StartupStringFn)0x402590;
 static void (*startup_first_frame_original)(void)=(void*)0x6ad020;
 static CRITICAL_SECTION startup_lock;
+static int startup_lock_ready;
 static volatile LONG startup_active;
 static HANDLE startup_file=INVALID_HANDLE_VALUE;
 static DWORD startup_bytes,startup_started,startup_sequence,startup_display_updates;
@@ -103,7 +104,7 @@ static int install_startup_hooks(void){
  startup_call(&startup_hooks[9],0x566d21,0x4023e2,(U)terrain_progress);
  for(i=10;i<12;i++){Hook *h=&startup_hooks[i];memset(h,0,sizeof(*h));h->address=i==10?0x566cbd:0x566d1c;h->length=5;h->raw=1;memcpy(h->original,"\xb9\x35\0\0\0",5);memcpy(h->replacement,i==10?"\x8b\x4d\xdc\x90\x90":"\x8b\x4d\xfc\x90\x90",5);}
  startup_call(&startup_hooks[12],0x494bc1,0x401357,(U)loading_assets);
- InitializeCriticalSection(&startup_lock);startup_started=GetTickCount();startup_active=1;
+ InitializeCriticalSection(&startup_lock);startup_lock_ready=1;startup_started=GetTickCount();startup_active=1;
  if(!prepare_hooks(startup_hooks,13)||!install_hooks(startup_hooks,13)){startup_active=0;return 0;}
  if(startup_log&&startup_open_log())startup_write("STARTUP BEGIN","File API activity; not a crash-cause diagnosis. Paths use Windows ANSI encoding.",0);
  return 1;

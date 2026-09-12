@@ -25,7 +25,9 @@ static RECT movie_fit(RECT client,RECT source){
 }
 static BOOL WINAPI movie_show(HWND h,int command){
  HWND main=*(HWND*)MOVIE_ADDR(0x82813a);RECT owner,outer,client,source={0,0,0,0},dest;POINT origin={0,0};BOOL result;LONG put=-1;char log[240];
- if(!separate_movie_window||h!=movie_window)return movie_show_original(h,command);
+ movie_log("SHOW reached (movie opened)",0);
+ /* Opening must complete with MSTS's original parent and styles intact. */
+ if(!separate_movie_window||!movie_detach(h))return movie_show_original(h,command);
  if(GetClientRect(main,&owner)&&GetWindowRect(h,&outer)&&ClientToScreen(main,&origin)){
   SetWindowPos(h,NULL,origin.x+(owner.right-(outer.right-outer.left))/2,origin.y+(owner.bottom-(outer.bottom-outer.top))/2,0,0,SWP_NOSIZE|SWP_NOZORDER|SWP_NOACTIVATE);
  }

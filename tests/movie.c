@@ -17,7 +17,9 @@ static LRESULT WINAPI send(HWND h,UINT m,WPARAM w,LPARAM l){
 }
 static U __fastcall play(const char *path,U edx){assert(!strcmp(path,"startup.mpg")&&edx==7);played++;return 42;}
 static U __fastcall old_open(HWND h,const char *path){assert(h==main_window_test);fallback++;return 8;}
+static U __fastcall option(const WCHAR *name,U *value,U scope){assert(scope==7);*value=0;return 99;}
 int main(void){
+ U preference=1;movie_get_option_original=option;assert(movie_get_option(L"ShowLogo",&preference,7)==99&&preference==0);
  movie_original=play;movie_original_open=old_open;movie_foreground=foreground;movie_get_focus=get_focus;movie_set_focus=set_focus;movie_send=send;movie_valid=is_valid;movie_enabled=is_enabled;movie_iconic=is_iconic;
  *(HWND*)MOVIE_ADDR(0x82813a)=main_window_test;restore_movie_focus=1;foreground_test=main_window_test;
  assert(movie_play("startup.mpg",7)==42&&played==1&&focused==1&&sent==1);
@@ -32,5 +34,16 @@ int main(void){
  open_error=1;assert(movie_open(main_window_test,"C:\\MSTS\\GLOBAL\\startup.MPG")==8&&opens==2&&fallback==1);
  assert(movie_open(main_window_test,"other.avi")==8&&opens==2&&fallback==2);
  system_movie_decoder=0;assert(movie_open(main_window_test,"C:\\MSTS\\GLOBAL\\startup.MPG")==8&&opens==2&&fallback==3);
+ /* Diagnostics survive startup_finish without erasing earlier evidence. */
+ {WCHAR dir[MAX_PATH],file[MAX_PATH];HANDLE h;char data[1024];DWORD read;U size;
+  GetTempPathW(MAX_PATH,dir);swprintf(runtime_dir,L"%lsNEMT-movie-log-%lu\\",dir,GetCurrentProcessId());assert(CreateDirectoryW(runtime_dir,NULL));
+  startup_log=1;max_log_bytes=1024;max_backup_logs=0;InitializeCriticalSection(&startup_lock);startup_lock_ready=1;startup_started=GetTickCount();startup_active=1;
+  assert(startup_open_log());startup_write("TEST","keep this evidence",0);startup_finish();
+  SetLastError(1234);movie_log("after startup",9);assert(GetLastError()==1234);
+  startup_log_name(file,0);h=CreateFileW(file,GENERIC_READ,FILE_SHARE_READ,NULL,OPEN_EXISTING,0,NULL);assert(h!=INVALID_HANDLE_VALUE);assert(ReadFile(h,data,sizeof(data)-1,&read,NULL));data[read]=0;size=GetFileSize(h,NULL);CloseHandle(h);
+  assert(strstr(data,"keep this evidence")&&strstr(data,"STARTUP COMPLETE")&&strstr(data,"after startup"));
+  max_log_bytes=size;movie_log("must not overflow",10);h=CreateFileW(file,GENERIC_READ,FILE_SHARE_READ,NULL,OPEN_EXISTING,0,NULL);assert(GetFileSize(h,NULL)==size);CloseHandle(h);
+  assert(DeleteFileW(file));assert(RemoveDirectoryW(runtime_dir));startup_log=0;
+ }
  puts("PASS movie driver selection/fallback and focus restoration: result preserved; active game only; no focus stealing, minimized/disabled/invalid window or still-installed movie WndProc.");return 0;
 }
