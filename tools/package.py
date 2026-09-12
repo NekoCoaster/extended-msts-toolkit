@@ -17,10 +17,13 @@ assert not any(re.search(r'-----BEGIN [A-Z ]+'+r'PRIVATE KEY-----',p.read_text(e
 archive=root.parent/'NEMT.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
  for p in sorted(root.rglob('*')):
-  if release_file(p):z.write(p,p.relative_to(root.parent).as_posix())
+  if release_file(p):
+   info=zipfile.ZipInfo('NEMT/'+p.relative_to(root).as_posix(),(2026,1,1,0,0,0))
+   info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644 << 16
+   z.writestr(info,p.read_bytes(),compresslevel=9)
 with zipfile.ZipFile(archive) as z:
  assert z.testzip() is None
  for p in root.rglob('*'):
-  if release_file(p):assert z.read(p.relative_to(root.parent).as_posix())==p.read_bytes()
+  if release_file(p):assert z.read('NEMT/'+p.relative_to(root).as_posix())==p.read_bytes()
 archive.with_suffix('.zip.sha256').write_text(digest(archive)+'  NEMT.zip\n',encoding='utf-8')
 print(json.dumps({'archive':str(archive),'zipBytes':archive.stat().st_size,'dllBytes':(root/'runtime/DINPUT.dll').stat().st_size,'files':len(files)+1},indent=2))

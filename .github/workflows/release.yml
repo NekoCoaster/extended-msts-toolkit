@@ -1,0 +1,46 @@
+name: Publish release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: ${{ github.ref_name }}
+    steps:
+      - name: Check out the tagged source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir NEMT
+          cd NEMT
+          git init
+          auth_header=$(printf "x-access-token:%s" "$GH_TOKEN" | base64 -w0)
+          echo "::add-mask::$auth_header"
+          git -c http.extraheader="AUTHORIZATION: basic $auth_header" fetch --depth=1 "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" "$GITHUB_REF"
+          git checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Verify version, checksums and package
+        working-directory: NEMT
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$RELEASE_TAG" = "v$(cat VERSION)"
+          sha256sum --check SHA256SUMS.txt
+          python3 tools/package.py
+          git diff --exit-code -- SHA256SUMS.txt
+          test -s "releases/$RELEASE_TAG.md"
+      - name: Publish ZIP and checksum
+        working-directory: NEMT
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create "$RELEASE_TAG" ../NEMT.zip ../NEMT.zip.sha256 --verify-tag --title "NEMT $RELEASE_TAG" --notes-file "releases/$RELEASE_TAG.md"
+          gh release view "$RELEASE_TAG" --json url,tagName,assets

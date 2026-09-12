@@ -70,3 +70,5 @@ Developed and Tested by NekoCoaster, Powered by Codex — 2026 | [MIT License](L
 NEMT now checks supported text route track databases for missing section definitions before startup. [Dependency checks and limits](docs/track-dependencies.md) explains the Xtracks warning and what it can detect.
 
 Earlier development NEMT configuration is not supported: reapply this package with the desired selections. It writes `settings.ini`; older configuration files are not read. The old `-vm:bw` spelling is no longer supported.
+
+Ready-to-use ZIP packages and versioned changelogs are available on the [Releases page](https://github.com/NekoCoaster/extended-msts-toolkit/releases). Maintainers publish a version by pushing a matching `vVERSION` tag; the release workflow verifies committed checksums and attaches the packaged ZIP and its checksum. Existing releases are never overwritten by a rerun.
