@@ -2,7 +2,7 @@
 
 A small native toolkit for Microsoft Train Simulator. Activity-end prevention, camera access and connected-engine crawling share one configurable `DINPUT.dll`.
 
-Development version **1.1.0-alpha.2** adds experimental high-FPS timing and retains the opt-in cab-needle correction. Follow the [timing test guide](docs/investigations/timing-host-test.md) and [cab comparison guide](docs/investigations/cab-host-test.md). In-game settings controls are out of scope. The stable release remains **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
+Development version **1.1.0-alpha.3** adds cab-dial selection, background audio and a native red-signal warning with repeat suppression. High-FPS timing has passed two initial host runs and remains potentially unstable. See the [new feature test guide](docs/investigations/quality-host-test.md). Follow the [timing test guide](docs/investigations/timing-host-test.md) and [cab comparison guide](docs/investigations/cab-host-test.md). In-game settings controls are out of scope. The stable release remains **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
 
 Source: [NekoCoaster/extended-msts-toolkit](https://github.com/NekoCoaster/extended-msts-toolkit).
 
@@ -19,6 +19,8 @@ The installer leaves `train.exe` unchanged. Restore previously patched executabl
 The installer upgrades only an owned, hash-matching `DINPUT.dll`. Existing dgVoodoo graphics DLLs and configuration are left alone. There is no Frida, Python, network listener or separate helper required during play.
 
 ![Toolkit configuration form](docs/assets/patcher.png)
+
+The image shows the stable form; the development build adds the options described below.
 
 ## Settings
 
@@ -46,7 +48,18 @@ CrawlStrength=10
 WriteStatusJson=false
 ShowCrawlHUD=true
 CrawlHUDAnchor=BottomLeft
+
+[Cab]
+CorrectNeedleAspect=false
+
+[Audio]
+UnmuteInBackground=false
+
+[Activity]
+IgnoreRedSignal=false
 ```
+
+The cab-dial checkbox is available only for a detected supported widescreen executable. Its installation-guide link explains how to obtain the prerequisite patch. Background audio and red-signal continuation are independent opt-ins.
 
 Settings take effect after restarting MSTS. Crawling requires `PreventActivityEnd=true`; the form enforces this. Invalid manual configuration prevents feature installation. Missing feature flags default off. Thrust ranges from 0–100×; zero disables added thrust while retaining the selected throttle-dependent collision/animation effects.
 

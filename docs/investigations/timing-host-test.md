@@ -1,10 +1,10 @@
-# Timing comparison — 1.1.0-alpha.2 (unstable)
+# Timing comparison — potentially unstable
 
-This is a development build. The high-FPS timing correction has passed automated tests with synthetic frame times, including execution of its actual x86 clock adapters. Live simulator behavior has not yet been validated. Stable 1.0.2 is unchanged.
+The high-FPS timing correction passed automated tests with synthetic frame times, including execution of its actual x86 clock adapters. Two host runs with alpha.2 confirmed working time acceleration. We also observed apparently improved activity-marker messages at 16×; more repeated comparisons are needed before claiming that separate bug is fixed. These runs were functional checks, not a measured long-duration drift study. Stable 1.0.2 is unchanged.
 
 ## Install
 
-Close MSTS, pull `codex/settings-cab-investigation`, and run `NEMT.vbs`. Confirm the title shows `1.1.0-alpha.2`. Check **Unlock FPS limit (-noclamp + corrected internal timing) (Unstable!)**, retain the other desired options, and Apply. Launch normally; adding `-noclamp` manually is unnecessary.
+Close MSTS, pull `codex/settings-cab-investigation`, and run `NEMT.vbs`. Confirm the title shows `1.1.0-alpha.3`. Check **Unlock FPS limit (-noclamp + corrected timing) (Potentially unstable)**, retain the other desired options, and Apply. Launch normally; adding `-noclamp` manually is unnecessary.
 
 The existing `[Startup] UnlockFPS=true` setting now enables both the parameter and timing correction. An explicit `-noclamp` without this checkbox retains MSTS's original timing behavior. There is no five-second wait for the timing feature: its checked call sites are installed during the existing command-line startup stage outside the loader lock. No Frida is used.
 

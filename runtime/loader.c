@@ -54,6 +54,8 @@ finish:
 #include "startup.h"
 #include "timing.h"
 #include "cab.h"
+#include "signal.h"
+#include "audio.h"
 #include "hud.h"
 #include "tracks.h"
 #include "window.h"
