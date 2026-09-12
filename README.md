@@ -2,7 +2,9 @@
 
 A small native toolkit for Microsoft Train Simulator. This first migration brings MEDS's activity-end prevention, camera access and connected-engine crawling into one configurable `DINPUT.dll`.
 
-**Host-validated borderless build:** native `-vm:bw` support and optional window centering are now included. The owner confirmed activity transitions, Alt+Tab and resolution changes; see the [validation and launch guide](docs/borderless.md). The existing MEDS releases remain unchanged. This is a separate local repository; it has not been published to a new GitHub repository.
+**Startup feature test build:** verbose loading, optional startup logging and the FPS option are now included; see the [startup guide and host checklist](docs/startup.md). Host validation of these additions is pending.
+
+**Borderless foundation:** native `-vm:bw` support and optional window centering are now included. The owner confirmed activity transitions, Alt+Tab and resolution changes; see the [validation and launch guide](docs/borderless.md). The existing MEDS releases remain unchanged. This is a separate local repository; it has not been published to a new GitHub repository.
 
 ## Install or migrate
 
@@ -23,6 +25,11 @@ The installer upgrades only an owned, hash-matching `DINPUT.dll`. Existing dgVoo
 `NEMT/native.ini`:
 
 ```ini
+[Startup]
+VerboseLoading=false
+WriteLog=false
+UnlockFPS=false
+
 [Window]
 Enabled=true
 CenterWindowed=true

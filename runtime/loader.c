@@ -51,6 +51,7 @@ finish:
     HeapFree(GetProcessHeap(),0,b);CloseHandle(file);return ok;
 }
 #include "crawl.c"
+#include "startup.h"
 #include "window.h"
 static DWORD WINAPI delayed_start(void *unused) {
     DWORD train=0,previous=0,head=0,body=0,owner=0,control=0; float now=0,first=0; int stable=0;

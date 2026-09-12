@@ -3,7 +3,11 @@
 #include <string.h>
 #include "../runtime/window_math.h"
 static void check(const char *in,const char *expected,int mode){char out[1024];assert(normalize_vm(in,NULL)==mode);assert(normalize_vm(in,out)==mode);assert(!strcmp(out,expected));}
-int main(void){int x,y;
+int main(void){int x,y;char launch[256];
+ normalize_launch("train.exe",launch,1);assert(!strcmp(launch,"train.exe -noclamp"));
+ normalize_launch("train.exe -vm:bw,1280,720,32",launch,1);assert(!strcmp(launch,"train.exe -vm:w,1280,720,32 -noclamp"));
+ normalize_launch("train.exe \"-NOCLAMP\"",launch,1);assert(!strcmp(launch,"train.exe \"-NOCLAMP\""));
+ assert(!has_noclamp("train.exe -noclampX")&&!has_noclamp("\"C:\\-noclamp\\train.exe\""));
  check("train.exe -vm:bw","train.exe -vm:w",2);
  check("\"C:\\MSTS Games\\train.exe\" -vm:bw,1280,720,32 -noclamp","\"C:\\MSTS Games\\train.exe\" -vm:w,1280,720,32 -noclamp",2);
  check("train.exe \"-VM:BW,s,800,600,16\"","train.exe \"-VM:W,s,800,600,16\"",2);

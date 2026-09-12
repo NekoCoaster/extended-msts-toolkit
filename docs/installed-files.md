@@ -5,6 +5,7 @@
 | `DINPUT.dll` beside `train.exe` | DirectInput forwarding plus the native toolkit and enabled features. |
 | `NEMT/native.ini` | Feature flags, thrust strength and optional diagnostics. Read at startup/readiness; restart to apply edits. |
 | `NEMT/installation.json` | Installer ownership and payload hash, saved option states. Does not control gameplay. |
+| `NEMT/startup.log` (optional) | Startup-only file activity trace; created only when Startup.WriteLog is enabled. |
 | `NEMT/status.json` | Installer placeholder by default; live snapshots only if diagnostic logging is enabled. |
 
 With `WriteStatusJson=false`, the DLL does not open or write the status file, and its worker exits after hook installation. The placeholder is not a live status indicator. With logging enabled, snapshots are overwritten approximately once a second; they are not a growing history. The legacy native telemetry field names are retained for tooling compatibility.

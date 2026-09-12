@@ -1,4 +1,6 @@
-# Frame-rate investigation (not a release feature)
+# Frame-rate option and historical investigation
+
+The NEMT form can now add the existing parameter automatically through **Unlock FPS limit**. See the [startup options](../startup.md). The experimental limiter patches below remain historical.
 
 ## Recommended first step: use `-noclamp`
 

@@ -66,14 +66,15 @@ static LPSTR WINAPI toolkit_command_line(void){
  LPSTR actual=original_command_line();LONG state=InterlockedCompareExchange(&window_initialized,1,0);
  if(state==0){
   WCHAR *slash;SIZE_T length=lstrlenA(actual);requested_window_mode=normalize_vm(actual,NULL);
-  if(requested_window_mode&&length<32768&&GetModuleFileNameW(NULL,root,MAX_PATH)&& (slash=wcsrchr(root,L'\\'))!=NULL){
+  if(length<32750&&GetModuleFileNameW(NULL,root,MAX_PATH)&& (slash=wcsrchr(root,L'\\'))!=NULL){
    slash[1]=0;
    if(wcslen(root)+45<MAX_PATH&&supported_image()){
     /* This runs from the EXE's CRT entry, outside DllMain/loader lock. */
-    read_config();normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+1);
+    read_config();normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+12);
     if(normalized_command_line){
-     normalize_vm(actual,normalized_command_line);
-     if(config_valid&&window_features&&(requested_window_mode==2||center_windowed)){
+     normalize_launch(actual,normalized_command_line,config_valid&&unlock_fps);
+     if(config_valid)install_startup_hooks();
+     if(config_valid&&window_features&&(requested_window_mode==2||(requested_window_mode==1&&center_windowed))){
       window_mode=requested_window_mode;if(!install_window_hooks())window_mode=0;
      }
     }
@@ -104,6 +105,5 @@ static void bootstrap_window_module(void){
  if(base!=(B*)0x400000||*(WORD*)base!=IMAGE_DOS_SIGNATURE)return;
  nt=(IMAGE_NT_HEADERS*)(base+((IMAGE_DOS_HEADER*)base)->e_lfanew);
  if(nt->Signature!=IMAGE_NT_SIGNATURE||nt->FileHeader.TimeDateStamp!=0x3c1625d7||nt->OptionalHeader.AddressOfEntryPoint!=0x31edf8||nt->OptionalHeader.SizeOfImage!=0x481000||nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_TLS].VirtualAddress)return;
- if(!normalize_vm(GetCommandLineA(),NULL))return;
  redirect_command_line(slot);
 }
