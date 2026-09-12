@@ -1,5 +1,5 @@
 /* MIT. Restart-only feature configuration. Missing features default off. */
-static int write_status_json,prevent_end,unlock_cameras,crawl_requested,config_valid;
+static int write_status_json,prevent_end,unlock_cameras,crawl_requested,config_valid,window_features,center_windowed;
 static WCHAR runtime_dir[MAX_PATH];
 static int read_bool(const WCHAR *path,const WCHAR *section,const WCHAR *key){
  WCHAR value[32];GetPrivateProfileStringW(section,key,L"false",value,32,path);
@@ -11,6 +11,8 @@ static void read_config(void){
  WCHAR path[MAX_PATH],value[32],*end;long parsed;
  config_valid=1;wcscpy(runtime_dir,root);wcscat(runtime_dir,L"NEMT\\");
  wcscpy(path,runtime_dir);wcscat(path,L"native.ini");
+ window_features=read_bool(path,L"Window",L"Enabled");
+ center_windowed=read_bool(path,L"Window",L"CenterWindowed");
  prevent_end=read_bool(path,L"Derailment",L"PreventActivityEnd");
  unlock_cameras=read_bool(path,L"Derailment",L"UnlockCameras");
  crawl_requested=read_bool(path,L"Derailment",L"EnableCrawl");

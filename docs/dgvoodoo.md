@@ -1,8 +1,8 @@
-# dgVoodoo and future borderless mode
+# dgVoodoo and borderless mode
 
-**Proposed compatibility baseline, not yet a validated NEMT borderless profile.** This build migrates MEDS only; `-vm:bw` is not implemented. Continue using `-vm:w` for now.
+**Compatibility baseline awaiting host validation.** The native borderless test build implements `-vm:bw`; follow the [visual checklist](borderless.md).
 
-For a future toolkit-managed window, start with:
+For a toolkit-managed window, start with:
 
 | dgVoodoo option | Proposed setting |
 |---|---|
@@ -18,4 +18,4 @@ This proposal gives MSTS/NEMT control of mode, dimensions and placement. Allowin
 
 dgVoodoo already supports `WindowedAttributes=Borderless` and `CenterAppWindow=true`. That is a useful wrapper-only comparison. `FullscreenSize` instead expands presentation to fullscreen dimensions, which differs from preserving a custom window size. These behaviors are described in [Dege's official documentation](https://dgvoodoo2.dege.freeweb.hu/dgVoodoo2/ReadmeGeneral/).
 
-The installed test configuration already has application-controlled mode and the Alt+Enter toggle disabled, but uses WARP and dgVoodoo centering. It was left unchanged. No optimal-performance claim is made; the future borderless tests must cover custom sizes, transitions, input coordinates, Alt+Tab, minimize/restore, monitors and DPI.
+The installed test configuration already has application-controlled mode and the Alt+Enter toggle disabled, but uses WARP and dgVoodoo centering. It was left unchanged. No optimal-performance claim is made; the borderless tests must cover custom sizes, transitions, input coordinates, Alt+Tab, minimize/restore, monitors and DPI.

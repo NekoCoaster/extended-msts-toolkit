@@ -2,17 +2,17 @@
 
 A small native toolkit for Microsoft Train Simulator. This first migration brings MEDS's activity-end prevention, camera access and connected-engine crawling into one configurable `DINPUT.dll`.
 
-**Borderless mode is planned, not included in this build.** The existing MEDS releases remain unchanged. This is a separate local repository; it has not been published to a new GitHub repository.
+**Borderless test build:** native `-vm:bw` support and optional window centering are now included. In-game visual validation is pending; see the [launch checklist](docs/borderless.md). The existing MEDS releases remain unchanged. This is a separate local repository; it has not been published to a new GitHub repository.
 
 ## Install or migrate
 
 1. Close MSTS and extract the whole package.
 2. Open **NEMT.vbs**, or drag your `train.exe` onto it. Registry detection and Browse remain available.
-3. Select features and click **Apply**. Launch MSTS normally; continue using `-vm:w` for windowed mode.
+3. Select features and click **Apply**. Enable the window option and use `-vm:bw` for borderless, or `-vm:w` for ordinary windowed mode.
 
 Supports the identified MSTS Bin **1.8.052113** base, widescreen, LAA and widescreen + LAA images. Exact image checks reject other modifications.
 
-On a clean supported executable, the installer does not change `train.exe`. Migrating an existing MEDS executable creates a verified backup and restores only its two known feature patches. Widescreen/LAA modifications are preserved. All subsequent feature changes are configuration-only; the DLL applies enabled features to process memory after the driving scene becomes ready.
+On a clean supported executable, the installer does not change `train.exe`. Migrating an existing MEDS executable creates a verified backup and restores only its two known feature patches. Widescreen/LAA modifications are preserved. All subsequent feature changes are configuration-only; the DLL applies gameplay features to process memory after the driving scene becomes ready. The separate window module initializes during normal startup.
 
 The installer upgrades only an owned, hash-matching `DINPUT.dll`. Existing dgVoodoo graphics DLLs and configuration are left alone. There is no Frida, Python, network listener or separate helper required during play.
 
@@ -23,6 +23,10 @@ The installer upgrades only an owned, hash-matching `DINPUT.dll`. Existing dgVoo
 `NEMT/native.ini`:
 
 ```ini
+[Window]
+Enabled=true
+CenterWindowed=true
+
 [Derailment]
 PreventActivityEnd=true
 UnlockCameras=true
@@ -42,7 +46,8 @@ Use **Uninstall** to remove the owned DLL and configuration. The clean executabl
 - [Architecture and migration](docs/native-runtime.md)
 - [Installed files](docs/installed-files.md)
 - [Validation and limits](docs/release-validation.md)
-- [Proposed dgVoodoo borderless settings](docs/dgvoodoo.md)
+- [Borderless launch guide and implementation](docs/borderless.md)
+- [dgVoodoo borderless settings](docs/dgvoodoo.md)
 - [Inherited physics equations](docs/physics.md) and [identified patch locations](docs/patches.md)
 - [Research history](docs/discovery.md)
 - [FPS: prefer the existing -noclamp option](docs/miscellaneous/fps.md)

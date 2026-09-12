@@ -3,7 +3,7 @@
 [CmdletBinding(SupportsShouldProcess=$true)]
 param([Parameter(Position=0)][Alias('Path')][string]$ExePath,
  [ValidateSet('Gui','Status','Apply','Restore')][string]$Action='Gui',
- [switch]$RemoveEndMessage,[switch]$UnlockCameras,[switch]$Crawl,
+ [switch]$RemoveEndMessage,[switch]$UnlockCameras,[switch]$Crawl,[switch]$WindowFeatures,
  [ValidateRange(0,100)][int]$Strength=10)
 $ErrorActionPreference='Stop'
 $script:Specs=@{
@@ -114,13 +114,13 @@ function Get-CrawlInstallation([string]$Path) {
 }
 function Invoke-Options {
  [CmdletBinding(SupportsShouldProcess=$true)]
- param([string]$Path,[bool]$Timeout,[bool]$Camera,[bool]$CrawlMode,[ValidateRange(0,100)][int]$Thrust=10,[string]$ExpectedHash)
+ param([string]$Path,[bool]$Timeout,[bool]$Camera,[bool]$CrawlMode,[ValidateRange(0,100)][int]$Thrust=10,[string]$ExpectedHash,[bool]$WindowFeatures=$false)
  if($CrawlMode -and -not $Timeout){throw 'Crawling requires PreventActivityEnd.'}
  $info=Get-MstsImage $Path;Assert-MstsClosed $info.Path
  if($ExpectedHash -and $ExpectedHash -ne $info.SHA256){throw 'The selected executable changed. Select it again.'}
  $gameDir=Split-Path -Parent $info.Path;$target=Join-Path $gameDir 'NEMT';$proxy=Join-Path $gameDir 'DINPUT.dll'
  $records=@(Get-ToolkitRecords $info.Path);$installed=Get-CrawlInstallation $info.Path
- $install=$Timeout -or $Camera -or $CrawlMode
+ $install=$Timeout -or $Camera -or $CrawlMode -or $WindowFeatures
  $modern=@($records | Where-Object {$_.Name -eq 'NEMT'})
  if($install -and (Test-Path -LiteralPath $target) -and -not $modern.Count){throw 'The existing NEMT folder is not owned by this installer.'}
  if(Test-Path -LiteralPath $proxy){
@@ -143,13 +143,14 @@ function Invoke-Options {
    if((Test-Path -LiteralPath $f) -and (Get-MstsHash ([IO.File]::ReadAllBytes($f))) -ne $record.Manifest.files.$name){throw "Modified legacy payload: $name"}
   }
  }
- $printStatus='false'
+ $printStatus='false';$centerWindowed='true'
  foreach($record in $records){
   $ini=Join-Path $record.Directory 'native.ini'
   if(Test-Path -LiteralPath $ini){
    $section=''
    foreach($line in [IO.File]::ReadAllLines($ini)){
     if($line -match '^\s*\[([^]]+)\]\s*$'){$section=$Matches[1]}
+    elseif($section -ieq 'Window' -and $line -match '^\s*CenterWindowed\s*=\s*(.*?)\s*$'){$centerWindowed=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
     elseif($section -ieq 'Diagnostics' -and $line -match '^\s*WriteStatusJson\s*=\s*(.*?)\s*$'){$printStatus=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
    }
    break
@@ -173,9 +174,9 @@ function Invoke-Options {
   if($desiredHash -ne $info.SHA256){Write-CheckedImage $info.Path $desired $info.SHA256;$changedImage=$true}
   if($install){
    if(-not (Test-Path -LiteralPath $target)){[void][IO.Directory]::CreateDirectory($target);$createdDir=$true}
-   $config="[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`n"
+   $config="[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`n"
    [IO.File]::WriteAllText((Join-Path $target 'native.ini'),$config,(New-Object Text.UTF8Encoding($false)))
-   $manifest=@{schema=1;product='NEMT';runtime='nemt-native';enabled=$true;strength=$Thrust;preventEnd=$Timeout;unlockCameras=$Camera;crawl=$CrawlMode;proxyHash=(Get-MstsHash $payload);files=@{}}
+   $manifest=@{schema=1;product='NEMT';runtime='nemt-native';enabled=$true;strength=$Thrust;preventEnd=$Timeout;unlockCameras=$Camera;crawl=$CrawlMode;windowFeatures=$WindowFeatures;proxyHash=(Get-MstsHash $payload);files=@{}}
    [IO.File]::WriteAllText((Join-Path $target 'installation.json'),($manifest | ConvertTo-Json -Depth 5),(New-Object Text.UTF8Encoding($false)))
    [IO.File]::WriteAllText((Join-Path $target 'status.json'),'{"runtime":"NEMT","phase":"not-running","note":"Installer snapshot; live diagnostics are optional."}',(New-Object Text.UTF8Encoding($false)))
    [IO.File]::WriteAllBytes($proxy,$payload)
@@ -236,7 +237,7 @@ function Resolve-MstsStartupPath([string]$Path) {
 function Show-Options([string]$InitialPath){
  Add-Type -AssemblyName System.Windows.Forms;Add-Type -AssemblyName System.Drawing
  [Windows.Forms.Application]::EnableVisualStyles()
- $form=New-Object Windows.Forms.Form;$form.Text="Neko's Extended MSTS Toolkit";$form.ClientSize=New-Object Drawing.Size(760,630)
+ $form=New-Object Windows.Forms.Form;$form.Text="Neko's Extended MSTS Toolkit";$form.ClientSize=New-Object Drawing.Size(760,666)
  $form.StartPosition='CenterScreen';$form.FormBorderStyle='FixedDialog';$form.MaximizeBox=$false;$form.AutoScaleMode='Dpi';$form.AutoScaleDimensions=New-Object Drawing.SizeF(96,96)
  $form.Font=New-Object Drawing.Font('Segoe UI',10);$form.BackColor=[Drawing.Color]::White
  function Label-At([string]$Text,[int]$Y,[int]$Height=28){$l=New-Object Windows.Forms.Label;$l.UseMnemonic=$false;$l.Text=$Text;$l.Location=New-Object Drawing.Point(24,$Y);$l.Size=New-Object Drawing.Size(712,$Height);$form.Controls.Add($l);return $l}
@@ -245,6 +246,7 @@ function Show-Options([string]$InitialPath){
  $browse=New-Object Windows.Forms.Button;$browse.Text='Browse...';$browse.Location=New-Object Drawing.Point(585,66);$browse.Size=New-Object Drawing.Size(90,32);$form.Controls.Add($browse)
  $version=Label-At 'Choose or drop your train.exe.' 110 48;$version.Font=New-Object Drawing.Font('Segoe UI',11,[Drawing.FontStyle]::Bold)
  function Check-At([string]$Text,[int]$Y){$c=New-Object Windows.Forms.CheckBox;$c.Text=$Text;$c.Location=New-Object Drawing.Point(24,$Y);$c.Size=New-Object Drawing.Size(652,30);$form.Controls.Add($c);return $c}
+ $window=Check-At 'Enable borderless (-vm:bw) and centered windowed modes' 129
  $timeout=Check-At 'Remove derailment activity-end message' 165
  $camera=Check-At 'Unlock camera modes during derailment' 201
  $crawl=Check-At 'Allow connected engines to crawl after derailment' 237
@@ -268,6 +270,8 @@ function Show-Options([string]$InitialPath){
  $icon=New-Object Windows.Forms.PictureBox;$icon.Location=New-Object Drawing.Point(24,577);$icon.Size=New-Object Drawing.Size(20,20);$icon.SizeMode='Zoom'
  $iconPath=Join-Path $PSScriptRoot 'docs\assets\github.png'
  if(Test-Path -LiteralPath $iconPath){$icon.Image=[Drawing.Image]::FromFile($iconPath)};$form.Controls.Add($icon)
+ foreach($control in $form.Controls){if($control -ne $window -and $control.Location.Y -ge 165){$control.Top+=36}}
+ $window.Top=165
  $ui=@{info=$null;loading=$false}
  $refresh={ $sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
  $slider.Add_ValueChanged($refresh)
@@ -276,6 +280,7 @@ function Show-Options([string]$InitialPath){
  $load={param([string]$p)
   $ui.info=$null;$ui.loading=$true;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p
   try{$i=Get-MstsImage $p;$m=Get-CrawlInstallation $i.Path;$ui.info=$i;$pathText.Text=$i.Path;$version.Text='Valid train.exe version: '+$i.Version;$version.ForeColor=[Drawing.Color]::FromArgb(0,170,0)
+   $window.Checked=if($m -and $null -ne $m.windowFeatures){$m.enabled -and $m.windowFeatures}else{$true}
    $timeout.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.preventEnd}else{$i.TimeoutPatched};$camera.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.unlockCameras}else{$i.CameraPatched};$crawl.Checked=($null -ne $m -and $m.enabled -and ($m.runtime -ne 'nemt-native' -or $m.crawl));$slider.Value=if($m){[Math]::Max(0,[Math]::Min(100,[int]$m.strength))}else{10}
    $apply.Enabled=$true;$restore.Enabled=$true;$message.ForeColor=[Drawing.Color]::DimGray;$message.Text=$instructions
   }catch{$version.Text='Unsupported executable selected. Please ensure your MSTS installation is updated to at least MSTS Bin 1.8';$version.ForeColor=[Drawing.Color]::FromArgb(204,0,0);$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
@@ -284,9 +289,9 @@ function Show-Options([string]$InitialPath){
  $browse.Add_Click({$d=New-Object Windows.Forms.OpenFileDialog;$d.Filter='Train executable (*.exe)|*.exe';try{if($d.ShowDialog($form) -eq 'OK'){& $load $d.FileName}}finally{$d.Dispose()}})
  $save={param([bool]$clear)
   if(-not $ui.info){return};$form.UseWaitCursor=$true;$apply.Enabled=$false;$restore.Enabled=$false;$browse.Enabled=$false
-  try{$t=if($clear){$false}else{$timeout.Checked};$c=if($clear){$false}else{$camera.Checked};$r=if($clear){$false}else{$crawl.Checked}
-   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -Confirm:$false
-   & $load $result.Path;$message.ForeColor=[Drawing.Color]::FromArgb(20,120,55);$message.Text=if($clear){'Toolkit removed. Widescreen and LAA were preserved.'}else{'Settings saved. Launch MSTS normally. Features activate in memory after the driving scene loads.'}
+  try{$t=if($clear){$false}else{$timeout.Checked};$c=if($clear){$false}else{$camera.Checked};$r=if($clear){$false}else{$crawl.Checked};$w=if($clear){$false}else{$window.Checked}
+   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -Confirm:$false
+   & $load $result.Path;$message.ForeColor=[Drawing.Color]::FromArgb(20,120,55);$message.Text=if($clear){'Toolkit removed. Widescreen and LAA were preserved.'}else{'Settings saved. Use -vm:bw for borderless or -vm:w for windowed. Restart MSTS to apply changes.'}
   }catch{$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
   finally{$form.UseWaitCursor=$false;$browse.Enabled=$true;$apply.Enabled=($null -ne $ui.info);$restore.Enabled=($null -ne $ui.info)}
  }
@@ -301,4 +306,4 @@ function Show-Options([string]$InitialPath){
 if($MyInvocation.InvocationName -eq '.'){return}
 if($Action -eq 'Gui'){Show-Options $ExePath}
 elseif($Action -eq 'Status'){Get-MstsImage $ExePath;Get-CrawlInstallation $ExePath}
-else{Invoke-Options -Path $ExePath -Timeout ($Action -eq 'Apply' -and $RemoveEndMessage) -Camera ($Action -eq 'Apply' -and $UnlockCameras) -CrawlMode ($Action -eq 'Apply' -and $Crawl) -Thrust $Strength -WhatIf:$WhatIfPreference}
+else{Invoke-Options -Path $ExePath -Timeout ($Action -eq 'Apply' -and $RemoveEndMessage) -Camera ($Action -eq 'Apply' -and $UnlockCameras) -CrawlMode ($Action -eq 'Apply' -and $Crawl) -Thrust $Strength -WindowFeatures ($Action -eq 'Apply' -and $WindowFeatures) -WhatIf:$WhatIfPreference}

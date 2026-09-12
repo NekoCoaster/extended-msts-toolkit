@@ -51,6 +51,7 @@ finish:
     HeapFree(GetProcessHeap(),0,b);CloseHandle(file);return ok;
 }
 #include "crawl.c"
+#include "window.h"
 static DWORD WINAPI delayed_start(void *unused) {
     DWORD train=0,previous=0,head=0,body=0,owner=0,control=0; float now=0,first=0; int stable=0;
     WCHAR path[MAX_PATH];
@@ -99,4 +100,4 @@ __declspec(dllexport) HRESULT WINAPI DllGetClassObject(const void* a,const void*
 __declspec(dllexport) HRESULT WINAPI DllCanUnloadNow(void){VoidFn f=(VoidFn)resolve("DllCanUnloadNow");return f?f():S_FALSE;}
 __declspec(dllexport) HRESULT WINAPI DllRegisterServer(void){VoidFn f=(VoidFn)resolve("DllRegisterServer");return f?f():E_FAIL;}
 __declspec(dllexport) HRESULT WINAPI DllUnregisterServer(void){VoidFn f=(VoidFn)resolve("DllUnregisterServer");return f?f():E_FAIL;}
-BOOL WINAPI DllMain(HINSTANCE instance,DWORD reason,LPVOID reserved){return TRUE;}
+BOOL WINAPI DllMain(HINSTANCE instance,DWORD reason,LPVOID reserved){if(reason==DLL_PROCESS_ATTACH)bootstrap_window_module();return TRUE;}

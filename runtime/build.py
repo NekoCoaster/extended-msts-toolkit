@@ -3,7 +3,7 @@ from pathlib import Path
 import sys,subprocess,hashlib,json
 root=Path(__file__).resolve().parent
 if len(sys.argv)!=2:raise SystemExit('Usage: python runtime/build.py C:/Tools/tcc/tcc.exe')
-subprocess.run([sys.argv[1],'-shared','-o',str(root/'DINPUT.dll'),str(root/'loader.c'),'-ladvapi32'],check=True)
+subprocess.run([sys.argv[1],'-shared','-o',str(root/'DINPUT.dll'),str(root/'loader.c'),'-ladvapi32','-luser32'],check=True)
 subprocess.run([sys.executable,str(root/'fix-exports.py'),str(root/'DINPUT.dll')],check=True)
 generated=root/'DINPUT.def'
 if generated.exists():generated.unlink()

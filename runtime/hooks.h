@@ -15,6 +15,8 @@ typedef struct {U address,length; B original[16]; B *entry,*leave,*trampoline;U 
 static void hook_enter(U id,Registers *r);
 static void hook_leave(U id,Registers *r);
 static B *code_memory;
+typedef struct {U address,length;} Claim;
+static Claim claimed[32];static U claim_count;
 static void emit8(B **p,U n){*(*p)++=(B)n;}
 static void emit32(B **p,U n){memcpy(*p,&n,4);*p+=4;}
 static void branch(B **p,U opcode,void *target){emit8(p,opcode);emit32(p,(U)target-(U)*p-4);}
@@ -58,14 +60,20 @@ static void gateway(B **p,U id,void *callback,void *tail,int leave){
  if(leave)emit8(p,0xc3);else branch(p,0xe9,tail);
 }
 static int prepare_hooks(Hook *hooks,U count){
- U i,j;DWORD old;B *p;
+ U i,j;DWORD old;B *p;int needs_code=0;
+ if(claim_count+count>32)return 0;
+ for(i=0;i<count;i++){
+  Hook *h=&hooks[i];
+  if(h->length<(h->raw?1:5)||h->length>16||h->site_count>6||memcmp((void*)h->address,h->original,h->length))return 0;
+  for(j=0;j<i;j++)if(h->address<hooks[j].address+hooks[j].length&&hooks[j].address<h->address+h->length)return 0;
+  for(j=0;j<claim_count;j++)if(h->address<claimed[j].address+claimed[j].length&&claimed[j].address<h->address+h->length)return 0;
+  if(!h->raw)needs_code=1;
+ }
+ if(!needs_code)return 1;
  code_memory=VirtualAlloc(NULL,count*512,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);
  if(!code_memory)return 0;
  for(i=0;i<count;i++){
-  Hook *h=&hooks[i];
-  if(h->length<(h->raw?1:5)||h->length>16||h->site_count>6||memcmp((void*)h->address,h->original,h->length))goto fail;
-  for(j=0;j<i;j++)if(h->address<hooks[j].address+hooks[j].length&&hooks[j].address<h->address+h->length)goto fail;
-  if(h->raw)continue;
+  Hook *h=&hooks[i];if(h->raw)continue;
   h->trampoline=p=code_memory+i*512;
   memcpy(p,h->original,h->length);p+=h->length;
   /* Only relocated relative instruction: teardown prologue CALL at +4. */
@@ -108,6 +116,7 @@ static int install_hooks(Hook *hooks,U count){
    VirtualProtect((void*)h->address,h->length,old,&old);
   }
   if(!ok)while(i){Hook *h=&hooks[--i];VirtualProtect((void*)h->address,h->length,PAGE_EXECUTE_READWRITE,&old);memcpy((void*)h->address,h->original,h->length);VirtualProtect((void*)h->address,h->length,old,&old);}
+  if(ok)for(j=0;j<count;j++){claimed[claim_count].address=hooks[j].address;claimed[claim_count++].length=hooks[j].length;}
   FlushInstructionCache(GetCurrentProcess(),NULL,0);
  }
  while(done)ResumeThread(threads[--done]);

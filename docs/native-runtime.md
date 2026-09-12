@@ -8,11 +8,11 @@ NEMT derives from MEDS commit `1b7760f`. One x86 `DINPUT.dll` forwards seven Dir
 
 The current gameplay stage waits for a stable train/head/body backlink, valid controls and an advancing simulation clock across about five seconds. Startup menus therefore remain unmodified. Settings load normally. This delay also means features are not available in the first moments of an activity. Initially paused activities wait for resume.
 
-Future window-mode work will need a separately validated earlier stage. It must not weaken the gameplay readiness gate or use early Frida attachment.
+The [window module](borderless.md) uses a separate early command-line stage and leaves the gameplay readiness gate intact. No early Frida attachment is used.
 
 ## One mutation transaction
 
-`runtime/hooks.h` supports checked detours and short raw instruction replacements. Every selected mutation claims an address range. Overlaps and unexpected original bytes are rejected before installation. Peer threads are temporarily suspended; if a thread is inside a target prefix, installation retries. A later byte mismatch rolls back earlier writes. DirectInput forwarding continues if feature setup fails.
+`runtime/hooks.h` supports checked detours and short raw instruction replacements. Every selected mutation claims an address range in a registry shared across window and gameplay stages. Overlaps and unexpected original bytes are rejected before installation. Peer threads are temporarily suspended; if a thread is inside a target prefix, installation retries. A later byte mismatch rolls back earlier writes. DirectInput forwarding continues if feature setup fails.
 
 The optional activity-end and camera replacements use their verified MEDS bytes, now in process memory only. Crawling contributes eleven native detours, preserving registers, flags, floating-point state and call cleanup. Inactive/paused fast gates avoid full callback overhead. Raw replacements have no per-frame callback cost.
 
