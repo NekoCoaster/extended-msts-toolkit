@@ -85,14 +85,25 @@ static LPSTR WINAPI toolkit_command_line(void){
 }
 /* Bootstrap only: no User32, configuration, hashing, thread creation or waits
    under loader lock. The identified images have no EXE TLS callbacks. */
+static int redirect_command_line(volatile LONG *slot){
+ MEMORY_BASIC_INFORMATION memory;DWORD old,unused,protection;LONG previous=*slot;int installed;
+ /* Compatibility layers can legitimately redirect the EXE's import. Chain
+    that target instead of requiring equality with this DLL's own import. */
+ if(!previous||previous==(LONG)toolkit_command_line||claim_count>=32)return 0;
+ if(!VirtualQuery((void*)previous,&memory,sizeof(memory))||memory.State!=MEM_COMMIT)return 0;
+ protection=memory.Protect;
+ if((protection&(PAGE_GUARD|PAGE_NOACCESS))||!(protection&(PAGE_EXECUTE|PAGE_EXECUTE_READ|PAGE_EXECUTE_READWRITE|PAGE_EXECUTE_WRITECOPY)))return 0;
+ original_command_line=(CmdLineFn)previous;
+ if(!VirtualProtect((void*)slot,4,PAGE_READWRITE,&old))return 0;
+ installed=InterlockedCompareExchange(slot,(LONG)toolkit_command_line,previous)==previous;
+ if(installed){claimed[claim_count].address=(U)slot;claimed[claim_count++].length=4;}
+ VirtualProtect((void*)slot,4,old,&unused);return installed;
+}
 static void bootstrap_window_module(void){
- B *base=(B*)GetModuleHandleW(NULL);DWORD old,unused;IMAGE_NT_HEADERS *nt;volatile LONG *slot=(LONG*)0x84dbec;LONG previous;
+ B *base=(B*)GetModuleHandleW(NULL);IMAGE_NT_HEADERS *nt;volatile LONG *slot=(LONG*)0x84dbec;
  if(base!=(B*)0x400000||*(WORD*)base!=IMAGE_DOS_SIGNATURE)return;
  nt=(IMAGE_NT_HEADERS*)(base+((IMAGE_DOS_HEADER*)base)->e_lfanew);
  if(nt->Signature!=IMAGE_NT_SIGNATURE||nt->FileHeader.TimeDateStamp!=0x3c1625d7||nt->OptionalHeader.AddressOfEntryPoint!=0x31edf8||nt->OptionalHeader.SizeOfImage!=0x481000||nt->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_TLS].VirtualAddress)return;
  if(!normalize_vm(GetCommandLineA(),NULL))return;
- previous=*slot;if(previous!=(LONG)GetCommandLineA)return;original_command_line=(CmdLineFn)previous;
- if(!VirtualProtect((void*)slot,4,PAGE_READWRITE,&old))return;
- if(InterlockedCompareExchange(slot,(LONG)toolkit_command_line,previous)==previous){claimed[claim_count].address=(U)slot;claimed[claim_count++].length=4;}
- VirtualProtect((void*)slot,4,old,&unused);
+ redirect_command_line(slot);
 }
