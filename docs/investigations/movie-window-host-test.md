@@ -54,3 +54,23 @@ Apply writes `SeparateMovieWindow=true` by default. Set it to `false` and restar
 Automated tests pass for real hidden Win32 window ownership, border removal, centering, aspect fitting, disabled-option bypass, movie driver/focus behavior, supported instruction sites and settings persistence. These tests do not decode or render the actual movie. This is an experimental comparison build awaiting host rendering validation, not a confirmed black-screen fix.
 
 The [earlier movie investigation](startup-movie.md) records the failed decoder/settings comparisons and successful keyboard tests. Microsoft documents the required style handling for [SetParent](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setparent) and the [MCIWnd messages](https://learn.microsoft.com/en-us/windows/win32/multimedia/mciwnd-messages) used for source/destination geometry.
+
+## VM comparison — 12 September 2026, alpha.6
+
+The host log reported `ShowLogo=0`; MSTS skipped before calling the movie playback routine. This is distinct from the original black-picture issue. No crash or forced termination was reported before the host skip, so the origin of the disabled preference remains unproven.
+
+In the development VM, ShowLogo was already 1. The first launch still skipped because the registry installation path was C:\MSTS, whose GLOBAL\startup.mpg retained its .bak suffix. Restoring the file in both that location and the designated C:\codex\derail\MSTS test installation allowed playback. No registry value was changed. The test executable remained byte-for-byte unchanged.
+
+Normal launches used train.exe -vm:w from the designated test directory. No Frida was attached. The VM graphics wrapper used d3d11warp with pass-through disabled; these results do not establish behavior on the hardware host's different rendering backend.
+
+| Decoder option | Separate window | Observation |
+| --- | --- | --- |
+| Original | Disabled | Visible Kuju animation in the original bordered movie window |
+| System | Disabled | Visible Microsoft logo in the original movie window |
+| System | Enabled | Visible ACES image in the owned popup; the underlying main window remained black |
+
+The final combination opened successfully at 750 ms, applied the destination rectangle successfully at 765 ms, returned from playback with the saved movie procedure cleared at 12,875 ms, and reached the main event loop at 14,265 ms. These are fresh alpha.6 measurements. Initial black captures were insufficient: the clip opens with dark frames, and capturing only the main window does not establish what the owned popup displays.
+
+The keyboard recovery code remained enabled. This comparison tested startup and menu return, not keyboard controls in a driving activity; the earlier host validation remains the evidence for that behavior. The movie files are left enabled for continued testing.
+
+The native registry preference is the DWORD ShowLogo under the 32-bit HKLM\SOFTWARE\Microsoft\Microsoft Games\Train Simulator\1.0\HWRenderer key (shown beneath WOW6432Node on 64-bit Windows). A host reset to 1 should be performed with MSTS closed. Compatibility registry virtualization can provide a per-user override; if the runtime still reports 0 after resetting the machine value, inspect that override rather than changing unrelated settings.
