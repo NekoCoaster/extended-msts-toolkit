@@ -1,5 +1,7 @@
 # Movie window rendering comparison — alpha.6
 
+> Historical investigation: alpha.8 removes all experimental movie rendering changes. Use the [current movie options](../startup-movie-options.md) for setup.
+
 ## Alpha.5 regression and alpha.6 follow-up
 
 On the host, alpha.5 skipped directly to loading without showing the movie. The supplied startup log completed in about 2.9 seconds and contained no movie geometry record. This does not establish an open failure: the earlier record was emitted only after a successful open and only while the startup log remained active.

@@ -1,5 +1,7 @@
 # Startup movie and keyboard recovery — alpha.4
 
+> Historical investigation: alpha.8 removes all experimental movie rendering changes. Use the [current movie options](../startup-movie-options.md) for setup.
+
 ## Findings
 
 The startup clip produced audio but only a black rectangle on the host with NEMT removed as well as installed. dgVoodoo was enabled, initially using D3D12 with no GDI hook. Enabling `SystemHookFlags=gdi`, then also selecting `OutputAPI=d3d11_fl11_0`, did not restore the image in those host comparisons. Neither setting change is a confirmed solution for this installation.
