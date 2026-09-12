@@ -63,6 +63,8 @@ Equal scaling commutes with rotation; unequal scaling generally does not. This e
 
 ### A focused correction
 
+Update: an opt-in native prototype is now available in `1.1.0-alpha.1`; see the [host test guide](cab-host-test.md). It replaces the persistent scope proposed below with direct verification of the original frame chain. Live visual validation remains pending.
+
 The existing caller already computes the scaled pivot and applies its final pixel offset. Preserve those calculations. Around the original vector rotation, convert the offset back to cab coordinates, rotate, then restore screen coordinates:
 
 ```text

@@ -92,7 +92,7 @@ static int redirect_command_line(volatile LONG *slot){
  MEMORY_BASIC_INFORMATION memory;DWORD old,unused,protection;LONG previous=*slot;int installed;
  /* Compatibility layers can legitimately redirect the EXE's import. Chain
     that target instead of requiring equality with this DLL's own import. */
- if(!previous||previous==(LONG)toolkit_command_line||claim_count>=32)return 0;
+ if(!previous||previous==(LONG)toolkit_command_line||claim_count>=MAX_HOOK_CLAIMS)return 0;
  if(!VirtualQuery((void*)previous,&memory,sizeof(memory))||memory.State!=MEM_COMMIT)return 0;
  protection=memory.Protect;
  if((protection&(PAGE_GUARD|PAGE_NOACCESS))||!(protection&(PAGE_EXECUTE|PAGE_EXECUTE_READ|PAGE_EXECUTE_READWRITE|PAGE_EXECUTE_WRITECOPY)))return 0;
