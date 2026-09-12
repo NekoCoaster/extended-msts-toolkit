@@ -3,7 +3,7 @@
 #ifndef MOVIE_ADDR
 #define MOVIE_ADDR(a) (a)
 #endif
-static Hook movie_hooks[2];
+static Hook movie_hooks[3];
 static U (__fastcall *movie_original)(const char*,U)=(void*)0x52fc32;
 static U (__fastcall *movie_original_open)(HWND,const char*)=(void*)0x52ffb3;
 static HWND (WINAPI *movie_foreground)(void)=GetForegroundWindow;
@@ -13,8 +13,10 @@ static LRESULT (WINAPI *movie_send)(HWND,UINT,WPARAM,LPARAM)=SendMessageA;
 static BOOL (WINAPI *movie_valid)(HWND)=IsWindow;
 static BOOL (WINAPI *movie_enabled)(HWND)=IsWindowEnabled;
 static BOOL (WINAPI *movie_iconic)(HWND)=IsIconic;
+#include "movie-window.h"
 static U __fastcall movie_open(HWND window,const char *path){
  char file[MAX_PATH+16];size_t length;
+ movie_detach(window);
  if(!system_movie_decoder||!path)return movie_original_open(window,path);
  length=strlen(path);
  if(length>=4&&!lstrcmpiA(path+length-4,".mpg")&&length<MAX_PATH){
@@ -33,17 +35,19 @@ static void movie_restore_focus(HWND main){
  movie_send(main,WM_ACTIVATEAPP,TRUE,GetCurrentThreadId());
 }
 static U __fastcall movie_play(const char *path,U edx){
- U result=movie_original(path,edx);
+ U result;movie_window=NULL;result=movie_original(path,edx);movie_window=NULL;
  /* Do not send input messages into a still-installed movie procedure on a
     playback failure. The normal success/skip path clears this saved pointer. */
  if(restore_movie_focus&&!*(U*)MOVIE_ADDR(0x7c2d90))movie_restore_focus(*(HWND*)MOVIE_ADDR(0x82813a));
  return result;
 }
 static int install_movie_hook(void){
- if(!restore_movie_focus&&!system_movie_decoder)return 1;
+ if(!restore_movie_focus&&!system_movie_decoder&&!separate_movie_window)return 1;
  if(memcmp((void*)0x52fc32,"\x55\x8b\xec\x81\xec\x68\x01\x00\x00",9)||
     memcmp((void*)0x52ffb3,"\x55\x8b\xec",3))return 0;
  startup_call(&movie_hooks[0],0x52fc29,0x52fc32,(U)movie_play);
  startup_call(&movie_hooks[1],0x52fd4a,0x52ffb3,(U)movie_open);
- return prepare_hooks(movie_hooks,2)&&install_hooks(movie_hooks,2);
+ startup_call(&movie_hooks[2],0x52fe51,0,(U)movie_show);
+ movie_hooks[2].length=6;memcpy(movie_hooks[2].original,"\xff\x15\x40\xdf\x84\x00",6);movie_hooks[2].replacement[5]=0x90;
+ return prepare_hooks(movie_hooks,3)&&install_hooks(movie_hooks,3);
 }

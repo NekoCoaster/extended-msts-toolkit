@@ -8,6 +8,8 @@ MSTS's movie opener at `0x52ffb3` first requests `tsmpegvideo!<filename>` for MP
 
 The playback function at `0x52fc32` temporarily subclasses the main window. Its movie procedure at `0x52fb70` discards `WM_ACTIVATEAPP`. Successful completion or skipping restores the saved procedure, but does not explicitly restore keyboard focus or replay the current application activation state. Alpha.4 host testing subsequently confirmed working keyboard controls after both natural movie completion and skipping, without an Alt-Tab workaround. These functional results support the correction, but do not isolate which restoration step is responsible.
 
+The later fullscreen comparison showed visible video behind a centred black rectangle; the windowed case remained black. Alpha.5 therefore targets window ownership and destination geometry: [follow-up investigation and checks](movie-window-host-test.md).
+
 ## Test build
 
 Alpha.4 adds two startup-only settings, enabled when applying this package:

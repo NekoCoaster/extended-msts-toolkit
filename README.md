@@ -2,7 +2,7 @@
 
 A small native toolkit for Microsoft Train Simulator. Activity-end prevention, camera access and connected-engine crawling share one configurable `DINPUT.dll`.
 
-Development version **1.1.0-alpha.4** compacts the form and adds startup movie driver/focus comparison fixes. Host testing confirmed keyboard recovery after finishing or skipping the movie; the black-screen video remains unresolved. See the [movie findings and checks](docs/investigations/startup-movie.md). Alpha.3's native red-signal alert and repeat suppression passed host testing. High-FPS timing has passed two initial host runs and remains potentially unstable. See the [new feature test guide](docs/investigations/quality-host-test.md). Follow the [timing test guide](docs/investigations/timing-host-test.md) and [cab comparison guide](docs/investigations/cab-host-test.md). In-game settings controls are out of scope. The stable release remains **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
+Development version **1.1.0-alpha.5** adds an experimental movie-window rendering correction. Follow the [windowed/fullscreen comparison](docs/investigations/movie-window-host-test.md). Host testing confirmed keyboard recovery after finishing or skipping the movie; the black-screen video remains unresolved. See the [movie findings and checks](docs/investigations/startup-movie.md). Alpha.3's native red-signal alert and repeat suppression passed host testing. High-FPS timing has passed two initial host runs and remains potentially unstable. See the [new feature test guide](docs/investigations/quality-host-test.md). Follow the [timing test guide](docs/investigations/timing-host-test.md) and [cab comparison guide](docs/investigations/cab-host-test.md). In-game settings controls are out of scope. The stable release remains **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
 
 Source: [NekoCoaster/extended-msts-toolkit](https://github.com/NekoCoaster/extended-msts-toolkit).
 
@@ -31,6 +31,7 @@ The image shows the stable form; the development build adds the options describe
 VerboseLoading=false
 WriteLog=false
 UnlockFPS=false
+SeparateMovieWindow=true
 UseSystemMovieDecoder=true
 RestoreMovieFocus=true
 MaxLogSizeKB=8192

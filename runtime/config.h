@@ -1,6 +1,6 @@
 /* MIT. Restart-only feature configuration. Missing features default off. */
 static int write_status_json,prevent_end,unlock_cameras,crawl_requested,config_valid,window_features,center_windowed,verbose_loading,startup_log,unlock_fps,crawl_hud;
-static int crawl_hud_left,cab_needles,background_audio,ignore_red_signal,restore_movie_focus,system_movie_decoder;
+static int crawl_hud_left,cab_needles,background_audio,ignore_red_signal,restore_movie_focus,system_movie_decoder,separate_movie_window;
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
 static WCHAR runtime_dir[MAX_PATH];
 static int read_bool(const WCHAR *path,const WCHAR *section,const WCHAR *key){
@@ -20,6 +20,7 @@ static void read_config(void){
  unlock_fps=read_bool(path,L"Startup",L"UnlockFPS");
  restore_movie_focus=read_bool(path,L"Startup",L"RestoreMovieFocus");
  system_movie_decoder=read_bool(path,L"Startup",L"UseSystemMovieDecoder");
+ separate_movie_window=read_bool(path,L"Startup",L"SeparateMovieWindow");
  cab_needles=read_bool(path,L"Cab",L"CorrectNeedleAspect");
  background_audio=read_bool(path,L"Audio",L"UnmuteInBackground");
  ignore_red_signal=read_bool(path,L"Activity",L"IgnoreRedSignal");

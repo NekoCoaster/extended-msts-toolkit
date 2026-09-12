@@ -124,7 +124,7 @@ function Invoke-Options {
   $payload=[IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'runtime/DINPUT.dll'))
   if((Get-MstsHash $payload) -ne $integrity.'DINPUT.dll'){throw 'Release DLL integrity mismatch.'}
  }
- $printStatus='false';$centerWindowed='true';$maxLogSizeKB=8192;$maxBackupLogs=0;$cabNeedle='false';$restoreMovieFocus='true';$systemMovieDecoder='true'
+ $printStatus='false';$centerWindowed='true';$maxLogSizeKB=8192;$maxBackupLogs=0;$cabNeedle='false';$restoreMovieFocus='true';$systemMovieDecoder='true';$separateMovieWindow='true'
  foreach($record in $records){
   $ini=Join-Path $record.Directory 'settings.ini'
   if(Test-Path -LiteralPath $ini){
@@ -132,6 +132,7 @@ function Invoke-Options {
    foreach($line in [IO.File]::ReadAllLines($ini)){
     if($line -match '^\s*\[([^]]+)\]\s*$'){$section=$Matches[1]}
     elseif($section -ieq 'Cab' -and $line -match '^\s*CorrectNeedleAspect\s*=\s*(.*?)\s*$'){$cabNeedle=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
+    elseif($section -ieq 'Startup' -and $line -match '^\s*SeparateMovieWindow\s*=\s*(.*?)\s*$'){$separateMovieWindow=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
     elseif($section -ieq 'Startup' -and $line -match '^\s*UseSystemMovieDecoder\s*=\s*(.*?)\s*$'){$systemMovieDecoder=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
     elseif($section -ieq 'Startup' -and $line -match '^\s*RestoreMovieFocus\s*=\s*(.*?)\s*$'){$restoreMovieFocus=if($Matches[1] -imatch '^(true|1)$'){'true'}else{'false'}}
     elseif($section -ieq 'Startup' -and $line -match '^\s*MaxLogSizeKB\s*=\s*(\d+)\s*$'){if([long]$Matches[1] -ge 4 -and [long]$Matches[1] -le 65536){$maxLogSizeKB=[int]$Matches[1]}}
@@ -154,7 +155,7 @@ function Invoke-Options {
  try{
   if($install){
    if(-not (Test-Path -LiteralPath $target)){[void][IO.Directory]::CreateDirectory($target);$createdDir=$true}
-   $config="[Startup]`r`nVerboseLoading=$($VerboseLoading.ToString().ToLowerInvariant())`r`nWriteLog=$($StartupLog.ToString().ToLowerInvariant())`r`nUnlockFPS=$($UnlockFPS.ToString().ToLowerInvariant())`r`nUseSystemMovieDecoder=$systemMovieDecoder`r`nRestoreMovieFocus=$restoreMovieFocus`r`nMaxLogSizeKB=$maxLogSizeKB`r`nMaxBackupLogs=$maxBackupLogs`r`n`r`n[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`nShowCrawlHUD=$($CrawlHUD.ToString().ToLowerInvariant())`r`nCrawlHUDAnchor=$CrawlHUDAnchor`r`n"
+   $config="[Startup]`r`nVerboseLoading=$($VerboseLoading.ToString().ToLowerInvariant())`r`nWriteLog=$($StartupLog.ToString().ToLowerInvariant())`r`nUnlockFPS=$($UnlockFPS.ToString().ToLowerInvariant())`r`nSeparateMovieWindow=$separateMovieWindow`r`nUseSystemMovieDecoder=$systemMovieDecoder`r`nRestoreMovieFocus=$restoreMovieFocus`r`nMaxLogSizeKB=$maxLogSizeKB`r`nMaxBackupLogs=$maxBackupLogs`r`n`r`n[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`nShowCrawlHUD=$($CrawlHUD.ToString().ToLowerInvariant())`r`nCrawlHUDAnchor=$CrawlHUDAnchor`r`n"
    $config+="`r`n[Cab]`r`nCorrectNeedleAspect=$cabNeedle`r`n"
    $config+="`r`n[Audio]`r`nUnmuteInBackground=$($BackgroundAudio.ToString().ToLowerInvariant())`r`n`r`n[Activity]`r`nIgnoreRedSignal=$($IgnoreRedSignal.ToString().ToLowerInvariant())`r`n"
    [IO.File]::WriteAllText((Join-Path $target 'settings.ini'),$config,(New-Object Text.UTF8Encoding($false)))
