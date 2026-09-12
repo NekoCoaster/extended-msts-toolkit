@@ -64,3 +64,7 @@ Final DLL `6e257dc1f58bba74175acfe5b46fc520fb05754ad4c2379aa8c1adf8b41d09b0` (44
 The logged run had progressed beyond LGVMed's paths before its last observed open, `routes/USA2/Marias.tdb`. That last file is not proof of fault. Post-run comparison found zero added, removed or content-modified route files, so no generated buffers required rollback. NEMT was restored and the test route copy moved out of active Routes into local scratch; the user's original route copy was untouched. Live terrain-percentage/ETA verification remains blocked by this independent startup failure. Inventories, crash events and logs remain local under work/ and are excluded from the release.
 
 After moving the LGVMED test copy out, the final build reached the main menu normally: 346 observed operations, 18 text substitutions, and a closed startup log. The menu was visually inspected and MSTS exited normally.
+
+## Host follow-up
+
+The owner confirmed terrain generation completed successfully and supplied a screenshot showing 46.0% with an estimated five seconds remaining. They identified LGVMed’s documented Xtracks 3.10 requirement and reported that installing Xtracks resolved the host startup crash. The supplied VM comparison package is Xtracks Standard Edition 3.22. These host reports supersede the earlier blocked terrain test, without turning the earlier VM failure into a successful measurement.

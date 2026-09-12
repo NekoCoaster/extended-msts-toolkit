@@ -14,7 +14,7 @@ foreach($wide in @($false,$true)){foreach($laa in @($false,$true)){
   try{Invoke-Options $file $t $c $crawl 10 -Confirm:$false | Out-Null}catch{if($crawl -and -not $t){$rejected=$true}else{throw}}
   Assert ($rejected -eq ($crawl -and -not $t)) 'Dependency validation mismatch'
   Assert ((Get-MstsHash ([IO.File]::ReadAllBytes($file))) -eq $hash) 'Clean executable was written'
-  if(-not $rejected -and $bits){$m=Get-CrawlInstallation $file;Assert ($m.preventEnd -eq $t -and $m.unlockCameras -eq $c -and $m.crawl -eq $crawl) 'Saved feature flags mismatch'}
+  if(-not $rejected -and $bits){$m=Get-CrawlInstallation $file;Assert ($m.preventEnd -eq $t -and $m.unlockCameras -eq $c -and $m.crawl -eq $crawl) 'Saved feature flags mismatch';Assert ($m.crawlHUD -eq $crawl) 'HUD must follow crawl selection'}
   $count++
  }
  Invoke-Options $file $false $false $false -Confirm:$false | Out-Null

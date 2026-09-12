@@ -49,3 +49,5 @@ The build refreshes the DLL integrity hash. The packager excludes Git metadata a
 ## Loading and HUD modules
 
 The independent startup module now tracks activity loading and native terrain progress; see [loading details](startup.md). The optional [white F5 HUD](crawl-hud.md) is installed during early initialization but reads crawl state only after the existing lock is ready. It uses the native renderer and adds no worker or file output. These modules use the shared checked mutation transaction, retaining whole-image validation.
+
+A read-only [track dependency preflight](track-dependencies.md) runs before the loading hooks, outside DllMain. It uses bounded text parsing and exits with a specific dialog only for a supported database containing unresolved section references.

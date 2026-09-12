@@ -120,6 +120,7 @@ function Invoke-Options {
  if($ExpectedHash -and $ExpectedHash -ne $info.SHA256){throw 'The selected executable changed. Select it again.'}
  $gameDir=Split-Path -Parent $info.Path;$target=Join-Path $gameDir 'NEMT';$proxy=Join-Path $gameDir 'DINPUT.dll'
  $records=@(Get-ToolkitRecords $info.Path);$installed=Get-CrawlInstallation $info.Path
+ $CrawlHUD=$CrawlHUD -or $CrawlMode
  $install=$Timeout -or $Camera -or $CrawlMode -or $WindowFeatures -or $VerboseLoading -or $StartupLog -or $UnlockFPS -or $CrawlHUD
  $modern=@($records | Where-Object {$_.Name -eq 'NEMT'})
  if($install -and (Test-Path -LiteralPath $target) -and -not $modern.Count){throw 'The existing NEMT folder is not owned by this installer.'}
@@ -276,8 +277,6 @@ function Show-Options([string]$InitialPath){
  $fps=Check-At 'Unlock FPS limit (forces -noclamp launch parameter)' 201
  $verbose=Check-At 'Show verbose startup and activity loading details' 233
  $startupLogBox=Check-At 'Write startup diagnostic log (optional; NEMT\startup.log)' 265
- foreach($control in $form.Controls){if($control.Top -ge 404){$control.Top+=32}}
- $hud=Check-At 'Show crawl status in extended F5 HUD' 405
  $form.AutoScroll=$true
  $ui=@{info=$null;loading=$false}
  $refresh={ $sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
@@ -287,7 +286,6 @@ function Show-Options([string]$InitialPath){
  $load={param([string]$p)
   $ui.info=$null;$ui.loading=$true;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p
   try{$i=Get-MstsImage $p;$m=Get-CrawlInstallation $i.Path;$ui.info=$i;$pathText.Text=$i.Path;$version.Text='Valid train.exe version: '+$i.Version;$version.ForeColor=[Drawing.Color]::FromArgb(0,170,0)
-   $hud.Checked=if($m -and $null -ne $m.crawlHUD){$m.enabled -and $m.crawlHUD}else{$false}
    $fps.Checked=($m -and $m.enabled -and $m.unlockFPS);$verbose.Checked=($m -and $m.enabled -and $m.verboseLoading);$startupLogBox.Checked=($m -and $m.enabled -and $m.startupLog)
    $window.Checked=if($m -and $null -ne $m.windowFeatures){$m.enabled -and $m.windowFeatures}else{$true}
    $timeout.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.preventEnd}else{$i.TimeoutPatched};$camera.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.unlockCameras}else{$i.CameraPatched};$crawl.Checked=($null -ne $m -and $m.enabled -and ($m.runtime -ne 'nemt-native' -or $m.crawl));$slider.Value=if($m){[Math]::Max(0,[Math]::Min(100,[int]$m.strength))}else{10}
@@ -299,7 +297,7 @@ function Show-Options([string]$InitialPath){
  $save={param([bool]$clear)
   if(-not $ui.info){return};$form.UseWaitCursor=$true;$apply.Enabled=$false;$restore.Enabled=$false;$browse.Enabled=$false
   try{$t=if($clear){$false}else{$timeout.Checked};$c=if($clear){$false}else{$camera.Checked};$r=if($clear){$false}else{$crawl.Checked};$w=if($clear){$false}else{$window.Checked}
-   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -CrawlHUD ((-not $clear) -and $hud.Checked) -Confirm:$false
+   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -CrawlHUD $r -Confirm:$false
    & $load $result.Path;$message.ForeColor=[Drawing.Color]::FromArgb(20,120,55);$message.Text=if($clear){'Toolkit removed. Widescreen and LAA were preserved.'}else{'Settings saved. Use -vm:bw for borderless or -vm:w for windowed. Restart MSTS to apply changes.'}
   }catch{$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
   finally{$form.UseWaitCursor=$false;$browse.Enabled=$true;$apply.Enabled=($null -ne $ui.info);$restore.Enabled=($null -ne $ui.info)}

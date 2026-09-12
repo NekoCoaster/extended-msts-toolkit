@@ -2,7 +2,7 @@
 
 A small native toolkit for Microsoft Train Simulator. This first migration brings MEDS's activity-end prevention, camera access and connected-engine crawling into one configurable `DINPUT.dll`.
 
-**Loading and HUD test build:** single-line verbose text now covers startup and activity loading, with terrain-buffer progress and estimated remaining time. An optional [extended F5 HUD](docs/crawl-hud.md) shows crawl controls and applied thrust without diagnostic file writes. See the [loading guide and validation limits](docs/startup.md). The owner validated the earlier startup display; these latest additions still need host validation.
+**Loading and HUD test build:** single-line verbose text now covers startup and activity loading, with terrain-buffer progress and estimated remaining time. An automatically included crawl [extended F5 HUD](docs/crawl-hud.md) shows crawl controls and applied thrust without diagnostic file writes. See the [loading guide and validation limits](docs/startup.md). The owner validated the earlier startup display; the owner has also confirmed terrain generation completed and the F5 HUD was visible. The latest HUD alignment/sign and dependency preflight changes still need host validation.
 
 **Borderless foundation:** native `-vm:bw` support and optional window centering are now included. The owner confirmed activity transitions, Alt+Tab and resolution changes; see the [validation and launch guide](docs/borderless.md). The existing MEDS releases remain unchanged. This is a separate local repository; it has not been published to a new GitHub repository.
 
@@ -42,7 +42,7 @@ CrawlStrength=10
 
 [Diagnostics]
 WriteStatusJson=false
-ShowCrawlHUD=false
+ShowCrawlHUD=true
 ```
 
 Settings take effect after restarting MSTS. Crawling requires `PreventActivityEnd=true`; the form enforces this. Invalid manual configuration prevents feature installation. Missing feature flags default off. Thrust ranges from 0–100×; zero disables added thrust while retaining the selected throttle-dependent collision/animation effects.
@@ -61,3 +61,5 @@ Use **Uninstall** to remove the owned DLL and configuration. The clean executabl
 - [FPS: prefer the existing -noclamp option](docs/miscellaneous/fps.md)
 
 Developed and Tested by NekoCoaster, Powered by Codex — 2026 | [MIT License](LICENSE). See [third-party notices](THIRD-PARTY.md).
+
+NEMT now checks supported text route track databases for missing section definitions before startup. [Dependency checks and limits](docs/track-dependencies.md) explains the Xtracks warning and what it can detect.

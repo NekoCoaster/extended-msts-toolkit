@@ -70,7 +70,7 @@ static LPSTR WINAPI toolkit_command_line(void){
    slash[1]=0;
    if(wcslen(root)+45<MAX_PATH&&supported_image()){
     /* This runs from the EXE's CRT entry, outside DllMain/loader lock. */
-    read_config();normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+12);
+    read_config();if(config_valid)track_check_startup(root);normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+12);
     if(normalized_command_line){
      normalize_launch(actual,normalized_command_line,config_valid&&unlock_fps);
      if(config_valid)install_startup_hooks();
