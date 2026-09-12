@@ -35,6 +35,7 @@ static U __fastcall movie_get_option(const WCHAR *name,U *value,U scope){
  U result=movie_get_option_original(name,value,scope);
  movie_log("ShowLogo preference (0 means movie disabled)",value?*value:0);return result;
 }
+#include "movie-output.h"
 #include "movie-window.h"
 static U __fastcall movie_open(HWND window,const char *path){
  char file[MAX_PATH+16];size_t length;U result;
@@ -66,7 +67,7 @@ static U __fastcall movie_play(const char *path,U edx){
  return result;
 }
 static int install_movie_hook(void){
- if(!restore_movie_focus&&!system_movie_decoder&&!separate_movie_window)return 1;
+ if(!restore_movie_focus&&!system_movie_decoder&&!separate_movie_window&&!bind_movie_output)return 1;
  if(memcmp((void*)0x52fc32,"\x55\x8b\xec\x81\xec\x68\x01\x00\x00",9)||
     memcmp((void*)0x52ffb3,"\x55\x8b\xec",3))return 0;
  startup_call(&movie_hooks[0],0x52fc29,0x52fc32,(U)movie_play);

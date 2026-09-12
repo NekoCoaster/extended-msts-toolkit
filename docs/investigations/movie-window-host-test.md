@@ -74,3 +74,13 @@ The final combination opened successfully at 750 ms, applied the destination rec
 The keyboard recovery code remained enabled. This comparison tested startup and menu return, not keyboard controls in a driving activity; the earlier host validation remains the evidence for that behavior. The movie files are left enabled for continued testing.
 
 The native registry preference is the DWORD ShowLogo under the 32-bit HKLM\SOFTWARE\Microsoft\Microsoft Games\Train Simulator\1.0\HWRenderer key (shown beneath WOW6432Node on 64-bit Windows). A host reset to 1 should be performed with MSTS closed. Compatibility registry virtualization can provide a per-user override; if the runtime still reports 0 after resetting the machine value, inspect that override rather than changing unrelated settings.
+
+## Host follow-up and output binding — alpha.7
+
+Resetting ShowLogo to 1 restored host movie playback, but only audio was audible. All four combinations of SeparateMovieWindow and UseSystemMovieDecoder still produced a black picture. The separate-window setting changed the outline to a thin white underline; this is not evidence of video output. The supplied alpha.6 log showed ShowLogo=1, successful system decoder open at 1,688 ms, source 640x480, destination assignment success at 1,719 ms, and normal playback return at 11,000 ms. It did not identify the decoder's display-window handle.
+
+Alpha.7 queries that handle using MCI_STATUS / MCI_DGV_STATUS_HWND, assigns the finalized movie window using MCI_WINDOW / MCI_DGV_WINDOW_HWND, and queries again. The assignment occurs after a successful open and any window conversion, before normal ShowWindow/playback. A rejected command is logged without cancelling playback. BindMovieOutput is enabled by Apply, independently configurable, and preserves explicit false values. No new instruction ranges, DLL dependencies, external player or registry modifications are introduced.
+
+The VM accepted the assignment at 781 ms; the output handle was already correct before assignment and remained correct afterward. Playback returned at 12,828 ms with the saved movie procedure cleared. The screenshot captured the subsequent loading scene, not the video, so this run establishes command acceptance and completion only. The hardware-host outcome remains unknown. The [alpha.7 test instructions](../../releases/v1.1.0-alpha.7.md) require one comparison, not another four-way matrix.
+
+Microsoft's [MCI window command](https://learn.microsoft.com/en-us/windows/win32/multimedia/window) distinguishes the decoder's destination window from window placement. If this assignment does not repair host output, the investigation must move to the renderer/presentation path; decoder-open success alone cannot diagnose why pixels are absent.

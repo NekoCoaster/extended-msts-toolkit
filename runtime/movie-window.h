@@ -24,13 +24,15 @@ static RECT movie_fit(RECT client,RECT source){
  result.left=client.left+(cw-w)/2;result.top=client.top+(ch-h)/2;result.right=result.left+w;result.bottom=result.top+h;return result;
 }
 static BOOL WINAPI movie_show(HWND h,int command){
- HWND main=*(HWND*)MOVIE_ADDR(0x82813a);RECT owner,outer,client,source={0,0,0,0},dest;POINT origin={0,0};BOOL result;LONG put=-1;char log[240];
+ HWND main=*(HWND*)MOVIE_ADDR(0x82813a);RECT owner,outer,client,source={0,0,0,0},dest;POINT origin={0,0};BOOL result,detached;LONG put=-1;char log[240];
  movie_log("SHOW reached (movie opened)",0);
  /* Opening must complete with MSTS's original parent and styles intact. */
- if(!separate_movie_window||!movie_detach(h))return movie_show_original(h,command);
- if(GetClientRect(main,&owner)&&GetWindowRect(h,&outer)&&ClientToScreen(main,&origin)){
+ detached=movie_detach(h);
+ if(!detached&&!bind_movie_output)return movie_show_original(h,command);
+ if(detached&&GetClientRect(main,&owner)&&GetWindowRect(h,&outer)&&ClientToScreen(main,&origin)){
   SetWindowPos(h,NULL,origin.x+(owner.right-(outer.right-outer.left))/2,origin.y+(owner.bottom-(outer.bottom-outer.top))/2,0,0,SWP_NOSIZE|SWP_NOZORDER|SWP_NOACTIVATE);
  }
+ movie_bind_output(h);
  result=movie_show_original(h,command);
  if(GetClientRect(h,&client)&&client.right>0&&client.bottom>0){
   movie_send(h,0x48c,0,(LPARAM)&source); /* MCIWNDM_GET_SOURCE */
