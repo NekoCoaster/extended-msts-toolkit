@@ -1,6 +1,6 @@
 # dgVoodoo and borderless mode
 
-**Compatibility baseline awaiting host validation.** The native borderless test build implements `-vm:bw`; follow the [visual checklist](borderless.md).
+**Recommended comparison baseline.** Borderless operation has been validated by the owner on their host; the exact final dgVoodoo configuration was not captured. The native borderless test build implements `-vm:bw`; follow the [visual checklist](borderless.md).
 
 For a toolkit-managed window, start with:
 

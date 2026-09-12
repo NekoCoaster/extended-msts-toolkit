@@ -1,4 +1,4 @@
-# Borderless window test build
+# Borderless window mode
 
 Enable **Enable borderless (-vm:bw) and centered windowed modes** in NEMT, apply, and restart MSTS. This option works independently of the derailment options. No executable bytes are changed on disk.
 
@@ -31,7 +31,7 @@ Use the [dgVoodoo baseline](dgvoodoo.md). Keep the same route and graphics setti
 5. Repeat with `-vm:w,1280,720,32`: expect a normal frame and centered placement at size changes. Check that moving the window manually is not continuously undone.
 6. Launch without a window argument to check the existing default mode. If applicable, repeat window tests on another monitor or DPI setting.
 
-Report the launch argument, monitor resolution/scaling, dgVoodoo version and which transition misbehaved. The first borderless build has automated Win32 coverage; in-game borderless behavior is not yet validated. The earlier host-tested MEDS migration remains tagged `nemt-migration-host-tested`.
+Report the launch argument, monitor resolution/scaling, dgVoodoo version and which transition misbehaved. The updated build has automated Win32 coverage and owner-reported host validation, detailed below. The earlier host-tested MEDS migration remains tagged `nemt-migration-host-tested`.
 
 ## Discovery and implementation
 
@@ -57,4 +57,10 @@ Compile C tests with x86 TCC; tests including `loader.c` need `-ladvapi32 -luser
 
 The initial 32 KB build failed on a reported Windows 11 host using the supported widescreen + LAA image and WINXPSP2 compatibility flags. Ordinary -vm:w worked; -vm:bw failed even with Window.Enabled=false. No crash event was available. The original bootstrap rejected any command-line import that differed from the DLL's own GetCommandLineA import, which could leave bw untranslated when a compatibility layer redirects that import.
 
-The follow-up build chains an existing executable import target, checks committed executable memory, and rejects null, non-executable and duplicate targets. Exact image headers and the later whole-image hash verification remain enforced. tests/window-bootstrap.c verifies a synthetic compatibility redirect, translation, forwarding and rejection cases. This is a candidate fix; the reported host failure has not yet been reproduced or confirmed fixed.
+The follow-up build chains an existing executable import target, checks committed executable memory, and rejects null, non-executable and duplicate targets. Exact image headers and the later whole-image hash verification remain enforced. tests/window-bootstrap.c verifies a synthetic compatibility redirect, translation, forwarding and rejection cases. The owner confirmed that this updated build resolves the host startup failure. The precise redirected API target was not captured, so the compatibility-layer explanation remains an inference.
+
+## Owner-reported host validation
+
+Validated runtime commit: 018b549. DLL SHA-256: a1f41ae008797fddf4e8aaa8c1bad87a12d52a63c6d4fbd6bb69272c480d61c9 (33,280 bytes). The host diagnostics identified Windows build 26200 and the supported widescreen + LAA executable.
+
+The owner confirmed successful borderless startup, activity entry, Alt+Tab away and back, activity exit, another activity entry and repeated Alt+Tab. Resolution changes also remained centered and scaled correctly. These are owner-reported observations, not new agent measurements. The exact final dgVoodoo configuration was not captured; no claim is made for every renderer, monitor/DPI configuration or executable variant. Previous migration and MEDS checkpoints remain preserved.

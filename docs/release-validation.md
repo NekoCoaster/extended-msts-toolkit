@@ -20,7 +20,7 @@ Normal `train.exe -vm:w` startup; no Frida attached. The [menu snapshot](evidenc
 
 The configured route showed a 2 mph limit. The eight-car Acela derailed naturally; memory reads confirmed derail flags. External camera selection worked, forward and 50% throttle controls were accepted, and activity exit returned normally to the menu. The game then closed normally. Diagnostic logging remained disabled and its installer placeholder was unchanged.
 
-This smoke check did not quantitatively isolate propulsion from gravity/collisions, re-test every custom trainset, or benchmark performance. Steam physics retains inherited automated coverage; no new live steam session is claimed. The later borderless build has separate [automated coverage and pending visual checks](borderless.md).
+This smoke check did not quantitatively isolate propulsion from gravity/collisions, re-test every custom trainset, or benchmark performance. Steam physics retains inherited automated coverage; no new live steam session is claimed. The later borderless build has separate [automated coverage and owner-reported host validation](borderless.md).
 
 ## Reproduction
 
