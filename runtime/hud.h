@@ -21,7 +21,7 @@ static void hud_render_end(void){
  void *font=*(void**)G(0x7b64d4);int screen_height=*(int*)G(0x7a8964),screen_width=*(int*)G(0x7a8960),height,x,y,i;char lines[3][160];WCHAR wide[160];
  if(crawl_hud&&font){HudDrawFn draw=*(HudDrawFn*)(*(U*)font+0x34);HudHeightFn get_height=*(HudHeightFn*)(*(U*)font+0x18);HudWidthFn get_width=*(HudWidthFn*)(*(U*)font+0x24);height=get_height(font);
   if(height>0&&height<100&&screen_height>height*3+10){hud_lines(lines);y=screen_height-height*3-8;
-   for(i=0;i<3;i++){wide[0]=0;MultiByteToWideChar(0,0,lines[i],-1,wide,160);x=screen_width-8-get_width(font,wide);if(x<8)x=8;draw(font,x,y+i*height,0xffffffff,wide);}
+   for(i=0;i<3;i++){wide[0]=0;MultiByteToWideChar(0,0,lines[i],-1,wide,160);x=crawl_hud_left?8:screen_width-8-get_width(font,wide);if(x<8)x=8;draw(font,x,y+i*height,0xffffffff,wide);}
   }
  }
  hud_end_original();

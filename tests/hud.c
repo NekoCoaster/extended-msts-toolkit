@@ -5,7 +5,7 @@ static unsigned char globals[0x100000];
 static int draws,ends;
 static int __fastcall fake_width(void *font,const WCHAR *text){return wcslen(text)*6;}
 static int __fastcall fake_height(void *font){return 12;}
-static U __fastcall fake_draw(void *font,int x,int y,U color,const WCHAR *text){assert(x==*(int*)G(0x7a8960)-8-fake_width(font,text)&&y==*(int*)G(0x7a8964)-44+(draws%3)*12&&color==0xffffffff&&text[0]);draws++;return 0;}
+static U __fastcall fake_draw(void *font,int x,int y,U color,const WCHAR *text){assert(x==(crawl_hud_left?8:*(int*)G(0x7a8960)-8-fake_width(font,text))&&y==*(int*)G(0x7a8964)-44+(draws%3)*12&&color==0xffffffff&&text[0]);draws++;return 0;}
 static void fake_end(void){ends++;}
 int main(void){char lines[3][160];
  hud_lines(lines);assert(strstr(lines[0],"disabled"));
@@ -18,6 +18,6 @@ int main(void){char lines[3][160];
  *(U*)G(0x7be0f4)=0;blocked=1;hud_lines(lines);assert(strstr(lines[0],"fault")&&strstr(lines[0],"0.0 kN"));
  clear_activity();hud_lines(lines);assert(strstr(lines[2],"0 applying / 0 connected"));
  {U table[16]={0};U font=(U)table;table[6]=(U)fake_height;table[9]=(U)fake_width;table[13]=(U)fake_draw;*(U*)G(0x7b64d4)=(U)&font;*(int*)G(0x7a8960)=640;*(int*)G(0x7a8964)=480;hud_end_original=fake_end;
- crawl_hud=1;hud_render_end();assert(draws==3&&ends==1);*(int*)G(0x7a8960)=1920;*(int*)G(0x7a8964)=1080;hud_render_end();assert(draws==6&&ends==2);crawl_hud=0;hud_render_end();assert(draws==6&&ends==3);}
+ crawl_hud=1;hud_render_end();assert(draws==3&&ends==1);*(int*)G(0x7a8960)=1920;*(int*)G(0x7a8964)=1080;hud_render_end();assert(draws==6&&ends==2);crawl_hud_left=1;hud_render_end();assert(draws==9&&ends==3);crawl_hud=0;hud_render_end();assert(draws==9&&ends==4);}
  puts("PASS HUD disabled/waiting/active/paused/fault states, applied force, throttle, reverser, powered membership and activity exit.");return 0;
 }

@@ -14,7 +14,7 @@ static HANDLE startup_file=INVALID_HANDLE_VALUE;
 static DWORD startup_bytes,startup_started,startup_sequence,startup_display_updates;
 static WCHAR startup_text[96]=L"Loading: initializing MSTS";
 static WCHAR startup_draw_text[96];
-static Hook startup_hooks[10];
+static Hook startup_hooks[13];
 static U (__fastcall *loading_begin_original)(U)=(void*)0x401c53;
 static void (*loading_end_original)(void)=(void*)0x4014d3;
 static int activity_loading;
@@ -76,6 +76,11 @@ static void startup_finish(void){
  if(startup_active){startup_write("DISPLAY UPDATES","Native loading text substitutions",startup_display_updates);startup_write("STARTUP COMPLETE","Main event loop reached",startup_sequence);startup_active=0;if(startup_file!=INVALID_HANDLE_VALUE){CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;}}
  LeaveCriticalSection(&startup_lock);
 }
+static void (*loading_assets_original)(void)=(void*)0x401357;
+static void loading_assets(void){
+ if(verbose_loading&&startup_active){EnterCriticalSection(&startup_lock);terrain_active=0;wcscpy(startup_text,L"Preparing route assets...");LeaveCriticalSection(&startup_lock);terrain_progress_original(308,0);}
+ loading_assets_original();
+}
 static void startup_first_frame(void){startup_finish();startup_first_frame_original();}
 static void startup_call(Hook *h,U address,U target,U replacement){
  U relative=target-address-5,new_relative=replacement-address-5;
@@ -95,8 +100,10 @@ static int install_startup_hooks(void){
  startup_call(&startup_hooks[7],0x4900e7,0x4014d3,(U)loading_end);
  startup_call(&startup_hooks[8],0x566cc2,0x4023e2,(U)terrain_begin);
  startup_call(&startup_hooks[9],0x566d21,0x4023e2,(U)terrain_progress);
+ for(i=10;i<12;i++){Hook *h=&startup_hooks[i];memset(h,0,sizeof(*h));h->address=i==10?0x566cbd:0x566d1c;h->length=5;h->raw=1;memcpy(h->original,"\xb9\x35\0\0\0",5);memcpy(h->replacement,i==10?"\x8b\x4d\xdc\x90\x90":"\x8b\x4d\xfc\x90\x90",5);}
+ startup_call(&startup_hooks[12],0x494bc1,0x401357,(U)loading_assets);
  InitializeCriticalSection(&startup_lock);startup_started=GetTickCount();startup_active=1;
- if(!prepare_hooks(startup_hooks,10)||!install_hooks(startup_hooks,10)){startup_active=0;return 0;}
+ if(!prepare_hooks(startup_hooks,13)||!install_hooks(startup_hooks,13)){startup_active=0;return 0;}
  if(startup_log){wcscpy(path,runtime_dir);wcscat(path,L"startup.log");startup_file=CreateFileW(path,GENERIC_WRITE,FILE_SHARE_READ,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);startup_write("STARTUP BEGIN","File API activity; not a crash-cause diagnosis. Paths use Windows ANSI encoding.",0);}
  return 1;
 }

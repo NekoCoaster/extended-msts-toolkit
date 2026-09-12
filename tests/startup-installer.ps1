@@ -13,6 +13,14 @@ foreach($source in @($BaseExe,$WidescreenExe)){foreach($laa in @($false,$true)){
   foreach($pair in @(@('VerboseLoading',$v),@('WriteLog',$l),@('UnlockFPS',$fps),@('ShowCrawlHUD',$hud))){if(-not $ini.Contains(($pair[0]+'='+$pair[1].ToString().ToLowerInvariant()))){throw 'INI mismatch'}}
   if(Test-Path (Join-Path $dir 'NEMT/startup.log')){throw 'Installer should not write startup log'}
  }
+ foreach($position in @('BottomLeft','BottomRight')){
+  Invoke-Options $file $true $false $true -CrawlHUDAnchor $position -Confirm:$false | Out-Null
+  $m=Get-CrawlInstallation $file
+  if($m.crawlHUDAnchor -ne $position -or -not $m.crawlHUD){throw 'Anchor/crawl mismatch'}
+  $ini=[IO.File]::ReadAllText((Join-Path $dir 'NEMT/native.ini'));if(-not $ini.Contains('CrawlHUDAnchor='+$position)){throw 'Anchor INI mismatch'}
+  Invoke-Options $file $true $false $true -Confirm:$false | Out-Null
+  if((Get-CrawlInstallation $file).crawlHUDAnchor -ne $position){throw 'Anchor preference not preserved'}
+ }
  Invoke-Options $file $false $false $false -Confirm:$false | Out-Null
  if(Test-Path (Join-Path $dir 'DINPUT.dll')){throw 'Uninstall failed'}
  if((Get-MstsHash ([IO.File]::ReadAllBytes($file))) -ne $hash){throw 'Executable changed'}

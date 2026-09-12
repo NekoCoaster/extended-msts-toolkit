@@ -5,6 +5,7 @@ static HANDLE WINAPI fake_open(LPCSTR a,DWORD b,DWORD c,LPSECURITY_ATTRIBUTES d,
 static WCHAR *__fastcall fake_string(U id){assert(id==308);return L"Original";}
 static U __fastcall fake_begin(U mode){assert(mode==1);return 123;}
 static void fake_end(void){}
+static void __fastcall fake_progress(U resource,U percent){assert(resource==53||resource==308);}
 static U __fastcall failed_begin(U mode){return 0;}
 int main(void){WCHAR before[96];char long_path[850];DWORD id;char eta[96];
  InitializeCriticalSection(&startup_lock);startup_active=1;verbose_loading=1;startup_open_original=fake_open;startup_string_original=fake_string;
@@ -16,6 +17,8 @@ int main(void){WCHAR before[96];char long_path[850];DWORD id;char eta[96];
  assert(loading_begin(1)==123&&startup_active&&activity_loading);startup_record("OPEN","ROUTES\\test\\tile.t");assert(wcsstr(startup_text,L"tile.t"));loading_end();assert(!startup_active&&!activity_loading);
  assert(loading_begin(1)==123&&startup_active);loading_end();assert(!startup_active);
  loading_begin_original=failed_begin;assert(!loading_begin(1)&&!startup_active&&!activity_loading);
- terrain_format(eta,sizeof(eta),0,0,0);assert(strstr(eta,"estimating")); terrain_format(eta,sizeof(eta),25,200000,3);assert(strstr(eta,"25.0%")&&strstr(eta,"~10m 00s")); terrain_format(eta,sizeof(eta),100,800000,8);assert(strstr(eta,"0m 00s")); terrain_format(eta,sizeof(eta),5,1000,1);assert(strstr(eta,"estimating"));
+ terrain_progress_original=fake_progress;terrain_begin(232,0);terrain_progress(58,25);terrain_format(eta,sizeof(eta),25,200000,3);assert(strstr(eta,"58/232"));
+ startup_active=1;loading_assets_original=fake_end;loading_assets();assert(!terrain_active&&wcsstr(startup_text,L"Preparing route assets"));
+ terrain_format(eta,sizeof(eta),0,0,0);assert(strstr(eta,"estimating")); terrain_format(eta,sizeof(eta),25,200000,3);assert(strstr(eta,"25%")&&strstr(eta,"~10m 00s")); terrain_format(eta,sizeof(eta),100,800000,8);assert(strstr(eta,"0m 00s")); terrain_format(eta,sizeof(eta),5,1000,1);assert(strstr(eta,"estimating"));
  puts("PASS startup API forwarding, LastError preservation, bounded display text and completion bypass.");return 0;
 }

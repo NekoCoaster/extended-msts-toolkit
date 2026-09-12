@@ -3,7 +3,7 @@
 [CmdletBinding(SupportsShouldProcess=$true)]
 param([Parameter(Position=0)][Alias('Path')][string]$ExePath,
  [ValidateSet('Gui','Status','Apply','Restore')][string]$Action='Gui',
- [switch]$RemoveEndMessage,[switch]$UnlockCameras,[switch]$Crawl,[switch]$WindowFeatures,[switch]$VerboseLoading,[switch]$StartupLog,[switch]$UnlockFPS,[switch]$CrawlHUD,
+ [switch]$RemoveEndMessage,[switch]$UnlockCameras,[switch]$Crawl,[switch]$WindowFeatures,[switch]$VerboseLoading,[switch]$StartupLog,[switch]$UnlockFPS,[switch]$CrawlHUD,[ValidateSet("BottomLeft","BottomRight")][string]$CrawlHUDAnchor="BottomRight",
  [ValidateRange(0,100)][int]$Strength=10)
 $ErrorActionPreference='Stop'
 $script:Specs=@{
@@ -114,12 +114,13 @@ function Get-CrawlInstallation([string]$Path) {
 }
 function Invoke-Options {
  [CmdletBinding(SupportsShouldProcess=$true)]
- param([string]$Path,[bool]$Timeout,[bool]$Camera,[bool]$CrawlMode,[ValidateRange(0,100)][int]$Thrust=10,[string]$ExpectedHash,[bool]$WindowFeatures=$false,[bool]$VerboseLoading=$false,[bool]$StartupLog=$false,[bool]$UnlockFPS=$false,[bool]$CrawlHUD=$false)
+ param([string]$Path,[bool]$Timeout,[bool]$Camera,[bool]$CrawlMode,[ValidateRange(0,100)][int]$Thrust=10,[string]$ExpectedHash,[bool]$WindowFeatures=$false,[bool]$VerboseLoading=$false,[bool]$StartupLog=$false,[bool]$UnlockFPS=$false,[bool]$CrawlHUD=$false,[ValidateSet("BottomLeft","BottomRight")][string]$CrawlHUDAnchor)
  if($CrawlMode -and -not $Timeout){throw 'Crawling requires PreventActivityEnd.'}
  $info=Get-MstsImage $Path;Assert-MstsClosed $info.Path
  if($ExpectedHash -and $ExpectedHash -ne $info.SHA256){throw 'The selected executable changed. Select it again.'}
  $gameDir=Split-Path -Parent $info.Path;$target=Join-Path $gameDir 'NEMT';$proxy=Join-Path $gameDir 'DINPUT.dll'
  $records=@(Get-ToolkitRecords $info.Path);$installed=Get-CrawlInstallation $info.Path
+ if(-not $CrawlHUDAnchor){$CrawlHUDAnchor=if($installed -and $installed.crawlHUDAnchor -eq "BottomLeft"){"BottomLeft"}else{"BottomRight"}}
  $CrawlHUD=$CrawlHUD -or $CrawlMode
  $install=$Timeout -or $Camera -or $CrawlMode -or $WindowFeatures -or $VerboseLoading -or $StartupLog -or $UnlockFPS -or $CrawlHUD
  $modern=@($records | Where-Object {$_.Name -eq 'NEMT'})
@@ -175,9 +176,9 @@ function Invoke-Options {
   if($desiredHash -ne $info.SHA256){Write-CheckedImage $info.Path $desired $info.SHA256;$changedImage=$true}
   if($install){
    if(-not (Test-Path -LiteralPath $target)){[void][IO.Directory]::CreateDirectory($target);$createdDir=$true}
-   $config="[Startup]`r`nVerboseLoading=$($VerboseLoading.ToString().ToLowerInvariant())`r`nWriteLog=$($StartupLog.ToString().ToLowerInvariant())`r`nUnlockFPS=$($UnlockFPS.ToString().ToLowerInvariant())`r`n`r`n[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`nShowCrawlHUD=$($CrawlHUD.ToString().ToLowerInvariant())`r`n"
+   $config="[Startup]`r`nVerboseLoading=$($VerboseLoading.ToString().ToLowerInvariant())`r`nWriteLog=$($StartupLog.ToString().ToLowerInvariant())`r`nUnlockFPS=$($UnlockFPS.ToString().ToLowerInvariant())`r`n`r`n[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`nShowCrawlHUD=$($CrawlHUD.ToString().ToLowerInvariant())`r`nCrawlHUDAnchor=$CrawlHUDAnchor`r`n"
    [IO.File]::WriteAllText((Join-Path $target 'native.ini'),$config,(New-Object Text.UTF8Encoding($false)))
-   $manifest=@{schema=1;product='NEMT';runtime='nemt-native';enabled=$true;strength=$Thrust;preventEnd=$Timeout;unlockCameras=$Camera;crawl=$CrawlMode;windowFeatures=$WindowFeatures;verboseLoading=$VerboseLoading;startupLog=$StartupLog;unlockFPS=$UnlockFPS;crawlHUD=$CrawlHUD;proxyHash=(Get-MstsHash $payload);files=@{}}
+   $manifest=@{schema=1;product='NEMT';runtime='nemt-native';enabled=$true;strength=$Thrust;preventEnd=$Timeout;unlockCameras=$Camera;crawl=$CrawlMode;windowFeatures=$WindowFeatures;verboseLoading=$VerboseLoading;startupLog=$StartupLog;unlockFPS=$UnlockFPS;crawlHUD=$CrawlHUD;crawlHUDAnchor=$CrawlHUDAnchor;proxyHash=(Get-MstsHash $payload);files=@{}}
    [IO.File]::WriteAllText((Join-Path $target 'installation.json'),($manifest | ConvertTo-Json -Depth 5),(New-Object Text.UTF8Encoding($false)))
    [IO.File]::WriteAllText((Join-Path $target 'status.json'),'{"runtime":"NEMT","phase":"not-running","note":"Installer snapshot; live diagnostics are optional."}',(New-Object Text.UTF8Encoding($false)))
    [IO.File]::WriteAllBytes($proxy,$payload)
@@ -277,15 +278,20 @@ function Show-Options([string]$InitialPath){
  $fps=Check-At 'Unlock FPS limit (forces -noclamp launch parameter)' 201
  $verbose=Check-At 'Show verbose startup and activity loading details' 233
  $startupLogBox=Check-At 'Write startup diagnostic log (optional; NEMT\startup.log)' 265
+ foreach($control in $form.Controls){if($control.Top -ge $sliderPanel.Bottom){$control.Top+=36}}
+ $anchorPanel=New-Object Windows.Forms.Panel;$anchorPanel.Location=New-Object Drawing.Point(24,($sliderPanel.Bottom+2));$anchorPanel.Size=New-Object Drawing.Size(652,32);$form.Controls.Add($anchorPanel)
+ $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text="Crawl HUD position:";$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
+ $anchor=New-Object Windows.Forms.ComboBox;$anchor.DropDownStyle="DropDownList";$anchor.Location=New-Object Drawing.Point(160,0);$anchor.Size=New-Object Drawing.Size(170,28);[void]$anchor.Items.AddRange(@("Bottom right","Bottom left"));$anchor.SelectedIndex=0;$anchorPanel.Controls.Add($anchor)
  $form.AutoScroll=$true
  $ui=@{info=$null;loading=$false}
- $refresh={ $sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
+ $refresh={ $anchorPanel.Visible=$crawl.Checked;$sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
  $slider.Add_ValueChanged($refresh)
  $crawl.Add_CheckedChanged({if($crawl.Checked -and -not $ui.loading){$timeout.Checked=$true};& $refresh})
  $timeout.Add_CheckedChanged({if(-not $timeout.Checked -and -not $ui.loading){$crawl.Checked=$false}})
  $load={param([string]$p)
   $ui.info=$null;$ui.loading=$true;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p
   try{$i=Get-MstsImage $p;$m=Get-CrawlInstallation $i.Path;$ui.info=$i;$pathText.Text=$i.Path;$version.Text='Valid train.exe version: '+$i.Version;$version.ForeColor=[Drawing.Color]::FromArgb(0,170,0)
+   $anchor.SelectedIndex=if($m -and $m.crawlHUDAnchor -eq "BottomLeft"){1}else{0}
    $fps.Checked=($m -and $m.enabled -and $m.unlockFPS);$verbose.Checked=($m -and $m.enabled -and $m.verboseLoading);$startupLogBox.Checked=($m -and $m.enabled -and $m.startupLog)
    $window.Checked=if($m -and $null -ne $m.windowFeatures){$m.enabled -and $m.windowFeatures}else{$true}
    $timeout.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.preventEnd}else{$i.TimeoutPatched};$camera.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.unlockCameras}else{$i.CameraPatched};$crawl.Checked=($null -ne $m -and $m.enabled -and ($m.runtime -ne 'nemt-native' -or $m.crawl));$slider.Value=if($m){[Math]::Max(0,[Math]::Min(100,[int]$m.strength))}else{10}
@@ -297,7 +303,7 @@ function Show-Options([string]$InitialPath){
  $save={param([bool]$clear)
   if(-not $ui.info){return};$form.UseWaitCursor=$true;$apply.Enabled=$false;$restore.Enabled=$false;$browse.Enabled=$false
   try{$t=if($clear){$false}else{$timeout.Checked};$c=if($clear){$false}else{$camera.Checked};$r=if($clear){$false}else{$crawl.Checked};$w=if($clear){$false}else{$window.Checked}
-   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -CrawlHUD $r -Confirm:$false
+   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -CrawlHUD $r -CrawlHUDAnchor $(if($anchor.SelectedIndex -eq 1){"BottomLeft"}else{"BottomRight"}) -Confirm:$false
    & $load $result.Path;$message.ForeColor=[Drawing.Color]::FromArgb(20,120,55);$message.Text=if($clear){'Toolkit removed. Widescreen and LAA were preserved.'}else{'Settings saved. Use -vm:bw for borderless or -vm:w for windowed. Restart MSTS to apply changes.'}
   }catch{$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
   finally{$form.UseWaitCursor=$false;$browse.Enabled=$true;$apply.Enabled=($null -ne $ui.info);$restore.Enabled=($null -ne $ui.info)}
@@ -313,4 +319,4 @@ function Show-Options([string]$InitialPath){
 if($MyInvocation.InvocationName -eq '.'){return}
 if($Action -eq 'Gui'){Show-Options $ExePath}
 elseif($Action -eq 'Status'){Get-MstsImage $ExePath;Get-CrawlInstallation $ExePath}
-else{Invoke-Options -Path $ExePath -Timeout ($Action -eq 'Apply' -and $RemoveEndMessage) -Camera ($Action -eq 'Apply' -and $UnlockCameras) -CrawlMode ($Action -eq 'Apply' -and $Crawl) -VerboseLoading ($Action -eq 'Apply' -and $VerboseLoading) -StartupLog ($Action -eq 'Apply' -and $StartupLog) -UnlockFPS ($Action -eq 'Apply' -and $UnlockFPS) -CrawlHUD ($Action -eq 'Apply' -and $CrawlHUD) -Thrust $Strength -WindowFeatures ($Action -eq 'Apply' -and $WindowFeatures) -WhatIf:$WhatIfPreference}
+else{Invoke-Options -Path $ExePath -Timeout ($Action -eq 'Apply' -and $RemoveEndMessage) -Camera ($Action -eq 'Apply' -and $UnlockCameras) -CrawlMode ($Action -eq 'Apply' -and $Crawl) -VerboseLoading ($Action -eq 'Apply' -and $VerboseLoading) -StartupLog ($Action -eq 'Apply' -and $StartupLog) -UnlockFPS ($Action -eq 'Apply' -and $UnlockFPS) -CrawlHUD ($Action -eq 'Apply' -and $CrawlHUD) -CrawlHUDAnchor $CrawlHUDAnchor -Thrust $Strength -WindowFeatures ($Action -eq 'Apply' -and $WindowFeatures) -WhatIf:$WhatIfPreference}

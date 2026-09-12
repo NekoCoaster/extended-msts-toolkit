@@ -27,7 +27,7 @@ Each line contains elapsed milliseconds, an operation type, a sequence number an
 
 The localized `Loading...` string is resource 308 in `string.dll`. The initial `Exec Splash Window` at `0x7066b0` is a different display; its Windows text draw was investigated but left unchanged. The native progress renderer at `0x44cace` looks up text at calls `0x44cceb` and `0x44cd0d`, then draws it through the game's font object. Those two lookups substitute one line while tracking is active. Normal localized lookup resumes outside loading. This preserves the existing graphics backend, font and placement.
 
-The game's `CreateFileA` and `FindFirstFileA` imports at `0x84db34` and `0x84dc98` are chained to record activity, preserving the original arguments, handle and `GetLastError` result. Tracking uses bounded buffers and a critical section; it never recursively invokes the renderer from a file operation. The first event-loop frame call at `0x6ba175` closes tracking and forwards to `0x6ad020`. Ten checked raw mutations use the existing transaction/claim mechanism; no executable gateway allocation is needed for these changes.
+The game's `CreateFileA` and `FindFirstFileA` imports at `0x84db34` and `0x84dc98` are chained to record activity, preserving the original arguments, handle and `GetLastError` result. Tracking uses bounded buffers and a critical section; it never recursively invokes the renderer from a file operation. The first event-loop frame call at `0x6ba175` closes tracking and forwards to `0x6ad020`. Thirteen checked raw mutations use the existing transaction/claim mechanism; no executable gateway allocation is needed for these changes.
 
 The early command-line stage now also runs when no video-mode argument was supplied. It retains exact image-header and normalized whole-image validation and the compatibility-import chaining fix. Configuration and file I/O run outside `DllMain`. The optional `-noclamp` addition uses the game's parser; limiter instructions and timing equations are not patched. See the [historical FPS investigation](miscellaneous/fps.md).
 
@@ -47,9 +47,9 @@ Automated tests cover argument preservation and `-noclamp` deduplication, compat
 
 ## Terrain-buffer progress and remaining time
 
-During actual generation, the single line reads for example `Generating terrain buffers 25.0%: ~10m 00s remaining`. Before enough progress is available it says `estimating...`. The estimate is elapsed time multiplied by remaining percentage divided by completed percentage. It is an estimate, not a deadline: individual buffers can take different amounts of time.
+During actual generation, the single line reads for example `Generating terrain buffers 58/232 25%: ~10m 00s remaining`. Before enough progress is available it says `estimating...`. The estimate is elapsed time multiplied by remaining percentage divided by completed percentage. It is an estimate, not a deadline: individual buffers can take different amounts of time.
 
-MSTS supplies integer percentages, so the displayed decimal is always `.0`; there is no claimed sub-percent precision. Updates arrive after completed buffer jobs when MSTS redraws. The message may remain stationary during a slow job. No separate animation or timer redraw is injected. Existing loading text is replaced, not stacked into a second line.
+MSTS supplies integer percentages; no sub-percent precision is claimed. Updates arrive after completed buffer jobs when MSTS redraws. The message may remain stationary during a slow job. No separate animation or timer redraw is injected. Existing loading text is replaced, not stacked into a second line.
 
 The generator at `0x56685f` counts missing jobs, increments the completed count after generating a buffer, and passes floor(completed × 100 / total) to the progress renderer. Checked calls `0x566cc2` and `0x566d21` wrap progress initialization and updates respectively, forwarding to `0x4023e2`. Resource 53 identifies generation; resources 58 and 59 identify the preceding checks/collation. Activity tracking wraps creation at `0x490e1d`, failure cleanup at `0x49105d` and first-frame cleanup at `0x4900e7`. Failed loading-window creation also clears tracking.
 
@@ -68,3 +68,13 @@ After moving the LGVMED test copy out, the final build reached the main menu nor
 ## Host follow-up
 
 The owner confirmed terrain generation completed successfully and supplied a screenshot showing 46.0% with an estimated five seconds remaining. They identified LGVMed’s documented Xtracks 3.10 requirement and reported that installing Xtracks resolved the host startup crash. The supplied VM comparison package is Xtracks Standard Edition 3.22. These host reports supersede the earlier blocked terrain test, without turning the earlier VM failure into a successful measurement.
+
+## Generation counts and the following pause
+
+The generation line now includes completed/total jobs: `Generating terrain buffers 56/232 24%: ~0m 08s remaining`. These are per-tile generation jobs, not individual output files. LGVMed’s 232 jobs generate 464 `_e.raw`/`_n.raw` files. Percentage remains the native integer result; the decimal `.0` was removed to keep the line compact.
+
+Two checked argument-load instructions now supply exact counts to the existing wrappers: `0x566cbd` reads total jobs from `[EBP-0x24]`, and `0x566d1c` reads completed jobs from `[EBP-0x4]`. Both originally loaded resource 53; the wrappers restore that resource when forwarding to the original renderer. The pair is installed atomically with the existing progress-call redirects. No guessed total is derived from a rounded percentage.
+
+The code immediately following generation selects the environment file (`0x4935af`) and initializes route/activity assets. No distinct post-generation terrain-validation loop with a measurable total was identified. The new checked call redirect at `0x494bc1` displays `Preparing route assets...`, clears generation mode and forwards to the original environment selection routine. It intentionally does not invent a validation count, percentage or ETA. Later native redraws continue to show observed file activity.
+
+VM build `4a0d061070a7af6c14b241604dba85d77038c8ff0e8c0bf1fbd1d0c973e5d34d` showed 56/232 jobs, 24% and approximately eight seconds remaining at 640×480, then entered LGVMed successfully. Only the 464 previously inventoried generated files were moved aside for this repeat, after checking every hash and path; original route files were preserved. The brief transition message was not captured visually in that run; its forwarding and generation-state reset have automated coverage. These observations do not imply every post-generation delay has been identified.
