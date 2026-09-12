@@ -43,7 +43,7 @@ CrawlStrength=10
 [Diagnostics]
 WriteStatusJson=false
 ShowCrawlHUD=true
-CrawlHUDAnchor=BottomRight
+CrawlHUDAnchor=BottomLeft
 ```
 
 Settings take effect after restarting MSTS. Crawling requires `PreventActivityEnd=true`; the form enforces this. Invalid manual configuration prevents feature installation. Missing feature flags default off. Thrust ranges from 0–100×; zero disables added thrust while retaining the selected throttle-dependent collision/animation effects.

@@ -3,7 +3,7 @@
 [CmdletBinding(SupportsShouldProcess=$true)]
 param([Parameter(Position=0)][Alias('Path')][string]$ExePath,
  [ValidateSet('Gui','Status','Apply','Restore')][string]$Action='Gui',
- [switch]$RemoveEndMessage,[switch]$UnlockCameras,[switch]$Crawl,[switch]$WindowFeatures,[switch]$VerboseLoading,[switch]$StartupLog,[switch]$UnlockFPS,[switch]$CrawlHUD,[ValidateSet("BottomLeft","BottomRight")][string]$CrawlHUDAnchor="BottomRight",
+ [switch]$RemoveEndMessage,[switch]$UnlockCameras,[switch]$Crawl,[switch]$WindowFeatures,[switch]$VerboseLoading,[switch]$StartupLog,[switch]$UnlockFPS,[switch]$CrawlHUD,[ValidateSet("BottomLeft","BottomRight")][string]$CrawlHUDAnchor="BottomLeft",
  [ValidateRange(0,100)][int]$Strength=10)
 $ErrorActionPreference='Stop'
 $script:Specs=@{
@@ -120,7 +120,7 @@ function Invoke-Options {
  if($ExpectedHash -and $ExpectedHash -ne $info.SHA256){throw 'The selected executable changed. Select it again.'}
  $gameDir=Split-Path -Parent $info.Path;$target=Join-Path $gameDir 'NEMT';$proxy=Join-Path $gameDir 'DINPUT.dll'
  $records=@(Get-ToolkitRecords $info.Path);$installed=Get-CrawlInstallation $info.Path
- if(-not $CrawlHUDAnchor){$CrawlHUDAnchor=if($installed -and $installed.crawlHUDAnchor -eq "BottomLeft"){"BottomLeft"}else{"BottomRight"}}
+ if(-not $CrawlHUDAnchor){$CrawlHUDAnchor=if($installed -and $installed.crawlHUDAnchor -eq "BottomRight"){"BottomRight"}else{"BottomLeft"}}
  $CrawlHUD=$CrawlHUD -or $CrawlMode
  $install=$Timeout -or $Camera -or $CrawlMode -or $WindowFeatures -or $VerboseLoading -or $StartupLog -or $UnlockFPS -or $CrawlHUD
  $modern=@($records | Where-Object {$_.Name -eq 'NEMT'})
@@ -281,7 +281,7 @@ function Show-Options([string]$InitialPath){
  foreach($control in $form.Controls){if($control.Top -ge $sliderPanel.Bottom){$control.Top+=36}}
  $anchorPanel=New-Object Windows.Forms.Panel;$anchorPanel.Location=New-Object Drawing.Point(24,($sliderPanel.Bottom+2));$anchorPanel.Size=New-Object Drawing.Size(652,32);$form.Controls.Add($anchorPanel)
  $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text="Crawl HUD position:";$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
- $anchor=New-Object Windows.Forms.ComboBox;$anchor.DropDownStyle="DropDownList";$anchor.Location=New-Object Drawing.Point(160,0);$anchor.Size=New-Object Drawing.Size(170,28);[void]$anchor.Items.AddRange(@("Bottom right","Bottom left"));$anchor.SelectedIndex=0;$anchorPanel.Controls.Add($anchor)
+ $anchor=New-Object Windows.Forms.ComboBox;$anchor.DropDownStyle="DropDownList";$anchor.Location=New-Object Drawing.Point(160,0);$anchor.Size=New-Object Drawing.Size(170,28);[void]$anchor.Items.AddRange(@("Bottom right","Bottom left"));$anchor.SelectedIndex=1;$anchorPanel.Controls.Add($anchor)
  $form.AutoScroll=$true
  $ui=@{info=$null;loading=$false}
  $refresh={ $anchorPanel.Visible=$crawl.Checked;$sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
@@ -291,7 +291,7 @@ function Show-Options([string]$InitialPath){
  $load={param([string]$p)
   $ui.info=$null;$ui.loading=$true;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p
   try{$i=Get-MstsImage $p;$m=Get-CrawlInstallation $i.Path;$ui.info=$i;$pathText.Text=$i.Path;$version.Text='Valid train.exe version: '+$i.Version;$version.ForeColor=[Drawing.Color]::FromArgb(0,170,0)
-   $anchor.SelectedIndex=if($m -and $m.crawlHUDAnchor -eq "BottomLeft"){1}else{0}
+   $anchor.SelectedIndex=if($m -and $m.crawlHUDAnchor -eq "BottomRight"){0}else{1}
    $fps.Checked=($m -and $m.enabled -and $m.unlockFPS);$verbose.Checked=($m -and $m.enabled -and $m.verboseLoading);$startupLogBox.Checked=($m -and $m.enabled -and $m.startupLog)
    $window.Checked=if($m -and $null -ne $m.windowFeatures){$m.enabled -and $m.windowFeatures}else{$true}
    $timeout.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.preventEnd}else{$i.TimeoutPatched};$camera.Checked=if($m -and $m.runtime -eq 'nemt-native'){$m.enabled -and $m.unlockCameras}else{$i.CameraPatched};$crawl.Checked=($null -ne $m -and $m.enabled -and ($m.runtime -ne 'nemt-native' -or $m.crawl));$slider.Value=if($m){[Math]::Max(0,[Math]::Min(100,[int]$m.strength))}else{10}
