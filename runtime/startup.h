@@ -1,5 +1,6 @@
 /* MIT. Startup-only file diagnostics and native loading-text substitution. */
 __declspec(dllimport) int WINAPI MultiByteToWideChar(UINT,DWORD,LPCSTR,int,LPWSTR,int);
+#include "terrain.h"
 typedef HANDLE (WINAPI *StartupOpenFn)(LPCSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE);
 typedef HANDLE (WINAPI *StartupFindFn)(LPCSTR,LPWIN32_FIND_DATAA);
 typedef WCHAR *(__fastcall *StartupStringFn)(U);
@@ -13,7 +14,10 @@ static HANDLE startup_file=INVALID_HANDLE_VALUE;
 static DWORD startup_bytes,startup_started,startup_sequence,startup_display_updates;
 static WCHAR startup_text[96]=L"Loading: initializing MSTS";
 static WCHAR startup_draw_text[96];
-static Hook startup_hooks[5];
+static Hook startup_hooks[10];
+static U (__fastcall *loading_begin_original)(U)=(void*)0x401c53;
+static void (*loading_end_original)(void)=(void*)0x4014d3;
+static int activity_loading;
 static void startup_write(const char *operation,const char *name,DWORD number){
  char line[1024];DWORD written;int n;
  if(startup_file==INVALID_HANDLE_VALUE)return;
@@ -51,7 +55,21 @@ static HANDLE WINAPI startup_find(LPCSTR name,LPWIN32_FIND_DATAA data){
 }
 static WCHAR *__fastcall startup_loading_string(U resource){
  if(!startup_active||!verbose_loading)return startup_string_original(resource);
- EnterCriticalSection(&startup_lock);wcscpy(startup_draw_text,startup_text);startup_display_updates++;LeaveCriticalSection(&startup_lock);return startup_draw_text;
+ EnterCriticalSection(&startup_lock);
+ if(resource==53&&terrain_active){char text[96];terrain_format(text,sizeof(text),terrain_percent,GetTickCount()-terrain_started,terrain_updates);MultiByteToWideChar(0,0,text,-1,startup_draw_text,96);}
+ else wcscpy(startup_draw_text,startup_text);
+ startup_display_updates++;LeaveCriticalSection(&startup_lock);return startup_draw_text;
+}
+static U __fastcall loading_begin(U mode){
+ U result;
+ if(verbose_loading){EnterCriticalSection(&startup_lock);activity_loading=1;startup_active=1;startup_sequence=0;terrain_active=0;wcscpy(startup_text,L"Preparing selected activity...");LeaveCriticalSection(&startup_lock);}
+ result=loading_begin_original(mode);
+ if(!result&&verbose_loading){EnterCriticalSection(&startup_lock);activity_loading=0;startup_active=0;LeaveCriticalSection(&startup_lock);}
+ return result;
+}
+static void loading_end(void){
+ if(activity_loading){EnterCriticalSection(&startup_lock);startup_active=0;activity_loading=0;LeaveCriticalSection(&startup_lock);}
+ loading_end_original();
 }
 static void startup_finish(void){
  if(!startup_active)return;EnterCriticalSection(&startup_lock);
@@ -72,8 +90,13 @@ static int install_startup_hooks(void){
  startup_call(&startup_hooks[2],0x44cceb,0x402590,(U)startup_loading_string);
  startup_call(&startup_hooks[3],0x44cd0d,0x402590,(U)startup_loading_string);
  startup_call(&startup_hooks[4],0x6ba175,0x6ad020,(U)startup_first_frame);
+ startup_call(&startup_hooks[5],0x490e1d,0x401c53,(U)loading_begin);
+ startup_call(&startup_hooks[6],0x49105d,0x4014d3,(U)loading_end);
+ startup_call(&startup_hooks[7],0x4900e7,0x4014d3,(U)loading_end);
+ startup_call(&startup_hooks[8],0x566cc2,0x4023e2,(U)terrain_begin);
+ startup_call(&startup_hooks[9],0x566d21,0x4023e2,(U)terrain_progress);
  InitializeCriticalSection(&startup_lock);startup_started=GetTickCount();startup_active=1;
- if(!prepare_hooks(startup_hooks,5)||!install_hooks(startup_hooks,5)){startup_active=0;return 0;}
+ if(!prepare_hooks(startup_hooks,10)||!install_hooks(startup_hooks,10)){startup_active=0;return 0;}
  if(startup_log){wcscpy(path,runtime_dir);wcscat(path,L"startup.log");startup_file=CreateFileW(path,GENERIC_WRITE,FILE_SHARE_READ,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);startup_write("STARTUP BEGIN","File API activity; not a crash-cause diagnosis. Paths use Windows ANSI encoding.",0);}
  return 1;
 }

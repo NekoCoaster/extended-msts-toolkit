@@ -15,3 +15,5 @@ Apply preserves an explicit logging opt-in. Uninstall removes the owned loader a
 When upgrading MEDS, the old MEDS/MSTS-Derailment folder may remain with disabled ownership metadata and old diagnostic snapshots. Known active legacy runtime files are removed; arbitrary user files are not recursively deleted.
 
 Registry detection only reads the current-user/local-machine MSTS `EXE Path` and `Path` entries in both registry views. An explicitly supplied executable takes priority, and all detected candidates undergo normal compatibility checks.
+
+The optional extended F5 HUD reads in-memory telemetry and adds no files or file writes. Activity loading detail likewise does not reopen startup.log.

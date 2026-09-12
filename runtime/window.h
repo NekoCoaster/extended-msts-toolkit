@@ -74,6 +74,7 @@ static LPSTR WINAPI toolkit_command_line(void){
     if(normalized_command_line){
      normalize_launch(actual,normalized_command_line,config_valid&&unlock_fps);
      if(config_valid)install_startup_hooks();
+     if(config_valid)install_hud_hook();
      if(config_valid&&window_features&&(requested_window_mode==2||(requested_window_mode==1&&center_windowed))){
       window_mode=requested_window_mode;if(!install_window_hooks())window_mode=0;
      }

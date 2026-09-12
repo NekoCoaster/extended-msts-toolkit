@@ -1,8 +1,8 @@
-# Startup loading details and FPS option
+# Startup/activity loading details and FPS option
 
 Open **NEMT.vbs**, select `train.exe`, choose the options and Apply with MSTS closed:
 
-- **Show verbose startup loading details** replaces the native loading-screen text with the latest observed file or directory scan. Long paths show their trailing portion to fit the existing text area.
+- **Show verbose startup and activity loading details** replaces the native loading-screen text with the latest observed file or directory scan. Long paths show their trailing portion to fit the existing text area.
 - **Write startup diagnostic log** records file-open and directory-search attempts and their results in `NEMT/startup.log`. It is off by default and works independently of the display option.
 - **Unlock FPS limit (forces -noclamp launch parameter)** adds MSTS's existing `-noclamp` option to its private startup command line. Shortcuts need no edits. Existing resolution/window arguments are preserved, and an existing `-noclamp` token is not duplicated. Disabling the option does not remove a parameter explicitly supplied by the user.
 
@@ -15,7 +15,7 @@ UnlockFPS=false
 
 Restart MSTS after changing settings. Missing flags default off. The initial splash image is unchanged. The display updates when MSTS redraws its native loading screen; it is not an independently animated monitor, and it may hold its last message while a long operation runs. The first version reports actual file API activity rather than inventing names for untraced parsing or registry operations. It does not report file reads made privately inside other DLLs.
 
-The tracker stops when the application reaches its first main event-loop frame. Later activity loading and gameplay do not generate startup records or substitute loading text. An enabled log is replaced on each fresh launch, capped at 8 MiB, and closed at startup completion. Disabling logging leaves an existing log untouched. The installer does not create this optional fourth file; Uninstall retains it as a diagnostic record. Regular OS writes are used, without per-record flush-to-disk calls. Logging has some startup I/O cost, and the last record is not guaranteed to survive a machine/power failure.
+Initial startup tracking stops at the first main event-loop frame. Activity loading reactivates display tracking until loading fails or the first driving frame begins, including subsequent activities. Activity tracking does not reopen the startup log. An enabled log is replaced on each fresh launch, capped at 8 MiB, and closed at startup completion. Disabling logging leaves an existing log untouched. The installer does not create this optional fourth file; Uninstall retains it as a diagnostic record. Regular OS writes are used, without per-record flush-to-disk calls. Logging has some startup I/O cost, and the last record is not guaranteed to survive a machine/power failure.
 
 ## Reading a log
 
@@ -25,17 +25,17 @@ Each line contains elapsed milliseconds, an operation type, a sequence number an
 
 ## Implementation and findings
 
-The localized `Loading...` string is resource 308 in `string.dll`. The initial `Exec Splash Window` at `0x7066b0` is a different display; its Windows text draw was investigated but left unchanged. The native progress renderer at `0x44cace` looks up text at calls `0x44cceb` and `0x44cd0d`, then draws it through the game's font object. Only those two calls are redirected. Normal localized lookup resumes after startup. This preserves the existing graphics backend, font and placement.
+The localized `Loading...` string is resource 308 in `string.dll`. The initial `Exec Splash Window` at `0x7066b0` is a different display; its Windows text draw was investigated but left unchanged. The native progress renderer at `0x44cace` looks up text at calls `0x44cceb` and `0x44cd0d`, then draws it through the game's font object. Those two lookups substitute one line while tracking is active. Normal localized lookup resumes outside loading. This preserves the existing graphics backend, font and placement.
 
-The game's `CreateFileA` and `FindFirstFileA` imports at `0x84db34` and `0x84dc98` are chained to record activity, preserving the original arguments, handle and `GetLastError` result. Tracking uses bounded buffers and a critical section; it never recursively invokes the renderer from a file operation. The first event-loop frame call at `0x6ba175` closes tracking and forwards to `0x6ad020`. Five checked raw mutations use the existing transaction/claim mechanism; no executable gateway allocation is needed for these changes.
+The game's `CreateFileA` and `FindFirstFileA` imports at `0x84db34` and `0x84dc98` are chained to record activity, preserving the original arguments, handle and `GetLastError` result. Tracking uses bounded buffers and a critical section; it never recursively invokes the renderer from a file operation. The first event-loop frame call at `0x6ba175` closes tracking and forwards to `0x6ad020`. Ten checked raw mutations use the existing transaction/claim mechanism; no executable gateway allocation is needed for these changes.
 
 The early command-line stage now also runs when no video-mode argument was supplied. It retains exact image-header and normalized whole-image validation and the compatibility-import chaining fix. Configuration and file I/O run outside `DllMain`. The optional `-noclamp` addition uses the game's parser; limiter instructions and timing equations are not patched. See the [historical FPS investigation](miscellaneous/fps.md).
 
 ## Validation
 
-VM smoke-test DLL SHA-256: `5b9cef7975fa389c95639ac6857089d3d8d63395afc982e3c83d063fe3780d6c` (38,400 bytes). Normal `train.exe -vm:w` launch, no Frida. The recorded run reached the menu, counted 18 text substitutions and 346 file/directory operations, and closed the log at the first event-loop frame. The main menu was visually inspected and MSTS exited normally. These counts describe this installation and run, not a benchmark or universal startup sequence. The fast loading-screen text itself was not captured visually; host readability validation remains pending.
+Historical startup-only VM smoke-test DLL SHA-256: `5b9cef7975fa389c95639ac6857089d3d8d63395afc982e3c83d063fe3780d6c` (38,400 bytes). Normal `train.exe -vm:w` launch, no Frida. The recorded run reached the menu, counted 18 text substitutions and 346 file/directory operations, and closed the log at the first event-loop frame. The main menu was visually inspected and MSTS exited normally. These counts describe this installation and run, not a benchmark or universal startup sequence. The fast loading-screen text itself was not captured visually; the owner subsequently confirmed the startup text was visible and working.
 
-Automated tests cover argument preservation and `-noclamp` deduplication, compatibility redirect chaining, native window sizing, startup API result/error preservation, bounded text, post-startup bypass, and 28 installer combinations across four executable variants. Original call-site bytes are checked against the supplied base/widescreen fixtures. Existing native physics, lifecycle and mutation tests remain separate regressions. No game binaries or raw research exports ship in the package.
+Automated tests cover argument preservation and `-noclamp` deduplication, compatibility redirect chaining, native window sizing, startup API result/error preservation, bounded text, post-startup bypass, and 60 startup/HUD installer combinations across four executable variants. Original call-site bytes are checked against the supplied base/widescreen fixtures. Existing native physics, lifecycle and mutation tests remain separate regressions. No game binaries or raw research exports ship in the package.
 
 ## Host checklist
 
@@ -44,3 +44,23 @@ Automated tests cover argument preservation and `-noclamp` deduplication, compat
 3. Disable the log and restart. Confirm the previous file stays unchanged while verbose text still works.
 4. Enable the FPS option and launch without manually adding `-noclamp`. Compare with the known explicit-parameter behavior; rendering/CPU limits can still constrain FPS.
 5. Retest `-vm:bw`, a custom resolution and Alt+Tab. The prior host-validated borderless checkpoint remains available as `nemt-borderless-host-tested`.
+
+## Terrain-buffer progress and remaining time
+
+During actual generation, the single line reads for example `Generating terrain buffers 25.0%: ~10m 00s remaining`. Before enough progress is available it says `estimating...`. The estimate is elapsed time multiplied by remaining percentage divided by completed percentage. It is an estimate, not a deadline: individual buffers can take different amounts of time.
+
+MSTS supplies integer percentages, so the displayed decimal is always `.0`; there is no claimed sub-percent precision. Updates arrive after completed buffer jobs when MSTS redraws. The message may remain stationary during a slow job. No separate animation or timer redraw is injected. Existing loading text is replaced, not stacked into a second line.
+
+The generator at `0x56685f` counts missing jobs, increments the completed count after generating a buffer, and passes floor(completed × 100 / total) to the progress renderer. Checked calls `0x566cc2` and `0x566d21` wrap progress initialization and updates respectively, forwarding to `0x4023e2`. Resource 53 identifies generation; resources 58 and 59 identify the preceding checks/collation. Activity tracking wraps creation at `0x490e1d`, failure cleanup at `0x49105d` and first-frame cleanup at `0x4900e7`. Failed loading-window creation also clears tracking.
+
+Automated tests cover initial/partial/completed estimates, insufficient samples, repeated activity loads and failed creation. VM smoke build `f66e0b23e31ab945421980fe87ea38ad49ebfc5560eec48310458567ab60c8af` displayed a single file-detail line while loading Megacoaster and reached the driving scene. The startup log stayed closed and unchanged during activity loading. No real missing-buffer generation was measured in that run; the subsequent LGVMED trial below was blocked before generation. Synthetic estimate tests are not a substitute for that route test.
+
+For a repeatable route test, inventory the untouched route before its first load, record the post-load differences, and preserve any original files. Only newly generated terrain buffers verified by this comparison should be removed for a repeat. Keep route files and inventories local, outside release archives.
+
+## LGVMED trial, 12 September 2026
+
+Final DLL `6e257dc1f58bba74175acfe5b46fc520fb05754ad4c2379aa8c1adf8b41d09b0` (44,544 bytes) was tested with a fresh installed LGVMed 3.0 copy. The original route was inventoried by relative path, size and SHA-256 before launch, and preserved separately. Startup crashed before reaching the menu or terrain generation. A second normal windowed launch with NEMT's DLL temporarily removed crashed at the same `train.exe` offset `0x002f4c5a`, exception `0xc0000005`. This reproduces the failure without NEMT, but does not identify its underlying cause.
+
+The logged run had progressed beyond LGVMed's paths before its last observed open, `routes/USA2/Marias.tdb`. That last file is not proof of fault. Post-run comparison found zero added, removed or content-modified route files, so no generated buffers required rollback. NEMT was restored and the test route copy moved out of active Routes into local scratch; the user's original route copy was untouched. Live terrain-percentage/ETA verification remains blocked by this independent startup failure. Inventories, crash events and logs remain local under work/ and are excluded from the release.
+
+After moving the LGVMED test copy out, the final build reached the main menu normally: 346 observed operations, 18 text substitutions, and a closed startup log. The menu was visually inspected and MSTS exited normally.

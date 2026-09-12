@@ -12,6 +12,8 @@ typedef struct {U originalReturn,slot,bits,a,b,links[4],body;float filtered[3];i
 typedef struct {U depth;Call calls[64];} ThreadCalls;
 static DWORD tls_index=TLS_OUT_OF_INDEXES,simulation_thread;
 static CRITICAL_SECTION state_lock;
+static volatile LONG crawl_state_ready;
+static double applied_dt;
 static Car cars[256];static U car_count,train_id,frame_count,control_type,active_count;
 static int enabled,blocked,strength=10,have_sim;
 #include "config.h"
@@ -76,6 +78,7 @@ static void update_frame(void){
   if(!calc_impulse(c->axis,c->velocity,c->mass,c->maxForce,c->maxPower,throttle,direction,dt,strength,c->dp,c->dv)){fail("Invalid propulsion parameters");return;}
   for(j=0;j<3;j++){double p=rf((B*)c->body+0x4c+j*4)+c->dp[j],v=c->velocity[j]+c->dv[j];if(!finite_number(p)||fabs(p)>3.4e38||!finite_number(v)||fabs(v)>3.4e38){fail("Invalid momentum");return;}}
  }
+ applied_dt=minimum(dt,.25);
  for(i=0;i<car_count;i++){Car *c=&cars[i];if(!c->engine||!c->derailed||!(c->dp[0]||c->dp[1]||c->dp[2]))continue;
   *((B*)c->body+0xf2)&=~8;
   for(j=0;j<3;j++){wf(c->body+0x4c+j*4,rf((B*)c->body+0x4c+j*4)+c->dp[j]);wf(c->body+0x88+j*4,c->velocity[j]+c->dv[j]);}
@@ -162,6 +165,7 @@ static int start_native(void){
  if(crawl_requested){
   tls_index=TlsAlloc();if(tls_index==TLS_OUT_OF_INDEXES)return 0;
   InitializeCriticalSection(&state_lock);
+  InterlockedExchange(&crawl_state_ready,1);
   for(tries=WHEEL;tries<HOOK_COUNT;tries++){hooks[tries].gate=(U)&enabled;hooks[tries].pause=G(0x7be0f4);}
   hooks[DRAG].sites=drag_sites;hooks[DRAG].site_count=6;
   hooks[VECTOR].sites=vector_site;hooks[VECTOR].site_count=1;

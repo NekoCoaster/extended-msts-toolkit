@@ -45,3 +45,7 @@ python tools/package.py
 ```
 
 The build refreshes the DLL integrity hash. The packager excludes Git metadata and scratch work, verifies local documentation links and checks archive CRC/content equality. Compiler/runtime notices remain under `docs/licenses`. Contributor tools are not end-user dependencies.
+
+## Loading and HUD modules
+
+The independent startup module now tracks activity loading and native terrain progress; see [loading details](startup.md). The optional [white F5 HUD](crawl-hud.md) is installed during early initialization but reads crawl state only after the existing lock is ready. It uses the native renderer and adds no worker or file output. These modules use the shared checked mutation transaction, retaining whole-image validation.
