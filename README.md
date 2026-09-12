@@ -2,7 +2,7 @@
 
 A small native toolkit for Microsoft Train Simulator. Activity-end prevention, camera access and connected-engine crawling share one configurable `DINPUT.dll`.
 
-Development version **1.1.0-alpha.8** adds **Skip startup movie** and **Restore keyboard control after movie** to the control panel. Skipping changes only the startup decision in memory; it does not edit the registry, rename the movie, or change train.exe. Playback uses MSTS's original renderer. The experimental rendering changes have been removed; the host black-picture issue remains unresolved. See the [movie options](docs/startup-movie-options.md). Keyboard recovery and the native red-signal alert passed earlier host tests. High-FPS timing remains potentially unstable. The stable release remains **1.0.2**.
+Development version **1.1.0-alpha.9** provides a single **Skip startup movie (fixes keyboard control issue when loading into simulator)** option. Skipping changes only the startup decision in memory; it does not edit the registry, rename the movie, or change train.exe. Playback uses MSTS's original renderer. The experimental rendering changes have been removed; the host black-picture issue remains unresolved. See the [movie options](docs/startup-movie-options.md). Movie skipping passed host testing. The separate keyboard-recovery option did not resolve the latest host test and has been removed from the form. The native red-signal alert passed earlier host tests. High-FPS timing remains potentially unstable. The stable release remains **1.0.2**.
 
 Source: [NekoCoaster/extended-msts-toolkit](https://github.com/NekoCoaster/extended-msts-toolkit).
 
@@ -32,7 +32,7 @@ VerboseLoading=false
 WriteLog=false
 UnlockFPS=false
 SkipStartupMovie=false
-RestoreMovieFocus=true
+RestoreMovieFocus=false
 MaxLogSizeKB=8192
 MaxBackupLogs=0
 
