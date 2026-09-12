@@ -6,6 +6,8 @@ The supplied Noli widescreen patch was run on an isolated workspace copy. Its ou
 
 ## General Options is made of real widgets
 
+Scope update: in-game settings integration has been dropped to avoid conflicts with widget/layout add-ons. The findings below are archived technical research. The standalone form remains the settings interface.
+
 `GUI/WIDGETS/optwidg.dat` defines the General Options checkboxes as `TrGUI_OnOff` widgets containing buttons and regions. Labels are separate text regions; checkbox surfaces come from the shared bitmap definitions. For example, the derailment checkbox occupies a 20×20 region at (94,242) in the 800×600 menu coordinate space. It is not baked into the background artwork.
 
 The native interface has a concrete lifecycle:
@@ -82,6 +84,8 @@ Do not patch the shared rotation helper globally: other interface rendering may 
 The Acela CVF defines a 9×65 speedometer needle with pivot 44. With scale factors 2 and 1.5, a 45° example puts its top-centre point at approximately (46.669, −46.669) with the current order and (62.225, −46.669) with the screen-relative order, relative to the pivot. The roughly 15.6-pixel horizontal difference is calculated, not measured from a screenshot.
 
 ### Remaining live checks
+
+Host feedback for `1.1.0-alpha.1` reports that the needles look substantially better. This is a positive visual comparison, not confirmation of every cab, resolution or texture variant listed below.
 
 Use the confirmed widescreen fixture at 1280×720 and 1920×1080, plus a 4:3 control case. Start normally and wait until the driving scene and settings have loaded before any Frida attachment. Compare stock Acela speed and pressure needles through their sweeps, including neutral angles, endpoints, day/night textures and resolution changes. Check needle pivots and instrument hit regions. Also test a second cab and a cab already adapted manually for widescreen before considering a default-on correction.
 

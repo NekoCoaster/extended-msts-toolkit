@@ -4,6 +4,8 @@ The NEMT form can now add the existing parameter automatically through **Unlock 
 
 ## Recommended first step: use `-noclamp`
 
+Follow-up: host testing now reports accelerated simulation time and unreliable time acceleration with this option. The timing issue is under investigation; `-noclamp` alone should not be treated as a fully validated high-FPS solution. The historical minimum-step finding below is relevant, but accelerated-time behavior still needs separate validation.
+
 MSTS already has a `-noclamp` launch parameter that disables the game-side frame limiter identified in this investigation. Host testing established the desired higher-frame-rate behavior, with performance still constrained by CPU throughput. For that goal, **prefer this existing option over reverse engineering or patching the executable**.
 
 For a windowed launch from the MSTS installation directory, use:
