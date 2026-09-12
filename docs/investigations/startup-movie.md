@@ -6,7 +6,7 @@ The startup clip produced audio but only a black rectangle on the host with NEMT
 
 MSTS's movie opener at `0x52ffb3` first requests `tsmpegvideo!<filename>` for MPEG files, then retries the plain filename only if opening returns an error. A driver can successfully open and play audio without producing a visible picture, so that fallback need not run for the reported symptom. The VM's 32-bit MCI registry associates `tsmpegvideo` with the old `tsqtz32.dll` and `MPEGVideo` with Windows' `mciqtz32.dll`.
 
-The playback function at `0x52fc32` temporarily subclasses the main window. Its movie procedure at `0x52fb70` discards `WM_ACTIVATEAPP`. Successful completion or skipping restores the saved procedure, but does not explicitly restore keyboard focus or replay the current application activation state. This is a plausible cause of the keyboard symptom; a new host comparison is required to establish whether the correction resolves it.
+The playback function at `0x52fc32` temporarily subclasses the main window. Its movie procedure at `0x52fb70` discards `WM_ACTIVATEAPP`. Successful completion or skipping restores the saved procedure, but does not explicitly restore keyboard focus or replay the current application activation state. Alpha.4 host testing subsequently confirmed working keyboard controls after both natural movie completion and skipping, without an Alt-Tab workaround. These functional results support the correction, but do not isolate which restoration step is responsible.
 
 ## Test build
 
@@ -24,9 +24,19 @@ The focus option wraps the original playback call. After the original procedure 
 
 The checked call sites are `0x52fc29` (playback) and `0x52fd4a` (open). Installation uses the shared byte-checked transaction at normal command-line startup, outside the loader lock. The wrappers are dormant when the movie is disabled or missing. No Frida, additional player process, recurring worker or per-frame writes are used.
 
-These are comparison fixes, not confirmed playback or keyboard results. Automated tests mock the media and focus APIs and verify selection, fallback, return preservation, focus guards and disabled settings. Supported executable sites and installer persistence also pass.
+Keyboard recovery is host-validated for the two tested paths; video rendering remains unresolved. Automated tests mock the media and focus APIs and verify selection, fallback, return preservation, focus guards and disabled settings. Supported executable sites and installer persistence also pass.
 
-## Host checks
+## Recorded host results
+
+| Alpha.4 check | Result |
+|---|---|
+| Let the movie finish, then load an activity | Keyboard controls work without Alt-Tab. |
+| Skip the movie, then load an activity | Keyboard controls work without Alt-Tab. |
+| Video with Windows MPEG driver selection enabled | Still black; no visible-video improvement. |
+
+The standard-driver attempt is not a confirmed video fix. The black screen also occurred without NEMT, and the GDI/D3D11 configuration comparisons were unsuccessful. No claim is made that the movie rendering issue is resolved. Switching away during playback and broader fullscreen/windowed combinations have not been separately confirmed in this report.
+
+## Repeatable host checks
 
 1. Close MSTS, pull `codex/settings-cab-investigation`, run `NEMT.vbs`, confirm **1.1.0-alpha.4**, and Apply the desired features. Both movie settings above are written automatically; there is no extra checkbox.
 2. Ensure the clip is named `GLOBAL\startup.mpg` and the simulator is configured to show it. Use the same dgVoodoo configuration for the before/after comparison.
