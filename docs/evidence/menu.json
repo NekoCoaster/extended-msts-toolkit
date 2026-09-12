@@ -1,0 +1,11 @@
+{
+  "memoryTimeout": "7416",
+  "memoryCamera": "0f8455030000",
+  "crawlFramePrefix": "558bec83ec08",
+  "diskSHA256": "69218fce876298c684a2140c7d3925a452c47bb10037ffd8c491f65c5c0c6e7a",
+  "status": {
+    "runtime": "NEMT",
+    "phase": "not-running",
+    "note": "Installer snapshot; live diagnostics are optional."
+  }
+}

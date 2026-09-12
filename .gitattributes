@@ -1,0 +1,4 @@
+* -text whitespace=cr-at-eol
+docs/licenses/** -whitespace
+*.dll binary
+*.png binary

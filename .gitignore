@@ -1,0 +1,8 @@
+*.bak
+*.exe
+__pycache__/
+*.pyc
+status.json
+installation.json
+
+/work/
