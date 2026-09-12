@@ -1,0 +1,29 @@
+# Feature guide
+
+Select options in NEMT.vbs, click **Apply**, and restart MSTS. The options are independent except where a dependency is described below.
+
+| Control-panel option | Behavior and notes |
+| --- | --- |
+| **Skip startup movie (fixes keyboard control issue when loading into simulator)** | Bypasses the clip before playback. The registry and movie file remain unchanged. Unchecked, MSTS follows its normal movie behavior. |
+| **Enable borderless windowed mode** | Removes the frame and centers the game window. An explicit fullscreen launch takes precedence. See [window modes](borderless.md). |
+| **Unlock FPS limit — Potentially unstable** | Enables the game's uncapped mode together with timing correction. Higher FPS is not guaranteed. Disable this option if it causes problems; also remove any uncapping argument you added to your own shortcut when returning to normal timing. |
+| **Show verbose startup and activity loading details** | Replaces the loading text with observed loading activity. Terrain generation includes completed/total jobs, percentage and an estimated remaining time. |
+| **Write startup diagnostic log** | Saves optional startup diagnostics. It is independent of the loading-screen text. See [logs](startup.md). |
+| **Fix cabview dials for widescreen displays** | Corrects dial-needle proportions. Available only for a supported widescreen executable; use the adjacent installation-guide link if needed. |
+| **Unmute while in background** | Keeps game audio active when another application has focus. |
+| **Continue after passing a red signal (Resume after failure message)** | Displays the built-in activity-failure message and permits continued simulation after dismissal. This does not turn the failed activity into a successful one or bypass unrelated failure conditions. |
+| **Remove derailment activity-end message** | Prevents the derailment activity-end message from ending the session. Other activity-ending conditions remain separate. |
+| **Unlock camera modes during derailment** | Keeps camera controls available after derailment. |
+| **Allow connected engines to crawl after derailment** | Adds powered movement after derailment. The panel also selects derailment activity-end prevention, which crawling requires. |
+
+## Crawling controls
+
+**Use throttle for speed & reverser for direction.** Steam locomotives use the regulator and reverser. Eligible engines contribute according to their individual power and force values.
+
+The strength slider ranges from **0–100×**, initially **10×**. At zero the form shows **Disabled**: added thrust is off, while the other selected crawling effects remain enabled. Higher settings are intended for playful movement, not realistic recovery.
+
+Choose **Bottom left** or **Bottom right** for the crawl HUD. Bottom left is the default. The HUD is included with crawling and appears in MSTS Bin's white extended F5 display. [Crawling guide](crawl-hud.md).
+
+## Select All
+
+The button checks every available checkbox, including the FPS and optional logging options. It does not change the thrust multiplier or enable an incompatible cab-dial option. You can uncheck individual options before Apply.

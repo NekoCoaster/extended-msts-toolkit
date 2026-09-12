@@ -1,6 +1,6 @@
 # Movie window rendering comparison — alpha.6
 
-> Historical investigation: alpha.8 removes all experimental movie rendering changes. Use the [current movie options](../startup-movie-options.md) for setup.
+> Historical investigation: alpha.8 removes all experimental movie rendering changes. Use the [current movie options](../technical/startup-movie-options.md) for setup.
 
 ## Alpha.5 regression and alpha.6 follow-up
 

@@ -16,7 +16,7 @@ These live observations describe the migration DLL hash below, not the later bor
 
 DLL SHA-256: `0df0a3c77a6b16f192f064ef543cd3469049f4807f600e4b0c140b76a298d5f1`.
 
-Normal `train.exe -vm:w` startup; no Frida attached. The [menu snapshot](evidence/menu.json) shows original activity-end/camera/frame-prefix bytes. The [activity snapshot](evidence/activity.json) shows the two selected in-memory changes and installed crawl frame hook, while the disk executable remained SHA-256 `69218fce876298c684a2140c7d3925a452c47bb10037ffd8c491f65c5c0c6e7a`.
+Normal `train.exe -vm:w` startup; no Frida attached. The [menu snapshot](../evidence/menu.json) shows original activity-end/camera/frame-prefix bytes. The [activity snapshot](../evidence/activity.json) shows the two selected in-memory changes and installed crawl frame hook, while the disk executable remained SHA-256 `69218fce876298c684a2140c7d3925a452c47bb10037ffd8c491f65c5c0c6e7a`.
 
 The configured route showed a 2 mph limit. The eight-car Acela derailed naturally; memory reads confirmed derail flags. External camera selection worked, forward and 50% throttle controls were accepted, and activity exit returned normally to the menu. The game then closed normally. Diagnostic logging remained disabled and its installer placeholder was unchanged.
 

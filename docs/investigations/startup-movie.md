@@ -1,6 +1,6 @@
 # Startup movie and keyboard recovery — alpha.4
 
-> Historical investigation: alpha.8 removes all experimental movie rendering changes. Use the [current movie options](../startup-movie-options.md) for setup.
+> Historical investigation: alpha.8 removes all experimental movie rendering changes. Use the [current movie options](../technical/startup-movie-options.md) for setup.
 
 ## Findings
 

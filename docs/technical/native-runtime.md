@@ -6,7 +6,7 @@ NEMT derives from MEDS commit `1b7760f`. One x86 `DINPUT.dll` forwards seven Dir
 
 `runtime/config.h` reads restart-only feature flags from `NEMT/settings.ini`. Missing feature flags default off. Invalid booleans, invalid strength or crawling without activity-end prevention reject feature installation. `runtime/loader.c` verifies the normalized whole executable and requires the two legacy MEDS patches to be absent on disk.
 
-The current gameplay stage waits for a stable train/head/body backlink, valid controls and an advancing simulation clock across about five seconds. Startup menus therefore remain unmodified. Settings load normally. This delay also means features are not available in the first moments of an activity. Initially paused activities wait for resume.
+The current gameplay stage waits for a stable train/head/body backlink, valid controls and an advancing simulation clock across about five seconds. Gameplay installation therefore waits until the driving scene is ready; startup and loading-display features use their separate early stage. Settings load normally. This delay also means features are not available in the first moments of an activity. Initially paused activities wait for resume.
 
 The [window module](borderless.md) uses a separate early command-line stage and leaves the gameplay readiness gate intact. No early Frida attachment is used.
 
@@ -24,7 +24,7 @@ flowchart TD
  D --> E[Prepare selected feature mutations]
  E --> F[Reject overlaps and changed bytes]
  F --> G[Install in one transaction]
- G --> H[Run enabled MEDS features]
+ G --> H[Run enabled gameplay features]
  H --> I[Activity exit clears crawl state]
  I --> H
 ```
