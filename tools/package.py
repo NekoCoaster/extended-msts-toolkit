@@ -13,7 +13,7 @@ for p in root.rglob('*.md'):
 files=sorted(p for p in root.rglob('*') if release_file(p) and p.name!='SHA256SUMS.txt')
 assert not any(p.suffix.lower() in {'.exe','.bak','.pyc','.pub'} or p.name in {'MstsCrawl.dll','DINPUT.def','known_hosts'} for p in files)
 assert not any(re.search(r'-----BEGIN [A-Z ]+'+r'PRIVATE KEY-----',p.read_text(encoding='utf-8',errors='ignore')) for p in files)
-(root/'SHA256SUMS.txt').write_text(''.join(digest(p)+'  '+p.relative_to(root).as_posix()+'\n' for p in files),encoding='utf-8')
+(root/'SHA256SUMS.txt').write_text(''.join(digest(p)+'  '+p.relative_to(root).as_posix()+'\n' for p in files),encoding='utf-8',newline='')
 archive=root.parent/'NEMT.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
  for p in sorted(root.rglob('*')):
@@ -25,5 +25,5 @@ with zipfile.ZipFile(archive) as z:
  assert z.testzip() is None
  for p in root.rglob('*'):
   if release_file(p):assert z.read('NEMT/'+p.relative_to(root).as_posix())==p.read_bytes()
-archive.with_suffix('.zip.sha256').write_text(digest(archive)+'  NEMT.zip\n',encoding='utf-8')
+archive.with_suffix('.zip.sha256').write_text(digest(archive)+'  NEMT.zip\n',encoding='utf-8',newline='')
 print(json.dumps({'archive':str(archive),'zipBytes':archive.stat().st_size,'dllBytes':(root/'runtime/DINPUT.dll').stat().st_size,'files':len(files)+1},indent=2))
