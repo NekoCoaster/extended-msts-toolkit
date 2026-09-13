@@ -8,6 +8,14 @@ int main(void){WNDCLASSA wc;HWND h;RECT r;int x,y;LONG style=WS_OVERLAPPEDWINDOW
  r.left=r.top=0;r.right=800;r.bottom=600;assert(AdjustWindowRectEx(&r,style,FALSE,0));
  h=CreateWindowExA(0,wc.lpszClassName,"NEMT window sizing test",style,10,10,r.right-r.left,r.bottom-r.top,NULL,NULL,wc.hInstance,NULL);assert(h);
  *(HWND*)WINDOW_ADDR(0x82813a)=h;original_window_pos=SetWindowPos;original_show=ShowWindow;
+ /* Even if game borderless state is present, toolset must pass placement
+    through unchanged and retain its frame. */
+ style=GetWindowLongA(h,GWL_STYLE);window_mode=2;toolset_mode=1;
+ assert(toolkit_window_pos(h,NULL,73,91,0,0,SWP_NOSIZE|SWP_NOZORDER|SWP_NOACTIVATE));
+ GetWindowRect(h,&r);assert(r.left==73&&r.top==91);dimensions(h,800,600);
+ assert(GetWindowLongA(h,GWL_STYLE)==style);assert(arranged_window==NULL);
+ toolkit_show(h,SW_HIDE);assert(GetWindowLongA(h,GWL_STYLE)==style);
+ toolset_mode=0;
  window_mode=2;assert(toolkit_window_pos(h,NULL,0,0,0,0,SWP_NOSIZE|SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE));
  dimensions(h,800,600);assert(!(GetWindowLongA(h,GWL_STYLE)&(WS_CAPTION|WS_THICKFRAME)));assert(*(LONG*)WINDOW_ADDR(0x82818a)==GetWindowLongA(h,GWL_STYLE));
  center_for(h,800,600,&x,&y);GetWindowRect(h,&r);assert(r.left==x&&r.top==y);

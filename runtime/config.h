@@ -1,6 +1,7 @@
 /* MIT. Restart-only feature configuration. Missing features default off. */
 static int write_status_json,prevent_end,unlock_cameras,crawl_requested,config_valid,window_features,center_windowed,verbose_loading,startup_log,unlock_fps,crawl_hud;
 static int crawl_hud_left,cab_needles,background_audio,ignore_red_signal,restore_movie_focus,skip_startup_movie;
+static int editor_windows,editor_free_tools,editor_idle_audio;
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
 static WCHAR runtime_dir[MAX_PATH];
 static int read_bool(const WCHAR *path,const WCHAR *section,const WCHAR *key){
@@ -25,6 +26,9 @@ static void read_config(void){
  ignore_red_signal=read_bool(path,L"Activity",L"IgnoreRedSignal");
  window_features=read_bool(path,L"Window",L"Enabled");
  center_windowed=read_bool(path,L"Window",L"CenterWindowed");
+ editor_windows=read_bool(path,L"Editors",L"ResizableViewports");
+ editor_free_tools=read_bool(path,L"Editors",L"FreeToolWindows");
+ editor_idle_audio=read_bool(path,L"Editors",L"SmoothIdleAudio");
  prevent_end=read_bool(path,L"Derailment",L"PreventActivityEnd");
  unlock_cameras=read_bool(path,L"Derailment",L"UnlockCameras");
  crawl_requested=read_bool(path,L"Derailment",L"EnableCrawl");

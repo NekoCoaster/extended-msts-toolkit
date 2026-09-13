@@ -16,6 +16,8 @@ Select options in NEMT.vbs, click **Apply**, and restart MSTS. The options are i
 | **Unlock camera modes during derailment** | Keeps camera controls available after derailment. |
 | **Allow connected engines to crawl after derailment** | Adds powered movement after derailment. The panel also selects derailment activity-end prevention, which crawling requires. |
 
+The three [editor options](editors.md) enable resizable viewports and Alt+Enter fullscreen, freely movable Route Editor tools, and the Route Editor idle-audio fix. Main-game borderless mode does not apply to `-toolset`.
+
 ## Crawling controls
 
 **Use throttle for speed & reverser for direction.** Steam locomotives use the regulator and reverser. Eligible engines contribute according to their individual power and force values.

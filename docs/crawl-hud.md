@@ -8,6 +8,8 @@ Connected powered engines contribute using their individual power and force valu
 
 Crawling is an arcade feature. It does not put vehicles back on the rails. Throttle also affects the selected derailment drag and pitching effects, and wheel animation follows movement and throttle. At **0×**, added thrust is disabled but these other crawling effects remain enabled.
 
+Pitch suppression follows the train's heading relative to world vertical, so it works consistently when the train is lying on either side or upside down. It reduces nose-up/nose-down rotation while allowing turning and rolling; it does not automatically level the train. Suppression fades when the train points almost straight up or down, where its horizontal heading is ambiguous.
+
 ## Strength and HUD
 
 The slider ranges from **0–100×**, with **10×** as the starting value. Use **Bottom left** or **Bottom right** to place the HUD; the default is bottom left.

@@ -8,7 +8,7 @@ static WindowPosFn original_window_pos;
 static ShowFn original_show;
 static volatile LONG window_initialized;
 static char *normalized_command_line;
-static int requested_window_mode,window_mode;
+static int requested_window_mode,window_mode,toolset_mode;
 static HWND arranged_window;
 static int window_busy;
 static Hook window_hooks[2];
@@ -39,7 +39,7 @@ static void center_for(HWND h,int width,int height,int *x,int *y){
 }
 static BOOL WINAPI toolkit_window_pos(HWND h,HWND after,int x,int y,int cx,int cy,UINT flags){
  RECT old;int fw=0,fh=0,nw=0,nh=0,changed=0,resize;
- if(!window_mode||window_busy||!main_window(h)||IsIconic(h))return original_window_pos(h,after,x,y,cx,cy,flags);
+ if(toolset_mode||!window_mode||window_busy||!main_window(h)||IsIconic(h))return original_window_pos(h,after,x,y,cx,cy,flags);
  window_busy=1;GetWindowRect(h,&old);
  if(window_mode==2){frame_extent(h,&fw,&fh);changed=strip_frame(h);if(changed){frame_extent(h,&nw,&nh);if(!(flags&SWP_NOSIZE)){cx+=nw-fw;cy+=nh-fh;}else{cx=old.right-old.left+nw-fw;cy=old.bottom-old.top+nh-fh;flags&=~SWP_NOSIZE;}flags|=SWP_FRAMECHANGED;}}
  resize=!(flags&SWP_NOSIZE)&&(cx!=old.right-old.left||cy!=old.bottom-old.top);
@@ -50,7 +50,7 @@ static BOOL WINAPI toolkit_window_pos(HWND h,HWND after,int x,int y,int cx,int c
  {BOOL result=original_window_pos(h,after,x,y,cx,cy,flags);window_busy=0;return result;}
 }
 static BOOL WINAPI toolkit_show(HWND h,int command){
- if(window_mode&&!window_busy&&main_window(h)&&!IsIconic(h)&&command!=SW_HIDE&&command!=SW_MINIMIZE&&command!=SW_SHOWMINIMIZED&&command!=SW_SHOWMINNOACTIVE){
+ if(!toolset_mode&&window_mode&&!window_busy&&main_window(h)&&!IsIconic(h)&&command!=SW_HIDE&&command!=SW_MINIMIZE&&command!=SW_SHOWMINIMIZED&&command!=SW_SHOWMINNOACTIVE){
   toolkit_window_pos(h,NULL,0,0,0,0,SWP_NOSIZE|SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
  }
  return original_show(h,command);
@@ -62,15 +62,21 @@ static int install_window_hooks(void){
  for(i=0;i<2;i++){Hook *h=&window_hooks[i];h->address=addresses[i];h->length=4;h->raw=1;memcpy(h->original,(void*)addresses[i],4);memcpy(h->replacement,&destinations[i],4);}
  return prepare_hooks(window_hooks,2)&&install_hooks(window_hooks,2);
 }
+#include "editors.h"
 static LPSTR WINAPI toolkit_command_line(void){
  LPSTR actual=original_command_line();LONG state=InterlockedCompareExchange(&window_initialized,1,0);
  if(state==0){
-  WCHAR *slash;SIZE_T length=lstrlenA(actual);requested_window_mode=normalize_vm(actual,NULL);
+  WCHAR *slash;SIZE_T length=lstrlenA(actual);toolset_mode=has_toolset(actual);requested_window_mode=normalize_vm(actual,NULL);
   if(length<32750&&GetModuleFileNameW(NULL,root,MAX_PATH)&& (slash=wcsrchr(root,L'\\'))!=NULL){
    slash[1]=0;
    if(wcslen(root)+45<MAX_PATH&&supported_image()){
     /* This runs from the EXE's CRT entry, outside DllMain/loader lock. */
-    read_config();if(config_valid)track_check_startup(root);
+    read_config();
+    if(toolset_mode&&config_valid&&!install_editor_hooks())MessageBoxW(NULL,L"The editor improvements could not be installed. Original editor behavior remains enabled.",L"NEMT editors unavailable",MB_OK|MB_ICONWARNING);
+    /* Toolset has its own windows and frame loop. Game launch defaults,
+       border removal, timing and gameplay UI hooks must not reach editors. */
+    if(!toolset_mode){
+    if(config_valid)track_check_startup(root);
     if(config_valid&&unlock_fps&&!install_timing_hooks()){
      unlock_fps=0;
      MessageBoxW(NULL,L"The experimental timing hooks could not be installed. NEMT will not add -noclamp. If your shortcut includes it, remove it before retrying.",L"NEMT timing unavailable",MB_OK|MB_ICONWARNING);
@@ -87,6 +93,7 @@ static LPSTR WINAPI toolkit_command_line(void){
      if(config_valid&&requested_window_mode==1&&(window_features||center_windowed)){
       window_mode=window_features?2:1;if(!install_window_hooks())window_mode=0;
      }
+    }
     }
    }
   }

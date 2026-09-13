@@ -4,6 +4,10 @@
 #include "../runtime/window_math.h"
 static void check(const char *in,const char *expected,int mode){char out[1024];assert(normalize_vm(in,NULL)==mode);assert(normalize_vm(in,out)==mode);assert(!strcmp(out,expected));}
 int main(void){int x,y;char launch[256];
+ assert(has_toolset("train.exe -toolset")&&has_toolset("\"C:\\Train Sim\\train.exe\" \"-TOOLSET\"\t-vm:w"));
+ assert(!has_toolset("\"C:\\-toolset\\train.exe\"")&&!has_toolset("train.exe -toolsetX")&&!has_toolset("train.exe \"notes -toolset\""));
+ normalize_launch("train.exe -toolset",launch,1);assert(!strcmp(launch,"train.exe -toolset"));
+ normalize_launch("train.exe -toolset -vm:w,1280,720,32",launch,1);assert(!strcmp(launch,"train.exe -toolset -vm:w,1280,720,32"));
  normalize_launch("train.exe",launch,1);assert(!strcmp(launch,"train.exe -vm:w -noclamp"));
  normalize_launch("train.exe -vm:w,1280,720,32",launch,1);assert(!strcmp(launch,"train.exe -vm:w,1280,720,32 -noclamp"));
  normalize_launch("train.exe \"-NOCLAMP\"",launch,1);assert(!strcmp(launch,"train.exe \"-NOCLAMP\" -vm:w"));

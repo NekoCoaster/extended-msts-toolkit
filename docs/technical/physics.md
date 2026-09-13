@@ -40,11 +40,23 @@ For steam, cutoff magnitude is not another thrust multiplier. Its sign selects d
 
 ## Drag and pitching
 
-The identified drag coefficients and local pitch-rate contribution scale by `1 - u`. Full throttle removes those contributions; closed throttle restores them. Contacts, gravity, yaw and roll remain native. Existing tilt is preserved, and underlying angular momentum is not erased. Lowering throttle can reveal rotation already present in that momentum.
+The identified drag coefficients and world-relative pitch-rate contribution scale by `1 - u`. Full throttle removes those contributions; closed throttle restores them. The pitch filter preserves turning around world vertical and rolling around the train's length. Existing tilt is preserved, and underlying angular momentum is not erased. Lowering throttle can reveal rotation already present in that momentum. Contacts and gravity continue to use the native solver.
 
 Drag filtering is limited to six calls to `0x62E7C6` from the derailment force routine: returns `0x62B18A`, `0x62B207`, `0x62B30E`, `0x62B38D`, `0x62B45A`, `0x62B4D6`. Linear velocity is at body + `0x88`, angular velocity at + `0x94`. Shared vehicle definitions are never edited.
 
-Pitch filtering changes the angular-velocity input to the orientation derivative `0x5F874C`. Scratch vectors remove only the component along body-local right. The two scoped helper returns are `0x5F8796` and `0x5F8876`. Physical orientation and angular momentum are not temporarily overwritten.
+Pitch filtering changes the angular-velocity input to the orientation derivative `0x5F874C`. It reads world angular velocity at body + `0x94` and the forward vector at + `0x24` from that callback's current integration buffer. With normalized forward `f`, world up `(0, 1, 0)`, and throttle/regulator `u`:
+
+```text
+p = world_up cross f = (f.z, 0, -f.x)
+h2 = dot(p, p)
+omega_filtered = omega - u * dot(omega, p) * p / max(h2, 0.0001)
+```
+
+For an ordinary heading this suppresses the angular component about the horizontal axis perpendicular to the train's heading. It is independent of body roll and the sign of forward, so reversing or lying on either side does not select a different compensation axis. World yaw and longitudinal roll are orthogonal to `p` and remain intact. This preserves the current inclination; it does not pull the train upright or level it with the terrain.
+
+Within approximately 0.57 degrees of straight up/down, suppression smoothly fades with `h2 / 0.0001`. At exactly vertical it is a no-op because there is no unique horizontal heading. This avoids amplifying small orientation noise or choosing a body-relative fallback axis.
+
+The former body-right projection could suppress world yaw for a train lying on its side. Merely negating that right vector (a level train rolled exactly 180 degrees) was already sign-invariant; the error was choosing an axis that followed body roll. The two scoped helper returns remain `0x5F8796` and `0x5F8876`, covering quaternion and matrix derivatives. Physical orientation and angular momentum are not temporarily overwritten. See the [fix investigation and validation](../investigations/world-pitch.md).
 
 ## Wheels and steam rods
 

@@ -7,6 +7,7 @@ Start with [installation](installation.md), then choose the features that suit y
 | [Installation and troubleshooting](installation.md) | Download, executable selection, Apply, Select All, compatibility and Uninstall |
 | [Feature guide](features.md) | Every control-panel option and its requirements |
 | [Window modes](borderless.md) | Borderless, ordinary windowed mode, custom resolutions and fullscreen |
+| [Editors and tools](editors.md) | Resizing, fullscreen, floating tools, Activity Editor panels and idle-audio slowdown |
 | [dgVoodoo settings](dgvoodoo.md) | Coordinate window settings with your graphics wrapper |
 | [Crawling and its HUD](crawl-hud.md) | Throttle, reverser, strength, connected engines and F5 |
 | [Loading details and logs](startup.md) | Loading messages, terrain progress and optional diagnostic logs |

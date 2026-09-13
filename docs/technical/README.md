@@ -10,6 +10,7 @@ We develop and instrument the toolkit in a Windows VM, then test graphics and ga
 | --- | --- |
 | [Validation summary](validation.md) | First-edition evidence, known limits and unresolved coverage |
 | [Native architecture](native-runtime.md) | Initialization, runtime ownership and mutation safety |
+| [Editors and tools](editors.md) | Toolset isolation, real viewport resizing, panel layout and audio idle stalls |
 | [Crawl physics](physics.md) | Connections, engine parameters, momentum, drag and animation |
 | [Activity-end and camera sites](patches.md) | Identified executable instructions |
 | [Window implementation and evidence](borderless.md) | Native arguments, centering, compatibility bootstrap and historical alias |

@@ -63,6 +63,7 @@ finish:
 static DWORD WINAPI delayed_start(void *unused) {
     DWORD train=0,previous=0,head=0,body=0,owner=0,control=0; float now=0,first=0; int stable=0;
     WCHAR path[MAX_PATH];
+    if(has_toolset(GetCommandLineA()))return 0;
     if(wcslen(root)+45>=MAX_PATH||!supported_image())return 0;
     read_config();
     if(!config_valid)return 0;

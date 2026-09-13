@@ -2,6 +2,8 @@
 
 Enable **Enable borderless windowed mode** in NEMT.vbs to remove the window frame. Uncheck it for an ordinary framed window. Apply and restart MSTS.
 
+This setting applies to the simulator. `-toolset` keeps its native launch arguments and window borders; use the separate [editor options](editors.md) for resizing and Alt+Enter borderless fullscreen.
+
 | Launch | Borderless enabled | Borderless disabled |
 | --- | --- | --- |
 | `train.exe` | Centered borderless window | Ordinary window |

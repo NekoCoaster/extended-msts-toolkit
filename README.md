@@ -21,7 +21,10 @@ Keep the extracted package together: the launcher needs its accompanying files. 
 | Option | What it does |
 | --- | --- |
 | Skip startup movie | Goes straight to loading, avoiding the movie-related keyboard-control issue without registry edits or renaming the clip. |
-| Enable borderless windowed mode | Removes the window border and keeps the window centered, including when changing resolution. |
+| Enable borderless windowed mode | Removes the main game's window border and keeps it centered. Does not apply to `-toolset`. |
+| Resizable editor windows and fullscreen | Resize or maximize Route, Activity and Cab Editor; Alt+Enter toggles borderless fullscreen. Activity panels fold inside when needed. |
+| Move Route Editor tool windows freely | Removes magnetic alignment of floating tools. |
+| Fix Route Editor slowdown without nearby sounds | Prevents audio-device idle stalls without adding route sound sources. |
 | Unlock FPS limit — **Potentially unstable** | Removes the game-side frame cap and applies corrected timing. Actual performance still depends on the installation and hardware. |
 | Show verbose startup and activity loading details | Shows loading activity and terrain-generation counts, progress and estimated remaining time. |
 | Write startup diagnostic log | Saves an optional loading log to help investigate startup problems. |

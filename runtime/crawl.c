@@ -93,12 +93,12 @@ static Call *push_call(U id,Registers *r){
 }
 static void wake_body(U b,int force){Car *c;if(!eligible(b))return;c=find_car(ru((B*)b+0x11d));if((!force&&c->active)||friction_scale<1){*((B*)b+0xf2)&=~8;wakes++;}}
 static void enter_effect(U id,Registers *r){
- U *s=(U*)(r+1),body=0,offset=0,i;Call *call;ThreadCalls *t;Car *c;double speed,rate;float factor,omega[3],right[3];
+ U *s=(U*)(r+1),body=0,offset=0,i;Call *call;ThreadCalls *t;Car *c;double speed,rate;float factor,omega[3],forward[3];
  if(id==PITCH){
   /* Push even an ineligible nested derivative to mask an outer pitch context. */
   call=push_call(id,r);if(!call)return;body=s[2];if(!eligible(body))return;
-  for(i=0;i<3;i++){omega[i]=rf((B*)body+0x94+i*4);right[i]=rf((B*)body+0xc+i*4);}
-  if(!calc_pitch(omega,right,friction_scale,call->filtered)){fail("Invalid pitch input");return;}
+  for(i=0;i<3;i++){omega[i]=rf((B*)body+0x94+i*4);forward[i]=rf((B*)body+0x24+i*4);}
+  if(!calc_pitch(omega,forward,friction_scale,call->filtered)){fail("Invalid pitch input");return;}
   call->pitch=1;call->body=body;return;
  }
  if(id==VECTOR||id==CROSS){
@@ -115,8 +115,8 @@ static void enter_effect(U id,Registers *r){
  if(id==WHEEL||id==ROD){
   U car=id==WHEEL?ru((B*)s[4]+4):r->ecx;c=find_car(car);if(!c||!c->derailed)return;
   body=ru((B*)car+0x5c);if(!eligible(body)||ru((B*)body+0x11d)!=car)return;
-  for(i=0;i<3;i++){omega[i]=rf((B*)body+0x88+i*4);right[i]=rf((B*)body+0x24+i*4);}
-  if(!calc_wheel(omega,right,throttle,strength,&speed)){fail("Invalid wheel input");return;}
+  for(i=0;i<3;i++){omega[i]=rf((B*)body+0x88+i*4);forward[i]=rf((B*)body+0x24+i*4);}
+  if(!calc_wheel(omega,forward,throttle,strength,&speed)){fail("Invalid wheel input");return;}
   if(id==WHEEL){factor=rf((B*)c->definition+0x4a0);if(!finite_number(factor)||factor<=0||factor>100){fail("Invalid wheel factor");return;}rate=speed*factor;offset=0x1b0;}
   else{if(!c->engine)return;factor=rf((B*)c->engineDefinition+0x112);if(!finite_number(factor)||factor<=0||factor>10){fail("Invalid driving radius");return;}rate=speed/(2*3.14159*factor);offset=0x2b2;}
   if(!finite_number(rate)||fabs(rate)>3.4e38){fail("Invalid visual rate");return;}

@@ -4,7 +4,7 @@
 param([Parameter(Position=0)][Alias('Path')][string]$ExePath,
  [ValidateSet('Gui','Status','Apply','Restore')][string]$Action='Gui',
  [switch]$RemoveEndMessage,[switch]$UnlockCameras,[switch]$Crawl,[switch]$WindowFeatures,[switch]$VerboseLoading,[switch]$StartupLog,[switch]$UnlockFPS,[switch]$CrawlHUD,[ValidateSet("BottomLeft","BottomRight")][string]$CrawlHUDAnchor="BottomLeft",
- [ValidateRange(0,100)][int]$Strength=10,[switch]$FixCabDials,[switch]$BackgroundAudio,[switch]$IgnoreRedSignal,[switch]$SkipStartupMovie)
+ [ValidateRange(0,100)][int]$Strength=10,[switch]$FixCabDials,[switch]$BackgroundAudio,[switch]$IgnoreRedSignal,[switch]$SkipStartupMovie,[switch]$EditorWindows,[switch]$FreeEditorTools,[switch]$SmoothEditorAudio)
 $ErrorActionPreference='Stop'
 $script:ToolkitVersion=[IO.File]::ReadAllText((Join-Path $PSScriptRoot 'VERSION')).Trim()
 $script:Specs=@{
@@ -103,7 +103,7 @@ function Get-CrawlInstallation([string]$Path) {
 }
 function Invoke-Options {
  [CmdletBinding(SupportsShouldProcess=$true)]
- param([string]$Path,[bool]$Timeout,[bool]$Camera,[bool]$CrawlMode,[ValidateRange(0,100)][int]$Thrust=10,[string]$ExpectedHash,[bool]$WindowFeatures=$false,[bool]$VerboseLoading=$false,[bool]$StartupLog=$false,[bool]$UnlockFPS=$false,[bool]$CrawlHUD=$false,[ValidateSet("BottomLeft","BottomRight")][string]$CrawlHUDAnchor,[Nullable[bool]]$FixCabDials=$null,[bool]$BackgroundAudio=$false,[bool]$IgnoreRedSignal=$false,[bool]$SkipStartupMovie=$false)
+ param([string]$Path,[bool]$Timeout,[bool]$Camera,[bool]$CrawlMode,[ValidateRange(0,100)][int]$Thrust=10,[string]$ExpectedHash,[bool]$WindowFeatures=$false,[bool]$VerboseLoading=$false,[bool]$StartupLog=$false,[bool]$UnlockFPS=$false,[bool]$CrawlHUD=$false,[ValidateSet("BottomLeft","BottomRight")][string]$CrawlHUDAnchor,[Nullable[bool]]$FixCabDials=$null,[bool]$BackgroundAudio=$false,[bool]$IgnoreRedSignal=$false,[bool]$SkipStartupMovie=$false,[bool]$EditorWindows=$false,[bool]$FreeEditorTools=$false,[bool]$SmoothEditorAudio=$false)
  if($CrawlMode -and -not $Timeout){throw 'Crawling requires PreventActivityEnd.'}
  $info=Get-MstsImage $Path;Assert-MstsClosed $info.Path
  if($FixCabDials -eq $true -and -not $info.Widescreen){throw 'Cab-dial correction requires the supported MSTS widescreen patch. Install it first, then select train.exe again.'}
@@ -112,7 +112,7 @@ function Invoke-Options {
  $records=@(Get-ToolkitRecords $info.Path);$installed=Get-CrawlInstallation $info.Path
  if(-not $CrawlHUDAnchor){$CrawlHUDAnchor=if($installed -and $installed.crawlHUDAnchor -eq "BottomRight"){"BottomRight"}else{"BottomLeft"}}
  $CrawlHUD=$CrawlHUD -or $CrawlMode
- $install=$Timeout -or $Camera -or $CrawlMode -or $WindowFeatures -or $VerboseLoading -or $StartupLog -or $UnlockFPS -or $CrawlHUD -or ($FixCabDials -eq $true) -or $BackgroundAudio -or $IgnoreRedSignal -or $SkipStartupMovie
+ $install=$Timeout -or $Camera -or $CrawlMode -or $WindowFeatures -or $VerboseLoading -or $StartupLog -or $UnlockFPS -or $CrawlHUD -or ($FixCabDials -eq $true) -or $BackgroundAudio -or $IgnoreRedSignal -or $SkipStartupMovie -or $EditorWindows -or $FreeEditorTools -or $SmoothEditorAudio
  $modern=@($records | Where-Object {$_.Name -eq 'NEMT'})
  if($install -and (Test-Path -LiteralPath $target) -and -not $modern.Count){throw 'The existing NEMT folder is not owned by this installer.'}
  if(Test-Path -LiteralPath $proxy){
@@ -155,8 +155,9 @@ function Invoke-Options {
    $config="[Startup]`r`nVerboseLoading=$($VerboseLoading.ToString().ToLowerInvariant())`r`nWriteLog=$($StartupLog.ToString().ToLowerInvariant())`r`nUnlockFPS=$($UnlockFPS.ToString().ToLowerInvariant())`r`nSkipStartupMovie=$($SkipStartupMovie.ToString().ToLowerInvariant())`r`nRestoreMovieFocus=$($SkipStartupMovie.ToString().ToLowerInvariant())`r`nMaxLogSizeKB=$maxLogSizeKB`r`nMaxBackupLogs=$maxBackupLogs`r`n`r`n[Window]`r`nEnabled=$($WindowFeatures.ToString().ToLowerInvariant())`r`nCenterWindowed=$centerWindowed`r`n`r`n[Derailment]`r`nPreventActivityEnd=$($Timeout.ToString().ToLowerInvariant())`r`nUnlockCameras=$($Camera.ToString().ToLowerInvariant())`r`nEnableCrawl=$($CrawlMode.ToString().ToLowerInvariant())`r`nCrawlStrength=$Thrust`r`n`r`n[Diagnostics]`r`nWriteStatusJson=$printStatus`r`nShowCrawlHUD=$($CrawlHUD.ToString().ToLowerInvariant())`r`nCrawlHUDAnchor=$CrawlHUDAnchor`r`n"
    $config+="`r`n[Cab]`r`nCorrectNeedleAspect=$cabNeedle`r`n"
    $config+="`r`n[Audio]`r`nUnmuteInBackground=$($BackgroundAudio.ToString().ToLowerInvariant())`r`n`r`n[Activity]`r`nIgnoreRedSignal=$($IgnoreRedSignal.ToString().ToLowerInvariant())`r`n"
+   $config+="`r`n[Editors]`r`nResizableViewports=$($EditorWindows.ToString().ToLowerInvariant())`r`nFreeToolWindows=$($FreeEditorTools.ToString().ToLowerInvariant())`r`nSmoothIdleAudio=$($SmoothEditorAudio.ToString().ToLowerInvariant())`r`n"
    [IO.File]::WriteAllText((Join-Path $target 'settings.ini'),$config,(New-Object Text.UTF8Encoding($false)))
-   $manifest=@{schema=1;product='NEMT';version=$script:ToolkitVersion;runtime='nemt-native';enabled=$true;strength=$Thrust;preventEnd=$Timeout;unlockCameras=$Camera;crawl=$CrawlMode;windowFeatures=$WindowFeatures;verboseLoading=$VerboseLoading;startupLog=$StartupLog;unlockFPS=$UnlockFPS;crawlHUD=$CrawlHUD;crawlHUDAnchor=$CrawlHUDAnchor;proxyHash=(Get-MstsHash $payload);files=@{}}
+   $manifest=@{schema=1;product='NEMT';version=$script:ToolkitVersion;runtime='nemt-native';enabled=$true;strength=$Thrust;preventEnd=$Timeout;unlockCameras=$Camera;crawl=$CrawlMode;windowFeatures=$WindowFeatures;editorWindows=$EditorWindows;freeEditorTools=$FreeEditorTools;smoothEditorAudio=$SmoothEditorAudio;verboseLoading=$VerboseLoading;startupLog=$StartupLog;unlockFPS=$UnlockFPS;crawlHUD=$CrawlHUD;crawlHUDAnchor=$CrawlHUDAnchor;proxyHash=(Get-MstsHash $payload);files=@{}}
    [IO.File]::WriteAllText((Join-Path $target 'installation.json'),($manifest | ConvertTo-Json -Depth 5),(New-Object Text.UTF8Encoding($false)))
    [IO.File]::WriteAllText((Join-Path $target 'status.json'),'{"runtime":"NEMT","phase":"not-running","note":"Installer snapshot; live diagnostics are optional."}',(New-Object Text.UTF8Encoding($false)))
    [IO.File]::WriteAllBytes($proxy,$payload)
@@ -225,7 +226,7 @@ function Show-Options([string]$InitialPath){
  $browse=New-Object Windows.Forms.Button;$browse.Text='Browse...';$browse.Location=New-Object Drawing.Point(585,66);$browse.Size=New-Object Drawing.Size(90,32);$form.Controls.Add($browse)
  $version=Label-At 'Choose or drop your train.exe.' 110 48;$version.Font=New-Object Drawing.Font('Segoe UI',11,[Drawing.FontStyle]::Bold)
  function Check-At([string]$Text,[int]$Y){$c=New-Object Windows.Forms.CheckBox;$c.Text=$Text;$c.Location=New-Object Drawing.Point(24,$Y);$c.Size=New-Object Drawing.Size(652,30);$form.Controls.Add($c);return $c}
- $window=Check-At 'Enable borderless windowed mode (use -vm:WIDTH,HEIGHT,32 to force fullscreen)' 129
+ $window=Check-At 'Enable borderless windowed mode for the main game' 129
  $timeout=Check-At 'Remove derailment activity-end message' 165
  $camera=Check-At 'Unlock camera modes during derailment' 201
  $crawl=Check-At 'Allow connected engines to crawl after derailment' 237
@@ -262,25 +263,28 @@ function Show-Options([string]$InitialPath){
  $anchorPanel=New-Object Windows.Forms.Panel;$anchorPanel.Location=New-Object Drawing.Point(24,($sliderPanel.Bottom+2));$anchorPanel.Size=New-Object Drawing.Size(652,32);$form.Controls.Add($anchorPanel)
  $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text="Crawl HUD position:";$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
  $anchor=New-Object Windows.Forms.ComboBox;$anchor.DropDownStyle="DropDownList";$anchor.Location=New-Object Drawing.Point(160,0);$anchor.Size=New-Object Drawing.Size(170,28);[void]$anchor.Items.AddRange(@("Bottom right","Bottom left"));$anchor.SelectedIndex=1;$anchorPanel.Controls.Add($anchor)
- # Compact layout: all options and actions fit at 100% on a 768px display.
+ # The scrollable options area keeps all controls reachable on smaller displays.
  # Scrolling remains an accessibility fallback for smaller/high-DPI desktops.
  $title.Top=8;$title.Height=34;$pathText.Top=48;$browse.Top=45
  $version.Top=79;$version.Height=38
  $skipMovieBox=Check-At 'Skip startup movie (fixes keyboard control issue when loading into simulator)' 118;$skipMovieBox.Width=712;$skipMovieBox.Height=24
+ $editorBox=Check-At 'Resizable editor windows and fullscreen (Alt+Enter)' 0
+ $toolsBox=Check-At 'Move Route Editor tool windows freely' 0
+ $idleBox=Check-At 'Fix Route Editor slowdown without nearby sounds' 0
  $optionY=142
- foreach($option in @($window,$fps,$verbose,$startupLogBox,$cabBox,$backgroundBox,$redBox,$timeout,$camera,$crawl)){
+ foreach($option in @($window,$fps,$verbose,$startupLogBox,$cabBox,$backgroundBox,$redBox,$editorBox,$toolsBox,$idleBox,$timeout,$camera,$crawl)){
   $option.Top=$optionY;$option.Height=24;$option.Width=712;$optionY+=24
  }
  $cabBox.Width=410;$wideLink.Text='Widescreen patch guide';$wideLink.Location=New-Object Drawing.Point(445,254);$wideLink.Size=New-Object Drawing.Size(270,22)
- $crawlHint.Top=384;$crawlHint.Height=22
- $sliderPanel.Top=410;$sliderPanel.Height=64
+ $crawlHint.Top=456;$crawlHint.Height=22
+ $sliderPanel.Top=482;$sliderPanel.Height=64
  $form.Controls.Remove($anchorPanel);$sliderPanel.Controls.Add($anchorPanel)
  $anchorPanel.Location=New-Object Drawing.Point(426,0);$anchorPanel.Size=New-Object Drawing.Size(226,28)
  $anchorLabel.Text='HUD:';$anchor.Location=New-Object Drawing.Point(48,0);$anchor.Width=170
  $slider.AutoSize=$false;$slider.Top=30;$slider.Height=34
- $space.Top=478;$space.Height=36;$message.Top=518;$message.Height=34
- foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=558;$button.Height=32}
- $credit.Top=598;$credit.Height=20;$github.Top=622;$github.Height=22;$icon.Top=621
+ $space.Top=550;$space.Height=36;$message.Top=590;$message.Height=34
+ foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=630;$button.Height=32}
+ $credit.Top=670;$credit.Height=20;$github.Top=694;$github.Height=22;$icon.Top=693
  $form.AutoScroll=$true
  $ui=@{info=$null;loading=$false}
  $refresh={ $anchorPanel.Visible=$crawl.Checked;$sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
@@ -288,7 +292,7 @@ function Show-Options([string]$InitialPath){
  $crawl.Add_CheckedChanged({if($crawl.Checked -and -not $ui.loading){$timeout.Checked=$true};& $refresh})
  $timeout.Add_CheckedChanged({if(-not $timeout.Checked -and -not $ui.loading){$crawl.Checked=$false}})
  $load={param([string]$p)
-  $ui.info=$null;$ui.loading=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p;$cabBox.Enabled=$false;$cabBox.Checked=$false;$backgroundBox.Checked=$false;$redBox.Checked=$false;$skipMovieBox.Checked=$false
+  $ui.info=$null;$ui.loading=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p;$cabBox.Enabled=$false;$cabBox.Checked=$false;$backgroundBox.Checked=$false;$redBox.Checked=$false;$skipMovieBox.Checked=$false;$editorBox.Checked=$false;$toolsBox.Checked=$false;$idleBox.Checked=$false
   try{$i=Get-MstsImage $p;$m=Get-CrawlInstallation $i.Path;$ui.info=$i;$pathText.Text=$i.Path;$version.Text='Valid train.exe version: '+$i.Version;$version.ForeColor=[Drawing.Color]::FromArgb(0,170,0)
    $anchor.SelectedIndex=if($m -and $m.crawlHUDAnchor -eq "BottomRight"){0}else{1}
    $cabBox.Enabled=$i.Widescreen
@@ -302,6 +306,9 @@ function Show-Options([string]$InitialPath){
       if($section -ieq 'Cab' -and $key -ieq 'CorrectNeedleAspect'){$cabBox.Checked=$i.Widescreen -and $on}
       if($section -ieq 'Audio' -and $key -ieq 'UnmuteInBackground'){$backgroundBox.Checked=$on}
       if($section -ieq 'Activity' -and $key -ieq 'IgnoreRedSignal'){$redBox.Checked=$on}
+      if($section -ieq 'Editors' -and $key -ieq 'ResizableViewports'){$editorBox.Checked=$on}
+      if($section -ieq 'Editors' -and $key -ieq 'FreeToolWindows'){$toolsBox.Checked=$on}
+      if($section -ieq 'Editors' -and $key -ieq 'SmoothIdleAudio'){$idleBox.Checked=$on}
      }
     }
    }
@@ -316,7 +323,7 @@ function Show-Options([string]$InitialPath){
  $save={param([bool]$clear)
   if(-not $ui.info){return};$form.UseWaitCursor=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$browse.Enabled=$false
   try{$t=if($clear){$false}else{$timeout.Checked};$c=if($clear){$false}else{$camera.Checked};$r=if($clear){$false}else{$crawl.Checked};$w=if($clear){$false}else{$window.Checked}
-   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -CrawlHUD $r -CrawlHUDAnchor $(if($anchor.SelectedIndex -eq 1){"BottomLeft"}else{"BottomRight"}) -FixCabDials ((-not $clear) -and $cabBox.Enabled -and $cabBox.Checked) -BackgroundAudio ((-not $clear) -and $backgroundBox.Checked) -IgnoreRedSignal ((-not $clear) -and $redBox.Checked) -SkipStartupMovie ((-not $clear) -and $skipMovieBox.Checked) -Confirm:$false
+   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -CrawlHUD $r -CrawlHUDAnchor $(if($anchor.SelectedIndex -eq 1){"BottomLeft"}else{"BottomRight"}) -FixCabDials ((-not $clear) -and $cabBox.Enabled -and $cabBox.Checked) -BackgroundAudio ((-not $clear) -and $backgroundBox.Checked) -IgnoreRedSignal ((-not $clear) -and $redBox.Checked) -SkipStartupMovie ((-not $clear) -and $skipMovieBox.Checked) -EditorWindows ((-not $clear) -and $editorBox.Checked) -FreeEditorTools ((-not $clear) -and $toolsBox.Checked) -SmoothEditorAudio ((-not $clear) -and $idleBox.Checked) -Confirm:$false
    & $load $result.Path;$message.ForeColor=[Drawing.Color]::FromArgb(20,120,55);$message.Text=if($clear){'Toolkit removed. Widescreen and LAA were preserved.'}else{'Settings saved. Restart MSTS to apply changes. Windowed mode is used unless fullscreen is requested.'}
   }catch{$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
   finally{$form.UseWaitCursor=$false;$browse.Enabled=$true;$selectAll.Enabled=($null -ne $ui.info);$apply.Enabled=($null -ne $ui.info);$restore.Enabled=($null -ne $ui.info)}
@@ -332,4 +339,4 @@ function Show-Options([string]$InitialPath){
 if($MyInvocation.InvocationName -eq '.'){return}
 if($Action -eq 'Gui'){Show-Options $ExePath}
 elseif($Action -eq 'Status'){Get-MstsImage $ExePath;Get-CrawlInstallation $ExePath}
-else{Invoke-Options -Path $ExePath -Timeout ($Action -eq 'Apply' -and $RemoveEndMessage) -Camera ($Action -eq 'Apply' -and $UnlockCameras) -CrawlMode ($Action -eq 'Apply' -and $Crawl) -VerboseLoading ($Action -eq 'Apply' -and $VerboseLoading) -StartupLog ($Action -eq 'Apply' -and $StartupLog) -UnlockFPS ($Action -eq 'Apply' -and $UnlockFPS) -CrawlHUD ($Action -eq 'Apply' -and $CrawlHUD) -CrawlHUDAnchor $CrawlHUDAnchor -Thrust $Strength -WindowFeatures ($Action -eq 'Apply' -and $WindowFeatures) -FixCabDials ($Action -eq 'Apply' -and $FixCabDials) -BackgroundAudio ($Action -eq 'Apply' -and $BackgroundAudio) -IgnoreRedSignal ($Action -eq 'Apply' -and $IgnoreRedSignal) -SkipStartupMovie ($Action -eq 'Apply' -and $SkipStartupMovie) -WhatIf:$WhatIfPreference}
+else{Invoke-Options -Path $ExePath -Timeout ($Action -eq 'Apply' -and $RemoveEndMessage) -Camera ($Action -eq 'Apply' -and $UnlockCameras) -CrawlMode ($Action -eq 'Apply' -and $Crawl) -VerboseLoading ($Action -eq 'Apply' -and $VerboseLoading) -StartupLog ($Action -eq 'Apply' -and $StartupLog) -UnlockFPS ($Action -eq 'Apply' -and $UnlockFPS) -CrawlHUD ($Action -eq 'Apply' -and $CrawlHUD) -CrawlHUDAnchor $CrawlHUDAnchor -Thrust $Strength -WindowFeatures ($Action -eq 'Apply' -and $WindowFeatures) -FixCabDials ($Action -eq 'Apply' -and $FixCabDials) -BackgroundAudio ($Action -eq 'Apply' -and $BackgroundAudio) -IgnoreRedSignal ($Action -eq 'Apply' -and $IgnoreRedSignal) -SkipStartupMovie ($Action -eq 'Apply' -and $SkipStartupMovie) -EditorWindows ($Action -eq 'Apply' -and $EditorWindows) -FreeEditorTools ($Action -eq 'Apply' -and $FreeEditorTools) -SmoothEditorAudio ($Action -eq 'Apply' -and $SmoothEditorAudio) -WhatIf:$WhatIfPreference}
