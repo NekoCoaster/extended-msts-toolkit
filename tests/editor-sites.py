@@ -13,11 +13,12 @@ for name in sys.argv[1:]:
                 o = raw+va-0x400000-rva
                 return b[o:o+n]
         raise AssertionError(hex(va))
-    for a, h in [(0x696c00,'a154998200'), (0x55521c,'558bec83ec10')]:
+    for a, h in [(0x696c00,'a154998200'), (0x55521c,'558bec83ec10'),
+                 (0x44390a,'ff15b4dd8400'), (0x6bae0e,'8b7c24188b07'), (0x6bb236,'8b4c24388b01')]:
         assert read(a,len(bytes.fromhex(h))) == bytes.fromhex(h), (name,hex(a))
     for a in [0x4999b0,0x6764b3,0x451d4f]:
         assert read(a,5) == b'\xe8'+struct.pack('<i',0x6bad60-a-5), (name,hex(a))
-    for a,t in [(0x44a8e6,0x6b6390),(0x44a8ba,0x40171c)]:
+    for a,t in [(0x44a8e6,0x6b6390),(0x44a8ba,0x40171c),(0x48ff6b,0x4040fc)]:
         assert read(a,5) == b'\xe8'+struct.pack('<i',t-a-5), (name,hex(a))
     for axis, target in [('x',0x770560),('y',0x77055c)]:
         source=(Path(__file__).resolve().parents[1]/'runtime/editor_picking.h').read_text()

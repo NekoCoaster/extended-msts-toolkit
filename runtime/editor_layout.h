@@ -14,6 +14,12 @@ static int editor_cab_coordinate(int value,int origin,int extent,int logical){
  if(value>=origin+extent)return logical;
  return (value-origin)*logical/extent;
 }
+/* Round upward so a native logical pixel survives the inverse mouse mapping. */
+static int editor_cab_screen_coordinate(int value,int origin,int extent,int logical){
+ if(value<0)return origin-1;
+ if(value>=logical)return origin+extent;
+ return origin+(value*extent+logical-1)/logical;
+}
 typedef struct {int right_x,right_y,bottom_x,bottom_y,fold_right,fold_bottom,min_width,min_height;} EditorLayout;
 static int editor_max(int a,int b){return a>b?a:b;}
 static int editor_clamp(int x,int lo,int hi){return x<lo?lo:x>hi?editor_max(lo,hi):x;}

@@ -4,7 +4,7 @@
 #include "editor_layout.h"
 #include "editor_picking.h"
 #include <math.h>
-static Hook editor_hooks[32];
+static Hook editor_hooks[40];
 static B *editor_code;
 static WNDPROC editor_original_proc;
 static int editor_busy,editor_sizing,editor_fullscreen,editor_last_mode,editor_pending;
@@ -43,6 +43,7 @@ static int editor_mode(void){
  return mode==1&&*(U*)0x7be0f8?1:mode==4?4:mode==3?3:0;
 }
 #include "editor_cab.h"
+#include "editor_keyboard.h"
 static void editor_toggle_fullscreen(HWND h){
  MONITORINFO info;LONG style;
  if(!editor_fullscreen){
@@ -222,12 +223,26 @@ static void editor_frame(void){
 }
 static int install_editor_hooks(void){
  U count=0;Hook *h;DWORD old;B *p;
- if(!editor_windows&&!editor_free_tools&&!editor_idle_audio)return 1;
+ if(!editor_windows&&!editor_free_tools&&!editor_idle_audio&&!editor_swap_keys)return 1;
  /* Independent verified instruction ranges, committed as one transaction. */
  if(memcmp((void*)0x696c00,"\xa1\x54\x99\x82\x00",5)||memcmp((void*)0x55521c,"\x55\x8b\xec\x83\xec\x10",6))return 0;
- editor_code=VirtualAlloc(NULL,32,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);if(!editor_code)return 0;
+ editor_code=VirtualAlloc(NULL,1024,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);if(!editor_code)return 0;
  p=editor_code;memcpy(p,(void*)0x696c00,5);p+=5;branch(&p,0xe9,(void*)0x696c05);
- if(!VirtualProtect(editor_code,32,PAGE_EXECUTE_READ,&old))goto failed;FlushInstructionCache(GetCurrentProcess(),editor_code,32);editor_original_proc=(WNDPROC)editor_code;
+ editor_original_proc=(WNDPROC)editor_code;
+ if(editor_swap_keys){B *tail=p,*entry;
+  memcpy(p,"\x8b\x7c\x24\x18\x8b\x07",6);p+=6;branch(&p,0xe9,(void*)0x6bae14);
+  entry=p;gateway(&p,0,editor_key_event_hook,tail,0);
+  h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x6bae0e;h->length=6;h->raw=1;
+  memcpy(h->original,"\x8b\x7c\x24\x18\x8b\x07",6);h->replacement[0]=0xe9;
+  *(U*)(h->replacement+1)=(U)entry-h->address-5;h->replacement[5]=0x90;
+  tail=p;memcpy(p,"\x8b\x4c\x24\x38\x8b\x01",6);p+=6;branch(&p,0xe9,(void*)0x6bb23c);
+  entry=p;gateway(&p,0,editor_key_restore_hook,tail,0);
+  h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x6bb236;h->length=6;h->raw=1;
+  memcpy(h->original,"\x8b\x4c\x24\x38\x8b\x01",6);h->replacement[0]=0xe9;
+  *(U*)(h->replacement+1)=(U)entry-h->address-5;h->replacement[5]=0x90;
+  startup_call(&editor_hooks[count++],0x48ff6b,0x4040fc,(U)editor_camera_keys);
+ }
+ if(!VirtualProtect(editor_code,1024,PAGE_EXECUTE_READ,&old))goto failed;FlushInstructionCache(GetCurrentProcess(),editor_code,1024);
  h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x696c00;h->length=5;h->raw=1;memcpy(h->original,(void*)h->address,5);h->replacement[0]=0xe9;*(U*)(h->replacement+1)=(U)editor_proc-h->address-5;
  startup_call(&editor_hooks[count++],0x4999b0,0x6bad60,(U)editor_frame);
  if(editor_windows){
@@ -236,6 +251,11 @@ static int install_editor_hooks(void){
   startup_call(&editor_hooks[count++],0x451d4f,0x6bad60,(U)editor_frame);
   startup_call(&editor_hooks[count++],0x44a8e6,0x6b6390,(U)editor_cab_present);
   startup_call(&editor_hooks[count++],0x44a8ba,0x40171c,(U)editor_cab_ui_present);
+  /* Only the native logical-canvas warp uses this call. Other cursor calls,
+     including Windows dialogs, retain their ordinary screen coordinates. */
+  h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x44390a;h->length=6;h->raw=1;
+  memcpy(h->original,"\xff\x15\xb4\xdd\x84\x00",6);
+  memcpy(h->replacement,h->original,6);*(U*)(h->replacement+2)=(U)&editor_cab_cursor_target;
  }
  if(editor_free_tools){h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x55521c;h->length=1;h->raw=1;h->original[0]=0x55;h->replacement[0]=0xc3;}
  if(editor_windows){h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x84df30;h->length=4;h->raw=1;editor_original_pos=*(WindowPosFn*)h->address;memcpy(h->original,(void*)h->address,4);*(WindowPosFn*)h->replacement=editor_window_pos;}

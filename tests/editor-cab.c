@@ -12,8 +12,8 @@ int main(void){
   assert(h-r.bottom-r.top>=0&&h-r.bottom-r.top<=1);
   assert(abs((r.right-r.left)*3-(r.bottom-r.top)*4)<=3);
   for(x=0;x<640;x+=19)for(y=0;y<480;y+=17){
-   int sx=r.left+(x*(r.right-r.left)+639)/640;
-   int sy=r.top+(y*(r.bottom-r.top)+479)/480;
+   int sx=editor_cab_screen_coordinate(x,r.left,r.right-r.left,640);
+   int sy=editor_cab_screen_coordinate(y,r.top,r.bottom-r.top,480);
    assert(editor_cab_coordinate(sx,r.left,r.right-r.left,640)==x);
    assert(editor_cab_coordinate(sy,r.top,r.bottom-r.top,480)==y);
   }

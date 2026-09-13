@@ -1,6 +1,17 @@
 /* Present the native 640x480 cab canvas with a centered proportional fit.
    Scaling the completed canvas keeps artwork, needles and selection outlines
    in the same coordinate system. Native window clipping preserves tools. */
+static BOOL WINAPI editor_cab_cursor(int x,int y){
+ HWND h=*(HWND*)0x82813a;RECT c;POINT origin={0,0};EditorRect fit;
+ if(editor_windows&&editor_mode()==4&&h&&GetClientRect(h,&c)&&
+    c.right>0&&c.bottom>0&&ClientToScreen(h,&origin)){
+  fit=editor_cab_fit(c.right,c.bottom);
+  x=origin.x+editor_cab_screen_coordinate(x-*(int*)0x828196,fit.left,fit.right-fit.left,640);
+  y=origin.y+editor_cab_screen_coordinate(y-*(int*)0x82819a,fit.top,fit.bottom-fit.top,480);
+ }
+ return SetCursorPos(x,y);
+}
+static BOOL (WINAPI *editor_cab_cursor_target)(int,int)=editor_cab_cursor;
 static LPARAM editor_cab_mouse(HWND h,LPARAM l){
  RECT c;EditorRect fit;int x=(short)LOWORD(l),y=(short)HIWORD(l);
  if(!GetClientRect(h,&c)||c.right<1||c.bottom<1)return l;
