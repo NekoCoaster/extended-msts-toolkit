@@ -33,7 +33,7 @@ Keep the extracted package together: the launcher needs its accompanying files. 
 | Continue after passing a red signal | Shows the failure message, then lets the simulation resume after dismissal. |
 | Remove derailment activity-end message | Keeps a derailment from ending the activity. |
 | Unlock camera modes during derailment | Keeps camera selection available after derailment. |
-| Allow connected engines to crawl after derailment | Uses throttle and reverser to move eligible connected locomotives after derailment. Includes thrust strength and HUD-position controls. |
+| Allow connected engines to crawl after derailment | Uses throttle/reverser to crawl, horn/whistle to roll upright, and train brake keys to steer derailed connected locomotives. Includes strength and HUD-position controls. |
 
 [Explore the options](docs/features.md), including crawling controls and feature requirements.
 
