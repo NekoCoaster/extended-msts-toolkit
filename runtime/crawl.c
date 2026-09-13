@@ -6,7 +6,7 @@
 #ifndef G
 #define G(a) (a)
 #endif
-enum {FRAME,EXIT,WHEEL,ROD,SPLIT,BODY,FORCE,DRAG,PITCH,VECTOR,CROSS,HOOK_COUNT};
+enum {FRAME,EXIT,WHEEL,ROD,SPLIT,BODY,FORCE,DRAG,PITCH,VECTOR,CROSS,MANUAL_KEY,HOOK_COUNT};
 #include "prologues.h"
 typedef struct {U id,body,definition,engineDefinition,links[2];int engine,derailed,active,rotating;float mass,maxForce,maxPower,axis[3],velocity[3];double dp[3],dv[3],dl[3],dw[3];} Car;
 typedef struct {U originalReturn,slot,bits,a,b,links[4],body;float filtered[3];int pitch;} Call;
@@ -34,7 +34,7 @@ static Car *find_car(U id){U i;for(i=0;i<car_count;i++)if(cars[i].id==id)return 
 /* MSTS rotates integration buffers between the frame snapshot and collision
    callbacks. Ownership is stable; the cached body address is not. */
 static int eligible(U body){Car *c;if(!body||*((B*)body+0xf0)!=1||!(*((B*)body+0xf2)&4))return 0;c=find_car(ru((B*)body+0x11d));return c&&c->derailed;}
-static void clear_activity(void){enabled=blocked=have_sim=0;car_count=active_count=train_id=0;throttle=direction=0;rotation_inputs=control_id=0;friction_scale=1;last_error="";phase="waiting-for-activity";}
+static void clear_activity(void){enabled=blocked=have_sim=0;car_count=active_count=train_id=0;throttle=direction=0;rotation_inputs=control_id=0;crawl_derail_pending=0;crawl_derail_down=1;crawl_shortcuts_reset();friction_scale=1;last_error="";phase="waiting-for-activity";}
 static int read_car(U id,Car *c){
  B header[0xac],body[0x124],engine[0x116];B flag;U i;
  memset(c,0,sizeof(*c));c->id=id;
@@ -62,17 +62,26 @@ static int snapshot(void){
  if(train_id!=train){have_sim=0;train_id=train;}
  memcpy(cars,next,n*sizeof(Car));car_count=n;throttle=t;direction=d;control_type=type;control_id=ctl;friction_scale=1-clamp_throttle(t);return 1;
 }
+#include "manual_derail.h"
 static void update_frame(void){
- U i,j,derailed=0;float sim,dt;frame_count++;
+ U i,j,derailed=0,input=0,ctl=0,type=0,mode=0;int focused,request;float sim,dt;frame_count++;
  if(blocked)return;
  if(!*(volatile U*)G(0x7c2ac0)){clear_activity();return;}
- if(!enabled&&frame_count%6)return;
+ focused=!paused()&&crawl_control_focus()&&read_memory(G(0x829980),&mode,4)&&!mode;
+ if(focused&&read_memory(G(0x7b6440),&ctl,4)&&read_memory(G(0x7b6438),&type,4))input=crawl_keyboard_controls(ctl,type);
+ request=crawl_derail_pending;crawl_derail_pending=0;
+ if(!focused){request=0;crawl_derail_down=1;}else if(!(input&CRAWL_DERAIL))crawl_derail_down=0;
+ rotation_inputs=strength?(input&7):0;
+ if(!enabled&&frame_count%6&&!request)return;
  if(!snapshot()){fail("Invalid train, controls or connection graph");return;}
+ if(request&&crawl_requested&&prevent_end){
+  if(!crawl_derail_consist())return;
+  if(!snapshot()){fail("Invalid graph after manual derailment");return;}
+ }
  for(i=0;i<car_count;i++)if(cars[i].derailed)derailed=1;
  if(!derailed){enabled=0;have_sim=0;active_count=rotation_inputs=0;phase="waiting-for-derailment";return;}
  enabled=1;phase="crawling";
  if(paused()){active_count=rotation_inputs=0;for(i=0;i<car_count;i++)cars[i].active=0;return;}
- rotation_inputs=strength&&crawl_control_focus()?crawl_keyboard_controls(control_id,control_type):0;
  if((rotation_inputs&(CRAWL_LEFT|CRAWL_RIGHT))==(CRAWL_LEFT|CRAWL_RIGHT))rotation_inputs&=CRAWL_RIGHTING;
  sim=*(float*)G(0x80acd4);dt=*(float*)G(0x828fb4);
  if(!finite_number(sim)){fail("Invalid simulation clock");return;}
@@ -149,6 +158,7 @@ static void hook_enter(U id,Registers *r){
  EnterCriticalSection(&state_lock);
  if(id==FRAME){if(!simulation_thread)simulation_thread=tid;if(tid==simulation_thread){InterlockedIncrement(&status_sequence);update_frame();InterlockedIncrement(&status_sequence);}}
  else if(id==EXIT){InterlockedIncrement(&status_sequence);clear_activity();InterlockedIncrement(&status_sequence);}
+ else if(id==MANUAL_KEY)crawl_manual_event(r);
  else if(enabled&&!paused())enter_effect(id,r);
  LeaveCriticalSection(&state_lock);
 }
@@ -187,7 +197,7 @@ static int start_native(void){
   tls_index=TlsAlloc();if(tls_index==TLS_OUT_OF_INDEXES)return 0;
   InitializeCriticalSection(&state_lock);
   InterlockedExchange(&crawl_state_ready,1);
-  for(tries=WHEEL;tries<HOOK_COUNT;tries++){hooks[tries].gate=(U)&enabled;hooks[tries].pause=G(0x7be0f4);}
+  for(tries=WHEEL;tries<MANUAL_KEY;tries++){hooks[tries].gate=(U)&enabled;hooks[tries].pause=G(0x7be0f4);}
   hooks[DRAG].sites=drag_sites;hooks[DRAG].site_count=6;
   hooks[VECTOR].sites=vector_site;hooks[VECTOR].site_count=1;
   hooks[CROSS].sites=cross_site;hooks[CROSS].site_count=1;

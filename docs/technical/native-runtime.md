@@ -14,7 +14,7 @@ The [window module](borderless.md) uses a separate early command-line stage and 
 
 `runtime/hooks.h` supports checked detours and short raw instruction replacements. Every selected mutation claims an address range in a registry shared across window and gameplay stages. Overlaps and unexpected original bytes are rejected before installation. Peer threads are temporarily suspended; if a thread is inside a target prefix, installation retries. A later byte mismatch rolls back earlier writes. DirectInput forwarding continues if feature setup fails.
 
-The optional activity-end and camera replacements use their verified MEDS bytes, now in process memory only. Crawling contributes eleven native detours, preserving registers, flags, floating-point state and call cleanup. Inactive/paused fast gates avoid full callback overhead. Raw replacements have no per-frame callback cost.
+The optional activity-end and camera replacements use their verified MEDS bytes, now in process memory only. Crawling contributes twelve native detours (including the buffered manual-derail key hook), preserving registers, flags, floating-point state and call cleanup. Inactive/paused fast gates avoid full callback overhead. Raw replacements have no per-frame callback cost.
 
 ```mermaid
 flowchart TD

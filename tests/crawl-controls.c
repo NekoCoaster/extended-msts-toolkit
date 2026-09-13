@@ -23,7 +23,7 @@ int main(void){
  lifecycle_main();clear_activity();
  head=obj();node=obj();device=obj();input=obj();bits=obj();table=obj();ctl=obj();train=obj();car=vehicle(1);body=(B*)ru(car+0x5c);freight=vehicle(0);fb=(B*)ru(freight+0x5c);
  putu((B*)G(0x8299a0),(U)head);putu(head,(U)node);putu(node,(U)head);putu(node+8,(U)device);
- putu(device+4,(U)input);putu(device+0x18,(U)table);input[0x2d]=1;putu(input+0x24,(U)bits);
+ putu(device+0x14,238);putu(device+4,(U)input);putu(device+0x18,(U)table);input[0x2d]=1;putu(input+0x24,(U)bits);
  for(type=1;type<=3;type++){
   memset(table,0,4096);memset(bits,0,32);
   binding(table,0x39,0x489a25,(U)ctl+(type==1?0x368:0x1c4));
@@ -43,7 +43,33 @@ int main(void){
   bits[4]=1;assert(crawl_keyboard_controls((U)ctl,type)==CRAWL_RIGHT);
   putu((B*)G(0x829980),2);assert(!crawl_keyboard_controls((U)ctl,type));putu((B*)G(0x829980),0);
  }
+ /* Actual MSTS layout: 238 bindings and 30 bytes, followed by allocator data.
+    Guard pages make either of alpha.14's oversized reads fail, independent of
+    whether the adjacent allocation happens to be readable in this run. */
+ {B *kb=VirtualAlloc(NULL,8192,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE),*tb=VirtualAlloc(NULL,8192,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);DWORD old;
+  assert(kb&&tb&&VirtualProtect(kb+4096,4096,PAGE_NOACCESS,&old)&&VirtualProtect(tb+4096,4096,PAGE_NOACCESS,&old));
+  kb+=4096-30;tb+=4096-238*16;memcpy(tb,table,238*16);kb[0x39/8]=1<<(0x39%8);
+  putu(input+0x24,(U)kb);putu(device+0x18,(U)tb);crawl_shortcut_ctl=0;
+  assert(crawl_keyboard_controls((U)ctl,3)==CRAWL_RIGHTING);assert(!strcmp(crawl_shortcuts[0],"Space"));
+  assert(!strcmp(crawl_shortcuts[2],"D"));
+  kb[0x39/8]=0;kb[0x27/8]|=1<<(0x27%8);assert(crawl_keyboard_controls((U)ctl,3)==CRAWL_LEFT);
+  putu(input+0x24,(U)bits);putu(device+0x18,(U)table);
+  /* Reproduce the live allocation tail (0x5b,0x03) and bogus extra entries. */
+  bits[30]=0x5b;bits[31]=3;putu(table+240*16,1);assert(crawl_keyboard_controls((U)ctl,3)==CRAWL_RIGHT);
+  bits[30]=bits[31]=0;putu(table+240*16,0);
+ }
  putu((B*)G(0x82813a),1);putu((B*)G(0x7c2ac0),(U)train);putu(train+0x6a,(U)car);putu((B*)G(0x7b6440),(U)ctl);putu((B*)G(0x7b6438),3);
+ /* Down and up can both arrive in the same IOM poll, before any physics
+    frame. The buffered command must survive the now-released key bitset. */
+ {Registers r;U stack[12]={0},event[4]={0x1002b,1,0,0};memset(&r,0,sizeof(r));
+  r.esp=(U)stack-4;stack[6]=(U)event;stack[9]=(U)device;
+  crawl_derail_down=crawl_derail_pending=0;hook_enter(MANUAL_KEY,&r);assert(crawl_derail_pending&&crawl_derail_down);
+  event[1]=0;hook_enter(MANUAL_KEY,&r);assert(crawl_derail_pending&&!crawl_derail_down);
+  crawl_derail_pending=0;event[1]=1;stack[10]=4;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);
+  stack[10]=0;event[1]=0;hook_enter(MANUAL_KEY,&r);test_focus=0;event[1]=1;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);test_focus=1;
+  event[1]=0;hook_enter(MANUAL_KEY,&r);putu((B*)G(0x829980),2);event[1]=1;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);putu((B*)G(0x829980),0);
+  event[1]=0;hook_enter(MANUAL_KEY,&r);putu((B*)G(0x7be0f4),1);event[1]=1;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);putu((B*)G(0x7be0f4),0);
+ }
  putu(car+0xa8,(U)freight);putu(freight+0xa0,(U)car);body[0xf2]=fb[0xf2]=12;
  /* Locomotive on its side: its up points left, so right steering is -world X. */
  wf((U)body+0xc,0);wf((U)body+0x10,1);wf((U)body+0x18,-1);wf((U)body+0x1c,0);

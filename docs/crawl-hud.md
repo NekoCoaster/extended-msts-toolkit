@@ -32,4 +32,8 @@ The slider ranges from **0–100×**, with **10×** as the starting value. Use *
 
 Press **F5** through the standard red pages until MSTS Bin's white extended display appears. The extra lines show crawl state, strength, added thrust, throttle/regulator, reverser and powered-engine counts. Reverse thrust is displayed with a minus sign. This is the added crawl thrust, not the train's total force.
 
+The HUD also shows the current keyboard bindings for upright rotation and steering, plus a live **UPRIGHT**, **LEFT**, or **RIGHT** input indicator. The labels follow MSTS key remapping. Before bindings are available it shows the default keys. If the indicator stays at **none**, the game is not receiving an eligible rotation input.
+
+Press `\` once to derail the currently controlled consist, including at a standstill. This invokes MSTS's native derailment sequence for each connected vehicle. It requires crawling to be enabled, works only in the active driving scene, and does not repeat while held. Pausing or leaving the game requires releasing the key before another command. Modified combinations such as Ctrl+\ do not trigger it. The shortcut is also listed on the extended F5 HUD.
+
 The HUD is included automatically with crawling. If it overlaps a track monitor or another overlay, choose the other bottom corner or move the other display. Its placement follows the current resolution.
