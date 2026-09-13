@@ -43,6 +43,7 @@ static int editor_mode(void){
  return mode==1&&*(U*)0x7be0f8?1:mode==4?4:mode==3?3:0;
 }
 #include "editor_cab.h"
+#include "editor_pan.h"
 #include "editor_keyboard.h"
 static void editor_toggle_fullscreen(HWND h){
  MONITORINFO info;LONG style;
@@ -153,7 +154,7 @@ static LRESULT CALLBACK editor_proc(HWND h,UINT msg,WPARAM w,LPARAM l){
   if(msg==WM_SIZE&&w!=SIZE_MINIMIZED){editor_pending=1;editor_resize_time=GetTickCount();}
  }
  if(msg==WM_DESTROY)editor_sound_release();
- if(msg==WM_KILLFOCUS)editor_wheel_remainder=0;
+ if(msg==WM_KILLFOCUS){editor_wheel_remainder=0;editor_pan_reset();}
  if(editor_windows&&active==3&&msg==WM_MOUSEWHEEL&&editor_map_wheel(h,w,l))return 0;
  if(editor_windows&&active==4&&msg>=WM_MOUSEMOVE&&msg<=WM_MBUTTONDBLCLK)l=editor_cab_mouse(h,l);
  result=CallWindowProcA(editor_original_proc,h,msg,w,l);
@@ -183,6 +184,9 @@ static int editor_rebuild(int width,int height){
 }
 static void editor_frame(void){
  HWND h=*(HWND*)0x82813a;int mode=editor_mode();RECT r;LONG style;U engine;
+ /* A paused/loading frame may skip camera processing. Never carry its mouse
+    movement into a later frame when the editor resumes. */
+ editor_pan_reset();
  if(editor_idle_audio&&mode==1&&!IsIconic(h)){engine=*(U*)0x7c32f0;editor_sound_tick(engine?*(void**)engine:NULL);}else editor_sound_release();
  if(editor_windows&&mode&&h){
   if(mode!=editor_last_mode){
@@ -223,7 +227,7 @@ static void editor_frame(void){
 }
 static int install_editor_hooks(void){
  U count=0;Hook *h;DWORD old;B *p;
- if(!editor_windows&&!editor_free_tools&&!editor_idle_audio&&!editor_swap_keys)return 1;
+ if(!editor_windows&&!editor_free_tools&&!editor_idle_audio&&!editor_swap_keys&&!editor_unlimited_pan)return 1;
  /* Independent verified instruction ranges, committed as one transaction. */
  if(memcmp((void*)0x696c00,"\xa1\x54\x99\x82\x00",5)||memcmp((void*)0x55521c,"\x55\x8b\xec\x83\xec\x10",6))return 0;
  editor_code=VirtualAlloc(NULL,1024,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);if(!editor_code)return 0;
@@ -240,7 +244,14 @@ static int install_editor_hooks(void){
   h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x6bb236;h->length=6;h->raw=1;
   memcpy(h->original,"\x8b\x4c\x24\x38\x8b\x01",6);h->replacement[0]=0xe9;
   *(U*)(h->replacement+1)=(U)entry-h->address-5;h->replacement[5]=0x90;
-  startup_call(&editor_hooks[count++],0x48ff6b,0x4040fc,(U)editor_camera_keys);
+ }
+ if(editor_swap_keys||editor_unlimited_pan)startup_call(&editor_hooks[count++],0x48ff6b,0x4040fc,(U)editor_camera_keys);
+ if(editor_unlimited_pan){
+  editor_pointer_original=(EditorPointerMove)p;
+  memcpy(p,"\x83\xec\x0c\x53\x55",5);p+=5;branch(&p,0xe9,(void*)0x6d3135);
+  h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x6d3130;h->length=5;h->raw=1;
+  memcpy(h->original,"\x83\xec\x0c\x53\x55",5);h->replacement[0]=0xe9;
+  *(U*)(h->replacement+1)=(U)editor_pointer_move-h->address-5;
  }
  if(!VirtualProtect(editor_code,1024,PAGE_EXECUTE_READ,&old))goto failed;FlushInstructionCache(GetCurrentProcess(),editor_code,1024);
  h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x696c00;h->length=5;h->raw=1;memcpy(h->original,(void*)h->address,5);h->replacement[0]=0xe9;*(U*)(h->replacement+1)=(U)editor_proc-h->address-5;

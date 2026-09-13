@@ -14,7 +14,8 @@ for name in sys.argv[1:]:
                 return b[o:o+n]
         raise AssertionError(hex(va))
     for a, h in [(0x696c00,'a154998200'), (0x55521c,'558bec83ec10'),
-                 (0x44390a,'ff15b4dd8400'), (0x6bae0e,'8b7c24188b07'), (0x6bb236,'8b4c24388b01')]:
+                 (0x44390a,'ff15b4dd8400'), (0x6bae0e,'8b7c24188b07'), (0x6bb236,'8b4c24388b01'),
+                 (0x6d3130,'83ec0c5355')]:
         assert read(a,len(bytes.fromhex(h))) == bytes.fromhex(h), (name,hex(a))
     for a in [0x4999b0,0x6764b3,0x451d4f]:
         assert read(a,5) == b'\xe8'+struct.pack('<i',0x6bad60-a-5), (name,hex(a))

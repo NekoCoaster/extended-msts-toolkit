@@ -26,6 +26,14 @@ The buffered-input gateway at `0x6bae0e` remaps keyboard events before native IO
 
 The camera-input call at `0x48ff6b` is wrapped separately. The native routine still handles mouse motion, rotation and timing; camera translation reads held physical keys from the native keyboard bitset. This supports simultaneous forward, lateral and vertical motion without synthesizing a global Ctrl key. Shift speed and lateral cooldown remain native-compatible. Ctrl+letter shortcuts, Ctrl+Left/Right rotation, and Alt shortcuts remain available. Focus is checked on the window's GUI thread, including exclusion of menus and move/size loops, so text fields and tools retain normal input. These three instruction ranges use the shared startup mutation transaction and are installed only in toolset mode.
 
+## Mouse-panning boundary fix
+
+Route initialization selects free-camera controller `0x519673`, which applies relative rotations without the yaw/pitch clamps used by other simulator camera modes. The actual boundary is upstream: virtual-pointer routine `0x6d3130` clips its accumulated X/Y coordinates to a rectangle initialized from the screen size. Callback `0x4a882b` copies those clipped coordinates into camera input, and `0x4a8d27` differences them. Once either pointer coordinate reaches an edge, that axis produces zero camera motion.
+
+`UnlimitedMousePan` installs an exact five-byte entry detour at `0x6d3130`, with a trampoline preserving its native behavior and return value. Only the Route Editor's own pointer, while its native camera-pan flag is active, contributes relative X/Y movement to separate per-frame accumulators. The native per-axis sensitivity is retained. The existing camera-input call at `0x48ff6b` is shared with key swapping, and substitutes these deltas after native input processing. No simulator angle clamps or virtual-pointer bounds are changed. Button transitions, lost focus, menus and frame consumption clear pending movement; large accumulated values are safely converted to native integers. The option is independent, defaults off, and belongs to the same verified toolset startup transaction.
+
+`tests/editor-pan.c` loads and executes the original pointer routine from each supported local EXE fixture. Its coordinates hit the native bounds while camera deltas remain responsive over 2,000 two-axis frames, including reversal and sensitivity scaling. It also checks release/repress, one-time consumption, focus/menu exclusion, unrelated pointer objects and disabled/other-editor isolation. These are isolated native-code regressions, not a claim of an extended live mouse-drag session. Fixtures and extracted machine code are not distributed.
+
 ## MegaCoaster audio finding
 
 On this installation, the listener update at `0x541926` took about 206 ms per call when the route had no active nearby audio. A short authorized capture recorded 21 calls taking 4,324 ms. Starting a silent looping software buffer removed that delay. With the installed fix, a later 15-second capture recorded about 56 native frames per second and 847 listener calls taking 83 ms in total, compared with roughly 4–5 frames per second before the fix. These are local observations, not a hardware-independent performance guarantee.
@@ -37,7 +45,7 @@ The fix uses the existing DirectSound device and a one-second, mono 22,050 Hz, 1
 - `tests/editor-input.c`: executes all 24 production picking operands across seven sizes, including differing client/camera extents during resize; checks wheel detents, partial deltas and reversals.
 
 - `tests/editor-sites.py`: verifies frame calls, snapping/window entries and renderer/camera/map helper entries against base and widescreen fixtures.
-- `tests/editor-config.c`: checks missing settings, all sixteen option combinations, custom keys and malformed/duplicate/reserved values.
+- `tests/editor-config.c`: checks missing settings, all thirty-two option combinations, custom keys and malformed/duplicate/reserved values.
 - `tests/editor-installer.ps1`: checks independent settings and manifest persistence, install/uninstall across base, widescreen and both LAA variants; executable hashes stay unchanged.
 - `tests/editor-layout.c`: covers independent right/bottom folding across monitor origins, minimum layout and small-monitor fallback.
 - `tests/editor-cab.c`: checks centered 4:3 fit and mouse-coordinate round trips at seven display sizes, including tall and ultrawide windows.

@@ -4,7 +4,7 @@ NEMT detects `-toolset` separately from the simulator. The main game's borderles
 
 The verbose startup/loading details and optional startup log also work in Editors & Tools.
 
-Four independent options are available in the control panel. Apply changes with MSTS closed, then restart Editors & Tools.
+Five independent options are available in the control panel. Apply changes with MSTS closed, then restart Editors & Tools.
 
 | Option | Behavior |
 | --- | --- |
@@ -12,10 +12,13 @@ Four independent options are available in the control panel. Apply changes with 
 | Move Route Editor tool windows freely | Removes MSTS's magnetic alignment of floating tools. |
 | Fix Route Editor slowdown without nearby sounds | Keeps the audio device active with a silent buffer while Route Editor runs. No sound source needs to be placed in the route. |
 | Swap arrow keys with WASDEQ controls in route editor | Uses configurable camera keys and moves their original shortcuts onto the corresponding arrow combinations. |
+| Remove Route Editor mouse-panning limit | Keeps mouse-drag camera rotation responsive after MSTS's invisible pointer reaches its screen bounds, on both axes. |
 
 Route Editor recreates its rendering surfaces and camera projection at the new size. Wider windows reveal more of the world while preserving the vertical field of view. Resizing settles after the drag ends; floating tools remain above the viewport.
 
 Object selection and placement follow the mouse across the enlarged viewport. The red compass stays centered at the top.
+
+The mouse-panning option fixes a native MSTS problem: its camera uses an invisible mouse position that stops at the edges of the screen. This feels like an angle limit even though the Route Editor's free camera has no such angle clamp. NEMT uses relative mouse movement while the camera-pan button is held, so you can keep turning horizontally or vertically. It retains the native sensitivity, regular cursor coordinates and object-drag behavior. This option works independently of resizing and camera key swaps.
 
 Cab Editor centers its 4:3 cab canvas and fits it inside the window without changing its proportions. Unused space is white. Mouse selection and native cursor positioning follow the fitted image, including fullscreen instrument selection. The cab's original bitmap resolution still limits its detail when enlarged.
 
@@ -31,6 +34,7 @@ ResizableViewports=true
 FreeToolWindows=true
 SmoothIdleAudio=true
 SwapArrowKeys=true
+UnlimitedMousePan=true
 RE_CAM_FORWARD=w
 RE_CAM_BACKWARD=s
 RE_CAM_LEFT=a
@@ -39,7 +43,7 @@ RE_CAM_UP=e
 RE_CAM_DOWN=q
 ```
 
-Missing feature switches default to false. The corresponding installer switches are `-EditorWindows`, `-FreeEditorTools`, `-SmoothEditorAudio` and `-SwapEditorKeys`. Like the other installer switches, they describe the requested configuration; include any other features you want to keep enabled when applying settings from the command line.
+Missing feature switches default to false. The corresponding installer switches are `-EditorWindows`, `-FreeEditorTools`, `-SmoothEditorAudio`, `-SwapEditorKeys` and `-UnlimitedEditorPan`. Like the other installer switches, they describe the requested configuration; include any other features you want to keep enabled when applying settings from the command line.
 
 ## Camera key swaps
 

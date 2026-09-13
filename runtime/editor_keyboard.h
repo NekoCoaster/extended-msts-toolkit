@@ -5,11 +5,7 @@ static B editor_key_held[256],editor_key_consumed[256];
 static U editor_key_event[4],*editor_key_mask_slot,editor_key_mask_saved;
 static U editor_key_ctrl_saved[2];static int editor_key_ctrl_changed;
 static int editor_keyboard_focus(void){
- HWND h=*(HWND*)0x82813a;GUITHREADINFO info;
- if(!editor_swap_keys||editor_mode()!=1||!h||GetForegroundWindow()!=h)return 0;
- memset(&info,0,sizeof(info));info.cbSize=sizeof(info);
- /* Input processing need not run on the thread owning the native window. */
- return GetGUIThreadInfo(GetWindowThreadProcessId(h,NULL),&info)&&info.hwndFocus==h&&!(info.flags&0x1c);
+ return editor_swap_keys&&editor_route_focus();
 }
 static void editor_key_restore(void){
  if(editor_key_mask_slot){*editor_key_mask_slot=editor_key_mask_saved;editor_key_mask_slot=NULL;}
@@ -57,6 +53,7 @@ static void editor_camera_keys(void){
  }
  cooldown=*(float*)0x7c2a70;
  ((void(*)(void))0x4a8d27)();
+ editor_pan_apply();
  if(!enabled)return;
  memcpy((void*)0x7ba9d0,saved,16);
  if(!editor_keyboard_focus()||(bits=editor_keyboard_bits())==NULL)return;
