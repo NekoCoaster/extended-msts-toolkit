@@ -1,5 +1,9 @@
 /* Integer desktop coordinates, including monitors left/above the primary. */
 typedef struct {int left,top,right,bottom;} EditorRect;
+/* Preserve partial high-resolution wheel deltas; a detent is 120 units. */
+static int editor_wheel_steps(int *remainder,int delta){
+ int total=*remainder+delta,steps=total/120;*remainder=total-steps*120;return steps;
+}
 static EditorRect editor_cab_fit(int width,int height){
  EditorRect r;int w=width,h=width*3/4;
  if(h>height){h=height;w=height*4/3;}

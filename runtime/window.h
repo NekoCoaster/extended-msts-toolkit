@@ -72,6 +72,8 @@ static LPSTR WINAPI toolkit_command_line(void){
    if(wcslen(root)+45<MAX_PATH&&supported_image()){
     /* This runs from the EXE's CRT entry, outside DllMain/loader lock. */
     read_config();
+    /* Native loading screens and diagnostics are shared by game and toolset. */
+    if(config_valid)install_startup_hooks();
     if(toolset_mode&&config_valid&&!install_editor_hooks())MessageBoxW(NULL,L"The editor improvements could not be installed. Original editor behavior remains enabled.",L"NEMT editors unavailable",MB_OK|MB_ICONWARNING);
     /* Toolset has its own windows and frame loop. Game launch defaults,
        border removal, timing and gameplay UI hooks must not reach editors. */
@@ -85,7 +87,6 @@ static LPSTR WINAPI toolkit_command_line(void){
     if(normalized_command_line){
      if(config_valid)normalize_launch(actual,normalized_command_line,unlock_fps);else strcpy(normalized_command_line,actual);
      requested_window_mode=normalize_vm(normalized_command_line,NULL);
-     if(config_valid)install_startup_hooks();
      if(config_valid)install_hud_hook();
      if(config_valid&&!install_movie_hook())MessageBoxW(NULL,L"The startup movie fixes could not be installed. Original movie behavior remains enabled.",L"NEMT feature unavailable",MB_OK|MB_ICONWARNING);
      if(config_valid&&!install_signal_hook())MessageBoxW(NULL,L"The red-signal continuation hook could not be installed. The original activity-end behavior remains enabled.",L"NEMT feature unavailable",MB_OK|MB_ICONWARNING);

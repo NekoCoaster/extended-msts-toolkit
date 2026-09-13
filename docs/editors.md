@@ -2,6 +2,8 @@
 
 NEMT detects `-toolset` separately from the simulator. The main game's borderless setting does not remove editor or launcher borders. Game timing, crawling and movie overrides are also bypassed in tools mode.
 
+The verbose startup/loading details and optional startup log also work in Editors & Tools.
+
 Three independent options are available in the control panel. Apply changes with MSTS closed, then restart Editors & Tools.
 
 | Option | Behavior |
@@ -12,9 +14,13 @@ Three independent options are available in the control panel. Apply changes with
 
 Route Editor recreates its rendering surfaces and camera projection at the new size. Wider windows reveal more of the world while preserving the vertical field of view. Resizing settles after the drag ends; floating tools remain above the viewport.
 
+Object selection and placement follow the mouse across the enlarged viewport. The red compass stays centered at the top.
+
 Cab Editor centers its 4:3 cab canvas and fits it inside the window without changing its proportions. Unused space is white. Mouse selection follows the fitted image. The cab's original bitmap resolution still limits its detail when enlarged.
 
 Activity Editor keeps its map centered at the same scale. Its right panel and bottom pair normally remain outside the main window. Each group folds inside independently when it would extend beyond the current monitor's usable area. When both fold, the right panel occupies the right edge and the bottom pair sits at the lower left. The map uses the remaining space. A small window may grow to accommodate the original fixed-size controls; very small displays cannot accommodate every native control without overlap.
+
+With resizable editor windows enabled, scroll up over Activity Editor's map to zoom in and down to zoom out. Zoom uses the same steps and limits as the native zoom buttons. Scrolling over floating tools and panels retains their normal behavior.
 
 The settings are stored in `NEMT/settings.ini` beside the game:
 

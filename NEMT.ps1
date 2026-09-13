@@ -217,7 +217,7 @@ function Resolve-MstsStartupPath([string]$Path) {
 function Show-Options([string]$InitialPath){
  Add-Type -AssemblyName System.Windows.Forms;Add-Type -AssemblyName System.Drawing
  [Windows.Forms.Application]::EnableVisualStyles()
- $form=New-Object Windows.Forms.Form;$form.Text="Neko's Extended MSTS Toolkit - v$script:ToolkitVersion";$form.ClientSize=New-Object Drawing.Size(760,([Math]::Max(500,[Math]::Min(648,[Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height-48))))
+ $form=New-Object Windows.Forms.Form;$form.Text="Neko's Extended MSTS Toolkit - v$script:ToolkitVersion";$form.ClientSize=New-Object Drawing.Size(760,([Math]::Max(500,[Math]::Min(772,[Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height-48))))
  $form.StartPosition='CenterScreen';$form.FormBorderStyle='FixedDialog';$form.MaximizeBox=$false;$form.AutoScaleMode='Dpi';$form.AutoScaleDimensions=New-Object Drawing.SizeF(96,96)
  $form.Font=New-Object Drawing.Font('Segoe UI',10);$form.BackColor=[Drawing.Color]::White
  function Label-At([string]$Text,[int]$Y,[int]$Height=28){$l=New-Object Windows.Forms.Label;$l.UseMnemonic=$false;$l.Text=$Text;$l.Location=New-Object Drawing.Point(24,$Y);$l.Size=New-Object Drawing.Size(712,$Height);$form.Controls.Add($l);return $l}
@@ -261,7 +261,7 @@ function Show-Options([string]$InitialPath){
  $backgroundBox=Check-At 'Unmute while in background' 361
  $redBox=Check-At 'Continue after passing a red signal (Resume after failure message)' 393
  $anchorPanel=New-Object Windows.Forms.Panel;$anchorPanel.Location=New-Object Drawing.Point(24,($sliderPanel.Bottom+2));$anchorPanel.Size=New-Object Drawing.Size(652,32);$form.Controls.Add($anchorPanel)
- $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text="Crawl HUD position:";$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
+ $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text='Extended F5 HUD Location';$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
  $anchor=New-Object Windows.Forms.ComboBox;$anchor.DropDownStyle="DropDownList";$anchor.Location=New-Object Drawing.Point(160,0);$anchor.Size=New-Object Drawing.Size(170,28);[void]$anchor.Items.AddRange(@("Bottom right","Bottom left"));$anchor.SelectedIndex=1;$anchorPanel.Controls.Add($anchor)
  # The scrollable options area keeps all controls reachable on smaller displays.
  # Scrolling remains an accessibility fallback for smaller/high-DPI desktops.
@@ -278,13 +278,12 @@ function Show-Options([string]$InitialPath){
  $cabBox.Width=410;$wideLink.Text='Widescreen patch guide';$wideLink.Location=New-Object Drawing.Point(445,254);$wideLink.Size=New-Object Drawing.Size(270,22)
  $crawlHint.Top=456;$crawlHint.Height=22
  $sliderPanel.Top=482;$sliderPanel.Height=64
- $form.Controls.Remove($anchorPanel);$sliderPanel.Controls.Add($anchorPanel)
- $anchorPanel.Location=New-Object Drawing.Point(426,0);$anchorPanel.Size=New-Object Drawing.Size(226,28)
- $anchorLabel.Text='HUD:';$anchor.Location=New-Object Drawing.Point(48,0);$anchor.Width=170
+ $anchorPanel.Location=New-Object Drawing.Point(24,550);$anchorPanel.Size=New-Object Drawing.Size(652,28)
+ $anchor.Location=New-Object Drawing.Point(($anchorLabel.PreferredWidth+12),0);$anchor.Width=170
  $slider.AutoSize=$false;$slider.Top=30;$slider.Height=34
- $space.Top=550;$space.Height=36;$message.Top=590;$message.Height=34
- foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=630;$button.Height=32}
- $credit.Top=670;$credit.Height=20;$github.Top=694;$github.Height=22;$icon.Top=693
+ $space.Top=582;$space.Height=36;$message.Top=622;$message.Height=34
+ foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=662;$button.Height=32}
+ $credit.Top=702;$credit.Height=20;$github.Top=726;$github.Height=22;$icon.Top=725
  $form.AutoScroll=$true
  $ui=@{info=$null;loading=$false}
  $refresh={ $anchorPanel.Visible=$crawl.Checked;$sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }

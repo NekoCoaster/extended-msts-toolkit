@@ -1,5 +1,5 @@
 """Verify toolset hook instructions in supported local executable fixtures."""
-import struct, sys
+import re, struct, sys
 from pathlib import Path
 for name in sys.argv[1:]:
     b = Path(name).read_bytes()
@@ -19,6 +19,11 @@ for name in sys.argv[1:]:
         assert read(a,5) == b'\xe8'+struct.pack('<i',0x6bad60-a-5), (name,hex(a))
     for a,t in [(0x44a8e6,0x6b6390),(0x44a8ba,0x40171c)]:
         assert read(a,5) == b'\xe8'+struct.pack('<i',t-a-5), (name,hex(a))
-    for a in [0x521315,0x51cd5f,0x67360d]:
+    for axis, target in [('x',0x770560),('y',0x77055c)]:
+        source=(Path(__file__).resolve().parents[1]/'runtime/editor_picking.h').read_text()
+        sites=re.search(r'editor_pick_'+axis+r'_sites\[\]=\{([^}]+)\}',source)[1]
+        for a in (int(x,16) for x in sites.split(',')):
+            assert read(a,6)==b'\xd8\x3d'+struct.pack('<I',target), (name,hex(a))
+    for a in [0x521315,0x51cd5f,0x67360d,0x672f34,0x6413e6]:
         assert read(a,3) == bytes.fromhex('558bec'), (name,hex(a))
     print('PASS editor frame calls, window procedure, snapping and renderer/camera/map entries:',name)

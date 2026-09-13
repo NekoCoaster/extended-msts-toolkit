@@ -2,8 +2,9 @@
    Resizing is deferred to the start of a native frame, outside rendering. */
 #include "editor_audio.h"
 #include "editor_layout.h"
+#include "editor_picking.h"
 #include <math.h>
-static Hook editor_hooks[8];
+static Hook editor_hooks[32];
 static B *editor_code;
 static WNDPROC editor_original_proc;
 static int editor_busy,editor_sizing,editor_fullscreen,editor_last_mode,editor_pending;
@@ -12,15 +13,25 @@ static LONG editor_base_style,editor_base_ex;
 static WINDOWPLACEMENT editor_saved_placement;
 static WindowPosFn editor_original_pos;
 static DWORD editor_resize_time;
+static int editor_wheel_remainder;
 static void editor_camera_size(int width,int height){
  typedef void (__fastcall *CameraRefresh)(void*);
  B *camera=*(B**)0x7c2a88;int oldw,oldh;float fov;
  if(!camera)return;
+ editor_pick_width=(float)width;editor_pick_height=(float)height;
+ /* The compass caches its anchor during route loading. Rebuild its native
+    layout when the viewport changes, retaining its original top spacing. */
+ if(*(U*)0x80ab2c&&*(U*)0x80ab28&&
+    (*(float*)0x7a45b8!=width*.5f||*(float*)0x7a45bc!=height*.5f)){
+  *(float*)0x7a45b8=width*.5f;*(float*)0x7a45bc=height*.5f;
+  ((void(*)(void))0x6413e6)();
+ }
  oldw=*(int*)(camera+0x7c);oldh=*(int*)(camera+0x80);
  if(oldw==width&&oldh==height)return;
  if(oldw<=0||oldh<=0)return;
  /* Preserve vertical field of view while widening the world view. Updating
-    the application camera also refreshes native projection and picking. */
+    the application camera refreshes native projection; editor_picking.h
+    keeps the separate mouse-coordinate conversion in the same basis. */
  fov=*(float*)(camera+0x84);
  if(fov>0.01f&&fov<3.13f)*(float*)(camera+0x84)=(float)(2*atan(tan(fov*.5)*width*oldh/(height*(double)oldw)));
  *(int*)(camera+0x74)=0;*(int*)(camera+0x78)=0;
@@ -112,6 +123,25 @@ static void editor_map_size(HWND h,int width,int height){
  map[6]=map[7]=0;map[8]=width;map[9]=height;*(float*)(map+14)=(float)height/width;
  ((MapRefresh)0x67360d)(map);
 }
+static int editor_map_wheel(HWND h,WPARAM w,LPARAM l){
+ typedef void (__fastcall *MapZoom)(void*,int,float,float);
+ typedef void (__fastcall *MapRefresh)(void*);
+ U activity=*(U*)0x80ae78;int *map=(int*)0x80adb8,steps;POINT p,origin;
+ p.x=(short)LOWORD(l);p.y=(short)HIWORD(l);
+ /* Wheel coordinates are screen-relative. Leave palettes and controls in
+    charge of their own scrolling, including panels folded over the map. */
+ if(!activity||!*(U*)(activity+0xc)||IsIconic(h)||GetCapture()||WindowFromPoint(p)!=h){editor_wheel_remainder=0;return 0;}
+ origin.x=origin.y=0;if(!ClientToScreen(h,&origin))return 0;
+ p.x-=origin.x;p.y-=origin.y;
+ if(p.x<map[6]||p.y<map[7]||p.x>=map[8]||p.y>=map[9]){editor_wheel_remainder=0;return 0;}
+ steps=editor_wheel_steps(&editor_wheel_remainder,(short)HIWORD(w));
+ while(steps){
+  /* Same 20% step and native bounds as the Tools palette's +/- buttons. */
+  ((MapZoom)0x672f34)(map,steps>0,.2f,1.f);
+  ((MapRefresh)0x67360d)(map);steps+=steps>0?-1:1;
+ }
+ return 1;
+}
 static LRESULT CALLBACK editor_proc(HWND h,UINT msg,WPARAM w,LPARAM l){
  LRESULT result;int active=editor_mode();
  if(editor_windows&&active){
@@ -122,6 +152,8 @@ static LRESULT CALLBACK editor_proc(HWND h,UINT msg,WPARAM w,LPARAM l){
   if(msg==WM_SIZE&&w!=SIZE_MINIMIZED){editor_pending=1;editor_resize_time=GetTickCount();}
  }
  if(msg==WM_DESTROY)editor_sound_release();
+ if(msg==WM_KILLFOCUS)editor_wheel_remainder=0;
+ if(editor_windows&&active==3&&msg==WM_MOUSEWHEEL&&editor_map_wheel(h,w,l))return 0;
  if(editor_windows&&active==4&&msg>=WM_MOUSEMOVE&&msg<=WM_MBUTTONDBLCLK)l=editor_cab_mouse(h,l);
  result=CallWindowProcA(editor_original_proc,h,msg,w,l);
  /* MSTS updates these dimensions only for SIZE_RESTORED. Its editor
@@ -153,6 +185,7 @@ static void editor_frame(void){
  if(editor_idle_audio&&mode==1&&!IsIconic(h)){engine=*(U*)0x7c32f0;editor_sound_tick(engine?*(void**)engine:NULL);}else editor_sound_release();
  if(editor_windows&&mode&&h){
   if(mode!=editor_last_mode){
+   editor_wheel_remainder=0;
    if(editor_fullscreen)editor_toggle_fullscreen(h);
    style=GetWindowLongA(h,GWL_STYLE);
    if(!editor_last_mode){editor_base_style=style&~(WS_MAXIMIZE|WS_MINIMIZE);editor_base_ex=GetWindowLongA(h,GWL_EXSTYLE);}
@@ -198,6 +231,7 @@ static int install_editor_hooks(void){
  h=&editor_hooks[count++];memset(h,0,sizeof(*h));h->address=0x696c00;h->length=5;h->raw=1;memcpy(h->original,(void*)h->address,5);h->replacement[0]=0xe9;*(U*)(h->replacement+1)=(U)editor_proc-h->address-5;
  startup_call(&editor_hooks[count++],0x4999b0,0x6bad60,(U)editor_frame);
  if(editor_windows){
+  editor_picking_hooks(&editor_hooks[count]);count+=24;
   startup_call(&editor_hooks[count++],0x6764b3,0x6bad60,(U)editor_frame);
   startup_call(&editor_hooks[count++],0x451d4f,0x6bad60,(U)editor_frame);
   startup_call(&editor_hooks[count++],0x44a8e6,0x6b6390,(U)editor_cab_present);
