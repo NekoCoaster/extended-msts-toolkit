@@ -59,9 +59,16 @@ static void deep_environment(void){
  SYSTEM_INFO info;char line[300];int i;DISPLAY_DEVICEA display;OSVERSIONINFOW version;
  typedef LONG (WINAPI *VersionFn)(OSVERSIONINFOW*);VersionFn query;
  static const char *modules[]={"DINPUT.dll","DDRAW.dll","DSOUND.dll","D3D11.dll","DXGI.dll","WINMM.dll"};
- startup_write("ENVIRONMENT BEGIN","No GPU or CPU scheduling settings are changed",0);
+ startup_write("ENVIRONMENT BEGIN","Reporting environment before optional CPU preference; graphics settings unchanged",0);
  query=(VersionFn)GetProcAddress(GetModuleHandleA("ntdll.dll"),"RtlGetVersion");memset(&version,0,sizeof(version));version.dwOSVersionInfoSize=sizeof(version);
- if(query&&query(&version)==0){snprintf(line,sizeof(line),"Windows %lu.%lu build %lu",version.dwMajorVersion,version.dwMinorVersion,version.dwBuildNumber);startup_write("OS",line,0);}
+ if(query&&query(&version)==0){snprintf(line,sizeof(line),"Windows %lu.%lu build %lu",version.dwMajorVersion,version.dwMinorVersion,version.dwBuildNumber);startup_write("OS APPLICATION VIEW",line,0);}
+ {
+  HKEY key;DWORD type,size;char value[128];const char *names[]={"CurrentBuildNumber","DisplayVersion","ProductName"};int k;
+  if(RegOpenKeyExA(HKEY_LOCAL_MACHINE,"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",0,KEY_READ|0x100,&key)==ERROR_SUCCESS){
+   for(k=0;k<3;k++){size=sizeof(value);memset(value,0,sizeof(value));if(RegQueryValueExA(key,names[k],NULL,&type,(BYTE*)value,&size)==ERROR_SUCCESS&&type==REG_SZ){value[127]=0;snprintf(line,sizeof(line),"%s=%s; registry metadata, not proof of active compatibility settings",names[k],value);startup_write("OS REGISTRY",line,0);}}
+   RegCloseKey(key);
+  }
+ }
  GetSystemInfo(&info);snprintf(line,sizeof(line),"pid=%lu; process=32-bit; visible logical processors=%lu; processor mask=0x%lx",GetCurrentProcessId(),info.dwNumberOfProcessors,(DWORD)info.dwActiveProcessorMask);startup_write("SYSTEM",line,0);
  deep_module(GetModuleHandleA(NULL));for(i=0;i<sizeof(modules)/sizeof(modules[0]);i++)deep_module(GetModuleHandleA(modules[i]));
  startup_write("DISPLAY ENUM BEGIN","Windows display adapters; listing is not proof of selected render GPU",0);

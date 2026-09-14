@@ -29,3 +29,7 @@ Choose **Bottom left** or **Bottom right** for the crawl HUD. Bottom left is the
 ## Select All
 
 The button checks every available checkbox, including the FPS and optional logging options. It does not change the thrust multiplier or enable an incompatible cab-dial option. You can uncheck individual options before Apply.
+
+## CPU preference
+
+[Prefer P-cores](cpu-preference.md) is an optional restart-only scheduling preference for compatibility testing; it defaults off.

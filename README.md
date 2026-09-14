@@ -20,6 +20,7 @@ Keep the extracted package together: the launcher needs its accompanying files. 
 
 | Option | What it does |
 | --- | --- |
+| Prefer P-cores (optional) | Requests the highest detected CPU performance class for compatibility testing; defaults off. See [CPU preference](docs/cpu-preference.md). |
 | Skip startup movie | Goes straight to loading, avoiding the movie-related keyboard-control issue without registry edits or renaming the clip. |
 | Enable borderless windowed mode | Removes the main game's window border and keeps it centered. Does not apply to `-toolset`. |
 | Resizable editor windows and fullscreen | Resize or maximize Route, Activity and Cab Editor; Alt+Enter toggles borderless fullscreen. Activity panels fold inside when needed. |

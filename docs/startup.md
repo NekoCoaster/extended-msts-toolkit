@@ -41,3 +41,7 @@ The size limit accepts **4–65536 KB** and backup count **0–20**. Zero backup
 ## Main-menu welcome
 
 The main game adds a NEMT activation/help message below the original welcome line. The stock footer uses more of the empty space beside the navigation buttons so the full paragraph fits. Menu hover help continues to work. This message is independent of verbose loading and is omitted in Editors and Tools (`-toolset`).
+
+## Graphics and CPU troubleshooting
+
+Deep logging also records Direct3D7 device-creation results. The native graphics safeguard rejects failed or missing devices before texture enumeration; it cannot manufacture missing graphics support. OS APPLICATION VIEW is the version exposed to MSTS; OS REGISTRY is separate installed-version metadata. See [the graphics findings](technical/device-initialization.md) and [optional P-core preference](cpu-preference.md).

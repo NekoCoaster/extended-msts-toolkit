@@ -74,6 +74,7 @@ static LPSTR WINAPI toolkit_command_line(void){
     read_config();
     /* Native loading screens and diagnostics are shared by game and toolset. */
     if(config_valid)install_startup_hooks();
+    if(config_valid){apply_cpu_preference();if(!install_device_hooks())MessageBoxW(NULL,L"The graphics initialization safeguard could not be installed.",L"NEMT graphics safeguard unavailable",MB_OK|MB_ICONWARNING);}
     if(toolset_mode&&config_valid&&!install_editor_hooks())MessageBoxW(NULL,L"The editor improvements could not be installed. Original editor behavior remains enabled.",L"NEMT editors unavailable",MB_OK|MB_ICONWARNING);
     /* Toolset has its own windows and frame loop. Game launch defaults,
        border removal, timing and gameplay UI hooks must not reach editors. */

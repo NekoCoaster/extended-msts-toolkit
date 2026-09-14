@@ -52,6 +52,8 @@ finish:
 }
 #include "crawl.c"
 #include "startup.h"
+#include "device-init.h"
+#include "cpu-preference.h"
 #include "welcome.h"
 #include "timing.h"
 #include "cab.h"
