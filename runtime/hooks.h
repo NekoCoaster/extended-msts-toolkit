@@ -16,7 +16,8 @@ static void hook_enter(U id,Registers *r);
 static void hook_leave(U id,Registers *r);
 static B *code_memory;
 typedef struct {U address,length;} Claim;
-static Claim claimed[32];static U claim_count;
+#define MAX_HOOK_CLAIMS 64
+static Claim claimed[MAX_HOOK_CLAIMS];static U claim_count;
 static void emit8(B **p,U n){*(*p)++=(B)n;}
 static void emit32(B **p,U n){memcpy(*p,&n,4);*p+=4;}
 static void branch(B **p,U opcode,void *target){emit8(p,opcode);emit32(p,(U)target-(U)*p-4);}
@@ -61,7 +62,7 @@ static void gateway(B **p,U id,void *callback,void *tail,int leave){
 }
 static int prepare_hooks(Hook *hooks,U count){
  U i,j;DWORD old;B *p;int needs_code=0;
- if(claim_count+count>32)return 0;
+ if(claim_count+count>MAX_HOOK_CLAIMS)return 0;
  for(i=0;i<count;i++){
   Hook *h=&hooks[i];
   if(h->length<(h->raw?1:5)||h->length>16||h->site_count>6||memcmp((void*)h->address,h->original,h->length))return 0;

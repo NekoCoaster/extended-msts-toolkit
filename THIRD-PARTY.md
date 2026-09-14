@@ -8,4 +8,3 @@ The DLL was compiled with Tiny C Compiler 0.9.27 Windows x86. The compiler is no
 
 Upstream archives: [Windows compiler](https://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27-win32-bin.zip) and [complete corresponding compiler source](https://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27.tar.bz2).
 
-Frida was used during earlier research and for a brief V2 diagnostic attached to an already loaded activity. No Frida component or JavaScript runtime is distributed in NEMT. The separately retained V1 package has its own third-party notices.

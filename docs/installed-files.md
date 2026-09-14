@@ -1,18 +1,15 @@
-# Installed files
+# Files installed beside MSTS
 
 | File | Purpose |
-|---|---|
-| `DINPUT.dll` beside `train.exe` | DirectInput forwarding plus the native toolkit and enabled features. |
-| `NEMT/settings.ini` | Feature flags, thrust strength and optional diagnostics. Read at startup/readiness; restart to apply edits. |
-| `NEMT/installation.json` | Installer ownership and payload hash, saved option states. Does not control gameplay. |
-| `NEMT/startup.log` (optional) | Startup-only file activity trace; created only when Startup.WriteLog is enabled. |
-| `NEMT/status.json` | Installer placeholder by default; live snapshots only if diagnostic logging is enabled. |
+| --- | --- |
+| `DINPUT.dll` beside `train.exe` | Runs the enabled toolkit features. |
+| `NEMT/settings.ini` | Saves feature choices, crawl strength, HUD placement and diagnostic preferences. |
+| `NEMT/installation.json` | Lets the installer identify the files it owns. |
+| `NEMT/status.json` | Status placeholder by default. Ordinary use does not continuously update this file. |
+| `NEMT/startup.log`, when enabled | Optional loading diagnostics. Numbered backups may also be present if configured. |
 
-With `WriteStatusJson=false`, the DLL does not open or write the status file, and its worker exits after hook installation. The placeholder is not a live status indicator. With logging enabled, snapshots are overwritten approximately once a second; they are not a growing history. The legacy native telemetry field names are retained for tooling compatibility.
+Apply requires MSTS to be closed. Settings take effect after a restart. Use the control panel for normal configuration and Uninstall for removal.
 
-Apply preserves an explicit logging opt-in. Uninstall removes the owned loader and native configuration, retains status/ownership records and leaves the clean executable unchanged.
+The extended F5 HUD does not need a log file. Startup logging is optional and is controlled separately. See [logging and retention](startup.md).
 
-
-Registry detection only reads the current-user/local-machine MSTS `EXE Path` and `Path` entries in both registry views. An explicitly supplied executable takes priority, and all detected candidates undergo normal compatibility checks.
-
-The optional extended F5 HUD reads in-memory telemetry and adds no files or file writes. Activity loading detail likewise does not reopen startup.log.
+Uninstall removes the owned runtime and settings while retaining ownership and diagnostic records. NEMT leaves `train.exe`, the startup movie, route files and unrelated graphics-wrapper files unchanged.

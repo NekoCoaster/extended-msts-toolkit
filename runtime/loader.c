@@ -52,16 +52,25 @@ finish:
 }
 #include "crawl.c"
 #include "startup.h"
+#include "device-init.h"
+#include "cpu-preference.h"
+#include "welcome.h"
+#include "timing.h"
+#include "cab.h"
+#include "signal.h"
+#include "audio.h"
+#include "movie.h"
 #include "hud.h"
 #include "tracks.h"
 #include "window.h"
 static DWORD WINAPI delayed_start(void *unused) {
     DWORD train=0,previous=0,head=0,body=0,owner=0,control=0; float now=0,first=0; int stable=0;
     WCHAR path[MAX_PATH];
+    if(has_toolset(GetCommandLineA()))return 0;
     if(wcslen(root)+45>=MAX_PATH||!supported_image())return 0;
     read_config();
     if(!config_valid)return 0;
-    if(!prevent_end&&!unlock_cameras&&!crawl_requested)return 0;
+    if(!prevent_end&&!unlock_cameras&&!crawl_requested&&!cab_needles)return 0;
     /* Require five seconds of a valid driving scene with advancing simulation time.
        A paused load waits for resume; startup/menu configuration is never instrumented. */
     for(;;){
@@ -75,6 +84,7 @@ static DWORD WINAPI delayed_start(void *unused) {
         if(++stable>=20 && now>first+0.25f)break;
     }
     if(wcslen(root)+45>=MAX_PATH)return 0;
+    if(!install_cab_hooks()){fail("Cab needle hook installation failed");write_status();return 0;}
     if(!start_native()){fail("Native hook installation failed");write_status();return 0;}
     /* No diagnostic worker or periodic file access when logging is disabled. */
     if(write_status_json)for(;;){Sleep(1000);write_status();}

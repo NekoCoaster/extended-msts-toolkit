@@ -1,74 +1,63 @@
 # Neko's Extended MSTS Toolkit — NEMT
 
-A small native toolkit for Microsoft Train Simulator. Activity-end prevention, camera access and connected-engine crawling share one configurable `DINPUT.dll`.
+**Where we're going, we don't need rails.**
 
-Version **1.0.2**. Development and instrumented testing take place in a Windows VM; host testing covers the real-machine graphics setup. Exact evidence and remaining checks are documented alongside each feature.
+NEMT adds optional gameplay and quality-of-life features to Microsoft Train Simulator: borderless windows, clearer loading messages, widescreen cab-dial corrections, and control of connected locomotives after derailment. Choose the features you want in one control panel and launch MSTS normally.
 
-Source: [NekoCoaster/extended-msts-toolkit](https://github.com/NekoCoaster/extended-msts-toolkit).
+[Download NEMT](https://github.com/NekoCoaster/extended-msts-toolkit/releases) · [User guide](docs/README.md) · [Report an issue](https://github.com/NekoCoaster/extended-msts-toolkit/issues)
 
-## Install
+## Get started
 
-1. Close MSTS and extract the whole package.
-2. Open **NEMT.vbs**, or drag your `train.exe` onto it. Registry detection and Browse remain available.
-3. Select features and click **Apply**. Check Enable borderless for a borderless window, or uncheck it for a normal frame. Existing `-vm:w` shortcuts work in either case; launches without display arguments default to windowed. Use `-vm:WIDTH,HEIGHT,32` for fullscreen.
+1. Download **NEMT.zip** from the release's **Assets** section and extract the whole ZIP into a folder.
+2. Close MSTS, then open **NEMT.vbs**. You can also drag your installed `train.exe` onto it.
+3. Confirm the detected executable, or use **Browse** to select it.
+4. Check the features you want and click **Apply**. **Select All** checks every available option; you can uncheck any afterward.
+5. Close the panel and launch MSTS normally. Restart MSTS whenever you change its NEMT settings.
 
-Supports the identified MSTS Bin **1.8.052113** base, widescreen, LAA and widescreen + LAA images. Exact image checks reject other modifications.
+Keep the extracted package together: the launcher needs its accompanying files. NEMT leaves `train.exe` unchanged and saves its settings beside the game.
 
-The installer leaves `train.exe` unchanged. Restore previously patched executables with their original patcher before installing NEMT. Supported widescreen/LAA variants are preserved. Features are configured through settings; gameplay changes apply to process memory after the driving scene becomes ready. The window module initializes during normal startup.
+## Features
 
-The installer upgrades only an owned, hash-matching `DINPUT.dll`. Existing dgVoodoo graphics DLLs and configuration are left alone. There is no Frida, Python, network listener or separate helper required during play.
+| Option | What it does |
+| --- | --- |
+| Prefer P-cores (optional) | Requests the highest detected CPU performance class for compatibility testing; defaults off. See [CPU preference](docs/cpu-preference.md). |
+| Skip startup movie | Goes straight to loading, avoiding the movie-related keyboard-control issue without registry edits or renaming the clip. |
+| Enable borderless windowed mode | Removes the main game's window border and keeps it centered. Does not apply to `-toolset`. |
+| Resizable editor windows and fullscreen | Resize or maximize Route, Activity and Cab Editor; Alt+Enter toggles borderless fullscreen. Activity panels fold inside when needed. |
+| Move Route Editor tool windows freely | Removes magnetic alignment of floating tools. |
+| Fix Route Editor slowdown without nearby sounds | Prevents audio-device idle stalls without adding route sound sources. |
+| Unlock FPS limit — **Potentially unstable** | Removes the game-side frame cap and applies corrected timing. Actual performance still depends on the installation and hardware. |
+| Show verbose startup and activity loading details | Shows loading activity and terrain-generation counts, progress and estimated remaining time. |
+| Enable deep logging | Records optional startup, activity-loading and audio/graphics diagnostics for troubleshooting. |
+| Fix cabview dials for widescreen displays | Corrects dial-needle proportions with a supported widescreen-patched executable. |
+| Unmute while in background | Keeps game audio playing when switching to another application. |
+| Continue after passing a red signal | Shows the failure message, then lets the simulation resume after dismissal. |
+| Remove derailment activity-end message | Keeps a derailment from ending the activity. |
+| Unlock camera modes during derailment | Keeps camera selection available after derailment. |
+| Enable counter-tilt filter while crawling | Optional throttle-based pitch filtering; defaults off and preserves manual steering. |
+| Allow connected engines to crawl after derailment | Uses throttle/reverser to crawl, horn/whistle to roll upright, and train brake keys to steer derailed connected locomotives. Includes strength and HUD-position controls. |
 
-![Toolkit configuration form](docs/assets/patcher.png)
+[Explore the options](docs/features.md), including crawling controls and feature requirements.
 
-## Settings
+## Compatibility
 
-`NEMT/settings.ini`:
+NEMT supports the identified **MSTS Bin 1.8.052113** executable in its base, widescreen, Large Address Aware (LAA), and widescreen + LAA forms. The panel checks compatibility before applying changes. A matching version label alone does not guarantee that another modified executable is supported.
 
-```ini
-[Startup]
-VerboseLoading=false
-WriteLog=false
-UnlockFPS=false
-MaxLogSizeKB=8192
-MaxBackupLogs=0
+The cab-dial option requires the [MSTS widescreen patch](https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/); the panel enables that checkbox when a supported patched executable is selected.
 
-[Window]
-Enabled=true
-CenterWindowed=true
+Using dgVoodoo? Follow the [window settings guide](docs/dgvoodoo.md). NEMT leaves its graphics files and configuration alone. An unrelated `DINPUT.dll` can prevent installation; NEMT will not overwrite it.
 
-[Derailment]
-PreventActivityEnd=true
-UnlockCameras=true
-EnableCrawl=true
-CrawlStrength=10
+## Change settings or uninstall
 
-[Diagnostics]
-WriteStatusJson=false
-ShowCrawlHUD=true
-CrawlHUDAnchor=BottomLeft
-```
+Reopen **NEMT.vbs**, select the same `train.exe`, adjust your choices and click **Apply**. To remove NEMT, close MSTS and click **Uninstall**. Diagnostic and ownership records may remain; your executable is unchanged.
 
-Settings take effect after restarting MSTS. Crawling requires `PreventActivityEnd=true`; the form enforces this. Invalid manual configuration prevents feature installation. Missing feature flags default off. Thrust ranges from 0–100×; zero disables added thrust while retaining the selected throttle-dependent collision/animation effects.
-
-Use **Uninstall** to remove the owned DLL and configuration. The executable remains unchanged. Ownership records and diagnostic files are retained.
+[Installation and troubleshooting](docs/installation.md) · [Installed files](docs/installed-files.md)
 
 ## Documentation
 
-- [Native architecture](docs/native-runtime.md)
-- [Installed files](docs/installed-files.md)
-- [Current validation and limits](docs/release-1.0.0.md)
-- [Historical migration validation](docs/release-validation.md)
-- [Borderless launch guide and implementation](docs/borderless.md)
-- [dgVoodoo borderless settings](docs/dgvoodoo.md)
-- [Inherited physics equations](docs/physics.md) and [identified patch locations](docs/patches.md)
-- [Research history](docs/discovery.md)
-- [Widescreen and in-game options investigation](docs/future-features.md)
-- [FPS: prefer the existing -noclamp option](docs/miscellaneous/fps.md)
+- [User guide](docs/README.md): installation, options, window modes, crawling and loading messages.
+- [Technical documentation and testing evidence](docs/technical/README.md): implementation, development history and validation limits.
 
-Developed and Tested by NekoCoaster, Powered by Codex — 2026 | [MIT License](LICENSE). See [third-party notices](THIRD-PARTY.md).
+Developed and Tested by NekoCoaster with Astra.
 
-NEMT now checks supported text route track databases for missing section definitions before startup. [Dependency checks and limits](docs/track-dependencies.md) explains the Xtracks warning and what it can detect.
-
-Earlier development NEMT configuration is not supported: reapply this package with the desired selections. It writes `settings.ini`; older configuration files are not read. The old `-vm:bw` spelling is no longer supported.
-
-Ready-to-use ZIP packages and versioned changelogs are available on the [Releases page](https://github.com/NekoCoaster/extended-msts-toolkit/releases). Maintainers publish a version by pushing a matching `vVERSION` tag; the release workflow verifies committed checksums and attaches the packaged ZIP and its checksum. Existing releases are never overwritten by a rerun.
+Released under the [MIT License](LICENSE). See [third-party notices](THIRD-PARTY.md). Microsoft Train Simulator and route assets are not included.

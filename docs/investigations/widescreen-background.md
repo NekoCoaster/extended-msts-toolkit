@@ -1,4 +1,6 @@
-# Widescreen and in-game options investigation
+# Historical widescreen and in-game options investigation
+
+> Historical snapshot: later work shipped the scoped cab-dial correction. In-game settings remain excluded. See the [validation summary](../technical/validation.md) for the delivered scope.
 
 ## Scope
 
@@ -26,6 +28,12 @@ The intended experiment is a single screen-relative horizontal transform shared 
 
 ## In-game options
 
+This feature is out of scope. Widget add-ons can replace the existing layouts, so embedding toolkit controls would add compatibility work for limited benefit. Configuration will remain in the standalone form and `settings.ini`. The native widget findings are retained as research, not an implementation roadmap.
+
 Adding controls to the General Options page is a plausible separate investigation. It requires identifying native control creation, placement, input callbacks, page teardown and saving. The fixed artwork limits available space, but that alone does not establish whether new checkboxes can be added safely.
 
 For now the standalone form owns configuration. Several features initialize at startup, so an eventual in-game form would need to distinguish saved settings from features already active and show when a restart is required. The thrust slider remains in the standalone form. No in-game settings controls have been implemented or validated.
+
+## Follow-up investigation
+
+The [September 12 investigation](settings-and-cab-needles.md) identifies native checkbox read/write routines and the cab needle’s scale-before-rotation path. It includes a proposed scoped correction and independent geometry tests. Live integration is still pending.

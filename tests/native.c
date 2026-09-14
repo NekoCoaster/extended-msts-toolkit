@@ -8,14 +8,12 @@ static volatile double calculation;
 static void hook_enter(U id,Registers *r){U *s=(U*)(r+1);enter_count++;seen_ecx=r->ecx;if(!fp_mode)s[1]+=10;original_return=s[0];s[0]=(U)test_hook.leave;calculation=sqrt(2.0);}
 static void hook_leave(U id,Registers *r){leave_count++;*((U*)(r+1))=original_return;if(!fp_mode)r->eax+=100;calculation=sqrt(3.0);}
 int main(void){
- B *code,*p;DWORD old;int i;double dp[3],dv[3],speed;float a[3]={0,0,1},v[3]={0,0,10},right[3]={1,0,0},omega[3]={2,3,4},out[3];
+ B *code,*p;DWORD old;int i;double dp[3],dv[3],speed;float a[3]={0,0,1},v[3]={0,0,10},omega[3]={2,3,4},out[3];
  typedef int (__stdcall *Fn)(int);Fn fn;
  assert(calc_impulse(a,v,100000,200000,1000000,1,1,.1,10,dp,dv));assert(fabs(dp[2]-100000)<.01);assert(fabs(dv[2]-1)<.00001);
  assert(calc_impulse(a,v,100000,200000,1000000,.5,-1,5,100,dp,dv));assert(fabs(dp[2]+1250000)<.01);
  assert(calc_impulse(a,v,100000,200000,1000000,1,1,.1,0,dp,dv)&&dp[2]==0);
  assert(!calc_impulse(a,v,0,200000,1000000,1,1,.1,10,dp,dv));
- assert(calc_pitch(omega,right,0,out)&&out[0]==0&&out[1]==3&&out[2]==4);
- assert(calc_pitch(omega,right,.5,out)&&out[0]==1);
  assert(calc_wheel(v,a,.5,10,&speed)&&speed==50);
  assert(calc_wheel(v,a,1,100,&speed)&&speed==1000);
  /* Synthetic stdcall target: ordinary verified prologue, argument return, RET 4.

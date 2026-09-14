@@ -1,8 +1,12 @@
-# Frame-rate option and historical investigation
+# Historical frame-rate investigation
 
-The NEMT form can now add the existing parameter automatically through **Unlock FPS limit**. See the [startup options](../startup.md). The experimental limiter patches below remain historical.
+For the shipped option, see the [feature guide](../features.md). The observations below retain their original development context.
+
+The NEMT form can now add the existing parameter automatically through **Unlock FPS limit**. See the [startup options](../technical/startup.md). The experimental limiter patches below remain historical.
 
 ## Recommended first step: use `-noclamp`
+
+Follow-up: host testing reports accelerated simulation time and unreliable time acceleration with this option. `-noclamp` alone should not be treated as a fully validated high-FPS solution. Alpha.2 adds an experimental timing correction through the FPS checkbox; [host timing validation](../investigations/timing-host-test.md) remains pending. The historical minimum-step finding below is relevant, but is not validation of this new build.
 
 MSTS already has a `-noclamp` launch parameter that disables the game-side frame limiter identified in this investigation. Host testing established the desired higher-frame-rate behavior, with performance still constrained by CPU throughput. For that goal, **prefer this existing option over reverse engineering or patching the executable**.
 

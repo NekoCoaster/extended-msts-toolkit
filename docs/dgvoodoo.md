@@ -1,21 +1,18 @@
-# dgVoodoo and borderless mode
+# Using NEMT with dgVoodoo
 
-**Recommended comparison baseline.** Borderless operation has been validated on the host; the exact final dgVoodoo configuration was not captured. Version 1.0.0 uses the borderless checkbox with ordinary `-vm:w`; follow the [visual checklist](borderless.md).
+NEMT leaves dgVoodoo's files and settings unchanged. For NEMT to manage the game window, use the following starting configuration in dgVoodoo and retain the output renderer that already works with your installation.
 
-For a toolkit-managed window, start with:
-
-| dgVoodoo option | Proposed setting |
-|---|---|
+| dgVoodoo setting | Value |
+| --- | --- |
 | Application controlled fullscreen/windowed state | Enabled (`AppControlledScreenMode=true`) |
 | Disable Alt-Enter to toggle screen state | Enabled (`DisableAltEnterToToggleScreenMode=true`) |
 | Resolution | Unforced / application-driven |
-| Center app window | Off once NEMT owns centering |
-| Windowed attributes | Empty; avoid AlwaysOnTop and FullscreenSize |
-| Fullscreen attributes | Empty; do not force fake fullscreen |
-| Output API | Keep the working hardware renderer; WARP is software rendering |
+| Center app window | Off (`CenterAppWindow=false`) |
+| Windowed attributes | Empty |
+| Fullscreen attributes | Empty |
 
-This proposal gives MSTS/NEMT control of mode, dimensions and placement. Allowing dgVoodoo's Alt+Enter toggle could change the screen state independently and conflict with that ownership. Alt+Tab is a separate operation and should remain available; it still needs live testing.
+These settings let MSTS and NEMT control window size and placement. **Alt+Tab** switches between applications; **Alt+Enter** changes display mode and can conflict with the selected window settings.
 
-dgVoodoo already supports `WindowedAttributes=Borderless` and `CenterAppWindow=true`. That is a useful wrapper-only comparison. `FullscreenSize` instead expands presentation to fullscreen dimensions, which differs from preserving a custom window size. These behaviors are described in [Dege's official documentation](https://dgvoodoo2.dege.freeweb.hu/dgVoodoo2/ReadmeGeneral/).
+Use NEMT's [borderless checkbox and normal launch arguments](borderless.md) to choose windowed or fullscreen mode. Keep a copy of a working dgVoodoo configuration before experimenting with graphics settings. This is a compatibility starting point, not a universal performance preset.
 
-The installed test configuration already has application-controlled mode and the Alt+Enter toggle disabled, but uses WARP and dgVoodoo centering. It was left unchanged. No optimal-performance claim is made; the borderless tests must cover custom sizes, transitions, input coordinates, Alt+Tab, minimize/restore, monitors and DPI.
+For the wrapper's own setting descriptions, see [dgVoodoo's documentation](https://dgvoodoo2.dege.freeweb.hu/dgVoodoo2/ReadmeGeneral/).

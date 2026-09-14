@@ -1,4 +1,4 @@
-/* MIT. Startup-only file diagnostics and native loading-text substitution. */
+/* MIT. Startup/activity diagnostics and native loading-text substitution. */
 __declspec(dllimport) int WINAPI MultiByteToWideChar(UINT,DWORD,LPCSTR,int,LPWSTR,int);
 #include "terrain.h"
 typedef HANDLE (WINAPI *StartupOpenFn)(LPCSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE);
@@ -9,6 +9,7 @@ static StartupFindFn startup_find_original;
 static StartupStringFn startup_string_original=(StartupStringFn)0x402590;
 static void (*startup_first_frame_original)(void)=(void*)0x6ad020;
 static CRITICAL_SECTION startup_lock;
+static int startup_lock_ready;
 static volatile LONG startup_active;
 static HANDLE startup_file=INVALID_HANDLE_VALUE;
 static DWORD startup_bytes,startup_started,startup_sequence,startup_display_updates;
@@ -20,13 +21,20 @@ static void (*loading_end_original)(void)=(void*)0x4014d3;
 static int activity_loading;
 #include "startup-log.h"
 static void startup_write(const char *operation,const char *name,DWORD number){
- char line[1024];DWORD written;int n;
- if(startup_file==INVALID_HANDLE_VALUE)return;
- n=snprintf(line,sizeof(line),"%lu ms | %s | %lu | %.700s\r\n",GetTickCount()-startup_started,operation,number,name?name:"");
- if(n<=0||n>=sizeof(line))return;
- if(startup_bytes+(DWORD)n>max_log_bytes&&!startup_open_log())return;
- if(!WriteFile(startup_file,line,n,&written,NULL)||written!=(DWORD)n){CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;return;}
+ char line[1024],clean[701];DWORD written,saved=GetLastError();int n;unsigned int i;SYSTEMTIME t;
+ if(startup_lock_ready)EnterCriticalSection(&startup_lock);
+ if(startup_file==INVALID_HANDLE_VALUE)goto done;
+ for(i=0;name&&name[i]&&i<sizeof(clean)-1;i++)clean[i]=(unsigned char)name[i]<32?' ':name[i];clean[i]=0;
+ GetLocalTime(&t);
+ n=snprintf(line,sizeof(line),"%04u-%02u-%02u %02u-%02u-%02u.%03u: %s | id=%lu | tid=%lu | %.700s\r\n",t.wYear,t.wMonth,t.wDay,t.wHour,t.wMinute,t.wSecond,t.wMilliseconds,operation,number,GetCurrentThreadId(),clean);
+ if(n<=0||n>=sizeof(line))goto done;
+ if(startup_bytes+(DWORD)n>max_log_bytes&&!startup_open_log())goto done;
+ if(!WriteFile(startup_file,line,n,&written,NULL)||written!=(DWORD)n){CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;goto done;}
  startup_bytes+=written;
+ /* Debug-only cost: complete each record and request persistence before the
+    intercepted operation proceeds. No user-space log queue survives a crash. */
+ if(!FlushFileBuffers(startup_file)){CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;}
+ done:if(startup_lock_ready)LeaveCriticalSection(&startup_lock);SetLastError(saved);
 }
 static DWORD startup_record(const char *operation,const char *path){
  char clean[700],short_path[64];DWORD id;unsigned int i,n;
@@ -63,18 +71,18 @@ static WCHAR *__fastcall startup_loading_string(U resource){
 }
 static U __fastcall loading_begin(U mode){
  U result;
- if(verbose_loading){EnterCriticalSection(&startup_lock);activity_loading=1;startup_active=1;startup_sequence=0;terrain_active=0;wcscpy(startup_text,L"Preparing selected activity...");LeaveCriticalSection(&startup_lock);}
+ if(verbose_loading||startup_log){EnterCriticalSection(&startup_lock);activity_loading=1;startup_active=1;startup_write("ACTIVITY BEGIN","Selected activity loading",mode);terrain_active=0;wcscpy(startup_text,L"Preparing selected activity...");LeaveCriticalSection(&startup_lock);}
  result=loading_begin_original(mode);
- if(!result&&verbose_loading){EnterCriticalSection(&startup_lock);activity_loading=0;startup_active=0;LeaveCriticalSection(&startup_lock);}
+ if(!result&&(verbose_loading||startup_log)){EnterCriticalSection(&startup_lock);startup_write("ACTIVITY FAILED","Native load returned zero",mode);activity_loading=0;startup_active=0;LeaveCriticalSection(&startup_lock);}
  return result;
 }
 static void loading_end(void){
- if(activity_loading){EnterCriticalSection(&startup_lock);startup_active=0;activity_loading=0;LeaveCriticalSection(&startup_lock);}
+ if(activity_loading){EnterCriticalSection(&startup_lock);startup_write("ACTIVITY COMPLETE","Native loading end reached",startup_sequence);startup_active=0;activity_loading=0;LeaveCriticalSection(&startup_lock);}
  loading_end_original();
 }
 static void startup_finish(void){
  if(!startup_active)return;EnterCriticalSection(&startup_lock);
- if(startup_active){startup_write("DISPLAY UPDATES","Native loading text substitutions",startup_display_updates);startup_write("STARTUP COMPLETE","Main event loop reached",startup_sequence);startup_active=0;if(startup_file!=INVALID_HANDLE_VALUE){CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;}}
+ if(startup_active){startup_write("DISPLAY UPDATES","Native loading text substitutions",startup_display_updates);startup_write("STARTUP COMPLETE","Main event loop reached",startup_sequence);startup_active=0;}
  LeaveCriticalSection(&startup_lock);
 }
 static void (*loading_assets_original)(void)=(void*)0x401357;
@@ -88,6 +96,7 @@ static void startup_call(Hook *h,U address,U target,U replacement){
  memset(h,0,sizeof(*h));h->address=address;h->length=5;h->raw=1;h->original[0]=h->replacement[0]=0xe8;
  memcpy(h->original+1,&relative,4);memcpy(h->replacement+1,&new_relative,4);
 }
+#include "deep-log.h"
 static int install_startup_hooks(void){
  U i;WCHAR path[MAX_PATH];static const U slots[]={0x84db34,0x84dc98};U targets[2];
  if(!verbose_loading&&!startup_log)return 1;
@@ -103,8 +112,8 @@ static int install_startup_hooks(void){
  startup_call(&startup_hooks[9],0x566d21,0x4023e2,(U)terrain_progress);
  for(i=10;i<12;i++){Hook *h=&startup_hooks[i];memset(h,0,sizeof(*h));h->address=i==10?0x566cbd:0x566d1c;h->length=5;h->raw=1;memcpy(h->original,"\xb9\x35\0\0\0",5);memcpy(h->replacement,i==10?"\x8b\x4d\xdc\x90\x90":"\x8b\x4d\xfc\x90\x90",5);}
  startup_call(&startup_hooks[12],0x494bc1,0x401357,(U)loading_assets);
- InitializeCriticalSection(&startup_lock);startup_started=GetTickCount();startup_active=1;
+ InitializeCriticalSection(&startup_lock);startup_lock_ready=1;startup_started=GetTickCount();startup_active=1;
  if(!prepare_hooks(startup_hooks,13)||!install_hooks(startup_hooks,13)){startup_active=0;return 0;}
- if(startup_log&&startup_open_log())startup_write("STARTUP BEGIN","File API activity; not a crash-cause diagnosis. Paths use Windows ANSI encoding.",0);
+ if(startup_log&&startup_open_log()){startup_write("STARTUP BEGIN","Deep logging; local wall time; durations use monotonic milliseconds. Paths use Windows ANSI encoding.",0);deep_environment();if(!install_deep_hooks())startup_write("DIAGNOSTICS UNAVAILABLE","Optional initialization hooks could not be installed",0);}
  return 1;
 }
