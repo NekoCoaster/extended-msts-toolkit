@@ -27,7 +27,7 @@ Keep the extracted package together: the launcher needs its accompanying files. 
 | Fix Route Editor slowdown without nearby sounds | Prevents audio-device idle stalls without adding route sound sources. |
 | Unlock FPS limit — **Potentially unstable** | Removes the game-side frame cap and applies corrected timing. Actual performance still depends on the installation and hardware. |
 | Show verbose startup and activity loading details | Shows loading activity and terrain-generation counts, progress and estimated remaining time. |
-| Write startup diagnostic log | Saves an optional loading log to help investigate startup problems. |
+| Enable deep logging | Records optional startup, activity-loading and audio/graphics diagnostics for troubleshooting. |
 | Fix cabview dials for widescreen displays | Corrects dial-needle proportions with a supported widescreen-patched executable. |
 | Unmute while in background | Keeps game audio playing when switching to another application. |
 | Continue after passing a red signal | Shows the failure message, then lets the simulation resume after dismissal. |

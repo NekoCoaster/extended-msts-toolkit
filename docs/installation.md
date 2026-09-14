@@ -29,7 +29,7 @@ The cab-dial correction requires a supported widescreen-patched executable. The 
 | Startup movie is black or disrupts keyboard input | Enable **Skip startup movie**. |
 | Missing route track definitions | Follow the [route dependency guide](track-dependencies.md). |
 
-For other startup problems, enable **Write startup diagnostic log**, reproduce the problem and inspect `NEMT/startup.log`. The last recorded file is not necessarily the cause. See [loading diagnostics](startup.md).
+For other startup problems, enable **Enable deep logging**, reproduce the problem and inspect `NEMT/startup.log`. The last recorded file is not necessarily the cause. See [loading diagnostics](startup.md).
 
 ## Uninstall
 

@@ -8,7 +8,7 @@ Select options in NEMT.vbs, click **Apply**, and restart MSTS. The options are i
 | **Enable borderless windowed mode** | Removes the frame and centers the game window. An explicit fullscreen launch takes precedence. See [window modes](borderless.md). |
 | **Unlock FPS limit — Potentially unstable** | Enables the game's uncapped mode together with timing correction. Higher FPS is not guaranteed. Disable this option if it causes problems; also remove any uncapping argument you added to your own shortcut when returning to normal timing. |
 | **Show verbose startup and activity loading details** | Replaces the loading text with observed loading activity. Terrain generation includes completed/total jobs, percentage and an estimated remaining time. |
-| **Write startup diagnostic log** | Saves optional startup diagnostics. It is independent of the loading-screen text. See [logs](startup.md). |
+| **Enable deep logging** | Records optional deep startup/activity and initialization diagnostics. It is independent of the loading-screen text. See [logs](startup.md). |
 | **Fix cabview dials for widescreen displays** | Corrects dial-needle proportions. Available only for a supported widescreen executable; use the adjacent installation-guide link if needed. |
 | **Unmute while in background** | Keeps game audio active when another application has focus. |
 | **Continue after passing a red signal (Resume after failure message)** | Displays the built-in activity-failure message and permits continued simulation after dismissal. This does not turn the failed activity into a successful one or bypass unrelated failure conditions. |

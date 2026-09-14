@@ -33,3 +33,5 @@ These documents preserve development tools, experimental options, former command
 - [Red-signal message and repeat suppression](../investigations/red-signal-repeat.md) and [quality-of-life host checks](../investigations/quality-host-test.md).
 - [Movie/input investigation](../investigations/startup-movie.md) and [movie renderer comparisons](../investigations/movie-window-host-test.md). Renderer experiments and the separate keyboard checkbox were retired; the delivered control skips the movie.
 - [Historical release notes](../../releases/).
+
+- [Deep logging and crash durability](deep-logging.md).

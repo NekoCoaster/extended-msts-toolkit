@@ -263,7 +263,7 @@ function Show-Options([string]$InitialPath){
  if(Test-Path -LiteralPath $iconPath){$icon.Image=[Drawing.Image]::FromFile($iconPath)};$form.Controls.Add($icon)
  $fps=Check-At 'Unlock FPS limit (-noclamp + corrected timing) (Potentially unstable)' 201
  $verbose=Check-At 'Show verbose startup and activity loading details' 233
- $startupLogBox=Check-At 'Write startup diagnostic log (optional; NEMT\startup.log)' 265
+ $startupLogBox=Check-At 'Enable deep logging (Optional; Use only for debugging or troubleshooting issues)' 265
  $cabBox=Check-At 'Fix cabview dials for widescreen displays' 297;$cabBox.Enabled=$false
  $wideLink=New-Object Windows.Forms.LinkLabel;$wideLink.Text='Requires the MSTS widescreen patch - installation guide';$wideLink.Location=New-Object Drawing.Point(45,329);$wideLink.Size=New-Object Drawing.Size(650,28)
  $wideLink.Add_LinkClicked({param($sender,$e) Start-Process ([string]$e.Link.LinkData)});$form.Controls.Add($wideLink)
