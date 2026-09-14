@@ -20,7 +20,6 @@ static void welcome_layout(U id,int expanded){
 }
 static U __fastcall welcome_set_text(U id,U message,const WCHAR *text){
  if(message==0x31){
-  text=resolution_note(id,text);
   if(text==welcome_text){welcome_widget_id=id;welcome_layout(id,1);}
   else if(id==welcome_widget_id)welcome_layout(id,0);
  }
