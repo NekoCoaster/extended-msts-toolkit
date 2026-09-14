@@ -20,7 +20,7 @@ static void hud_lines(char lines[HUD_LINE_COUNT][240]){
  snprintf(lines[0],240,"Crawl system: %s; Strength: %dx; Force: %.2f kN",status,boost,force/1000);
  snprintf(lines[1],240,"Direction: %.0f%% - %s; Applied on engines: %u of %u;",t*100,reverser,applying,powered);
  snprintf(lines[2],240,"Active rotation nudge: %s%s%s",rotation&CRAWL_LEFT?"LEFT":rotation&CRAWL_RIGHT?"RIGHT":"",(rotation&(CRAWL_LEFT|CRAWL_RIGHT))&&(rotation&CRAWL_RIGHTING)?" + ":"",rotation&CRAWL_RIGHTING?"UPRIGHT":rotation?"":"None");
- snprintf(lines[3],240,"Controls: Derail = %s  Nudge Left = %s  Nudge Right = %s  Rotate Upright = %s",crawl_derail_name,keys[1],keys[2],keys[0]);
+ snprintf(lines[3],240,"Controls: Derail = %s  Steer Left = %s  Steer Right = %s  Rotate Upright = %s",crawl_derail_name,keys[1],keys[2],keys[0]);
 }
 static void hud_render_end(void){
  void *font=*(void**)G(0x7b64d4);int screen_height=*(int*)G(0x7a8964),screen_width=*(int*)G(0x7a8960),height,x,y,i;char lines[HUD_LINE_COUNT][240];WCHAR wide[240];

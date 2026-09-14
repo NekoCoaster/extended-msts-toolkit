@@ -55,7 +55,7 @@ The extended HUD uses this four-line format (rotation is **None** when idle, or 
 Crawl system: Active; Strength: 10x; Force: -12.34 kN
 Direction: 50% - Reverse; Applied on engines: 1 of 2;
 Active rotation nudge: LEFT + UPRIGHT
-Controls: Derail = \  Nudge Left = ;  Nudge Right = '  Rotate Upright = Space
+Controls: Derail = \  Steer Left = ;  Steer Right = '  Rotate Upright = Space
 ```
 
 Inactive, disabled, paused and faulted states show **Standby** and zero applied force. The detailed internal fault state remains available in optional diagnostics.

@@ -14,7 +14,7 @@ int main(void){char lines[HUD_LINE_COUNT][240];
  car_count=3;cars[0].engine=cars[1].engine=1;cars[0].active=1;cars[0].dp[0]=300;cars[0].dp[1]=400;
  hud_lines(lines);assert(strstr(lines[0],"Active")&&strstr(lines[0],"-5.00 kN"));assert(strstr(lines[1],"50%")&&strstr(lines[1],"Reverse"));assert(strstr(lines[1],"Applied on engines: 1 of 2;"));
  strcpy(crawl_shortcuts[0],"H");strcpy(crawl_shortcuts[1],"Ctrl+J");strcpy(crawl_shortcuts[2],"K");crawl_shortcut_ctl=1;
- rotation_inputs=CRAWL_RIGHTING|CRAWL_LEFT;hud_lines(lines);assert(strstr(lines[3],"Nudge Left = Ctrl+J  Nudge Right = K  Rotate Upright = H"));assert(strstr(lines[2],"LEFT + UPRIGHT"));
+ rotation_inputs=CRAWL_RIGHTING|CRAWL_LEFT;hud_lines(lines);assert(strstr(lines[3],"Steer Left = Ctrl+J  Steer Right = K  Rotate Upright = H"));assert(strstr(lines[2],"LEFT + UPRIGHT"));
  rotation_inputs=CRAWL_RIGHT;hud_lines(lines);assert(strstr(lines[2],"RIGHT"));
  strcpy(crawl_derail_name,"F12");hud_lines(lines);assert(strstr(lines[3],"Derail = F12"));
  direction=1;hud_lines(lines);assert(strstr(lines[0],": 5.00 kN"));direction=-1;
