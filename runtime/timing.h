@@ -10,6 +10,7 @@ static void (*timing_step_original)(void)=(void*)0x4b7b20;
 static BOOL (WINAPI *timing_counter)(LARGE_INTEGER*)=QueryPerformanceCounter;
 static LARGE_INTEGER timing_frequency,timing_previous;
 static int timing_started;
+#include "refresh-cap.h"
 static Hook timing_hooks[4];static B *timing_code;
 typedef struct {double error;float last;int valid;} TimingRemainder;
 static TimingRemainder timing_remainders[2];
@@ -41,7 +42,7 @@ static double timing_elapsed(LARGE_INTEGER now){
 static int timing_frame(void){
  int accepted=timing_frame_original();LARGE_INTEGER now;
  if(!accepted)return accepted;
- if(timing_counter(&now))TF(0x828fb4)=(float)timing_elapsed(now);
+ if(timing_counter(&now)&&refresh_pace(&now))TF(0x828fb4)=(float)timing_elapsed(now);
  else {timing_started=0;if(!(TF(0x828fb4)>0&&TF(0x828fb4)<=0.3f))TF(0x828fb4)=0.000001f;}
  TF(0x828f6c)=1.0f/TF(0x828fb4);
  return accepted;
@@ -78,6 +79,6 @@ static int install_timing_hooks(void){
   memcpy(h->original,i?"\xd9\x45\xfc\xd8\x42\x1c":"\xd9\x45\xfc\xd8\x40\x18",6);
   h->replacement[0]=0xe8;*(U*)(h->replacement+1)=(U)(timing_code+i*64)-h->address-5;h->replacement[5]=0x90;
  }
- if(prepare_hooks(timing_hooks,4)&&install_hooks(timing_hooks,4))return 1;
+ if(prepare_hooks(timing_hooks,4)&&install_hooks(timing_hooks,4)){refresh_initialize();return 1;}
 failed:VirtualFree(timing_code,0,MEM_RELEASE);timing_code=NULL;return 0;
 }

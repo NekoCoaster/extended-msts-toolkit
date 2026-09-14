@@ -37,3 +37,5 @@ These documents preserve development tools, experimental options, former command
 - [Deep logging and crash durability](deep-logging.md).
 
 - [Direct3D initialization safeguard and laptop findings](device-initialization.md).
+
+- [Display guidance, refresh-rate cap and deep logging selection](display-options.md)
