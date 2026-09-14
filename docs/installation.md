@@ -38,3 +38,7 @@ Close MSTS, open NEMT.vbs, select the installed executable and click **Uninstall
 ## Reporting a problem
 
 Use the [issue tracker](https://github.com/NekoCoaster/extended-msts-toolkit/issues). Include the NEMT version shown in the title bar, the detected executable variant, the selected options, and steps to reproduce. For visual issues, include your resolution and graphics-wrapper settings. Review logs before attaching them because they can contain local file paths.
+
+## Widescreen cab option
+
+The cab-dial checkbox is enabled only when a supported widescreen executable is detected. Otherwise it is greyed out, with download and installation-guide links on the same line. Once a supported widescreen executable is selected, that guidance is hidden. NEMT does not apply the external widescreen patch.

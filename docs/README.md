@@ -1,5 +1,7 @@
 # NEMT user guide
 
+[What changed in 1.1.0](../releases/v1.1.0.md) · [Findings and implementation diagrams](technical/release-1.1.0.md).
+
 Start with [installation](installation.md), then choose the features that suit your game. All options are managed through **NEMT.vbs** and take effect after restarting MSTS.
 
 | Guide | Contents |

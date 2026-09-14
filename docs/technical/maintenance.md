@@ -19,7 +19,7 @@ Run checks appropriate to a runtime or installer change. Documentation-only chan
 
 The repository's VERSION file identifies the package. Keep it synchronized with the matching releases/vVERSION.md notes before publishing. A vVERSION tag triggers the release workflow, which checks committed hashes and attaches NEMT.zip and its checksum to the GitHub release. Existing releases are not overwritten.
 
-Do not retag old releases, rewrite published history or describe an alpha checkpoint as a newly tested stable build. First-edition documentation polish does not itself publish a new tag or change the package version.
+Do not retag old releases, rewrite published history or describe an alpha checkpoint as a newly tested stable build. Develop on `dev` and submit release changes to `main` for review. The prepared 1.1.0 version is not published until a matching tag is explicitly authorized.
 
 ## Local research
 

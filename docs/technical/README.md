@@ -1,5 +1,7 @@
 # Technical documentation and testing evidence
 
+[1.1.0 findings, implementation diagrams and validation limits](release-1.1.0.md).
+
 This section records how NEMT was built and what was tested. For installation and the shipped controls, start with the [user guide](../README.md).
 
 We develop and instrument the toolkit in a Windows VM, then test graphics and gameplay behavior on the host machine. A synthetic test, a VM observation and a host report are separate kinds of evidence. Historical hashes and timings identify the build actually tested; they are not measurements of the current package.

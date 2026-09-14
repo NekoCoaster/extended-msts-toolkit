@@ -226,7 +226,7 @@ function Resolve-MstsStartupPath([string]$Path) {
 function Show-Options([string]$InitialPath){
  Add-Type -AssemblyName System.Windows.Forms;Add-Type -AssemblyName System.Drawing
  [Windows.Forms.Application]::EnableVisualStyles()
- $form=New-Object Windows.Forms.Form;$form.Text="Neko's Extended MSTS Toolkit - v$script:ToolkitVersion";$form.ClientSize=New-Object Drawing.Size(760,([Math]::Max(500,[Math]::Min(820,[Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height-48))))
+ $form=New-Object Windows.Forms.Form;$form.Text="NEMT $script:ToolkitVersion";$form.ClientSize=New-Object Drawing.Size(760,([Math]::Max(500,[Math]::Min(844,[Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height-48))))
  $form.StartPosition='CenterScreen';$form.FormBorderStyle='FixedDialog';$form.MaximizeBox=$false;$form.AutoScaleMode='Dpi';$form.AutoScaleDimensions=New-Object Drawing.SizeF(96,96)
  $form.Font=New-Object Drawing.Font('Segoe UI',10);$form.BackColor=[Drawing.Color]::White
  function Label-At([string]$Text,[int]$Y,[int]$Height=28){$l=New-Object Windows.Forms.Label;$l.UseMnemonic=$false;$l.Text=$Text;$l.Location=New-Object Drawing.Point(24,$Y);$l.Size=New-Object Drawing.Size(712,$Height);$form.Controls.Add($l);return $l}
@@ -255,7 +255,7 @@ function Show-Options([string]$InitialPath){
  $apply=New-Object Windows.Forms.Button;$apply.Text='Apply';$apply.Location=New-Object Drawing.Point(346,502);$apply.Size=New-Object Drawing.Size(100,34);$form.Controls.Add($apply)
  $restore=New-Object Windows.Forms.Button;$restore.Text='Uninstall';$restore.Location=New-Object Drawing.Point(454,502);$restore.Size=New-Object Drawing.Size(106,34);$form.Controls.Add($restore)
  $close=New-Object Windows.Forms.Button;$close.Text='Close';$close.Location=New-Object Drawing.Point(568,502);$close.Size=New-Object Drawing.Size(108,34);$close.Add_Click({$form.Close()});$form.Controls.Add($close)
- $credit=Label-At 'Developed and Tested by NekoCoaster, Powered by Codex - 2026 | MIT License' 550 24;$credit.ForeColor=[Drawing.Color]::DimGray;$credit.Font=New-Object Drawing.Font('Segoe UI',9)
+ $credit=Label-At 'Developed and Tested by NekoCoaster with Astra | MIT License' 550 24;$credit.ForeColor=[Drawing.Color]::DimGray;$credit.Font=New-Object Drawing.Font('Segoe UI',9)
  $github=New-Object Windows.Forms.LinkLabel;$github.Text='NekoCoaster/extended-msts-toolkit';$github.Location=New-Object Drawing.Point(51,578);$github.Size=New-Object Drawing.Size(680,26)
  $github.Add_LinkClicked({Start-Process 'https://github.com/NekoCoaster/extended-msts-toolkit'});$form.Controls.Add($github)
  $icon=New-Object Windows.Forms.PictureBox;$icon.Location=New-Object Drawing.Point(24,577);$icon.Size=New-Object Drawing.Size(20,20);$icon.SizeMode='Zoom'
@@ -266,7 +266,7 @@ function Show-Options([string]$InitialPath){
  $startupLogBox=Check-At 'Write startup diagnostic log (optional; NEMT\startup.log)' 265
  $cabBox=Check-At 'Fix cabview dials for widescreen displays' 297;$cabBox.Enabled=$false
  $wideLink=New-Object Windows.Forms.LinkLabel;$wideLink.Text='Requires the MSTS widescreen patch - installation guide';$wideLink.Location=New-Object Drawing.Point(45,329);$wideLink.Size=New-Object Drawing.Size(650,28)
- $wideLink.Add_LinkClicked({Start-Process 'https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/'});$form.Controls.Add($wideLink)
+ $wideLink.Add_LinkClicked({param($sender,$e) Start-Process ([string]$e.Link.LinkData)});$form.Controls.Add($wideLink)
  $backgroundBox=Check-At 'Unmute while in background' 361
  $redBox=Check-At 'Continue after passing a red signal (Resume after failure message)' 393
  $anchorPanel=New-Object Windows.Forms.Panel;$anchorPanel.Location=New-Object Drawing.Point(24,($sliderPanel.Bottom+2));$anchorPanel.Size=New-Object Drawing.Size(652,32);$form.Controls.Add($anchorPanel)
@@ -287,7 +287,15 @@ function Show-Options([string]$InitialPath){
  foreach($option in @($window,$fps,$verbose,$startupLogBox,$cabBox,$backgroundBox,$redBox,$editorBox,$toolsBox,$idleBox,$keysBox,$panBox,$timeout,$camera,$crawl,$counterTiltBox)){
   $option.Top=$optionY;$option.Height=24;$option.Width=712;$optionY+=24
  }
- $cabBox.Width=410;$wideLink.Text='Widescreen patch guide';$wideLink.Location=New-Object Drawing.Point(445,254);$wideLink.Size=New-Object Drawing.Size(270,22)
+ $cabBox.Width=$cabBox.PreferredSize.Width
+ $wideLink.Text='Widescreen patch required. Download here, install guide'
+ $wideLink.Font=New-Object Drawing.Font('Segoe UI',9)
+ $wideLink.Location=New-Object Drawing.Point(($cabBox.Right+4),($cabBox.Top+3))
+ $wideLink.Size=New-Object Drawing.Size((736-$wideLink.Left),22)
+ $wideLink.Links.Clear()
+ [void]$wideLink.Links.Add($wideLink.Text.IndexOf('here'),4,'https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/')
+ [void]$wideLink.Links.Add($wideLink.Text.IndexOf('install guide'),13,'https://youtu.be/nkWh1HAuRKQ?t=556')
+ $wideLink.Visible=$false
  $crawlHint.Top=$optionY+2;$crawlHint.Height=22
  $sliderPanel.Top=$optionY+28;$sliderPanel.Height=64
  $anchorPanel.Location=New-Object Drawing.Point(24,($optionY+96));$anchorPanel.Size=New-Object Drawing.Size(652,28)
@@ -296,7 +304,7 @@ function Show-Options([string]$InitialPath){
  $space.Top=$optionY+128;$space.Height=36;$message.Top=$optionY+168;$message.Height=34
  foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=$optionY+208;$button.Height=32}
  $credit.Top=$optionY+248;$credit.Height=20;$github.Top=$optionY+272;$github.Height=22;$icon.Top=$optionY+271
- $form.AutoScroll=$true
+ $form.AutoScroll=$true;$form.AutoScrollMinSize=New-Object Drawing.Size(0,($github.Bottom+24))
  $ui=@{info=$null;loading=$false}
  $refresh={ $counterTiltBox.Enabled=$crawl.Checked;$anchorPanel.Visible=$crawl.Checked;$sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
  $slider.Add_ValueChanged($refresh)
@@ -304,10 +312,10 @@ function Show-Options([string]$InitialPath){
  $timeout.Add_CheckedChanged({if(-not $timeout.Checked -and -not $ui.loading){$crawl.Checked=$false}})
  $load={param([string]$p)
   $counterTiltBox.Checked=$false;$keysBox.Checked=$false;$panBox.Checked=$false
-  $ui.info=$null;$ui.loading=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p;$cabBox.Enabled=$false;$cabBox.Checked=$false;$backgroundBox.Checked=$false;$redBox.Checked=$false;$skipMovieBox.Checked=$false;$editorBox.Checked=$false;$toolsBox.Checked=$false;$idleBox.Checked=$false
+  $ui.info=$null;$ui.loading=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$pathText.Text=$p;$cabBox.Enabled=$false;$cabBox.Checked=$false;$wideLink.Visible=$false;$backgroundBox.Checked=$false;$redBox.Checked=$false;$skipMovieBox.Checked=$false;$editorBox.Checked=$false;$toolsBox.Checked=$false;$idleBox.Checked=$false
   try{$i=Get-MstsImage $p;$m=Get-CrawlInstallation $i.Path;$ui.info=$i;$pathText.Text=$i.Path;$version.Text='Valid train.exe version: '+$i.Version;$version.ForeColor=[Drawing.Color]::FromArgb(0,170,0)
    $anchor.SelectedIndex=if($m -and $m.crawlHUDAnchor -eq "BottomRight"){0}else{1}
-   $cabBox.Enabled=$i.Widescreen
+   $cabBox.Enabled=$i.Widescreen;$wideLink.Visible=-not $i.Widescreen
    $settingsPath=Join-Path (Split-Path $i.Path) 'NEMT/settings.ini'
    if($m -and $m.enabled -and (Test-Path -LiteralPath $settingsPath)){
     $section='';foreach($line in [IO.File]::ReadAllLines($settingsPath)){

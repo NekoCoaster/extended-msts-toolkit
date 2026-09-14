@@ -57,6 +57,6 @@ Reopen **NEMT.vbs**, select the same `train.exe`, adjust your choices and click 
 - [User guide](docs/README.md): installation, options, window modes, crawling and loading messages.
 - [Technical documentation and testing evidence](docs/technical/README.md): implementation, development history and validation limits.
 
-Developed and Tested by NekoCoaster, Powered by Codex — 2026.
+Developed and Tested by NekoCoaster with Astra.
 
 Released under the [MIT License](LICENSE). See [third-party notices](THIRD-PARTY.md). Microsoft Train Simulator and route assets are not included.

@@ -1,6 +1,6 @@
 # World-relative crawl pitching
 
-Unreleased fix, 2026-09-13. The installed MSTS folder was inspected read-only. Its NEMT manifest identifies `1.1.0-alpha.7`, while the source checkout identifies `1.1.0-alpha.9`; the fix is based on the source checkout. This is fresh automated validation, not a live gameplay measurement.
+Historical investigation, 2026-09-13. In 1.1.0 this filter is optional and defaults off; manual steering bypasses it. See [current physics behavior](../technical/physics.md). The installed MSTS folder was inspected read-only. Its NEMT manifest identifies `1.1.0-alpha.7`, while the source checkout identifies `1.1.0-alpha.9`; the fix is based on the source checkout. This is fresh automated validation, not a live gameplay measurement.
 
 ## Cause and correction
 

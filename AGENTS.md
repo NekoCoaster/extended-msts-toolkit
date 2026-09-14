@@ -2,7 +2,7 @@
 
 This is a separate local repository for Neko's Extended MSTS Toolkit (NEMT), derived from MEDS commit `1b7760f`. The authorized GitHub repository is `NekoCoaster/extended-msts-toolkit`. Access only this repository for NEMT work; do not push toolkit work into MEDS.
 
-The user requests that completed, validated NEMT changes be committed and pushed to `origin/codex/settings-cab-investigation` so they can pull updates. Keep using this branch for future changes unless the user specifies another destination.
+The user requests that completed, validated NEMT changes be committed and pushed to `origin/dev` so they can pull updates. Keep using this branch for future changes unless the user specifies another destination.
 
 Preserve MEDS releases. Never include game executables, private keys or raw game decompilation. Scratch files belong outside the distributable source or in ignored `work/`.
 
