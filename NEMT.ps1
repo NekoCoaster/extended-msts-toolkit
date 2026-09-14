@@ -232,7 +232,7 @@ function Show-Options([string]$InitialPath){
  $form.StartPosition='CenterScreen';$form.FormBorderStyle='FixedDialog';$form.MaximizeBox=$false;$form.AutoScaleMode='Dpi';$form.AutoScaleDimensions=New-Object Drawing.SizeF(96,96)
  $form.Font=New-Object Drawing.Font('Segoe UI',10);$form.BackColor=[Drawing.Color]::White
  function Label-At([string]$Text,[int]$Y,[int]$Height=28){$l=New-Object Windows.Forms.Label;$l.UseMnemonic=$false;$l.Text=$Text;$l.Location=New-Object Drawing.Point(24,$Y);$l.Size=New-Object Drawing.Size(712,$Height);$form.Controls.Add($l);return $l}
- $title=Label-At "Neko's Extended MSTS Toolkit" 20 36;$title.Font=New-Object Drawing.Font('Segoe UI',17,[Drawing.FontStyle]::Bold)
+ $title=Label-At "Neko's Extended MSTS Toolkit Patcher v$script:ToolkitVersion" 20 36;$title.Font=New-Object Drawing.Font('Segoe UI',17,[Drawing.FontStyle]::Bold)
  $pathText=New-Object Windows.Forms.TextBox;$pathText.ReadOnly=$true;$pathText.Location=New-Object Drawing.Point(24,69);$pathText.Size=New-Object Drawing.Size(550,28);$form.Controls.Add($pathText)
  $browse=New-Object Windows.Forms.Button;$browse.Text='Browse...';$browse.Location=New-Object Drawing.Point(585,66);$browse.Size=New-Object Drawing.Size(90,32);$form.Controls.Add($browse)
  $version=Label-At 'Choose or drop your train.exe.' 110 48;$version.Font=New-Object Drawing.Font('Segoe UI',11,[Drawing.FontStyle]::Bold)
@@ -252,8 +252,8 @@ function Show-Options([string]$InitialPath){
  foreach($pair in @(@('0',0),@('100',623))){$l=New-Object Windows.Forms.Label;$l.Text=$pair[0];$l.Location=New-Object Drawing.Point($pair[1],28);$l.AutoSize=$true;$sliderPanel.Controls.Add($l)}
  $instructions="Select train.exe and choose features, then Apply. Settings take effect after restarting MSTS."
  $message=Label-At $instructions 430 62
- $selectAll=New-Object Windows.Forms.Button;$selectAll.Text='Select All';$selectAll.Location=New-Object Drawing.Point(238,502);$selectAll.Size=New-Object Drawing.Size(100,34);$selectAll.Enabled=$false;$form.Controls.Add($selectAll)
- $selectAll.Add_Click({foreach($control in $form.Controls){if($control -is [Windows.Forms.CheckBox] -and $control.Enabled -and $control.Tag -ne 'ExcludeSelectAll'){$control.Checked=$true}}})
+ $selectAll=New-Object Windows.Forms.Button;$selectAll.Text='Use Recommended';$selectAll.Location=New-Object Drawing.Point(180,502);$selectAll.Size=New-Object Drawing.Size(158,34);$selectAll.Enabled=$false;$form.Controls.Add($selectAll)
+ $selectAll.Add_Click({foreach($control in $form.Controls){if($control -is [Windows.Forms.CheckBox] -and $control.Enabled -and $control.Tag -ne 'ExcludeSelectAll'){$control.Checked=$true}};$startupLogBox.Checked=$false})
  $apply=New-Object Windows.Forms.Button;$apply.Text='Apply';$apply.Location=New-Object Drawing.Point(346,502);$apply.Size=New-Object Drawing.Size(100,34);$form.Controls.Add($apply)
  $restore=New-Object Windows.Forms.Button;$restore.Text='Uninstall';$restore.Location=New-Object Drawing.Point(454,502);$restore.Size=New-Object Drawing.Size(106,34);$form.Controls.Add($restore)
  $close=New-Object Windows.Forms.Button;$close.Text='Close';$close.Location=New-Object Drawing.Point(568,502);$close.Size=New-Object Drawing.Size(108,34);$close.Add_Click({$form.Close()});$form.Controls.Add($close)
@@ -276,7 +276,7 @@ function Show-Options([string]$InitialPath){
  $backgroundBox=Check-At 'Unmute while in background' 361
  $redBox=Check-At 'Continue after passing a red signal (Resume after failure message)' 393
  $anchorPanel=New-Object Windows.Forms.Panel;$anchorPanel.Location=New-Object Drawing.Point(24,($sliderPanel.Bottom+2));$anchorPanel.Size=New-Object Drawing.Size(652,32);$form.Controls.Add($anchorPanel)
- $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text='Extended F5 HUD Location';$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
+ $anchorLabel=New-Object Windows.Forms.Label;$anchorLabel.Text='Extended F5 HUD Location for Crawling statistics';$anchorLabel.AutoSize=$true;$anchorPanel.Controls.Add($anchorLabel)
  $anchor=New-Object Windows.Forms.ComboBox;$anchor.DropDownStyle="DropDownList";$anchor.Location=New-Object Drawing.Point(160,0);$anchor.Size=New-Object Drawing.Size(170,28);[void]$anchor.Items.AddRange(@("Bottom right","Bottom left"));$anchor.SelectedIndex=1;$anchorPanel.Controls.Add($anchor)
  # The scrollable options area keeps all controls reachable on smaller displays.
  # Scrolling remains an accessibility fallback for smaller/high-DPI desktops.
@@ -290,9 +290,9 @@ function Show-Options([string]$InitialPath){
  $panBox=Check-At 'Remove Route Editor mouse-panning limit' 0
  $pcoresBox=Check-At 'Prefer P-cores (optional; compatibility troubleshooting)' 0
  $counterTiltBox=Check-At 'Enable counter-tilt filter while crawling (optional)' 0
- $optionY=142
- foreach($option in @($window,$fps,$verbose,$startupLogBox,$cabBox,$backgroundBox,$redBox,$editorBox,$toolsBox,$idleBox,$keysBox,$panBox,$timeout,$camera,$crawl,$counterTiltBox,$pcoresBox)){
-  $option.Top=$optionY;$option.Height=24;$option.Width=712;$optionY+=24;if($option -eq $startupLogBox){$option.Height=44;$optionY+=20}
+ $optionY=118
+ foreach($option in @($pcoresBox,$skipMovieBox,$window,$fps,$verbose,$cabBox,$backgroundBox,$redBox,$editorBox,$toolsBox,$idleBox,$keysBox,$panBox,$timeout,$camera,$crawl,$counterTiltBox)){
+  $option.Top=$optionY;$option.Height=22;$option.Width=712;$optionY+=22
  }
  $fps.Width=510;$vsyncBox.Location=New-Object Drawing.Point(544,$fps.Top);$vsyncBox.Width=192;$vsyncBox.Height=24
  $cabBox.Width=$cabBox.PreferredSize.Width
@@ -304,15 +304,18 @@ function Show-Options([string]$InitialPath){
  [void]$wideLink.Links.Add($wideLink.Text.IndexOf('here'),4,'https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/')
  [void]$wideLink.Links.Add($wideLink.Text.IndexOf('install guide'),13,'https://youtu.be/nkWh1HAuRKQ?t=556')
  $wideLink.Visible=$false
- $crawlHint.Top=$optionY+2;$crawlHint.Height=22
- $sliderPanel.Top=$optionY+28;$sliderPanel.Height=64
- $anchorPanel.Location=New-Object Drawing.Point(24,($optionY+96));$anchorPanel.Size=New-Object Drawing.Size(652,28)
+ $crawlHint.Top=$optionY+2;$crawlHint.Height=18
+ $sliderPanel.Top=$optionY+22;$sliderPanel.Height=48
+ $anchorPanel.Location=New-Object Drawing.Point(24,($optionY+76));$anchorPanel.Size=New-Object Drawing.Size(652,28)
  $anchor.Location=New-Object Drawing.Point(($anchorLabel.PreferredWidth+12),0);$anchor.Width=170
- $slider.AutoSize=$false;$slider.Top=30;$slider.Height=34
- $space.Top=$optionY+128;$space.Height=36;$message.Top=$optionY+168;$message.Height=34
- foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=$optionY+208;$button.Height=32}
- $credit.Top=$optionY+248;$credit.Height=20;$github.Top=$optionY+272;$github.Height=22;$icon.Top=$optionY+271
+ $slider.AutoSize=$false;$slider.Top=22;$slider.Height=26
+ $startupLogBox.Location=New-Object Drawing.Point(24,($optionY+108));$startupLogBox.Size=New-Object Drawing.Size(712,40)
+ $optionY+=44
+ $space.Top=$optionY+108;$space.Height=36;$message.Top=$optionY+146;$message.Height=30
+ foreach($button in @($selectAll,$apply,$restore,$close)){$button.Top=$optionY+180;$button.Height=32}
+ $credit.Top=$optionY+220;$credit.Height=20;$github.Top=$optionY+242;$github.Height=22;$icon.Top=$optionY+241
  $form.AutoScroll=$true;$form.AutoScrollMinSize=New-Object Drawing.Size(0,($github.Bottom+24))
+ $form.ClientSize=New-Object Drawing.Size(760,([Math]::Min($form.AutoScrollMinSize.Height,[Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height-48)))
  $ui=@{info=$null;loading=$false}
  $refresh={ $counterTiltBox.Enabled=$crawl.Checked;$anchorPanel.Visible=$crawl.Checked;$sliderPanel.Visible=$crawl.Checked;$crawlHint.Visible=$crawl.Checked;$strengthValue.Text=if($slider.Value -eq 0){'Disabled'}else{"$($slider.Value)x"};$strengthValue.Font=if($slider.Value -eq 0){$strengthBold}else{$form.Font};$strengthValue.Location=New-Object Drawing.Point(($strengthLabel.PreferredWidth+3),0) }
  $slider.Add_ValueChanged($refresh)

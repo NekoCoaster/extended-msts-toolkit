@@ -46,4 +46,4 @@ The main game adds a NEMT activation/help message below the original welcome lin
 
 Deep logging also records Direct3D7 device-creation results. The native graphics safeguard rejects failed or missing devices before texture enumeration; it cannot manufacture missing graphics support. OS APPLICATION VIEW is the version exposed to MSTS; OS REGISTRY is separate installed-version metadata. See [the graphics findings](technical/device-initialization.md) and [optional P-core preference](cpu-preference.md).
 
-See [display guidance and refresh-rate limiting](technical/display-options.md) for Limit FPS to vsync. Deep logging is excluded from Select All and should be enabled explicitly for troubleshooting.
+See [display guidance and refresh-rate limiting](technical/display-options.md) for Limit FPS to vsync. Use Recommended explicitly turns deep logging off; enable it separately for troubleshooting.
