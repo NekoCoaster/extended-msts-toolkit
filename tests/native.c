@@ -14,8 +14,6 @@ int main(void){
  assert(calc_impulse(a,v,100000,200000,1000000,.5,-1,5,100,dp,dv));assert(fabs(dp[2]+1250000)<.01);
  assert(calc_impulse(a,v,100000,200000,1000000,1,1,.1,0,dp,dv)&&dp[2]==0);
  assert(!calc_impulse(a,v,0,200000,1000000,1,1,.1,10,dp,dv));
- assert(calc_pitch(omega,a,0,out)&&out[0]==0&&out[1]==3&&out[2]==4);
- assert(calc_pitch(omega,a,.5,out)&&out[0]==1);
  assert(calc_wheel(v,a,.5,10,&speed)&&speed==50);
  assert(calc_wheel(v,a,1,100,&speed)&&speed==1000);
  /* Synthetic stdcall target: ordinary verified prologue, argument return, RET 4.

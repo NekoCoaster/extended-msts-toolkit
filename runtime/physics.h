@@ -16,19 +16,6 @@ static int calc_impulse(float *axis,float *velocity,double mass,double force,dou
  f=minimum(force,power/maximum(.5,fabs(speed)))*clamp_throttle(throttle)*(direction>0?1:direction<0?-1:0)*boost*minimum(dt,.25);
  for(i=0;i<3;i++){dp[i]=u[i]*f;dv[i]=dp[i]/mass;}return 1;
 }
-static int calc_pitch(const float *omega,const float *forward,double scale,float *out){
- double f[3],p[3],h2,pitch=0;int i;
- if(!finite_number(scale)||scale<0||scale>1||!unit_vector(forward,f))return 0;
- /* World Y is vertical. up x forward is horizontal regardless of body roll.
-    Its projection preserves world yaw and rotation about the train's length.
-    Below .01 horizontal length (~.57 degrees from vertical), fade to zero:
-    a vertical train has no unique heading, and tiny X/Z noise must not select
-    a full-strength axis. No body-local fallback or stored heading is needed. */
- p[0]=f[2];p[1]=0;p[2]=-f[0];h2=p[0]*p[0]+p[2]*p[2];
- for(i=0;i<3;i++){if(!finite_number(omega[i]))return 0;pitch+=omega[i]*p[i];}
- pitch*=(1-scale)/maximum(h2,.0001);
- for(i=0;i<3;i++)out[i]=omega[i]-pitch*p[i];return 1;
-}
 static int calc_wheel(float *velocity,float *axis,double throttle,double boost,double *speed){
  double u[3];int i;if(!unit_vector(axis,u)||!finite_number(throttle)||!finite_number(boost)||boost<0||boost>100)return 0;
  *speed=0;for(i=0;i<3;i++){if(!finite_number(velocity[i]))return 0;*speed+=velocity[i]*u[i];}

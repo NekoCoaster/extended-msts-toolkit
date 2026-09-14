@@ -70,6 +70,13 @@ int main(void){
   event[1]=0;hook_enter(MANUAL_KEY,&r);putu((B*)G(0x829980),2);event[1]=1;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);putu((B*)G(0x829980),0);
   event[1]=0;hook_enter(MANUAL_KEY,&r);putu((B*)G(0x7be0f4),1);event[1]=1;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);putu((B*)G(0x7be0f4),0);
  }
+ {
+  U stack[16]={0},event[2]={0x10058,1},dev[7]={0};B input[64]={0};Registers r={0};
+  dev[1]=(U)input;input[0x2d]=1;stack[6]=(U)event;stack[9]=(U)dev;r.esp=(U)stack-4;
+  crawl_derail_scan=0x58;crawl_derail_down=0;crawl_derail_pending=0;hook_enter(MANUAL_KEY,&r);assert(crawl_derail_pending);
+  crawl_derail_pending=0;event[1]=0;hook_enter(MANUAL_KEY,&r);event[0]=0x1002b;event[1]=1;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);
+  crawl_derail_scan=0;event[0]=0x10000;hook_enter(MANUAL_KEY,&r);assert(!crawl_derail_pending);crawl_derail_scan=0x2b;
+ }
  putu(car+0xa8,(U)freight);putu(freight+0xa0,(U)car);body[0xf2]=fb[0xf2]=12;
  /* Locomotive on its side: its up points left, so right steering is -world X. */
  wf((U)body+0xc,0);wf((U)body+0x10,1);wf((U)body+0x18,-1);wf((U)body+0x1c,0);
@@ -81,14 +88,9 @@ int main(void){
  test_focus=0;wf(G(0x80acd4),101);tick();assert(!rotation_inputs&&rf(body+0x58)==before);test_focus=1;
  putu((B*)G(0x7be0f4),1);wf(G(0x80acd4),102);tick();assert(!rotation_inputs&&rf(body+0x58)==before);putu((B*)G(0x7be0f4),0);
  strength=0;wf(G(0x80acd4),103);tick();assert(!rotation_inputs&&rf(body+0x58)==before);strength=10;
- /* At full throttle, steering must reach both native derivative helpers. */
- wf((U)ctl+0x8c,1);wf(G(0x80acd4),104);tick();
- {PitchContext ctx,helper;ThreadCalls *t;memset(&ctx,0,sizeof(ctx));ctx.stack[0]=1234;ctx.stack[2]=(U)body;
-  hook_enter(PITCH,&ctx.r);t=TlsGetValue(tls_index);assert(t->calls[0].filtered[0]==rf(body+0x94));
-  memset(&helper,0,sizeof(helper));helper.r.ecx=(U)body+0x94;helper.stack[0]=0x5f8796;hook_enter(VECTOR,&helper.r);assert(helper.r.ecx==(U)t->calls[0].filtered);hook_leave(PITCH,&ctx.r);
- }
- memset(bits,0,32);wf(G(0x80acd4),105);tick();assert(!rotation_inputs);
- {PitchContext ctx;ThreadCalls *t;memset(&ctx,0,sizeof(ctx));ctx.stack[0]=1234;ctx.stack[2]=(U)body;hook_enter(PITCH,&ctx.r);t=TlsGetValue(tls_index);assert(fabs(t->calls[0].filtered[0])<1e-8);hook_leave(PITCH,&ctx.r);}
+ /* Without the pitch filter, releasing the controls preserves angular state. */
+ memset(bits,0,32);before=rf(body+0x94);wf((U)ctl+0x8c,1);wf(G(0x80acd4),105);tick();
+ assert(!rotation_inputs&&rf(body+0x94)==before);
  /* Horn righting reaches momentum, not just the isolated calculation. */
  bits[0x39/8]=1<<(0x39%8);wf((U)ctl+0x8c,0);wf(G(0x80acd4),106);tick();
  assert(rotation_inputs==CRAWL_RIGHTING&&rf(body+0x9c)<0&&rf(body+0x60)<0);
@@ -101,5 +103,5 @@ int main(void){
   wf((U)badbody+0x1c,1);wf(G(0x80acd4),108);tick();assert(blocked&&!enabled&&rf(body+0x60)==before);
  }
  clear_activity();assert(!rotation_inputs&&!control_id);
- puts("PASS crawl controls: steam/diesel/electric bindings, remapping/modifiers, disabled actions, release/menu/focus/pause/strength gates, standstill local-up impulse, freight exclusion and full-throttle pitch interaction.");return 0;
+ puts("PASS crawl controls: steam/diesel/electric bindings, remapping/modifiers, disabled actions, release/menu/focus/pause/strength gates, standstill local-up impulse, freight exclusion and unfiltered rotation after release.");return 0;
 }

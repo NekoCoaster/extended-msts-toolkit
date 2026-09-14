@@ -8,7 +8,7 @@ The controlled locomotive comes from `[0x7C2AC0] + 0x6A`. The graph follows each
 
 Coupler type is not a whitelist. Eligibility follows the live connection graph. A visually separated vehicle can remain logically connected; a real link break removes its eligibility without erasing its existing momentum. The native uncoupler at `0x635DFB` is checked before and after each attempt. Only changed links trigger a graph refresh. Rebuilding the graph on every unsuccessful attempt caused a severe performance regression and was removed.
 
-Only physically derailed powered vehicles receive added thrust. Connected unpowered cars participate in the drag, pitch and wheel-animation treatment. A powered vehicle still on rails continues to use native traction.
+Only physically derailed powered vehicles receive added thrust. Connected unpowered cars participate in the drag and wheel-animation treatment. A powered vehicle still on rails continues to use native traction.
 
 ## Force and timestep
 
@@ -38,25 +38,13 @@ Control type at `0x7B6438`: 1 steam, 2 diesel, 3 electric. The control object is
 
 For steam, cutoff magnitude is not another thrust multiplier. Its sign selects direction, zero selects neutral. Boiler pressure, fuel, adhesion and heating do not limit artificial crawl thrust. Control + `0x1C` is a combined power value, not the reverser.
 
-## Drag and pitching
+## Drag and native orientation
 
-The identified drag coefficients and world-relative pitch-rate contribution scale by `1 - u`. Full throttle removes those contributions; closed throttle restores them. The pitch filter preserves turning around world vertical and rolling around the train's length. Existing tilt is preserved, and underlying angular momentum is not erased. Lowering throttle can reveal rotation already present in that momentum. Contacts and gravity continue to use the native solver.
+The six selected derailment drag contributions scale by `1 - u`. Their return addresses remain `0x62B18A`, `0x62B207`, `0x62B30E`, `0x62B38D`, `0x62B45A`, `0x62B4D6`, targeting `0x62E7C6`. Linear velocity is at body + `0x88`, angular velocity at + `0x94`.
 
-Drag filtering is limited to six calls to `0x62E7C6` from the derailment force routine: returns `0x62B18A`, `0x62B207`, `0x62B30E`, `0x62B38D`, `0x62B45A`, `0x62B4D6`. Linear velocity is at body + `0x88`, angular velocity at + `0x94`. Shared vehicle definitions are never edited.
+Alpha.16 removes automatic counter-tilt filtering entirely: the `0x5F874C` derivative hook, `0x5F9CA0`/`0x5FD2CA` helper hooks, filtered-vector storage, pitch callback context and projection formula are gone. Native orientation integration always receives its original angular velocity. The steering-specific pitch bypass is also removed. The [world-pitch investigation](../investigations/world-pitch.md) describes historical behavior only.
 
-Pitch filtering changes the angular-velocity input to the orientation derivative `0x5F874C`. It reads world angular velocity at body + `0x94` and the forward vector at + `0x24` from that callback's current integration buffer. With normalized forward `f`, world up `(0, 1, 0)`, and throttle/regulator `u`:
-
-```text
-p = world_up cross f = (f.z, 0, -f.x)
-h2 = dot(p, p)
-omega_filtered = omega - u * dot(omega, p) * p / max(h2, 0.0001)
-```
-
-For an ordinary heading this suppresses the angular component about the horizontal axis perpendicular to the train's heading. It is independent of body roll and the sign of forward, so reversing or lying on either side does not select a different compensation axis. World yaw and longitudinal roll are orthogonal to `p` and remain intact. This preserves the current inclination; it does not pull the train upright or level it with the terrain.
-
-Within approximately 0.57 degrees of straight up/down, suppression smoothly fades with `h2 / 0.0001`. At exactly vertical it is a no-op because there is no unique horizontal heading. This avoids amplifying small orientation noise or choosing a body-relative fallback axis.
-
-The former body-right projection could suppress world yaw for a train lying on its side. Merely negating that right vector (a level train rolled exactly 180 degrees) was already sign-invariant; the error was choosing an axis that followed body roll. The two scoped helper returns remain `0x5F8796` and `0x5F8876`, covering quaternion and matrix derivatives. Physical orientation and angular momentum are not temporarily overwritten. See the [fix investigation and validation](../investigations/world-pitch.md).
+Manual righting still chooses the shortest roll about the locomotive's length; steering still uses its own up axis. Their target-rate limits, timestep cap and inertia conversion were reviewed and do not compensate for the removed filter. The angular-drag exemption during a held nudge remains necessary to keep native friction from immediately damping the requested rotation. It is independent of counter-tilt. Releasing the controls stops added impulses without filtering angular velocity. Native contacts and gravity continue to apply.
 
 ## Wheels and steam rods
 
@@ -78,7 +66,7 @@ The body basis is right `+0x0C`, up `+0x18`, forward `+0x24`. Righting chooses `
 
 Native `0x5F6368` computes world angular velocity at `+0x94` from the world inverse-inertia tensor at `+0x64` and angular momentum at `+0x58` (matrix/vector helper `0x5FD74F`). The assist solves this symmetric positive-definite tensor for an angular impulse matching its requested velocity increment, validates every connected engine's planned writes first, then updates both fields. Invalid tensors fail closed. The existing simulation-time deduplication and 0.25-second timestep cap apply. Strength zero, paused scenes, on-rail and unpowered cars receive no added rotational impulse.
 
-While an eligible powered locomotive receives rotational input, its angular drag contribution is suppressed and sleep is cleared; linear drag retains the throttle rule. During directional steering, that locomotive's derivative uses native angular velocity without pitch suppression so local-up rotation survives when rolled. Releasing steering restores world-relative pitch filtering. No orientation, horn state, brake state or shared vehicle definition is written.
+While an eligible powered locomotive receives rotational input, its angular drag contribution is suppressed and sleep is cleared; linear drag retains the throttle rule. Orientation integration is unfiltered, whether steering is held or released. No orientation, horn state, brake state or shared vehicle definition is written.
 
 Validation: `tests/rotation.c` covers 1,920 heading/roll/slope combinations, shortest-path convergence at 30/60/120 Hz, local-up signs and rotated anisotropic inertia. `tests/crawl-controls.c` covers all three controller types, remapped keys/modifiers, native masks, release/focus/menu/pause gates, stationary rotation, freight exclusion, simulation-step deduplication and full-throttle derivative interaction. These are isolated native regression tests; final in-game control feel still needs gameplay verification.
 
@@ -90,6 +78,14 @@ Shortcut names come from the checked binding traversal, refresh once per second,
 
 Unmodified backslash (DIK `0x2B`) supplies an edge-triggered manual derail request. The request survives a press and release in the same IOM poll, which a held-bit-only physics sample could miss. After the existing driving-readiness stage, the simulation-thread frame callback validates the controlled reciprocal consist, rejects cyclic links, checks the exact six-byte entry of native routine `0x62E017`, and invokes it for each not-yet-derailed connected car. The native routine handles vehicle/train flags, camera notification, native coupler settings and engine derail state; NEMT also wakes stationary bodies and refreshes its snapshot afterward. This deliberately uses native side effects, including the routine's own in-memory vehicle-definition updates. No on-disk executable bytes or route/train files are changed. A single checked buffered-key hook at `0x6BAE0E` captures keydown before native IOM dispatch; it uses the shared mutation transaction and is installed only at the existing driving-readiness stage. This site is separate from the toolset keyboard hook because the simulator and toolset startup paths are mutually exclusive. Crawl plus activity-end prevention is required; crawl strength zero still permits the deliberate derail command. Holding the key through loading, pause, menus or focus loss cannot repeat it without a release.
 
-`tests/manual-derail.c` executes the actual native routine from both supported executable fixtures, replacing only camera/wake callees with observers. It covers all-car native flags, engine/freight differences, train state, wake-up, already-derailed exclusion, signature/cycle rejection and one-shot/pause/feature gating. Existing rotation, pitch, lifecycle, HUD, shared-transaction and driving-readiness regression checks remain in place.
+`tests/manual-derail.c` executes the actual native routine from both supported executable fixtures, replacing only camera/wake callees with observers. It covers all-car native flags, engine/freight differences, train state, wake-up, already-derailed exclusion, signature/cycle rejection and one-shot/pause/feature gating. Existing rotation, counter-tilt-removal, lifecycle, HUD, shared-transaction and driving-readiness regression checks remain in place.
 
 Live follow-up: the final build was launched normally with `-vm:w`, a MegaCoaster driving scene finished loading, and a backslash tap invoked derailment and switched to the native derail camera. The extended white F5 HUD subsequently showed **active** crawling, the mapped Space/semicolon/apostrophe labels, the rotation-input line and the manual-derail hint. F5 still cycled normally. A short diagnostic capture of the already-loaded scene observed a normal F5 keydown/release traverse the buffered hook with the original event pointer and key code preserved. The capture was detached and the test session was closed without saving. Sustained righting/steering strength against different terrain and vehicle masses still needs gameplay feel testing; the confirmed alpha.14 failure was the keyboard-buffer overread, and the angular gains were not changed in this fix.
+
+## Alpha.16 controls and checks
+
+`[Derailment] DerailKey` selects a physical scan code through the existing named-key parser; backslash is the default, `NONE` disables it. The buffered event and held-state readers share the configured scan code. The shortcut remains driving-only, unmodified and edge-triggered. Apply preserves the value. Invalid/reserved keys invalidate configuration rather than silently selecting another command.
+
+Regression checks cover removal of all three orientation hooks, angular-state preservation after key release, shortest-path manual righting, local-up steering, custom buffered events and old-key rejection, configuration defaults/validation and installer persistence.
+
+Read-only inspection of the alpha.16 driving process confirmed the original instruction prefixes at all three former counter-tilt hook sites. Manual shortest-path righting and local-axis steering have automated coverage; sustained handling strength was not measured in this live run.

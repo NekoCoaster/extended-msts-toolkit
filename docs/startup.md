@@ -27,3 +27,7 @@ MaxBackupLogs=0
 ```
 
 The size limit accepts **4–65536 KB** and backup count **0–20**. Zero backups replaces old content when a new log begins or the size limit is reached. With backups, `startup.1.log` is the newest archived log. Reducing the count removes excess numbered backups when logging next starts. Restart MSTS after edits.
+
+## Main-menu welcome
+
+The main game adds a NEMT activation/help message below the original welcome line. The stock footer uses more of the empty space beside the navigation buttons so the full paragraph fits. Menu hover help continues to work. This message is independent of verbose loading and is omitted in Editors and Tools (`-toolset`).

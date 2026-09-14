@@ -3,6 +3,8 @@
    Rotation needs no synthetic keys or controller writes; manual derail events
    are handled separately. */
 enum {CRAWL_RIGHTING=1,CRAWL_LEFT=2,CRAWL_RIGHT=4,CRAWL_DERAIL=8};
+static U crawl_derail_scan=0x2b;
+static char crawl_derail_name[40]="\\";
 static int crawl_derail_down=1,crawl_derail_pending;
 static int crawl_derail_edge(U input,int allowed){
  int down=(input&CRAWL_DERAIL)!=0,pressed=allowed&&down&&!crawl_derail_down;
@@ -50,7 +52,7 @@ static U crawl_keyboard_controls(U ctl,U type){
        (crawl_key(bits,0x1d)||crawl_key(bits,0x9d)?4:0)|
        (crawl_key(bits,0x38)||crawl_key(bits,0xb8)?2:0)|
        (crawl_key(bits,0xdb)||crawl_key(bits,0xdc)?1:0);
-  if(count>0x2b&&!mods&&crawl_key(bits,0x2b))result|=CRAWL_DERAIL;
+  if(crawl_derail_scan&&count>crawl_derail_scan&&!mods&&crawl_key(bits,crawl_derail_scan))result|=CRAWL_DERAIL;
   for(scan=0;scan<count;scan++)if(refresh||crawl_key(bits,scan)){
    memcpy(binding,table+scan*4,16);
    for(;;){

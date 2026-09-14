@@ -40,6 +40,14 @@ static void read_config(void){
  prevent_end=read_bool(path,L"Derailment",L"PreventActivityEnd");
  unlock_cameras=read_bool(path,L"Derailment",L"UnlockCameras");
  crawl_requested=read_bool(path,L"Derailment",L"EnableCrawl");
+ GetPrivateProfileStringW(L"Derailment",L"DerailKey",L"BACKSLASH",value,32,path);
+ crawl_derail_scan=!lstrcmpW(value,L"\\")?0x2b:editor_key_parse(value);
+ if(!lstrcmpiW(value,L"NONE")){crawl_derail_scan=0;strcpy(crawl_derail_name,"Disabled");}
+ else if(!crawl_derail_scan||crawl_derail_scan>=238||crawl_derail_scan==1||
+         crawl_derail_scan==0x1d||crawl_derail_scan==0x9d||crawl_derail_scan==0x2a||crawl_derail_scan==0x36||
+         crawl_derail_scan==0x38||crawl_derail_scan==0xb8||crawl_derail_scan==0xdb||crawl_derail_scan==0xdc||crawl_derail_scan==0xdd)config_valid=0;
+ else if(crawl_derail_scan==0x2b)strcpy(crawl_derail_name,"\\");
+ else crawl_key_name(crawl_derail_scan,0,crawl_derail_name);
  write_status_json=read_bool(path,L"Diagnostics",L"WriteStatusJson");
  crawl_hud=read_bool(path,L"Diagnostics",L"ShowCrawlHUD");
  GetPrivateProfileStringW(L"Diagnostics",L"CrawlHUDAnchor",L"BottomLeft",value,32,path);

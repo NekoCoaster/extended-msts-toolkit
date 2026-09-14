@@ -52,6 +52,7 @@ finish:
 }
 #include "crawl.c"
 #include "startup.h"
+#include "welcome.h"
 #include "timing.h"
 #include "cab.h"
 #include "signal.h"
