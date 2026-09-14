@@ -14,3 +14,10 @@ The preference is confined to MSTS and ends with the process. Uncheck it and res
 Windows 10/11 CPU Set APIs and distinct performance classes are required. If Windows reports only one class, no eligible performance cores within existing restrictions, or an unsupported topology, scheduling is left unchanged. This x86 implementation deliberately skips multi-group and greater-than-32-logical-processor mappings. Deep logging records the outcome and selected CPU Set IDs.
 
 A P-core preference is a comparison test, not an established MSTS crash fix. First capture the original failure with the option off, then compare an otherwise identical run with it on. For the reported Acer crash, the concrete evidence points to graphics-device initialization; see the [graphics investigation](technical/device-initialization.md).
+
+
+The patcher now queries Windows CPU Set performance classes before enabling the checkbox. It is disabled when all reported classes are equal, the query is unavailable, or the topology exceeds the runtime's supported single-group/32-logical-processor mapping. Detection uses reported classes rather than CPU brand names, so Intel branding alone does not enable it. The label explains that it applies to hybrid CPUs such as Intel P/E-core models.
+
+Use Recommended skips the disabled control without changing its checked value. Apply preserves an existing saved preference when the control is disabled; uninstall still removes NEMT normally. A copied configuration with PreferPCores=true remains safe on a homogeneous CPU: the runtime performs its own topology check and leaves scheduling unchanged. Detection does not change affinity or CPU Sets. The runtime DLL is unchanged by this UI improvement.
+
+Synthetic detector tests cover homogeneous/hybrid data, unsupported groups/logical indices and malformed records. Form checks verify the note fits and Use Recommended preserves a disabled checked value while still clearing deep logging. The local host reported no supported hybrid classes and the control was visibly disabled.

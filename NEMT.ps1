@@ -225,6 +225,47 @@ function Resolve-MstsStartupPath([string]$Path) {
  # Show the normal unsupported-executable result if that is all the registry offers.
  $firstExisting
 }
+function Test-HybridCpuSupport {
+ try {
+  if(-not ('NemtCpuTopology' -as [type])) {
+   Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+public static class NemtCpuTopology {
+ [DllImport("kernel32.dll", SetLastError=true)]
+ static extern bool GetSystemCpuSetInformation(IntPtr data, uint length, out uint returned, IntPtr process, uint flags);
+ public static bool HasSupportedClasses(byte[] data) {
+  int offset=0,min=255,max=0;bool found=false;
+  while(offset<data.Length) {
+   if(data.Length-offset<8)return false;
+   uint size=BitConverter.ToUInt32(data,offset),type=BitConverter.ToUInt32(data,offset+4);
+   if(size<8||size>data.Length-offset)return false;
+   if(type==0) {
+    if(size<32||BitConverter.ToUInt16(data,offset+12)!=0||data[offset+14]>=32)return false;
+    int efficiency=data[offset+18];min=Math.Min(min,efficiency);max=Math.Max(max,efficiency);found=true;
+   }
+   offset+=(int)size;
+  }
+  return found&&min!=max;
+ }
+ public static bool Detect() {
+  IntPtr memory=IntPtr.Zero;
+  try {
+   uint bytes,returned;GetSystemCpuSetInformation(IntPtr.Zero,0,out bytes,IntPtr.Zero,0);
+   if(bytes==0||bytes>1048576)return false;
+   memory=Marshal.AllocHGlobal((int)bytes);
+   if(!GetSystemCpuSetInformation(memory,bytes,out returned,IntPtr.Zero,0)||returned>bytes)return false;
+   byte[] data=new byte[(int)returned];Marshal.Copy(memory,data,0,data.Length);
+   return HasSupportedClasses(data);
+  } catch {return false;} finally {if(memory!=IntPtr.Zero)Marshal.FreeHGlobal(memory);}
+ }
+}
+"@
+  }
+  return [NemtCpuTopology]::Detect()
+ } catch {return $false}
+}
+
 function Show-Options([string]$InitialPath){
  Add-Type -AssemblyName System.Windows.Forms;Add-Type -AssemblyName System.Drawing
  [Windows.Forms.Application]::EnableVisualStyles()
@@ -288,7 +329,7 @@ function Show-Options([string]$InitialPath){
  $idleBox=Check-At 'Fix Route Editor slowdown without nearby sounds' 0
  $keysBox=Check-At 'Swap arrow keys with WASDEQ controls in route editor' 0
  $panBox=Check-At 'Remove Route Editor mouse-panning limit' 0
- $pcoresBox=Check-At 'Prefer P-cores (optional; compatibility troubleshooting)' 0
+ $pcoresBox=Check-At 'Prefer P-cores (Only applicable to CPUs with Hybrid Architecture, e.g. Intel P & E cores)' 0;$pcoresBox.UseMnemonic=$false;$pcoresBox.Enabled=Test-HybridCpuSupport
  $counterTiltBox=Check-At 'Enable counter-tilt filter while crawling (optional)' 0
  $optionY=118
  foreach($option in @($pcoresBox,$skipMovieBox,$window,$fps,$verbose,$cabBox,$backgroundBox,$redBox,$editorBox,$toolsBox,$idleBox,$keysBox,$panBox,$timeout,$camera,$crawl,$counterTiltBox)){
@@ -360,7 +401,7 @@ function Show-Options([string]$InitialPath){
  $save={param([bool]$clear)
   if(-not $ui.info){return};$form.UseWaitCursor=$true;$selectAll.Enabled=$false;$apply.Enabled=$false;$restore.Enabled=$false;$browse.Enabled=$false
   try{$t=if($clear){$false}else{$timeout.Checked};$c=if($clear){$false}else{$camera.Checked};$r=if($clear){$false}else{$crawl.Checked};$w=if($clear){$false}else{$window.Checked}
-   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -LimitToVSync ((-not $clear) -and $fps.Checked -and $vsyncBox.Checked) -CrawlHUD $r -CrawlHUDAnchor $(if($anchor.SelectedIndex -eq 1){"BottomLeft"}else{"BottomRight"}) -FixCabDials ((-not $clear) -and $cabBox.Enabled -and $cabBox.Checked) -BackgroundAudio ((-not $clear) -and $backgroundBox.Checked) -IgnoreRedSignal ((-not $clear) -and $redBox.Checked) -SkipStartupMovie ((-not $clear) -and $skipMovieBox.Checked) -EditorWindows ((-not $clear) -and $editorBox.Checked) -FreeEditorTools ((-not $clear) -and $toolsBox.Checked) -SmoothEditorAudio ((-not $clear) -and $idleBox.Checked) -SwapEditorKeys ((-not $clear) -and $keysBox.Checked) -UnlimitedEditorPan ((-not $clear) -and $panBox.Checked) -PreferPCores ((-not $clear) -and $pcoresBox.Checked) -CounterTilt ((-not $clear) -and $counterTiltBox.Checked) -Confirm:$false
+   $result=Invoke-Options -Path $ui.info.Path -Timeout $t -Camera $c -CrawlMode $r -Thrust $slider.Value -ExpectedHash $ui.info.SHA256 -WindowFeatures $w -VerboseLoading ((-not $clear) -and $verbose.Checked) -StartupLog ((-not $clear) -and $startupLogBox.Checked) -UnlockFPS ((-not $clear) -and $fps.Checked) -LimitToVSync ((-not $clear) -and $fps.Checked -and $vsyncBox.Checked) -CrawlHUD $r -CrawlHUDAnchor $(if($anchor.SelectedIndex -eq 1){"BottomLeft"}else{"BottomRight"}) -FixCabDials ((-not $clear) -and $cabBox.Enabled -and $cabBox.Checked) -BackgroundAudio ((-not $clear) -and $backgroundBox.Checked) -IgnoreRedSignal ((-not $clear) -and $redBox.Checked) -SkipStartupMovie ((-not $clear) -and $skipMovieBox.Checked) -EditorWindows ((-not $clear) -and $editorBox.Checked) -FreeEditorTools ((-not $clear) -and $toolsBox.Checked) -SmoothEditorAudio ((-not $clear) -and $idleBox.Checked) -SwapEditorKeys ((-not $clear) -and $keysBox.Checked) -UnlimitedEditorPan ((-not $clear) -and $panBox.Checked) -PreferPCores $(if($clear){$false}elseif($pcoresBox.Enabled){$pcoresBox.Checked}else{$null}) -CounterTilt ((-not $clear) -and $counterTiltBox.Checked) -Confirm:$false
    & $load $result.Path;$message.ForeColor=[Drawing.Color]::FromArgb(20,120,55);$message.Text=if($clear){'Toolkit removed. Widescreen and LAA were preserved.'}else{'Settings saved. Restart MSTS to apply changes. Windowed mode is used unless fullscreen is requested.'}
   }catch{$message.ForeColor=[Drawing.Color]::Firebrick;$message.Text=$_.Exception.Message}
   finally{$form.UseWaitCursor=$false;$browse.Enabled=$true;$selectAll.Enabled=($null -ne $ui.info);$apply.Enabled=($null -ne $ui.info);$restore.Enabled=($null -ne $ui.info)}
