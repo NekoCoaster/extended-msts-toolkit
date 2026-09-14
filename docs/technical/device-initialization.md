@@ -42,7 +42,7 @@ A once-per-process warning reports a non-pixel-format device creation failure ev
 
 The exact cause of INVALIDOBJECT remains unresolved. Candidates include the surface/object setup, native legacy graphics support, and compatibility handling. It does not establish insufficient GPU capability or a CPU scheduling fault.
 
-Validation: native probe tests on both executable fixtures cover all six hook ranges, failure and retry behavior with logging on/off, and warning suppression on successful fallback. A separate file-backed test verifies requested/actual surface records, owner reference balance, return/output/LastError preservation and one-time warning delivery. These are simulated COM tests; the new diagnostic build still needs a laptop run.
+Validation: native probe tests on both executable fixtures cover all six hook ranges, failure and retry behavior with logging on/off, and warning suppression on successful fallback. A separate file-backed test verifies requested/actual surface records, owner reference balance, return/output/LastError preservation and one-time warning delivery. These are simulated COM tests; subsequent laptop evidence is recorded below.
 
 
 ## Targeted INVALIDOBJECT probe retry
@@ -53,8 +53,39 @@ Only the first CreateDevice call in the verified capability probe now treats INV
 
 No additional instruction ranges are patched: the two already-validated call sites now use distinct bridges to distinguish the first and second attempts. Installation remains at the validated bootstrap stage. The change is active without deep logging; enable logging for laptop validation. The executable on disk is unchanged.
 
-Regression coverage on both native fixtures includes INVALIDOBJECT followed by success, repeated INVALIDOBJECT, both fallback surface creations failing, RGB565 surface creation failing followed by RGB555 success, and INVALIDOBJECT with a non-null output (no retry). Tests check bounded attempt counts, warning behavior, and cleanup reference counts with logging on/off. Laptop validation remains pending.
+Regression coverage on both native fixtures includes INVALIDOBJECT followed by success, repeated INVALIDOBJECT, both fallback surface creations failing, RGB565 surface creation failing followed by RGB555 success, and INVALIDOBJECT with a non-null output (no retry). Tests check bounded attempt counts, warning behavior, and cleanup reference counts with logging on/off. The automated checks preceded the laptop confirmation below.
 
 The laptop user subsequently confirmed successful startup without dgVoodoo and approximately 180 FPS after the off-screen retry. Route loading, cab rendering and menus were reported working; an extended driving session remains untested. Higher-resolution selection separately required D3DIM700.DLL on that installation. These are user observations, not instrumented benchmarks.
 
 A subsequent successful log (18:36) shows four successful device creations on the original 2560x1600 32-bit surface, no D3D PROBE RETRY, and completed startup/activity loading. Thus that run does not exercise the fallback. The user had separately reported adding D3DIM700.DLL for higher resolutions; its causal role in the changed probe outcome is not established by this log. The earlier successful user test after the retry and this later direct-success trace are distinct evidence.
+
+## Confirmed laptop comparison: with and without D3DIM700.DLL
+
+The user supplied a second successful log at 19:13 and explicitly identified this run as having D3DIM700.DLL removed. Unlike the earlier 18:36 successful run, it directly exercises NEMT's retry.
+
+| Observation | Earlier successful run, DLL present per user context (18:36) | DLL removed per user (19:13) |
+|---|---|---|
+| Initial probe surface | 2560x1600, 32-bit RGB | Same dimensions, depth and RGB masks |
+| Initial CreateDevice | Four successful calls | Four INVALIDOBJECT failures, each with null device |
+| NEMT retry | None | Four D3D PROBE RETRY records, one per probe |
+| Fallback surface | Not used | 16x16 RGB565; actual pitch 128 bytes |
+| Fallback CreateDevice | Not used | Four successful calls, each returning a device |
+| Startup / activity loading | Both completed | Both completed |
+
+The first failure is recorded at 19:13:12.641, retry at 12.642, and successful fallback device at 12.646. Startup completes at 19:13:13.483 and activity loading at 19:13:29.879. The four retries represent separate native probe invocations, not an unbounded retry loop.
+
+This confirms the fallback is executed successfully on the affected laptop without D3DIM700.DLL, and allows initialization and activity loading to continue. Removing the DLL reproduces the primary-surface failure while the NEMT fallback recovers. The logs do not expose the internal driver/runtime check that rejects the large primary surface, or independently inventory the DLL; presence/absence comes from the user's test description.
+
+The 16x16 16-bit surface is a temporary capability-test target, not the gameplay framebuffer: the workaround does not force gameplay to 16x16 or 16-bit color. It also does not remove the separate greater-than-2048 resolution limitation. D3DIM700.DLL remains useful for that issue on this installation.
+
+The fallback request retains a pitch value of 10240 in the descriptor, but its flags are 0x1007 (no DDSD_PITCH), so that request field is not authoritative. The returned descriptor has flags 0x100f and a valid pitch of 128. This is not evidence of a malformed 16x16 allocation.
+
+```mermaid
+flowchart TD
+    A[Primary surface: 2560 x 1600, 32-bit] --> B{CreateDevice result}
+    B -->|Success: earlier DLL-present run| E[Continue capability probe]
+    B -->|INVALIDOBJECT and null device| C[NEMT invokes native off-screen fallback]
+    C --> D[16 x 16 RGB565 surface]
+    D -->|CreateDevice succeeds: DLL-removed run| E
+    E --> F[Startup and activity loading complete]
+```
