@@ -15,8 +15,9 @@ int main(int argc,char **argv){
  SetLastError(123);assert(device_surface_create(&draw,desc,&out,NULL)==S_OK&&out==&surf&&GetLastError()==456);
  SetLastError(321);assert(device_create_checked(&d3d,NULL,&surf,&out)==(HRESULT)0x88760082&&!out&&GetLastError()==654);
  SetLastError(321);assert(device_create_checked(&d3d,NULL,&surf,&out)==(HRESULT)0x88760082&&GetLastError()==654);
- assert(queried==2&&released==2&&notices==1);
+ SetLastError(321);assert(device_create_primary(&d3d,NULL,&surf,&out)==(HRESULT)0x88760091&&!out&&GetLastError()==654);
+ assert(queried==3&&released==3&&notices==1);
  CloseHandle(startup_file);startup_file=INVALID_HANDLE_VALUE;startup_log_name(path,0);f=CreateFileW(path,GENERIC_READ,FILE_SHARE_READ,NULL,OPEN_EXISTING,0,NULL);assert(f!=INVALID_HANDLE_VALUE);assert(ReadFile(f,data,sizeof(data)-1,&n,NULL));CloseHandle(f);
- assert(strstr(data,"SURFACE REQUEST")&&strstr(data,"SURFACE ACTUAL")&&strstr(data,"width=16; height=16")&&strstr(data,"SURFACE OWNER END")&&strstr(data,"D3D FAILURE NOTICE")&&strstr(data,"0x88760082"));
+ assert(strstr(data,"SURFACE REQUEST")&&strstr(data,"SURFACE ACTUAL")&&strstr(data,"width=16; height=16")&&strstr(data,"SURFACE OWNER END")&&strstr(data,"D3D FAILURE NOTICE")&&strstr(data,"0x88760082")&&strstr(data,"D3D PROBE RETRY")&&strstr(data,"branch signal=0x88760091"));
  puts("PASS surface diagnostics: file records, owner reference balance, API arguments/results/LastError and one-time failure notice.");return 0;
 }

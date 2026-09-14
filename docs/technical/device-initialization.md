@@ -43,3 +43,14 @@ A once-per-process warning reports a non-pixel-format device creation failure ev
 The exact cause of INVALIDOBJECT remains unresolved. Candidates include the surface/object setup, native legacy graphics support, and compatibility handling. It does not establish insufficient GPU capability or a CPU scheduling fault.
 
 Validation: native probe tests on both executable fixtures cover all six hook ranges, failure and retry behavior with logging on/off, and warning suppression on successful fallback. A separate file-backed test verifies requested/actual surface records, owner reference balance, return/output/LastError preservation and one-time warning delivery. These are simulated COM tests; the new diagnostic build still needs a laptop run.
+
+
+## Targeted INVALIDOBJECT probe retry
+
+The next laptop log confirmed successful creation and inspection of a 2560x1600 32-bit primary surface; GetDDInterface returned the same interface address used for creation. Device creation still returned INVALIDOBJECT. This narrows the failure but does not prove its underlying cause.
+
+Only the first CreateDevice call in the verified capability probe now treats INVALIDOBJECT with a null output as a request for MSTS's existing fallback. The actual HRESULT remains in the diagnostic record; `D3D PROBE RETRY` explicitly records translation to the private pixel-format branch signal. Native code releases the primary surface, creates its 16x16 off-screen RGB565 surface (with its existing RGB555 surface-creation retry), then attempts device creation once more. The second device call never performs this translation, so repeated INVALIDOBJECT follows normal failure cleanup and warning. Other errors and non-null failed outputs keep their original behavior. This is not a general replacement of Direct3D errors or a guarantee of usable gameplay rendering.
+
+No additional instruction ranges are patched: the two already-validated call sites now use distinct bridges to distinguish the first and second attempts. Installation remains at the validated bootstrap stage. The change is active without deep logging; enable logging for laptop validation. The executable on disk is unchanged.
+
+Regression coverage on both native fixtures includes INVALIDOBJECT followed by success, repeated INVALIDOBJECT, both fallback surface creations failing, RGB565 surface creation failing followed by RGB555 success, and INVALIDOBJECT with a non-null output (no retry). Tests check bounded attempt counts, warning behavior, and cleanup reference counts with logging on/off. Laptop validation remains pending.
