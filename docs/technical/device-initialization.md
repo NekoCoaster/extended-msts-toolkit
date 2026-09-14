@@ -28,3 +28,18 @@ All three verified ranges belong to the shared mutation transaction. The two fiv
 ## OS version reporting
 
 An unchecked Compatibility tab does not exclude automatic compatibility treatment. The laptop reported Windows 5.1 build 2600 to the version API. The log now calls this **OS APPLICATION VIEW**, and separately records build/display-version/product-name metadata from the 64-bit Windows registry view. These sources may disagree; registry product names can also be historical. Neither alone proves which compatibility shim is active, and the toolkit does not remove shims or alter compatibility settings.
+
+
+## Follow-up: invalid object and silent exit
+
+The laptop follow-up reported `CreateDevice = 0x88760082` (`DDERR_INVALIDOBJECT`) with a null output device, after successful DirectSound and DirectDraw creation. The user observed a black window followed by a silent exit. The earlier access violation was absent, consistent with the guard reaching native failure handling; this is not proof of a clean process exit. The P-core preference was accepted for 16 CPU Sets in this run but did not prevent graphics failure.
+
+Deep logging now captures all three CreateSurface call sites within this probe: `0x70610b`, `0x70625e`, and `0x70629a`. Each five-byte CALL/CMP range is validated and claimed in the same transaction as the existing device guard. The bridge preserves stdcall cleanup and CMP flags. Request descriptors, returned pointers, HRESULTs and durations are recorded. Before device creation, GetSurfaceDesc records actual dimensions, caps and pixel format; GetDDInterface records the owner and releases the acquired reference. Different interface addresses alone do not prove different COM objects. Descriptor fields must be interpreted using their flags.
+
+These extra COM queries run only with deep logging enabled. They do not modify or restore a surface, change device selection, or force the pixel-format fallback. BEGIN records are flushed before the queries, so an interrupted query is identifiable. As with any in-process diagnostic, a defective COM implementation can still fault during inspection.
+
+A once-per-process warning reports a non-pixel-format device creation failure even with logging disabled. It says MSTS will continue normal error handling rather than claiming that every failed probe is fatal. Pixel-format failures remain silent to allow the existing retry. No artificial success result is returned.
+
+The exact cause of INVALIDOBJECT remains unresolved. Candidates include the surface/object setup, native legacy graphics support, and compatibility handling. It does not establish insufficient GPU capability or a CPU scheduling fault.
+
+Validation: native probe tests on both executable fixtures cover all six hook ranges, failure and retry behavior with logging on/off, and warning suppression on successful fallback. A separate file-backed test verifies requested/actual surface records, owner reference balance, return/output/LastError preservation and one-time warning delivery. These are simulated COM tests; the new diagnostic build still needs a laptop run.
