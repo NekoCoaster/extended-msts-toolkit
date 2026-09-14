@@ -91,6 +91,13 @@ int main(void){
  /* Without the pitch filter, releasing the controls preserves angular state. */
  memset(bits,0,32);before=rf(body+0x94);wf((U)ctl+0x8c,1);wf(G(0x80acd4),105);tick();
  assert(!rotation_inputs&&rf(body+0x94)==before);
+ counter_tilt=1;rotation_inputs=CRAWL_RIGHT;friction_scale=0;
+ {PitchContext ctx;ThreadCalls *t;memset(&ctx,0,sizeof(ctx));ctx.stack[0]=1234;ctx.stack[2]=(U)body;
+  hook_enter(PITCH,&ctx.r);t=TlsGetValue(tls_index);assert(t&&t->calls[0].filtered[0]==rf(body+0x94));hook_leave(PITCH,&ctx.r);}
+ rotation_inputs=0;
+ {PitchContext ctx;ThreadCalls *t;memset(&ctx,0,sizeof(ctx));ctx.stack[0]=1234;ctx.stack[2]=(U)body;
+  hook_enter(PITCH,&ctx.r);t=TlsGetValue(tls_index);assert(t&&fabs(t->calls[0].filtered[0])<1e-8);hook_leave(PITCH,&ctx.r);}
+ counter_tilt=0;
  /* Horn righting reaches momentum, not just the isolated calculation. */
  bits[0x39/8]=1<<(0x39%8);wf((U)ctl+0x8c,0);wf(G(0x80acd4),106);tick();
  assert(rotation_inputs==CRAWL_RIGHTING&&rf(body+0x9c)<0&&rf(body+0x60)<0);

@@ -1,6 +1,7 @@
 /* MIT. Restart-only feature configuration. Missing features default off. */
 static int write_status_json,prevent_end,unlock_cameras,crawl_requested,config_valid,window_features,center_windowed,verbose_loading,startup_log,unlock_fps,crawl_hud;
 static int crawl_hud_left,cab_needles,background_audio,ignore_red_signal,restore_movie_focus,skip_startup_movie;
+static int counter_tilt;
 static int editor_windows,editor_free_tools,editor_idle_audio,editor_swap_keys,editor_unlimited_pan;
 #include "editor_keys.h"
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
@@ -40,6 +41,7 @@ static void read_config(void){
  prevent_end=read_bool(path,L"Derailment",L"PreventActivityEnd");
  unlock_cameras=read_bool(path,L"Derailment",L"UnlockCameras");
  crawl_requested=read_bool(path,L"Derailment",L"EnableCrawl");
+ counter_tilt=read_bool(path,L"Derailment",L"CounterTilt");
  GetPrivateProfileStringW(L"Derailment",L"DerailKey",L"BACKSLASH",value,32,path);
  crawl_derail_scan=!lstrcmpW(value,L"\\")?0x2b:editor_key_parse(value);
  if(!lstrcmpiW(value,L"NONE")){crawl_derail_scan=0;strcpy(crawl_derail_name,"Disabled");}

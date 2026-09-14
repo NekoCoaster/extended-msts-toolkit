@@ -42,9 +42,9 @@ For steam, cutoff magnitude is not another thrust multiplier. Its sign selects d
 
 The six selected derailment drag contributions scale by `1 - u`. Their return addresses remain `0x62B18A`, `0x62B207`, `0x62B30E`, `0x62B38D`, `0x62B45A`, `0x62B4D6`, targeting `0x62E7C6`. Linear velocity is at body + `0x88`, angular velocity at + `0x94`.
 
-Alpha.16 removes automatic counter-tilt filtering entirely: the `0x5F874C` derivative hook, `0x5F9CA0`/`0x5FD2CA` helper hooks, filtered-vector storage, pitch callback context and projection formula are gone. Native orientation integration always receives its original angular velocity. The steering-specific pitch bypass is also removed. The [world-pitch investigation](../investigations/world-pitch.md) describes historical behavior only.
+Alpha.16 removed automatic counter-tilt filtering entirely: the `0x5F874C` derivative hook, `0x5F9CA0`/`0x5FD2CA` helper hooks, filtered-vector storage, pitch callback context and projection formula were removed. Alpha.17 restores them only when `[Derailment] CounterTilt=true`. The default false leaves native orientation integration unfiltered. The steering-specific pitch bypass is active only with the optional filter. The [world-pitch investigation](../investigations/world-pitch.md) documents the restored filter’s math.
 
-Manual righting still chooses the shortest roll about the locomotive's length; steering still uses its own up axis. Their target-rate limits, timestep cap and inertia conversion were reviewed and do not compensate for the removed filter. The angular-drag exemption during a held nudge remains necessary to keep native friction from immediately damping the requested rotation. It is independent of counter-tilt. Releasing the controls stops added impulses without filtering angular velocity. Native contacts and gravity continue to apply.
+Manual righting still chooses the shortest roll about the locomotive's length; steering still uses its own up axis. Their target-rate limits, timestep cap and inertia conversion were reviewed and do not compensate for the removed filter. The angular-drag exemption during a held nudge remains necessary to keep native friction from immediately damping the requested rotation. It is independent of counter-tilt. Releasing the controls stops added impulses; if the filter is enabled, its throttle-based projection resumes after steering. Native contacts and gravity continue to apply.
 
 ## Wheels and steam rods
 
@@ -66,7 +66,7 @@ The body basis is right `+0x0C`, up `+0x18`, forward `+0x24`. Righting chooses `
 
 Native `0x5F6368` computes world angular velocity at `+0x94` from the world inverse-inertia tensor at `+0x64` and angular momentum at `+0x58` (matrix/vector helper `0x5FD74F`). The assist solves this symmetric positive-definite tensor for an angular impulse matching its requested velocity increment, validates every connected engine's planned writes first, then updates both fields. Invalid tensors fail closed. The existing simulation-time deduplication and 0.25-second timestep cap apply. Strength zero, paused scenes, on-rail and unpowered cars receive no added rotational impulse.
 
-While an eligible powered locomotive receives rotational input, its angular drag contribution is suppressed and sleep is cleared; linear drag retains the throttle rule. Orientation integration is unfiltered, whether steering is held or released. No orientation, horn state, brake state or shared vehicle definition is written.
+While an eligible powered locomotive receives rotational input, its angular drag contribution is suppressed and sleep is cleared; linear drag retains the throttle rule. Orientation integration is unfiltered by default. With CounterTilt enabled, directional steering bypasses the filter while held; release restores the configured pitch filtering. No orientation, horn state, brake state or shared vehicle definition is written.
 
 Validation: `tests/rotation.c` covers 1,920 heading/roll/slope combinations, shortest-path convergence at 30/60/120 Hz, local-up signs and rotated anisotropic inertia. `tests/crawl-controls.c` covers all three controller types, remapped keys/modifiers, native masks, release/focus/menu/pause gates, stationary rotation, freight exclusion, simulation-step deduplication and full-throttle derivative interaction. These are isolated native regression tests; final in-game control feel still needs gameplay verification.
 
@@ -89,3 +89,9 @@ Live follow-up: the final build was launched normally with `-vm:w`, a MegaCoaste
 Regression checks cover removal of all three orientation hooks, angular-state preservation after key release, shortest-path manual righting, local-up steering, custom buffered events and old-key rejection, configuration defaults/validation and installer persistence.
 
 Read-only inspection of the alpha.16 driving process confirmed the original instruction prefixes at all three former counter-tilt hook sites. Manual shortest-path righting and local-axis steering have automated coverage; sustained handling strength was not measured in this live run.
+
+## Optional counter-tilt (alpha.17)
+
+The original world-relative projection is restored without changes: with forward `f`, `p=(f.z,0,-f.x)`, throttle `u`, the derivative receives `omega - u * dot(omega,p) * p / max(dot(p,p),0.0001)`. It preserves world yaw and longitudinal roll and fades near vertical. Manual steering uses scale 1 to bypass the projection while either direction is held. The flag defaults false and is restart-only.
+
+The three optional hooks occupy the trailing entries after the nine base crawl hooks. Disabled configurations do not prepare or install them. Enabled configurations include them in the same shared mutation transaction, using their original byte checks and late driving-scene stage. Tests cover actual installed/uninstalled prefixes, missing/invalid configuration, pure world-relative math, nested helper callbacks, manual steering interaction, and installer persistence on both executable variants. This release was validated with automated checks; no new in-game handling measurement is claimed.

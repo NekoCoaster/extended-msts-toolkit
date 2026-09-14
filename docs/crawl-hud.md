@@ -8,7 +8,7 @@ Connected powered engines contribute using their individual power and force valu
 
 Crawling is an arcade feature. It does not put vehicles back on the rails. Throttle also affects the selected derailment drag effects, and wheel animation follows movement and throttle. At **0×**, added thrust and rotational controls are disabled but these other crawling effects remain enabled.
 
-Automatic counter-tilt/pitch suppression has been removed. Crawl no longer filters the native orientation derivative.
+Counter-tilt/pitch filtering is optional and defaults off. Enable **Enable counter-tilt filter while crawling (optional)** in the patcher, or set `CounterTilt=true` under `[Derailment]` in `NEMT/settings.ini`, then restart MSTS. With it off, crawl leaves the native orientation derivative unfiltered. With it on, increasing throttle suppresses nose-up/nose-down rotation relative to world vertical; it does not automatically level the train. Manual left/right steering temporarily bypasses the filter so rotation still works on the train’s side. Friction reduction is present in either mode.
 
 ## Righting and steering
 

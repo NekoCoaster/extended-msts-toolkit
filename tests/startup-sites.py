@@ -14,4 +14,6 @@ for name in sys.argv[1:]:
   o=offset(address);assert b[o:o+5]==bytes.fromhex('8b00ff5038')
  for address in [0x566cbd,0x566d1c]:
   o=offset(address);assert b[o:o+5]==bytes.fromhex("b935000000")
+ for address,expected in [(0x5f874c,'558bec81ec90010000'),(0x5f9ca0,'558bec83ec10'),(0x5fd2ca,'558bec83ec28')]:
+  data=bytes.fromhex(expected);o=offset(address);assert b[o:o+len(data)]==data
  print('PASS startup call sites:',Path(name).name)
