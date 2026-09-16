@@ -1,6 +1,6 @@
 param([string]$BaseExe,[string]$WidescreenExe,[string]$Scratch)
 $ErrorActionPreference='Stop'
-. (Join-Path (Split-Path $PSScriptRoot) 'NEMT.ps1')
+. (Join-Path (Join-Path (Split-Path $PSScriptRoot) 'legacy') 'NEMT.ps1')
 function Assert($c,$m){if(-not $c){throw $m}}
 $count=0
 foreach($wide in @($false,$true)){foreach($laa in @($false,$true)){

@@ -37,14 +37,16 @@ The form supports drag-and-drop, registry discovery, executable verification and
 
 ## Build
 
-Use the x86 Tiny C Compiler 0.9.27 distribution:
+For an intentional runtime rebuild, use the bundled x86 TinyCC 0.9.27 subset on Windows. The frontend build alone does not rebuild this DLL:
 
 ```powershell
-python runtime/build.py C:/Tools/tcc/tcc.exe
+python runtime/build.py tools/tcc/tcc.exe
+.\build.bat
+python tools/prepare-commit.py
 python tools/package.py
 ```
 
-The build refreshes the DLL integrity hash. The packager excludes Git metadata and scratch work, verifies local documentation links and checks archive CRC/content equality. Compiler/runtime notices remain under `docs/licenses`. Contributor tools are not end-user dependencies.
+The build defines `WINVER` and `_WIN32_WINNT` as `0x0501` (Windows XP), fixes the proxy exports, audits the final PE import table for accidental post-XP dependencies, and refreshes the DLL integrity hash. The packager excludes Git metadata and scratch work, verifies local documentation links and checks archive CRC/content equality. Compiler/runtime notices remain under `docs/licenses`. Contributor tools are not end-user dependencies. Packaging reads the frontend and its manifest from `build/` and never replaces source checksums; see [Build and publishing](maintenance.md) for complete checks and source-redistribution preparation.
 
 ## Loading and HUD modules
 

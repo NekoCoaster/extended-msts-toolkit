@@ -1,46 +1,73 @@
 name: Publish release
+
 on:
   push:
     tags: ['v*']
+
 permissions:
-  contents: write
+  contents: read
+
 concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: false
+
 jobs:
+  verify:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/verify.yml
+
   release:
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-      GH_REPO: ${{ github.repository }}
-      RELEASE_TAG: ${{ github.ref_name }}
+    needs: verify
+    runs-on: windows-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
     steps:
-      - name: Check out the tagged source
-        shell: bash
+      - name: Check out verified tagged source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set up contributor Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify tag, release notes and source inputs
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          set -euo pipefail
-          mkdir NEMT
-          cd NEMT
-          git init
-          auth_header=$(printf "x-access-token:%s" "$GH_TOKEN" | base64 -w0)
-          echo "::add-mask::$auth_header"
-          git -c http.extraheader="AUTHORIZATION: basic $auth_header" fetch --depth=1 "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git" "$GITHUB_REF"
-          git checkout --detach FETCH_HEAD
-          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
-      - name: Verify version, checksums and package
-        working-directory: NEMT
-        shell: bash
+          if ($env:RELEASE_TAG -ne "v$((Get-Content VERSION -Raw).Trim())") { throw 'VERSION does not match tag' }
+          if (-not (Test-Path "releases/$env:RELEASE_TAG.md")) { throw 'Release notes missing' }
+          python tools/prepare-commit.py --check
+          if ($LASTEXITCODE -ne 0) { throw 'Source/checksum verification failed' }
+          python tools/verify-toolchain.py --require-source
+          if ($LASTEXITCODE -ne 0) { throw 'Toolchain verification failed' }
+      - name: Build native x86 frontend
+        shell: cmd
         run: |
-          set -euo pipefail
-          test "$RELEASE_TAG" = "v$(cat VERSION)"
-          sha256sum --check SHA256SUMS.txt
-          python3 tools/package.py
-          git diff --exit-code -- SHA256SUMS.txt
-          test -s "releases/$RELEASE_TAG.md"
-      - name: Publish ZIP and checksum
-        working-directory: NEMT
-        shell: bash
+          call build.bat
+          if errorlevel 1 exit /b 1
+      - name: Audit and package release inputs
+        shell: pwsh
         run: |
-          set -euo pipefail
-          gh release create "$RELEASE_TAG" ../NEMT.zip ../NEMT.zip.sha256 --verify-tag --title "NEMT $RELEASE_TAG" --notes-file "releases/$RELEASE_TAG.md"
-          gh release view "$RELEASE_TAG" --json url,tagName,assets
+          python tools/check-win32-imports.py build/NEMT.exe
+          if ($LASTEXITCODE -ne 0) { throw 'Frontend PE audit failed' }
+          python tools/check-win32-imports.py runtime/DINPUT.dll
+          if ($LASTEXITCODE -ne 0) { throw 'Runtime PE audit failed' }
+          python tools/package.py
+          if ($LASTEXITCODE -ne 0) { throw 'Packaging failed' }
+          python tools/source-checksums.py --check
+          if ($LASTEXITCODE -ne 0) { throw 'Packaging modified source inputs' }
+      - name: Publish ZIP, checksum and corresponding compiler source
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$env:RELEASE_TAG" ../NEMT.zip ../NEMT.zip.sha256 third-party/tinycc/tcc-0.9.27.tar.bz2 third-party/tinycc/tcc-0.9.27.tar.bz2.sha256 --verify-tag --title "NEMT $env:RELEASE_TAG" --notes-file "releases/$env:RELEASE_TAG.md"
+          if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }
+          gh release view "$env:RELEASE_TAG" --json url,tagName,assets
+          if ($LASTEXITCODE -ne 0) { throw 'Release inspection failed' }

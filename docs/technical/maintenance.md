@@ -1,28 +1,85 @@
-# Build, package and publish
+# Build, verify, package and publish
 
-These instructions are for contributors. Installing NEMT requires only the packaged control panel and its accompanying files; see the [installation guide](../installation.md).
+These are contributor instructions. Opening NEMT or building its frontend from an already complete source ZIP does not require Python or Internet access; see the [installation guide](../installation.md).
 
-## Build
+## Offline frontend build and native tests
 
-From the repository root, use Python and the x86 Tiny C Compiler 0.9.27 toolchain:
+From the repository root on Windows:
 
-```powershell
-python runtime/build.py C:/Tools/tcc/tcc.exe
-python tools/package.py
+```bat
+build.bat
+"TEST NEMT.bat" --ci
 ```
 
-Building refreshes runtime/DINPUT.dll and runtime/integrity.json. Packaging validates DLL integrity, relative Markdown links, archive contents and exclusions, updates SHA256SUMS.txt, and creates NEMT.zip plus its SHA-256 file beside the repository directory. No compiler or game executable is distributed. Licensing notices remain in THIRD-PARTY.md and docs/licenses.
+`build.bat` uses the bundled, reduced TinyCC 0.9.27 x86 toolchain. It produces `build/NEMT.exe` and `build/NEMT.exe.manifest`. Keep the sidecar next to the executable. `BUILD AND RUN NEMT.bat` builds and launches the panel; `clean.bat` removes known frontend/test outputs. Generated files under `build/` are not committed. Do not remove the intentional compiler binaries or committed runtime DLL.
 
-Run checks appropriate to a runtime or installer change. Documentation-only changes need link, terminology and package validation, not new claims of gameplay testing.
+The native tests use temporary synthetic fixtures, not a real game installation. The corrected display tests temporarily relax tracking limits only for synthetic off-screen DPI cases, then restore normal limits. A Windows CI pass does not establish that every injected feature works on every supported OS.
 
-## Release publication
+## One-time compiler-source preparation
 
-The repository's VERSION file identifies the package. Keep it synchronized with the matching releases/vVERSION.md notes before publishing. A vVERSION tag triggers the release workflow, which checks committed hashes and attaches NEMT.zip and its checksum to the GitHub release. Existing releases are not overwritten.
+Maintainer checks and packaging use **Python 3.11+** on a modern development/CI machine. Before the initial public commit of the bundled compiler, run:
 
-Do not retag old releases, rewrite published history or describe an alpha checkpoint as a newly tested stable build. Develop on `dev` and submit release changes to `main` for review. The prepared 1.1.0 version is not published until a matching tag is explicitly authorized.
+```text
+python tools/prepare-commit.py
+```
+
+This downloads the complete compiler source archive, verifies its pinned SHA-256, stores it under `third-party/tinycc/`, and refreshes source hashes. It does not execute or extract downloaded code. Commit that archive along with its sidecar/metadata. Subsequent runs reuse the archive without downloading. To supply an archive obtained elsewhere, use `--source-archive PATH`. Do not distribute the compiler with only an archive link or hash in place of its source. See [third-party notices](../../THIRD-PARTY.md).
+
+After all later source/documentation edits, explicitly refresh and check the manifest:
+
+```text
+python tools/source-checksums.py --write
+python tools/prepare-commit.py --check
+python tools/verify-toolchain.py --require-source
+```
+
+The manifest hashes raw file bytes. Existing `.gitattributes` disables line-ending normalization; preserve batch CRLF and vendored input bytes. Build products, Git metadata, local work directories and the manifest itself are excluded. Do not keep unrelated local files outside the ignored work/build directories.
+
+## Contributor checks
+
+```text
+python tests/native-frontend.py
+python tests/repository-tools.py
+python tools/check-win32-imports.py build/NEMT.exe
+python tools/check-win32-imports.py runtime/DINPUT.dll
+git diff --check
+```
+
+The PE audit is a guard against known incompatible imports, not an exhaustive proof of XP compatibility. Keep real-machine observations separate from source/static tests.
+
+## Runtime changes only
+
+The frontend build uses the existing `runtime/DINPUT.dll`. It does **not** rebuild the injected runtime. For an intentional runtime change:
+
+```text
+python runtime/build.py tools/tcc/tcc.exe
+```
+
+This rebuilds `runtime/DINPUT.dll`, repairs exports, audits imports and refreshes `runtime/integrity.json`. Review those tracked changes, run the appropriate runtime tests, then refresh source checksums. A frontend/documentation-only change should not rebuild the DLL unnecessarily.
+
+## Package without dirtying source
+
+After a successful frontend build and current source checksums:
+
+```text
+python tools/package.py
+python tools/source-checksums.py --check
+```
+
+The packager reads **both** `build/NEMT.exe` and `build/NEMT.exe.manifest` directly. No root-level staging copies are needed. It validates runtime integrity and relative Markdown links in both the source and the selected release payload. It creates `NEMT.zip` and `NEMT.zip.sha256` beside the repository directory. Use `--frontend PATH` or `--output PATH` when needed; outputs may also go under ignored `build/`, but not among source inputs.
+
+The source `SHA256SUMS.txt` covers the tracked-intent source inventory, including compiler inputs. The **separate manifest inside the release ZIP** covers the release payload. Packaging never overwrites the source manifest, and deterministic ZIP metadata gives identical ZIP bytes for identical input bytes. This does not claim that compiling the application or compiler is reproducible across all machines.
+
+The ready-to-run ZIP contains the frontend, its manifest, runtime, notices and documentation. It excludes the toolchain, complete compiler-source archive, GUI source, tests, frontend build scripts, legacy frontend, GitHub workflows and agent notes. The source archive and its checksum remain independently distributed with the compiler/tagged source tree. No game executable/assets are packaged.
+
+## PR and release workflows
+
+`verify.yml` runs for pull requests, pushes to `main`/`dev`, manual dispatch and reusable calls. It checks source/toolchain/source-archive integrity, builds with the bundled compiler, runs native regression tests, source guards and repository-tool tests, audits PE imports and smoke-tests packaging. Its token is read-only; it never publishes.
+
+`release.yml` runs only on `v*` tags, calls the same verification workflow, then checks `VERSION` and the matching `releases/vVERSION.md`. Only the publishing job has write permission. It builds the frontend again and attaches the end-user ZIP/checksum plus the complete compiler-source archive/checksum. Existing releases are not overwritten.
+
+Do not tag merely to open a PR. Keep `VERSION` and released notes unchanged until an explicit release decision. Do not retag old releases or rewrite published history. Develop on the working branch and submit it for review; a prepared version is not evidence of a published or newly host-tested release.
 
 ## Local research
 
-Use work/ for executable fixtures, probes, disassembly exports, raw logs and VM snapshots. Keep them out of commits and archives. Earlier Frida and Python investigations belong in testing documentation; they are not part of the normal installation or play instructions.
-
-The authorized repository is NekoCoaster/extended-msts-toolkit. Preserve the separate MEDS checkpoints and unrelated game files.
+Use `work/` for executable fixtures, probes, disassembly exports, raw logs and VM snapshots. Keep them out of commits and archives. Earlier Frida/Python investigations belong in historical testing documentation, not normal installation instructions. Never present separate MEDS checkpoints as new NEMT measurements.

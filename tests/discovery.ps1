@@ -1,6 +1,6 @@
 ﻿param([Parameter(Mandatory=$true)][string]$BaseExe,[Parameter(Mandatory=$true)][string]$Scratch)
 $ErrorActionPreference='Stop'
-. (Join-Path (Split-Path $PSScriptRoot) 'NEMT.ps1')
+. (Join-Path (Join-Path (Split-Path $PSScriptRoot) 'legacy') 'NEMT.ps1')
 function Assert($c,$m){if(-not $c){throw $m}}
 # Substitute registry results, without creating or changing registry entries.
 $script:RegistryTestValues=@();$script:RegistryReads=0
