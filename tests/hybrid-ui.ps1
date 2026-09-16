@@ -1,5 +1,5 @@
 $ErrorActionPreference='Stop'
-. (Join-Path (Split-Path $PSScriptRoot) 'NEMT.ps1')
+. (Join-Path (Join-Path (Split-Path $PSScriptRoot) 'legacy') 'NEMT.ps1')
 $detected=Test-HybridCpuSupport
 $data=New-Object byte[] 64
 [BitConverter]::GetBytes([uint32]32).CopyTo($data,0)

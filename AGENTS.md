@@ -1,15 +1,18 @@
-# Toolkit scope
+# Agent notes
 
-This is a separate local repository for Neko's Extended MSTS Toolkit (NEMT), derived from MEDS commit `1b7760f`. The authorized GitHub repository is `NekoCoaster/extended-msts-toolkit`. Access only this repository for NEMT work; do not push toolkit work into MEDS.
+NEMT has two native components:
 
-The user requests that completed, validated NEMT changes be committed and pushed to `origin/dev` so they can pull updates. Keep using this branch for future changes unless the user specifies another destination.
+- `src/nemt.c`: the dependency-light Win32/x86 control panel and installer.
+- `runtime/loader.c`: the injected x86 `DINPUT.dll` runtime.
 
-Preserve MEDS releases. Never include game executables, private keys or raw game decompilation. Scratch files belong outside the distributable source or in ignored `work/`.
+The frontend targets Windows XP SP3 APIs (`0x0501`). Do not introduce mandatory imports newer than XP; resolve optional modern APIs dynamically. Keep runtime dependencies to Win32 system DLLs already present on the target OS. Do not change the working GUI while performing packaging or documentation housekeeping.
 
-Launch the designated MSTS installation normally with `train.exe -vm:w`. Never attach Frida before settings and the driving scene finish loading. The native readiness gate must remain covered by regression checks.
+Build the frontend with `build.bat` using the reviewed 50-file TinyCC 0.9.27 x86 subset in `tools/tcc/`. `BUILD AND RUN NEMT.bat` and `TEST NEMT.bat` are offline, XP-compatible entry points; never introduce Python, PowerShell, an SDK installer or a network download into their normal path. Keep `NEMT.exe.manifest` beside the generated executable. The `C:\Tools\tcc\tcc.exe` fallback is for an explicitly configured developer machine, not the CI toolchain.
 
-Clean supported executables must remain byte-for-byte unchanged by normal configuration and uninstall. Reject previously patched executables; never migrate legacy installations or write train.exe. Never replace unrelated DirectInput or graphics wrappers.
+Contributor tooling uses Python 3.11+. Rebuild the runtime only when intended, with `python runtime/build.py tools/tcc/tcc.exe`; this changes the committed runtime DLL/integrity hash. Refresh reviewed source checksums with `python tools/source-checksums.py --write`. `python tools/prepare-commit.py` additionally ensures the full corresponding compiler source is vendored; its `--check` mode never downloads or writes. Preserve the compiler-source archive when redistributing the compiler.
 
-New features must claim their instruction ranges through the shared mutation transaction, reject overlaps, validate original bytes and define their startup stage. Configuration changes require a game restart. The current borderless setting controls ordinary `-vm:w`. Read configuration only from `settings.ini`; historical NEMT options are not supported.
+Package releases with `python tools/package.py`: it reads `build/NEMT.exe` and `build/NEMT.exe.manifest`, creates the small end-user ZIP outside the repository, and does not rewrite any source file. Do not copy a stale root-level EXE into a release or regenerate source hashes by packaging. Source and release manifests serve different inventories.
 
-Build with `python runtime/build.py <x86-TCC-path>`. Package with `python tools/package.py`; this excludes `.git` and `work` and checks archive bytes and DLL integrity. Never present old MEDS traces as new toolkit measurements.
+Run `TEST NEMT.bat --ci`, the source guards, repository-tool tests and PE import audits before review. Native Windows execution, portable model checks and user-reported host observations are different evidence; do not claim more than was actually tested. PR checks have read-only permissions and must not publish. Release publication remains tag-only and requires matching VERSION/release notes. Do not bump versions, create tags or overwrite releases without an explicit release task.
+
+The former PowerShell frontend is under `legacy/` and is reference material only. Never reintroduce it as a runtime dependency. Never present old MEDS traces as new toolkit measurements.

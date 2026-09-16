@@ -2,43 +2,48 @@
 
 ## Install
 
-Download **NEMT.zip** from the [GitHub Releases page](https://github.com/NekoCoaster/extended-msts-toolkit/releases), under **Assets**. Extract the entire ZIP. Keep its contents together and use the included **NEMT.vbs** launcher.
+Download **NEMT.zip** from the [GitHub Releases page](https://github.com/NekoCoaster/extended-msts-toolkit/releases), under **Assets**. Extract the entire ZIP and open **NEMT.exe**.
 
-Close MSTS before applying changes. Open the launcher, or drag your installed `train.exe` onto it. The panel tries to locate MSTS automatically when no executable is supplied. Use **Browse** if the path is missing or points to another installation.
+The control panel is a native 32-bit Win32 application. It does not require PowerShell, .NET, Python, WebView, or a separate GUI runtime.
+
+Close MSTS before applying changes. The panel tries to locate MSTS automatically using the game's registry entry. Use **Browse** if the path is missing or points to another installation. You can also drag one `train.exe` onto the panel.
 
 After the panel confirms a valid executable, select the features you want and click **Apply**. Launch the game as usual. Repeat Apply and restart MSTS whenever you change settings.
 
-**Select All** checks every enabled checkbox. It respects compatibility restrictions and leaves the thrust slider at its current value. It includes optional startup logging and the potentially unstable FPS option, so review the selections before applying.
+## Supported Windows versions
+
+The native frontend is intentionally compiled against a Windows XP SP3 API baseline and is designed for:
+
+- Windows XP SP3
+- Windows 7
+- Windows 10
+- Windows 11
+
+Features that rely on newer Windows APIs are capability-detected at runtime. Unsupported optional controls are disabled instead of raising the minimum operating-system requirement.
+
+## Build from the repository ZIP
+
+For an offline source build, the complete repository source ZIP includes the reviewed TinyCC 0.9.27 x86 compiler and required header subset at `tools\tcc\`. Keep that folder intact and double-click **BUILD AND RUN NEMT.bat**. The resulting executable is written to `build\NEMT.exe` and started automatically.
+
+The build path is deliberately compatible with Windows XP `cmd.exe` and does not depend on CMake, Visual Studio, PowerShell, .NET, or Python.
 
 ## Supported executables
 
 The identified MSTS Bin **1.8.052113** base, widescreen, LAA and widescreen + LAA variants are supported. NEMT checks executable contents as well as the displayed version. If another patch has changed the executable, restore a supported copy using that patch's own removal procedure before trying again.
-
-The cab-dial correction requires a supported widescreen-patched executable. The panel's **Widescreen patch guide** link explains that prerequisite.
 
 ## Common messages
 
 | Message or symptom | What to do |
 | --- | --- |
 | MSTS is running | Close the simulator before Apply or Uninstall. |
-| Unsupported executable | Confirm the installation and MSTS Bin version. A different modification may make the executable unsupported. |
-| No installation detected | Use Browse to select the correct `train.exe`. |
-| Existing DLL or ownership conflict | Check which add-on owns `DINPUT.dll`. Do not replace an unrelated add-on's file. |
-| Cab-dial checkbox is unavailable | Install the supported widescreen patch first, then select the executable again. |
-| Changes do not appear | Restart MSTS and confirm you configured the installation being launched. Some gameplay features initialize after a few seconds of unpaused driving. |
-| Startup movie is black or disrupts keyboard input | Enable **Skip startup movie**. |
-| Missing route track definitions | Follow the [route dependency guide](track-dependencies.md). |
+| Unsupported executable | Confirm the installation and MSTS Bin version. |
+| Existing DLL or ownership conflict | Check which add-on owns `DINPUT.dll`. NEMT will not overwrite an unrelated file. |
+| Cab-dial checkbox is unavailable | Install the supported widescreen patch first. |
+| Prefer P-cores is unavailable | The OS or CPU does not expose the required hybrid-topology APIs/classes; other NEMT functions remain available. |
+| Changes do not appear | Restart MSTS and confirm you configured the installation being launched. |
 
-For other startup problems, enable **Enable deep logging**, reproduce the problem and inspect `NEMT/startup.log`. The last recorded file is not necessarily the cause. See [loading diagnostics](startup.md).
+For startup problems, enable **deep logging**, reproduce the problem and inspect `NEMT/startup.log`.
 
 ## Uninstall
 
-Close MSTS, open NEMT.vbs, select the installed executable and click **Uninstall**. NEMT removes its owned runtime and settings. Ownership records and diagnostics may remain for reference. It does not modify `train.exe` or remove unrelated graphics-wrapper files.
-
-## Reporting a problem
-
-Use the [issue tracker](https://github.com/NekoCoaster/extended-msts-toolkit/issues). Include the NEMT version shown in the title bar, the detected executable variant, the selected options, and steps to reproduce. For visual issues, include your resolution and graphics-wrapper settings. Review logs before attaching them because they can contain local file paths.
-
-## Widescreen cab option
-
-The cab-dial checkbox is enabled only when a supported widescreen executable is detected. Otherwise it is greyed out, with download and installation-guide links on the same line. Once a supported widescreen executable is selected, that guidance is hidden. NEMT does not apply the external widescreen patch.
+Close MSTS, open NEMT.exe, select the installed executable and click **Uninstall**. NEMT removes its owned runtime and settings. It does not modify `train.exe` or remove unrelated graphics-wrapper files.

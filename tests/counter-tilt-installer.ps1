@@ -1,6 +1,6 @@
 param([string]$BaseExe,[string]$WidescreenExe,[string]$Scratch)
 $ErrorActionPreference='Stop'
-. (Join-Path (Split-Path $PSScriptRoot) 'NEMT.ps1')
+. (Join-Path (Join-Path (Split-Path $PSScriptRoot) 'legacy') 'NEMT.ps1')
 foreach($source in @($BaseExe,$WidescreenExe)){
  $dir=Join-Path $Scratch ([guid]::NewGuid().ToString('N'));[void][IO.Directory]::CreateDirectory($dir)
  $file=Join-Path $dir 'train.exe';[IO.File]::WriteAllBytes($file,[IO.File]::ReadAllBytes((Resolve-Path $source)))
