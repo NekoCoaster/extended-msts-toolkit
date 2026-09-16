@@ -1,6 +1,6 @@
 # Feature guide
 
-Select options in NEMT.vbs, click **Apply**, and restart MSTS. The options are independent except where a dependency is described below.
+Select options in NEMT.exe, click **Apply**, and restart MSTS. The options are independent except where a dependency is described below.
 
 | Control-panel option | Behavior and notes |
 | --- | --- |

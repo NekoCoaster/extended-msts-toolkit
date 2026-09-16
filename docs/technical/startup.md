@@ -1,6 +1,6 @@
 # Startup/activity loading details and FPS option
 
-Open **NEMT.vbs**, select `train.exe`, choose the options and Apply with MSTS closed:
+Open **NEMT.exe**, select `train.exe`, choose the options and Apply with MSTS closed:
 
 - **Show verbose startup and activity loading details** replaces the native loading-screen text with the latest observed file or directory scan. Long paths show their trailing portion to fit the existing text area.
 - **Enable deep logging** records file-open and directory-search attempts and their results in `NEMT/startup.log`. It is off by default and works independently of the display option.

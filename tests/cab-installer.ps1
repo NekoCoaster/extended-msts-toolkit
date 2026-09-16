@@ -1,6 +1,6 @@
 param([string]$BaseExe,[string]$Scratch)
 $ErrorActionPreference='Stop'
-. (Join-Path (Split-Path $PSScriptRoot) 'NEMT.ps1')
+. (Join-Path (Join-Path (Split-Path $PSScriptRoot) 'legacy') 'NEMT.ps1')
 $dir=Join-Path $Scratch ([Guid]::NewGuid().ToString('N'));[void][IO.Directory]::CreateDirectory($dir)
 $file=Join-Path $dir 'train.exe';Copy-Item -LiteralPath $BaseExe -Destination $file
 $hash=Get-MstsHash ([IO.File]::ReadAllBytes($file))

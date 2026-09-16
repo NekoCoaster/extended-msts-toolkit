@@ -2,3 +2,7 @@
 docs/licenses/** -whitespace
 *.dll binary
 *.png binary
+*.exe binary
+*.a binary
+*.bz2 binary
+*.zip binary
