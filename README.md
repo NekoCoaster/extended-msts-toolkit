@@ -2,7 +2,7 @@
 
 **Where we're going, we don't need rails.**
 
-NEMT adds optional gameplay and quality-of-life features to Microsoft Train Simulator: borderless windows, clearer loading messages, widescreen cab-dial corrections, editor improvements, and control of connected locomotives after derailment. The control panel is a small native 32-bit Win32 program written in C; it does not require PowerShell, .NET, Python, a browser runtime, or a modern GUI framework.
+NEMT adds optional gameplay and quality-of-life features to Microsoft Train Simulator: borderless windows, clearer loading messages, widescreen cab-dial corrections, editor improvements, and control of connected locomotives after derailment. In this new version, the patcher window is now a small native 32-bit Win32 program written in C, eliminating the need for modern framework bloats, while self-containing everything tht it needs on it's own to compile and patch MSTS.
 
 [Download NEMT](https://github.com/NekoCoaster/extended-msts-toolkit/releases) · [User guide](docs/README.md) · [Report an issue](https://github.com/NekoCoaster/extended-msts-toolkit/issues)
 
@@ -16,7 +16,7 @@ NEMT adds optional gameplay and quality-of-life features to Microsoft Train Simu
 
 NEMT leaves `train.exe` unchanged and saves its settings beside the game.
 
-## Native compatibility goal
+## Native compatibility goal release
 
 The frontend intentionally targets the old, well-understood Win32 API and is built as an x86 executable with a Windows XP SP3 API baseline (`WINVER/_WIN32_WINNT = 0x0501`). The compatibility target is:
 
@@ -43,32 +43,32 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 
 ## Features
 
-| Option | What it does |
-| --- | --- |
-| Prefer P-cores (optional) | Requests the highest detected CPU performance class when the OS and CPU expose the required topology. Defaults off. |
-| Skip startup movie | Goes straight to loading, avoiding the movie-related keyboard-control issue. |
-| Enable borderless windowed mode | Removes the main game's window border and keeps it centered. |
-| Resizable editor windows and fullscreen | Resize or maximize Route, Activity and Cab Editor; Alt+Enter toggles borderless fullscreen. |
-| Move Route Editor tool windows freely | Removes magnetic alignment of floating tools. |
-| Fix Route Editor slowdown without nearby sounds | Prevents audio-device idle stalls without adding route sound sources. |
-| Unlock FPS limit — **Potentially unstable** | Removes the game-side frame cap and applies corrected timing. |
-| Show verbose startup and activity loading details | Shows loading activity and terrain-generation progress. |
-| Enable deep logging | Records optional diagnostics for troubleshooting. |
-| Fix cabview dials for widescreen displays | Corrects dial-needle proportions with a supported widescreen-patched executable. |
-| Unmute while in background | Keeps game audio playing when switching to another application. |
-| Continue after passing a red signal | Shows the failure message, then lets the simulation resume after dismissal. |
-| Remove derailment activity-end message | Keeps a derailment from ending the activity. |
-| Unlock camera modes during derailment | Keeps camera selection available after derailment. |
-| Enable counter-tilt filter while crawling | Optional throttle-based pitch filtering. |
-| Allow connected engines to crawl after derailment | Uses throttle/reverser to move derailed connected locomotives. |
+| Option                                            | What it does                                                                                                        |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Prefer P-cores (optional)                         | Requests the highest detected CPU performance class when the OS and CPU expose the required topology. Defaults off. |
+| Skip startup movie                                | Skips startup movie for faster loading time. Also resolves keyboard input not working after loading into sim        |
+| Enable borderless windowed mode                   | Runs game in windowed mode without boarders, centering window to primary display.                                   |
+| Resizable editor windows and fullscreen           | Resize or maximize Route, Activity and Cab Editor windows; Use Alt+Enter to toggle borderless fullscreen.           |
+| Move Route Editor tool windows freely             | Removes jankly snap alignment of floating tool windows in Route Editor                                              |
+| Fix Route Editor slowdown without nearby sounds   | Prevents Route Editor from lagging when loading into a route with no nearby sound sources playing                   |
+| Unlock FPS limit — **Potentially unstable**       | Removes the game-side frame cap and applies corrective timing to frame-rate tied simulator operations               |
+| Show verbose startup and activity loading details | Shows loading activity and terrain-generation progress messages during startup and sim-loading                      |
+| Enable deep logging                               | Records optional diagnostics for troubleshooting and writes them into NEMT/startup.log                              |
+| Fix cabview dials for widescreen displays         | Corrects dial-needle proportions with a when running MSTS in patched widescreen mode                                |
+| Unmute while in background                        | Keeps game audio playing when in background                                                                         |
+| Continue after passing a red signal               | Allows the simulator to resume after passing a red signal                                                           |
+| Remove derailment activity-end message            | Removes "Activity ended -- car derailed" message after 20 seconds, allowing for infinite duration past derailment   |
+| Unlock camera modes during derailment             | Allows the use of standard external cameras even after train has derailed                                           |
+| Enable counter-tilt filter while crawling         | When crawling, adds a counter force to (try to) prevent trains from nose-diving tilting when crawling on terrain    |
+| Allow connected engines to crawl after derailment | Allows locomotives and connected power cars to continue moving forward/backwards even after derailment              |
 
 [Explore the options](docs/features.md).
 
 ## Compatibility
 
-NEMT supports the identified **MSTS Bin 1.8.052113** executable in its base, widescreen, Large Address Aware (LAA), and widescreen + LAA forms. The native panel checks executable contents before applying changes.
+NEMT requires at least **MSTS Bin 1.8.052113** but is compatible with patched versions such as the Widescreen patch & LAA or both.
 
-The cab-dial option requires the [MSTS widescreen patch](https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/). An unrelated `DINPUT.dll` can prevent installation; NEMT will not overwrite it.
+The cab-dial patch option requires train.exe to be patched with the [MSTS widescreen patch](https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/).
 
 ## Change settings or uninstall
 
