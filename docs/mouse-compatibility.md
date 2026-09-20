@@ -20,7 +20,11 @@ values, last-error preservation, malformed imports, unexpected pointers, page
 protection, installation/restoration, and repeated real DirectInput mouse creation.
 With the physical mouse dongle removed, Windows reported no mouse: real DirectInput
 mouse creation returned 80040154 before installation, succeeded after installation
-and on repeat calls, and returned 80040154 again after restoration. This does not replace a
-mouse-less in-game test of cab movement, clicks, dragging, reconnecting hardware,
-and repeated activity loading. The earlier remote-host experiment established
+and on repeat calls, and returned 80040154 again after restoration.
+
+On 2026-09-20, following checkpoint b98ffac, the user confirmed that in-game
+clicking, dragging and activity loading work as intended with no mice connected.
+This is user-reported in-game validation, separate from the native regression
+results above. Physical reconnection during a running game and extended-session
+testing have not been reported. The earlier remote-host experiment established
 the workaround, but is not a test of this committed runtime.
