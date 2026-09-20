@@ -213,13 +213,21 @@ int main(void) {
     CHECK(panel_graphics_file()==0);
     panel_monitor_info=fake_display_info;panel_display_notice=fake_display_notice;
     check_set(IDC_HIGHRES,0);display_width=2048;refresh_display_guidance(1);CHECK(display_notices==0);
+    get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable High-res support (Optional)"));
+    CHECK(IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
     display_width=2560;refresh_display_guidance(1);CHECK(display_notices==1);
+    get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable High-res support (Recommended)"));
     refresh_display_guidance(1);CHECK(display_notices==1);
     check_set(IDC_HIGHRES,1);display_width=3840;refresh_display_guidance(1);CHECK(display_notices==1);
     check_set(IDC_HIGHRES,0);refresh_display_guidance(1);CHECK(display_notices==2);
     {char graphics[MAX_PATH];join_path(graphics,fixture,"D3DIM700.dll");
      CHECK(write_all(graphics,"unknown",7));CHECK(panel_graphics_file()==2);
-     refresh_display_guidance(1);CHECK(display_notices==3);DeleteFileA(graphics);
+     refresh_display_guidance(1);CHECK(display_notices==3);
+     get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable high-res support (Existing D3D wrapper detected. e.g. dgVoodoo2, etc)"));
+     CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+     set_valid_controls(1);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+     display_width=1920;refresh_display_guidance(0);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+     DeleteFileA(graphics);refresh_display_guidance(0);CHECK(IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
      join_path(graphics,fixture,"ddraw.dll");CHECK(write_all(graphics,"wrapper",7));CHECK(panel_graphics_file()==2);DeleteFileA(graphics);}
     panel_monitor_info=GetMonitorInfoA;panel_display_notice=MessageBoxA;
     CHECK(!strcmp(panel_selected_monitor(),""));

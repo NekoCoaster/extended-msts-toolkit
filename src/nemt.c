@@ -34,7 +34,7 @@ enum {
  IDC_PCORES=200, IDC_SKIPMOVIE, IDC_WINDOW, IDC_UNLOCKFPS, IDC_VSYNC, IDC_VERBOSE, IDC_CAB,
  IDC_BACKGROUND, IDC_REDSIGNAL, IDC_EDITORWINDOWS, IDC_EDITORTOOLS, IDC_EDITORAUDIO,
  IDC_EDITORKEYS, IDC_EDITORPAN, IDC_TIMEOUT, IDC_CAMERA, IDC_CRAWL, IDC_COUNTERTILT,
- IDC_STRENGTH, IDC_STRENGTHVALUE, IDC_HUDLEFT, IDC_LOGGING, IDC_MONITOR, IDC_HIGHRES, IDC_HIGHSTATUS, IDC_HIGHGUIDE, IDC_HIGHPROJECT,
+ IDC_STRENGTH, IDC_STRENGTHVALUE, IDC_HUDLEFT, IDC_LOGGING, IDC_MONITOR, IDC_HIGHRES, IDC_HIGHGUIDE, IDC_HIGHPROJECT,
  IDC_TITLE=400, IDC_MESSAGE, IDC_CRAWLHINT, IDC_STRENGTHLABEL, IDC_ZERO, IDC_HUNDRED,
  IDC_ANCHORLABEL, IDC_SPACE, IDC_CREDIT, IDC_GITHUB, IDC_WIDENOTE, IDC_WIDEDOWNLOAD, IDC_WIDEGUIDE
 };
@@ -440,7 +440,7 @@ static HFONT g_font,g_bold,g_title_font,g_link_font;
 static HWND g_tooltip,g_last_focus;
 static const char *g_instructions="Select train.exe and choose features, then Apply. Settings take effect after restarting MSTS.";
 #define CONTENT_WIDTH 760
-#define CONTENT_HEIGHT 928
+#define CONTENT_HEIGHT 894
 #define STARTUP_EXTRA_WIDTH 24
 #define STARTUP_EXTRA_HEIGHT 24
 #define MAIN_WINDOW_STYLE (WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN)
@@ -519,13 +519,14 @@ static void refresh_crawl(void) {
     enable(IDC_STRENGTH,on && !g_busy);enable(IDC_HUDLEFT,on && !g_busy);
     update_strength();
 }
+static int panel_graphics_file(void);
 static void set_valid_controls(int on) {
     const int ids[]={IDC_RECOMMENDED,IDC_APPLY,IDC_UNINSTALL,IDC_SKIPMOVIE,IDC_WINDOW,IDC_UNLOCKFPS,IDC_VERBOSE,IDC_LOGGING,IDC_BACKGROUND,IDC_REDSIGNAL,IDC_EDITORWINDOWS,IDC_EDITORTOOLS,IDC_EDITORAUDIO,IDC_EDITORKEYS,IDC_EDITORPAN,IDC_TIMEOUT,IDC_CAMERA,IDC_CRAWL};
     int i;on=on && !g_busy;
     for(i=0;i<(int)(sizeof(ids)/sizeof(ids[0]));++i) enable(ids[i],on);
     enable(IDC_PCORES,on && g_cpu_supported);enable(IDC_CAB,on && g_info.widescreen);
     enable(IDC_VSYNC,on && check_get(IDC_UNLOCKFPS));
-    enable(IDC_MONITOR,on && check_get(IDC_WINDOW));enable(IDC_HIGHRES,on);
+    enable(IDC_MONITOR,on && check_get(IDC_WINDOW));enable(IDC_HIGHRES,on && !panel_graphics_file());
     enable(IDC_BROWSE,!g_busy);enable(IDC_CLOSE,!g_busy);
     refresh_crawl();
 }
@@ -571,22 +572,22 @@ static int (WINAPI *panel_display_notice)(HWND,LPCSTR,LPCSTR,UINT)=MessageBoxA;
 static void refresh_display_guidance(int popup){
  MONITORINFO info;int large,external,width,height;char text[768],key[512];
  static char warned[512];
- if(!g_info.valid){SetDlgItemTextA(g_main,IDC_HIGHSTATUS,"");return;}
+ if(!g_info.valid){SetDlgItemTextA(g_main,IDC_HIGHRES,"Enable High-res support (Optional)");enable(IDC_HIGHRES,0);return;}
  info.cbSize=sizeof(info);
- if(!panel_monitor_info(nemt_selected_monitor(check_get(IDC_WINDOW)?panel_selected_monitor():""),&info))return;
+ memset(&info.rcMonitor,0,sizeof(info.rcMonitor));
+ panel_monitor_info(nemt_selected_monitor(check_get(IDC_WINDOW)?panel_selected_monitor():""),&info);
  width=info.rcMonitor.right-info.rcMonitor.left;height=info.rcMonitor.bottom-info.rcMonitor.top;
  large=nemt_large_display(width,height);external=panel_graphics_file();
- if(external==1)lstrcpyA(text,"D3DIM700.dll already present. Patch will not be applied.");
- else if(external==2)lstrcpyA(text,"Conflicting graphics wrapper detected. High-res fix will not be applied. (e.g. dgVoodoo2, etc)");
- else if(check_get(IDC_HIGHRES))lstrcpyA(text,"High-resolution support selected. Click Apply, then restart MSTS.");
- else if(large)lstrcpyA(text,"Selected display exceeds 2048 pixels. Enable High-res support if MSTS crashes on startup, or simulator reverts to lower resolution.");
- else lstrcpyA(text,"Selected display is below 2048 pixels. High-resolution support is optional.");
- SetDlgItemTextA(g_main,IDC_HIGHSTATUS,text);
+ if(external)lstrcpyA(text,"Enable high-res support (Existing D3D wrapper detected. e.g. dgVoodoo2, etc)");
+ else if(large)lstrcpyA(text,"Enable High-res support (Recommended)");
+ else lstrcpyA(text,"Enable High-res support (Optional)");
+ SetDlgItemTextA(g_main,IDC_HIGHRES,text);
+ enable(IDC_HIGHRES,!g_busy && !external);
  if(!popup || !large || external==1 || (!external && check_get(IDC_HIGHRES)))return;
  _snprintf(key,sizeof(key),"%s|%s|%d|%d|%d",g_info.path,panel_selected_monitor(),width,height,external);
  key[sizeof(key)-1]=0;if(!strcmp(key,warned))return;lstrcpynA(warned,key,sizeof(warned));
  if(external==2)lstrcpyA(text,"Your current display exceeds 2048 pixels with a conflicting graphics wrapper present. As such, the integrated fix will not be applied, and high-resolution support cannot be guaranteed.\n\nIf MSTS crashes or enters the simulator with a lowered resolution, please remove the conflicting graphics wrapper and instead use the option supplied with NEMT, or view the high-res guide or the linked GitHub repository from UCyborg.");
- else lstrcpyA(text,"Your current display exceeds 2048 pixels. If MSTS crashes on launch or reverts to lower resolution when entering the simulator, select \"Enable high-resolution support for displays larger than 2048 in width or height\", then click Apply.\n\nAlternatively, copy D3DIM700.DLL from msts-widescreen-patch.zip beside train.exe. See High-res guide or the linked GitHub repository from UCyborg in the NEMT form.");
+ else lstrcpyA(text,"Your current display exceeds 2048 pixels. If MSTS crashes on launch or reverts to lower resolution when entering the simulator, select \"Enable High-res support (Recommended)\", then click Apply.\n\nAlternatively, copy D3DIM700.DLL from msts-widescreen-patch.zip beside train.exe. See High-res guide or the linked GitHub repository from UCyborg in the NEMT form.");
  panel_display_notice(g_main,text,"High-resolution display detected",MB_OK|MB_ICONINFORMATION);
 }
 static void settings_to_ui(const Settings *s) {
@@ -836,14 +837,14 @@ static int create_ui(void) {
         "Prefer P-cores (Only applicable to CPUs with hybrid architecture, e.g. Intel P && E cores)",
         "Skip startup movie (fixes keyboard control issue when loading into simulator)",
         "Enable borderless windowed mode on display:",
-        "Unlock FPS limit (corrected timing; potentially unstable)",
+        "Unlock FPS limit (Potentially unstable)",
         "Show verbose startup and activity loading details",
         "Fix cabview dials for widescreen displays",
         "Unmute while in background",
         "Continue after passing a red signal (Resume after failure message)",
         "Resizable editor windows and fullscreen (Alt+Enter)",
         "Move Route Editor tool windows freely",
-        "Fix Route Editor slowdown without nearby sounds",
+        "Fix Route Editor lag when no sound sources present",
         "Swap arrow keys with WASDEQ controls in route editor",
         "Remove Route Editor mouse-panning limit",
         "Remove derailment activity-end message",
@@ -865,11 +866,10 @@ static int create_ui(void) {
         if(ids[i]==IDC_UNLOCKFPS) ADD("BUTTON","Limit FPS to vsync",BS_AUTOCHECKBOX|WS_TABSTOP,544,y,192,22,IDC_VSYNC);
         if(ids[i]==IDC_WINDOW){
             ADD("COMBOBOX","",CBS_DROPDOWNLIST|WS_TABSTOP|WS_VSCROLL,430,y,306,180,IDC_MONITOR);
-            ADD("BUTTON","Enable high-resolution support for displays larger than 2048 in width or height",BS_AUTOCHECKBOX|WS_TABSTOP,24,y+24,712,22,IDC_HIGHRES);
+            ADD("BUTTON","Enable High-res support (Optional)",BS_AUTOCHECKBOX|WS_TABSTOP,24,y+24,712,22,IDC_HIGHRES);
             c=ADD("STATIC","High-res guide",SS_NOTIFY|WS_TABSTOP,24,y+48,125,20,IDC_HIGHGUIDE);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
             c=ADD("STATIC","UCyborg/LegacyD3DResolutionHack",SS_NOTIFY|WS_TABSTOP,165,y+48,380,20,IDC_HIGHPROJECT);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
-            ADD("STATIC","",SS_LEFT|SS_NOPREFIX,24,y+70,712,34,IDC_HIGHSTATUS);
-            y+=88;
+            y+=54;
         }
         if(ids[i]==IDC_CAB) {
             ADD("STATIC","Widescreen patch required.",SS_LEFT|SS_NOPREFIX,340,y+2,175,20,IDC_WIDENOTE);
@@ -907,7 +907,7 @@ static int create_ui(void) {
         if(g_controls[i].id>=IDC_TITLE || g_controls[i].id==IDC_STRENGTH ||
            g_controls[i].id==IDC_STRENGTHVALUE || g_controls[i].id==IDC_HUDLEFT ||
            g_controls[i].id==IDC_LOGGING || (g_controls[i].id>=IDC_RECOMMENDED && g_controls[i].id<=IDC_CLOSE)){
-            if(g_controls[i].y>=494)g_controls[i].y+=88;
+            if(g_controls[i].y>=494)g_controls[i].y+=54;
         }
     }
     if(g_control_failed || !g_strength || !g_path || !g_status || !g_message || !GetDlgItem(g_main,IDC_HUDLEFT)) return 0;

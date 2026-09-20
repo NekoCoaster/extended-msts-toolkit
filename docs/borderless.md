@@ -8,11 +8,16 @@ falls back to the primary display; its choice remains saved for reconnection.
 This selects window placement, not the rendering GPU or game resolution.
 
 For a display wider or taller than 2048 pixels, NEMT suggests **Enable
-high-resolution support for displays larger than 2048 in width or height**. Apply and restart MSTS. The integrated fix
+High-res support**. Apply and restart MSTS. The integrated fix
 changes only process memory and adds no separate DLL. It leaves an existing
 local `D3DIM700.dll` or `ddraw.dll` in charge; an unknown file is not proof that
 high resolutions work. The form includes the widescreen guide and upstream
 project links. See [implementation and validation](technical/display-options.md).
+
+The checkbox reads **Optional** up to and including 2048 pixels in both
+dimensions, or **Recommended** when either dimension is larger. If an existing
+D3D wrapper is detected, the checkbox explains this and is disabled. The
+previous separate status line has been removed.
 
 This setting applies to the simulator. `-toolset` keeps its native launch arguments and window borders; use the separate [editor options](editors.md) for resizing and Alt+Enter borderless fullscreen.
 

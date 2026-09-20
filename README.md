@@ -51,7 +51,7 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 | Enable high-resolution compatibility             | Removes recognized legacy Direct3D dimension limits in memory; stands down for external graphics DLLs.             |
 | Resizable editor windows and fullscreen           | Resize or maximize Route, Activity and Cab Editor windows; Use Alt+Enter to toggle borderless fullscreen.           |
 | Move Route Editor tool windows freely             | Removes jankly snap alignment of floating tool windows in Route Editor                                              |
-| Fix Route Editor slowdown without nearby sounds   | Prevents Route Editor from lagging when loading into a route with no nearby sound sources playing                   |
+| Fix Route Editor lag when no sound sources present   | Prevents Route Editor from lagging when loading into a route with no nearby sound sources playing                   |
 | Unlock FPS limit — **Potentially unstable**       | Removes the game-side frame cap and applies corrective timing to frame-rate tied simulator operations               |
 | Show verbose startup and activity loading details | Shows loading activity and terrain-generation progress messages during startup and sim-loading                      |
 | Enable deep logging                               | Records optional diagnostics for troubleshooting and writes them into NEMT/startup.log                              |
