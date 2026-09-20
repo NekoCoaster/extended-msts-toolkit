@@ -6,6 +6,13 @@
 #undef WinMain
 #include <assert.h>
 static int checks,failures;
+static int display_notices,display_width=2560;
+static BOOL WINAPI fake_display_info(HMONITOR monitor,LPMONITORINFO info){
+ memset(info,0,sizeof(*info));info->cbSize=sizeof(*info);info->rcMonitor.right=display_width;info->rcMonitor.bottom=1440;return TRUE;
+}
+static int WINAPI fake_display_notice(HWND owner,LPCSTR text,LPCSTR title,UINT flags){
+ display_notices++;assert(strstr(text,"2048"));return IDOK;
+}
 static const char *test_phase="setup/installer";
 #define CHECK(x) do {++checks;if(!(x)){++failures;printf("FAIL line %d [%s, layout DPI %d]: %s\n",__LINE__,test_phase,g_dpi,#x);}}while(0)
 /* A fictitious work RECT does not enlarge Windows' real maximum track size.
@@ -204,9 +211,17 @@ int main(void) {
     CHECK(nemt_large_display(2560,1440) && nemt_large_display(1080,2560));
     CHECK(!nemt_large_display(2048,2048) && !nemt_large_display(1920,1080));
     CHECK(panel_graphics_file()==0);
+    panel_monitor_info=fake_display_info;panel_display_notice=fake_display_notice;
+    check_set(IDC_HIGHRES,0);display_width=2048;refresh_display_guidance(1);CHECK(display_notices==0);
+    display_width=2560;refresh_display_guidance(1);CHECK(display_notices==1);
+    refresh_display_guidance(1);CHECK(display_notices==1);
+    check_set(IDC_HIGHRES,1);display_width=3840;refresh_display_guidance(1);CHECK(display_notices==1);
+    check_set(IDC_HIGHRES,0);refresh_display_guidance(1);CHECK(display_notices==2);
     {char graphics[MAX_PATH];join_path(graphics,fixture,"D3DIM700.dll");
-     CHECK(write_all(graphics,"unknown",7));CHECK(panel_graphics_file()==2);DeleteFileA(graphics);
+     CHECK(write_all(graphics,"unknown",7));CHECK(panel_graphics_file()==2);
+     refresh_display_guidance(1);CHECK(display_notices==3);DeleteFileA(graphics);
      join_path(graphics,fixture,"ddraw.dll");CHECK(write_all(graphics,"wrapper",7));CHECK(panel_graphics_file()==2);DeleteFileA(graphics);}
+    panel_monitor_info=GetMonitorInfoA;panel_display_notice=MessageBoxA;
     CHECK(!strcmp(panel_selected_monitor(),""));
     strcpy(s.monitor,"\\\\.\\DISPLAY99");settings_to_ui(&s);
     CHECK(!strcmp(panel_selected_monitor(),s.monitor));

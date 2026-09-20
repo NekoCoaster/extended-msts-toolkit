@@ -24,6 +24,14 @@ if errorlevel 1 goto failed
 if errorlevel 1 goto failed
 build\high-resolution-test.exe
 if errorlevel 1 goto failed
+"%TCC%" -o build\display-monitor-test.exe tests\display-monitor.c -luser32
+if errorlevel 1 goto failed
+build\display-monitor-test.exe
+if errorlevel 1 goto failed
+"%TCC%" -o build\window-native-test.exe tests\window-native.c -ladvapi32 -luser32
+if errorlevel 1 goto failed
+build\window-native-test.exe
+if errorlevel 1 goto failed
 echo All native regression tests passed.
 if /i not "%~1"=="--ci" pause
 exit /b 0

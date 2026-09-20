@@ -566,12 +566,14 @@ static int panel_graphics_file(void){
  if(sha_file(path,hash) && !strcmp(hash,"a11a9c627766b1c7d2b7ec8ee664ece131d40a5801a51062b787fd5e765b20d9"))return 1;
  return 2;
 }
+static BOOL (WINAPI *panel_monitor_info)(HMONITOR,LPMONITORINFO)=GetMonitorInfoA;
+static int (WINAPI *panel_display_notice)(HWND,LPCSTR,LPCSTR,UINT)=MessageBoxA;
 static void refresh_display_guidance(int popup){
  MONITORINFO info;int large,external,width,height;char text[768],key[512];
  static char warned[512];
  if(!g_info.valid){SetDlgItemTextA(g_main,IDC_HIGHSTATUS,"Select train.exe to check high-resolution compatibility.");return;}
  info.cbSize=sizeof(info);
- if(!GetMonitorInfoA(nemt_selected_monitor(check_get(IDC_WINDOW)?panel_selected_monitor():""),&info))return;
+ if(!panel_monitor_info(nemt_selected_monitor(check_get(IDC_WINDOW)?panel_selected_monitor():""),&info))return;
  width=info.rcMonitor.right-info.rcMonitor.left;height=info.rcMonitor.bottom-info.rcMonitor.top;
  large=nemt_large_display(width,height);external=panel_graphics_file();
  if(external==1)lstrcpyA(text,"Recognized widescreen D3DIM700.dll present. NEMT will leave it in charge.");
@@ -585,7 +587,7 @@ static void refresh_display_guidance(int popup){
  key[sizeof(key)-1]=0;if(!strcmp(key,warned))return;lstrcpynA(warned,key,sizeof(warned));
  if(external==2)lstrcpyA(text,"Your display exceeds 2048 pixels. An external graphics file is present, so NEMT will leave it in charge. Its high-resolution support could not be verified.\n\nIf MSTS crashes or cannot enter the simulator, consult High-res guide or Fix project in the NEMT form.");
  else lstrcpyA(text,"Your display exceeds 2048 pixels in width or height. If MSTS crashes on launch or cannot enter the simulator at these resolutions, select Enable high-resolution compatibility, then click Apply.\n\nAlternatively, copy D3DIM700.DLL from msts-widescreen-patch.zip beside train.exe. See High-res guide and Fix project in the NEMT form.");
- MessageBoxA(g_main,text,"High-resolution display detected",MB_OK|MB_ICONINFORMATION);
+ panel_display_notice(g_main,text,"High-resolution display detected",MB_OK|MB_ICONINFORMATION);
 }
 static void settings_to_ui(const Settings *s) {
     g_loading=1;

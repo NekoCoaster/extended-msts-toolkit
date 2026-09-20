@@ -3,7 +3,7 @@ name: Verify source and native frontend
 on:
   pull_request:
   push:
-    branches: [main, dev]
+    branches: [main, dev, feature/display-compatibility]
   workflow_dispatch:
   workflow_call:
 
