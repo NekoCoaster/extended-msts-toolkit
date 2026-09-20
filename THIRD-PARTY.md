@@ -1,5 +1,18 @@
 # Third-party notices
 
+## LegacyD3DResolutionHack (integrated compatibility feature)
+
+The Direct3D dimension-limit removal in `runtime/high-resolution.h` adapts the
+idea and instruction signature from UCyborg's MIT-0 project,
+[LegacyD3DResolutionHack](https://github.com/UCyborg/LegacyD3DResolutionHack),
+revision `9d42266ed7d81957002953a0e2ad8304c81d5ae5`, `d3dim700.c`.
+Copyright 2016 UCyborg. The [MIT-0 license](docs/licenses/LegacyD3DResolutionHack.txt)
+is included in source and end-user packages.
+
+NEMT uses its own guarded PE-section scanner and patch transaction outside
+DllMain, validates paired width/height checks, detects already-patched states,
+and stands down for external graphics DLLs. No Microsoft DLL is redistributed.
+
 NEMT's original control panel, native loader, physics code, tests and documentation are under the [MIT license](LICENSE). Third-party files retain their own licenses and notices. Microsoft Train Simulator assets and executables are not included.
 
 ## Tiny C Compiler 0.9.27

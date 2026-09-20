@@ -34,7 +34,7 @@ enum {
  IDC_PCORES=200, IDC_SKIPMOVIE, IDC_WINDOW, IDC_UNLOCKFPS, IDC_VSYNC, IDC_VERBOSE, IDC_CAB,
  IDC_BACKGROUND, IDC_REDSIGNAL, IDC_EDITORWINDOWS, IDC_EDITORTOOLS, IDC_EDITORAUDIO,
  IDC_EDITORKEYS, IDC_EDITORPAN, IDC_TIMEOUT, IDC_CAMERA, IDC_CRAWL, IDC_COUNTERTILT,
- IDC_STRENGTH, IDC_STRENGTHVALUE, IDC_HUDLEFT, IDC_LOGGING, IDC_MONITOR,
+ IDC_STRENGTH, IDC_STRENGTHVALUE, IDC_HUDLEFT, IDC_LOGGING, IDC_MONITOR, IDC_HIGHRES, IDC_HIGHSTATUS, IDC_HIGHGUIDE, IDC_HIGHPROJECT,
  IDC_TITLE=400, IDC_MESSAGE, IDC_CRAWLHINT, IDC_STRENGTHLABEL, IDC_ZERO, IDC_HUNDRED,
  IDC_ANCHORLABEL, IDC_SPACE, IDC_CREDIT, IDC_GITHUB, IDC_WIDENOTE, IDC_WIDEDOWNLOAD, IDC_WIDEGUIDE
 };
@@ -146,6 +146,7 @@ static void ini_get(const char*path,const char*sec,const char*key,const char*def
 static const char*bt(int v);
 static void load_settings(const char*path,Settings*s){char v[64];settings_defaults(s);if(!exists_file(path))return;
 #define GB(sec,key,field) ini_get(path,sec,key,bt(s->field),v,sizeof(v));s->field=true_text(v)
+ GB("Startup","HighResolutionCompatibility",high_resolution);
  GB("Startup","PreferPCores",prefer_pcores);GB("Startup","SkipStartupMovie",skip_movie);GB("Startup","UnlockFPS",unlock_fps);GB("Startup","LimitToVSync",limit_vsync);GB("Startup","VerboseLoading",verbose_loading);GB("Startup","WriteLog",startup_log);
  GB("Window","Enabled",window_features);GB("Window","CenterWindowed",center_windowed);GB("Cab","CorrectNeedleAspect",cab_needles);GB("Audio","UnmuteInBackground",background_audio);GB("Activity","IgnoreRedSignal",ignore_red_signal);
  GB("Editors","ResizableViewports",editor_windows);GB("Editors","FreeToolWindows",editor_tools);GB("Editors","SmoothIdleAudio",editor_audio);GB("Editors","SwapArrowKeys",editor_keys);GB("Editors","UnlimitedMousePan",editor_pan);
@@ -172,7 +173,8 @@ static int write_settings(const char*path,const Settings*s){char b[8192];int n=_
  if(n<0||n>=(int)sizeof(b))return 0;
  if(strchr(s->monitor,'\r')||strchr(s->monitor,'\n'))return 0;
  if(!write_all(path,b,(DWORD)n))return 0;
- return WritePrivateProfileStringA("Window","Monitor",s->monitor,path);}
+ return WritePrivateProfileStringA("Window","Monitor",s->monitor,path) &&
+  WritePrivateProfileStringA("Startup","HighResolutionCompatibility",bt(s->high_resolution),path);}
 
 /* ---------- installation ---------- */
 /* Read and validate ownership before using either the GUI state or installer.
@@ -229,6 +231,7 @@ static int load_selection_settings(const MstsInfo *info,Settings *s,char *err,si
         load_settings(ini,&extra);
         s->prefer_pcores=extra.prefer_pcores;
         s->skip_movie=extra.skip_movie;
+        s->high_resolution=extra.high_resolution;
         lstrcpynA(s->monitor,extra.monitor,sizeof(s->monitor));
         /* A missing key retains the manifest fallback, unlike a false key. */
         {char value[64];ini_get(ini,"Startup","LimitToVSync",bt(s->limit_vsync),value,sizeof(value));s->limit_vsync=true_text(value);}
@@ -437,7 +440,7 @@ static HFONT g_font,g_bold,g_title_font,g_link_font;
 static HWND g_tooltip,g_last_focus;
 static const char *g_instructions="Select train.exe and choose features, then Apply. Settings take effect after restarting MSTS.";
 #define CONTENT_WIDTH 760
-#define CONTENT_HEIGHT 840
+#define CONTENT_HEIGHT 906
 #define STARTUP_EXTRA_WIDTH 24
 #define STARTUP_EXTRA_HEIGHT 24
 #define MAIN_WINDOW_STYLE (WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN)
@@ -446,7 +449,7 @@ static const char *g_instructions="Select train.exe and choose features, then Ap
 static int dip(int value) {return MulDiv(value,g_dpi,96);}
 static void layout_controls(void);
 static void ensure_focus_visible(HWND hwnd);
-static int is_link(int id) {return id==IDC_GITHUB || id==IDC_WIDEDOWNLOAD || id==IDC_WIDEGUIDE;}
+static int is_link(int id) {return id==IDC_GITHUB || id==IDC_WIDEDOWNLOAD || id==IDC_WIDEGUIDE || id==IDC_HIGHGUIDE || id==IDC_HIGHPROJECT;}
 static UiControl *ui_control(HWND hwnd) {
     int i;for(i=0;i<g_control_count;++i) if(g_controls[i].hwnd==hwnd) return &g_controls[i];
     return NULL;
@@ -522,7 +525,7 @@ static void set_valid_controls(int on) {
     for(i=0;i<(int)(sizeof(ids)/sizeof(ids[0]));++i) enable(ids[i],on);
     enable(IDC_PCORES,on && g_cpu_supported);enable(IDC_CAB,on && g_info.widescreen);
     enable(IDC_VSYNC,on && check_get(IDC_UNLOCKFPS));
-    enable(IDC_MONITOR,on && check_get(IDC_WINDOW));
+    enable(IDC_MONITOR,on && check_get(IDC_WINDOW));enable(IDC_HIGHRES,on);
     enable(IDC_BROWSE,!g_busy);enable(IDC_CLOSE,!g_busy);
     refresh_crawl();
 }
@@ -554,10 +557,41 @@ static const char *panel_selected_monitor(void){
  int index=(int)SendDlgItemMessageA(g_main,IDC_MONITOR,CB_GETCURSEL,0,0);
  return index>=0 && index<g_monitor_count?g_monitor_names[index]:"";
 }
+/* Existing external renderers are respected, never overwritten. */
+static int panel_graphics_file(void){
+ char game[MAX_PATH],path[MAX_PATH],hash[65];parent_dir(g_info.path,game);
+ if(join_path(path,game,"ddraw.dll") && GetFileAttributesA(path)!=INVALID_FILE_ATTRIBUTES)return 2;
+ if(!join_path(path,game,"D3DIM700.dll"))return 2;
+ if(GetFileAttributesA(path)==INVALID_FILE_ATTRIBUTES)return GetLastError()==ERROR_FILE_NOT_FOUND?0:2;
+ if(sha_file(path,hash) && !strcmp(hash,"a11a9c627766b1c7d2b7ec8ee664ece131d40a5801a51062b787fd5e765b20d9"))return 1;
+ return 2;
+}
+static void refresh_display_guidance(int popup){
+ MONITORINFO info;int large,external,width,height;char text[768],key[512];
+ static char warned[512];
+ if(!g_info.valid){SetDlgItemTextA(g_main,IDC_HIGHSTATUS,"Select train.exe to check high-resolution compatibility.");return;}
+ info.cbSize=sizeof(info);
+ if(!GetMonitorInfoA(nemt_selected_monitor(check_get(IDC_WINDOW)?panel_selected_monitor():""),&info))return;
+ width=info.rcMonitor.right-info.rcMonitor.left;height=info.rcMonitor.bottom-info.rcMonitor.top;
+ large=nemt_large_display(width,height);external=panel_graphics_file();
+ if(external==1)lstrcpyA(text,"Recognized widescreen D3DIM700.dll present. NEMT will leave it in charge.");
+ else if(external==2)lstrcpyA(text,"External graphics file present; compatibility unverified. NEMT's integrated fix will stand down.");
+ else if(check_get(IDC_HIGHRES))lstrcpyA(text,"High-resolution support selected. Click Apply, then restart MSTS. Activation is checked at game startup.");
+ else if(large)lstrcpyA(text,"This display exceeds 2048 pixels. Enable high-resolution support if MSTS crashes or cannot enter the simulator.");
+ else lstrcpyA(text,"This display is at or below 2048 pixels per dimension. High-resolution support is optional.");
+ SetDlgItemTextA(g_main,IDC_HIGHSTATUS,text);
+ if(!popup || !large || external==1 || (!external && check_get(IDC_HIGHRES)))return;
+ _snprintf(key,sizeof(key),"%s|%s|%d|%d|%d",g_info.path,panel_selected_monitor(),width,height,external);
+ key[sizeof(key)-1]=0;if(!strcmp(key,warned))return;lstrcpynA(warned,key,sizeof(warned));
+ if(external==2)lstrcpyA(text,"Your display exceeds 2048 pixels. An external graphics file is present, so NEMT will leave it in charge. Its high-resolution support could not be verified.\n\nIf MSTS crashes or cannot enter the simulator, consult High-res guide or Fix project in the NEMT form.");
+ else lstrcpyA(text,"Your display exceeds 2048 pixels in width or height. If MSTS crashes on launch or cannot enter the simulator at these resolutions, select Enable high-resolution compatibility, then click Apply.\n\nAlternatively, copy D3DIM700.DLL from msts-widescreen-patch.zip beside train.exe. See High-res guide and Fix project in the NEMT form.");
+ MessageBoxA(g_main,text,"High-resolution display detected",MB_OK|MB_ICONINFORMATION);
+}
 static void settings_to_ui(const Settings *s) {
     g_loading=1;
     check_set(IDC_PCORES,s->prefer_pcores);check_set(IDC_SKIPMOVIE,s->skip_movie);
     populate_monitors(s->monitor);
+    check_set(IDC_HIGHRES,s->high_resolution);
     check_set(IDC_WINDOW,s->window_features);check_set(IDC_UNLOCKFPS,s->unlock_fps);
     check_set(IDC_VSYNC,s->limit_vsync);check_set(IDC_VERBOSE,s->verbose_loading);
     check_set(IDC_LOGGING,s->startup_log);check_set(IDC_CAB,s->cab_needles);
@@ -569,7 +603,7 @@ static void settings_to_ui(const Settings *s) {
     check_set(IDC_COUNTERTILT,s->counter_tilt);
     SendMessageA(g_strength,TBM_SETPOS,TRUE,s->strength);
     SendDlgItemMessageA(g_main,IDC_HUDLEFT,CB_SETCURSEL,s->hud_left?1:0,0);
-    g_loading=0;set_valid_controls(g_info.valid);
+    g_loading=0;set_valid_controls(g_info.valid);refresh_display_guidance(0);
 }
 static void ui_to_settings(Settings *s) {
     char game[MAX_PATH],ini[MAX_PATH];
@@ -579,6 +613,7 @@ static void ui_to_settings(Settings *s) {
      * must not silently turn an existing preference off on another machine. */
     if(g_cpu_supported) s->prefer_pcores=check_get(IDC_PCORES);
     lstrcpynA(s->monitor,panel_selected_monitor(),sizeof(s->monitor));
+    s->high_resolution=check_get(IDC_HIGHRES);
     s->skip_movie=check_get(IDC_SKIPMOVIE);s->window_features=check_get(IDC_WINDOW);
     s->unlock_fps=check_get(IDC_UNLOCKFPS);s->limit_vsync=s->unlock_fps && check_get(IDC_VSYNC);
     s->verbose_loading=check_get(IDC_VERBOSE);s->startup_log=check_get(IDC_LOGGING);
@@ -610,7 +645,7 @@ static void load_selection(const char *path) {
     wsprintfA(text,"Valid train.exe version: %s",g_info.version);status_text(text,1);
     SetWindowTextA(g_path,g_info.path);
     show_control(IDC_WIDENOTE,!g_info.widescreen);show_control(IDC_WIDEDOWNLOAD,!g_info.widescreen);show_control(IDC_WIDEGUIDE,!g_info.widescreen);
-    message_text(g_instructions,-1);set_valid_controls(1);
+    message_text(g_instructions,-1);set_valid_controls(1);refresh_display_guidance(1);
 }
 static void browse_train(void) {
     OPENFILENAMEA o;char p[MAX_PATH]="";
@@ -623,10 +658,13 @@ static void browse_train(void) {
 }
 static void recommended(void) {
     Settings s;if(!g_info.valid || g_busy) return;
-    ui_to_settings(&s);settings_recommended(&s,g_info.widescreen,g_cpu_supported);settings_to_ui(&s);
+    ui_to_settings(&s);settings_recommended(&s,g_info.widescreen,g_cpu_supported);
+    {MONITORINFO info;info.cbSize=sizeof(info);if(GetMonitorInfoA(nemt_selected_monitor(s.monitor),&info) && !panel_graphics_file())
+      s.high_resolution=nemt_large_display(info.rcMonitor.right-info.rcMonitor.left,info.rcMonitor.bottom-info.rcMonitor.top);}
+    settings_to_ui(&s);
 }
 static int any_feature_enabled(const Settings *s) {
-    return s->prefer_pcores||s->skip_movie||s->window_features||s->unlock_fps||s->verbose_loading||s->startup_log||s->cab_needles||s->background_audio||s->ignore_red_signal||s->editor_windows||s->editor_tools||s->editor_audio||s->editor_keys||s->editor_pan||s->prevent_end||s->unlock_cameras||s->crawl;
+    return s->high_resolution||s->prefer_pcores||s->skip_movie||s->window_features||s->unlock_fps||s->verbose_loading||s->startup_log||s->cab_needles||s->background_audio||s->ignore_red_signal||s->editor_windows||s->editor_tools||s->editor_audio||s->editor_keys||s->editor_pan||s->prevent_end||s->unlock_cameras||s->crawl;
 }
 static void do_save(int remove) {
     Settings s,effective;char err[512],selected[MAX_PATH];int ok;
@@ -713,7 +751,8 @@ static void handle_scroll(UINT m,WPARAM wp) {
 }
 static void open_link(int id) {
     const char *url=id==IDC_GITHUB?"https://github.com/NekoCoaster/extended-msts-toolkit":
-        id==IDC_WIDEDOWNLOAD?"https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/":
+        (id==IDC_WIDEDOWNLOAD || id==IDC_HIGHGUIDE)?"https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/":
+        id==IDC_HIGHPROJECT?"https://github.com/UCyborg/LegacyD3DResolutionHack":
         "https://youtu.be/nkWh1HAuRKQ?t=556";
     if((INT_PTR)ShellExecuteA(g_main,"open",url,NULL,NULL,SW_SHOWNORMAL)<=32) message_text("Could not open the documentation link in your browser.",0);
 }
@@ -768,10 +807,12 @@ static LRESULT CALLBACK wndproc(HWND w,UINT m,WPARAM wp,LPARAM lp) {
         else if(id==IDC_CRAWL) {if(check_get(IDC_CRAWL) && !g_loading) check_set(IDC_TIMEOUT,1);refresh_crawl();}
         else if(id==IDC_TIMEOUT && !check_get(IDC_TIMEOUT) && !g_loading) {check_set(IDC_CRAWL,0);refresh_crawl();}
         else if(id==IDC_UNLOCKFPS) enable(IDC_VSYNC,g_info.valid && check_get(IDC_UNLOCKFPS));
-        else if(id==IDC_WINDOW) enable(IDC_MONITOR,g_info.valid && check_get(IDC_WINDOW));
+        else if(id==IDC_WINDOW) {enable(IDC_MONITOR,g_info.valid && check_get(IDC_WINDOW));refresh_display_guidance(1);}
+        else if(id==IDC_HIGHRES) refresh_display_guidance(0);
+        else if(id==IDC_MONITOR && code==CBN_SELCHANGE && !g_loading)refresh_display_guidance(1);
         return 0;
     }
-    case WM_DISPLAYCHANGE:if(g_ui_ready)populate_monitors(panel_selected_monitor());return 0;
+    case WM_DISPLAYCHANGE:if(g_ui_ready){populate_monitors(panel_selected_monitor());refresh_display_guidance(0);}return 0;
     case WM_CLOSE:if(!g_busy) DestroyWindow(w);return 0;
     case WM_DESTROY:PostQuitMessage(0);return 0;
     }
@@ -820,7 +861,14 @@ static int create_ui(void) {
         int width=ids[i]==IDC_WINDOW?310:(ids[i]==IDC_UNLOCKFPS?510:(ids[i]==IDC_CAB?308:712));
         ADD("BUTTON",labels[i],BS_AUTOCHECKBOX|WS_TABSTOP,24,y,width,22,ids[i]);
         if(ids[i]==IDC_UNLOCKFPS) ADD("BUTTON","Limit FPS to vsync",BS_AUTOCHECKBOX|WS_TABSTOP,544,y,192,22,IDC_VSYNC);
-        if(ids[i]==IDC_WINDOW)ADD("COMBOBOX","",CBS_DROPDOWNLIST|WS_TABSTOP|WS_VSCROLL,340,y,396,180,IDC_MONITOR);
+        if(ids[i]==IDC_WINDOW){
+            ADD("COMBOBOX","",CBS_DROPDOWNLIST|WS_TABSTOP|WS_VSCROLL,340,y,396,180,IDC_MONITOR);
+            ADD("BUTTON","Enable high-resolution compatibility",BS_AUTOCHECKBOX|WS_TABSTOP,24,y+24,400,22,IDC_HIGHRES);
+            c=ADD("STATIC","High-res guide",SS_NOTIFY|WS_TABSTOP,490,y+26,125,20,IDC_HIGHGUIDE);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
+            c=ADD("STATIC","Fix project",SS_NOTIFY|WS_TABSTOP,632,y+26,100,20,IDC_HIGHPROJECT);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
+            ADD("STATIC","Select train.exe to check high-resolution compatibility.",SS_LEFT|SS_NOPREFIX,24,y+48,712,34,IDC_HIGHSTATUS);
+            y+=66;
+        }
         if(ids[i]==IDC_CAB) {
             ADD("STATIC","Widescreen patch required.",SS_LEFT|SS_NOPREFIX,340,y+2,175,20,IDC_WIDENOTE);
             c=ADD("STATIC","Download",SS_NOTIFY|WS_TABSTOP,518,y+2,73,20,IDC_WIDEDOWNLOAD);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
@@ -851,7 +899,15 @@ static int create_ui(void) {
     ADD("STATIC","Developed and Tested by NekoCoaster with Astra | MIT License",SS_LEFT|SS_NOPREFIX,24,782,712,20,IDC_CREDIT);
     c=ADD("STATIC","NekoCoaster/extended-msts-toolkit",SS_NOTIFY|WS_TABSTOP,24,806,500,22,IDC_GITHUB);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
 #undef ADD
-    for(i=0;i<g_control_count;++i) if(!g_controls[i].hwnd) return 0;
+    /* The added display rows shift the existing lower controls together. */
+    for(i=0;i<g_control_count;++i) {
+        if(!g_controls[i].hwnd)return 0;
+        if(g_controls[i].id>=IDC_TITLE || g_controls[i].id==IDC_STRENGTH ||
+           g_controls[i].id==IDC_STRENGTHVALUE || g_controls[i].id==IDC_HUDLEFT ||
+           g_controls[i].id==IDC_LOGGING || (g_controls[i].id>=IDC_RECOMMENDED && g_controls[i].id<=IDC_CLOSE)){
+            if(g_controls[i].y>=494)g_controls[i].y+=66;
+        }
+    }
     if(g_control_failed || !g_strength || !g_path || !g_status || !g_message || !GetDlgItem(g_main,IDC_HUDLEFT)) return 0;
     g_tooltip=CreateWindowExA(WS_EX_TOPMOST,TOOLTIPS_CLASSA,NULL,WS_POPUP|TTS_ALWAYSTIP,CW_USEDEFAULT,CW_USEDEFAULT,CW_USEDEFAULT,CW_USEDEFAULT,g_main,NULL,g_instance,NULL);
     if(g_tooltip) SendMessageA(g_tooltip,TTM_SETMAXTIPWIDTH,0,dip(400));

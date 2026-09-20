@@ -173,10 +173,12 @@ int main(void) {
     join_path(status,fixture,"NEMT\\status.json");join_path(proxy,fixture,"DINPUT.dll");
     settings_defaults(&s);s.prefer_pcores=1;s.crawl=1;s.prevent_end=1;s.counter_tilt=1;s.strength=77;s.hud_left=0;
     strcpy(s.monitor,"\\\\.\\DISPLAY99");
+    s.high_resolution=1;
     CHECK(install_settings(&info,&s,0,err,sizeof(err)));
     CHECK(load_selection_settings(&info,&loaded,err,sizeof(err)));
     CHECK(loaded.prefer_pcores && loaded.crawl && loaded.strength==77 && !loaded.hud_left);
     CHECK(!strcmp(loaded.monitor,s.monitor));
+    CHECK(loaded.high_resolution);
     /* A partial old INI must not clear CenterWindowed's true default. */
     CHECK(write_all(ini,"[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n",(DWORD)strlen("[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n")));
     load_settings(ini,&loaded);CHECK(loaded.center_windowed && loaded.window_features);
@@ -197,6 +199,14 @@ int main(void) {
     cosmetic_gui_checks();
     settings_defaults(&s);settings_to_ui(&s);
     CHECK(g_monitor_count>=2);
+    CHECK(!check_get(IDC_HIGHRES));
+    SendDlgItemMessageA(g_main,IDC_HIGHRES,BM_CLICK,0,0);ui_to_settings(&loaded);CHECK(loaded.high_resolution);
+    CHECK(nemt_large_display(2560,1440) && nemt_large_display(1080,2560));
+    CHECK(!nemt_large_display(2048,2048) && !nemt_large_display(1920,1080));
+    CHECK(panel_graphics_file()==0);
+    {char graphics[MAX_PATH];join_path(graphics,fixture,"D3DIM700.dll");
+     CHECK(write_all(graphics,"unknown",7));CHECK(panel_graphics_file()==2);DeleteFileA(graphics);
+     join_path(graphics,fixture,"ddraw.dll");CHECK(write_all(graphics,"wrapper",7));CHECK(panel_graphics_file()==2);DeleteFileA(graphics);}
     CHECK(!strcmp(panel_selected_monitor(),""));
     strcpy(s.monitor,"\\\\.\\DISPLAY99");settings_to_ui(&s);
     CHECK(!strcmp(panel_selected_monitor(),s.monitor));

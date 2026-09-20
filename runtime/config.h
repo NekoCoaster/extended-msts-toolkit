@@ -3,6 +3,7 @@ static int write_status_json,prevent_end,unlock_cameras,crawl_requested,config_v
 static int crawl_hud_left,cab_needles,background_audio,ignore_red_signal,restore_movie_focus,skip_startup_movie;
 static int counter_tilt,prefer_pcores,limit_vsync;
 static char window_monitor[32];
+static int high_resolution;
 static int editor_windows,editor_free_tools,editor_idle_audio,editor_swap_keys,editor_unlimited_pan;
 #include "editor_keys.h"
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
@@ -22,6 +23,7 @@ static void read_config(void){
  startup_log=read_bool(path,L"Startup",L"WriteLog");
  max_log_bytes=1024*read_limit(path,L"MaxLogSizeKB",L"8192",4,65536);max_backup_logs=read_limit(path,L"MaxBackupLogs",L"0",0,20);
  prefer_pcores=read_bool(path,L"Startup",L"PreferPCores");
+ high_resolution=read_bool(path,L"Startup",L"HighResolutionCompatibility");
  unlock_fps=read_bool(path,L"Startup",L"UnlockFPS");
  limit_vsync=read_bool(path,L"Startup",L"LimitToVSync");
  skip_startup_movie=read_bool(path,L"Startup",L"SkipStartupMovie");
