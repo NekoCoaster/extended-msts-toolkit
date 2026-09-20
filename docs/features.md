@@ -7,7 +7,7 @@ Select options in NEMT.exe, click **Apply**, and restart MSTS. The options are i
 | **Skip startup movie (fixes keyboard control issue when loading into simulator)** | Bypasses the clip before playback. The registry and movie file remain unchanged. Unchecked, MSTS follows its normal movie behavior. |
 | **Enable borderless windowed mode** | Removes the frame and centers the game window. An explicit fullscreen launch takes precedence. See [window modes](borderless.md). |
 | **Display dropdown** | Chooses the borderless game's monitor. Disconnected displays fall back to the primary monitor. |
-| **Enable high-resolution compatibility** | Removes recognized legacy Direct3D limits in memory. Recommended when the chosen display exceeds 2048 pixels in either dimension. External graphics DLLs take precedence. |
+| **Enable high-resolution support for displays larger than 2048 in width or height** | Removes recognized legacy Direct3D limits in memory. Recommended when the chosen display exceeds 2048 pixels in either dimension. External graphics DLLs take precedence. |
 | **Unlock FPS limit — Potentially unstable** | Enables the game's uncapped mode together with timing correction. Higher FPS is not guaranteed. Disable this option if it causes problems; also remove any uncapping argument you added to your own shortcut when returning to normal timing. |
 | **Show verbose startup and activity loading details** | Replaces the loading text with observed loading activity. Terrain generation includes completed/total jobs, percentage and an estimated remaining time. |
 | **Enable deep logging** | Records optional deep startup/activity and initialization diagnostics. It is independent of the loading-screen text. See [logs](startup.md). |
