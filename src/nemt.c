@@ -682,7 +682,7 @@ static void do_save(int remove) {
     if(ok) {
         load_selection(selected);
         /* Reload FIRST; otherwise the success message is immediately lost. */
-        if(g_info.valid) message_text(remove?"Toolkit removed. Widescreen and LAA were preserved.":"Settings saved. Restart MSTS to apply changes. Windowed mode is used unless fullscreen is requested.",1);
+        if(g_info.valid) message_text(remove?"Toolkit removed. Widescreen and LAA were preserved.":"Settings saved. MSTS now defaults to windowed mode unless specified through parameter arguments",1);
     } else message_text(err,0);
     set_valid_controls(g_info.valid);
     ensure_focus_visible(g_message);
@@ -861,9 +861,9 @@ static int create_ui(void) {
     g_status=ADD("STATIC","Choose or drop your train.exe.",SS_LEFT|SS_NOPREFIX,24,82,712,34,IDC_STATUS);
     SendMessageA(g_status,WM_SETFONT,(WPARAM)g_bold,TRUE);SetWindowLongA(g_status,GWL_USERDATA,-1);
     for(i=0;i<(int)(sizeof(ids)/sizeof(ids[0]));++i,y+=22) {
-        int width=ids[i]==IDC_WINDOW?396:(ids[i]==IDC_UNLOCKFPS?510:(ids[i]==IDC_CAB?308:712));
+        int width=ids[i]==IDC_WINDOW?396:(ids[i]==IDC_UNLOCKFPS?396:(ids[i]==IDC_CAB?308:712));
         ADD("BUTTON",labels[i],BS_AUTOCHECKBOX|WS_TABSTOP,24,y,width,22,ids[i]);
-        if(ids[i]==IDC_UNLOCKFPS) ADD("BUTTON","Limit FPS to vsync",BS_AUTOCHECKBOX|WS_TABSTOP,544,y,192,22,IDC_VSYNC);
+        if(ids[i]==IDC_UNLOCKFPS) ADD("BUTTON","Cap FPS to Monitor Refresh Rate",BS_AUTOCHECKBOX|WS_TABSTOP,430,y,306,22,IDC_VSYNC);
         if(ids[i]==IDC_WINDOW){
             ADD("COMBOBOX","",CBS_DROPDOWNLIST|WS_TABSTOP|WS_VSCROLL,430,y,306,180,IDC_MONITOR);
             ADD("BUTTON","Enable High-res support (Optional)",BS_AUTOCHECKBOX|WS_TABSTOP,24,y+24,712,22,IDC_HIGHRES);

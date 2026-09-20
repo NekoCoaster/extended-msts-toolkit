@@ -57,8 +57,10 @@ Native regression checks pass for same-size moves, unchanged-size requests,
 show-after-displacement, resizing and bordered movement. This session exposes
 only one monitor; the separate synthetic display tests cover secondary selection,
 negative coordinates and disconnected fallback. Actual MSTS loading-to-menu,
-menu-to-simulator and return-to-menu transitions on a secondary monitor still
-require host confirmation for this change.
+menu-to-simulator and return-to-menu transitions were not exercised by that
+automated run. Following checkpoint 8349087, the user confirmed that the game
+window now stays in place on the selected monitor. This is user-reported host
+validation, separate from the automated checks.
 
 - `tests/window-math.c`: quoted executable/argument paths, case, comma resolutions, optional `s`, tabs, false positives, duplicate options and negative monitor coordinates.
 - `tests/window-native.c`: real Win32 window creation, frame removal, exact client dimensions, cached style update, centering after resize, retained manual movement and bordered mode. This is a synthetic window, not an MSTS/dgVoodoo test.

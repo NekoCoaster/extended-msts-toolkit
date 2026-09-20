@@ -26,8 +26,22 @@ This is a development checkpoint, not a version bump or release.
   widescreen D3DIM700.dll was recognized. No Apply was performed on that installation.
 
 The real graphics result is device-creation evidence, not an MSTS activity test.
-Windows XP/7 and other system DLL versions remain untested for this new feature.
+The original automated run did not test Windows XP/7 or other system DLL versions.
 Unrecognized implementations must stand down with an explanatory startup notice.
+
+## Subsequent user-reported validation
+
+- The user reported that the form works on Windows XP, 7 and 11, and that
+  standalone operation without the external MIT-0 DLL works on their laptop.
+- Following b98ffac, in-game clicking, dragging and activity loading work with
+  no mice connected.
+- Following 8349087, the window remains on the selected secondary monitor.
+- The final wording/alignment update passes 299 native GUI/installer checks,
+  the remaining native regression suite, source guards, repository-tool checks
+  and the XP-baseline frontend import audit. The frontend build succeeded.
+
+These reports close the reported functional issues; they do not establish every
+step of the broader laptop checklist below on every operating system or wrapper.
 
 ## Laptop validation
 

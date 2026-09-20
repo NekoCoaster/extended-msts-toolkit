@@ -242,6 +242,8 @@ int main(void) {
     CHECK(GetWindowLongA(GetDlgItem(g_main,IDC_BROWSE),GWL_STYLE)&WS_TABSTOP);
     CHECK(LOWORD(SendMessageA(g_main,DM_GETDEFID,0,0))==IDC_APPLY);
     GetWindowRect(GetDlgItem(g_main,IDC_UNLOCKFPS),&a);GetWindowRect(GetDlgItem(g_main,IDC_VSYNC),&b);CHECK(a.right<=b.left);
+    GetWindowRect(GetDlgItem(g_main,IDC_MONITOR),&a);CHECK(a.left==b.left);
+    get_text(IDC_VSYNC,text,sizeof(text));CHECK(!strcmp(text,"Cap FPS to Monitor Refresh Rate"));
     SendDlgItemMessageA(g_main,IDC_RECOMMENDED,BM_CLICK,0,0);
     CHECK(check_get(IDC_VERBOSE) && check_get(IDC_VSYNC) && check_get(IDC_COUNTERTILT) && !check_get(IDC_LOGGING));
     CHECK(check_get(IDC_CRAWL) && check_get(IDC_TIMEOUT));
