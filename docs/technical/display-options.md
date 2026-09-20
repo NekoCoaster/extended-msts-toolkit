@@ -2,38 +2,44 @@
 
 ## Resolution guidance
 
-Selecting a resolution whose width or height exceeds 2048 pixels now opens a native MSTS popup after the dropdown closes. Exactly 2048 does not trigger it. The alert tells users to close MSTS and copy `D3DIM700.DLL` from their original `msts-widescreen-patch.zip` into the folder containing `train.exe`. Without that workaround, the game may revert to 1280 x 720 or crash. The notice is informational even when the DLL is present; NEMT does not inspect its version, download it or replace graphics DLLs.
+The experimental in-game resolution-selection alert has been removed. NEMT no longer intercepts the resolution dropdown or repurposes the keyboard-assignment dialog. Earlier synthetic tests did not establish successful native rendering; historical implementation details remain in Git history.
 
-[Digital Rails](https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/) documents the greater-than-2048 limitation. User testing found resolution reversion without D3DIM700.DLL and successful higher-resolution selection with it. This is separate from NEMT's off-screen startup-probe workaround.
+The native form checks the selected borderless monitor (or primary monitor when
+borderless is off) after executable detection and display selection. The strict
+threshold is width > 2048 OR height > 2048, in pixels. Combined desktop width
+does not determine a game's render-target dimensions. A recognized external
+widescreen DLL suppresses the suggestion; unknown local D3DIM700/ddraw files
+are reported as unverified external graphics components. The warning repeats
+only when the last warned executable/display configuration changes.
 
-### Correction to the v1.1.0 implementation
+`[Startup] HighResolutionCompatibility=true` enables the integrated MIT-0-derived
+fix; missing settings default off. Use Recommended selects it for a display
+above the threshold when no external graphics file is present. Apply and restart
+MSTS to activate it. Selecting the checkbox is not evidence of runtime success.
 
-The original inline note did not appear in user testing. Its synthetic test exercised a welcome-message text hook at `0x44c59c`, but the resolution dropdown uses a different dispatch path. Those tests established helper behavior, not that real selections reached it. The inline heading mutation has been removed. [Issue #2](https://github.com/NekoCoaster/extended-msts-toolkit/issues/2) tracks this correction.
+The main-game bootstrap, outside DllMain, loads the system x86 D3DIM700.dll by
+absolute path and retains its reference. Local D3DIM700.dll/ddraw.dll or a
+non-system loaded module of either name causes NEMT to stand down; this does
+not certify an external wrapper's compatibility. Editors are excluded.
 
-The new hook replaces the final dropdown-close call at `0x43b3e4` inside the committed-item handler `0x43b1fb`. It forwards that call first, then checks that the closed popup was `combopopup9`. It reads `displayrescombo`'s selected index at offset `0x114` and maps it to the ten-entry resolution table at `0x79ca70`. The base executable skips unavailable entries; the supported widescreen patch lists all entries. Exact branch bytes at `0x4633b3` select the matching interpretation. List population and hover do not use the hooked call site.
+Executable PE sections are inspected for the upstream `mov eax,2048` signature
+followed by two adjacent stack-local dimension comparisons and unsigned branches
+to the same failure block. Every candidate must be recognized; ambiguous,
+malformed, or inaccessible layouts are rejected. At most eight sites are
+accepted. Original instructions are rechecked and changed through NEMT's shared
+thread-aware mutation transaction. Recognized `mov eax,-1` pairs are left alone.
+The host system DLL has two original sites, both handled by this adaptation.
+Neither train.exe nor system files are edited on disk. An unsupported enabled
+fix gives a normal Win32 startup notice, with detailed state in optional deep
+logging under `HIGH RESOLUTION`.
 
-The existing `condlgpopup` keyboard-assignment dialog supplies modal display and the dismissal button. NEMT assigns warning text and an OK label, temporarily repositions its title and body, then opens it through native method `0x58` with context `0x2b`. It does not enable key capture. The existing dismissal handler still closes the popup and clears input capture. A hook at `0x4648f2` restores the original title/body rectangles afterward. Only rectangle fields are restored: text pointers are owned by MSTS and must not be restored after its text setter replaces their allocations. Unrecognized custom dialog geometry is left untouched and receives no popup.
-
-Both call patches use the shared mutation transaction and exact original-call validation. Installation occurs at the verified main-game bootstrap stage; toolset is excluded. Game executable and GUI files remain unchanged.
-
-```mermaid
-flowchart TD
-    A[Commit dropdown item] --> B[Native update and close]
-    B --> C{Resolution dropdown?}
-    C -- No --> Z[Return normally]
-    C -- Yes --> D[Map selected index using the executable variant]
-    D --> E{Width or height above 2048?}
-    E -- No --> Z
-    E -- Yes --> F[Show native warning without key capture]
-    F --> G[User dismisses popup]
-    G --> H[Native close and restore dialog rectangles]
-```
-
-### Validation and remaining host check
-
-`tests/resolution-alert.c` covers both index mappings, the strict threshold, other dropdowns/messages, repeated selections, reentrancy suppression, normal dismissal, rectangle restoration without stale text pointers, custom-layout exclusion and exact call signatures in both supported executable fixtures. Existing welcome/footer and refresh-pacing checks pass. These are synthetic behavior and fixture checks, not proof of native rendering.
-
-A local visual attempt stopped at an inaccessible MSTS license dialog before reaching the menu. The temporary diagnostic DLL was removed and the installed DLL restored. Host verification remains: select a mode above 2048, confirm all warning text and OK are visible, dismiss it, choose a lower mode, then open keyboard assignment to confirm its normal appearance and input behavior. Also check selecting another high mode produces a fresh warning.
+Native tests cover both paired instruction layouts, repeated/mixed patch state,
+ambiguous signatures, invalid PE inputs, memory protection preservation,
+external-file stand-down, saved settings, threshold boundaries and disconnected
+display fallback. A separate `high-resolution-test.exe --host-probe` successfully
+applied the fix inside a disposable process on the development host, then
+recognized the already-patched state. This does not establish in-game device
+creation, cross-OS behavior or laptop results; those remain host checks.
 
 ## Limit FPS to vsync
 

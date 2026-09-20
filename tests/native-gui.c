@@ -6,6 +6,13 @@
 #undef WinMain
 #include <assert.h>
 static int checks,failures;
+static int display_notices,display_width=2560;
+static BOOL WINAPI fake_display_info(HMONITOR monitor,LPMONITORINFO info){
+ memset(info,0,sizeof(*info));info->cbSize=sizeof(*info);info->rcMonitor.right=display_width;info->rcMonitor.bottom=1440;return TRUE;
+}
+static int WINAPI fake_display_notice(HWND owner,LPCSTR text,LPCSTR title,UINT flags){
+ display_notices++;assert(strstr(text,"2048"));return IDOK;
+}
 static const char *test_phase="setup/installer";
 #define CHECK(x) do {++checks;if(!(x)){++failures;printf("FAIL line %d [%s, layout DPI %d]: %s\n",__LINE__,test_phase,g_dpi,#x);}}while(0)
 /* A fictitious work RECT does not enlarge Windows' real maximum track size.
@@ -172,9 +179,13 @@ int main(void) {
     join_path(ini,fixture,"NEMT\\settings.ini");join_path(manifest,fixture,"NEMT\\installation.json");
     join_path(status,fixture,"NEMT\\status.json");join_path(proxy,fixture,"DINPUT.dll");
     settings_defaults(&s);s.prefer_pcores=1;s.crawl=1;s.prevent_end=1;s.counter_tilt=1;s.strength=77;s.hud_left=0;
+    strcpy(s.monitor,"\\\\.\\DISPLAY99");
+    s.high_resolution=1;
     CHECK(install_settings(&info,&s,0,err,sizeof(err)));
     CHECK(load_selection_settings(&info,&loaded,err,sizeof(err)));
     CHECK(loaded.prefer_pcores && loaded.crawl && loaded.strength==77 && !loaded.hud_left);
+    CHECK(!strcmp(loaded.monitor,s.monitor));
+    CHECK(loaded.high_resolution);
     /* A partial old INI must not clear CenterWindowed's true default. */
     CHECK(write_all(ini,"[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n",(DWORD)strlen("[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n")));
     load_settings(ini,&loaded);CHECK(loaded.center_windowed && loaded.window_features);
@@ -194,9 +205,48 @@ int main(void) {
     CHECK(g_main!=NULL);CHECK(create_ui());ShowWindow(g_main,SW_SHOWNORMAL);UpdateWindow(g_main);SetActiveWindow(g_main);g_info=info;g_cpu_supported=0;
     cosmetic_gui_checks();
     settings_defaults(&s);settings_to_ui(&s);
+    CHECK(g_monitor_count>=2);
+    CHECK(!check_get(IDC_HIGHRES));
+    SendDlgItemMessageA(g_main,IDC_HIGHRES,BM_CLICK,0,0);ui_to_settings(&loaded);CHECK(loaded.high_resolution);
+    CHECK(nemt_large_display(2560,1440) && nemt_large_display(1080,2560));
+    CHECK(!nemt_large_display(2048,2048) && !nemt_large_display(1920,1080));
+    CHECK(panel_graphics_file()==0);
+    panel_monitor_info=fake_display_info;panel_display_notice=fake_display_notice;
+    check_set(IDC_HIGHRES,0);display_width=2048;refresh_display_guidance(1);CHECK(display_notices==0);
+    get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable High-res support (Optional)"));
+    CHECK(IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+    display_width=2560;refresh_display_guidance(1);CHECK(display_notices==1);
+    get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable High-res support (Recommended)"));
+    refresh_display_guidance(1);CHECK(display_notices==1);
+    check_set(IDC_HIGHRES,1);display_width=3840;refresh_display_guidance(1);CHECK(display_notices==1);
+    check_set(IDC_HIGHRES,0);refresh_display_guidance(1);CHECK(display_notices==2);
+    {char graphics[MAX_PATH];join_path(graphics,fixture,"D3DIM700.dll");
+     CHECK(write_all(graphics,"unknown",7));CHECK(panel_graphics_file()==2);
+     refresh_display_guidance(1);CHECK(display_notices==3);
+     get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable high-res support (Existing D3D wrapper detected. e.g dgVoodoo2, D3DIM700.DLL, etc)"));
+     CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+     set_valid_controls(1);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+     display_width=1920;refresh_display_guidance(0);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+     DeleteFileA(graphics);refresh_display_guidance(0);CHECK(IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
+     join_path(graphics,fixture,"ddraw.dll");CHECK(write_all(graphics,"wrapper",7));CHECK(panel_graphics_file()==2);DeleteFileA(graphics);}
+    panel_monitor_info=GetMonitorInfoA;panel_display_notice=MessageBoxA;
+    CHECK(!strcmp(panel_selected_monitor(),""));
+    strcpy(s.monitor,"\\\\.\\DISPLAY99");settings_to_ui(&s);
+    CHECK(!strcmp(panel_selected_monitor(),s.monitor));
+    CHECK(nemt_selected_monitor(s.monitor)==nemt_selected_monitor(""));
+    SendMessageA(g_main,WM_DISPLAYCHANGE,0,0);CHECK(!strcmp(panel_selected_monitor(),s.monitor));
+    SendDlgItemMessageA(g_main,IDC_WINDOW,BM_CLICK,0,0);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_MONITOR)));
+    SendDlgItemMessageA(g_main,IDC_WINDOW,BM_CLICK,0,0);CHECK(IsWindowEnabled(GetDlgItem(g_main,IDC_MONITOR)));
+    ui_to_settings(&loaded);CHECK(!strcmp(loaded.monitor,s.monitor));
+    GetWindowRect(GetDlgItem(g_main,IDC_WINDOW),&a);GetWindowRect(GetDlgItem(g_main,IDC_MONITOR),&b);CHECK(a.right<=b.left);
     CHECK(GetWindowLongA(GetDlgItem(g_main,IDC_BROWSE),GWL_STYLE)&WS_TABSTOP);
     CHECK(LOWORD(SendMessageA(g_main,DM_GETDEFID,0,0))==IDC_APPLY);
+    CHECK(!strcmp(saved_settings_message(0,1),"Settings saved. MSTS now defaults to windowed mode unless specified through parameter arguments"));
+    CHECK(!strcmp(saved_settings_message(0,0),"Settings saved. MSTS uses its normal launch mode. Add -vm:w to launch in windowed mode."));
+    CHECK(!strcmp(saved_settings_message(1,1),saved_settings_message(1,0)));
     GetWindowRect(GetDlgItem(g_main,IDC_UNLOCKFPS),&a);GetWindowRect(GetDlgItem(g_main,IDC_VSYNC),&b);CHECK(a.right<=b.left);
+    GetWindowRect(GetDlgItem(g_main,IDC_MONITOR),&a);CHECK(a.left==b.left);
+    get_text(IDC_VSYNC,text,sizeof(text));CHECK(!strcmp(text,"Cap FPS to Monitor Refresh Rate"));
     SendDlgItemMessageA(g_main,IDC_RECOMMENDED,BM_CLICK,0,0);
     CHECK(check_get(IDC_VERBOSE) && check_get(IDC_VSYNC) && check_get(IDC_COUNTERTILT) && !check_get(IDC_LOGGING));
     CHECK(check_get(IDC_CRAWL) && check_get(IDC_TIMEOUT));

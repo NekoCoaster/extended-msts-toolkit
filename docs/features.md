@@ -6,6 +6,8 @@ Select options in NEMT.exe, click **Apply**, and restart MSTS. The options are i
 | --- | --- |
 | **Skip startup movie (fixes keyboard control issue when loading into simulator)** | Bypasses the clip before playback. The registry and movie file remain unchanged. Unchecked, MSTS follows its normal movie behavior. |
 | **Enable borderless windowed mode** | Removes the frame and centers the game window. An explicit fullscreen launch takes precedence. See [window modes](borderless.md). |
+| **Display dropdown** | Chooses the borderless game's monitor. Disconnected displays fall back to the primary monitor. |
+| **Enable High-res support** | Removes recognized legacy Direct3D limits in memory. Recommended when the chosen display exceeds 2048 pixels in either dimension. External graphics DLLs take precedence. |
 | **Unlock FPS limit — Potentially unstable** | Enables the game's uncapped mode together with timing correction. Higher FPS is not guaranteed. Disable this option if it causes problems; also remove any uncapping argument you added to your own shortcut when returning to normal timing. |
 | **Show verbose startup and activity loading details** | Replaces the loading text with observed loading activity. Terrain generation includes completed/total jobs, percentage and an estimated remaining time. |
 | **Enable deep logging** | Records optional deep startup/activity and initialization diagnostics. It is independent of the loading-screen text. See [logs](startup.md). |
@@ -26,9 +28,12 @@ The strength slider ranges from **0–100×**, initially **10×**. At zero the f
 
 Choose **Bottom left** or **Bottom right** for the crawl HUD. Bottom left is the default. The HUD is included with crawling and appears in MSTS Bin's white extended F5 display. [Crawling guide](crawl-hud.md).
 
-## Select All
+## Use Recommended
 
-The button checks every available checkbox, including the FPS and optional logging options. It does not change the thrust multiplier or enable an incompatible cab-dial option. You can uncheck individual options before Apply.
+The button enables recommended available features, leaves deep logging off,
+and recommends high-resolution compatibility for a display above 2048 pixels
+when no external graphics DLL is present. It preserves the display choice and
+thrust multiplier. You can change individual options before Apply.
 
 ## CPU preference
 

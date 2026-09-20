@@ -20,6 +20,26 @@ copy /y src\NEMT.exe.manifest build\native-gui-test.exe.manifest >nul
 if errorlevel 1 goto failed
 build\native-gui-test.exe
 if errorlevel 1 goto failed
+"%TCC%" -DWINVER=0x0501 -D_WIN32_WINNT=0x0501 -o build\high-resolution-test.exe tests\high-resolution.c -ladvapi32 -luser32
+if errorlevel 1 goto failed
+build\high-resolution-test.exe
+if errorlevel 1 goto failed
+"%TCC%" -o build\display-monitor-test.exe tests\display-monitor.c -luser32
+if errorlevel 1 goto failed
+build\display-monitor-test.exe
+if errorlevel 1 goto failed
+"%TCC%" -o build\window-native-test.exe tests\window-native.c -ladvapi32 -luser32
+if errorlevel 1 goto failed
+build\window-native-test.exe
+if errorlevel 1 goto failed
+"%TCC%" -DWINVER=0x0501 -D_WIN32_WINNT=0x0501 -o build\mouse-input-test.exe tests\mouse-compatibility.c -ladvapi32 -luser32
+if errorlevel 1 goto failed
+build\mouse-input-test.exe
+if errorlevel 1 goto failed
+"%TCC%" -o build\window-math-test.exe tests\window-math.c
+if errorlevel 1 goto failed
+build\window-math-test.exe
+if errorlevel 1 goto failed
 echo All native regression tests passed.
 if /i not "%~1"=="--ci" pause
 exit /b 0

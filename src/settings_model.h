@@ -11,6 +11,8 @@ typedef struct {
  char derail_key[32];
  char key_forward[32], key_backward[32], key_left[32], key_right[32], key_up[32], key_down[32];
  int max_log_kb, max_backup_logs, center_windowed, write_status;
+ char monitor[32];
+ int high_resolution;
 } Settings;
 
 static void settings_defaults(Settings*s){memset(s,0,sizeof(*s));s->window_features=1;s->strength=10;s->hud_left=1;s->max_log_kb=8192;s->center_windowed=1;strcpy(s->derail_key,"BACKSLASH");strcpy(s->key_forward,"w");strcpy(s->key_backward,"s");strcpy(s->key_left,"a");strcpy(s->key_right,"d");strcpy(s->key_up,"e");strcpy(s->key_down,"q");}

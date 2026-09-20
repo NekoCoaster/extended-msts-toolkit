@@ -10,7 +10,7 @@ Five independent options are available in the control panel. Apply changes with 
 | --- | --- |
 | Resizable editor windows and fullscreen | Resize or maximize Route, Activity and Cab Editor. Press **Alt+Enter** in the main viewport to enter borderless fullscreen; press it again to restore the previous window. |
 | Move Route Editor tool windows freely | Removes MSTS's magnetic alignment of floating tools. |
-| Fix Route Editor slowdown without nearby sounds | Keeps the audio device active with a silent buffer while Route Editor runs. No sound source needs to be placed in the route. |
+| Fix Route Editor lag when no sound sources present | Keeps the audio device active with a silent buffer while Route Editor runs. No sound source needs to be placed in the route. |
 | Swap arrow keys with WASDEQ controls in route editor | Uses configurable camera keys and moves their original shortcuts onto the corresponding arrow combinations. |
 | Remove Route Editor mouse-panning limit | Keeps mouse-drag camera rotation responsive after MSTS's invisible pointer reaches its screen bounds, on both axes. |
 

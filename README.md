@@ -47,10 +47,11 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | Prefer P-cores (optional)                         | Requests the highest detected CPU performance class when the OS and CPU expose the required topology. Defaults off. |
 | Skip startup movie                                | Skips startup movie for faster loading time. Also resolves keyboard input not working after loading into sim        |
-| Enable borderless windowed mode                   | Runs game in windowed mode without boarders, centering window to primary display.                                   |
+| Enable borderless windowed mode                   | Removes the game window border and centers it on the display selected beside the checkbox.                         |
+| Enable high-resolution compatibility             | Removes recognized legacy Direct3D dimension limits in memory; stands down for external graphics DLLs.             |
 | Resizable editor windows and fullscreen           | Resize or maximize Route, Activity and Cab Editor windows; Use Alt+Enter to toggle borderless fullscreen.           |
 | Move Route Editor tool windows freely             | Removes jankly snap alignment of floating tool windows in Route Editor                                              |
-| Fix Route Editor slowdown without nearby sounds   | Prevents Route Editor from lagging when loading into a route with no nearby sound sources playing                   |
+| Fix Route Editor lag when no sound sources present   | Prevents Route Editor from lagging when loading into a route with no nearby sound sources playing                   |
 | Unlock FPS limit — **Potentially unstable**       | Removes the game-side frame cap and applies corrective timing to frame-rate tied simulator operations               |
 | Show verbose startup and activity loading details | Shows loading activity and terrain-generation progress messages during startup and sim-loading                      |
 | Enable deep logging                               | Records optional diagnostics for troubleshooting and writes them into NEMT/startup.log                              |

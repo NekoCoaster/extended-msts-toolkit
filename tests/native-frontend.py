@@ -28,7 +28,7 @@ check('CBS_DROPDOWNLIST' in src and '"Bottom right"' in src and '"Bottom left"' 
 load=src[src.index('static void load_selection('):src.index('static void browse_train(')]
 check(load.index('lstrcpynA(selected,')<load.index('memset(&g_info'),'copy aliased path before clearing state')
 save=src[src.index('static void do_save('):src.index('static void layout_controls(void) {')]
-check(save.index('load_selection(selected);')<save.index('Settings saved.'),'reload before success message')
+check(save.index('load_selection(selected);')<save.index('message_text(saved_settings_message(remove,s.window_features),1)'),'reload before saved-state success message')
 check('s->limit_vsync=1; s->verbose_loading=1; s->startup_log=0;' in model,'recommended choices match PS1')
 check('s->crawl=1; s->counter_tilt=1;' in model,'recommended counter-tilt')
 check('if(g_cpu_supported) s->prefer_pcores=check_get(IDC_PCORES);' in src,'preserve unsupported P-core setting')

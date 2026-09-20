@@ -1,17 +1,27 @@
 # Windowed and borderless mode
 
+The monitor dropdown beside borderless mode selects the target display. The
+default follows the primary display; explicit choices are saved as Windows
+device names in `[Window] Monitor` (for example `\\.\DISPLAY2`). A disconnected
+selection remains saved and is shown as unavailable in the panel; the runtime
+falls back to the primary display. Windows can rename devices after topology or
+driver changes, so reselect the display if that happens. Placement preserves
+the game's requested client size and supports negative monitor coordinates.
+The selector affects borderless mode only; framed windows retain nearest-monitor
+centering. Changes take effect when MSTS restarts.
+
 The **Enable borderless windowed mode** checkbox controls the border of an ordinary MSTS window. Configuration is in `NEMT/settings.ini`; restart after applying changes.
 
 | Launch | Checkbox on | Checkbox off |
 |---|---|---|
-| `train.exe` | Borderless window | Bordered window |
+| `train.exe` | Borderless window | Native MSTS default (no mode override) |
 | `train.exe -vm:w` | Borderless window | Bordered window |
 | `train.exe -vm:w,1280,720,32` | Borderless 1280×720 client area | Bordered 1280×720 client area |
 | `train.exe -vm:1280,720,32` | Fullscreen | Fullscreen |
 
-Use a resolution supported by the installation and display. MSTS has no native `-vm:f` token: its parser recognizes `w` for windowed, and resolution-only arguments leave the native fullscreen mode selected. An explicit fullscreen request takes precedence over windowed arguments. Existing width, height and bit-depth values are preserved. With no recognized mode, NEMT supplies `-vm:w`. The former `-vm:bw` alias is unsupported.
+Use a resolution supported by the installation and display. MSTS has no native `-vm:f` token: its parser recognizes `w` for windowed, and resolution-only arguments leave the native fullscreen mode selected. An explicit fullscreen request takes precedence over windowed arguments. Existing width, height and bit-depth values are preserved. With no recognized mode, NEMT supplies `-vm:w` only when borderless mode is enabled. The former `-vm:bw` alias is unsupported.
 
-`[Window] Enabled=true` enables border removal. `CenterWindowed=true` centers normal framed windows; borderless windows are always centered. A smaller borderless resolution is centered, not stretched to fill the monitor. The no-argument windowed default applies while NEMT is installed, even with border removal disabled.
+`[Window] Enabled=true` enables border removal. `CenterWindowed=true` centers normal framed windows; borderless windows are always centered. A smaller borderless resolution is centered, not stretched to fill the monitor. With border removal disabled, NEMT does not add a windowed-mode argument; the separate centering preference does not change that decision.
 
 ## Implementation and checks
 
@@ -29,11 +39,28 @@ The general option handler at `0x706af0` dispatches `vm` to `0x707000`. That rou
 
 At DLL process attachment, a minimal bootstrap checks the image fingerprint, absence of TLS and an executable command-line import target, then redirects that one pointer. It performs no configuration reads, hashing, User32 calls, thread creation or waits. The redirected function runs when the EXE CRT requests its command line, outside the loader entry callback. It checks the complete supported executable hash and reads configuration before installing the window module. This follows the constraints documented for [DllMain](https://learn.microsoft.com/en-us/windows/win32/dlls/dllmain) and the immutable storage returned by [GetCommandLineA](https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-getcommandlinea).
 
-The window module chains the game's existing `SetWindowPos` (`0x84df30`) and `ShowWindow` (`0x84df40`) imports. It affects only the main HWND stored at `0x82813a`. The native sizing routine at `0x6963a0` uses cached styles at `0x82818a` and `0x82818e`; these must be updated along with the visible window style. Frame extents are accounted for so requested client dimensions survive border removal. Borderless uses the nearest monitor's full rectangle; ordinary windows use its work area. First appearance and size/frame changes trigger centering. There is no polling loop, topmost enforcement or per-frame window callback.
+The window module chains the game's existing `SetWindowPos` (`0x84df30`) and `ShowWindow` (`0x84df40`) imports. It affects only the main HWND stored at `0x82813a`. The native sizing routine at `0x6963a0` uses cached styles at `0x82818a` and `0x82818e`; these must be updated along with the visible window style. Frame extents are accounted for so requested client dimensions survive border removal. Borderless uses the selected monitor's full rectangle with primary fallback; ordinary windows use the nearest monitor's work area. First appearance and size/frame changes trigger centering. There is no polling loop, topmost enforcement or per-frame window callback.
 
 The IAT mutations participate in the shared address-claim registry. Raw-only transactions allocate no executable gateway page. The initial command-line import is claimed atomically during startup; subsequent window and gameplay transactions reject overlaps and mismatched bytes. Gameplay retains its separate driving-scene readiness gate. No Frida attachment is used.
 
 ## Automated coverage
+
+### Secondary-display follow-up (2026-09-20)
+
+The previous placement condition allowed same-size moves through after initial
+centering. Borderless placement now reapplies the selected display on every
+intercepted main-window placement, including unchanged-size calls and show calls.
+Bordered windows retain manual movement. No polling or new graphics hooks were
+added. The existing toolset, non-main-window and minimized-window exclusions remain.
+
+Native regression checks pass for same-size moves, unchanged-size requests,
+show-after-displacement, resizing and bordered movement. This session exposes
+only one monitor; the separate synthetic display tests cover secondary selection,
+negative coordinates and disconnected fallback. Actual MSTS loading-to-menu,
+menu-to-simulator and return-to-menu transitions were not exercised by that
+automated run. Following checkpoint 8349087, the user confirmed that the game
+window now stays in place on the selected monitor. This is user-reported host
+validation, separate from the automated checks.
 
 - `tests/window-math.c`: quoted executable/argument paths, case, comma resolutions, optional `s`, tabs, false positives, duplicate options and negative monitor coordinates.
 - `tests/window-native.c`: real Win32 window creation, frame removal, exact client dimensions, cached style update, centering after resize, retained manual movement and bordered mode. This is a synthetic window, not an MSTS/dgVoodoo test.
