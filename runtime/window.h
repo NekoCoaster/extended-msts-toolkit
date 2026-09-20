@@ -44,7 +44,9 @@ static BOOL WINAPI toolkit_window_pos(HWND h,HWND after,int x,int y,int cx,int c
  window_busy=1;GetWindowRect(h,&old);
  if(window_mode==2){frame_extent(h,&fw,&fh);changed=strip_frame(h);if(changed){frame_extent(h,&nw,&nh);if(!(flags&SWP_NOSIZE)){cx+=nw-fw;cy+=nh-fh;}else{cx=old.right-old.left+nw-fw;cy=old.bottom-old.top+nh-fh;flags&=~SWP_NOSIZE;}flags|=SWP_FRAMECHANGED;}}
  resize=!(flags&SWP_NOSIZE)&&(cx!=old.right-old.left||cy!=old.bottom-old.top);
- if(arranged_window!=h||changed||resize){
+ /* Borderless is anchored, including same-size menu/simulator placement calls.
+    Bordered mode still permits movement between resize operations. */
+ if(window_mode==2||arranged_window!=h||changed||resize){
   if(flags&SWP_NOSIZE){cx=old.right-old.left;cy=old.bottom-old.top;}
   if(cx>0&&cy>0){center_for(h,cx,cy,&x,&y);flags&=~SWP_NOMOVE;arranged_window=h;}
  }

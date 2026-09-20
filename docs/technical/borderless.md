@@ -45,6 +45,21 @@ The IAT mutations participate in the shared address-claim registry. Raw-only tra
 
 ## Automated coverage
 
+### Secondary-display follow-up (2026-09-20)
+
+The previous placement condition allowed same-size moves through after initial
+centering. Borderless placement now reapplies the selected display on every
+intercepted main-window placement, including unchanged-size calls and show calls.
+Bordered windows retain manual movement. No polling or new graphics hooks were
+added. The existing toolset, non-main-window and minimized-window exclusions remain.
+
+Native regression checks pass for same-size moves, unchanged-size requests,
+show-after-displacement, resizing and bordered movement. This session exposes
+only one monitor; the separate synthetic display tests cover secondary selection,
+negative coordinates and disconnected fallback. Actual MSTS loading-to-menu,
+menu-to-simulator and return-to-menu transitions on a secondary monitor still
+require host confirmation for this change.
+
 - `tests/window-math.c`: quoted executable/argument paths, case, comma resolutions, optional `s`, tabs, false positives, duplicate options and negative monitor coordinates.
 - `tests/window-native.c`: real Win32 window creation, frame removal, exact client dimensions, cached style update, centering after resize, retained manual movement and bordered mode. This is a synthetic window, not an MSTS/dgVoodoo test.
 - `tests/window-installer.ps1`: window-only and combined installation, preserved centering preference, unchanged EXE and uninstall across base, widescreen and both LAA variants.
