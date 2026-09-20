@@ -3,7 +3,6 @@ static Hook welcome_hooks[3];
 static U welcome_widget_id;
 static WCHAR welcome_text[]=L"Welcome to Microsoft Train Simulator!\nNeko's Extended MSTS Toolkit is active. For help or feedback, visit the github repository linked in the patcher window. Enjoy!";
 static U (__fastcall *welcome_set_original)(U,U,const WCHAR*)=(void*)0x44d2f4;
-#include "resolution-note.h"
 static void welcome_layout(U id,int expanded){
  U table,widget;int area[4],text[4];
  static const int stock_area[4]={325,558,270,34},stock_text[4]={0,0,270,34};
