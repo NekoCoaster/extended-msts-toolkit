@@ -40,8 +40,8 @@ static int has_launch_option(const char *s,const char *option){
 static int has_noclamp(const char *s){return has_launch_option(s,"-noclamp");}
 static int has_toolset(const char *s){return has_launch_option(s,"-toolset");}
 /* Caller allocates input length + 32 bytes for the two optional tokens. */
-static void normalize_launch(const char *src,char *dst,int fps){
+static void normalize_launch(const char *src,char *dst,int fps,int borderless){
  int mode;if(has_toolset(src)){strcpy(dst,src);return;}mode=normalize_vm(src,dst);
- if(!mode)strcat(dst," -vm:w");
+ if(!mode&&borderless)strcat(dst," -vm:w");
  if(fps&&!has_noclamp(dst))strcat(dst," -noclamp");
 }

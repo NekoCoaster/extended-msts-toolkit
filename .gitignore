@@ -6,3 +6,14 @@ status.json
 installation.json
 
 /work/
+/build/
+/NEMT.exe
+/NEMT.exe.manifest
+
+# The bundled compiler is a deliberate source-build dependency.
+!tools/tcc/*.exe
+
+# Contributor-tool caches and interrupted source downloads.
+.venv/
+.pytest_cache/
+*.pending

@@ -1,0 +1,11 @@
+{
+  "version": "0.9.27",
+  "target": "win32-x86",
+  "source_archive": "tcc-0.9.27.tar.bz2",
+  "source_sha256": "de23af78fca90ce32dff2dd45b3432b2334740bb9bb7b05bf60fdbfc396ceb9c",
+  "source_hash_reference": "https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/t/tcc.rb",
+  "compiler_archive": "tcc-0.9.27-win32-bin.zip",
+  "compiler_archive_sha256_recorded": "02e2bfe8c272a549b15e4bfa4507bd7e05304692af1761db6c1e8e88af675651",
+  "header_overlay": "winapi-full-for-0.9.27.zip",
+  "input_verification": "FILES.sha256 records the exact retained user-tested files. It is not a claim of a new independent upstream binary/header comparison or a reproducible compiler build."
+}

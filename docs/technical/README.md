@@ -11,6 +11,7 @@ We develop and instrument the toolkit in a Windows VM, then test graphics and ga
 | Document | Scope |
 | --- | --- |
 | [Validation summary](validation.md) | First-edition evidence, known limits and unresolved coverage |
+| [Native frontend validation](native-frontend-validation.md) | Migration build/launch reports, regression checks and coverage limits |
 | [Native architecture](native-runtime.md) | Initialization, runtime ownership and mutation safety |
 | [Editors and tools](editors.md) | Toolset isolation, real viewport resizing, panel layout and audio idle stalls |
 | [Crawl physics](physics.md) | Connections, engine parameters, momentum, drag and animation |
@@ -39,3 +40,5 @@ These documents preserve development tools, experimental options, former command
 - [Direct3D initialization safeguard and laptop findings](device-initialization.md).
 
 - [Display guidance, refresh-rate cap and deep logging selection](display-options.md)
+
+- [Native frontend](native-frontend.md): XP-baseline Win32 control panel, build path and compatibility rules.

@@ -1,0 +1,69 @@
+name: Verify source and native frontend
+
+on:
+  pull_request:
+  push:
+    branches: [main, dev, feature/display-compatibility]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up contributor Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source, toolchain and corresponding source
+        shell: pwsh
+        run: |
+          python tools/prepare-commit.py --check
+          if ($LASTEXITCODE -ne 0) { throw 'Source preparation/checksums failed' }
+          python tools/verify-toolchain.py --require-source
+          if ($LASTEXITCODE -ne 0) { throw 'Bundled toolchain verification failed' }
+          git diff --check
+          if ($LASTEXITCODE -ne 0) { throw 'Whitespace check failed' }
+      - name: Build with the bundled x86 compiler
+        shell: cmd
+        run: |
+          call build.bat
+          if errorlevel 1 exit /b 1
+      - name: Run native regression tests
+        shell: cmd
+        run: |
+          call "TEST NEMT.bat" --ci
+          if errorlevel 1 exit /b 1
+      - name: Run source guards and repository-tool regressions
+        shell: pwsh
+        run: |
+          python tests/native-frontend.py
+          if ($LASTEXITCODE -ne 0) { throw 'Frontend source guards failed' }
+          python tests/repository-tools.py
+          if ($LASTEXITCODE -ne 0) { throw 'Repository-tool regressions failed' }
+      - name: Audit frontend and committed runtime imports
+        shell: pwsh
+        run: |
+          python tools/check-win32-imports.py build/NEMT.exe
+          if ($LASTEXITCODE -ne 0) { throw 'Frontend PE import audit failed' }
+          python tools/check-win32-imports.py runtime/DINPUT.dll
+          if ($LASTEXITCODE -ne 0) { throw 'Runtime PE import audit failed' }
+      - name: Smoke-test release packaging without modifying source
+        shell: pwsh
+        run: |
+          python tools/package.py
+          if ($LASTEXITCODE -ne 0) { throw 'Release packaging failed' }
+          python tools/source-checksums.py --check
+          if ($LASTEXITCODE -ne 0) { throw 'Packaging modified source inputs' }
+          git diff --exit-code
+          if ($LASTEXITCODE -ne 0) { throw 'Verification dirtied tracked files' }
+          $unexpected = @(git ls-files --others --exclude-standard)
+          if ($unexpected.Count -ne 0) { throw "Unexpected untracked files: $unexpected" }

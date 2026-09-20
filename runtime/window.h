@@ -1,5 +1,6 @@
 /* Native window module. Only the game's IAT is redirected; dgVoodoo is chained. */
 #include "window_math.h"
+#include "display-monitor.h"
 typedef LPSTR (WINAPI *CmdLineFn)(void);
 typedef BOOL (WINAPI *WindowPosFn)(HWND,HWND,int,int,int,int,UINT);
 typedef BOOL (WINAPI *ShowFn)(HWND,int);
@@ -31,7 +32,7 @@ static void frame_extent(HWND h,int *w,int *v){
  *w=r.right-r.left;*v=r.bottom-r.top;
 }
 static void center_for(HWND h,int width,int height,int *x,int *y){
- MONITORINFO info;HMONITOR monitor=MonitorFromWindow(h,MONITOR_DEFAULTTONEAREST);RECT r;
+ MONITORINFO info;HMONITOR monitor=window_mode==2?nemt_selected_monitor(window_monitor):MonitorFromWindow(h,MONITOR_DEFAULTTONEAREST);RECT r;
  info.cbSize=sizeof(info);
  if(GetMonitorInfoA(monitor,&info))r=window_mode==2?info.rcMonitor:info.rcWork;
  else{r.left=r.top=0;r.right=GetSystemMetrics(SM_CXSCREEN);r.bottom=GetSystemMetrics(SM_CYSCREEN);}
@@ -43,7 +44,9 @@ static BOOL WINAPI toolkit_window_pos(HWND h,HWND after,int x,int y,int cx,int c
  window_busy=1;GetWindowRect(h,&old);
  if(window_mode==2){frame_extent(h,&fw,&fh);changed=strip_frame(h);if(changed){frame_extent(h,&nw,&nh);if(!(flags&SWP_NOSIZE)){cx+=nw-fw;cy+=nh-fh;}else{cx=old.right-old.left+nw-fw;cy=old.bottom-old.top+nh-fh;flags&=~SWP_NOSIZE;}flags|=SWP_FRAMECHANGED;}}
  resize=!(flags&SWP_NOSIZE)&&(cx!=old.right-old.left||cy!=old.bottom-old.top);
- if(arranged_window!=h||changed||resize){
+ /* Borderless is anchored, including same-size menu/simulator placement calls.
+    Bordered mode still permits movement between resize operations. */
+ if(window_mode==2||arranged_window!=h||changed||resize){
   if(flags&SWP_NOSIZE){cx=old.right-old.left;cy=old.bottom-old.top;}
   if(cx>0&&cy>0){center_for(h,cx,cy,&x,&y);flags&=~SWP_NOMOVE;arranged_window=h;}
  }
@@ -79,6 +82,8 @@ static LPSTR WINAPI toolkit_command_line(void){
     /* Toolset has its own windows and frame loop. Game launch defaults,
        border removal, timing and gameplay UI hooks must not reach editors. */
     if(!toolset_mode){
+    if(config_valid)apply_mouse_compatibility();
+    if(config_valid && !apply_high_resolution())MessageBoxW(NULL,L"Unable to support high-resolution compatibility on this Direct3D version. If MSTS fails above 2048 pixels, use a lower resolution or see the high-resolution guide in NEMT.",L"NEMT high-resolution compatibility",MB_OK|MB_ICONWARNING);
     if(config_valid)install_welcome_hooks();
     if(config_valid)track_check_startup(root);
     if(config_valid&&unlock_fps&&!install_timing_hooks()){
@@ -87,7 +92,7 @@ static LPSTR WINAPI toolkit_command_line(void){
     }
     normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+32);
     if(normalized_command_line){
-     if(config_valid)normalize_launch(actual,normalized_command_line,unlock_fps);else strcpy(normalized_command_line,actual);
+     if(config_valid)normalize_launch(actual,normalized_command_line,unlock_fps,window_features);else strcpy(normalized_command_line,actual);
      requested_window_mode=normalize_vm(normalized_command_line,NULL);
      if(config_valid)install_hud_hook();
      if(config_valid&&!install_movie_hook())MessageBoxW(NULL,L"The startup movie fixes could not be installed. Original movie behavior remains enabled.",L"NEMT feature unavailable",MB_OK|MB_ICONWARNING);
