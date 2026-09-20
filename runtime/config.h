@@ -2,6 +2,7 @@
 static int write_status_json,prevent_end,unlock_cameras,crawl_requested,config_valid,window_features,center_windowed,verbose_loading,startup_log,unlock_fps,crawl_hud;
 static int crawl_hud_left,cab_needles,background_audio,ignore_red_signal,restore_movie_focus,skip_startup_movie;
 static int counter_tilt,prefer_pcores,limit_vsync;
+static char window_monitor[32];
 static int editor_windows,editor_free_tools,editor_idle_audio,editor_swap_keys,editor_unlimited_pan;
 #include "editor_keys.h"
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
@@ -30,6 +31,9 @@ static void read_config(void){
  ignore_red_signal=read_bool(path,L"Activity",L"IgnoreRedSignal");
  window_features=read_bool(path,L"Window",L"Enabled");
  center_windowed=read_bool(path,L"Window",L"CenterWindowed");
+ {WCHAR monitor[32];int i;GetPrivateProfileStringW(L"Window",L"Monitor",L"",monitor,32,path);
+  for(i=0;i<31 && monitor[i] && monitor[i]<128;i++)window_monitor[i]=(char)monitor[i];
+  window_monitor[i]=0;if(monitor[i])window_monitor[0]=0;}
  editor_windows=read_bool(path,L"Editors",L"ResizableViewports");
  editor_free_tools=read_bool(path,L"Editors",L"FreeToolWindows");
  editor_idle_audio=read_bool(path,L"Editors",L"SmoothIdleAudio");

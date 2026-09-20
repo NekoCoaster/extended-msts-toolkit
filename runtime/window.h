@@ -1,5 +1,6 @@
 /* Native window module. Only the game's IAT is redirected; dgVoodoo is chained. */
 #include "window_math.h"
+#include "display-monitor.h"
 typedef LPSTR (WINAPI *CmdLineFn)(void);
 typedef BOOL (WINAPI *WindowPosFn)(HWND,HWND,int,int,int,int,UINT);
 typedef BOOL (WINAPI *ShowFn)(HWND,int);
@@ -31,7 +32,7 @@ static void frame_extent(HWND h,int *w,int *v){
  *w=r.right-r.left;*v=r.bottom-r.top;
 }
 static void center_for(HWND h,int width,int height,int *x,int *y){
- MONITORINFO info;HMONITOR monitor=MonitorFromWindow(h,MONITOR_DEFAULTTONEAREST);RECT r;
+ MONITORINFO info;HMONITOR monitor=window_mode==2?nemt_selected_monitor(window_monitor):MonitorFromWindow(h,MONITOR_DEFAULTTONEAREST);RECT r;
  info.cbSize=sizeof(info);
  if(GetMonitorInfoA(monitor,&info))r=window_mode==2?info.rcMonitor:info.rcWork;
  else{r.left=r.top=0;r.right=GetSystemMetrics(SM_CXSCREEN);r.bottom=GetSystemMetrics(SM_CYSCREEN);}

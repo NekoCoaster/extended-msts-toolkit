@@ -1,5 +1,15 @@
 # Windowed and borderless mode
 
+The monitor dropdown beside borderless mode selects the target display. The
+default follows the primary display; explicit choices are saved as Windows
+device names in `[Window] Monitor` (for example `\\.\DISPLAY2`). A disconnected
+selection remains saved and is shown as unavailable in the panel; the runtime
+falls back to the primary display. Windows can rename devices after topology or
+driver changes, so reselect the display if that happens. Placement preserves
+the game's requested client size and supports negative monitor coordinates.
+The selector affects borderless mode only; framed windows retain nearest-monitor
+centering. Changes take effect when MSTS restarts.
+
 The **Enable borderless windowed mode** checkbox controls the border of an ordinary MSTS window. Configuration is in `NEMT/settings.ini`; restart after applying changes.
 
 | Launch | Checkbox on | Checkbox off |

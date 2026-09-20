@@ -172,9 +172,11 @@ int main(void) {
     join_path(ini,fixture,"NEMT\\settings.ini");join_path(manifest,fixture,"NEMT\\installation.json");
     join_path(status,fixture,"NEMT\\status.json");join_path(proxy,fixture,"DINPUT.dll");
     settings_defaults(&s);s.prefer_pcores=1;s.crawl=1;s.prevent_end=1;s.counter_tilt=1;s.strength=77;s.hud_left=0;
+    strcpy(s.monitor,"\\\\.\\DISPLAY99");
     CHECK(install_settings(&info,&s,0,err,sizeof(err)));
     CHECK(load_selection_settings(&info,&loaded,err,sizeof(err)));
     CHECK(loaded.prefer_pcores && loaded.crawl && loaded.strength==77 && !loaded.hud_left);
+    CHECK(!strcmp(loaded.monitor,s.monitor));
     /* A partial old INI must not clear CenterWindowed's true default. */
     CHECK(write_all(ini,"[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n",(DWORD)strlen("[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n")));
     load_settings(ini,&loaded);CHECK(loaded.center_windowed && loaded.window_features);
@@ -194,6 +196,16 @@ int main(void) {
     CHECK(g_main!=NULL);CHECK(create_ui());ShowWindow(g_main,SW_SHOWNORMAL);UpdateWindow(g_main);SetActiveWindow(g_main);g_info=info;g_cpu_supported=0;
     cosmetic_gui_checks();
     settings_defaults(&s);settings_to_ui(&s);
+    CHECK(g_monitor_count>=2);
+    CHECK(!strcmp(panel_selected_monitor(),""));
+    strcpy(s.monitor,"\\\\.\\DISPLAY99");settings_to_ui(&s);
+    CHECK(!strcmp(panel_selected_monitor(),s.monitor));
+    CHECK(nemt_selected_monitor(s.monitor)==nemt_selected_monitor(""));
+    SendMessageA(g_main,WM_DISPLAYCHANGE,0,0);CHECK(!strcmp(panel_selected_monitor(),s.monitor));
+    SendDlgItemMessageA(g_main,IDC_WINDOW,BM_CLICK,0,0);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_MONITOR)));
+    SendDlgItemMessageA(g_main,IDC_WINDOW,BM_CLICK,0,0);CHECK(IsWindowEnabled(GetDlgItem(g_main,IDC_MONITOR)));
+    ui_to_settings(&loaded);CHECK(!strcmp(loaded.monitor,s.monitor));
+    GetWindowRect(GetDlgItem(g_main,IDC_WINDOW),&a);GetWindowRect(GetDlgItem(g_main,IDC_MONITOR),&b);CHECK(a.right<=b.left);
     CHECK(GetWindowLongA(GetDlgItem(g_main,IDC_BROWSE),GWL_STYLE)&WS_TABSTOP);
     CHECK(LOWORD(SendMessageA(g_main,DM_GETDEFID,0,0))==IDC_APPLY);
     GetWindowRect(GetDlgItem(g_main,IDC_UNLOCKFPS),&a);GetWindowRect(GetDlgItem(g_main,IDC_VSYNC),&b);CHECK(a.right<=b.left);

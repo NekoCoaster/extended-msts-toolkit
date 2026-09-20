@@ -34,7 +34,7 @@ enum {
  IDC_PCORES=200, IDC_SKIPMOVIE, IDC_WINDOW, IDC_UNLOCKFPS, IDC_VSYNC, IDC_VERBOSE, IDC_CAB,
  IDC_BACKGROUND, IDC_REDSIGNAL, IDC_EDITORWINDOWS, IDC_EDITORTOOLS, IDC_EDITORAUDIO,
  IDC_EDITORKEYS, IDC_EDITORPAN, IDC_TIMEOUT, IDC_CAMERA, IDC_CRAWL, IDC_COUNTERTILT,
- IDC_STRENGTH, IDC_STRENGTHVALUE, IDC_HUDLEFT, IDC_LOGGING,
+ IDC_STRENGTH, IDC_STRENGTHVALUE, IDC_HUDLEFT, IDC_LOGGING, IDC_MONITOR,
  IDC_TITLE=400, IDC_MESSAGE, IDC_CRAWLHINT, IDC_STRENGTHLABEL, IDC_ZERO, IDC_HUNDRED,
  IDC_ANCHORLABEL, IDC_SPACE, IDC_CREDIT, IDC_GITHUB, IDC_WIDENOTE, IDC_WIDEDOWNLOAD, IDC_WIDEGUIDE
 };
@@ -51,6 +51,7 @@ typedef struct {
 } MstsInfo;
 
 #include "settings_model.h"
+#include "../runtime/display-monitor.h"
 
 static HINSTANCE g_instance;
 static HWND g_main, g_path, g_status, g_strength, g_message;
@@ -150,6 +151,7 @@ static void load_settings(const char*path,Settings*s){char v[64];settings_defaul
  GB("Editors","ResizableViewports",editor_windows);GB("Editors","FreeToolWindows",editor_tools);GB("Editors","SmoothIdleAudio",editor_audio);GB("Editors","SwapArrowKeys",editor_keys);GB("Editors","UnlimitedMousePan",editor_pan);
  GB("Derailment","PreventActivityEnd",prevent_end);GB("Derailment","UnlockCameras",unlock_cameras);GB("Derailment","EnableCrawl",crawl);GB("Derailment","CounterTilt",counter_tilt);GB("Diagnostics","WriteStatusJson",write_status);
 #undef GB
+ ini_get(path,"Window","Monitor","",s->monitor,sizeof(s->monitor));
  ini_get(path,"Derailment","CrawlStrength","10",v,sizeof(v));s->strength=atoi(v);if(s->strength<0||s->strength>100)s->strength=10;
  ini_get(path,"Diagnostics","CrawlHUDAnchor","BottomLeft",v,sizeof(v));s->hud_left=lstrcmpiA(v,"BottomRight")!=0;
  ini_get(path,"Startup","MaxLogSizeKB","8192",v,sizeof(v));s->max_log_kb=atoi(v);if(s->max_log_kb<4||s->max_log_kb>65536)s->max_log_kb=8192;
@@ -167,7 +169,10 @@ static int write_settings(const char*path,const Settings*s){char b[8192];int n=_
  "[Editors]\r\nResizableViewports=%s\r\nFreeToolWindows=%s\r\nSmoothIdleAudio=%s\r\nUnlimitedMousePan=%s\r\nSwapArrowKeys=%s\r\nRE_CAM_FORWARD=%s\r\nRE_CAM_BACKWARD=%s\r\nRE_CAM_LEFT=%s\r\nRE_CAM_RIGHT=%s\r\nRE_CAM_UP=%s\r\nRE_CAM_DOWN=%s\r\n",
  bt(s->prefer_pcores),bt(s->verbose_loading),bt(s->startup_log),bt(s->limit_vsync),bt(s->unlock_fps),bt(s->skip_movie),bt(s->skip_movie),s->max_log_kb,s->max_backup_logs,
  bt(s->window_features),bt(s->center_windowed),bt(s->prevent_end),bt(s->unlock_cameras),bt(s->crawl),s->strength,s->derail_key,bt(s->counter_tilt),bt(s->write_status),bt(s->crawl),s->hud_left?"BottomLeft":"BottomRight",bt(s->cab_needles),bt(s->background_audio),bt(s->ignore_red_signal),bt(s->editor_windows),bt(s->editor_tools),bt(s->editor_audio),bt(s->editor_pan),bt(s->editor_keys),s->key_forward,s->key_backward,s->key_left,s->key_right,s->key_up,s->key_down);
- if(n<0||n>=(int)sizeof(b))return 0;return write_all(path,b,(DWORD)n);}
+ if(n<0||n>=(int)sizeof(b))return 0;
+ if(strchr(s->monitor,'\r')||strchr(s->monitor,'\n'))return 0;
+ if(!write_all(path,b,(DWORD)n))return 0;
+ return WritePrivateProfileStringA("Window","Monitor",s->monitor,path);}
 
 /* ---------- installation ---------- */
 /* Read and validate ownership before using either the GUI state or installer.
@@ -224,6 +229,7 @@ static int load_selection_settings(const MstsInfo *info,Settings *s,char *err,si
         load_settings(ini,&extra);
         s->prefer_pcores=extra.prefer_pcores;
         s->skip_movie=extra.skip_movie;
+        lstrcpynA(s->monitor,extra.monitor,sizeof(s->monitor));
         /* A missing key retains the manifest fallback, unlike a false key. */
         {char value[64];ini_get(ini,"Startup","LimitToVSync",bt(s->limit_vsync),value,sizeof(value));s->limit_vsync=true_text(value);}
         s->counter_tilt=extra.counter_tilt;
@@ -456,7 +462,7 @@ static LRESULT CALLBACK child_proc(HWND w,UINT m,WPARAM wp,LPARAM lp) {
         g_last_focus=w;ensure_focus_visible(w);return result;
     }
     if(m==WM_MOUSEWHEEL) {
-        if(c->id!=IDC_HUDLEFT || !SendMessageA(w,CB_GETDROPPEDSTATE,0,0)) {
+        if((c->id!=IDC_HUDLEFT && c->id!=IDC_MONITOR) || !SendMessageA(w,CB_GETDROPPEDSTATE,0,0)) {
             SendMessageA(g_main,m,wp,lp);return 0;
         }
     }
@@ -516,12 +522,42 @@ static void set_valid_controls(int on) {
     for(i=0;i<(int)(sizeof(ids)/sizeof(ids[0]));++i) enable(ids[i],on);
     enable(IDC_PCORES,on && g_cpu_supported);enable(IDC_CAB,on && g_info.widescreen);
     enable(IDC_VSYNC,on && check_get(IDC_UNLOCKFPS));
+    enable(IDC_MONITOR,on && check_get(IDC_WINDOW));
     enable(IDC_BROWSE,!g_busy);enable(IDC_CLOSE,!g_busy);
     refresh_crawl();
+}
+static char g_monitor_names[34][32];
+static int g_monitor_count;
+static BOOL CALLBACK panel_monitor(HMONITOR monitor,HDC dc,LPRECT rect,LPARAM data){
+ MONITORINFOEXA info;char label[160];int index;
+ if(g_monitor_count>=33)return FALSE;
+ memset(&info,0,sizeof(info));info.mi.cbSize=sizeof(info);
+ if(!GetMonitorInfoA(monitor,(MONITORINFO*)&info))return TRUE;
+ index=g_monitor_count++;
+ lstrcpynA(g_monitor_names[index],info.szDevice,32);
+ wsprintfA(label,"%s - %ld x %ld%s",info.szDevice+4,info.mi.rcMonitor.right-info.mi.rcMonitor.left,
+  info.mi.rcMonitor.bottom-info.mi.rcMonitor.top,(info.mi.dwFlags&MONITORINFOF_PRIMARY)?" (Primary)":"");
+ SendDlgItemMessageA(g_main,IDC_MONITOR,CB_ADDSTRING,0,(LPARAM)label);return TRUE;
+}
+static void populate_monitors(const char *saved){
+ char device[32];int i,selected=0;lstrcpynA(device,saved,32);
+ SendDlgItemMessageA(g_main,IDC_MONITOR,CB_RESETCONTENT,0,0);
+ memset(g_monitor_names,0,sizeof(g_monitor_names));g_monitor_count=1;
+ SendDlgItemMessageA(g_main,IDC_MONITOR,CB_ADDSTRING,0,(LPARAM)"Primary display (automatic)");
+ EnumDisplayMonitors(NULL,NULL,panel_monitor,0);
+ for(i=1;i<g_monitor_count;i++)if(!lstrcmpiA(device,g_monitor_names[i]))selected=i;
+ if(*device && !selected){selected=g_monitor_count++;lstrcpynA(g_monitor_names[selected],device,32);
+  SendDlgItemMessageA(g_main,IDC_MONITOR,CB_ADDSTRING,0,(LPARAM)"Saved display disconnected - use primary");}
+ SendDlgItemMessageA(g_main,IDC_MONITOR,CB_SETCURSEL,selected,0);
+}
+static const char *panel_selected_monitor(void){
+ int index=(int)SendDlgItemMessageA(g_main,IDC_MONITOR,CB_GETCURSEL,0,0);
+ return index>=0 && index<g_monitor_count?g_monitor_names[index]:"";
 }
 static void settings_to_ui(const Settings *s) {
     g_loading=1;
     check_set(IDC_PCORES,s->prefer_pcores);check_set(IDC_SKIPMOVIE,s->skip_movie);
+    populate_monitors(s->monitor);
     check_set(IDC_WINDOW,s->window_features);check_set(IDC_UNLOCKFPS,s->unlock_fps);
     check_set(IDC_VSYNC,s->limit_vsync);check_set(IDC_VERBOSE,s->verbose_loading);
     check_set(IDC_LOGGING,s->startup_log);check_set(IDC_CAB,s->cab_needles);
@@ -542,6 +578,7 @@ static void ui_to_settings(Settings *s) {
     /* Preserve manually configured, non-GUI options. A disabled P-core box
      * must not silently turn an existing preference off on another machine. */
     if(g_cpu_supported) s->prefer_pcores=check_get(IDC_PCORES);
+    lstrcpynA(s->monitor,panel_selected_monitor(),sizeof(s->monitor));
     s->skip_movie=check_get(IDC_SKIPMOVIE);s->window_features=check_get(IDC_WINDOW);
     s->unlock_fps=check_get(IDC_UNLOCKFPS);s->limit_vsync=s->unlock_fps && check_get(IDC_VSYNC);
     s->verbose_loading=check_get(IDC_VERBOSE);s->startup_log=check_get(IDC_LOGGING);
@@ -731,8 +768,10 @@ static LRESULT CALLBACK wndproc(HWND w,UINT m,WPARAM wp,LPARAM lp) {
         else if(id==IDC_CRAWL) {if(check_get(IDC_CRAWL) && !g_loading) check_set(IDC_TIMEOUT,1);refresh_crawl();}
         else if(id==IDC_TIMEOUT && !check_get(IDC_TIMEOUT) && !g_loading) {check_set(IDC_CRAWL,0);refresh_crawl();}
         else if(id==IDC_UNLOCKFPS) enable(IDC_VSYNC,g_info.valid && check_get(IDC_UNLOCKFPS));
+        else if(id==IDC_WINDOW) enable(IDC_MONITOR,g_info.valid && check_get(IDC_WINDOW));
         return 0;
     }
+    case WM_DISPLAYCHANGE:if(g_ui_ready)populate_monitors(panel_selected_monitor());return 0;
     case WM_CLOSE:if(!g_busy) DestroyWindow(w);return 0;
     case WM_DESTROY:PostQuitMessage(0);return 0;
     }
@@ -753,7 +792,7 @@ static int create_ui(void) {
     const char *labels[]={
         "Prefer P-cores (Only applicable to CPUs with hybrid architecture, e.g. Intel P && E cores)",
         "Skip startup movie (fixes keyboard control issue when loading into simulator)",
-        "Enable borderless windowed mode for the main game",
+        "Enable borderless windowed mode",
         "Unlock FPS limit (corrected timing; potentially unstable)",
         "Show verbose startup and activity loading details",
         "Fix cabview dials for widescreen displays",
@@ -778,9 +817,10 @@ static int create_ui(void) {
     g_status=ADD("STATIC","Choose or drop your train.exe.",SS_LEFT|SS_NOPREFIX,24,82,712,34,IDC_STATUS);
     SendMessageA(g_status,WM_SETFONT,(WPARAM)g_bold,TRUE);SetWindowLongA(g_status,GWL_USERDATA,-1);
     for(i=0;i<(int)(sizeof(ids)/sizeof(ids[0]));++i,y+=22) {
-        int width=ids[i]==IDC_UNLOCKFPS?510:(ids[i]==IDC_CAB?308:712);
+        int width=ids[i]==IDC_WINDOW?310:(ids[i]==IDC_UNLOCKFPS?510:(ids[i]==IDC_CAB?308:712));
         ADD("BUTTON",labels[i],BS_AUTOCHECKBOX|WS_TABSTOP,24,y,width,22,ids[i]);
         if(ids[i]==IDC_UNLOCKFPS) ADD("BUTTON","Limit FPS to vsync",BS_AUTOCHECKBOX|WS_TABSTOP,544,y,192,22,IDC_VSYNC);
+        if(ids[i]==IDC_WINDOW)ADD("COMBOBOX","",CBS_DROPDOWNLIST|WS_TABSTOP|WS_VSCROLL,340,y,396,180,IDC_MONITOR);
         if(ids[i]==IDC_CAB) {
             ADD("STATIC","Widescreen patch required.",SS_LEFT|SS_NOPREFIX,340,y+2,175,20,IDC_WIDENOTE);
             c=ADD("STATIC","Download",SS_NOTIFY|WS_TABSTOP,518,y+2,73,20,IDC_WIDEDOWNLOAD);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
