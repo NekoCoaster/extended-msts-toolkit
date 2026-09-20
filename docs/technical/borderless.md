@@ -14,14 +14,14 @@ The **Enable borderless windowed mode** checkbox controls the border of an ordin
 
 | Launch | Checkbox on | Checkbox off |
 |---|---|---|
-| `train.exe` | Borderless window | Bordered window |
+| `train.exe` | Borderless window | Native MSTS default (no mode override) |
 | `train.exe -vm:w` | Borderless window | Bordered window |
 | `train.exe -vm:w,1280,720,32` | Borderless 1280×720 client area | Bordered 1280×720 client area |
 | `train.exe -vm:1280,720,32` | Fullscreen | Fullscreen |
 
-Use a resolution supported by the installation and display. MSTS has no native `-vm:f` token: its parser recognizes `w` for windowed, and resolution-only arguments leave the native fullscreen mode selected. An explicit fullscreen request takes precedence over windowed arguments. Existing width, height and bit-depth values are preserved. With no recognized mode, NEMT supplies `-vm:w`. The former `-vm:bw` alias is unsupported.
+Use a resolution supported by the installation and display. MSTS has no native `-vm:f` token: its parser recognizes `w` for windowed, and resolution-only arguments leave the native fullscreen mode selected. An explicit fullscreen request takes precedence over windowed arguments. Existing width, height and bit-depth values are preserved. With no recognized mode, NEMT supplies `-vm:w` only when borderless mode is enabled. The former `-vm:bw` alias is unsupported.
 
-`[Window] Enabled=true` enables border removal. `CenterWindowed=true` centers normal framed windows; borderless windows are always centered. A smaller borderless resolution is centered, not stretched to fill the monitor. The no-argument windowed default applies while NEMT is installed, even with border removal disabled.
+`[Window] Enabled=true` enables border removal. `CenterWindowed=true` centers normal framed windows; borderless windows are always centered. A smaller borderless resolution is centered, not stretched to fill the monitor. With border removal disabled, NEMT does not add a windowed-mode argument; the separate centering preference does not change that decision.
 
 ## Implementation and checks
 

@@ -92,7 +92,7 @@ static LPSTR WINAPI toolkit_command_line(void){
     }
     normalized_command_line=HeapAlloc(GetProcessHeap(),0,length+32);
     if(normalized_command_line){
-     if(config_valid)normalize_launch(actual,normalized_command_line,unlock_fps);else strcpy(normalized_command_line,actual);
+     if(config_valid)normalize_launch(actual,normalized_command_line,unlock_fps,window_features);else strcpy(normalized_command_line,actual);
      requested_window_mode=normalize_vm(normalized_command_line,NULL);
      if(config_valid)install_hud_hook();
      if(config_valid&&!install_movie_hook())MessageBoxW(NULL,L"The startup movie fixes could not be installed. Original movie behavior remains enabled.",L"NEMT feature unavailable",MB_OK|MB_ICONWARNING);

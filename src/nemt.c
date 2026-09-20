@@ -669,6 +669,11 @@ static void recommended(void) {
 static int any_feature_enabled(const Settings *s) {
     return s->high_resolution||s->prefer_pcores||s->skip_movie||s->window_features||s->unlock_fps||s->verbose_loading||s->startup_log||s->cab_needles||s->background_audio||s->ignore_red_signal||s->editor_windows||s->editor_tools||s->editor_audio||s->editor_keys||s->editor_pan||s->prevent_end||s->unlock_cameras||s->crawl;
 }
+static const char *saved_settings_message(int remove,int borderless){
+    return remove?"Toolkit removed. Widescreen and LAA were preserved.":
+        borderless?"Settings saved. MSTS now defaults to windowed mode unless specified through parameter arguments":
+        "Settings saved. MSTS uses its normal launch mode. Add -vm:w to launch in windowed mode.";
+}
 static void do_save(int remove) {
     Settings s,effective;char err[512],selected[MAX_PATH];int ok;
     if(!g_info.valid || g_busy) return;
@@ -682,7 +687,7 @@ static void do_save(int remove) {
     if(ok) {
         load_selection(selected);
         /* Reload FIRST; otherwise the success message is immediately lost. */
-        if(g_info.valid) message_text(remove?"Toolkit removed. Widescreen and LAA were preserved.":"Settings saved. MSTS now defaults to windowed mode unless specified through parameter arguments",1);
+        if(g_info.valid) message_text(saved_settings_message(remove,s.window_features),1);
     } else message_text(err,0);
     set_valid_controls(g_info.valid);
     ensure_focus_visible(g_message);

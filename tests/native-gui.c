@@ -241,6 +241,9 @@ int main(void) {
     GetWindowRect(GetDlgItem(g_main,IDC_WINDOW),&a);GetWindowRect(GetDlgItem(g_main,IDC_MONITOR),&b);CHECK(a.right<=b.left);
     CHECK(GetWindowLongA(GetDlgItem(g_main,IDC_BROWSE),GWL_STYLE)&WS_TABSTOP);
     CHECK(LOWORD(SendMessageA(g_main,DM_GETDEFID,0,0))==IDC_APPLY);
+    CHECK(!strcmp(saved_settings_message(0,1),"Settings saved. MSTS now defaults to windowed mode unless specified through parameter arguments"));
+    CHECK(!strcmp(saved_settings_message(0,0),"Settings saved. MSTS uses its normal launch mode. Add -vm:w to launch in windowed mode."));
+    CHECK(!strcmp(saved_settings_message(1,1),saved_settings_message(1,0)));
     GetWindowRect(GetDlgItem(g_main,IDC_UNLOCKFPS),&a);GetWindowRect(GetDlgItem(g_main,IDC_VSYNC),&b);CHECK(a.right<=b.left);
     GetWindowRect(GetDlgItem(g_main,IDC_MONITOR),&a);CHECK(a.left==b.left);
     get_text(IDC_VSYNC,text,sizeof(text));CHECK(!strcmp(text,"Cap FPS to Monitor Refresh Rate"));

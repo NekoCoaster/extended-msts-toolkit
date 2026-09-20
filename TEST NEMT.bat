@@ -36,6 +36,10 @@ if errorlevel 1 goto failed
 if errorlevel 1 goto failed
 build\mouse-input-test.exe
 if errorlevel 1 goto failed
+"%TCC%" -o build\window-math-test.exe tests\window-math.c
+if errorlevel 1 goto failed
+build\window-math-test.exe
+if errorlevel 1 goto failed
 echo All native regression tests passed.
 if /i not "%~1"=="--ci" pause
 exit /b 0
