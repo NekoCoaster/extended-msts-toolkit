@@ -36,6 +36,8 @@ Unrecognized implementations must stand down with an explanatory startup notice.
 - Following b98ffac, in-game clicking, dragging and activity loading work with
   no mice connected.
 - Following 8349087, the window remains on the selected secondary monitor.
+- Following ddddcdb, the user confirmed the conditional windowed default and
+  saved-settings messages work as intended, and approved proceeding with the PR.
 - The final wording/alignment update passes 299 native GUI/installer checks,
   the remaining native regression suite, source guards, repository-tool checks
   and the XP-baseline frontend import audit. The frontend build succeeded.
