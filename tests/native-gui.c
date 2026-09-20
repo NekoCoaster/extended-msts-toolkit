@@ -223,7 +223,7 @@ int main(void) {
     {char graphics[MAX_PATH];join_path(graphics,fixture,"D3DIM700.dll");
      CHECK(write_all(graphics,"unknown",7));CHECK(panel_graphics_file()==2);
      refresh_display_guidance(1);CHECK(display_notices==3);
-     get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable high-res support (Existing D3D wrapper detected. e.g. dgVoodoo2, etc)"));
+     get_text(IDC_HIGHRES,text,sizeof(text));CHECK(!strcmp(text,"Enable high-res support (Existing D3D wrapper detected. e.g dgVoodoo2, D3DIM700.DLL, etc)"));
      CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
      set_valid_controls(1);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));
      display_width=1920;refresh_display_guidance(0);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_HIGHRES)));

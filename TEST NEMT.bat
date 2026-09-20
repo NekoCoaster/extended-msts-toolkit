@@ -32,6 +32,10 @@ if errorlevel 1 goto failed
 if errorlevel 1 goto failed
 build\window-native-test.exe
 if errorlevel 1 goto failed
+"%TCC%" -DWINVER=0x0501 -D_WIN32_WINNT=0x0501 -o build\mouse-input-test.exe tests\mouse-compatibility.c -ladvapi32 -luser32
+if errorlevel 1 goto failed
+build\mouse-input-test.exe
+if errorlevel 1 goto failed
 echo All native regression tests passed.
 if /i not "%~1"=="--ci" pause
 exit /b 0

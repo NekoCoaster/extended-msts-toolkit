@@ -80,6 +80,7 @@ static LPSTR WINAPI toolkit_command_line(void){
     /* Toolset has its own windows and frame loop. Game launch defaults,
        border removal, timing and gameplay UI hooks must not reach editors. */
     if(!toolset_mode){
+    if(config_valid)apply_mouse_compatibility();
     if(config_valid && !apply_high_resolution())MessageBoxW(NULL,L"Unable to support high-resolution compatibility on this Direct3D version. If MSTS fails above 2048 pixels, use a lower resolution or see the high-resolution guide in NEMT.",L"NEMT high-resolution compatibility",MB_OK|MB_ICONWARNING);
     if(config_valid)install_welcome_hooks();
     if(config_valid)track_check_startup(root);

@@ -578,7 +578,7 @@ static void refresh_display_guidance(int popup){
  panel_monitor_info(nemt_selected_monitor(check_get(IDC_WINDOW)?panel_selected_monitor():""),&info);
  width=info.rcMonitor.right-info.rcMonitor.left;height=info.rcMonitor.bottom-info.rcMonitor.top;
  large=nemt_large_display(width,height);external=panel_graphics_file();
- if(external)lstrcpyA(text,"Enable high-res support (Existing D3D wrapper detected. e.g. dgVoodoo2, etc)");
+ if(external)lstrcpyA(text,"Enable high-res support (Existing D3D wrapper detected. e.g dgVoodoo2, D3DIM700.DLL, etc)");
  else if(large)lstrcpyA(text,"Enable High-res support (Recommended)");
  else lstrcpyA(text,"Enable High-res support (Optional)");
  SetDlgItemTextA(g_main,IDC_HIGHRES,text);
