@@ -1,6 +1,16 @@
+> [!IMPORTANT]
+> ## Disclaimer
+> **Neko's Extended MSTS Toolkit (NEMT)** is an independent collection of enhancements, fixes, tools, and patches for Microsoft's Train Simulator (2001), developed by one guy with far too much time on his hands, whose ADHD has resulted in significantly more features being added over time—well beyond the original goal of removing MSTS's derailment timer.
+>
+> **NEMT is not affiliated with, derived from, or associated with any other similarly named toolkit, toolset, utility, project, or product.** Any similarity in names does not imply a connection or endorsement.
+>
+> This statement does not override the acknowledgements and licenses for third-party components explicitly documented in [THIRD-PARTY.md](THIRD-PARTY.md).
+
 # Neko's Extended MSTS Toolkit — NEMT
 
-**Where we're going, we don't need rails.**
+**\*MSTS Bin development stops\***
+
+**"Fine, I'll do it myself."**
 
 NEMT adds optional gameplay and quality-of-life features to Microsoft Train Simulator: borderless windows, clearer loading messages, widescreen cab-dial corrections, editor improvements, and control of connected locomotives after derailment. In this new version, the patcher window is now a small native 32-bit Win32 program written in C, eliminating the need for modern framework bloats, while self-containing everything tht it needs on it's own to compile and patch MSTS.
 
