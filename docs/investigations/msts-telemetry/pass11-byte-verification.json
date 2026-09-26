@@ -1,0 +1,230 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass11",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00404c90",
+      "instructions": 12,
+      "bytes": 35,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00494850",
+      "instructions": 1512,
+      "bytes": 6990,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "00494bc1",
+          "expected": "e891c7f6ff",
+          "actual": "e82e573a02"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "0049ef77",
+      "instructions": 133,
+      "bytes": 373,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004a0010",
+      "instructions": 96,
+      "bytes": 267,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005157b0",
+      "instructions": 96,
+      "bytes": 373,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00515925",
+      "instructions": 79,
+      "bytes": 232,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005859e0",
+      "instructions": 70,
+      "bytes": 219,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005902ef",
+      "instructions": 1441,
+      "bytes": 5901,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00591aa6",
+      "instructions": 999,
+      "bytes": 2883,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00595f2d",
+      "instructions": 127,
+      "bytes": 413,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00596dc8",
+      "instructions": 65,
+      "bytes": 234,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a34b8",
+      "instructions": 27,
+      "bytes": 87,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a38f7",
+      "instructions": 8,
+      "bytes": 21,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a3941",
+      "instructions": 584,
+      "bytes": 2177,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a41c2",
+      "instructions": 752,
+      "bytes": 3524,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a52a9",
+      "instructions": 224,
+      "bytes": 827,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a55e4",
+      "instructions": 68,
+      "bytes": 195,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a58af",
+      "instructions": 151,
+      "bytes": 661,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a5b44",
+      "instructions": 73,
+      "bytes": 238,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a5c9a",
+      "instructions": 130,
+      "bytes": 535,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a6cf4",
+      "instructions": 219,
+      "bytes": 857,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a7202",
+      "instructions": 102,
+      "bytes": 309,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a8b50",
+      "instructions": 193,
+      "bytes": 801,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a8ecb",
+      "instructions": 39,
+      "bytes": 104,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a966e",
+      "instructions": 31,
+      "bytes": 84,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c2563",
+      "instructions": 112,
+      "bytes": 416,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064b263",
+      "instructions": 65,
+      "bytes": 241,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

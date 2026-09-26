@@ -1,0 +1,506 @@
+{
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf": {
+    "sha256": "f8775fedc3815bf55b9a323fe894e6d35f6ab8ecc4bfc8538ecf0bd86d472d0b",
+    "bytes": 7378
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\CABVIEW\\2000.cvf": {
+    "sha256": "5ff4658531ebe908940e1d0f9370e3797adc58b8d56fd8621e1a5a45d618e860",
+    "bytes": 6676
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf": {
+    "sha256": "b4d9bacdc6d343d6fd1811b63e59267d34af14d0b00ce7a03f7590574f6e1876",
+    "bytes": 14114
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\CABVIEW\\scotsman.cvf": {
+    "sha256": "6d16f65bf62508e77bef0564a9892971d3bd5d8021cb9f16bf66666244ad3392",
+    "bytes": 13406
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\CABVIEW\\kiha31.cvf": {
+    "sha256": "b35f933e8fa9abb8bc03dfa475b3f2b4a0a86cee6d76e0095fbadf7d0866f41b",
+    "bytes": 7498
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf": {
+    "sha256": "d1ee221f844e5ef34ec565a7c2a56b6d0b4faf0033374fe44d0b79efc50b463a",
+    "bytes": 14056
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\CABVIEW\\gp38.cvf": {
+    "sha256": "f07f617d792dd076a2e22cb31603284bc040d9330c8da1f20e6c5d85850aeafb",
+    "bytes": 12738
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\CABVIEW\\dash9.cvf": {
+    "sha256": "9b4a7bb96056f2085a1fb199242b7c48bfc074fd7444b71e055767891c2174c5",
+    "bytes": 18404
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\CABVIEW\\class50.cvf": {
+    "sha256": "5d3936d40b79d6153e08b5bbb34f550aedee9acefc881cb269b8403bfba146b0",
+    "bytes": 7496
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\CABVIEW\\acela.cvf": {
+    "sha256": "883726a90305e57a67eda2516cd7fcb52ee4d1d04b725d31856a5515bff54c60",
+    "bytes": 13438
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\CABVIEW\\380.cvf": {
+    "sha256": "fc37cbf347e25dad401cfd50f7ccb1278fa704d6c65168837bf6c70ba89ed3fc",
+    "bytes": 14226
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng": {
+    "sha256": "4d16ddc3139873b51cbf5875dde795810a0b5310619a238190b6263f3eca88b8",
+    "bytes": 12302
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng": {
+    "sha256": "58a028291891db8ef0380570daa20b87d4501335d5abd1f8277794f9233b9d1e",
+    "bytes": 18244
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng": {
+    "sha256": "e3ebd5e69ab616f4e605e7ea7aced2b431bfc243bd1749add8cf482e43cfa2e2",
+    "bytes": 28326
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng": {
+    "sha256": "f4168e1fda78be439a25598db3386643b906e9784497516b83bb75b13241df93",
+    "bytes": 32112
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng": {
+    "sha256": "23f4d92803a63b2d25daad3a3bd063e0ed3cfccf85c0c3043fba72a8a11c3d53",
+    "bytes": 21722
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng": {
+    "sha256": "74d1426c765460845e323adb5b4d739b63951355448252c58eef79a9dae4b886",
+    "bytes": 33550
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng": {
+    "sha256": "1fbdac0cdd10b9e5ac75c1d8bab3d874675a4e053f8b3496a798bcab6b36fd5d",
+    "bytes": 20704
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng": {
+    "sha256": "f2b708d8aad741778031f888c7cad8217396070200dd73a375dcda45aede2237",
+    "bytes": 31776
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng": {
+    "sha256": "fee41fd5ce4ca2c2f44d6a608c2a93a663908dec9ddfb0c6cbf499e15f6dc362",
+    "bytes": 27906
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng": {
+    "sha256": "aa0f1b5cccad6c6e68417eddbfec8d12184d723b43c64b316784e43530644251",
+    "bytes": 31956
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng": {
+    "sha256": "7a43459aef6f142c151b4ad0a04540152f71c11e639032c203a9d8f4a97a2ccc",
+    "bytes": 31008
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng": {
+    "sha256": "ff28ce214d68a721f463a1c25b446b064d5448c4c13d0a67a2bfe8eeb8d45524",
+    "bytes": 31068
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng": {
+    "sha256": "8c3de9822ab109c8aaa4ccee26db62e628ecc07bc3295f11f3562c6cd1858e1e",
+    "bytes": 30436
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng": {
+    "sha256": "a6cfa855463f34bd353e8a7917b483b9079b871d68c83b250886fa56cb2e5b84",
+    "bytes": 16152
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng": {
+    "sha256": "217dba9e8529a15120d1e1ef1aa1327d30606417e6d244fe8bb78b309fd49726",
+    "bytes": 15016
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng": {
+    "sha256": "8cb01e4d1b5d8a76670c53eb3263d7df57b3d555a67612c34b8f34c3d330061d",
+    "bytes": 25194
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng": {
+    "sha256": "655520777684f0955c7eb3e5fb35a609186f67559c9c59e6c5d2f2c620eb8a72",
+    "bytes": 22738
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng": {
+    "sha256": "fd2a43f0e73f198d9b20a597ff95efe27d675e2eeafaf04c0612b1a42a2e65dd",
+    "bytes": 31934
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng": {
+    "sha256": "b7923f0e4c65cb5ea2dcea7056e45cd66411ad74bbda3ed7ae5661e4512ac838",
+    "bytes": 21266
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng": {
+    "sha256": "4da16d4225d0719a0ad18afe9a670d38203e3f0259d52ab2fe22faafaf4b76a4",
+    "bytes": 15350
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng": {
+    "sha256": "16e11669afec06dba2c569b1336b64cd313ff829c096216449e91d0112015d0c",
+    "bytes": 21042
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng": {
+    "sha256": "1226e7ce55875106c728e017b1472095e83e4a0052b0cd7c5874d4aa13af379a",
+    "bytes": 15926
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag": {
+    "sha256": "7ba481df436a80b90fd8461f95d2c897f41786c4423ad681f6a1ba275d6626b7",
+    "bytes": 2536
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310car1.wag": {
+    "sha256": "c83ecc931169ca66cced1001b1a4d53ff2176e4f724ab1ee43c8022f111e8588",
+    "bytes": 2522
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310car2.wag": {
+    "sha256": "b1628998ee165a71e675f26e9c89a44f39c0d14c391af099ed57f4df112ea5a6",
+    "bytes": 2306
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310grcar1.wag": {
+    "sha256": "547cd7d0875eb10c39c00e6c1126ef879eabaf947d6bec2e26aa732ee60e8889",
+    "bytes": 2304
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310tender.wag": {
+    "sha256": "469057c3968a56ac5687ba2a2dc9d62a7ffc4ce6e3ad7346592299bbd200e8c1",
+    "bytes": 2524
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310wdcar1.wag": {
+    "sha256": "47b21f39db2a73cc54351425ca72bb25987f455f13e19d8d77161ff8f69517a0",
+    "bytes": 2314
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380car1.wag": {
+    "sha256": "c19515e27dd1ceb251dd2bc20b56379ef8e418b8a174ddc4d5e79fcb5cb1f684",
+    "bytes": 2674
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380tender.wag": {
+    "sha256": "85552a4af9482744d50417c3118ad58216637843274c2a100a293f43d7fdf76c",
+    "bytes": 4480
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oe380cardin1.wag": {
+    "sha256": "3ed00303e4fee37026532bb09f292df569450e65c9d0b4eb997557e3d9316ed5",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oe380cardin2.wag": {
+    "sha256": "5fbdf87eead754f7a02a58c55a2585bb900e2b8a89f82b5cdf35724630289240",
+    "bytes": 2704
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oe380cardin3.wag": {
+    "sha256": "deae4b0179060dc50193804f93901b39c44593d417812bb770567a099bc87801",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oebarcar.wag": {
+    "sha256": "94e84d75a299f1b945177e4791a9596496627455da9988fddf17f6d99d1e94e9",
+    "bytes": 3148
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oeservcar1.wag": {
+    "sha256": "c81f9c9305ab45881034bbc23c301da67860983532445a45bef7212e28cfe84c",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oeservcar2.wag": {
+    "sha256": "581c02f4d4965453423286d3e5766d2ec3148815dc5c1a99e55f6be43cae1031",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar1.wag": {
+    "sha256": "e76c3f9b12128e7762e6d5eaad06700cdb4ff2a5cfef608d5a39c38b3b616ae5",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar10.wag": {
+    "sha256": "234c0c9d17b0f8bb89c5b69ccdee110695f4c9b6a9db3edf3cce28816de98435",
+    "bytes": 2698
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar11.wag": {
+    "sha256": "305e4265cc291dcb43a95a7f8bc2ea0b2f42231f4cc39391508de3aa78a785a5",
+    "bytes": 2698
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar2.wag": {
+    "sha256": "d6a589e61433cc884e263530336e341100fdba6248f1da52a6665f16297f8ff6",
+    "bytes": 2692
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar3.wag": {
+    "sha256": "b6d2edad9bd191d69d69da6a457fcbd8aa55e3e6b207bd374836a9b0ca287eff",
+    "bytes": 2692
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar4.wag": {
+    "sha256": "0763fb4a668b6730bd85eb67a94af7382783122a42bf4c327dc6a96240361b50",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar5.wag": {
+    "sha256": "2dd78d86b8438236619caa0295eab3eb44f83a884b281961f75aa4a80fd7d801",
+    "bytes": 2692
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar6.wag": {
+    "sha256": "03c1c2ac81463644aa4b132ce458409d517d7f89c087e3ddeac9ccb552457cf1",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar7.wag": {
+    "sha256": "f4efcee51eab66c0c33db77f3c09b3807df843d73f8f7a9cac318898f2b84a8e",
+    "bytes": 2696
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar8.wag": {
+    "sha256": "6adb614d417d3917b20191571862adf2d04e2feaa4658c26d810668850810405",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar9.wag": {
+    "sha256": "70f862d26cbfb8d6a0f126b28e69a88312d4d1941d5bb685ba96751bfd2e899b",
+    "bytes": 2694
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag": {
+    "sha256": "e231a36420f0d260dbbe7d020e6bd57166e7dd5577b9e3e3a1168ec7c67b4b2d",
+    "bytes": 3182
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelacar.wag": {
+    "sha256": "451c02d4e974585f84ee34abf8a2fbc6e5556ef8b95b9a29b353147563e51f0b",
+    "bytes": 2996
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelaendcar.wag": {
+    "sha256": "e172f63bb2b1aa046f84f73147d00c0a2e29f7e7ca36e111821a7b9019bc7edd",
+    "bytes": 3114
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelafirstclass.wag": {
+    "sha256": "c8b0ff7135cc17a988d87fd9a196ff8f1bdcbf29b5667158284e629b26c5e23c",
+    "bytes": 3176
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\DEFAULT\\default.wag": {
+    "sha256": "727da147e8c1c076fe10dd5838d2a5cbb47d023df30a67f4d4f68e5784342cc4",
+    "bytes": 3716
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\superliner.wag": {
+    "sha256": "aaef7162a2de644333991c82cfab247b2ded9e17c800a001e3c9e8a1068f07f3",
+    "bytes": 2448
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlbc.wag": {
+    "sha256": "656436239066bf1184776a6e6a5388a5d8b40c6d2de06f482ebe861b1d3b6ac8",
+    "bytes": 4030
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlcafe.wag": {
+    "sha256": "794a4768867022d9b96a66ff18d5efb673d92332e780d3febdac14b033ee7ef7",
+    "bytes": 4038
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlcar.wag": {
+    "sha256": "aff7937d817ca40a19bf3bc41d6014ff5a782087b18b368da178d5d2f2a77eee",
+    "bytes": 4028
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlco.wag": {
+    "sha256": "dfdcef56a6012ba03d3f9f8fb33490ba1a1068729e7c3cdd2fbe13111a46579e",
+    "bytes": 4030
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metrocarriage.wag": {
+    "sha256": "bec198dd93b87450263dfbec8d9460c0da3e52dfb13d64538d4145f62ba893bb",
+    "bytes": 2540
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\ukbrake.wag": {
+    "sha256": "78c5e2dc18bf6c7317181b3a0180aeb003a3464d7539fb699ad43b0462bc937d",
+    "bytes": 2504
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\ukfirst.wag": {
+    "sha256": "80f4b3797ee19f5592e5465e67d414e41db31dd3882f23475285e565ef5915a2",
+    "bytes": 2500
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\ukrestaurant.wag": {
+    "sha256": "48e0e64936f6ac7b6caa6eae07c0a59779c13fd42eca7f38510f4e9204247712",
+    "bytes": 2520
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\uksecond.wag": {
+    "sha256": "1e59ae9b4cc6c60f848d86bdcff0982b33191a2b04f7ada6bc75191f8123aaf1",
+    "bytes": 2998
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrfirst.wag": {
+    "sha256": "dde077da5fce28c1a4ea1934b5f8285e9c05e41b588243e604f216d1ea342406",
+    "bytes": 2096
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrluggcar.wag": {
+    "sha256": "8f9332227503db2cc3f05d300ec85b1076c1e02de32215ff575182b98513a218",
+    "bytes": 2144
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrmailcar.wag": {
+    "sha256": "2bc0ba3550f8a1db093ee38508d25ea69f57f79bbc8f7b811f5d8b12c0731293",
+    "bytes": 2148
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrrest.wag": {
+    "sha256": "08ff76ca5489fdfab1a0e54b1fa75f317bbc86775c13dd219f31d96695a785ac",
+    "bytes": 2096
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrthird.wag": {
+    "sha256": "465cb05b201089e303e0713a7948fdb6a32ba30324fcebe3cd5bcb4acb16d939",
+    "bytes": 2092
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennistender.wag": {
+    "sha256": "9cd0d39d0e63e6d345067f8f7c5c25625e7d1c727784d5d496066f17b8b0448a",
+    "bytes": 3326
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscottender.wag": {
+    "sha256": "97ed309827842c346476746feb799525c5fbc7efc041542da1f1a8c04fa1cf11",
+    "bytes": 2840
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\scotsfirstclass.wag": {
+    "sha256": "4eb0fc700f597c8a6e0d04218897a73f8b63b1263cf4e83f83e58c3a2e5ab316",
+    "bytes": 1960
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\scotsthirdclass.wag": {
+    "sha256": "e89a4ab075f373b851aadb7dbacd4e72b4d22e549b799bbb00d6fd466b3cad15",
+    "bytes": 1966
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotscar1.wag": {
+    "sha256": "dc16952814a13996ba9b5ab03599973bac9213ac44accb5bb5454fa15076d9c2",
+    "bytes": 2526
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotscar3.wag": {
+    "sha256": "190ad44a406e97c41886e48245689347d166019df49f493a57eebb62028037a5",
+    "bytes": 2050
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsmailcar.wag": {
+    "sha256": "99fa36ef8977bee790d95912ffea02df8d3bd9895f8df8fc06401e5918b4b4d8",
+    "bytes": 2140
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotstender.wag": {
+    "sha256": "1a548564127db88c7c36723d452ee9b5665651586b31d6a0b42584429722221f",
+    "bytes": 3072
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000acarriage.wag": {
+    "sha256": "8cd0fcb0df5b781a3ece7843675bb2ac7445fc5c5e5909b56e1c6ca9de0026b9",
+    "bytes": 2892
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000bcarriage.wag": {
+    "sha256": "7f544b2eebae64b350a13f8324a598715ff7a13c15e936d85ce0d16bd23e2788",
+    "bytes": 3554
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000cara.wag": {
+    "sha256": "414f63519387d0b78d950deb95a2bf738ffd7a9c24f323dd4eb3ae4005d0e995",
+    "bytes": 2552
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carb.wag": {
+    "sha256": "8726231fc87ffbdc18ac8502c39f78d48b2428d2defd8731216eabb2b1c37da0",
+    "bytes": 2554
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carc.wag": {
+    "sha256": "aa2cbfb1e53393081b385bb8a7139d9b3cb68bca57db00fb6b694c67544f3a6d",
+    "bytes": 2544
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000card.wag": {
+    "sha256": "ad95bd8f73cfdbac654f0a95b4bdc2a1f70d4e42a89dc38f200502b87b2b13dd",
+    "bytes": 2558
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carg.wag": {
+    "sha256": "c8055e5eb2e301c7bb815907819f5228d3102e940bb4e62ddffa7f3d1cc8cd6f",
+    "bytes": 2546
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carh.wag": {
+    "sha256": "0dd55d271fcd855ce731d38ef906857d1e92472738eea7dfe166d20a59d38783",
+    "bytes": 2550
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000cari.wag": {
+    "sha256": "5087b75f249b98f7f179277cea404663f4262d594156fd814e0613d92dc109aa",
+    "bytes": 2546
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2BNSFCAR\\us2bnsfcar.wag": {
+    "sha256": "0a27b0883f18d77640c6a632ca91f360aa8aa2de7a029aaf650a7d0bdd919b67",
+    "bytes": 5138
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2CABOOSE\\us2caboose.wag": {
+    "sha256": "0525dcf10786d1656ca75a0dd7c1a23fbca7c7bb75f19868a2bf49f1249f31fc",
+    "bytes": 4872
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2CHEMICAR\\us2chemicar.wag": {
+    "sha256": "1e9ddd7e099830e09a31766fffd1469f217be13a14183cb1f3bf6df8242cfe8d",
+    "bytes": 5130
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTBL\\us2dblehgtfrghtbl.wag": {
+    "sha256": "6b68625ca6a2c692bf7c02f18325565782d38f49ba0257127c935b7a82053477",
+    "bytes": 5144
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTRD\\us2dblehgtfrghtrd.wag": {
+    "sha256": "2646acdd6492e001cda0b8e0255cfcc8bc54858d6fc2d0c1f24cd4a4ef120ff8",
+    "bytes": 5138
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2EMPLOGGERCAR\\us2emploggercar.wag": {
+    "sha256": "df1cef2137d5043e3198c743ba2c73b5b224df2224161caf2c461cb9c5ee1bef",
+    "bytes": 5286
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRE2\\us2fcarre2.wag": {
+    "sha256": "365e376fe3c4f4176b4c14b40c2bb6c3902b5b37c06d9c8d96d33511140950ee",
+    "bytes": 5170
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRF2\\us2fcarrf2.wag": {
+    "sha256": "365f5d8b6803e030e857f31908e896097300a3e01f575db9723038386970f913",
+    "bytes": 5150
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYE2\\us2fcarye2.wag": {
+    "sha256": "e18528201debf71a536f4c9cb4ac93cef97f88863cd6eaa69c8d7b14fa3dd61b",
+    "bytes": 5150
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYF2\\us2fcaryf2.wag": {
+    "sha256": "8d28ba5452906e75abfb3447f7622abebdad42cf045c0d6f956d4cbc3e7ffba1",
+    "bytes": 5150
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT6\\us2freight6.wag": {
+    "sha256": "01f5769d03f9a5d22eec53156af096bbc76fa43cc507aa38ee80c9ff73fa6e11",
+    "bytes": 4466
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT7\\us2freight7.wag": {
+    "sha256": "ad47a7c8222a9c62c903304916f72fda895603c8760ca9521e84e6ea188d6f28",
+    "bytes": 5290
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT8\\us2freight8.wag": {
+    "sha256": "f4e3ea0366cf3ae6b276291e1b4e1c72f82d3659cc251d0eb156bd09b03bad11",
+    "bytes": 5236
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR1\\us2freightcar1.wag": {
+    "sha256": "7ee0dcd32f7f21765b7a55cb3365e01c7aa92aa47413573cce9f9e768f1b2c62",
+    "bytes": 5164
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR3\\us2freightcar3.wag": {
+    "sha256": "ef297fd9ca30041bc48cede4d78018d9e023b4e0a41de301faf658ae173b0f3b",
+    "bytes": 5244
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR4\\us2freightcar4.wag": {
+    "sha256": "c1e32c07db985b517de7939b699c7c8ecacab535b6dda61717114a75ccac9cc3",
+    "bytes": 5172
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR5\\us2freightcar5.wag": {
+    "sha256": "f093bc8806981921327e54c370d1ab9f4053b5348cadd1215db88b60fc1ba9ce",
+    "bytes": 5180
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCARYEL1\\us2freightcaryel1.wag": {
+    "sha256": "e519ecf25502c3ff9daf34565164795d48b85dcf9116af158b04085ceb7eebc5",
+    "bytes": 5192
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCEMENT\\us2freightcement.wag": {
+    "sha256": "27bd01501671ff7c7ac11d3e9931dd7bbc77f02fe363f852c58e1b265367f33f",
+    "bytes": 3576
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTREFRIGE\\us2freightrefrige.wag": {
+    "sha256": "c877d08a433690daebdc9f4c5fc32535a75d695631134ef93f9ed26e1378c753",
+    "bytes": 3546
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2FULLLOGGERCAR\\us2fullloggercar.wag": {
+    "sha256": "b70bdf19a5699712c03f7d94590e6f4359aeca6b78c2a1f296a6d80c5920e9d6",
+    "bytes": 5272
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2GRAINCAR\\us2graincar.wag": {
+    "sha256": "f7595a40ccfb0f27e08f18d4cd16fc1b18fa62207dfb6d2f43151cf03448c8b3",
+    "bytes": 5272
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2HOPPERCAR\\us2hoppercar.wag": {
+    "sha256": "e491a04ae9e13114fc36def0bc388553ebe7d550350723488b33b6057625dc54",
+    "bytes": 5312
+  },
+  "C:\\MSTS\\TRAINS\\TRAINSET\\US2WOODCHIPPER\\us2woodchipper.wag": {
+    "sha256": "6d448f5274877b1d1be393e8bdd645040e2bca3dd4547b5aeee2c2cdafc0b531",
+    "bytes": 5308
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.act": {
+    "sha256": "d11b8c54356ea63bce018b29e0510ed1490434988bbe2c2fcce24bf70243e3d3",
+    "bytes": 5670
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\SERVICES\\evegrain (traffic).srv": {
+    "sha256": "69109af1f6213323d5ff28ae88f4395f3bbcf993cb66a5e2458e57e64a03032c",
+    "bytes": 682
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\SERVICES\\evegrain (traffic01).srv": {
+    "sha256": "cb9c0aae6755c40064eaedce0b8b5e2af24137e106cd631f44513f29bf49c45c",
+    "bytes": 642
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\SERVICES\\evegrain.srv": {
+    "sha256": "d50aefed9f044b2254b8f4cdee1a3d8329473fcf519e3ae483bcab1c1d667a5e",
+    "bytes": 652
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\evegrain (traffic).trf": {
+    "sha256": "bedbce2ce5199b38cde5fa06cfa243c679a5b3206e2a40e2ccd97af55b0eef77",
+    "bytes": 402
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\PATHS\\evegrain (traffic).pat": {
+    "sha256": "0f31988d99da1b72d8b917192e232f02f9e0bc1b3229291caa7338ba57ed977f",
+    "bytes": 2288
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\PATHS\\evegrain.pat": {
+    "sha256": "2baca7ec00c4f1ee8a274978244e506ddf33dac0be00553306ece50fd1d70d52",
+    "bytes": 2674
+  }
+}

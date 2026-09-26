@@ -1,0 +1,2804 @@
+{
+  "executable": "C:\\MSTS\\train.exe",
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "table": "0x77fce0; 68 pointers",
+  "basis": [
+    "pass01b/0041c4ba.c: cab-view type dispatcher",
+    "pass01b/0041f357.asm",
+    "pass01b/0042064b.asm",
+    "pass01b/004218ae.asm",
+    "pass04/00422f06.asm"
+  ],
+  "warning": "CabViewType mapping differs from player control-type enum. Base channels only: helper also branches on extended values 0x100..0x120; those remain to inventory.",
+  "channels": [
+    {
+      "enum": 0,
+      "enum_hex": "0x0",
+      "name": "THROTTLE",
+      "name_pointer": "0x753a00",
+      "table_slot": "0x77fce0",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 0,
+          "destination": "0x41f399",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 36,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 0,
+          "destination": "0x42068d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 31,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 1,
+      "enum_hex": "0x1",
+      "name": "THROTTLE_DISPLAY",
+      "name_pointer": "0x7539d8",
+      "table_slot": "0x77fce4",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 1,
+          "destination": "0x41f3cc",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 42,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 1,
+          "destination": "0x4206c0",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 37,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 2,
+      "enum_hex": "0x2",
+      "name": "ACCELEROMETER",
+      "name_pointer": "0x7539b4",
+      "table_slot": "0x77fce8",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 2,
+          "destination": "0x41f3f7",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 48,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 2,
+          "destination": "0x4206eb",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 43,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 3,
+      "enum_hex": "0x3",
+      "name": "ACCELERATE_HILO",
+      "name_pointer": "0x75398c",
+      "table_slot": "0x77fcec",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 3,
+          "destination": "0x41f4da",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 73,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 4,
+      "enum_hex": "0x4",
+      "name": "SPEEDOMETER",
+      "name_pointer": "0x753970",
+      "table_slot": "0x77fcf0",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 4,
+          "destination": "0x41f50d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 79,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 3,
+          "destination": "0x4207ce",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 71,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 0,
+          "destination": "0x4218f9",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 16,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 5,
+      "enum_hex": "0x5",
+      "name": "OVERSPEED",
+      "name_pointer": "0x753958",
+      "table_slot": "0x77fcf4",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 5,
+          "destination": "0x41f5c8",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 103,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 4,
+          "destination": "0x42088c",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 95,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 6,
+      "enum_hex": "0x6",
+      "name": "DIRECTION",
+      "name_pointer": "0x753940",
+      "table_slot": "0x77fcf8",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 6,
+          "destination": "0x41f705",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 122,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 5,
+          "destination": "0x4209b1",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 112,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 7,
+      "enum_hex": "0x7",
+      "name": "DIRECTION_DISPLAY",
+      "name_pointer": "0x753914",
+      "table_slot": "0x77fcfc",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 7,
+          "destination": "0x41f738",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 128,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 6,
+          "destination": "0x4209e4",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 118,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 8,
+      "enum_hex": "0x8",
+      "name": "GEARS",
+      "name_pointer": "0x753904",
+      "table_slot": "0x77fd00",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 7,
+          "destination": "0x420a17",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 124,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 9,
+      "enum_hex": "0x9",
+      "name": "GEARS_DISPLAY",
+      "name_pointer": "0x7538e0",
+      "table_slot": "0x77fd04",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 8,
+          "destination": "0x420a4a",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 130,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 10,
+      "enum_hex": "0xa",
+      "name": "WHEELSLIP",
+      "name_pointer": "0x7538c8",
+      "table_slot": "0x77fd08",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 8,
+          "destination": "0x41f76b",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 134,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 9,
+          "destination": "0x420a7d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 136,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 11,
+      "enum_hex": "0xb",
+      "name": "CP_HANDLE",
+      "name_pointer": "0x7538b0",
+      "table_slot": "0x77fd0c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 9,
+          "destination": "0x41f7b5",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 146,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 10,
+          "destination": "0x420ac7",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 148,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 12,
+      "enum_hex": "0xc",
+      "name": "CPH_DISPLAY",
+      "name_pointer": "0x753894",
+      "table_slot": "0x77fd10",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 10,
+          "destination": "0x41f7e5",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 152,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 11,
+          "destination": "0x420af7",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 154,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 13,
+      "enum_hex": "0xd",
+      "name": "TRACTION_BRAKING",
+      "name_pointer": "0x75386c",
+      "table_slot": "0x77fd14",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 11,
+          "destination": "0x41f815",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 158,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 12,
+          "destination": "0x420b27",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 160,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 14,
+      "enum_hex": "0xe",
+      "name": "TRAIN_BRAKE",
+      "name_pointer": "0x753850",
+      "table_slot": "0x77fd18",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 12,
+          "destination": "0x41f911",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 186,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 13,
+          "destination": "0x420c23",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 188,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 1,
+          "destination": "0x4219a5",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 38,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 15,
+      "enum_hex": "0xf",
+      "name": "ENGINE_BRAKE",
+      "name_pointer": "0x753830",
+      "table_slot": "0x77fd1c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 13,
+          "destination": "0x41f93c",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 192,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 14,
+          "destination": "0x420c4e",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 194,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 2,
+          "destination": "0x4219d0",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 44,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 16,
+      "enum_hex": "0x10",
+      "name": "FRICTION_BRAKING",
+      "name_pointer": "0x753808",
+      "table_slot": "0x77fd20",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 14,
+          "destination": "0x41f97f",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 201,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 15,
+          "destination": "0x420cbc",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 203,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 17,
+      "enum_hex": "0x11",
+      "name": "DYNAMIC_BRAKE",
+      "name_pointer": "0x7537e4",
+      "table_slot": "0x77fd24",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 15,
+          "destination": "0x41fa4a",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 226,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 16,
+          "destination": "0x420d88",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 228,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 18,
+      "enum_hex": "0x12",
+      "name": "DYNAMIC_BRAKE_FORCE",
+      "name_pointer": "0x7537b4",
+      "table_slot": "0x77fd28",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 16,
+          "destination": "0x41fa75",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 232,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 17,
+          "destination": "0x420db3",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 234,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 19,
+      "enum_hex": "0x13",
+      "name": "DYNAMIC_BRAKE_DISPLAY",
+      "name_pointer": "0x753780",
+      "table_slot": "0x77fd2c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 17,
+          "destination": "0x41fad0",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 245,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 18,
+          "destination": "0x420e0d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 247,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 20,
+      "enum_hex": "0x14",
+      "name": "EMERGENCY_BRAKE",
+      "name_pointer": "0x753758",
+      "table_slot": "0x77fd30",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 18,
+          "destination": "0x41fb44",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 251,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 19,
+          "destination": "0x420e82",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 253,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 21,
+      "enum_hex": "0x15",
+      "name": "PENALTY_APP",
+      "name_pointer": "0x75373c",
+      "table_slot": "0x77fd34",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 19,
+          "destination": "0x41fafb",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 257,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 20,
+          "destination": "0x420e38",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 259,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 22,
+      "enum_hex": "0x16",
+      "name": "MAIN_RES",
+      "name_pointer": "0x753724",
+      "table_slot": "0x77fd38",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 20,
+          "destination": "0x41fb6f",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 269,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 21,
+          "destination": "0x420ead",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 271,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 3,
+          "destination": "0x421a03",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 50,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 23,
+      "enum_hex": "0x17",
+      "name": "EQ_RES",
+      "name_pointer": "0x753714",
+      "table_slot": "0x77fd3c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 21,
+          "destination": "0x41fc72",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 298,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 22,
+          "destination": "0x420fb1",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 300,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 4,
+          "destination": "0x421b7b",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 85,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 24,
+      "enum_hex": "0x18",
+      "name": "BRAKE_CYL",
+      "name_pointer": "0x7536fc",
+      "table_slot": "0x77fd40",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 22,
+          "destination": "0x41fd76",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 327,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 23,
+          "destination": "0x4210b4",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 329,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 5,
+          "destination": "0x421e7d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 120,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 25,
+      "enum_hex": "0x19",
+      "name": "BRAKE_PIPE",
+      "name_pointer": "0x7536e0",
+      "table_slot": "0x77fd44",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 23,
+          "destination": "0x41fef5",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 369,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 24,
+          "destination": "0x42123d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 371,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 6,
+          "destination": "0x4220ca",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 179,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 26,
+      "enum_hex": "0x1a",
+      "name": "ENGINE_BRAKING_BUTTON",
+      "name_pointer": "0x7536ac",
+      "table_slot": "0x77fd48",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 25,
+          "destination": "0x420c91",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 400,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 27,
+      "enum_hex": "0x1b",
+      "name": "PANTOGRAPH",
+      "name_pointer": "0x753690",
+      "table_slot": "0x77fd4c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 24,
+          "destination": "0x420014",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 398,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 28,
+      "enum_hex": "0x1c",
+      "name": "PANTO_DISPLAY",
+      "name_pointer": "0x75366c",
+      "table_slot": "0x77fd50",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 25,
+          "destination": "0x420053",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 404,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 29,
+      "enum_hex": "0x1d",
+      "name": "HORN",
+      "name_pointer": "0x753660",
+      "table_slot": "0x77fd54",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 26,
+          "destination": "0x4200ab",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 416,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 26,
+          "destination": "0x42135b",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 406,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 30,
+      "enum_hex": "0x1e",
+      "name": "BELL",
+      "name_pointer": "0x753654",
+      "table_slot": "0x77fd58",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 27,
+          "destination": "0x4200dc",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 422,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 27,
+          "destination": "0x42138c",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 412,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 7,
+          "destination": "0x42229c",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 225,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 31,
+      "enum_hex": "0x1f",
+      "name": "WHISTLE",
+      "name_pointer": "0x753640",
+      "table_slot": "0x77fd5c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 8,
+          "destination": "0x4222cd",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 231,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 32,
+      "enum_hex": "0x20",
+      "name": "SANDERS",
+      "name_pointer": "0x75362c",
+      "table_slot": "0x77fd60",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 28,
+          "destination": "0x42010d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 428,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 28,
+          "destination": "0x4213bd",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 418,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 9,
+          "destination": "0x4222f8",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 237,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 33,
+      "enum_hex": "0x21",
+      "name": "SANDING",
+      "name_pointer": "0x753618",
+      "table_slot": "0x77fd64",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 29,
+          "destination": "0x42014c",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 434,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 29,
+          "destination": "0x4213fc",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 424,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 34,
+      "enum_hex": "0x22",
+      "name": "ASPECT_DISPLAY",
+      "name_pointer": "0x7535f4",
+      "table_slot": "0x77fd68",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 30,
+          "destination": "0x4201a4",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 446,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 30,
+          "destination": "0x421454",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 436,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 35,
+      "enum_hex": "0x23",
+      "name": "SPEEDLIM_DISPLAY",
+      "name_pointer": "0x7535cc",
+      "table_slot": "0x77fd6c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 31,
+          "destination": "0x41f66c",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 451,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 31,
+          "destination": "0x420919",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 441,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 36,
+      "enum_hex": "0x24",
+      "name": "RESET",
+      "name_pointer": "0x7535bc",
+      "table_slot": "0x77fd70",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 32,
+          "destination": "0x4201bd",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 467,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 32,
+          "destination": "0x42146d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 457,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 37,
+      "enum_hex": "0x25",
+      "name": "ALERTER_DISPLAY",
+      "name_pointer": "0x753594",
+      "table_slot": "0x77fd74",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 33,
+          "destination": "0x4201e8",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 473,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 33,
+          "destination": "0x421498",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 463,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 38,
+      "enum_hex": "0x26",
+      "name": "CAB_RADIO",
+      "name_pointer": "0x75357c",
+      "table_slot": "0x77fd78",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 34,
+          "destination": "0x42022f",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 484,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 34,
+          "destination": "0x4214df",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 474,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 39,
+      "enum_hex": "0x27",
+      "name": "LOAD_METER",
+      "name_pointer": "0x753560",
+      "table_slot": "0x77fd7c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 35,
+          "destination": "0x420255",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 490,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 35,
+          "destination": "0x421505",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 480,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 40,
+      "enum_hex": "0x28",
+      "name": "AMMETER",
+      "name_pointer": "0x75354c",
+      "table_slot": "0x77fd80",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 35,
+          "destination": "0x420255",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 490,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 35,
+          "destination": "0x421505",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 480,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 41,
+      "enum_hex": "0x29",
+      "name": "LINE_VOLTAGE",
+      "name_pointer": "0x75352c",
+      "table_slot": "0x77fd84",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 36,
+          "destination": "0x42036b",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 518,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 30,
+          "destination": "0x422a48",
+          "status": "default branch; no display update established"
+        }
+      ]
+    },
+    {
+      "enum": 42,
+      "enum_hex": "0x2a",
+      "name": "CUTOFF",
+      "name_pointer": "0x75351c",
+      "table_slot": "0x77fd88",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 10,
+          "destination": "0x422331",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 243,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 43,
+      "enum_hex": "0x2b",
+      "name": "REGULATOR",
+      "name_pointer": "0x753504",
+      "table_slot": "0x77fd8c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 11,
+          "destination": "0x422397",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 249,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 44,
+      "enum_hex": "0x2c",
+      "name": "CYL_COCKS",
+      "name_pointer": "0x7534ec",
+      "table_slot": "0x77fd90",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 12,
+          "destination": "0x4223c7",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 255,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 45,
+      "enum_hex": "0x2d",
+      "name": "BLOWER",
+      "name_pointer": "0x7534dc",
+      "table_slot": "0x77fd94",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 13,
+          "destination": "0x4223f2",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 261,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 46,
+      "enum_hex": "0x2e",
+      "name": "FIREHOLE",
+      "name_pointer": "0x7534c4",
+      "table_slot": "0x77fd98",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 14,
+          "destination": "0x422425",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 267,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 47,
+      "enum_hex": "0x2f",
+      "name": "STEAM_INJ1",
+      "name_pointer": "0x7534a8",
+      "table_slot": "0x77fd9c",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 15,
+          "destination": "0x422458",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 273,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 48,
+      "enum_hex": "0x30",
+      "name": "STEAM_INJ2",
+      "name_pointer": "0x75348c",
+      "table_slot": "0x77fda0",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 16,
+          "destination": "0x422489",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 279,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 49,
+      "enum_hex": "0x31",
+      "name": "DAMPERS_FRONT",
+      "name_pointer": "0x753468",
+      "table_slot": "0x77fda4",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 17,
+          "destination": "0x4224ba",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 285,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 50,
+      "enum_hex": "0x32",
+      "name": "DAMPERS_BACK",
+      "name_pointer": "0x753448",
+      "table_slot": "0x77fda8",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 18,
+          "destination": "0x4224ed",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 291,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 51,
+      "enum_hex": "0x33",
+      "name": "STEAM_PR",
+      "name_pointer": "0x753430",
+      "table_slot": "0x77fdac",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 19,
+          "destination": "0x422520",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 297,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 52,
+      "enum_hex": "0x34",
+      "name": "STEAMCHEST_PR",
+      "name_pointer": "0x75340c",
+      "table_slot": "0x77fdb0",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 20,
+          "destination": "0x422611",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 322,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 53,
+      "enum_hex": "0x35",
+      "name": "TENDER_WATER",
+      "name_pointer": "0x7533ec",
+      "table_slot": "0x77fdb4",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 21,
+          "destination": "0x422703",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 347,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 54,
+      "enum_hex": "0x36",
+      "name": "BOILER_WATER",
+      "name_pointer": "0x7533cc",
+      "table_slot": "0x77fdb8",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 22,
+          "destination": "0x4227a2",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 363,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 55,
+      "enum_hex": "0x37",
+      "name": "FIREBOX",
+      "name_pointer": "0x753a18",
+      "table_slot": "0x77fdbc",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 23,
+          "destination": "0x42285b",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 384,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 56,
+      "enum_hex": "0x38",
+      "name": "WATER_INJECTOR1",
+      "name_pointer": "0x7533a4",
+      "table_slot": "0x77fdc0",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 24,
+          "destination": "0x42289e",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 389,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 57,
+      "enum_hex": "0x39",
+      "name": "WATER_INJECTOR2",
+      "name_pointer": "0x75337c",
+      "table_slot": "0x77fdc4",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 25,
+          "destination": "0x4228d7",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 395,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 58,
+      "enum_hex": "0x3a",
+      "name": "SMALL_EJECTOR",
+      "name_pointer": "0x753358",
+      "table_slot": "0x77fdc8",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 26,
+          "destination": "0x422910",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 401,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 59,
+      "enum_hex": "0x3b",
+      "name": "REVERSER_PLATE",
+      "name_pointer": "0x753334",
+      "table_slot": "0x77fdcc",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 27,
+          "destination": "0x422364",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 407,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 60,
+      "enum_hex": "0x3c",
+      "name": "STEAMHEAT_PRESSURE",
+      "name_pointer": "0x753304",
+      "table_slot": "0x77fdd0",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 28,
+          "destination": "0x422941",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 413,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 61,
+      "enum_hex": "0x3d",
+      "name": "VACUUM_RESERVOIR_PRESSURE",
+      "name_pointer": "0x7532c4",
+      "table_slot": "0x77fdd4",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 41,
+          "destination": "0x4204ef",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 564,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "jump_index": 29,
+          "destination": "0x421cf6",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\004218ae.c",
+          "decompiler_line": 438,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        }
+      ]
+    },
+    {
+      "enum": 62,
+      "enum_hex": "0x3e",
+      "name": "WIPERS",
+      "name_pointer": "0x7532b4",
+      "table_slot": "0x77fdd8",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 37,
+          "destination": "0x42044d",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 541,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 36,
+          "destination": "0x42161b",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 509,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 63,
+      "enum_hex": "0x3f",
+      "name": "FRONT_HLIGHT",
+      "name_pointer": "0x753294",
+      "table_slot": "0x77fddc",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 38,
+          "destination": "0x42047b",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 547,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 37,
+          "destination": "0x42164c",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 515,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 64,
+      "enum_hex": "0x40",
+      "name": "TAILLIGHTS",
+      "name_pointer": "0x753278",
+      "table_slot": "0x77fde0",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 39,
+          "destination": "0x4204a3",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 553,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 38,
+          "destination": "0x421677",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 521,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 65,
+      "enum_hex": "0x41",
+      "name": "CLOCK",
+      "name_pointer": "0x753268",
+      "table_slot": "0x77fde4",
+      "installed_cab_declaration": true,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 40,
+          "destination": "0x4204cb",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0041f357.c",
+          "decompiler_line": 559,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 39,
+          "destination": "0x4216a2",
+          "status": "static branch identified; runtime availability unverified",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 527,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 66,
+      "enum_hex": "0x42",
+      "name": "CAB_SWITCH",
+      "name_pointer": "0x75324c",
+      "table_slot": "0x77fde8",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "jump_index": 175,
+          "destination": "0xb7e8f44d",
+          "status": "static branch identified; runtime availability unverified"
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "jump_index": 41,
+          "destination": "0x421765",
+          "status": "default branch; no display update established",
+          "decompiler_file": "pass01b\\0042064b.c",
+          "decompiler_line": 551,
+          "warning": "Decompiler shared-helper control flow is malformed; enum/branch association comes from raw PE jump table and assembly, not reconstructed switch condition."
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    },
+    {
+      "enum": 67,
+      "enum_hex": "0x43",
+      "name": "FUEL_GAUGE",
+      "name_pointer": "0x753230",
+      "table_slot": "0x77fdec",
+      "installed_cab_declaration": false,
+      "dispatch": [
+        {
+          "engine": "electric",
+          "cab_view_type": 1,
+          "function": "0x41f357",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x4204ef"
+        },
+        {
+          "engine": "diesel",
+          "cab_view_type": 2,
+          "function": "0x42064b",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x421765"
+        },
+        {
+          "engine": "steam",
+          "cab_view_type": 3,
+          "function": "0x4218ae",
+          "status": "not routed by this base dispatcher",
+          "destination": "0x422a48"
+        }
+      ]
+    }
+  ]
+}

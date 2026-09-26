@@ -1,0 +1,21 @@
+{
+  "cars": 45,
+  "read_errors": 0,
+  "section_pointer_mismatches": 0,
+  "same_sim_time": true,
+  "origin_stable": true,
+  "body_minus_track_axis_ranges": [
+    [
+      -0.047901153564453125,
+      -0.0145721435546875
+    ],
+    [
+      2.0167236328125,
+      3.9779052734375
+    ],
+    [
+      0.017822265625,
+      0.0966796875
+    ]
+  ]
+}
