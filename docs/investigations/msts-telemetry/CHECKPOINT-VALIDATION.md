@@ -163,3 +163,11 @@ Inventory remains971 with513 evidence paths and126 unchanged original assets. Pa
 990 candidates (389direct26derived68cab507config);534 evidence paths and126 unchanged original assets. Pass190/191/192 verify5/11/5functions and2608/4254/1794instruction bytes against disk/live. Type1 payloads resolve loaded sample labels; type2 payloads require child-ring traversal returning to the wrapper. Separate paused captures preserve262top-level nodes, then12children across4wrappers and8sample identities. Two player engine streams shareone sample; no unique owner or actual playback is inferred. The traffic outer chain remains incomplete at256observed nodes.
 
 249JSON/114Python sources parse;8612old raw hashes unchanged,94added,8706total. No game controls/process writes/assets/saves changed. Native-test limitations and remote CI status remain as above. Goal incomplete,PR draft.
+
+## Native input and short-key checkpoint
+
+1005 candidates (404direct26derived68cab507config),552 evidence paths and126 unchanged source assets. Reused pinned clean NEMT reader layout;238keyboard entries require30bytes. Listener targets may be callbacks or value destinations. Action filter/state words are split. Pass194 matches disk/live; pass195 matches disk withtwo live spans changed by an existing input detour. Failed pass196 function export is retained; bounded pass197/198 producer/getter ranges match disk/live.
+
+One Shift_L press in the visible pause dialog produced two distinct native records (press/release), seen inthree of5394samples withzero read errors. Cursor/count2/2 shows both records were already consumed. Every sampled held bitset remainedzero; pause/dayclock unchanged. This demonstrates event-versus-held sampling limits, not lossless capture or gameplay dispatch. No game-memory writes/assets/save changes; UI action was one modifier press.
+
+255JSON/119Python sources parse;8706old raw hashes unchanged,102added,8808total. Historical native-test and remote CI limitations remain above. Goal active,PR draft.

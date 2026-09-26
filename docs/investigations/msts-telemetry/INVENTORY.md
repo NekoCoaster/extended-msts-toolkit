@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 389, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 990}
+{'runtime_direct': 404, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1005}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -996,3 +996,18 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | audio.pending.resource_identity | Loaded resource object for requested sample | typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads |
 | audio.pending.nested_children | Type2 pending-record child ring identities | verified native construction rule;4wrappers3children each with stable full-record rereads |
 | audio.pending.nested_child_count | Child count for a completely traversed type2 pending record | verified native construction rule;4wrappers3children each with stable full-record rereads |
+| input.mode | Raw native input mode/gate | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.devices | Native input device registry identities | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.device_kind | Input object device kind | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.keyboard_count | Native keyboard entry count | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.keyboard_held | Native keyboard held-state bitset | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |
+| input.bindings | Native scan binding records and modifier words | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.action_id | Bound input action opaque identifier | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.action_flags | Native bound-action state flags | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.listeners | Bound action listener target/context/mask/flags | layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read |
+| input.action_value | Stored action event value or button-reference count | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed |
+| input.action_filter | Action dispatch filter word | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed |
+| input.buffer_capacity | Keyboard native event buffer capacity | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |
+| input.buffer_cursor | Keyboard event consumption cursor | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |
+| input.buffer_count | Keyboard current buffered record count | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |
+| input.buffer_records | Keyboard buffered native input records | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |

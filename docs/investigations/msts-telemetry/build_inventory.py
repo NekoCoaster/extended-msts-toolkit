@@ -819,6 +819,47 @@ for name,meaning,typ,units,method in [
         nested_evidence,'verified native construction rule;4wrappers3children each with stable full-record rereads',
         'pending request enqueue/processing;no lifetime or removal transition tested',
         common+' Return to wrapper is expected;other cycles are invalid to this probe. Counts are structural,not playing voices. Sample references can be shared. Top-level traffic chain remains incomplete. No actual playback, sound segment meaning, AI owner or global reference-accounting proof.')
+input_evidence=['INPUT-BINDINGS-FINDINGS.md','input-bindings-summary.json','captures/input-bindings-paused-01/input.json','pass194-byte-verification.json','pass194/006bb790.c','pass194/006bb8b0.c','pass194/006bc130.c']
+for name,meaning,typ,units,method in [
+    ('mode','Raw native input mode/gate','uint32','opaque mode;zero observed;full enum untraced','[0x829980]'),
+    ('devices','Native input device registry identities','bounded pointer32 list','session addresses;not connected physical-device count guarantee','root=[0x8299a0];circular nodes next0/device8'),
+    ('device_kind','Input object device kind','uint8','native kind;1keyboard;2observed but not independently named','input=[device+4];input+0x2d'),
+    ('keyboard_count','Native keyboard entry count','uint32 difference','entries;238observed,not fixed256','[device+0x14]-[device+0x10]'),
+    ('keyboard_held','Native keyboard held-state bitset','bounded bitset','one bit per native scan index;not virtual-key codes or dispatched commands','bits=[input+0x24],readceil(count/8),bitindex scan'),
+    ('bindings','Native scan binding records and modifier words','bounded records','16-byte records;action0,next4,modifier8,flagsc','table=[device+0x18];first=table+(device10+scan)*16;followbinding+4'),
+    ('action_id','Bound input action opaque identifier','uint32','native identifier;semantic names untraced','action=[binding];[action]'),
+    ('action_flags','Native bound-action state flags','uint32','raw bits;context/lifecycle-dependent','action+0x10'),
+    ('listeners','Bound action listener callback/context/mask/flags','bounded records','20-byte records;callback0,context4,next8,maskc,flags10','head=[action+4];followlistener+8;neverinvoke')]:
+    add('input.'+name,meaning,'local native input context;not AI driver commands',typ,units,method,input_evidence,
+        'layout reused from pinned clean NEMT source;native list/binding/listener helpers verified;paused238-entry keyboard read',
+        'input polling/binding context;producer cadence and key transitions not tested here',
+        common+' No OS-wide input read or native callback calls. Paused all-zero held bitset only;does not prove functioning gameplay dispatch.73retained records include6action references/5unique actions,not73commands. Count-sized30byte read avoids allocator-tail keys. Stable sequential rereads cannot exclude ABA. Other device kinds/axes,complete modifier semantics,action naming and buffered event transitions remain open.')
+dispatch_evidence=['INPUT-DISPATCH-FINDINGS.md','pass195-byte-verification.json','pass195/006bad60.asm','pass197-byte-verification.json','pass197/range.asm','pass198-byte-verification.json','pass198/range.asm','captures/input-dispatch-buffer-paused-01/dispatch.json']
+for row in rows:
+    if row['id'] in {'input.keyboard_held','input.listeners','input.action_flags'}:
+        row['evidence'].extend(dispatch_evidence)
+        row['limitations']+=' Keyboard producer/event getter bounded bytes match disk/live, but006bad60 has an existing live entry detour;no complete dispatch equivalence. Empty-buffer and zero-held observations are not a key-transition test.'
+    if row['id']=='input.listeners':
+        row['meaning']='Bound action listener target/context/mask/flags'
+        row['units']='20-byte records;target0,context4,next8,maskc,flags10;mask0x100 selects callback,otherwise target is value destination'
+    if row['id']=='input.action_flags':
+        row['value_type']='uint16';row['extraction']='action+0x12';row['units']='raw state bits;prior uint32 read also included filter word at+0x10'
+for name,meaning,typ,units,method in [
+    ('action_value','Stored action event value or button-reference count','uint32','event-type-dependent;not universal boolean or axis','action+0xc'),
+    ('action_filter','Action dispatch filter word','uint16','opaque filter;compared toFFFFwhen globalmode2','action+0x10'),
+    ('buffer_capacity','Keyboard native event buffer capacity','uint32','16-byte records;12observed','input+0x10'),
+    ('buffer_cursor','Keyboard event consumption cursor','uint32','record index;not lifetime event count','input+0x14'),
+    ('buffer_count','Keyboard current buffered record count','uint32','records this transient buffer;not history','input+0x18'),
+    ('buffer_records','Keyboard buffered native input records','bounded array of4uint32','16-byte records:scan/typeword,0or1value,two raw source words','buffer=[input+0xc],readcount records only;cursor partitions consumed/unconsumed snapshots')]:
+    add('input.'+name,meaning,'local keyboard/input actions;not AI driver state',typ,units,method,dispatch_evidence,
+        'disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed',
+        'input polling clears/produces/consumes buffer;non-atomic external reads may miss events',
+        common+' Do not invoke methods or write target pointers. Live dispatch patch fingerprint retained but full detour behavior unaudited. No complete-event guarantee or timestamp units. Nonempty buffer,held-key transitions and action invocation remain untested. Mode/filter/action units vary by event type;source flags not gameplay outcomes.')
+for row in rows:
+    if row['id'] in {'input.keyboard_held','input.buffer_capacity','input.buffer_cursor','input.buffer_count','input.buffer_records'}:
+        row['evidence'].extend(['KEYBOARD-TRANSITION-FINDINGS.md','keyboard-transition-summary.json','captures/keyboard-shift-paused-01/metadata.json'])
+        row['evidence_status']+=';one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero'
+        row['limitations']+=' Later short-key test observes scan2a/value1and0 records but no sampled held interval. Nonempty-buffer evidence supersedes the earlier empty-only observation;it does not establish lossless capture or successful gameplay dispatch. Repeated buffer snapshots are not additional events;cursor distinguishes consumed entries.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
