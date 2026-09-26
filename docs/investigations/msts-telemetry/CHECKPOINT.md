@@ -12,7 +12,9 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 206 direct-read candidates/structures, 16 derived candidates, 68 native cab channels (59 declared in installed cab files) and 473 configuration leaf paths, totaling 763 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+Current inventory has 215 direct-read candidates/structures, 16 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 806 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+
+Latest camera test leaves MSTS paused at 74600.2734375, player stopped with 23 intact vehicles.
 
 ## Test scenario and installation
 
@@ -28,6 +30,8 @@ The running installation already enables IgnoreRedSignal, PreventActivityEnd, En
 
 ## Direct findings
 
+[Camera findings](CAMERA-FINDINGS.md) adds player view mode/tracking and render-camera position/basis from native consumers and a live cab/front/rear/trackside/cab switch test. Lifecycle and transition timing remain untested.
+
 [Track-item findings](TRACK-ITEM-FINDINGS.md) identifies all 2,970 live item kinds and verifies stored platform, siding and speed-post payloads against the route file. Dynamic behavior and effective restriction semantics remain open.
 
 [Infrastructure findings](INFRASTRUCTURE-FINDINGS.md) enumerates all 732 route nodes with validated route IDs, resolving earlier disconnected/ambiguous coverage. It also records 78 service-linked track-presence records and seven signal/service associations; reservation semantics remain unverified.
@@ -36,7 +40,7 @@ The running installation already enables IgnoreRedSignal, PreventActivityEnd, En
 
 [Track geometry findings](TRACK-GEOMETRY-FINDINGS.md) maps current section length, radius, angle, width, skew and flags for player and offscreen AI. Four geometry definitions match installed assets; straight-grade and nominal-curvature formulas remain explicitly derived candidates.
 
-Latest checkpoint: [AI lifecycle findings](AI-LIFECYCLE-FINDINGS.md) records 539 samples, zero read errors, physical removal of the first AI and scheduled offscreen activation of the later AI. The first AI eventually retained positive speed with stationary track position; subsequent [scheduler tracing](SERVICE-UPDATE-FINDINGS.md) found its update gate disabled and last-update clock stopped. The precise deactivation trigger remains unproven. Game is paused at 74525.53125, player intact and stopped.
+Latest checkpoint: [AI lifecycle findings](AI-LIFECYCLE-FINDINGS.md) records 539 samples, zero read errors, physical removal of the first AI and scheduled offscreen activation of the later AI. The first AI eventually retained positive speed with stationary track position; subsequent [scheduler tracing](SERVICE-UPDATE-FINDINGS.md) found its update gate disabled and last-update clock stopped. The precise deactivation trigger remains unproven. The later bounded pause/resume test left the game paused at 74548.40625, player intact and stopped; see UPDATE-CADENCE-FINDINGS.md.
 
 [Vehicle-system findings](VEHICLE-SYSTEM-FINDINGS.md) adds per-car pressure, requested brake force, coupling-force candidates and inertia. Session metadata is in captures/session-header-running-01/session.json; header parser offsets are relative to activity+4.
 

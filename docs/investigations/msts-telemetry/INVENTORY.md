@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 206, 'runtime_derived': 16, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_leaf_paths': 473, 'files_scanned': 126, 'total': 763}
+{'runtime_direct': 215, 'runtime_derived': 16, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 806}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -130,8 +130,11 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..act:Tr_Activity.Tr_Activity_File.Events.EventCategoryLocation.TriggerOnStop | Tr_Activity.Tr_Activity_File.Events.EventCategoryLocation.TriggerOnStop configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_File.NextActivityObjectUID | Tr_Activity.Tr_Activity_File.NextActivityObjectUID configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_File.NextServiceUID | Tr_Activity.Tr_Activity_File.NextServiceUID configured value | static configuration extracted; not a live changing value |
+| config..act:Tr_Activity.Tr_Activity_File.Player_Service_Definition | Tr_Activity.Tr_Activity_File.Player_Service_Definition configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_File.Player_Service_Definition.Player_Traffic_Definition | Tr_Activity.Tr_Activity_File.Player_Service_Definition.Player_Traffic_Definition configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_File.Player_Service_Definition.UiD | Tr_Activity.Tr_Activity_File.Player_Service_Definition.UiD configured value | static configuration extracted; not a live changing value |
+| config..act:Tr_Activity.Tr_Activity_File.Traffic_Definition | Tr_Activity.Tr_Activity_File.Traffic_Definition configured value | static configuration extracted; not a live changing value |
+| config..act:Tr_Activity.Tr_Activity_File.Traffic_Definition.Service_Definition | Tr_Activity.Tr_Activity_File.Traffic_Definition.Service_Definition configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_File.Traffic_Definition.Service_Definition.UiD | Tr_Activity.Tr_Activity_File.Traffic_Definition.Service_Definition.UiD configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_Header.Animals | Tr_Activity.Tr_Activity_Header.Animals configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_Header.Briefing | Tr_Activity.Tr_Activity_Header.Briefing configured value | static configuration extracted; not a live changing value |
@@ -152,6 +155,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..act:Tr_Activity.Tr_Activity_Header.Type | Tr_Activity.Tr_Activity_Header.Type configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_Header.Weather | Tr_Activity.Tr_Activity_Header.Weather configured value | static configuration extracted; not a live changing value |
 | config..act:Tr_Activity.Tr_Activity_Header.Workers | Tr_Activity.Tr_Activity_Header.Workers configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine | Engine configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.AWSMonitor.MonitoringDeviceAlarmTimeLimit | Engine.AWSMonitor.MonitoringDeviceAlarmTimeLimit configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.AWSMonitor.MonitoringDeviceAppliesCutsPower | Engine.AWSMonitor.MonitoringDeviceAppliesCutsPower configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.AWSMonitor.MonitoringDeviceAppliesEmergencyBrake | Engine.AWSMonitor.MonitoringDeviceAppliesEmergencyBrake configured value | static configuration extracted; not a live changing value |
@@ -250,43 +254,63 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..eng:Engine.EngineControllers.AWS | Engine.EngineControllers.AWS configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.BailOffButton | Engine.EngineControllers.BailOffButton configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.BellToggle | Engine.EngineControllers.BellToggle configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Blower | Engine.EngineControllers.Blower configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Blower.NumNotches | Engine.EngineControllers.Blower.NumNotches configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Brake_Dynamic | Engine.EngineControllers.Brake_Dynamic configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Brake_Dynamic.NumNotches | Engine.EngineControllers.Brake_Dynamic.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Brake_Dynamic.NumNotches.Notch | Engine.EngineControllers.Brake_Dynamic.NumNotches.Notch configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Brake_Engine | Engine.EngineControllers.Brake_Engine configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Brake_Engine.NumNotches | Engine.EngineControllers.Brake_Engine.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Brake_Engine.NumNotches.Notch | Engine.EngineControllers.Brake_Engine.NumNotches.Notch configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Brake_Hand | Engine.EngineControllers.Brake_Hand configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Brake_Hand.NumNotches | Engine.EngineControllers.Brake_Hand.NumNotches configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Brake_Train | Engine.EngineControllers.Brake_Train configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Brake_Train.NumNotches | Engine.EngineControllers.Brake_Train.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Brake_Train.NumNotches.Notch | Engine.EngineControllers.Brake_Train.NumNotches.Notch configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Combined_Control | Engine.EngineControllers.Combined_Control configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Cutoff | Engine.EngineControllers.Cutoff configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Cutoff.NumNotches | Engine.EngineControllers.Cutoff.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.CylinderCocks | Engine.EngineControllers.CylinderCocks configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.DampersBack | Engine.EngineControllers.DampersBack configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.DampersBack.NumNotches | Engine.EngineControllers.DampersBack.NumNotches configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.DampersFront | Engine.EngineControllers.DampersFront configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.DampersFront.NumNotches | Engine.EngineControllers.DampersFront.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.DirControl | Engine.EngineControllers.DirControl configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.EmergencyStopResetToggle | Engine.EngineControllers.EmergencyStopResetToggle configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.EmergencyStopToggle | Engine.EngineControllers.EmergencyStopToggle configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.EngineBrakingButton | Engine.EngineControllers.EngineBrakingButton configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.FireDoor | Engine.EngineControllers.FireDoor configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.FireDoor.NumNotches | Engine.EngineControllers.FireDoor.NumNotches configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Gear | Engine.EngineControllers.Gear configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Gear.NumNotches | Engine.EngineControllers.Gear.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Gear.NumNotches.Notch | Engine.EngineControllers.Gear.NumNotches.Notch configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Headlights | Engine.EngineControllers.Headlights configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.HeatingTap | Engine.EngineControllers.HeatingTap configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.HeatingTap.NumNotches | Engine.EngineControllers.HeatingTap.NumNotches configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.HighLowAcceleration | Engine.EngineControllers.HighLowAcceleration configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.HighLowAcceleration.NumNotches | Engine.EngineControllers.HighLowAcceleration.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Horn | Engine.EngineControllers.Horn configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Injector1Steam | Engine.EngineControllers.Injector1Steam configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Injector1Water | Engine.EngineControllers.Injector1Water configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Injector1Water.NumNotches | Engine.EngineControllers.Injector1Water.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Injector2Steam | Engine.EngineControllers.Injector2Steam configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Injector2Water | Engine.EngineControllers.Injector2Water configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Injector2Water.NumNotches | Engine.EngineControllers.Injector2Water.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.PantographToggle1 | Engine.EngineControllers.PantographToggle1 configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Regulator | Engine.EngineControllers.Regulator configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Regulator.NumNotches | Engine.EngineControllers.Regulator.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Sanding | Engine.EngineControllers.Sanding configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Shovel | Engine.EngineControllers.Shovel configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Shovel.NumNotches | Engine.EngineControllers.Shovel.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.SmallEjectorOrCompressor | Engine.EngineControllers.SmallEjectorOrCompressor configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineControllers.Throttle | Engine.EngineControllers.Throttle configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Throttle.NumNotches | Engine.EngineControllers.Throttle.NumNotches configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Throttle.NumNotches.Notch | Engine.EngineControllers.Throttle.NumNotches.Notch configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Vigilance | Engine.EngineControllers.Vigilance configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.WaterScoop | Engine.EngineControllers.WaterScoop configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Whistle | Engine.EngineControllers.Whistle configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineControllers.Wipers | Engine.EngineControllers.Wipers configured value | static configuration extracted; not a live changing value |
+| config..eng:Engine.EngineOperatingProcedures | Engine.EngineOperatingProcedures configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.EngineVariables | Engine.EngineVariables configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.ExhaustLimit | Engine.ExhaustLimit configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.GearBoxBackLoadForce | Engine.GearBoxBackLoadForce configured value | static configuration extracted; not a live changing value |
@@ -399,7 +423,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..eng:Engine.VigilanceMonitor.MonitoringDeviceResetOnResetButton | Engine.VigilanceMonitor.MonitoringDeviceResetOnResetButton configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.Wagon | Engine.Wagon configured value | static configuration extracted; not a live changing value |
 | config..eng:Engine.WheelRadius | Engine.WheelRadius configured value | static configuration extracted; not a live changing value |
-| config..eng:EngineVariables | EngineVariables configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon | Wagon configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Adheasion | Wagon.Adheasion configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.AntiSlip | Wagon.AntiSlip configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.BrakeAirPressureGainInResForOnePoundFromPipe | Wagon.BrakeAirPressureGainInResForOnePoundFromPipe configured value | static configuration extracted; not a live changing value |
@@ -444,12 +468,14 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..eng:Wagon.Inside.Sound | Wagon.Inside.Sound configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Inside.StartDirection | Wagon.Inside.StartDirection configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.IntakePoint | Wagon.IntakePoint configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon.Lights | Wagon.Lights configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.Conditions.Control | Wagon.Lights.Light.Conditions.Control configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.Conditions.Headlight | Wagon.Lights.Light.Conditions.Headlight configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.Conditions.Unit | Wagon.Lights.Light.Conditions.Unit configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.Cycle | Wagon.Lights.Light.Cycle configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.FadeIn | Wagon.Lights.Light.FadeIn configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.FadeOut | Wagon.Lights.Light.FadeOut configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon.Lights.Light.States | Wagon.Lights.Light.States configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.States.State.Angle | Wagon.Lights.Light.States.State.Angle configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.States.State.Azimuth | Wagon.Lights.Light.States.State.Azimuth configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.States.State.Duration | Wagon.Lights.Light.States.State.Duration configured value | static configuration extracted; not a live changing value |
@@ -480,6 +506,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..pat:TrackPath.Name | TrackPath.Name configured value | static configuration extracted; not a live changing value |
 | config..pat:TrackPath.TrPathEnd | TrackPath.TrPathEnd configured value | static configuration extracted; not a live changing value |
 | config..pat:TrackPath.TrPathName | TrackPath.TrPathName configured value | static configuration extracted; not a live changing value |
+| config..pat:TrackPath.TrPathNodes | TrackPath.TrPathNodes configured value | static configuration extracted; not a live changing value |
 | config..pat:TrackPath.TrPathNodes.TrPathNode | TrackPath.TrPathNodes.TrPathNode configured value | static configuration extracted; not a live changing value |
 | config..pat:TrackPath.TrPathStart | TrackPath.TrPathStart configured value | static configuration extracted; not a live changing value |
 | config..srv:Service_Definition.Efficiency | Service_Definition.Efficiency configured value | static configuration extracted; not a live changing value |
@@ -492,8 +519,10 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..srv:Service_Definition.TimeTable.StartInWorld | Service_Definition.TimeTable.StartInWorld configured value | static configuration extracted; not a live changing value |
 | config..srv:Service_Definition.TimeTable.StartingSpeed | Service_Definition.TimeTable.StartingSpeed configured value | static configuration extracted; not a live changing value |
 | config..srv:Service_Definition.Train_Config | Service_Definition.Train_Config configured value | static configuration extracted; not a live changing value |
+| config..trf:Traffic_Definition | Traffic_Definition configured value | static configuration extracted; not a live changing value |
 | config..trf:Traffic_Definition.Serial | Traffic_Definition.Serial configured value | static configuration extracted; not a live changing value |
 | config..trf:Traffic_Definition.Service_Definition | Traffic_Definition.Service_Definition configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon | Wagon configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.#Size | Wagon.#Size configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Adheasion | Wagon.Adheasion configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.AntiSlip | Wagon.AntiSlip configured value | static configuration extracted; not a live changing value |
@@ -531,13 +560,16 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..wag:Wagon.EmergencyBrakeTriggerRate | Wagon.EmergencyBrakeTriggerRate configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.EmergencyResCapacity | Wagon.EmergencyResCapacity configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.EmergencyResChargingRate | Wagon.EmergencyResChargingRate configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.ExtraParameters | Wagon.ExtraParameters configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.FreightAnim | Wagon.FreightAnim configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction | Wagon.Friction configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.Friction.Lights | Wagon.Friction.Lights configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.Conditions.Headlight | Wagon.Friction.Lights.Light.Conditions.Headlight configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.Conditions.Unit | Wagon.Friction.Lights.Light.Conditions.Unit configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.Cycle | Wagon.Friction.Lights.Light.Cycle configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.FadeIn | Wagon.Friction.Lights.Light.FadeIn configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.FadeOut | Wagon.Friction.Lights.Light.FadeOut configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.Friction.Lights.Light.States | Wagon.Friction.Lights.Light.States configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.States.State.Azimuth | Wagon.Friction.Lights.Light.States.State.Azimuth configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.States.State.Duration | Wagon.Friction.Lights.Light.States.State.Duration configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction.Lights.Light.States.State.LightColour | Wagon.Friction.Lights.Light.States.State.LightColour configured value | static configuration extracted; not a live changing value |
@@ -553,11 +585,13 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..wag:Wagon.Inside.Sound | Wagon.Inside.Sound configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Inside.StartDirection | Wagon.Inside.StartDirection configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.IntakePoint | Wagon.IntakePoint configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.Lights | Wagon.Lights configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.Conditions.Headlight | Wagon.Lights.Light.Conditions.Headlight configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.Conditions.Unit | Wagon.Lights.Light.Conditions.Unit configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.Cycle | Wagon.Lights.Light.Cycle configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.FadeIn | Wagon.Lights.Light.FadeIn configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.FadeOut | Wagon.Lights.Light.FadeOut configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.Lights.Light.States | Wagon.Lights.Light.States configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.States.State.Azimuth | Wagon.Lights.Light.States.State.Azimuth configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.States.State.Duration | Wagon.Lights.Light.States.State.Duration configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.States.State.LightColour | Wagon.Lights.Light.States.State.LightColour configured value | static configuration extracted; not a live changing value |
@@ -679,6 +713,11 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | infrastructure.vector_presence | Abstract per-car position records linked to a vector track segment | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.presence_service | Service identity attached to track-presence record | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.presence_node_distance | Position of abstract car record along its track node | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
+| train.definition_mass_sum | Stored sum of connected vehicle definition masses | paused23-car player sum and two installed definitions matched exactly; changing load/AI untested |
+| train.definition_length_sum | Stored sum of connected vehicle definition lengths | paused23-car player sum and two installed definitions matched exactly; coupling changes untested |
+| sound.region_count | Allocated per-train sound-region table count | native allocation traced; paused count10 |
+| sound.region_handles | Per-region pair of opaque sound handles | native allocation/release traced; only default player handles nonzero in paused capture |
+| sound.region_last_interaction_tick | Most recent sound-region interaction timer tick | native writer/expiry traced; all paused timestamps0, changing timestamp untested |
 | pickup.eligibility_flags | Pickup proximity and speed eligibility flags | native traced; paused route pickup flags0 |
 | pickup.candidate_vehicle | Last vehicle selected by pickup eligibility scan | native writer traced; paused value null; nonnull transition untested |
 | hazard.state_candidate | Hazard current-state candidate | native consumer traced; live world object unavailable |
@@ -702,7 +741,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | track_item.siding_flags | Siding subtype flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.siding_paired_item | Other siding endpoint item ID | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.speedpost_flags | Speed-post subtype/control flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
-| track_item.speedpost_byte_value | Conditional speed-post byte payload | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.speedpost_byte_value | Conditional speed-post byte payload | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances; native restriction conversion traced, crossing transition untested |
 | track_item.speedpost_float_value | Conditional speed-post floating payload | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.speedpost_angle | Stored speed-post orientation angle | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | environment.pointer | Active render environment identity | inherited native research plus current paused read; scene transitions not tested in this phase |
@@ -769,3 +808,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | session.duration_hm | Configured activity duration | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.start_seconds | Activity start clock in seconds | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.elapsed_candidate | Elapsed simulation time since activity start | loaded values match ACT; elapsed is derived and midnight semantics untested |
+| camera.mode | Player view mode raw enum | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
+| camera.tracking | Player camera tracking state used by native debug display | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
+| camera.render_position | Current render-camera position | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
+| camera.render_basis | Current render-camera basis vectors | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |

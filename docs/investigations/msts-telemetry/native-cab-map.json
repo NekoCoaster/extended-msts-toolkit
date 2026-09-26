@@ -9,7 +9,7 @@
     "pass01b/004218ae.asm",
     "pass04/00422f06.asm"
   ],
-  "warning": "CabViewType mapping differs from player control-type enum. Base channels only: helper also branches on extended values 0x100..0x120; those remain to inventory.",
+  "warning": "CabViewType differs from player control type. Extended helper has bounded branch evidence, aliases and no-update branches; range114..120 overlaps adjacent table data and is not established supported telemetry. See EXTENDED-CAB-FINDINGS.md.",
   "channels": [
     {
       "enum": 0,
@@ -2800,5 +2800,6 @@
         }
       ]
     }
-  ]
+  ],
+  "extended_helper_evidence": "EXTENDED-CAB-FINDINGS.md"
 }

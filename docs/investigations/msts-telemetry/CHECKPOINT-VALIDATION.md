@@ -30,3 +30,12 @@ GitHub Actions run 36245441062 (Verify source and native frontend) completed suc
 Source guards28 and repository-tool tests29 passed. Frontend and committed runtime PE import audits passed using the existing unchanged binaries. Native byte comparisons for passes38-47 and50-54 matched the installed disk/live process. The paused captures verified speed-cap reproduction, freight class, pickup absence and retained sound-region values; no new moving crossing/refill/hazard test was performed.
 
 Production code and build inputs remain unchanged. The full native batch was not rerun for this research-only update: its earlier Device Guard block remains unresolved, with no bypass attempted. The initial build/model/GUI results above remain historical evidence, not new tests of this checkpoint.
+
+
+## Camera, consist, cadence and configuration checkpoint
+
+806 unique candidates:215 direct-read candidates/structures,16 derived,68 cab channels and507 configuration paths. All66 published JSON files and35 Python scripts parse. The canonical local audit checks182 evidence paths and126 unchanged asset hashes; it is tied to the unstripped local inventory hash. The publication intentionally strips embedded decompiler excerpts, so its inventory hash differs.
+
+New evidence includes cab/front/rear/trackside/cab mode switches, exact float32 consist mass/length aggregation, a bounded pause/resume cadence test, sound-region handle lifecycle tracing and extended cab-helper limitations. Configuration coverage now retains long leaves and values beside child blocks, and correctly handles the observed anonymous annotation groups. These are evidence improvements, not keep/drop prioritization or proof of all live semantics.
+
+363 additional local evidence files were hashed; existing manifest entries were verified unchanged. Raw captures, native exports and game assets remain local. Source guards28, repository-tool tests29 and both PE import audits passed again using unchanged binaries. No production source/build/version change or NEMT integration was made. The earlier full-native Device Guard block remains unresolved; that batch was not rerun or bypassed. GitHub run36246913033 passed for previous commit285a0ff, not for this new checkpoint.

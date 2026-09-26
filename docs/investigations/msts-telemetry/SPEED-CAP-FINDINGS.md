@@ -66,4 +66,4 @@ Pass47:11 functions,1365 instructions,5309 bytes; pass50:2 functions,3454 instru
 
 Inventory stays752; existing flags and cap metadata are refined. Outstanding: actual crossing transitions, non-freight runtime consist, post-coupling class refresh, subtype names for4/5, exact dispatcher event states, and speed restriction reset semantics. Current local checkpoint has not yet been published to PR9.
 
-Publication note: this report and its standalone probes are included in the current research-branch checkpoint. Earlier local-only notes above describe the stages before publication. Raw captures/native exports remain local and are listed in local-evidence-manifest.json.
+Later correction: pass56/00608800 also clears/sets class bits0x2/0x4 while scanning physical cars, using the same type2 Freight rule. Class writing is therefore not exclusive to initialization. Its caller cadence and a coupling transition remain unverified. This supersedes any reading of the earlier initialization finding as the only producer.

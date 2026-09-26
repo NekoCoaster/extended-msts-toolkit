@@ -90,6 +90,8 @@ def nodes(text):
         while i<len(tokens):
             t=tokens[i];i+=1
             if t==')':break
+            if t=='(':
+                result.append(('__anonymous__',sequence(True)));continue
             if i<len(tokens) and tokens[i]=='(':
                 i+=1;result.append((t,sequence(True)))
             else:result.append(t)
@@ -99,11 +101,11 @@ def walk(tree,path=()):
     for x in tree:
         if isinstance(x,tuple):
             k,children=x
-            if k.lower() in ('_skip','comment'):continue
+            if k.lower() in ('_skip','comment','__anonymous__'):continue
             yield path+(k,),children
             yield from walk(children,path+(k,))
 
-cab={};param={};scanned=[]
+cab={};param={};scanned=[];leaf_paths=set();mixed_paths=set()
 files=list((GAME/'TRAINS/TRAINSET').rglob('*.cvf'))
 files+=list((GAME/'TRAINS/TRAINSET').rglob('*.eng'))+list((GAME/'TRAINS/TRAINSET').rglob('*.wag'))
 files+=[GAME/'ROUTES/USA2/ACTIVITIES/evegrain.act']
@@ -123,17 +125,21 @@ for p in files:
     else:
         for path,children in walk(tree):
             atoms=[x for x in children if isinstance(x,str)]
-            if any(isinstance(x,tuple) for x in children) or len(atoms)>20:continue
             key=p.suffix.lower()+':'+'.'.join(path)
-            sample=dict(file=str(p),path=' / '.join(path),example=atoms)
+            mixed=any(isinstance(x,tuple) for x in children)
+            if mixed and not atoms:continue
+            (mixed_paths if mixed else leaf_paths).add(key)
+            sample=dict(file=str(p),path=' / '.join(path),example=atoms,syntax='direct atoms beside child nodes' if mixed else 'leaf atoms')
             if key not in param:param[key]=[]
             if len(param[key])<3:param[key].append(sample)
+            elif sample['syntax'] not in {e['syntax'] for e in param[key]}:
+                param[key][-1]=sample
 for name,examples in sorted(cab.items()):
     add('cab.'+name,name.replace('_',' ').lower()+' native cab input/display channel','player where cab/engine supports it; AI unknown','native channel dependent',
-        sorted({str(e['units']) for e in examples if e['units']}),'CVF Type declares channel; trace native cab dispatchers 0x41f357 / 0x42064b / 0x4218ae to actual producers',examples,
+        sorted({str(e['units']) for e in examples if e['units']}) or ['not declared in sampled CVF controls; native units unresolved'],'CVF Type declares channel; trace native cab dispatchers 0x41f357 / 0x42064b / 0x4218ae to actual producers',examples,
         'installed asset declaration; raw field/meaning not yet fully traced','cab render/update; underlying simulation producer may differ','Asset declaration alone does not prove live population, accuracy, units or AI availability. Duplicate displays share channels.')
 for key,examples in sorted(param.items()):
-    add('config.'+key,key.split(':',1)[1]+' configured value','asset/service/activity dependent; bind by actual runtime identity','SIMIS leaf tokens','as written in source; infer no units',
+    add('config.'+key,key.split(':',1)[1]+' configured value','asset/service/activity dependent; bind by actual runtime identity','SIMIS direct node tokens','as written in source; infer no units',
         'Read installed SIMIS asset; attach configuration metadata to runtime entity',examples,'static configuration extracted; not a live changing value','asset load or reload','Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart.')
 native=json.loads((ROOT/'native-cab-map.json').read_text())
 byid={r['id']:r for r in rows}
@@ -216,6 +222,11 @@ for row in rows:
         row['evidence_status']='all 732 registry-derived route IDs validated in current route; earlier geometry ambiguity resolved'
         row['limitations']=common+' This is index-derived identity for the tested route, not a native embedded ID field; validate after route edits/reload.'
 interaction_specs=[
+('train.definition_mass_sum','Stored sum of connected vehicle definition masses','physical player/AI trains','float32','kg; both sampled definitions matched source tonnes*1000','train+0x9a=sum(definition+0x444), producer00608800','paused23-car player sum and two installed definitions matched exactly; changing load/AI untested'),
+('train.definition_length_sum','Stored sum of connected vehicle definition lengths','physical player/AI trains','float32','metres; both sampled definitions matched third Size component','train+0xaa=sum(definition+0x400), producer00608800','paused23-car player sum and two installed definitions matched exactly; coupling changes untested'),
+('sound.region_count','Allocated per-train sound-region table count','session and physical trains','uint32','record count','[0x7c2e88]; allocation0060806f uses count*12','native allocation traced; paused count10'),
+('sound.region_handles','Per-region pair of opaque sound handles','physical player/AI trains','two uint32','opaque handle identities; zero absent','[[train+0xea]+0xc]+region_index*12, offsets0/4; bound by[7c2e88]','native allocation/release traced; only default player handles nonzero in paused capture'),
+('sound.region_last_interaction_tick','Most recent sound-region interaction timer tick','physical player/AI trains','uint32','Windows timeGetTime milliseconds, wraps32bits; not simulation time','region record+8; written by004ef178; consumed by00608800','native writer/expiry traced; all paused timestamps0, changing timestamp untested'),
 ('pickup.eligibility_flags','Pickup proximity and speed eligibility flags','route pickup; physical player/AI trains','uint32','bitfield','kind2 item+0x2c; bits8/0x10 reset by004dcc65 and set by004dcc7f','native traced; paused route pickup flags0'),
 ('pickup.candidate_vehicle','Last vehicle selected by pickup eligibility scan','physical player/AI vehicles','pointer32','session vehicle identity','kind2 item+0x34; use only with eligibility flags and valid vehicle lifetime','native writer traced; paused value null; nonnull transition untested'),
 ('hazard.state_candidate','Hazard current-state candidate','loaded route hazard; physical player/AI interactions','uint32','raw enum','kind4 linked world object+0xac; compared with9 by004d3a19','native consumer traced; live world object unavailable'),
@@ -231,6 +242,18 @@ for key,meaning,applies,typ,unit,method,status in interaction_specs:
     add(key,meaning,applies,typ,unit,method,['TRACK-INTERACTION-FINDINGS.md','captures/track-interactions-paused-01/snapshot.json','pass51/004d7e0c.asm','pass51/004ef178.asm','pass51-byte-verification.json','pass52-byte-verification.json'],status,'interaction dispatch; exact refresh/reset cadence unmeasured',common+' Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated.')
 payload_extra+=len(interaction_specs)
 for row in rows:
+    if row['id'] in {'train.definition_mass_sum','train.definition_length_sum'}:
+        row['evidence']=['CONSIST-AGGREGATE-FINDINGS.md','captures/consist-totals-paused-01/snapshot.json','consist-asset-summary.json','pass56/00608800.asm','pass57/0060820c.asm','pass57-byte-verification.json','pass58-byte-verification.json']
+        row['update_or_lifecycle']='callback0x10 registered by0060820c; pause/resume experiment shows repeated running updates via same-function+d6 accumulator at0.1s sampling; exact callback rate unresolved'
+        row['evidence'].extend(['UPDATE-CADENCE-FINDINGS.md','update-cadence-summary.json','captures/update-cadence-01/samples.jsonl'])
+        row['limitations']=common+' Definition totals differ in provenance from physics-body mass sums; dynamic load/fuel inclusion unproven. Empty car chain skips recalculation. No physical AI or coupling transition validated.'
+    if row['id'].startswith('sound.'):
+        row['evidence'].extend(['pass56/0060806f.asm','pass56/00608800.asm','pass56/00609713.asm','pass56-byte-verification.json','captures/sound-table-paused-01/snapshot.json'])
+        row['limitations'] += ' Nearest distance resets to the train length sum; not always a measured boundary. Region0 and selected region bypass timestamp expiry; others expire after unsigned tick age exceeds10000ms only when consumer executes. Handles are opaque, not proof of playback.'
+    if row['id']=='service.flags_raw':
+        row['extraction'] += ';00608800 also recomputes class from physical cars, so initialization is not the only writer'
+        row['evidence'].extend(['pass56/00608800.asm','pass56-byte-verification.json'])
+for row in rows:
     if row['id'].startswith(('pickup.','hazard.')):
         row['evidence'].extend(['captures/pickup-hazard-paused-01/snapshot.json','pass53/004dcc7f.asm','pass53/004d3a19.asm','pass54/004dcc65.asm','pass53-byte-verification.json','pass54-byte-verification.json'])
         row['limitations'] += ' Pickup candidate pointer can outlive eligibility bits; resource transfer is unproven. Hazard state numbers are not animation names; no loaded hazard was sampled.'
@@ -238,6 +261,9 @@ track_item_fields=json.loads((ROOT/'track-item-fields.json').read_text())
 for name,meaning,typ,unit,method in track_item_fields:
     add('track_item.'+name,meaning,'shared route metadata joined to player/AI track context; subtype-specific',typ,unit,method,['captures/track-items-paused-01/items.json','track-item-summary.json','pass36-byte-verification.json','pass37-byte-verification.json','TRACK-ITEM-FINDINGS.md'],'native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances','loaded configuration; runtime updates and reload lifecycle not validated',common+' This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested.')
 for row in rows:
+    if row['id']=='track_item.speedpost_byte_value':
+        row['evidence'].extend(['SPEED-CAP-FINDINGS.md','pass45/004f5862.asm','pass46-byte-verification.json'])
+        row['evidence_status'] += '; native restriction conversion traced, crossing transition untested'
     if row['id']=='infrastructure.item_kind':
         row['units']='0 signal, 2 pickup, 3 platform, 4 HazzardItem, 6 siding, 7 level crossing, 8 speedpost, 9 empty, 10 sound region; other kinds unobserved'
         row['evidence'].extend(['track-item-summary.json','pass36/005b5475.asm'])
@@ -258,9 +284,16 @@ session_fields=json.loads((ROOT/'session-fields.json').read_text())
 for name,meaning,typ,unit,method in session_fields:
     add('session.'+name,meaning,'activity session',typ,unit,method,['captures/session-header-running-01/session.json','pass27/0058f066.asm','pass27/0058bf90.asm','C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act'],'loaded values match ACT; elapsed is derived and midnight semantics untested','header load/reset; elapsed follows advancing simulation clock',common+' Header parser receives activity+4, so raw parser-relative offsets must include that base adjustment. Do not infer calendar date from narrative briefing. Enum name mapping remains incomplete.')
 payload_extra+=len(session_fields)
+camera_fields=[
+    ('mode','Player view mode raw enum','uint32','observed 0 cab, 1 front exterior, 2 rear exterior, 3 trackside; others unresolved','[[0x7c2a88]+0x11c]'),
+    ('tracking','Player camera tracking state used by native debug display','uint32','zero/nonzero; only interpreted for mode 1, 2 or 3','[[0x7c2a88]+0x110]'),
+    ('render_position','Current render-camera position','float32[3]','native local scene coordinates; origin shifts apply','[0x829224] +0x30/+0x34/+0x38'),
+    ('render_basis','Current render-camera basis vectors','float32[3][3]','dimensionless native basis; axis conventions need camera-transition validation','[0x829224] +0x0c/+0x18/+0x24')]
+for name,meaning,typ,units,method in camera_fields:
+    add('camera.'+name,meaning,'current player view/render scene; not independent AI viewpoints',typ,units,method,['CAMERA-FINDINGS.md','camera-transition-summary.json','captures/camera-final-paused-01/consist-check.json','captures/camera-paused-01/camera.json','pass61/004918e0.asm','pass62/006c0290.asm','pass62/006b63c0.asm','pass61-byte-verification.json','pass62-byte-verification.json'],'native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots','view/render update; paused values may retain last rendered frame',common+' View-state and render-camera pointers are distinct. Other mode names, transition timing, projection lifecycle and train-relative camera attachment remain unresolved. Stable pointer/time checks do not make external reads atomic.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
-             scope='First runtime probes plus installed cab/rolling-stock and preferred-activity leaf declarations. Not comprehensive completion.',
-             counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_leaf_paths=len(param),files_scanned=len(scanned),total=len(rows)),
+             scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
+             counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
              executable_assumption=common,data_points=rows)
 (ROOT/'inventory.json').write_text(json.dumps(payload,indent=2))
 (ROOT/'source-manifest.json').write_text(json.dumps(sources,indent=2))

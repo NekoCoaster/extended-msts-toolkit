@@ -29,11 +29,15 @@ if __name__=='__main__':
                     elif item['kind']==10:row.update(region_index=r.u(p+0x2a),angle_candidate=r.f(p+0x2e))
                 except (OSError,ValueError) as e:row['error']=str(e)
                 rows.append(row)
+        region_count=r.u(0x7c2e88)
+        if region_count>4096:raise ValueError('Sound region table count bound')
         for t in r.trains():
             state=r.u(t['address']+0xea);row=dict(train=t['address'],state=state)
             if state:row.update(reference_distance_candidate=r.f(state),nearest_distance_candidate=r.f(state+4),selected_region=r.u(state+8),region_table=r.u(state+12))
+            if state and row['region_table']:
+                row['region_records']=[dict(index=i,handle_a=r.u(row['region_table']+i*12),handle_b=r.u(row['region_table']+i*12+4),last_interaction_tick_ms=r.u(row['region_table']+i*12+8)) for i in range(region_count)]
             trains.append(row)
-        result=dict(pid=a.pid,sha256=r.sha,sim_time=start,sim_time_after=r.f(0x80acd4),paused=r.u(0x7be0f4),items=rows,trains=trains)
+        result=dict(pid=a.pid,sha256=r.sha,sim_time=start,sim_time_after=r.f(0x80acd4),paused=r.u(0x7be0f4),sound_region_count=region_count,items=rows,trains=trains)
         (out/'snapshot.json').write_text(json.dumps(result,indent=2,allow_nan=False));hashes={}
         for name in ['probe_track_interactions.py','read_infrastructure.py','read_topology.py','read_services.py','read_live.py']:
             data=(root/name).read_bytes();(out/name).write_bytes(data);hashes[name]=hashlib.sha256(data).hexdigest()

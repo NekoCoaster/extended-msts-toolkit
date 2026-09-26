@@ -34,4 +34,14 @@ Capture pickup-hazard-paused-01 expands the probe to1804 items:1 pickup,593 haza
 
 Pass53:5 functions,493 instructions,1651 bytes; pass54:8 functions,654 instructions,2207 bytes. All exported instructions match disk and live memory with zero errors. Five further candidates bring inventory to763; all preserve explicit live-validation gaps. No NEMT integration, gameplay writes or field prioritization occurred.
 
-Publication note: this report and its standalone probes are included in the current research-branch checkpoint. Earlier local-only notes above describe the stages before publication. Raw captures/native exports remain local and are listed in local-evidence-manifest.json.
+## Sound table lifecycle follow-up
+
+0060806f allocates the16-byte train+ea state and a region table of [7c2e88]*12 bytes, zeroes it, and creates two handles for region0. 00609713 releases nonzero handles and clears them before freeing state/table storage. Exact ownership after destruction still requires pointer-lifetime checks.
+
+00608800 iterates that same global region count. It retains region0 and the currently selected region regardless of timestamp. Other records are retained when unsigned32(timeGetTime()-record+8)<=10000; otherwise both nonzero handles are released and zeroed. The assembly uses CMP0x2710/JBE. This is a Windows multimedia timer tick, not simulation time, and subtraction wraps at32 bits. Cleanup only happens when this function executes; do not promise a ten-second wall-clock expiry during pause or when updates are gated. Exact invocation cadence remains untraced.
+
+At its end,00608800 resets nearest-distance state+4 from train+aa. The same function derives train+aa by summing definition+400 over current cars. Thus state+4 is a search accumulator/reset value, not always an actual nearby boundary distance. It also writes state+0 from calculated train geometry; its physical interpretation remains a candidate.
+
+The expanded probe bounds the region count at4096, reads only12-byte records and does not dereference the opaque handles. Capture sound-table-paused-01 found count10, region0 handles7065/7066, all other handles0, and all timestamps0. This agrees with default allocation but proves neither current playback nor actual expiry. The snapshot still had1804 items, zero errors, unchanged simulation time. Historic captures retain their original script versions.
+
+Pass56 checked4 functions/1037 instructions/4407 bytes, all matching disk and live memory. Pass55 was a rejected byte-pattern lead into an unrelated dialog function; no telemetry inferred from it. New candidates are region table count, per-region handle pair and last-interaction tick, bringing inventory to766. These updates remain local after published commit285a0ff.

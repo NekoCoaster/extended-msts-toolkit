@@ -11,7 +11,7 @@
  ["siding_flags","Siding subtype flags","uint32","bitfield","kind6 item+0x18; SidingTrItemData first value"],
  ["siding_paired_item","Other siding endpoint item ID","uint32","TDB item index","kind6 item+0x1c; SidingTrItemData second value"],
  ["speedpost_flags","Speed-post subtype/control flags","uint16","bitfield","kind8 item+0x28; low bits determine payload interpretation; native serializer 0x4f5703"],
- ["speedpost_byte_value","Conditional speed-post byte payload","uint8","raw source value; restriction units unresolved","kind8 item+0x2a; serialized for low3bits 1/2 or low3bits0 with bit8 set"],
+ ["speedpost_byte_value","Conditional speed-post byte payload","uint8","for traced restriction consumer: mph when flag0x100 set, otherwise km/h; other subtype semantics unresolved","kind8 item+0x2a; 004f5862 converts subtype2 and subtype0+flag8 using float32 0.44704 or0.27777; serializer also emits subtype1, whose runtime use is not established"],
  ["speedpost_float_value","Conditional speed-post floating payload","float32","source value; can represent distance marker, not universally speed","kind8 item+0x2c; serialized for low3bits0 or flag0x10; subtype/unit semantics still to trace"],
  ["speedpost_angle","Stored speed-post orientation angle","float32","radians candidate","kind8 item+0x30; final SpeedpostTrItemData value"]
 ]

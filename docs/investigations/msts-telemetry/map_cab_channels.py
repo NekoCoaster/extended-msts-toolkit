@@ -41,7 +41,7 @@ for n in range(68):
     channels.append(row)
 meta=dict(executable=str(p.path),sha256=hashlib.sha256(p.data).hexdigest(),table='0x77fce0; 68 pointers',
           basis=['pass01b/0041c4ba.c: cab-view type dispatcher','pass01b/0041f357.asm','pass01b/0042064b.asm','pass01b/004218ae.asm','pass04/00422f06.asm'],
-          warning='CabViewType mapping differs from player control-type enum. Base channels only: helper also branches on extended values 0x100..0x120; those remain to inventory.',channels=channels)
+          warning='CabViewType mapping differs from player control-type enum. Base channels only; see EXTENDED-CAB-FINDINGS.md for extended aliases, no-update branches and range/table overlap.',channels=channels)
 (R/'native-cab-map.json').write_text(json.dumps(meta,indent=2))
 lines=['# Native cab channel discovery','','Static installed-binary evidence. Branches and declared names are not blanket runtime-support claims. Cab view types: electric 1, diesel 2, steam 3.','','| ID | Native name | In installed cabs | Electric / diesel / steam branch |','|---|---|---|---|']
 for c in channels:lines.append(f'| {c["enum_hex"]} | {c["name"]} | {c["installed_cab_declaration"]} | '+ ' / '.join(x['destination'] for x in c['dispatch'])+' |')
