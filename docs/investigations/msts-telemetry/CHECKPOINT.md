@@ -12,7 +12,7 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 215 direct-read candidates/structures, 16 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 806 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+Current inventory has 233 direct-read candidates/structures, 18 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 826 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
 
 Latest camera test leaves MSTS paused at 74600.2734375, player stopped with 23 intact vehicles.
 
@@ -30,6 +30,10 @@ The running installation already enables IgnoreRedSignal, PreventActivityEnd, En
 
 ## Direct findings
 
+[Evaluation findings](EVALUATION-FINDINGS.md) identifies live speed-episode storage and its40-record cap, separate from teardown-only report summaries. Nonzero violation transitions remain untested.
+
+[Clock findings](CLOCK-FINDINGS.md) resolves separate elapsed/day-time accumulators and identifies live NEMT timing patches; internal calendar/clock components are retained with untested lifecycle limits.
+
 [Camera findings](CAMERA-FINDINGS.md) adds player view mode/tracking and render-camera position/basis from native consumers and a live cab/front/rear/trackside/cab switch test. Lifecycle and transition timing remain untested.
 
 [Track-item findings](TRACK-ITEM-FINDINGS.md) identifies all 2,970 live item kinds and verifies stored platform, siding and speed-post payloads against the route file. Dynamic behavior and effective restriction semantics remain open.
@@ -44,7 +48,7 @@ Latest checkpoint: [AI lifecycle findings](AI-LIFECYCLE-FINDINGS.md) records 539
 
 [Vehicle-system findings](VEHICLE-SYSTEM-FINDINGS.md) adds per-car pressure, requested brake force, coupling-force candidates and inertia. Session metadata is in captures/session-header-running-01/session.json; header parser offsets are relative to activity+4.
 
-[Activity event findings](ACTIVITY-EVENT-FINDINGS.md) matches the three loaded location events to ACT definitions. Runtime activation/completion transitions and operational evaluation counters remain unverified.
+[Activity event findings](ACTIVITY-EVENT-FINDINGS.md) matches the three loaded location events to ACT definitions. [Evaluator tracing](ACTIVITY-EVALUATOR-FINDINGS.md) now identifies mutable activation, trigger latch/reversal and event-outcome result flags. Actual firing transitions and operational evaluation counters remain unverified.
 
 [Environment findings](ENVIRONMENT-FINDINGS.md) adds read-only precipitation, wind, lighting and fog observations from the current paused snow/night scene; weather-to-physics coupling remains unproven.
 

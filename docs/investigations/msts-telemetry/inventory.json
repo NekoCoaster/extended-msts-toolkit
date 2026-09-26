@@ -1,17 +1,17 @@
 {
-  "generated_utc": "2026-09-26T14:27:31.402623+00:00",
+  "generated_utc": "2026-09-26T14:58:30.279492+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 215,
-    "runtime_derived": 16,
+    "runtime_direct": 233,
+    "runtime_derived": 18,
     "cab_channels": 68,
     "installed_cab_channels": 59,
     "config_paths": 507,
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 806
+    "total": 826
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -27673,10 +27673,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27692,10 +27697,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27711,10 +27721,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27730,67 +27745,87 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
       "id": "activity.event.state_10",
-      "meaning": "Runtime event state used by work-order display",
+      "meaning": "Event trigger latch",
       "applicability": "loaded activity; observed player location objectives, other event kinds untested",
       "value_type": "uint32",
-      "units": "raw state; fired/completed interpretation pending",
-      "extraction": "event+0x10; UI 0x458de1 tests this for action types6..9",
+      "units": "zero/nonzero; successful predicate sets latch, reversible false predicate clears it",
+      "extraction": "event+0x10; evaluator0059a7d3, predicate dispatcher0059b083",
       "evidence": [
         "captures/activity-events-paused-01/activity.json",
         "pass19/0059c477.asm",
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
       "id": "activity.event.state_20",
-      "meaning": "Runtime activation-related state candidate",
+      "meaning": "Activation-level reset baseline",
       "applicability": "loaded activity; observed player location objectives, other event kinds untested",
-      "value_type": "uint32",
-      "units": "raw state",
-      "extraction": "event+0x20; initialized separately from configured activation, serialized independently",
+      "value_type": "int32",
+      "units": "signed level copied to current activation by outcome type4",
+      "extraction": "event+0x20; outcome handler0059ae8e",
       "evidence": [
         "captures/activity-events-paused-01/activity.json",
         "pass19/0059c477.asm",
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
       "id": "activity.event.activation_level",
-      "meaning": "Stored activation level",
+      "meaning": "Mutable current activation level",
       "applicability": "loaded activity; observed player location objectives, other event kinds untested",
       "value_type": "int32",
-      "units": "level",
-      "extraction": "event+0x24; native Activation_Level parser/writer",
+      "units": "signed level; positive enables initial trigger evaluation",
+      "extraction": "event+0x24; gate0059b76f and outcome handlers0059ae8e/0059ad81",
       "evidence": [
         "captures/activity-events-paused-01/activity.json",
         "pass19/0059c477.asm",
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27806,10 +27841,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27825,10 +27865,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27844,10 +27889,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27863,10 +27913,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27882,10 +27937,15 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
@@ -27901,18 +27961,23 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
     },
     {
       "id": "activity.event.reversible_candidate",
-      "meaning": "Reversible-event marker candidate",
+      "meaning": "Reversible event latch behavior",
       "applicability": "loaded activity; observed player location objectives, other event kinds untested",
       "value_type": "uint32",
-      "units": "boolean-like",
+      "units": "nonzero reevaluates a latched event and permits clearing when predicate becomes false",
       "extraction": "event+0x6a; token0x403e7; further semantics pending",
       "evidence": [
         "captures/activity-events-paused-01/activity.json",
@@ -27920,11 +27985,162 @@
         "pass20/0059d037.asm",
         "pass21/0059c2ed.asm",
         "pass23/005902ef.c",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
       ],
-      "evidence_status": "three loaded location events corroborated against ACT file; runtime trigger/state transitions untested",
-      "update_or_lifecycle": "activity load and event evaluation; field-specific cadence unmeasured",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+    },
+    {
+      "id": "activity.event_evaluation_stop",
+      "meaning": "Activity flag that suppresses further event evaluation",
+      "applicability": "loaded activity; observed player location objectives, other event kinds untested",
+      "value_type": "uint32",
+      "units": "zero/nonzero; traced success/failure outcomes set1",
+      "extraction": "activity0x809810+0x348; evaluator0059a7d3",
+      "evidence": [
+        "captures/activity-events-paused-01/activity.json",
+        "pass19/0059c477.asm",
+        "pass20/0059d037.asm",
+        "pass21/0059c2ed.asm",
+        "pass23/005902ef.c",
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
+      ],
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+    },
+    {
+      "id": "activity.event_outcome_success",
+      "meaning": "Success value set by event outcome handler",
+      "applicability": "loaded activity; observed player location objectives, other event kinds untested",
+      "value_type": "uint32",
+      "units": "1 on outcome6, 0 on outcome7; interpret with stop flag, not alone",
+      "extraction": "activity0x809810+0x34c; handler0059ae8e",
+      "evidence": [
+        "captures/activity-events-paused-01/activity.json",
+        "pass19/0059c477.asm",
+        "pass20/0059d037.asm",
+        "pass21/0059c2ed.asm",
+        "pass23/005902ef.c",
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/activity-evaluator-paused-02/activity.json",
+        "pass64-byte-verification.json",
+        "pass65-byte-verification.json",
+        "pass66-byte-verification.json"
+      ],
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+    },
+    {
+      "id": "activity.time_event_clock",
+      "meaning": "Elapsed clock accumulator used by time-event conditions",
+      "applicability": "player activity; location condition uses first player car, not AI",
+      "value_type": "float32",
+      "units": "seconds since clock setter reset; independent float accumulator",
+      "extraction": "[0x80acd0]; native00645af0 adds dt;00645d12 resets to0; current additions patched by NEMT UnlockFPS",
+      "evidence": [
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/event-conditions-paused-01/conditions.json",
+        "pass66/0059b146.asm",
+        "pass67/0059e3ca.asm",
+        "pass67-byte-verification.json",
+        "pass68-byte-verification.json",
+        "CLOCK-FINDINGS.md",
+        "captures/clock-paused-01/clock.json",
+        "captures/clock-paused-01/live-clock-patches.json",
+        "pass70-byte-verification.json",
+        "pass71-byte-verification.json"
+      ],
+      "evidence_status": "native producer/reset traced; current live timing adapters match NEMT source pattern; one paused sample",
+      "update_or_lifecycle": "time-event evaluation or derived on sampling; producer cadence and reset for clock unresolved",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Origin/near-boundary/nonfinite behavior unvalidated; no full x87 emulation. Native clock additions are patched in this installation; no stock timing drift validation. Distinct accumulator must not be replaced by day-time minus start-time."
+    },
+    {
+      "id": "activity.event.horizontal_distance",
+      "meaning": "Horizontal distance from first player car to location trigger",
+      "applicability": "player activity; location condition uses first player car, not AI",
+      "value_type": "derived float",
+      "units": "metres",
+      "extraction": "Convert event tile/offset using current origin and2048m tiles; subtract first car+0x170 X/Z; sqrt horizontal squared distance",
+      "evidence": [
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/event-conditions-paused-01/conditions.json",
+        "pass66/0059b146.asm",
+        "pass67/0059e3ca.asm",
+        "pass67-byte-verification.json",
+        "pass68-byte-verification.json"
+      ],
+      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition",
+      "update_or_lifecycle": "time-event evaluation or derived on sampling; producer cadence and reset for clock unresolved",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Origin/near-boundary/nonfinite behavior unvalidated; no full x87 emulation."
+    },
+    {
+      "id": "activity.event.location_condition",
+      "meaning": "Reconstructed location-event spatial and optional stop predicate",
+      "applicability": "player activity; location condition uses first player car, not AI",
+      "value_type": "derived boolean",
+      "units": "true/false for finite ordinary inputs",
+      "extraction": "distance squared < radius squared AND (TriggerOnStop=0 OR abs(player train+0x92)<double[0x7706d8])",
+      "evidence": [
+        "ACTIVITY-EVALUATOR-FINDINGS.md",
+        "captures/event-conditions-paused-01/conditions.json",
+        "pass66/0059b146.asm",
+        "pass67/0059e3ca.asm",
+        "pass67-byte-verification.json",
+        "pass68-byte-verification.json"
+      ],
+      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition",
+      "update_or_lifecycle": "time-event evaluation or derived on sampling; producer cadence and reset for clock unresolved",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Origin/near-boundary/nonfinite behavior unvalidated; no full x87 emulation."
+    },
+    {
+      "id": "session.internal_calendar",
+      "meaning": "Internal clock day/month/year",
+      "applicability": "shared session clock",
+      "value_type": "uint32[3]",
+      "units": "day/month/year; intended activity-date provenance unverified",
+      "extraction": "uint32 at0x80acb8/0x80acbc/0x80acc0",
+      "evidence": [
+        "CLOCK-FINDINGS.md",
+        "captures/clock-paused-01/clock.json",
+        "pass70/00645af0.asm",
+        "pass70/00645d12.asm",
+        "pass71-byte-verification.json"
+      ],
+      "evidence_status": "native clock update/setter traced and paused values read; current clock additions patched",
+      "update_or_lifecycle": "clock update and initialization; midnight/reload transitions untested",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Internal calendar is not established as narrative activity date. Leap/calendar validity and source initialization remain unresolved. Live timing differs from original disk instructions."
+    },
+    {
+      "id": "session.clock_components",
+      "meaning": "Internal clock second/minute/hour",
+      "applicability": "shared session clock",
+      "value_type": "uint32[3]",
+      "units": "second/minute/hour",
+      "extraction": "uint32 at0x80acc4/0x80acc8/0x80accc",
+      "evidence": [
+        "CLOCK-FINDINGS.md",
+        "captures/clock-paused-01/clock.json",
+        "pass70/00645af0.asm",
+        "pass70/00645d12.asm",
+        "pass71-byte-verification.json"
+      ],
+      "evidence_status": "native clock update/setter traced and paused values read; current clock additions patched",
+      "update_or_lifecycle": "clock update and initialization; midnight/reload transitions untested",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Internal calendar is not established as narrative activity date. Leap/calendar validity and source initialization remain unresolved. Live timing differs from original disk instructions."
     },
     {
       "id": "car.brake_cylinder_pressure",
@@ -28207,6 +28423,270 @@
       "evidence_status": "loaded values match ACT; elapsed is derived and midnight semantics untested",
       "update_or_lifecycle": "header load/reset; elapsed follows advancing simulation clock",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Header parser receives activity+4, so raw parser-relative offsets must include that base adjustment. Do not infer calendar date from narrative briefing. Enum name mapping remains incomplete."
+    },
+    {
+      "id": "evaluation.speed_episode_count",
+      "meaning": "Completed speed-violation episode count",
+      "applicability": "player activity evaluation; not AI telemetry",
+      "value_type": "uint32",
+      "units": "episodes; collector limit40",
+      "extraction": "[0x809790+0x38]",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-01/evaluation.json",
+        "pass75/00586987.asm",
+        "pass75-byte-verification.json",
+        "pass73/004963b7.asm",
+        "captures/evaluation-paused-02/evaluation.json",
+        "pass76-byte-verification.json",
+        "pass77-byte-verification.json",
+        "pass78-byte-verification.json"
+      ],
+      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
+      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+    },
+    {
+      "id": "evaluation.speed_episode_duration",
+      "meaning": "Total duration of closed speed-violation episodes",
+      "applicability": "player activity evaluation; not AI telemetry",
+      "value_type": "float32",
+      "units": "seconds; excludes open episode and stops collecting at40",
+      "extraction": "[0x809790+0x44]",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-01/evaluation.json",
+        "pass75/00586987.asm",
+        "pass75-byte-verification.json",
+        "pass73/004963b7.asm",
+        "captures/evaluation-paused-02/evaluation.json",
+        "pass76-byte-verification.json",
+        "pass77-byte-verification.json",
+        "pass78-byte-verification.json"
+      ],
+      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
+      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+    },
+    {
+      "id": "evaluation.speed_episode_active",
+      "meaning": "Current speed-violation episode state and retained details",
+      "applicability": "player activity evaluation; not AI telemetry",
+      "value_type": "structure",
+      "units": "active flag; start seconds, location raw, adjusted peak/limit native speed, subtype raw",
+      "extraction": "activity0x809810+0x398 flag; +0x388 start,+0x38c location,+0x390 adjusted peak,+0x394 limit,+0x39c subtype",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-01/evaluation.json",
+        "pass75/00586987.asm",
+        "pass75-byte-verification.json",
+        "pass73/004963b7.asm",
+        "captures/evaluation-paused-02/evaluation.json",
+        "pass76-byte-verification.json",
+        "pass77-byte-verification.json",
+        "pass78-byte-verification.json"
+      ],
+      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
+      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+    },
+    {
+      "id": "evaluation.speed_episode_records",
+      "meaning": "Completed speed-violation episode records",
+      "applicability": "player activity evaluation; not AI telemetry",
+      "value_type": "list of24-byte records",
+      "units": "mixed start/duration seconds, location raw, adjusted speed/limit and subtype",
+      "extraction": "sentinel[0x809790+0x28]; node next+0,record+8; record float0/4/8/c/10 and uint32+14",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-01/evaluation.json",
+        "pass75/00586987.asm",
+        "pass75-byte-verification.json",
+        "pass73/004963b7.asm",
+        "captures/evaluation-paused-02/evaluation.json",
+        "pass76-byte-verification.json",
+        "pass77-byte-verification.json",
+        "pass78-byte-verification.json"
+      ],
+      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
+      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+    },
+    {
+      "id": "evaluation.operational_error_count",
+      "meaning": "Retained operational-error record count",
+      "applicability": "player activity evaluation",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "[0x809790+0x34]",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-02/evaluation.json",
+        "pass76/00586226.asm",
+        "pass75/00585e59.asm",
+        "pass76-byte-verification.json"
+      ],
+      "evidence_status": "native append path traced; two retained records match stored count, emission not observed",
+      "update_or_lifecycle": "appended on traced rising controller conditions; initialization/reset and global bounds unresolved",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Raw codes4 and8 observed, not independently named UI errors. Retained timestamps do not establish capture-time causality. Location is marker-derived with unresolved route units. No AI equivalent established."
+    },
+    {
+      "id": "evaluation.operational_error_records",
+      "meaning": "Operational-error records with time, marker location and raw code",
+      "applicability": "player activity evaluation",
+      "value_type": "list of12-byte records",
+      "units": "time seconds; marker location displayed as mile/km by report flag; codes2 penalty brake,4 emergency brake applied,8 penalty power cutout,16 penalty engine shutdown,32 user emergency brake,64 left station while loading",
+      "extraction": "sentinel[0x809790+0x24]; node next+0,record+8; record float time+0/location+4,uint32 code+8",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-02/evaluation.json",
+        "pass76/00586226.asm",
+        "pass75/00585e59.asm",
+        "pass76-byte-verification.json",
+        "evaluation-label-map.json",
+        "map_evaluation_labels.py",
+        "pass80-byte-verification.json"
+      ],
+      "evidence_status": "two retained records match count; native display dispatch maps codes4/8 to installed English resource labels; emission not observed",
+      "update_or_lifecycle": "appended on traced rising controller conditions; initialization/reset and global bounds unresolved",
+      "limitations": "Exact-image/installed-resource mapping only; preserve raw code. Codes4 and32 are distinct. No causal input or live emission proof. Marker interpolation and route conversion remain unvalidated. No AI equivalent established."
+    },
+    {
+      "id": "evaluation.freight_durability_count",
+      "meaning": "Freight durability exceedance record count",
+      "applicability": "player consist evaluation; not AI telemetry",
+      "value_type": "uint32",
+      "units": "records; both collectors stop if either count reaches40",
+      "extraction": "[0x809790+0x3c]",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-03/evaluation.json",
+        "vehicle-condition-labels.json",
+        "pass75/00586666.asm",
+        "pass74/0043bc16.asm",
+        "pass74-byte-verification.json",
+        "pass75-byte-verification.json"
+      ],
+      "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
+      "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Reference threshold initialization unresolved. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+    },
+    {
+      "id": "evaluation.freight_durability_records",
+      "meaning": "Freight durability exceedance time and marker-location records",
+      "applicability": "player consist evaluation; not AI telemetry",
+      "value_type": "list of8-byte records",
+      "units": "time seconds; marker location raw",
+      "extraction": "sentinel[0x809790+0x2c]; node next+0,record+8; record float time+0/location+4",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-03/evaluation.json",
+        "vehicle-condition-labels.json",
+        "pass75/00586666.asm",
+        "pass74/0043bc16.asm",
+        "pass74-byte-verification.json",
+        "pass75-byte-verification.json"
+      ],
+      "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
+      "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Reference threshold initialization unresolved. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+    },
+    {
+      "id": "evaluation.passenger_comfort_count",
+      "meaning": "Passenger comfort exceedance record count",
+      "applicability": "player consist evaluation; not AI telemetry",
+      "value_type": "uint32",
+      "units": "records; both collectors stop if either count reaches40",
+      "extraction": "[0x809790+0x40]",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-03/evaluation.json",
+        "vehicle-condition-labels.json",
+        "pass75/00586666.asm",
+        "pass74/0043bc16.asm",
+        "pass74-byte-verification.json",
+        "pass75-byte-verification.json"
+      ],
+      "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
+      "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Reference threshold initialization unresolved. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+    },
+    {
+      "id": "evaluation.passenger_comfort_records",
+      "meaning": "Passenger comfort exceedance time and marker-location records",
+      "applicability": "player consist evaluation; not AI telemetry",
+      "value_type": "list of8-byte records",
+      "units": "time seconds; marker location raw",
+      "extraction": "sentinel[0x809790+0x30]; node next+0,record+8; record float time+0/location+4",
+      "evidence": [
+        "EVALUATION-FINDINGS.md",
+        "captures/evaluation-paused-03/evaluation.json",
+        "vehicle-condition-labels.json",
+        "pass75/00586666.asm",
+        "pass74/0043bc16.asm",
+        "pass74-byte-verification.json",
+        "pass75-byte-verification.json"
+      ],
+      "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
+      "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Reference threshold initialization unresolved. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+    },
+    {
+      "id": "car.stored_velocity",
+      "meaning": "Native stored car signed speed",
+      "applicability": "physical player and AI cars; fresh validation player only",
+      "value_type": "float32",
+      "units": "m/s",
+      "extraction": "car+0x1bc;0062924c signed magnitude of physics velocity; derailed branch unsigned",
+      "evidence": [
+        "VEHICLE-MOTION-EVALUATION.md",
+        "vehicle-evaluation-labels.json",
+        "captures/vehicle-evaluation-paused-02/snapshot.json",
+        "pass81-byte-verification.json",
+        "pass82-byte-verification.json",
+        "pass83-byte-verification.json"
+      ],
+      "evidence_status": "native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested",
+      "update_or_lifecycle": "motion physics update with branch gates; Durability copied during creation, later writers not exhaustively excluded",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only."
+    },
+    {
+      "id": "car.stored_acceleration",
+      "meaning": "Native stored car signed acceleration",
+      "applicability": "physical player and AI cars; fresh validation player only",
+      "value_type": "float32",
+      "units": "m/s squared",
+      "extraction": "car+0x1c0;0062924c signed force magnitude times inverse mass; derailed branch unsigned",
+      "evidence": [
+        "VEHICLE-MOTION-EVALUATION.md",
+        "vehicle-evaluation-labels.json",
+        "captures/vehicle-evaluation-paused-02/snapshot.json",
+        "pass81-byte-verification.json",
+        "pass82-byte-verification.json",
+        "pass83-byte-verification.json"
+      ],
+      "evidence_status": "native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested",
+      "update_or_lifecycle": "motion physics update with branch gates; Durability copied during creation, later writers not exhaustively excluded",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only."
+    },
+    {
+      "id": "car.loaded_durability",
+      "meaning": "Durability copied from service/consist definition",
+      "applicability": "physical player and AI cars; fresh validation player only",
+      "value_type": "float32",
+      "units": "native dimensionless scalar",
+      "extraction": "car+0x28e copied from definition+0xa0 by005a7821/005a7a5f; token4028c Durability",
+      "evidence": [
+        "VEHICLE-MOTION-EVALUATION.md",
+        "vehicle-evaluation-labels.json",
+        "captures/vehicle-evaluation-paused-02/snapshot.json",
+        "pass81-byte-verification.json",
+        "pass82-byte-verification.json",
+        "pass83-byte-verification.json"
+      ],
+      "evidence_status": "native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested",
+      "update_or_lifecycle": "motion physics update with branch gates; Durability copied during creation, later writers not exhaustively excluded",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only."
     },
     {
       "id": "camera.mode",

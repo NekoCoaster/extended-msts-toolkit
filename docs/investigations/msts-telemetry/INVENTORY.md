@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 215, 'runtime_derived': 16, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 806}
+{'runtime_direct': 233, 'runtime_derived': 18, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 826}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -778,20 +778,27 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | environment.fog.start | Current fog start distance | inherited native research plus current paused read; scene transitions not tested in this phase |
 | environment.fog.end | Current fog end distance | inherited native research plus current paused read; scene transitions not tested in this phase |
 | environment.fog.scale | Fog interpolation scale | inherited native research plus current paused read; scene transitions not tested in this phase |
-| activity.event_registry | Loaded activity event list | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.id | Activity-defined event ID | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.category | Native event category | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.type | Native event type | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.state_10 | Runtime event state used by work-order display | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.state_20 | Runtime activation-related state candidate | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.activation_level | Stored activation level | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.location_tile | Location trigger tile pair | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.location_offset | Location trigger X/Z inside tile | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.location_radius | Location trigger radius | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.trigger_on_stop | Location event requires stopping | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.outcome_count | Number of event outcomes | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.outcomes | Outcome records: type, argument and payload reference | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
-| activity.event.reversible_candidate | Reversible-event marker candidate | three loaded location events corroborated against ACT file; runtime trigger/state transitions untested |
+| activity.event_registry | Loaded activity event list | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.id | Activity-defined event ID | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.category | Native event category | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.type | Native event type | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.state_10 | Event trigger latch | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.state_20 | Activation-level reset baseline | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.activation_level | Mutable current activation level | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.location_tile | Location trigger tile pair | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.location_offset | Location trigger X/Z inside tile | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.location_radius | Location trigger radius | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.trigger_on_stop | Location event requires stopping | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.outcome_count | Number of event outcomes | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.outcomes | Outcome records: type, argument and payload reference | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.reversible_candidate | Reversible event latch behavior | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event_evaluation_stop | Activity flag that suppresses further event evaluation | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event_outcome_success | Success value set by event outcome handler | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.time_event_clock | Elapsed clock accumulator used by time-event conditions | native producer/reset traced; current live timing adapters match NEMT source pattern; one paused sample |
+| activity.event.horizontal_distance | Horizontal distance from first player car to location trigger | native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition |
+| activity.event.location_condition | Reconstructed location-event spatial and optional stop predicate | native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition |
+| session.internal_calendar | Internal clock day/month/year | native clock update/setter traced and paused values read; current clock additions patched |
+| session.clock_components | Internal clock second/minute/hour | native clock update/setter traced and paused values read; current clock additions patched |
 | car.brake_cylinder_pressure | Per-car brake cylinder pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.brake_pipe_pressure | Per-car brake-pipe pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.brake_force_candidate | Per-car requested brake-force quantity before adhesion limiting | static source tracing plus stopped-player values during running simulation; independent AI population untested |
@@ -808,6 +815,19 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | session.duration_hm | Configured activity duration | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.start_seconds | Activity start clock in seconds | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.elapsed_candidate | Elapsed simulation time since activity start | loaded values match ACT; elapsed is derived and midnight semantics untested |
+| evaluation.speed_episode_count | Completed speed-violation episode count | native collector and storage traced; empty paused state read, no nonzero episode validation |
+| evaluation.speed_episode_duration | Total duration of closed speed-violation episodes | native collector and storage traced; empty paused state read, no nonzero episode validation |
+| evaluation.speed_episode_active | Current speed-violation episode state and retained details | native collector and storage traced; empty paused state read, no nonzero episode validation |
+| evaluation.speed_episode_records | Completed speed-violation episode records | native collector and storage traced; empty paused state read, no nonzero episode validation |
+| evaluation.operational_error_count | Retained operational-error record count | native append path traced; two retained records match stored count, emission not observed |
+| evaluation.operational_error_records | Operational-error records with time, marker location and raw code | two retained records match count; native display dispatch maps codes4/8 to installed English resource labels; emission not observed |
+| evaluation.freight_durability_count | Freight durability exceedance record count | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
+| evaluation.freight_durability_records | Freight durability exceedance time and marker-location records | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
+| evaluation.passenger_comfort_count | Passenger comfort exceedance record count | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
+| evaluation.passenger_comfort_records | Passenger comfort exceedance time and marker-location records | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
+| car.stored_velocity | Native stored car signed speed | native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested |
+| car.stored_acceleration | Native stored car signed acceleration | native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested |
+| car.loaded_durability | Durability copied from service/consist definition | native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested |
 | camera.mode | Player view mode raw enum | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
 | camera.tracking | Player camera tracking state used by native debug display | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
 | camera.render_position | Current render-camera position | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |

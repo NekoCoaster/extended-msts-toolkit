@@ -1,0 +1,21 @@
+# Stored car motion and evaluation inputs
+
+Native update0062924c writes car+1bc and+1c0. Debug display0060997a consumes these as wagon velocity (m/s) and acceleration (m/s squared), using string00772938. These are stored simulator quantities, distinct from an external finite difference of position or speed.
+
+For the ordinary non-derailed branch, velocity is magnitude(body+88 vector) times sign(dot(car's current body+24 forward vector, body+88)). Acceleration is magnitude(body+a0 force vector) times body+c8 inverse mass, times sign(dot(forward, force)). Helper005fcfa9 computes vector magnitude through005fdd6b's FSQRT;0062e80f is dot product;00607b60 returns-1/0/+1 with a dead band around +/-1.0000000116860974e-7. This is signed magnitude, not the longitudinal dot product itself. Do not merge it with the existing derived longitudinal-speed candidate.
+
+The branch for body+f2 bit4 (derailed) omits sign and stores nonnegative magnitudes. Car+84 bit2 skips these writes. The update operates on a body supplied by the physics iteration while the forward vector comes from car+5c; buffer swapping matters. A same-time external sample is not inherently atomic or proof of exact producer cadence.
+
+The evaluation comparison input car+28e is loaded Durability, not a measured damage accumulator. The token table at00795ee8 pairs string Durability with token4028c. Parser0062154a compares that token at006216ff, routes to0062177d and reads into definition+a0. Serializer006221cd emits the same token/value. Initial car construction005a7821 copies the source definition+a0 to car+28e; physical service creation005a7a5f copies [service+18]+a0 there. The decompiler removes parser branches incorrectly; instruction listings are authoritative here. Other writers or later mutation have not been exhaustively excluded.
+
+The evaluation uses abs(stored acceleration), threshold abs(acceleration)*reference_definition+7d0 below/equal reference_definition+7cc, otherwise1. Its reference is [[80aa1c]+94]. The paused sample reference car is outside the enumerated player chain, so it must not be silently replaced with each car's own definition. Reference ceiling29.399999618530273 and scale0.03401360660791397 are observed; their configuration/default producer remains untraced.
+
+## Read-only sample and checks
+
+probe_vehicle_evaluation.py captures bounded registered physical trains, with ownership checks inherited from Reader.trains, stored motion, force vectors, Durability, relevant definition values and finite reconstruction. captures/vehicle-evaluation-paused-02 contains one player train/23 cars at unchanged simulation74600.2734375, pause1. All Durability values and the player's service-definition+a0 are1.0. No comparison qualifies. Stored acceleration ranges approximately +/-2.58756e-8 m/s squared; velocity is0. Reconstructed values differ by at most1.50663e-15 for acceleration and0 for velocity; all body pointers remain stable. This stopped snapshot is only a near-zero consistency check, not dynamic, reverse-motion, derailment or AI validation.
+
+The first probe attempt failed before capture because it used an incorrect Reader method name; the empty vehicle-evaluation-paused-01 directory is not evidence of a successful sample. The method was corrected to trains and a new capture name used.
+
+Pass81:6 functions/1136 instructions/4097 bytes, zero disk/live mismatches. Pass82:2 functions/2789 instructions/12385 bytes, zero disk mismatches, one live call patch at0060c996 elsewhere in the debug function (expected e8551d0a00, actual e8ad2a2302). The relevant motion-display instructions match; the whole function does not. Patch target provenance remains untraced. Pass83:2 functions/574 instructions/1814 bytes, zero mismatches. These checks cover only exported instructions. String/token evidence is retained in vehicle-evaluation-labels.json.
+
+Three candidates added: stored per-car velocity, stored per-car acceleration, and loaded Durability. Both physical player and AI objects have the structural extraction paths; this fresh sample validates player only. Offscreen AI services do not imply available car physics. Next investigations include moving/reversing samples, the reference definition's threshold initialization, and dynamic AI/car lifecycle coverage.

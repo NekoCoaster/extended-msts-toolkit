@@ -1,16 +1,114 @@
 [
- ["event_registry","Loaded activity event list","list","event identities","activity singleton 0x809810; sentinel at +0x324 = [0x809b34]; nodes next+0, event+8"],
- ["event.id","Activity-defined event ID","uint32","ID within activity","event+0xc"],
- ["event.category","Native event category","uint32","enum; 2 observed for location events","event+4"],
- ["event.type","Native event type","uint32","enum; 1 observed for location trigger","event+8"],
- ["event.state_10","Runtime event state used by work-order display","uint32","raw state; fired/completed interpretation pending","event+0x10; UI 0x458de1 tests this for action types6..9"],
- ["event.state_20","Runtime activation-related state candidate","uint32","raw state","event+0x20; initialized separately from configured activation, serialized independently"],
- ["event.activation_level","Stored activation level","int32","level","event+0x24; native Activation_Level parser/writer"],
- ["event.location_tile","Location trigger tile pair","2 int32","signed tile indices","location event+0x6e and +0x72"],
- ["event.location_offset","Location trigger X/Z inside tile","2 float32","metres","location event+0x76 and +0x7a"],
- ["event.location_radius","Location trigger radius","float32","metres","location event+0x7e"],
- ["event.trigger_on_stop","Location event requires stopping","uint32","boolean-like","location event+0x82"],
- ["event.outcome_count","Number of event outcomes","uint32","count","event+0x66"],
- ["event.outcomes","Outcome records: type, argument and payload reference","three uint32 per outcome","mixed native enum/argument/pointer","inline array at event+0x2a; stride12, bounded5 from common layout; observed types5 display-message and6 success"],
- ["event.reversible_candidate","Reversible-event marker candidate","uint32","boolean-like","event+0x6a; token0x403e7; further semantics pending"]
+  [
+    "event_registry",
+    "Loaded activity event list",
+    "list",
+    "event identities",
+    "activity singleton 0x809810; sentinel at +0x324 = [0x809b34]; nodes next+0, event+8"
+  ],
+  [
+    "event.id",
+    "Activity-defined event ID",
+    "uint32",
+    "ID within activity",
+    "event+0xc"
+  ],
+  [
+    "event.category",
+    "Native event category",
+    "uint32",
+    "enum; 2 observed for location events",
+    "event+4"
+  ],
+  [
+    "event.type",
+    "Native event type",
+    "uint32",
+    "enum; 1 observed for location trigger",
+    "event+8"
+  ],
+  [
+    "event.state_10",
+    "Event trigger latch",
+    "uint32",
+    "zero/nonzero; successful predicate sets latch, reversible false predicate clears it",
+    "event+0x10; evaluator0059a7d3, predicate dispatcher0059b083"
+  ],
+  [
+    "event.state_20",
+    "Activation-level reset baseline",
+    "int32",
+    "signed level copied to current activation by outcome type4",
+    "event+0x20; outcome handler0059ae8e"
+  ],
+  [
+    "event.activation_level",
+    "Mutable current activation level",
+    "int32",
+    "signed level; positive enables initial trigger evaluation",
+    "event+0x24; gate0059b76f and outcome handlers0059ae8e/0059ad81"
+  ],
+  [
+    "event.location_tile",
+    "Location trigger tile pair",
+    "2 int32",
+    "signed tile indices",
+    "location event+0x6e and +0x72"
+  ],
+  [
+    "event.location_offset",
+    "Location trigger X/Z inside tile",
+    "2 float32",
+    "metres",
+    "location event+0x76 and +0x7a"
+  ],
+  [
+    "event.location_radius",
+    "Location trigger radius",
+    "float32",
+    "metres",
+    "location event+0x7e"
+  ],
+  [
+    "event.trigger_on_stop",
+    "Location event requires stopping",
+    "uint32",
+    "boolean-like",
+    "location event+0x82"
+  ],
+  [
+    "event.outcome_count",
+    "Number of event outcomes",
+    "uint32",
+    "count",
+    "event+0x66"
+  ],
+  [
+    "event.outcomes",
+    "Outcome records: type, argument and payload reference",
+    "three uint32 per outcome",
+    "mixed native enum/argument/pointer",
+    "inline array at event+0x2a; stride12, bounded5 from common layout; observed types5 display-message and6 success"
+  ],
+  [
+    "event.reversible_candidate",
+    "Reversible event latch behavior",
+    "uint32",
+    "nonzero reevaluates a latched event and permits clearing when predicate becomes false",
+    "event+0x6a; token0x403e7; further semantics pending"
+  ],
+  [
+    "event_evaluation_stop",
+    "Activity flag that suppresses further event evaluation",
+    "uint32",
+    "zero/nonzero; traced success/failure outcomes set1",
+    "activity0x809810+0x348; evaluator0059a7d3"
+  ],
+  [
+    "event_outcome_success",
+    "Success value set by event outcome handler",
+    "uint32",
+    "1 on outcome6, 0 on outcome7; interpret with stop flag, not alone",
+    "activity0x809810+0x34c; handler0059ae8e"
+  ]
 ]

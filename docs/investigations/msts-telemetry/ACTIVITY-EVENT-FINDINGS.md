@@ -27,3 +27,5 @@ The initial failure lead0x58ea72 proved to be a generic indexed-object message d
 No event was triggered here. No operational evaluation counter was decoded yet. Future work: event evaluator/context, activation changes, time/action event extensions, outcome payloads, actual completion/failure result, speed/error counters and elapsed evaluation times. Readable loaded definitions are useful metadata, but not proof of changing telemetry.
 
 `read_activity.py` preserves exact readers and bounded raw observations. `activity-fields.json` adds14 candidates with per-field limitations. Passes17–23 retain parser, writer, save loader and UI evidence. Do not trust high-level decompiler omissions without comparing assembly.
+
+Follow-up: ACTIVITY-EVALUATOR-FINDINGS.md resolves the native activation gate, mutable activation/reset baseline, trigger latch and reversal handling, and adds two activity outcome flags. Earlier raw-label uncertainty above is historical; actual event-firing transitions remain untested.
