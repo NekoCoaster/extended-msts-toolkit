@@ -1,0 +1,48 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass95",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00403882",
+      "instructions": 1,
+      "bytes": 5,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005f5630",
+      "instructions": 40,
+      "bytes": 119,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00602bf0",
+      "instructions": 292,
+      "bytes": 1027,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00603691",
+      "instructions": 122,
+      "bytes": 441,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0060392e",
+      "instructions": 292,
+      "bytes": 1071,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

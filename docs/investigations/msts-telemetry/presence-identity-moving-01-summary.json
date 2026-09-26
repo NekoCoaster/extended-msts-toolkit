@@ -1,0 +1,355 @@
+{
+  "source": "captures\\presence-identity-moving-01\\samples.jsonl",
+  "sha256": "e5cb0f5ab3a29e0e65b1964a6f5ac32fb78bcc493301e211463e1aa10e6dcda3",
+  "samples": 261,
+  "errors": 0,
+  "clock_range": [
+    74054.6171875,
+    74105.6171875
+  ],
+  "max_read_seconds": 0.11596979998284951,
+  "unique_presence_records": 45,
+  "identity_changes": [
+    {
+      "sample": 97,
+      "record": 73066020,
+      "before": [
+        69503572,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73066148,
+      "before": [
+        69115956,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065508,
+      "before": [
+        69116884,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73066116,
+      "before": [
+        69117812,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065412,
+      "before": [
+        69118740,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065828,
+      "before": [
+        69119408,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065796,
+      "before": [
+        69108228,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73066052,
+      "before": [
+        69109156,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065348,
+      "before": [
+        69109824,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73063684,
+      "before": [
+        69110492,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73063652,
+      "before": [
+        69111160,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065636,
+      "before": [
+        69065816,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73063268,
+      "before": [
+        69066744,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73063716,
+      "before": [
+        69067672,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065188,
+      "before": [
+        69068600,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065540,
+      "before": [
+        69069268,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065572,
+      "before": [
+        69069936,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065380,
+      "before": [
+        68776416,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73063620,
+      "before": [
+        68777344,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73065060,
+      "before": [
+        68762724,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73063492,
+      "before": [
+        68779556,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    },
+    {
+      "sample": 97,
+      "record": 73063588,
+      "before": [
+        68764676,
+        53786524
+      ],
+      "after": [
+        0,
+        53786524
+      ]
+    }
+  ],
+  "node_changes": [],
+  "distinct_ai_update_times": 10,
+  "exclusions": {
+    "unjoined": 3608
+  },
+  "comparisons": {
+    "moving_all": {
+      "error": {
+        "count": 880,
+        "min": 1.3446383777235447,
+        "median": 1.5888246893882751,
+        "max": 1.831641711958035
+      },
+      "end_clock_error": {
+        "count": 880,
+        "min": 2.1637149437481185e-05,
+        "median": 0.0002679601311683655,
+        "max": 0.2444490712906422
+      },
+      "age": {
+        "count": 880,
+        "min": 0.6796875,
+        "median": 1.0625,
+        "max": 1.453125
+      },
+      "gap": {
+        "count": 880,
+        "min": 12.2236328125,
+        "median": 18.21337890625,
+        "max": 24.0810546875
+      },
+      "samples": 40
+    },
+    "moving_same_clock": {
+      "error": {
+        "count": 0
+      },
+      "end_clock_error": {
+        "count": 0
+      },
+      "age": {
+        "count": 0
+      },
+      "gap": {
+        "count": 0
+      },
+      "samples": 0
+    },
+    "paused": {
+      "error": {
+        "count": 1254,
+        "min": 0.00034125238488513787,
+        "median": 0.00034125238488513787,
+        "max": 0.00034125238488513787
+      },
+      "end_clock_error": {
+        "count": 1254,
+        "min": 0.00034125238488513787,
+        "median": 0.00034125238488513787,
+        "max": 0.00034125238488513787
+      },
+      "age": {
+        "count": 1254,
+        "min": 0.6171875,
+        "median": 0.6171875,
+        "max": 0.6171875
+      },
+      "gap": {
+        "count": 1254,
+        "min": 9.65234375,
+        "median": 9.65234375,
+        "max": 9.65234375
+      },
+      "samples": 57
+    }
+  },
+  "limitations": "Per-car sequential snapshots,not atomic. Same-clock filter cannot exclude internal phase differences. Python double reconstruction;single AI and route segment,not universal correction. Statistics count correlated cars separately;sample count also reported. Pointer reuse between samples can go undetected."
+}

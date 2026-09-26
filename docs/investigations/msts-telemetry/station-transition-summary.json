@@ -1,0 +1,162 @@
+{
+  "maryland-station-baseline-01": {
+    "samples": 1,
+    "errors": 0,
+    "sim_time_range": [
+      28809.5703125,
+      28809.5703125
+    ],
+    "paused_samples": 1,
+    "clock_crossings": 0,
+    "unstable_services": 0,
+    "player_speed_range": [
+      0.0,
+      0.0
+    ],
+    "transitions": [
+      {
+        "index": 0,
+        "sim_time_before": 28809.5703125,
+        "sim_time_after": 28809.5703125,
+        "previous_observation_time": null,
+        "state": {
+          "selected": 111689260,
+          "previous": 0,
+          "efficiency": 0.75,
+          "boarding": 0,
+          "remaining": 0.0,
+          "records": [
+            {
+              "address": 111689260,
+              "flags": 34,
+              "recorded_arrival": 28801.0,
+              "recorded_departure": 0.0
+            },
+            {
+              "address": 111690460,
+              "flags": 0,
+              "recorded_arrival": 0.0,
+              "recorded_departure": 0.0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "maryland-station-wait-01": {
+    "samples": 879,
+    "errors": 0,
+    "sim_time_range": [
+      28809.5703125,
+      28889.744140625
+    ],
+    "paused_samples": 97,
+    "clock_crossings": 170,
+    "unstable_services": 0,
+    "player_speed_range": [
+      0.0,
+      0.0
+    ],
+    "transitions": [
+      {
+        "index": 0,
+        "sim_time_before": 28809.5703125,
+        "sim_time_after": 28809.5703125,
+        "previous_observation_time": null,
+        "state": {
+          "selected": 111689260,
+          "previous": 0,
+          "efficiency": 0.75,
+          "boarding": 0,
+          "remaining": 0.0,
+          "records": [
+            {
+              "address": 111689260,
+              "flags": 34,
+              "recorded_arrival": 28801.0,
+              "recorded_departure": 0.0
+            },
+            {
+              "address": 111690460,
+              "flags": 0,
+              "recorded_arrival": 0.0,
+              "recorded_departure": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "index": 111,
+        "sim_time_before": 28811.072265625,
+        "sim_time_after": 28811.072265625,
+        "previous_observation_time": 28810.96875,
+        "state": {
+          "selected": 111689260,
+          "previous": 0,
+          "efficiency": 0.75,
+          "boarding": 0,
+          "remaining": 0.0,
+          "records": [
+            {
+              "address": 111689260,
+              "flags": 98,
+              "recorded_arrival": 28801.0,
+              "recorded_departure": 0.0
+            },
+            {
+              "address": 111690460,
+              "flags": 0,
+              "recorded_arrival": 0.0,
+              "recorded_departure": 0.0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "maryland-station-departure-01": {
+    "samples": 1463,
+    "errors": 0,
+    "sim_time_range": [
+      28871.62109375,
+      28919.865234375
+    ],
+    "paused_samples": 992,
+    "clock_crossings": 108,
+    "unstable_services": 0,
+    "player_speed_range": [
+      0.0,
+      0.0
+    ],
+    "transitions": [
+      {
+        "index": 0,
+        "sim_time_before": 28871.62109375,
+        "sim_time_after": 28871.630859375,
+        "previous_observation_time": null,
+        "state": {
+          "selected": 111689260,
+          "previous": 0,
+          "efficiency": 0.75,
+          "boarding": 0,
+          "remaining": 0.0,
+          "records": [
+            {
+              "address": 111689260,
+              "flags": 98,
+              "recorded_arrival": 28801.0,
+              "recorded_departure": 0.0
+            },
+            {
+              "address": 111690460,
+              "flags": 0,
+              "recorded_arrival": 0.0,
+              "recorded_departure": 0.0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "limitations": "Non-atomic, sampled observations. Transition bounds are observation intervals, not proof of exact native write time. Capture name departure denotes intended test, not successful movement. No boarding-active or departure transition occurred if values remain zero."
+}

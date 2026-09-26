@@ -1,0 +1,112 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass147",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00401820",
+      "instructions": 1,
+      "bytes": 5,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00403d0a",
+      "instructions": 1,
+      "bytes": 5,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058bf90",
+      "instructions": 546,
+      "bytes": 1998,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058eada",
+      "instructions": 102,
+      "bytes": 470,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a1b1a",
+      "instructions": 660,
+      "bytes": 2467,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a2dc3",
+      "instructions": 143,
+      "bytes": 441,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a31d4",
+      "instructions": 91,
+      "bytes": 457,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a847d",
+      "instructions": 265,
+      "bytes": 1032,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005ad843",
+      "instructions": 226,
+      "bytes": 907,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064a4d7",
+      "instructions": 67,
+      "bytes": 283,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064a6d3",
+      "instructions": 104,
+      "bytes": 435,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064eea4",
+      "instructions": 147,
+      "bytes": 475,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "006587ad",
+      "instructions": 73,
+      "bytes": 271,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

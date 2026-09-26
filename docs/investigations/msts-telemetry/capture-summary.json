@@ -1,0 +1,624 @@
+{
+  "ai-pass-braking": {
+    "samples": 472,
+    "errors": 0,
+    "registry_errors": 0,
+    "start_time": 73900.015625,
+    "end_time": 73914.796875,
+    "paused_samples": 414,
+    "crossed_simulation_step": 10,
+    "unstable_player_pointer": 0,
+    "player_counts": [
+      23
+    ],
+    "trains": {
+      "400007": {
+        "player": true,
+        "samples": 472,
+        "counts": [
+          23
+        ],
+        "derailed": [
+          0,
+          3,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "wrappers": [
+          8086584
+        ],
+        "speed_range": [
+          0.8173738718032837,
+          10.415304183959961
+        ],
+        "max_train_body_speed_difference": 14.867089844823965,
+        "first_position": [
+          -796.7918701171875,
+          1105.0418701171875,
+          -85.14459991455078
+        ],
+        "last_position": [
+          -715.4826049804688,
+          1104.7547607421875,
+          -164.89715576171875
+        ],
+        "coordinate_jumps_over_1000m": 0
+      },
+      "400005": {
+        "player": false,
+        "samples": 472,
+        "counts": [
+          6,
+          22
+        ],
+        "derailed": [
+          0,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "wrappers": [
+          8086584
+        ],
+        "speed_range": [
+          0.3973652422428131,
+          24.193662643432617
+        ],
+        "max_train_body_speed_difference": 13.617523348657638,
+        "first_position": [
+          -639.2767333984375,
+          1104.87548828125,
+          -239.11448669433594
+        ],
+        "last_position": [
+          -730.6665649414062,
+          1105.1502685546875,
+          -159.34176635742188
+        ],
+        "coordinate_jumps_over_1000m": 0
+      }
+    },
+    "signal_history": {
+      "0x5a0bb54": [
+        {
+          "sim_time": 73900.015625,
+          "distance": 39.3115234375,
+          "state": [
+            1,
+            0.0,
+            0
+          ]
+        }
+      ],
+      "0x5a0bb84": [
+        {
+          "sim_time": 73900.015625,
+          "distance": 6215.15283203125,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x5a0c244": [
+        {
+          "sim_time": 73900.015625,
+          "distance": 6215.15283203125,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bcbe34": [
+        {
+          "sim_time": 73902.59375,
+          "distance": 11897.86328125,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bcbc54": [
+        {
+          "sim_time": 73902.59375,
+          "distance": 11897.86328125,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "ai-running-01": {
+    "samples": 178,
+    "errors": 0,
+    "registry_errors": 0,
+    "start_time": 73873.65625,
+    "end_time": 73900.015625,
+    "paused_samples": 75,
+    "crossed_simulation_step": 26,
+    "unstable_player_pointer": 0,
+    "player_counts": [
+      23
+    ],
+    "trains": {
+      "400007": {
+        "player": true,
+        "samples": 178,
+        "counts": [
+          23
+        ],
+        "derailed": [
+          0
+        ],
+        "wrappers": [
+          8086584
+        ],
+        "speed_range": [
+          6.32345724105835,
+          9.656964302062988
+        ],
+        "max_train_body_speed_difference": 0.022384522822939346,
+        "first_position": [
+          987.237060546875,
+          1106.3804931640625,
+          139.43890380859375
+        ],
+        "last_position": [
+          -796.7918701171875,
+          1105.0418701171875,
+          -85.14459991455078
+        ],
+        "coordinate_jumps_over_1000m": 1
+      },
+      "400005": {
+        "player": false,
+        "samples": 178,
+        "counts": [
+          22
+        ],
+        "derailed": [
+          0
+        ],
+        "wrappers": [
+          8086584
+        ],
+        "speed_range": [
+          14.959239959716797,
+          21.261533737182617
+        ],
+        "max_train_body_speed_difference": 0.008944724788705116,
+        "first_position": [
+          1543.8092041015625,
+          1104.87548828125,
+          -627.1160888671875
+        ],
+        "last_position": [
+          -639.2767333984375,
+          1104.87548828125,
+          -239.11448669433594
+        ],
+        "coordinate_jumps_over_1000m": 1
+      }
+    },
+    "signal_history": {
+      "0x5a0bb54": [
+        {
+          "sim_time": 73873.65625,
+          "distance": 385.3779296875,
+          "state": [
+            1,
+            0.0,
+            0
+          ]
+        }
+      ],
+      "0x5a0bb84": [
+        {
+          "sim_time": 73873.65625,
+          "distance": 6561.2216796875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x5a0c244": [
+        {
+          "sim_time": 73873.65625,
+          "distance": 6561.2216796875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bcbe34": [
+        {
+          "sim_time": 73875.5859375,
+          "distance": 12358.3623046875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bcbc54": [
+        {
+          "sim_time": 73875.5859375,
+          "distance": 12358.3623046875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "clean-ai-pass": {
+    "samples": 477,
+    "errors": 1,
+    "registry_errors": 0,
+    "start_time": 73800.6640625,
+    "end_time": 74022.890625,
+    "paused_samples": 37,
+    "crossed_simulation_step": 124,
+    "unstable_player_pointer": 0,
+    "player_counts": [
+      23
+    ],
+    "trains": {
+      "400007": {
+        "player": true,
+        "samples": 476,
+        "counts": [
+          23
+        ],
+        "derailed": [
+          0
+        ],
+        "wrappers": [
+          8086584
+        ],
+        "speed_range": [
+          0.0,
+          11.023432731628418
+        ],
+        "max_train_body_speed_difference": 0.60582093794687,
+        "first_position": [
+          401.8802185058594,
+          1099.492431640625,
+          637.291748046875
+        ],
+        "last_position": [
+          512.7078857421875,
+          1101.7779541015625,
+          543.0348510742188
+        ],
+        "coordinate_jumps_over_1000m": 0
+      },
+      "400005": {
+        "player": false,
+        "samples": 265,
+        "counts": [
+          22
+        ],
+        "derailed": [
+          0
+        ],
+        "wrappers": [
+          8086584
+        ],
+        "speed_range": [
+          14.959239959716797,
+          24.81072235107422
+        ],
+        "max_train_body_speed_difference": 0.008933518786591321,
+        "first_position": [
+          1535.883056640625,
+          1104.87548828125,
+          -394.15020751953125
+        ],
+        "last_position": [
+          -160.00355529785156,
+          1074.7142333984375,
+          1434.2703857421875
+        ],
+        "coordinate_jumps_over_1000m": 0
+      }
+    },
+    "signal_history": {
+      "0x5a0bf44": [
+        {
+          "sim_time": 73800.6640625,
+          "distance": 1156.9580078125,
+          "state": [
+            1,
+            0.0,
+            0
+          ]
+        }
+      ],
+      "0x5a0b974": [
+        {
+          "sim_time": 73800.6640625,
+          "distance": 3874.01904296875,
+          "state": [
+            1,
+            8.940799713134766,
+            48
+          ]
+        }
+      ],
+      "0x5a0b8e4": [
+        {
+          "sim_time": 73800.6640625,
+          "distance": 7332.92822265625,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x5a0b914": [
+        {
+          "sim_time": 73800.6640625,
+          "distance": 7332.92822265625,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bccbe4": [
+        {
+          "sim_time": 73803.671875,
+          "distance": 14097.484375,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bccbb4": [
+        {
+          "sim_time": 73803.671875,
+          "distance": 14097.484375,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "first-running": {
+    "samples": 181,
+    "errors": 0,
+    "registry_errors": 0,
+    "start_time": 73800.7109375,
+    "end_time": 73856.921875,
+    "paused_samples": 69,
+    "crossed_simulation_step": 14,
+    "unstable_player_pointer": 0,
+    "player_counts": [
+      23
+    ],
+    "trains": {},
+    "signal_history": {
+      "0x5a0bb54": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 1156.5009765625,
+          "state": [
+            1,
+            0.0,
+            0
+          ]
+        }
+      ],
+      "0x5a0bdc4": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 3873.56689453125,
+          "state": [
+            1,
+            8.940799713134766,
+            48
+          ]
+        }
+      ],
+      "0x5a0bb84": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 7332.47607421875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x5a0c244": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 7332.47607421875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bcbe34": [
+        {
+          "sim_time": 73803.640625,
+          "distance": 14097.484375,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x3bcbc54": [
+        {
+          "sim_time": 73803.640625,
+          "distance": 14097.484375,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "initial-briefing": {
+    "samples": 1,
+    "errors": 0,
+    "registry_errors": 0,
+    "start_time": 73800.7109375,
+    "end_time": 73800.7109375,
+    "paused_samples": 1,
+    "crossed_simulation_step": 0,
+    "unstable_player_pointer": 0,
+    "player_counts": [
+      23
+    ],
+    "trains": {},
+    "signal_history": {
+      "0x5a0bb54": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 1156.5009765625,
+          "state": [
+            1,
+            0.0,
+            0
+          ]
+        }
+      ],
+      "0x5a0bdc4": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 3873.56689453125,
+          "state": [
+            1,
+            8.940799713134766,
+            48
+          ]
+        }
+      ],
+      "0x5a0bb84": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 7332.47607421875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x5a0c244": [
+        {
+          "sim_time": 73800.7109375,
+          "distance": 7332.47607421875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "paused-red": {
+    "samples": 3,
+    "errors": 0,
+    "registry_errors": 0,
+    "start_time": 73873.65625,
+    "end_time": 73873.65625,
+    "paused_samples": 3,
+    "crossed_simulation_step": 0,
+    "unstable_player_pointer": 0,
+    "player_counts": [
+      23
+    ],
+    "trains": {},
+    "signal_history": {
+      "0x5a0bb54": [
+        {
+          "sim_time": 73873.65625,
+          "distance": 385.3779296875,
+          "state": [
+            1,
+            0.0,
+            0
+          ]
+        }
+      ],
+      "0x5a0bb84": [
+        {
+          "sim_time": 73873.65625,
+          "distance": 6561.2216796875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ],
+      "0x5a0c244": [
+        {
+          "sim_time": 73873.65625,
+          "distance": 6561.2216796875,
+          "state": [
+            1,
+            0.0,
+            1
+          ]
+        }
+      ]
+    }
+  }
+}

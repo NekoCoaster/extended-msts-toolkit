@@ -1,0 +1,6053 @@
+{
+  "source_files": 126,
+  "balance_issues": [
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+      "line": 354,
+      "error": "opening parenthesis without name"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+      "line": 358,
+      "error": "unmatched closing parenthesis"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+      "line": 336,
+      "error": "opening parenthesis without name"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+      "line": 340,
+      "error": "unmatched closing parenthesis"
+    }
+  ],
+  "leaf_instances": 12054,
+  "omitted_long_leaf_paths": {
+    ".eng:Engine.Description": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 401,
+        "token_count": 31,
+        "example": [
+          "\"G\u00f6lsdorf Series 380 steam locomotive, designed by famed Austrian locomotive designer \"",
+          "+",
+          "\"Karl G\u00f6lsdorf. The 380's high tractive effort makes it a natural for pulling the \"",
+          "+",
+          "\"Orient-Express passenger train through the mountainous regions of Austria.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Series 380 1E h4v (2-10-0)\\n\\n\"",
+          "+",
+          "\"Wheel configuration: Ten 55.5 in. (141 cm) diameter driving wheels, 1E configuration\\n\\n\"",
+          "+",
+          "\"Max. boiler pressure: 16 kg/cm\u00b2 (228 psi)\\n\\n\"",
+          "+",
+          "\"Max. speed (permitted): 43.5 mph (70 km/h)\\n\\n\"",
+          "+",
+          "\"Height: 15 ft. (4.57 m)\\n\\n\"",
+          "+",
+          "\"Width: 10 ft. 1 in. (3.08 m)\\n\\n\"",
+          "+",
+          "\"Length: locomotive: 38 ft. (11.6 m) ; tender: 24.9 ft. (7.59 m); total: 62.9 ft. (19.2 m)\\n\\n\"",
+          "+",
+          "\"Weight (locomotive & class 156 tender): 157 U.S. tons (142 metric tons)\\n\\n\"",
+          "+",
+          "\"Max. weight on driving wheels: 15.4 U.S. tons (14 metric tons)\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 549,
+        "token_count": 33,
+        "example": [
+          "\"The Amtrak\u00ae Acela(SM) Express, a new high-speed electric trainset. Each Acela Express trainset \"",
+          "+",
+          "\"consists of five passenger cars, a cafe car, and two 6,000 hp Power Cars (locomotives), one at \"",
+          "+",
+          "\"each end.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Bombardier ALSTOM Consortium high-speed electric power car\\n\\n\"",
+          "+",
+          "\"Power source: Catenary from stationary electric generator\\n\\n\"",
+          "+",
+          "\"Power, each power car: 6,169 hp; 4,600 kilowatts\\n\\n\"",
+          "+",
+          "\"Max. speed: 165 mph (265.4 km/h)\\n\\n\"",
+          "+",
+          "\"Height: 14 ft. 2 in. (4.3 m)\\n\\n\"",
+          "+",
+          "\"Width: 10 ft. 5 in. (3.2 m)\\n\\n\"",
+          "+",
+          "\"Length, each power car: 69 ft. 7 in. (21.2 m)\\n\\n\"",
+          "+",
+          "\"Length, trainset: 663 ft. 9 in. (202.3 m)\\n\\n\"",
+          "+",
+          "\"Weight, each power car: 200,000 lb (90,720 kg)\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 316,
+        "token_count": 27,
+        "example": [
+          "\"Class 50 locomotives have an avid British fan following. All were named for famous English warships, \"",
+          "+",
+          "\"and were used on many BR routes from 1967 to 1994.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Diesel-Electric\\n\\n\"",
+          "+",
+          "\"Power source: English Electric Co 16CSVT, 16-cyl pressure charged\\n\\n\"",
+          "+",
+          "\"Power: 2,700 hp\\n\\n\"",
+          "+",
+          "\"Max. speed: 100 mph (160.9 km/h)\\n\\n\"",
+          "+",
+          "\"Height: 12 ft. 9 in. (3.9 m)\\n\\n\"",
+          "+",
+          "\"Width: 8 ft. 10 in. (2.7 m)\\n\\n\"",
+          "+",
+          "\"Length: 68 ft. 9 in. (20.96 m)\\n\\n\"",
+          "+",
+          "\"Weight: 129 U.S. tons (117 metric tons)\\n\\n\"",
+          "+",
+          "\"Brakes: Automatic air-controlled vacuum brakes\\n\\n\"",
+          "+",
+          "\"Wheel configuration: Twelve 43 in. (1.4 m) in a Co-Co configuration (two sets of three driving axles)\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 501,
+        "token_count": 33,
+        "example": [
+          "\"The GE-9-44CW (commonly called 'the Dash 9'), a modern diesel-electric locomotive, most effective \"",
+          "+",
+          "\"pulling loads over long stretches at moderate speeds.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Diesel-Electric\\n\\n\"",
+          "+",
+          "\"Power: 4,400 hp\\n\\n\"",
+          "+",
+          "\"Max. speed: 74 mph (119 km/h)\\n\\n\"",
+          "+",
+          "\"Gear ratio: 83:20\\n\\n\"",
+          "+",
+          "\"Power source: Diesel engine\\n\\n\"",
+          "+",
+          "\"Alternator: GMG 197\\n\\n\"",
+          "+",
+          "\"Traction motors: Six GE752AH DC electric motors\\n\\n\"",
+          "+",
+          "\"Max. starting tractive effort: 142,000 lb (64,410 kg)\\n\\n\"",
+          "+",
+          "\"Max. continuous tractive effort: 105,640 lb (47,917 kg)\\n\\n\"",
+          "+",
+          "\"Wheel configuration: Twelve 42-inch (16.5 cm) diameter in C-C configuration (two sets of three \"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 479,
+        "token_count": 31,
+        "example": [
+          "\"The GP38-2 diesel-electric locomotive, a popular and versatile performer capable of tasks ranging \"",
+          "+",
+          "\"from switching to pulling freight over the main line.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Diesel-Electric\\n\\n\"",
+          "+",
+          "\"Power source: Diesel engine\\n\\n\"",
+          "+",
+          "\"Power: 2,000 hp\\n\\n\"",
+          "+",
+          "\"Max. speed: 65 mph (115 km/h)\\n\\n\"",
+          "+",
+          "\"Gear ratio: 62:15\\n\\n\"",
+          "+",
+          "\"Alternator (rectified output): AR10\\n\\n\"",
+          "+",
+          "\"Traction motors: Four model D77 DC, series wound, axle-hung\\n\\n\"",
+          "+",
+          "\"Max. continuous tractive effort: 52,000 lb (23,586.8 kg)\\n\\n\"",
+          "+",
+          "\"Wheel configuration: Eight 40-in (15.75 cm), tapered tread in B-B configuration (two sets of two \"",
+          "+",
+          "\"driven axles)\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 412,
+        "token_count": 25,
+        "example": [
+          "\"The dual cab, 8,000 hp AcelaSM HHP-8, the only Train Simulator electric locomotive that is not \"",
+          "+",
+          "\"permanently coupled into a trainset.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Bombardier ALSTOM Consortium dual cab high-speed electric power car\\n\\n\"",
+          "+",
+          "\"Power source: Catenary from stationary electric generator\\n\\n\"",
+          "+",
+          "\"Power: 8,046 hp; 6,000 kilowatts\\n\\n\"",
+          "+",
+          "\"Max. speed: 135 mph (217 km/h)\\n\\n\"",
+          "+",
+          "\"Height: 14 ft. 5 in. (4.4 m)\\n\\n\"",
+          "+",
+          "\"Width: 10 ft. 5 in. (3.2 m)\\n\\n\"",
+          "+",
+          "\"Length: 67 ft. 1 in. (20.4 m)\\n\\n\"",
+          "+",
+          "\"Weight: 111 U.S. tons (100.7 metric tons)\\n\\n\"",
+          "+",
+          "\"Max. short time tractive effort: 71,240 lb (32,314 kg)\\n\\n\"",
+          "+",
+          "\"Wheel configuration: Eight 40-inch diameter wheels in B-B configuration (two sets of two driven \"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 509,
+        "token_count": 25,
+        "example": [
+          "\"You'll find two KIHA 31 models in Train Simulator. The only difference between them is that \"",
+          "+",
+          "\"the KIHA 31 Isaburo/Shinpei has placards on its front and rear stating that it is the Isaburo/Shinpei \"",
+          "+",
+          "\"sightseeing train, which makes long stops at points of interest. The Isaburo/Shinpei train runs \"",
+          "+",
+          "\"only between Hitoyoshi and Yoshimatsu.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Diesel-Hydraulic\\n\\n\"",
+          "+",
+          "\"Power source: Model DMF13HS diesel engine\\n\\n\"",
+          "+",
+          "\"Power: 246 hp\\n\\n\"",
+          "+",
+          "\"Max. speed: 59 mph (95 km/h)\\n\\n\"",
+          "+",
+          "\"Height: 12 ft. 7 in. (3.84 m)\\n\\n\"",
+          "+",
+          "\"Width: 9 ft. 7 in. (2.92 m)\\n\\n\"",
+          "+",
+          "\"Length: 58 ft. 4 in. (17.75 m)\\n\\n\"",
+          "+",
+          "\"Weight: 33 U.S. tons (30 metric tons)\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 502,
+        "token_count": 25,
+        "example": [
+          "\"You'll find two KIHA 31 models in Train Simulator. The only difference between them is that \"",
+          "+",
+          "\"the KIHA 31 Isaburo/Shinpei has placards on its front and rear stating that it is the Isaburo/Shinpei \"",
+          "+",
+          "\"sightseeing train, which makes long stops at points of interest. The Isaburo/Shinpei train runs \"",
+          "+",
+          "\"only between Hitoyoshi and Yoshimatsu.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Diesel-Hydraulic\\n\\n\"",
+          "+",
+          "\"Power source: Model DMF13HS diesel engine\\n\\n\"",
+          "+",
+          "\"Power: 246 hp\\n\\n\"",
+          "+",
+          "\"Max. speed: 59 mph (95 km/h)\\n\\n\"",
+          "+",
+          "\"Height: 12 ft. 7 in. (3.84 m)\\n\\n\"",
+          "+",
+          "\"Width: 9 ft. 7 in. (2.92 m)\\n\\n\"",
+          "+",
+          "\"Length: 58 ft. 4 in. (17.75 m)\\n\\n\"",
+          "+",
+          "\"Weight: 33 U.S. tons (30 metric tons)\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 335,
+        "token_count": 29,
+        "example": [
+          "\"London & North Eastern Railway's No. 4472 Flying Scotsman steam locomotive, modeled as it was in the 1920s. In\"",
+          "+",
+          "\"Train Simulator, Flying Scotsman typically pulls a consist of luxury passenger cars on the Settle &\"",
+          "+",
+          "\"Carlisle line.\\n\\n\"",
+          "+",
+          "\"Locomotive type & no.: LNER A1 4-6-2 8P, No. 4472\\n\\n\"",
+          "+",
+          "\"Power source: 180 psi hand-fired, coal burning boiler\\n\\n\"",
+          "+",
+          "\"Wheel configuration: Six 80-in. (2.03m) diameter driving wheels in a 4-6-2 configuration\\n\\n\"",
+          "+",
+          "\"Max. speed: 100 mph (161 km/h) under favorable conditions\\n\\n\"",
+          "+",
+          "\"Height: 13 ft. 2 in. (4.03 m)\\n\\n\"",
+          "+",
+          "\"Width: 9 ft. (2.74 m) (over footplate)\\n\\n\"",
+          "+",
+          "\"Length (locomotive & tender): 70.43 ft. (21.47 m)\\n\\n\"",
+          "+",
+          "\"Weight (locomotive & tender): 171 U.S. tons  (155 metric tons)\\n\\n\"",
+          "+",
+          "\"Tractive effort: 29,835 lb (13,532.93 kg)\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 471,
+        "token_count": 33,
+        "example": [
+          "\"The SD40-2 is a powerful diesel-electric locomotive built in the 1970s and 80s by the \"",
+          "+",
+          "\"Electro-Motive Division of General Motors. This reliable locomotive is used to haul a variety of cargo. \"",
+          "+",
+          "\"Although being replaced by newer locomotives, the BNSF still uses hundreds of SD40-2 locomotives \"",
+          "+",
+          "\"all over the BNSF system.\\n\\n\"",
+          "+",
+          "\"Locomotive type: Diesel-Electric\\n\\n\"",
+          "+",
+          "\"Power: 3,000 hp\\n\\n\"",
+          "+",
+          "\"Max. speed: 65 mph (105 km/h)\\n\\n\"",
+          "+",
+          "\"Gear ratio: 62:15\\n\\n\"",
+          "+",
+          "\"Power source: Turbocharged diesel engine\\n\\n\"",
+          "+",
+          "\"Alternator: AR10-D14\\n\\n\"",
+          "+",
+          "\"Traction motors: Six D77 DC electric motors\\n\\n\"",
+          "+",
+          "\"Tractive effort: 83,160 lb (37,721 kg)\\n\\n\"",
+          "+"
+        ]
+      }
+    ],
+    ".eng:Engine.EngineOperatingProcedures": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 419,
+        "token_count": 121,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress the W key several times to move the Reverser to full Forward.\\n\"",
+          "+",
+          "\"2.\tPress the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"3.\tPress the [ (LEFT BRACKET) key to release the locomotive brake.\\n\"",
+          "+",
+          "\"4.\tPress the D key to increase the Regulator setting.\\n\"",
+          "+",
+          "\"5.\tAs you accelerate, press the S key to slowly reduce the Reverser setting, then adjust the Regulator to maintain the desired speed.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the Regulator to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the train brakes\\n\"",
+          "+",
+          "\"1.\tPress the ' (APOSTROPHE) key to apply the train brakes.\\n\\n\"",
+          "+",
+          "\"To release the train brakes\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 568,
+        "token_count": 49,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1. The pantograph has been raised for you. (If it is not up for some reason, press the P key to raise it.)\\n\"",
+          "+",
+          "\"2.\tPress the W key to move the Reverser to Forward.\\n\"",
+          "+",
+          "\"3.\tPress the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"4.\tPress the D key to move increase the throttle setting.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the train brakes\\n\"",
+          "+",
+          "\"1.\tPress the ' (APOSTROPHE) key to apply the train brakes.\\n\\n\"",
+          "+",
+          "\"To release the train brakes\\n\"",
+          "+",
+          "\"1. Press the ; (SEMICOLON) key to release the train brakes.\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 332,
+        "token_count": 73,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress the W key to move the Reverser to Neutral (if it is not there already) and then to Forward.\\n\"",
+          "+",
+          "\"2.\tPress the ; (SEMICOLON) key to release the train air brakes.\\n\"",
+          "+",
+          "\"3.\tPress the [ (LEFT BRACKET) key to release the locomotive brakes.\\n\"",
+          "+",
+          "\"4.\tPress the D key to move the throttle from Idle to Notch 1 then gradually increase \"",
+          "+",
+          "\"power until your train reaches the desired speed.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the train brakes (', the APOSTROPHE key) to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the train brakes\\n\"",
+          "+",
+          "\"1.\tPress the ' (APOSTROPHE) key.\\n\\n\"",
+          "+",
+          "\"To release the train brakes\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 520,
+        "token_count": 85,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress the W key to move the Reverser to Forward.\\n\"",
+          "+",
+          "\"2.\tPress the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"3.\tPress the [ (LEFT BRACKET) key to release the locomotive brake.\\n\"",
+          "+",
+          "\"4.\tPress the D key to move the throttle from Idle to Notch 1.\\n\"",
+          "+",
+          "\"5.\tGradually increase power (D key), one notch at a time, until your train reaches the desired speed.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the dynamic brakes\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to the Idle position.\\n\"",
+          "+",
+          "\"2.\tWait for 10 seconds, then press the . (PERIOD) key to advance the Dynamic Brake handle from Off to the Setup position.  After allowing a few seconds for braking circuit setup, press the . [PERIOD] key again to set the desired level of dynamic braking (Levels 1 - 8).\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 497,
+        "token_count": 85,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress the W key to move the Reverser to Forward.\\n\"",
+          "+",
+          "\"2.\tPress the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"3.\tPress the [ (LEFT BRACKET) key to release the locomotive brake.\\n\"",
+          "+",
+          "\"4.\tPress the D key to move the throttle from Idle to Notch 1.\\n\"",
+          "+",
+          "\"5.\tGradually increase power (D key), one notch at a time, until your train reaches the desired speed.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the dynamic brakes\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to the Idle position.\\n\"",
+          "+",
+          "\"2.\tWait for 10 seconds, then press the . (PERIOD) key to advance the Dynamic Brake handle from Off to the Setup position. After allowing a few seconds for braking circuit setup, press the . (PERIOD) key again to set the desired level of dynamic braking (Levels 1 - 8).\\n\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 427,
+        "token_count": 85,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1. The pantograph has been raised for you. (If it is not up for some reason, press the P key to raise it.)\\n\"",
+          "+",
+          "\"2.\tPress the W key to move the Reverser to Forward.\\n\"",
+          "+",
+          "\"3.\tPress the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"4. \tPress the [ (LEFT BRACKET) key to release the locomotive brake.\\n\"",
+          "+",
+          "\"5.\tPress the D key to move increase the Throttle setting.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the train brakes\\n\"",
+          "+",
+          "\"1.\tPress the ' (APOSTROPHE) key to apply the train brakes.\\n\\n\"",
+          "+",
+          "\"To release the train brakes\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 524,
+        "token_count": 109,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress Shift+E if necessary to move the Speed Gear handle to neutral.\\n\"",
+          "+",
+          "\"2. Hold down the A key as necessary to move the Throttle to 0%.\\n\"",
+          "+",
+          "\"3.\tPress the W key to move the Reverser to Forward.\\n\"",
+          "+",
+          "\"4. Press E to move the Speed Gear handle to 1.\\n\"",
+          "+",
+          "\"5.\tHold down the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"6.\tPress the D key to move increase the Throttle setting.\\n\\n\"",
+          "+",
+          "\"To coast\\n\"",
+          "+",
+          "\"1.\tHold down the A key to reduce the Throttle to 0%.\\n\"",
+          "+",
+          "\"2.\tPress Shift+E to move the Speed Gear handle from 1 to Neutral.\\n\\n\"",
+          "+",
+          "\"To resume powered operation\\n\"",
+          "+",
+          "\"1.\tIf traveling under 50 km/h, press E once to move the Speed Gear handle to 1. If traveling over 50 km/h, press E twice to move the Speed Gear handle to 2.\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 518,
+        "token_count": 109,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress Shift+E if necessary to move the Speed Gear handle to neutral.\\n\"",
+          "+",
+          "\"2. Hold down the A key as necessary to move the Throttle to 0%.\\n\"",
+          "+",
+          "\"3.\tPress the W key to move the Reverser to Forward.\\n\"",
+          "+",
+          "\"4. Press E to move the Speed Gear handle to 1.\\n\"",
+          "+",
+          "\"5.\tHold down the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"6.\tPress the D key to move increase the Throttle setting.\\n\\n\"",
+          "+",
+          "\"To coast\\n\"",
+          "+",
+          "\"1.\tHold down the A key to reduce the Throttle to 0%.\\n\"",
+          "+",
+          "\"2.\tPress Shift+E to move the Speed Gear handle from 1 to Neutral.\\n\\n\"",
+          "+",
+          "\"To resume powered operation\\n\"",
+          "+",
+          "\"1.\tIf traveling under 50 km/h, press E once to move the Speed Gear handle to 1. If traveling over 50 km/h, press E twice to move the Speed Gear handle to 2.\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 352,
+        "token_count": 111,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress the W key several times to move the Reverser to full Forward.\\n\"",
+          "+",
+          "\"2.\tPress the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"3.\tPress the D key to increase the Regulator setting.\\n\"",
+          "+",
+          "\"4.\tAs you accelerate, press the S key to slowly reduce the Reverser setting, then adjust the Regulator to maintain the desired speed.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the Regulator to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the train brakes\\n\"",
+          "+",
+          "\"1.\tPress the ' (APOSTROPHE) key to apply the train brakes.\\n\"",
+          "+",
+          "\"2. To hold the brakes at their current setting, lower the brake lever until it's in its middle (Neutral) position, by pressing the ; (SEMICOLON) key.\\n\\n\"",
+          "+",
+          "\"To release the train brakes\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 491,
+        "token_count": 81,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1.\tPress the W key to move the Reverser to Neutral (if it is not there already) and then to Forward.\\n\"",
+          "+",
+          "\"2.\tPress the ; (SEMICOLON) key to release the train air brakes.\\n\"",
+          "+",
+          "\"3.\tPress the [ (LEFT BRACKET) key to release the locomotive brakes.\\n\"",
+          "+",
+          "\"4.\tPress the D key to move the throttle from Idle to Notch 1. The load meter will immediately show the load increase. Your train may start moving at once.\\n\"",
+          "+",
+          "\"5.\tGradually increase power every few seconds, one notch at a time, until your train reaches the desired speed.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the train brakes or the dynamic brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the dynamic brakes\\n\"",
+          "+",
+          "\"1.\tAfter making sure the Reverser is set for the direction in which the locomotive is moving (Forward or Reverse), press the A key to return the throttle to the Idle position. Wait 10 seconds.\\n\"",
+          "+",
+          "\"2.\tPress the . (PERIOD) key to advance the Dynamic Brake handle to the Setup position.\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 342,
+        "token_count": 73,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1. \tThe pantograph has been raised for you. (If it is not up for some reason, press the P key to raise it.)\\n\"",
+          "+",
+          "\"2.\tPress the W key to move the Reverser to Forward.\\n\"",
+          "+",
+          "\"3.\tPress the ; (SEMICOLON) key to release the train brakes.\\n\"",
+          "+",
+          "\"4.\tPress the D key to move the throttle from Idle to Notch 1.\\n\"",
+          "+",
+          "\"5.\tGradually increase power (D key), one notch at a time, until your train reaches the desired speed.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the train brakes\\n\"",
+          "+",
+          "\"1.\tPress the ' (APOSTROPHE) key to apply the train brakes.\\n\\n\"",
+          "+",
+          "\"To release the train brakes\\n\"",
+          "+"
+        ]
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 297,
+        "token_count": 59,
+        "example": [
+          "\"To move forward\\n\"",
+          "+",
+          "\"1. \tThe pantograph has been raised for you. (If it is not up for some reason, press the P key to raise it.)\\n\"",
+          "+",
+          "\"2.\tPress the D key to move the master control lever into the Idle position.\\n\"",
+          "+",
+          "\"\tNote: A green lamp lights when the master control lever is in the Idle position.\\n\"",
+          "+",
+          "\"3.\tPress the W key to move the Reverser handle to Forward.\\n\"",
+          "+",
+          "\"\tNote: The Reverser can be operated only when the master control lever is in the Idle position.\\n\"",
+          "+",
+          "\"4.\tPress the D key to move the master control lever to throttle notch 1.\\n\"",
+          "+",
+          "\"5.\tIf more power or speed is needed, press the D key to move the master control lever to higher throttle notch settings.\\n\\n\"",
+          "+",
+          "\"To slow the train\\n\"",
+          "+",
+          "\"1.\tPress the A key to move the throttle to a lower setting.\\n\"",
+          "+",
+          "\"2.\tUse the brakes to further reduce speed if desired.\\n\\n\"",
+          "+",
+          "\"To apply the train brakes\\n\"",
+          "+"
+        ]
+      }
+    ],
+    ".wag:Wagon.ExtraParameters": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DEFAULT\\default.wag",
+        "line": 26,
+        "token_count": 25,
+        "example": [
+          "\"0.01\t\t\t# Default coefficent of restitution\"",
+          "\"1\t\t\t# Floor contact ratio friction scaling factor\"",
+          "\"5e4N/m/s\t\t# Linear water friction\"",
+          "\"5e4N/rad/s\t\t# Angular water friction\"",
+          "\"0.05m/s\t\t# Collision threshold velocity\"",
+          "\"0\t\t\t# On-track solver: 0=euler 1=rungekutta\"",
+          "\"10ms\t\t\t# On-track solver timestep\"",
+          "\"1\t\t\t# Off-track solver\"",
+          "\"30ms\t\t\t# Off-track timestep\"",
+          "\"0\t\t\t# Reposition colliding objects: 0=no 1=yes\"",
+          "\"0\t\t\t# Collision method: 0=impulse 1=penalty\"",
+          "\"0\t\t\t# Orientation representation: 0=matrix 1=quaternion\"",
+          "\"0.7*1.5m/s\t\t# Linear freeze velocity\"",
+          "\"0.7*1.5m/s/7m\t\t# Angular freeze velocity\"",
+          "\"3\t\t\t# Impulse collision handler flags - 1 for force, 2 for momentum\"",
+          "\"10\t\t\t# DerailRailForce scaling factor for track-orthogonal forces\"",
+          "\"50\t\t\t# DerailBufferForce scaling factor for track-tangential forces\"",
+          "\"1e5N/m/s\t\t# Friction force for full friction everywhere on the body\"",
+          "\"30cm\t\t\t# Minimum couple distance\"",
+          "\"0.8\t\t\t# Coefficient of restitution for car/car collisions\"",
+          "\"1.0N/kg/m/s\t\t# Friction when cars dig themselves into banks\"",
+          "\"0.2\t\t\t# min coupling velocity\"",
+          "\"3.0\t\t\t# max coupling velocity\"",
+          "\"29.4\t\t\t# durability max acceleration\""
+        ]
+      }
+    ]
+  },
+  "mixed_node_atom_paths": {
+    ".eng:Wagon.Lights.Light.States": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 66,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 86,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 107,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 128,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 149,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 74,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 94,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 115,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 136,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 67,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 90,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 111,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 133,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 154,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 82,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 103,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 125,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 148,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 170,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 192,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 213,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 235,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 256,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 278,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 300,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 323,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 345,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 367,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 389,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 411,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 433,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 66,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 87,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 109,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 130,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 151,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 172,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 83,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 104,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 125,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 146,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 167,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 197,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 226,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 247,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 268,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 68,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 88,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 108,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 128,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 149,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 170,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 191,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 211,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 231,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 79,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 100,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 121,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 142,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 163,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 191,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 219,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 240,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 262,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 78,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 99,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 121,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 144,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 166,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 189,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 211,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 234,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 256,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 72,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 93,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 115,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 137,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 159,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 181,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 203,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 225,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 247,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 270,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 292,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 315,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 337,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 359,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 381,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 403,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 425,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 447,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 469,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 492,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 514,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 78,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 100,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 123,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 146,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 168,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 191,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 213,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 235,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 258,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 280,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 302,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 325,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 348,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 77,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 98,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 120,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 142,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 164,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 186,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 208,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 230,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 252,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 274,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 296,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 318,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 340,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 67,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 88,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 110,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 132,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 154,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 176,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 198,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 220,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 242,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 264,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 286,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 308,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 330,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 352,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 374,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 396,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 418,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 440,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 462,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 485,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 507,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 60,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 81,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 102,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 123,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 54,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 74,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 94,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 58,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 80,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 102,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 72,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 92,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 112,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 132,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 153,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 173,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 194,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 214,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 235,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 66,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 86,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 106,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 126,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 146,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 167,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 187,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 207,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 227,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 248,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 269,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 85,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 107,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 130,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 153,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 176,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 199,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 222,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 85,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 107,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 130,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 153,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 176,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 199,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 222,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 91,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 113,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 136,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 159,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 182,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 205,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 228,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 90,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 112,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 135,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 158,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 181,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 204,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 227,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Wagon.Lights": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 56,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 64,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 56,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 71,
+        "direct_atoms": [
+          "17"
+        ],
+        "child_nodes": 17
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 55,
+        "direct_atoms": [
+          "6"
+        ],
+        "child_nodes": 6
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 72,
+        "direct_atoms": [
+          "10"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 58,
+        "direct_atoms": [
+          "10"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 68,
+        "direct_atoms": [
+          "9"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 67,
+        "direct_atoms": [
+          "9"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 61,
+        "direct_atoms": [
+          "22"
+        ],
+        "child_nodes": 21
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 67,
+        "direct_atoms": [
+          "13"
+        ],
+        "child_nodes": 13
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 66,
+        "direct_atoms": [
+          "13"
+        ],
+        "child_nodes": 13
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 57,
+        "direct_atoms": [
+          "21"
+        ],
+        "child_nodes": 21
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 50,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 44,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 47,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 62,
+        "direct_atoms": [
+          "9"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 56,
+        "direct_atoms": [
+          "11"
+        ],
+        "child_nodes": 11
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 74,
+        "direct_atoms": [
+          "7"
+        ],
+        "child_nodes": 7
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 74,
+        "direct_atoms": [
+          "7"
+        ],
+        "child_nodes": 7
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 80,
+        "direct_atoms": [
+          "7"
+        ],
+        "child_nodes": 7
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 79,
+        "direct_atoms": [
+          "7"
+        ],
+        "child_nodes": 7
+      }
+    ],
+    ".eng:Wagon": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 3,
+        "direct_atoms": [
+          "30000"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 3,
+        "direct_atoms": [
+          "310"
+        ],
+        "child_nodes": 32
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 3,
+        "direct_atoms": [
+          "380"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Acela"
+        ],
+        "child_nodes": 39
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Class50"
+        ],
+        "child_nodes": 26
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Dash9"
+        ],
+        "child_nodes": 34
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Genesis"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 3,
+        "direct_atoms": [
+          "GP38"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaHHL"
+        ],
+        "child_nodes": 38
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 3,
+        "direct_atoms": [
+          "KIHA140"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 3,
+        "direct_atoms": [
+          "KIHA31"
+        ],
+        "child_nodes": 32
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 3,
+        "direct_atoms": [
+          "KIHA31a"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Metroliner"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 3,
+        "direct_atoms": [
+          "pendennis"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 3,
+        "direct_atoms": [
+          "royalscotsclass"
+        ],
+        "child_nodes": 26
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Scotsman"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 3,
+        "direct_atoms": [
+          "sd40"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 3,
+        "direct_atoms": [
+          "SD402"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 3,
+        "direct_atoms": [
+          "2000"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 3,
+        "direct_atoms": [
+          "2000RearEng"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000"
+        ],
+        "child_nodes": 32
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000EngR"
+        ],
+        "child_nodes": 32
+      }
+    ],
+    ".eng:Engine.EngineControllers.Throttle": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 212,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 597,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 281,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 443,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 347,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 423,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 380,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 658,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 472,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.2",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 465,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.2",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 627,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 399,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 415,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 298,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.2",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 299,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.2",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 355,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.25",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 306,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.25",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Brake_Train.NumNotches": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 216,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 311,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 352,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 601,
+        "direct_atoms": [
+          "6"
+        ],
+        "child_nodes": 6
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 299,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 462,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 356,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 442,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 384,
+        "direct_atoms": [
+          "6"
+        ],
+        "child_nodes": 6
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 668,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 484,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 476,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 636,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 294,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 265,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 285,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 409,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 434,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 309,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 310,
+        "direct_atoms": [
+          "4"
+        ],
+        "child_nodes": 4
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 365,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 316,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      }
+    ],
+    ".eng:Engine.EngineControllers.Brake_Train": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 215,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 310,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 351,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.6"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 600,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.5"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 298,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.5"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 461,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.75"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 355,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 441,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.75"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 383,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.65"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 667,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 483,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.75"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 475,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.75"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 635,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 293,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 264,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 284,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.01",
+          "0.65"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 408,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 433,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.75"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 308,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.75"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 309,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0.75"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 364,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0.7"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 315,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0.7"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Brake_Dynamic": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 223,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 610,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 470,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1111",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 364,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 450,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.11",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 675,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 644,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 417,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 442,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.11",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.HighLowAcceleration": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 234,
+        "direct_atoms": [
+          "-1",
+          "1",
+          "1",
+          "1"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
+        "line": 166,
+        "direct_atoms": [
+          "30000"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 153,
+        "direct_atoms": [
+          "310",
+          "#_fire",
+          "temp,",
+          "fire",
+          "mass,",
+          "water",
+          "mass,",
+          "boiler",
+          "pressure,",
+          "_water",
+          "level,",
+          "tender_water_mass,",
+          "tender_coal_mass,",
+          "_smoke_quantity,",
+          "fire_condition,",
+          "coal",
+          "quality"
+        ],
+        "child_nodes": 73
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 169,
+        "direct_atoms": [
+          "380"
+        ],
+        "child_nodes": 98
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
+        "line": 448,
+        "direct_atoms": [
+          "Acela"
+        ],
+        "child_nodes": 57
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 188,
+        "direct_atoms": [
+          "Class50"
+        ],
+        "child_nodes": 64
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 284,
+        "direct_atoms": [
+          "Dash9"
+        ],
+        "child_nodes": 89
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 248,
+        "direct_atoms": [
+          "Genesis"
+        ],
+        "child_nodes": 59
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 277,
+        "direct_atoms": [
+          "GP38"
+        ],
+        "child_nodes": 85
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 273,
+        "direct_atoms": [
+          "AcelaHHL"
+        ],
+        "child_nodes": 65
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 531,
+        "direct_atoms": [
+          "KIHA140"
+        ],
+        "child_nodes": 69
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 365,
+        "direct_atoms": [
+          "KIHA31"
+        ],
+        "child_nodes": 63
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 356,
+        "direct_atoms": [
+          "KIHA31a"
+        ],
+        "child_nodes": 65
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 527,
+        "direct_atoms": [
+          "Metroliner"
+        ],
+        "child_nodes": 58
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 139,
+        "direct_atoms": [
+          "pendennis",
+          "_#fire",
+          "temp,",
+          "fire",
+          "mass,",
+          "water",
+          "mass,",
+          "boiler",
+          "pressure,",
+          ";water",
+          "level,",
+          "tender_water_mass,",
+          "tender_coal_mass,",
+          ";smoke_quantity,",
+          "fire_condition,",
+          "coal",
+          "quality"
+        ],
+        "child_nodes": 75
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 111,
+        "direct_atoms": [
+          "royalscotsclass"
+        ],
+        "child_nodes": 77
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 118,
+        "direct_atoms": [
+          "Scotsman"
+        ],
+        "child_nodes": 94
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 251,
+        "direct_atoms": [
+          "sd40"
+        ],
+        "child_nodes": 75
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 285,
+        "direct_atoms": [
+          "SD402"
+        ],
+        "child_nodes": 85
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 239,
+        "direct_atoms": [
+          "2000"
+        ],
+        "child_nodes": 35
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 239,
+        "direct_atoms": [
+          "2000RearEng"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 244,
+        "direct_atoms": [
+          "Series7000"
+        ],
+        "child_nodes": 39
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 243,
+        "direct_atoms": [
+          "Series7000EngR"
+        ],
+        "child_nodes": 35
+      }
+    ],
+    ".eng:Engine.EngineControllers.Regulator": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 297,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 338,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 287,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 258,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 278,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Cutoff": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 300,
+        "direct_atoms": [
+          "-0.75",
+          "0.75",
+          "0.01",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 341,
+        "direct_atoms": [
+          "-0.89",
+          "0.89",
+          "0.01",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 290,
+        "direct_atoms": [
+          "-0.75",
+          "0.75",
+          "0.01",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 261,
+        "direct_atoms": [
+          "-0.75",
+          "0.75",
+          "0.01",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 281,
+        "direct_atoms": [
+          "-0.55",
+          "0.75",
+          "0.01",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Brake_Engine.NumNotches": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 304,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 345,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 294,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 457,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 351,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 437,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 394,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 662,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 631,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 403,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 429,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Brake_Engine": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 303,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 344,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 293,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 456,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\genesis.eng",
+        "line": 350,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 436,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+        "line": 393,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 661,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metroliner.eng",
+        "line": 630,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD40\\sd40.eng",
+        "line": 402,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 428,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Brake_Hand": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 318,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 359,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 300,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 271,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 291,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.0125",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.FireDoor": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 321,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 362,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 303,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 274,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 294,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Blower": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 325,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 366,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0.2"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 307,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 278,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 298,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0.2"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.HeatingTap": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 328,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 369,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 310,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 281,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 301,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.025",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Shovel": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 331,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 372,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 313,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 284,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 304,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.DampersFront": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 334,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 375,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 316,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 287,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 307,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "1"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.DampersBack": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 337,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 378,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 319,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 290,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 310,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Injector1Water": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 342,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 383,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 324,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 295,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 315,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Injector2Water": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310.eng",
+        "line": 345,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380.eng",
+        "line": 386,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennis.eng",
+        "line": 327,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscotsclass.eng",
+        "line": 298,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsman.eng",
+        "line": 318,
+        "direct_atoms": [
+          "0",
+          "1",
+          "0.1",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Throttle.NumNotches": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\class50.eng",
+        "line": 282,
+        "direct_atoms": [
+          "8"
+        ],
+        "child_nodes": 8
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 444,
+        "direct_atoms": [
+          "9"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 424,
+        "direct_atoms": [
+          "9"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 473,
+        "direct_atoms": [
+          "6"
+        ],
+        "child_nodes": 6
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 466,
+        "direct_atoms": [
+          "6"
+        ],
+        "child_nodes": 6
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 416,
+        "direct_atoms": [
+          "9"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000.eng",
+        "line": 299,
+        "direct_atoms": [
+          "6"
+        ],
+        "child_nodes": 6
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000reareng.eng",
+        "line": 300,
+        "direct_atoms": [
+          "6"
+        ],
+        "child_nodes": 6
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000.eng",
+        "line": 356,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000engr.eng",
+        "line": 307,
+        "direct_atoms": [
+          "5"
+        ],
+        "child_nodes": 5
+      }
+    ],
+    ".eng:Engine.EngineControllers.Brake_Dynamic.NumNotches": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+        "line": 471,
+        "direct_atoms": [
+          "10"
+        ],
+        "child_nodes": 10
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\gp38.eng",
+        "line": 451,
+        "direct_atoms": [
+          "10"
+        ],
+        "child_nodes": 10
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\sd402.eng",
+        "line": 443,
+        "direct_atoms": [
+          "10"
+        ],
+        "child_nodes": 10
+      }
+    ],
+    ".eng:Engine.EngineControllers.Gear": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA140\\kiha140.eng",
+        "line": 685,
+        "direct_atoms": [
+          "1",
+          "2",
+          "1",
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 498,
+        "direct_atoms": [
+          "0",
+          "2",
+          "1",
+          "0"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 489,
+        "direct_atoms": [
+          "0",
+          "2",
+          "1",
+          "0"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".eng:Engine.EngineControllers.Gear.NumNotches": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31.eng",
+        "line": 499,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\kiha31a.eng",
+        "line": 490,
+        "direct_atoms": [
+          "3"
+        ],
+        "child_nodes": 3
+      }
+    ],
+    ".wag:Wagon": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
+        "line": 3,
+        "direct_atoms": [
+          "30000car"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310car1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "310Car1"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310car2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "310Car2"
+        ],
+        "child_nodes": 25
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310grcar1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "310GrCar1"
+        ],
+        "child_nodes": 25
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310tender.wag",
+        "line": 3,
+        "direct_atoms": [
+          "310Tender"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\310\\310wdcar1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "310WdCar1"
+        ],
+        "child_nodes": 25
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380car1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "380Car1"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380tender.wag",
+        "line": 3,
+        "direct_atoms": [
+          "380Tender"
+        ],
+        "child_nodes": 32
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oe380cardin1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OE380CarDin1"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oe380cardin2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OE380CarDin2"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oe380cardin3.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OE380CarDin3"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oebarcar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OEBarCar"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oeservcar1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OEServCar1"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oeservcar2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OEServCar2"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar1"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar10.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar10"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar11.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar11"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar2"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar3.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar3"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar4.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar4"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar5.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar5"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar6.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar6"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar7.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar7"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar8.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar8"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\oesleepcar9.wag",
+        "line": 3,
+        "direct_atoms": [
+          "OESleepCar9"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaBistroCar"
+        ],
+        "child_nodes": 36
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelacar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaCar"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelaendcar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaEndCar"
+        ],
+        "child_nodes": 35
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelafirstclass.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaFirstClass"
+        ],
+        "child_nodes": 36
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DEFAULT\\default.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Default"
+        ],
+        "child_nodes": 10
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GENESIS\\superliner.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Superliner"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlbc.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaHHLBC"
+        ],
+        "child_nodes": 43
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlcafe.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaHHLCAFE"
+        ],
+        "child_nodes": 43
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlcar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaHHLCar"
+        ],
+        "child_nodes": 43
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlco.wag",
+        "line": 3,
+        "direct_atoms": [
+          "AcelaHHLCO"
+        ],
+        "child_nodes": 43
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\METROLINER\\metrocarriage.wag",
+        "line": 3,
+        "direct_atoms": [
+          "MetroCarriage"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\ukbrake.wag",
+        "line": 3,
+        "direct_atoms": [
+          "UKBrake"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\ukfirst.wag",
+        "line": 3,
+        "direct_atoms": [
+          "UKFirst"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\ukrestaurant.wag",
+        "line": 3,
+        "direct_atoms": [
+          "UKRestaurant"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\MK1CARRIAGES\\uksecond.wag",
+        "line": 3,
+        "direct_atoms": [
+          "UKSecond"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrfirst.wag",
+        "line": 3,
+        "direct_atoms": [
+          "GWRFirst"
+        ],
+        "child_nodes": 23
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrluggcar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "GWRLuggCar"
+        ],
+        "child_nodes": 24
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrmailcar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "GWRMailCar"
+        ],
+        "child_nodes": 24
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrrest.wag",
+        "line": 3,
+        "direct_atoms": [
+          "GWRRest"
+        ],
+        "child_nodes": 23
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\gwrthird.wag",
+        "line": 3,
+        "direct_atoms": [
+          "GWRThird"
+        ],
+        "child_nodes": 23
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennistender.wag",
+        "line": 3,
+        "direct_atoms": [
+          "PendennisTender"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscottender.wag",
+        "line": 3,
+        "direct_atoms": [
+          "RoyalScotTender"
+        ],
+        "child_nodes": 25
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\scotsfirstclass.wag",
+        "line": 3,
+        "direct_atoms": [
+          "ScotsFirstClass"
+        ],
+        "child_nodes": 24
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\scotsthirdclass.wag",
+        "line": 3,
+        "direct_atoms": [
+          "ScotsThirdClass"
+        ],
+        "child_nodes": 24
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotscar1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "ScotsCar1"
+        ],
+        "child_nodes": 27
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotscar3.wag",
+        "line": 3,
+        "direct_atoms": [
+          "ScotsCar3"
+        ],
+        "child_nodes": 26
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotsmailcar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "ScotsMailCar"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotstender.wag",
+        "line": 3,
+        "direct_atoms": [
+          "ScotsTender"
+        ],
+        "child_nodes": 29
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000acarriage.wag",
+        "line": 3,
+        "direct_atoms": [
+          "2000ACarriage"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\2000bcarriage.wag",
+        "line": 3,
+        "direct_atoms": [
+          "2000BCarriage"
+        ],
+        "child_nodes": 40
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000cara.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000Cara"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carb.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000Carb"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carc.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000Carc"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000card.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000Card"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carg.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000Carg"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000carh.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000Carh"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\series7000cari.wag",
+        "line": 3,
+        "direct_atoms": [
+          "Series7000Cari"
+        ],
+        "child_nodes": 28
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2BNSFCAR\\us2bnsfcar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2BNSFCar"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CABOOSE\\us2caboose.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Caboose"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CHEMICAR\\us2chemicar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2ChemiCar"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTBL\\us2dblehgtfrghtbl.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2DbleHgtFrghtBl"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTRD\\us2dblehgtfrghtrd.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2DbleHgtFrghtRd"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2EMPLOGGERCAR\\us2emploggercar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2EmpLoggerCar"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRE2\\us2fcarre2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FCarRE2"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRF2\\us2fcarrf2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FCarRF2"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYE2\\us2fcarye2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FCarYE2"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYF2\\us2fcaryf2.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FCarYF2"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT6\\us2freight6.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Freight6"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT7\\us2freight7.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Freight7"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT8\\us2freight8.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Freight8"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR1\\us2freightcar1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Freightcar1"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR3\\us2freightcar3.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Freightcar3"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR4\\us2freightcar4.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Freightcar4"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR5\\us2freightcar5.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2Freightcar5"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCARYEL1\\us2freightcaryel1.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FreightcarYel1"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCEMENT\\us2freightcement.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FreightCement"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTREFRIGE\\us2freightrefrige.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FreightRefrige"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FULLLOGGERCAR\\us2fullloggercar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2FullLoggerCar"
+        ],
+        "child_nodes": 30
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2GRAINCAR\\us2graincar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2GrainCar"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2HOPPERCAR\\us2hoppercar.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2HopperCar"
+        ],
+        "child_nodes": 31
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2WOODCHIPPER\\us2woodchipper.wag",
+        "line": 3,
+        "direct_atoms": [
+          "US2WoodChipper"
+        ],
+        "child_nodes": 31
+      }
+    ],
+    ".wag:Wagon.Friction.Lights.Light.States": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380tender.wag",
+        "line": 66,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380tender.wag",
+        "line": 88,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".wag:Wagon.Friction.Lights": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380tender.wag",
+        "line": 55,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      }
+    ],
+    ".wag:Wagon.Friction": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\380tender.wag",
+        "line": 51,
+        "direct_atoms": [
+          "50N/m/s",
+          "1",
+          "-1mph",
+          "0",
+          "1",
+          "5.1N/rad/s",
+          "1",
+          "-1rad/s",
+          "0",
+          "1"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".wag:Wagon.Lights.Light.States": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennistender.wag",
+        "line": 54,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscottender.wag",
+        "line": 42,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotstender.wag",
+        "line": 44,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2BNSFCAR\\us2bnsfcar.wag",
+        "line": 55,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2BNSFCAR\\us2bnsfcar.wag",
+        "line": 84,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CABOOSE\\us2caboose.wag",
+        "line": 53,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CABOOSE\\us2caboose.wag",
+        "line": 74,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CHEMICAR\\us2chemicar.wag",
+        "line": 53,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CHEMICAR\\us2chemicar.wag",
+        "line": 84,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTBL\\us2dblehgtfrghtbl.wag",
+        "line": 53,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTBL\\us2dblehgtfrghtbl.wag",
+        "line": 82,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTRD\\us2dblehgtfrghtrd.wag",
+        "line": 52,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTRD\\us2dblehgtfrghtrd.wag",
+        "line": 82,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2EMPLOGGERCAR\\us2emploggercar.wag",
+        "line": 55,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2EMPLOGGERCAR\\us2emploggercar.wag",
+        "line": 84,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRE2\\us2fcarre2.wag",
+        "line": 54,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRE2\\us2fcarre2.wag",
+        "line": 83,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRF2\\us2fcarrf2.wag",
+        "line": 53,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRF2\\us2fcarrf2.wag",
+        "line": 82,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYE2\\us2fcarye2.wag",
+        "line": 52,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYE2\\us2fcarye2.wag",
+        "line": 81,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYF2\\us2fcaryf2.wag",
+        "line": 53,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYF2\\us2fcaryf2.wag",
+        "line": 82,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT6\\us2freight6.wag",
+        "line": 54,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT6\\us2freight6.wag",
+        "line": 75,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT7\\us2freight7.wag",
+        "line": 55,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT7\\us2freight7.wag",
+        "line": 84,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT8\\us2freight8.wag",
+        "line": 53,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT8\\us2freight8.wag",
+        "line": 82,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR1\\us2freightcar1.wag",
+        "line": 52,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR1\\us2freightcar1.wag",
+        "line": 81,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR3\\us2freightcar3.wag",
+        "line": 53,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR3\\us2freightcar3.wag",
+        "line": 82,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR4\\us2freightcar4.wag",
+        "line": 54,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR4\\us2freightcar4.wag",
+        "line": 83,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR5\\us2freightcar5.wag",
+        "line": 54,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR5\\us2freightcar5.wag",
+        "line": 83,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCARYEL1\\us2freightcaryel1.wag",
+        "line": 54,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCARYEL1\\us2freightcaryel1.wag",
+        "line": 83,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCEMENT\\us2freightcement.wag",
+        "line": 53,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTREFRIGE\\us2freightrefrige.wag",
+        "line": 53,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FULLLOGGERCAR\\us2fullloggercar.wag",
+        "line": 54,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FULLLOGGERCAR\\us2fullloggercar.wag",
+        "line": 83,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2GRAINCAR\\us2graincar.wag",
+        "line": 56,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2GRAINCAR\\us2graincar.wag",
+        "line": 85,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2HOPPERCAR\\us2hoppercar.wag",
+        "line": 55,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2HOPPERCAR\\us2hoppercar.wag",
+        "line": 84,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2WOODCHIPPER\\us2woodchipper.wag",
+        "line": 55,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2WOODCHIPPER\\us2woodchipper.wag",
+        "line": 85,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      }
+    ],
+    ".wag:Wagon.Lights": [
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\PENDENNIS\\pendennistender.wag",
+        "line": 43,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ROYALSCOTSCLASS\\royalscottender.wag",
+        "line": 32,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\scotstender.wag",
+        "line": 32,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2BNSFCAR\\us2bnsfcar.wag",
+        "line": 43,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CABOOSE\\us2caboose.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2CHEMICAR\\us2chemicar.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTBL\\us2dblehgtfrghtbl.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2DBLEHGTFRGHTRD\\us2dblehgtfrghtrd.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2EMPLOGGERCAR\\us2emploggercar.wag",
+        "line": 43,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRE2\\us2fcarre2.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARRF2\\us2fcarrf2.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYE2\\us2fcarye2.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FCARYF2\\us2fcaryf2.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT6\\us2freight6.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT7\\us2freight7.wag",
+        "line": 43,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHT8\\us2freight8.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR1\\us2freightcar1.wag",
+        "line": 41,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR3\\us2freightcar3.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR4\\us2freightcar4.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCAR5\\us2freightcar5.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCARYEL1\\us2freightcaryel1.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTCEMENT\\us2freightcement.wag",
+        "line": 41,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FREIGHTREFRIGE\\us2freightrefrige.wag",
+        "line": 41,
+        "direct_atoms": [
+          "1"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2FULLLOGGERCAR\\us2fullloggercar.wag",
+        "line": 42,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2GRAINCAR\\us2graincar.wag",
+        "line": 44,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2HOPPERCAR\\us2hoppercar.wag",
+        "line": 43,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      },
+      {
+        "file": "C:\\MSTS\\TRAINS\\TRAINSET\\US2WOODCHIPPER\\us2woodchipper.wag",
+        "line": 43,
+        "direct_atoms": [
+          "2"
+        ],
+        "child_nodes": 2
+      }
+    ],
+    ".act:Tr_Activity.Tr_Activity_File.Player_Service_Definition": [
+      {
+        "file": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.act",
+        "line": 34,
+        "direct_atoms": [
+          "EveGrain"
+        ],
+        "child_nodes": 2
+      }
+    ],
+    ".act:Tr_Activity.Tr_Activity_File.Traffic_Definition.Service_Definition": [
+      {
+        "file": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.act",
+        "line": 41,
+        "direct_atoms": [
+          "\"EveGrain (Traffic)\"",
+          "73020"
+        ],
+        "child_nodes": 1
+      },
+      {
+        "file": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.act",
+        "line": 44,
+        "direct_atoms": [
+          "\"EveGrain (Traffic01)\"",
+          "74460"
+        ],
+        "child_nodes": 1
+      }
+    ],
+    ".act:Tr_Activity.Tr_Activity_File.Traffic_Definition": [
+      {
+        "file": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.act",
+        "line": 40,
+        "direct_atoms": [
+          "\"EveGrain (Traffic)\""
+        ],
+        "child_nodes": 2
+      }
+    ],
+    ".trf:Traffic_Definition": [
+      {
+        "file": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\evegrain (traffic).trf",
+        "line": 3,
+        "direct_atoms": [
+          "\"EveGrain (Traffic)\""
+        ],
+        "child_nodes": 3
+      }
+    ],
+    ".pat:TrackPath.TrPathNodes": [
+      {
+        "file": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\evegrain (traffic).pat",
+        "line": 20,
+        "direct_atoms": [
+          "9"
+        ],
+        "child_nodes": 9
+      },
+      {
+        "file": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\evegrain.pat",
+        "line": 22,
+        "direct_atoms": [
+          "11"
+        ],
+        "child_nodes": 11
+      }
+    ]
+  },
+  "limitations": "Diagnostic tokenizer shares lexical assumptions with catalogue builder. Balanced text is not proof of complete SIMIS grammar, supported token semantics or telemetry availability. Mixed parent atoms need semantic review, not automatic new fields."
+}

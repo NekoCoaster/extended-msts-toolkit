@@ -1,0 +1,293 @@
+{
+  "capture": "infrastructure-player-approach-01",
+  "sha256": "ab9c277eb7630bcabdf1a0989888dcb1fc8bfff894b3389038f8a0648b9aec00",
+  "samples": 300,
+  "errors": [],
+  "paused_samples": 119,
+  "time_range": [
+    73800.6875,
+    73891.171875
+  ],
+  "max_read_seconds": 0.14059040002757683,
+  "map_changes": 0,
+  "event_counts": {
+    "junctions": 1,
+    "vectors": 3,
+    "signals": 4
+  },
+  "events": [
+    {
+      "kind": "junctions",
+      "address": 52351064,
+      "id": 302,
+      "time0": 73800.6875,
+      "time0_after": 73800.6875,
+      "time1": 73800.859375,
+      "time1_after": 73800.9765625,
+      "before": {
+        "branch": 0,
+        "owner": 0,
+        "flags": 0
+      },
+      "after": {
+        "branch": 0,
+        "owner": 53785908,
+        "flags": 0
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "vectors",
+      "address": 113456764,
+      "id": 310,
+      "time0": 73800.6875,
+      "time0_after": 73800.6875,
+      "time1": 73800.859375,
+      "time1_after": 73800.9765625,
+      "before": {
+        "constraint": 0,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 0,
+        "state": 0,
+        "services": [
+          53785908
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "vectors",
+      "address": 113456892,
+      "id": 305,
+      "time0": 73800.6875,
+      "time0_after": 73800.6875,
+      "time1": 73800.859375,
+      "time1_after": 73800.9765625,
+      "before": {
+        "constraint": 1,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 1,
+        "state": 1,
+        "services": [
+          8427664
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "vectors",
+      "address": 113457084,
+      "id": 300,
+      "time0": 73800.6875,
+      "time0_after": 73800.6875,
+      "time1": 73800.859375,
+      "time1_after": 73800.9765625,
+      "before": {
+        "constraint": 3,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 3,
+        "state": 1,
+        "services": [
+          53785908
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "signals",
+      "address": 54664668,
+      "id": 336,
+      "time0": 73800.859375,
+      "time0_after": 73800.9765625,
+      "time1": 73801.359375,
+      "time1_after": 73801.46875,
+      "before": {
+        "aspect": 4,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 4,
+        "associated_service": 53785908,
+        "flags": 49200
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421236,
+      "id": 306,
+      "time0": 73800.859375,
+      "time0_after": 73800.9765625,
+      "time1": 73801.359375,
+      "time1_after": 73801.46875,
+      "before": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "after": {
+        "aspect": 0,
+        "associated_service": 53785908,
+        "flags": 32769
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421284,
+      "id": 301,
+      "time0": 73800.859375,
+      "time0_after": 73800.9765625,
+      "time1": 73801.359375,
+      "time1_after": 73801.46875,
+      "before": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "after": {
+        "aspect": 7,
+        "associated_service": 53785908,
+        "flags": 32769
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94420900,
+      "id": 300,
+      "time0": 73804.359375,
+      "time0_after": 73804.4765625,
+      "time1": 73804.859375,
+      "time1_after": 73804.96875,
+      "before": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    }
+  ],
+  "presence_distance_ranges": [
+    {
+      "node": 113456892,
+      "route_id": 305,
+      "service": 8427664,
+      "first": {
+        "time": 73800.6875,
+        "count": 23,
+        "min": 10274.0146484375,
+        "max": 10712.9814453125
+      },
+      "last": {
+        "time": 73891.171875,
+        "count": 23,
+        "min": 11411.21875,
+        "max": 11852.02734375
+      },
+      "observations": 300,
+      "min_seen": 10274.0146484375,
+      "max_seen": 11852.02734375
+    },
+    {
+      "node": 113457084,
+      "route_id": 300,
+      "service": 53785908,
+      "first": {
+        "time": 73800.6875,
+        "count": 22,
+        "min": 3388.540771484375,
+        "max": 3776.43994140625
+      },
+      "last": {
+        "time": 73891.171875,
+        "count": 22,
+        "min": 5428.9072265625,
+        "max": 5816.81103515625
+      },
+      "observations": 300,
+      "min_seen": 3388.540771484375,
+      "max_seen": 5816.81103515625
+    }
+  ],
+  "first_trains": [
+    {
+      "id": 400007,
+      "address": 59067520,
+      "is_player": true,
+      "speed": 11.018960952758789,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    }
+  ],
+  "last_trains": [
+    {
+      "id": 400007,
+      "address": 59067520,
+      "is_player": true,
+      "speed": 12.640427589416504,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    },
+    {
+      "id": 400005,
+      "address": 54499236,
+      "is_player": false,
+      "speed": 16.20182228088379,
+      "service": 53785908,
+      "cars": 22,
+      "derailed": 0
+    }
+  ],
+  "service_identities": [
+    {
+      "address": 8427664,
+      "id": 0,
+      "is_player": true
+    },
+    {
+      "address": 53785908,
+      "id": 2,
+      "is_player": false
+    },
+    {
+      "address": 53750332,
+      "id": 3,
+      "is_player": false
+    }
+  ],
+  "limitations": "Changes bracketed between sequential snapshots;not exact transition times,atomic states or causal proof. Errors/map changes break continuity. Event counts include presence membership/count changes but exclude continuously varying distances,which are summarized separately. Presence reports per-service record counts,not physical occupancy;list duplicates preserved. Signal index is database item index,not universal asset ID. Complete route map checked each row;no lifecycle identity guarantee."
+}

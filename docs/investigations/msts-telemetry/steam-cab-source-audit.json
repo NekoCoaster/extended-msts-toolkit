@@ -1,0 +1,215 @@
+{
+  "checks": [
+    {
+      "channel": "CUTOFF",
+      "base": "controller",
+      "offset": "0x8c",
+      "branch": "0x422331",
+      "matched_instructions": [
+        "0042234b  MOV EDX,dword ptr [ECX + 0x8c]"
+      ]
+    },
+    {
+      "channel": "REGULATOR",
+      "base": "controller",
+      "offset": "0x54",
+      "branch": "0x422397",
+      "matched_instructions": [
+        "004223b1  MOV EAX,dword ptr [EDX + 0x54]"
+      ]
+    },
+    {
+      "channel": "TRAIN_BRAKE",
+      "base": "controller",
+      "offset": "0xfc",
+      "branch": "0x4219a5",
+      "matched_instructions": [
+        "004219ab  MOV EDX,dword ptr [ECX + 0xfc]"
+      ]
+    },
+    {
+      "channel": "ENGINE_BRAKE",
+      "base": "controller",
+      "offset": "0xc4",
+      "branch": "0x4219d0",
+      "matched_instructions": [
+        "004219d6  MOV EAX,dword ptr [EDX + 0xc4]"
+      ]
+    },
+    {
+      "channel": "CYL_COCKS",
+      "base": "controller",
+      "offset": "0x264",
+      "branch": "0x4223c7",
+      "matched_instructions": [
+        "004223cd  MOV EAX,dword ptr [EDX + 0x264]"
+      ]
+    },
+    {
+      "channel": "BLOWER",
+      "base": "controller",
+      "offset": "0x190",
+      "branch": "0x4223f2",
+      "matched_instructions": [
+        "0042240c  MOV EAX,dword ptr [EDX + 0x190]"
+      ]
+    },
+    {
+      "channel": "FIREHOLE",
+      "base": "controller",
+      "offset": "0x294",
+      "branch": "0x422425",
+      "matched_instructions": [
+        "0042243f  MOV EDX,dword ptr [ECX + 0x294]"
+      ]
+    },
+    {
+      "channel": "STEAM_INJ1",
+      "base": "controller",
+      "offset": "0x2c0",
+      "branch": "0x422458",
+      "matched_instructions": [
+        "0042245d  CMP dword ptr [EAX + 0x2c0],0x0"
+      ]
+    },
+    {
+      "channel": "STEAM_INJ2",
+      "base": "controller",
+      "offset": "0x2e4",
+      "branch": "0x422489",
+      "matched_instructions": [
+        "0042248e  CMP dword ptr [ECX + 0x2e4],0x0"
+      ]
+    },
+    {
+      "channel": "DAMPERS_FRONT",
+      "base": "controller",
+      "offset": "0x200",
+      "branch": "0x4224ba",
+      "matched_instructions": [
+        "004224d4  MOV EAX,dword ptr [EDX + 0x200]"
+      ]
+    },
+    {
+      "channel": "DAMPERS_BACK",
+      "base": "controller",
+      "offset": "0x238",
+      "branch": "0x4224ed",
+      "matched_instructions": [
+        "00422507  MOV EDX,dword ptr [ECX + 0x238]"
+      ]
+    },
+    {
+      "channel": "WATER_INJECTOR1",
+      "base": "controller",
+      "offset": "0x314",
+      "branch": "0x42289e",
+      "matched_instructions": [
+        "004228be  MOV EAX,dword ptr [EDX + 0x314]"
+      ]
+    },
+    {
+      "channel": "WATER_INJECTOR2",
+      "base": "controller",
+      "offset": "0x34c",
+      "branch": "0x4228d7",
+      "matched_instructions": [
+        "004228f7  MOV EDX,dword ptr [ECX + 0x34c]"
+      ]
+    },
+    {
+      "channel": "SMALL_EJECTOR",
+      "base": "controller",
+      "offset": "0x41c",
+      "branch": "0x422910",
+      "matched_instructions": [
+        "00422915  CMP dword ptr [EAX + 0x41c],0x0"
+      ]
+    },
+    {
+      "channel": "BELL",
+      "base": "controller",
+      "offset": "0x440",
+      "branch": "0x42229c",
+      "matched_instructions": [
+        "004222a1  CMP dword ptr [EAX + 0x440],0x0"
+      ]
+    },
+    {
+      "channel": "WHISTLE",
+      "base": "controller",
+      "offset": "0x378",
+      "branch": "0x4222cd",
+      "matched_instructions": [
+        "004222d3  MOV EAX,dword ptr [EDX + 0x378]"
+      ]
+    },
+    {
+      "channel": "SANDERS",
+      "base": "controller",
+      "offset": "0x160",
+      "branch": "0x4222f8",
+      "matched_instructions": [
+        "004222fd  CMP dword ptr [EDX + 0x160],0x0"
+      ]
+    },
+    {
+      "channel": "REVERSER_PLATE",
+      "base": "controller",
+      "offset": "0x8c",
+      "branch": "0x422364",
+      "matched_instructions": [
+        "0042237e  MOV ECX,dword ptr [EAX + 0x8c]"
+      ]
+    },
+    {
+      "channel": "STEAM_PR",
+      "base": "lead",
+      "offset": "0x2d2",
+      "branch": "0x422520",
+      "matched_instructions": [
+        "0042252b  MOV EAX,dword ptr [ECX + 0x2d2]"
+      ]
+    },
+    {
+      "channel": "STEAMCHEST_PR",
+      "base": "lead",
+      "offset": "0x34a",
+      "branch": "0x422611",
+      "matched_instructions": [
+        "0042261d  MOV EDX,dword ptr [EAX + 0x34a]"
+      ]
+    },
+    {
+      "channel": "STEAMHEAT_PRESSURE",
+      "base": "lead",
+      "offset": "0x34e",
+      "branch": "0x422941",
+      "matched_instructions": [
+        "0042294d  MOV ECX,dword ptr [EDX + 0x34e]"
+      ]
+    },
+    {
+      "channel": "TENDER_WATER",
+      "base": "lead",
+      "offset": "0x2de",
+      "branch": "0x422703",
+      "matched_instructions": [
+        "0042272e  FLD float ptr [ECX + 0x2de]",
+        "0042274d  FLD float ptr [ECX + 0x2de]"
+      ]
+    },
+    {
+      "channel": "BOILER_WATER",
+      "base": "lead",
+      "offset": "0x2da",
+      "branch": "0x4227a2",
+      "matched_instructions": [
+        "004227ab  FLD float ptr [EAX + 0x2da]",
+        "004227d3  FLD float ptr [EDX + 0x2da]",
+        "004227fa  FLD float ptr [ECX + 0x2da]"
+      ]
+    }
+  ],
+  "limitations": "Checks expected offset references within native mapped branches; full semantic reasoning and positive steam runtime validation remain separate."
+}

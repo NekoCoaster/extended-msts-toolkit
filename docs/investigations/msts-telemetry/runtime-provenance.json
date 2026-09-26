@@ -1,0 +1,41 @@
+{
+  "train.exe": {
+    "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+    "bytes": 4091953
+  },
+  "DINPUT.dll": {
+    "sha256": "7b1ebfc1f3d917fe3ce8aee466f5bd81481dce305eb08ea9797be0047a61df42",
+    "bytes": 125952
+  },
+  "NEMT/settings.ini": {
+    "sha256": "23aeea01fc154c5858622c3d6c63e00bca8196ead5ae6d6ebad1f74517883345",
+    "bytes": 830
+  },
+  "ROUTES/USA2/ACTIVITIES/evegrain.act": {
+    "sha256": "d11b8c54356ea63bce018b29e0510ed1490434988bbe2c2fcce24bf70243e3d3",
+    "bytes": 5670
+  },
+  "ROUTES/USA2/SERVICES/EveGrain.srv": {
+    "sha256": "d50aefed9f044b2254b8f4cdee1a3d8329473fcf519e3ae483bcab1c1d667a5e",
+    "bytes": 652
+  },
+  "ROUTES/USA2/SERVICES/EveGrain (Traffic).srv": {
+    "sha256": "69109af1f6213323d5ff28ae88f4395f3bbcf993cb66a5e2458e57e64a03032c",
+    "bytes": 682
+  },
+  "ROUTES/USA2/SERVICES/EveGrain (Traffic01).srv": {
+    "sha256": "cb9c0aae6755c40064eaedce0b8b5e2af24137e106cd631f44513f29bf49c45c",
+    "bytes": 642
+  },
+  "TRAINS/CONSISTS/Dash921gran.con": {
+    "sha256": "033421f1ca9d429388cb934dfe9f142e28964fae6c540bf5e237a6423e7b137a",
+    "bytes": 3648
+  },
+  "TRAINS/CONSISTS/2 x Dash 9, 20 Intermodal.con": {
+    "sha256": "7919745ba8e22aed6e334d9c50b6a110f0b03d6c2e6dfe16a44d522e3b062351",
+    "bytes": 4124
+  },
+  "executable_LAA_bit_cleared_sha256": "1b041ecf4b2d2a7306218efa1d7418fd87dc21dc4b2d00056cb5749084fe55a4",
+  "ghidra_program_sha256": "69218fce876298c684a2140c7d3925a452c47bb10037ffd8c491f65c5c0c6e7a",
+  "matches_ghidra_after_LAA_bit_only": false
+}

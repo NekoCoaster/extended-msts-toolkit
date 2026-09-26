@@ -1,0 +1,115 @@
+{
+  "capture": "infrastructure-ai-transitions-01",
+  "sha256": "7fb30fb181a4181ffb7d563dbc0a167b719a83aeabd6fda88bd7daa32c04b30c",
+  "samples": 241,
+  "errors": [],
+  "paused_samples": 20,
+  "time_range": [
+    73934.734375,
+    74045.2421875
+  ],
+  "max_read_seconds": 0.1402712000417523,
+  "map_changes": 0,
+  "event_counts": {},
+  "events": [],
+  "presence_distance_ranges": [
+    {
+      "node": 113455676,
+      "route_id": 305,
+      "service": 8427664,
+      "first": {
+        "time": 73934.734375,
+        "count": 23,
+        "min": 10446.1005859375,
+        "max": 10883.47265625
+      },
+      "last": {
+        "time": 74045.1328125,
+        "count": 23,
+        "min": 10446.1005859375,
+        "max": 10883.47265625
+      },
+      "observations": 241,
+      "min_seen": 10446.1005859375,
+      "max_seen": 10883.47265625
+    },
+    {
+      "node": 113455804,
+      "route_id": 310,
+      "service": 53786524,
+      "first": {
+        "time": 73934.734375,
+        "count": 22,
+        "min": 11181.34765625,
+        "max": 11569.2509765625
+      },
+      "last": {
+        "time": 74045.1328125,
+        "count": 22,
+        "min": 9339.310546875,
+        "max": 9727.2138671875
+      },
+      "observations": 241,
+      "min_seen": 9339.310546875,
+      "max_seen": 11569.2509765625
+    }
+  ],
+  "first_trains": [
+    {
+      "id": 400007,
+      "address": 59273328,
+      "is_player": true,
+      "speed": 0.0,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    },
+    {
+      "id": 400005,
+      "address": 69503060,
+      "is_player": false,
+      "speed": 21.130149841308594,
+      "service": 53786524,
+      "cars": 22,
+      "derailed": 0
+    }
+  ],
+  "last_trains": [
+    {
+      "id": 400007,
+      "address": 59273328,
+      "is_player": true,
+      "speed": 0.0,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    },
+    {
+      "id": 400005,
+      "address": 69503060,
+      "is_player": false,
+      "speed": 15.646395683288574,
+      "service": 53786524,
+      "cars": 22,
+      "derailed": 0
+    }
+  ],
+  "service_identities": [
+    {
+      "address": 8427664,
+      "id": 0,
+      "is_player": true
+    },
+    {
+      "address": 53786524,
+      "id": 2,
+      "is_player": false
+    },
+    {
+      "address": 53750948,
+      "id": 3,
+      "is_player": false
+    }
+  ],
+  "limitations": "Changes bracketed between sequential snapshots;not exact transition times,atomic states or causal proof. Errors/map changes break continuity. Event counts include presence membership/count changes but exclude continuously varying distances,which are summarized separately. Presence reports per-service record counts,not physical occupancy;list duplicates preserved. Signal index is database item index,not universal asset ID. Complete route map checked each row;no lifecycle identity guarantee."
+}

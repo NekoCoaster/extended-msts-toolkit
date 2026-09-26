@@ -1,0 +1,90 @@
+{
+  "samples": 1182,
+  "errors": 0,
+  "sim_time_range": [
+    36515.296875,
+    36558.82421875
+  ],
+  "unstable": 0,
+  "crossed_time_reads": 17,
+  "speed_range": [
+    0.0,
+    0.414058119058609
+  ],
+  "changes": [
+    {
+      "time": 36515.296875,
+      "throttle": 0.0,
+      "speed": 0.0,
+      "force": 0.0,
+      "current": 0.0
+    },
+    {
+      "time": 36521.55859375,
+      "throttle": 0.02500000037252903,
+      "speed": 0.0,
+      "force": 0.0,
+      "current": 0.0
+    },
+    {
+      "time": 36536.76171875,
+      "throttle": 0.0,
+      "speed": 0.41055166721343994,
+      "force": 5007.04052734375,
+      "current": 45.518550872802734
+    }
+  ],
+  "field_ranges": {
+    "lead_230": [
+      0.0,
+      0.0
+    ],
+    "lead_29e": [
+      0.0,
+      5007.04052734375
+    ],
+    "lead_2a2": [
+      0.0,
+      230000.0
+    ],
+    "lead_2c2": [
+      0.0,
+      45.518550872802734
+    ],
+    "lead_492": [
+      0.0,
+      0.02500000037252903
+    ],
+    "lead_496": [
+      200000.0,
+      200284.578125
+    ]
+  },
+  "active_samples": 298,
+  "current_comparison_max_abs_error": 3.814697265625e-06,
+  "current_comparison_exact": 211,
+  "last": {
+    "time": 36558.82421875,
+    "paused": 0,
+    "speed": 0.38477039337158203,
+    "fields": {
+      "lead_1bc": 0.38477736711502075,
+      "lead_230": 0.0,
+      "lead_29e": 0.0,
+      "lead_2a2": 0.0,
+      "lead_2c2": 0.0,
+      "lead_492": 0.0,
+      "lead_496": 200264.6875,
+      "controller_8c": 0.0,
+      "controller_c8": 1.0,
+      "definition_fe": 9200000.0,
+      "definition_102": 220000.0,
+      "definition_106": 200000.0,
+      "definition_13e": 13.0,
+      "definition_1da": 2000.0,
+      "definition_63c": 1.0,
+      "definition_640": 15.0
+    }
+  },
+  "limitations": "Read-only50ms asynchronous samples; current relation compared with stored shared force, not original return value. Low forward speed only. Earlier braked snapshot is separate, not simultaneous controlled crossover. No wheel-force or electrical-energy measurement; gate freshness discrepancy unresolved."
+}

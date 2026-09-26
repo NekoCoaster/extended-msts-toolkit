@@ -1,0 +1,80 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass172",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00596eb2",
+      "instructions": 129,
+      "bytes": 376,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0059702a",
+      "instructions": 415,
+      "bytes": 1595,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00597830",
+      "instructions": 521,
+      "bytes": 2382,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00598346",
+      "instructions": 92,
+      "bytes": 304,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00598476",
+      "instructions": 82,
+      "bytes": 253,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00598573",
+      "instructions": 80,
+      "bytes": 265,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0059867c",
+      "instructions": 172,
+      "bytes": 527,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005988e9",
+      "instructions": 80,
+      "bytes": 229,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00598fd9",
+      "instructions": 54,
+      "bytes": 159,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "samples": 1739,
+  "errors": 0,
+  "mode_values": [
+    "0x1000"
+  ],
+  "release_observed": false,
+  "sim_time_range": [
+    36308.75,
+    36372.03515625
+  ],
+  "changes": [
+    {
+      "elapsed": 0.00029910000739619136,
+      "sim_time": 36308.75,
+      "handle": 0.5249999761581421,
+      "mode": "0x1000",
+      "fraction": 0.458333283662796,
+      "pipe_command": 94.83333587646484
+    },
+    {
+      "elapsed": 23.636801299988292,
+      "sim_time": 36315.5859375,
+      "handle": 0.8490000367164612,
+      "mode": "0x1000",
+      "fraction": 0.458333283662796,
+      "pipe_command": 94.83333587646484
+    },
+    {
+      "elapsed": 66.77046489994973,
+      "sim_time": 36358.73046875,
+      "handle": 0.8365000486373901,
+      "mode": "0x1000",
+      "fraction": 0.9983333349227905,
+      "pipe_command": 84.03333282470703
+    }
+  ],
+  "speed_range": [
+    0.0,
+    0.0
+  ],
+  "lead_cylinder_range": [
+    30.788328170776367,
+    53.704307556152344
+  ],
+  "pipe_command_range": [
+    84.03333282470703,
+    94.83333587646484
+  ],
+  "post_final_decrease_pipe_range": [
+    84.03333282470703,
+    84.03333282470703
+  ],
+  "post_final_decrease_duration": 23.184355900040828,
+  "rise_latch_values": [
+    0,
+    1
+  ],
+  "fall_latch_values": [
+    0
+  ],
+  "limitations": "Capture name describes intended test only: release not achieved if mode4 absent. Mouse drag first increased holding demand; subsequent downward drags did not change it; one keyboard decrement followed. Non-atomic50ms external sampling. No AI."
+}

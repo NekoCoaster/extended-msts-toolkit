@@ -1,0 +1,224 @@
+{
+  "capture": "scheduled-traffic-01",
+  "samples": 539,
+  "errors": 0,
+  "crossed_sim_step": 171,
+  "sim_start": 74000.0546875,
+  "sim_end": 74522.0390625,
+  "origin_changes": [
+    {
+      "sample": 0,
+      "sim_time": 74000.0546875,
+      "origin": [
+        -12560,
+        14766
+      ]
+    }
+  ],
+  "service_transitions": [
+    {
+      "service_id": 0,
+      "sim_time": 74000.0546875,
+      "sample": 0,
+      "train": 61142896,
+      "physicalized": 0,
+      "flags": 20,
+      "speed": 0.0
+    },
+    {
+      "service_id": 2,
+      "sim_time": 74000.0546875,
+      "sample": 0,
+      "train": 66775088,
+      "physicalized": 1,
+      "flags": 20,
+      "speed": 15.64639949798584
+    },
+    {
+      "service_id": 3,
+      "sim_time": 74000.0546875,
+      "sample": 0,
+      "train": 0,
+      "physicalized": 0,
+      "flags": 4,
+      "speed": 0.0
+    },
+    {
+      "service_id": 2,
+      "sim_time": 74064.96875,
+      "sample": 83,
+      "train": 0,
+      "physicalized": 0,
+      "flags": 20,
+      "speed": 15.64639949798584
+    },
+    {
+      "service_id": 3,
+      "sim_time": 74460.765625,
+      "sample": 477,
+      "train": 0,
+      "physicalized": 0,
+      "flags": 20,
+      "speed": 0.0
+    }
+  ],
+  "services": {
+    "0": {
+      "name": "EveGrain",
+      "samples": 539,
+      "speeds": {
+        "count": 539,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0
+      },
+      "targets": {
+        "count": 539,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0
+      },
+      "accelerations": {
+        "count": 539,
+        "min": -8.559643660532856e-09,
+        "max": 4.137059139708299e-09,
+        "median": -4.4642228802516115e-10
+      },
+      "movement_errors": {
+        "count": 239,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0
+      },
+      "physical_samples": 539,
+      "unphysical_positive_speed_samples": 0,
+      "node_transitions": 0,
+      "section_transitions": 0
+    },
+    "2": {
+      "name": "EveGrain (Traffic)",
+      "samples": 539,
+      "speeds": {
+        "count": 539,
+        "min": 4.426946640014648,
+        "max": 15.64639949798584,
+        "median": 15.64639949798584
+      },
+      "targets": {
+        "count": 539,
+        "min": 0.0,
+        "max": 15.64639949798584,
+        "median": 15.64639949798584
+      },
+      "accelerations": {
+        "count": 539,
+        "min": -0.3506148159503937,
+        "max": 0.3432735204696655,
+        "median": 0.0
+      },
+      "movement_errors": {
+        "count": 239,
+        "min": 3.5084946059527056e-07,
+        "max": 15.403829303944477,
+        "median": 0.12202683136421832
+      },
+      "physical_samples": 83,
+      "unphysical_positive_speed_samples": 456,
+      "node_transitions": 0,
+      "section_transitions": 37,
+      "movement_anomalies": {
+        "count": 111,
+        "examples": [
+          {
+            "sample": 215,
+            "sim_time": 74197.5703125,
+            "dt": 1.0078125,
+            "position_chord_speed": 31.050228801930317,
+            "native_speed": 15.64639949798584,
+            "expected_average_speed": 15.64639949798584,
+            "train": 0,
+            "node": 113456828,
+            "section": 62
+          },
+          {
+            "sample": 338,
+            "sim_time": 74321.140625,
+            "dt": 1.0078125,
+            "position_chord_speed": 0.0,
+            "native_speed": 4.426946640014648,
+            "expected_average_speed": 4.426946640014648,
+            "train": 0,
+            "node": 113456828,
+            "section": 47
+          },
+          {
+            "sample": 339,
+            "sim_time": 74322.140625,
+            "dt": 1.0,
+            "position_chord_speed": 0.0,
+            "native_speed": 4.426946640014648,
+            "expected_average_speed": 4.426946640014648,
+            "train": 0,
+            "node": 113456828,
+            "section": 47
+          },
+          {
+            "sample": 340,
+            "sim_time": 74323.1484375,
+            "dt": 1.0078125,
+            "position_chord_speed": 0.0,
+            "native_speed": 4.426946640014648,
+            "expected_average_speed": 4.426946640014648,
+            "train": 0,
+            "node": 113456828,
+            "section": 47
+          },
+          {
+            "sample": 341,
+            "sim_time": 74324.15625,
+            "dt": 1.0078125,
+            "position_chord_speed": 0.0,
+            "native_speed": 4.426946640014648,
+            "expected_average_speed": 4.426946640014648,
+            "train": 0,
+            "node": 113456828,
+            "section": 47
+          }
+        ]
+      }
+    },
+    "3": {
+      "name": "EveGrain (Traffic01)",
+      "samples": 539,
+      "speeds": {
+        "count": 539,
+        "min": 0.0,
+        "max": 6.788670063018799,
+        "median": 0.0
+      },
+      "targets": {
+        "count": 539,
+        "min": 0.0,
+        "max": 13.411199569702148,
+        "median": 0.0
+      },
+      "accelerations": {
+        "count": 539,
+        "min": 0.0,
+        "max": 0.1396844983100891,
+        "median": 0.0
+      },
+      "movement_errors": {
+        "count": 33,
+        "min": 6.03733136728124e-06,
+        "max": 0.05008998368545203,
+        "median": 0.007145476661817085
+      },
+      "physical_samples": 0,
+      "unphysical_positive_speed_samples": 61,
+      "node_transitions": 0,
+      "section_transitions": 2
+    }
+  },
+  "limitation": "Position/speed comparison uses chords and asynchronous samples; it does not prove exact integration, axis conventions or global origin-shift handling."
+}
