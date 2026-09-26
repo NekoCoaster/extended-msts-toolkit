@@ -913,6 +913,19 @@ for row in rows:
     if row['id'].startswith('evaluation.'):
         row['evidence'].extend(['COLLISION-STATE-FINDINGS.md','captures/post-red-collision-evaluation-01/evaluation.json','captures/collision-exit-evaluation-01/evaluation.json'])
         row['limitations']+=' Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record.'
+physical_evidence=['PHYSICAL-REGISTRY-FINDINGS.md','pass217-byte-verification.json','pass218-byte-verification.json','captures/physical-registry-paused-01/registry.json']
+for ident,meaning,typ,unit,method in [
+ ('car.physical_registry','Physical-object list independently of train-owned consist chains','object list','objects','manager=[0x7bdecc]; sentinel=[manager+0x18]; node+8 indexes [0x828108] with stride8'),
+ ('car.native_kind','Native vehicle class discriminator','uint32','opaque native kind','Resolve class from object first-word table index; method0x14 slot at class+0xb4; verified return targets005f15ac=>0x4000e engine,0063465b=>0x4000d wagon; never invoke method'),
+ ('car.object_id','Native vehicle identifier used by object lookup and save references','uint32','opaque ID','verified wagon/engine object+0x50; lookup006347ef searches physical list')]:
+    add(ident,meaning,'player and physical AI; detached/static applicability unvalidated',typ,unit,method,physical_evidence,
+        'native consumers and exact constant-return methods traced;45paused objects match connected train membership',
+        'physical object creation/removal and load reconstruction;no persistent identity guarantee',
+        common+' Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage.')
+for row in rows:
+    if row['id'] in {'car.identity','car.train_owner','car.links','car.body_pointer'}:
+        row['evidence'].extend(physical_evidence)
+        row['limitations']+=' Independent physical-list probe matches45connected player/AIcars;no positive detached/static fixture yet.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

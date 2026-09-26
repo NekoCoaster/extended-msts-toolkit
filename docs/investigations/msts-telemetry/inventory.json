@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-26T21:39:42.334085+00:00",
+  "generated_utc": "2026-09-26T21:50:20.901043+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 414,
+    "runtime_direct": 417,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 1015
+    "total": 1018
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -359,11 +359,15 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "PHYSICAL-REGISTRY-FINDINGS.md",
+        "pass217-byte-verification.json",
+        "pass218-byte-verification.json",
+        "captures/physical-registry-paused-01/registry.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;no positive detached/static fixture yet."
     },
     {
       "id": "car.train_owner",
@@ -388,11 +392,15 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "PHYSICAL-REGISTRY-FINDINGS.md",
+        "pass217-byte-verification.json",
+        "pass218-byte-verification.json",
+        "captures/physical-registry-paused-01/registry.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;no positive detached/static fixture yet."
     },
     {
       "id": "car.links",
@@ -417,11 +425,15 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "PHYSICAL-REGISTRY-FINDINGS.md",
+        "pass217-byte-verification.json",
+        "pass218-byte-verification.json",
+        "captures/physical-registry-paused-01/registry.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;no positive detached/static fixture yet."
     },
     {
       "id": "car.definition",
@@ -504,11 +516,15 @@
         "pass207-byte-verification.json",
         "pass208-byte-verification.json",
         "pass209-byte-verification.json",
-        "pass210-byte-verification.json"
+        "pass210-byte-verification.json",
+        "PHYSICAL-REGISTRY-FINDINGS.md",
+        "pass217-byte-verification.json",
+        "pass218-byte-verification.json",
+        "captures/physical-registry-paused-01/registry.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Independent physical-list probe matches45connected player/AIcars;no positive detached/static fixture yet."
     },
     {
       "id": "body.position",
@@ -34414,6 +34430,57 @@
       "evidence_status": "writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree",
       "update_or_lifecycle": "loaded resource/service lifetime;reload and word mutation not observed",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Resource metadata,not motion or simulation counters. No uniqueness/content-hash/revision-increment guarantee. Header filters missing path resources and deduplicates names via native comparison whose case rules remain untraced. Sequential reads are non-atomic. Installed ASV agreement is not a newly generated SAV or load round trip."
+    },
+    {
+      "id": "car.physical_registry",
+      "meaning": "Physical-object list independently of train-owned consist chains",
+      "applicability": "player and physical AI; detached/static applicability unvalidated",
+      "value_type": "object list",
+      "units": "objects",
+      "extraction": "manager=[0x7bdecc]; sentinel=[manager+0x18]; node+8 indexes [0x828108] with stride8",
+      "evidence": [
+        "PHYSICAL-REGISTRY-FINDINGS.md",
+        "pass217-byte-verification.json",
+        "pass218-byte-verification.json",
+        "captures/physical-registry-paused-01/registry.json"
+      ],
+      "evidence_status": "native consumers and exact constant-return methods traced;45paused objects match connected train membership",
+      "update_or_lifecycle": "physical object creation/removal and load reconstruction;no persistent identity guarantee",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage."
+    },
+    {
+      "id": "car.native_kind",
+      "meaning": "Native vehicle class discriminator",
+      "applicability": "player and physical AI; detached/static applicability unvalidated",
+      "value_type": "uint32",
+      "units": "opaque native kind",
+      "extraction": "Resolve class from object first-word table index; method0x14 slot at class+0xb4; verified return targets005f15ac=>0x4000e engine,0063465b=>0x4000d wagon; never invoke method",
+      "evidence": [
+        "PHYSICAL-REGISTRY-FINDINGS.md",
+        "pass217-byte-verification.json",
+        "pass218-byte-verification.json",
+        "captures/physical-registry-paused-01/registry.json"
+      ],
+      "evidence_status": "native consumers and exact constant-return methods traced;45paused objects match connected train membership",
+      "update_or_lifecycle": "physical object creation/removal and load reconstruction;no persistent identity guarantee",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage."
+    },
+    {
+      "id": "car.object_id",
+      "meaning": "Native vehicle identifier used by object lookup and save references",
+      "applicability": "player and physical AI; detached/static applicability unvalidated",
+      "value_type": "uint32",
+      "units": "opaque ID",
+      "extraction": "verified wagon/engine object+0x50; lookup006347ef searches physical list",
+      "evidence": [
+        "PHYSICAL-REGISTRY-FINDINGS.md",
+        "pass217-byte-verification.json",
+        "pass218-byte-verification.json",
+        "captures/physical-registry-paused-01/registry.json"
+      ],
+      "evidence_status": "native consumers and exact constant-return methods traced;45paused objects match connected train membership",
+      "update_or_lifecycle": "physical object creation/removal and load reconstruction;no persistent identity guarantee",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage."
     }
   ]
 }

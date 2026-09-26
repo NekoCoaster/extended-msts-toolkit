@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 414, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1015}
+{'runtime_direct': 417, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1018}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1021,3 +1021,6 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | resource.consist_version_word | Loaded consist raw word emitted in native Version_Consist list | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
 | resource.service_version_word | Loaded service raw word emitted in native Version_Service list | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
 | resource.traffic_version_word | Loaded traffic raw word emitted in native Version_Traffic block | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
+| car.physical_registry | Physical-object list independently of train-owned consist chains | native consumers and exact constant-return methods traced;45paused objects match connected train membership |
+| car.native_kind | Native vehicle class discriminator | native consumers and exact constant-return methods traced;45paused objects match connected train membership |
+| car.object_id | Native vehicle identifier used by object lookup and save references | native consumers and exact constant-return methods traced;45paused objects match connected train membership |

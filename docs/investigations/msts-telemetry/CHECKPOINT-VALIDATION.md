@@ -201,3 +201,9 @@ Source/toolchain checks and staged whitespace checks are performed for this docu
 Added EXTRACTION-HANDOFF.md with the retained-evidence access recipe, supported disk build, actual per-probe guards and documented gaps, nested-error interpretation, lifecycle and time-base limitations, and fresh-capture commands. It is a working handoff; discovery and the final completion audit remain open. No new candidate quantity or game observation is claimed.
 
 The standalone verify_evidence_manifest.py read and matched all9276published raw-evidence entries. Four offline tests passed,covering matching data and extra files,same-size corruption,missing files,and malformed manifests including duplicate/traversal paths. All293JSON and135Python sources parsed;the canonical audit still passes1015unique entries,605evidence paths and126unchanged assets. The retained research save hash matches its original capture. Production main remains clean at5cd5896. No game input or process capture was needed for this checkpoint.
+
+## Independent physical-object registry
+
+Inventory1018=417direct26derived68cab507configuration;609evidence paths and126unchanged assets pass the canonical audit. Added independent physical-list probe and native type/object-ID candidates. Paused snapshot contains45vehicles (4engines41wagons),all also connected to player/AItrain chains,with stable roots/node/class/table rereads and reciprocal links. No positive detached/static fixture is claimed. Corrected004a041e from allocator to method dispatcher in the load-identity report.
+
+Pass217 verifies12functions3362instructions13153bytes andpass2184functions327instructions1038bytes against disk/live,zero mismatches/errors;overlapping exports are not unique totals. All295JSON136Python sources parse.9276priorrawhashes unchanged,63new entries=>9339retainedfiles. NoUIinput/processwrites/savechanges. FullnativeDeviceGuard4551block and uninspected currentremotechecks remain as previously documented.
