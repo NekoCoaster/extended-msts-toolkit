@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-26T19:47:54.142709+00:00",
+  "generated_utc": "2026-09-26T19:59:44.781642+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 321,
+    "runtime_direct": 349,
     "runtime_derived": 24,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 920
+    "total": 948
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -31637,6 +31637,526 @@
       "evidence_status": "native comparison/removal paths traced;paused distance inputs and disk/live threshold match",
       "update_or_lifecycle": "view/service updates;origin and lifecycle validity required",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Finite-value reconstruction,not instruction-exact rounding. Null/uninitialized endpoints and disabled service gates can satisfy numeric predicates without spawning. Either endpoint strictly inside allows creation path;both strictly outside allow removal path;success/other gates unproven. No threshold-crossing or other-view/origin-shift runtime validation. Current initialized AI remains outside;later inactive service has zero endpoints."
+    },
+    {
+      "id": "environment.selection.season_selector",
+      "meaning": "Season selector consumed by ENV filename selection",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "uint32",
+      "units": "raw0..3;out-of-range fallback",
+      "extraction": "[0x79a3ac]",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.selection.weather_selector",
+      "meaning": "Weather selector consumed by ENV filename selection",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "uint32",
+      "units": "1 snow,2 rain,other default slot;not route slot index",
+      "extraction": "[0x7be0d8]",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.selection.editor_override",
+      "meaning": "Raw selector override choosing editor.env",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "uint32",
+      "units": "zero/nonzero",
+      "extraction": "[0x7be0f8]",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.selection.route_filename_table",
+      "meaning": "Loaded route season/weather ENV filename table",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "12 pointer32 to bounded UTF16 strings",
+      "units": "filenames;four rows of clear/rain/snow slots",
+      "extraction": "route=[0x7b8d3c];route+0x70+season*12+slot*4",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.selection.selected_filename",
+      "meaning": "Current selected ENV filename buffer",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "bounded UTF16 string",
+      "units": "filename",
+      "extraction": "buffer at0x7b8d48;not pointer indirection",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.selection.route_directory",
+      "meaning": "Route directory buffer used by path setup",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "bounded UTF16 string",
+      "units": "installation-relative path",
+      "extraction": "buffer at0x7b8310",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.selection.env_directory",
+      "meaning": "ENV directory buffer constructed by route setup",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "bounded UTF16 string",
+      "units": "installation-relative path",
+      "extraction": "buffer at0x7b74cc",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.selection.env_texture_directory",
+      "meaning": "ENV texture directory buffer constructed by route setup",
+      "applicability": "shared loaded route/environment context;not per-train state",
+      "value_type": "bounded UTF16 string",
+      "units": "installation-relative path",
+      "extraction": "buffer at0x7b76d4",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass181-byte-verification.json",
+        "pass181/004935af.c",
+        "pass181/00493341.c",
+        "environment-selection-summary.json",
+        "captures/environment-selection-paused-01/selection.json"
+      ],
+      "evidence_status": "native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route",
+      "update_or_lifecycle": "route/activity setup;alternate initialization/reset writers and change latency unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order."
+    },
+    {
+      "id": "environment.sky.pointer",
+      "meaning": "Loaded sky object identity",
+      "applicability": "shared render environment;not per-train state",
+      "value_type": "pointer32",
+      "units": "session identity",
+      "extraction": "sky=[[0x7b6d60]+0]",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass182-byte-verification.json",
+        "pass182/006e3dd0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled",
+      "update_or_lifecycle": "environment load;runtime updates/teardown and pointer reuse unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Loaded count is not active/visible/drawn count. Conservative32-record probe bound is not native capacity. Raw records retained without promoting undecoded bytes to semantic fields. Split initializes-1 and defaults count-1 if not overridden;renderer and malformed/zero-count behavior not validated. Snapshot non-atomic despite stable structural rereads."
+    },
+    {
+      "id": "environment.sky.layer_count",
+      "meaning": "Loaded sky layer record count",
+      "applicability": "shared render environment;not per-train state",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "sky+0",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass182-byte-verification.json",
+        "pass182/006e3dd0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled",
+      "update_or_lifecycle": "environment load;runtime updates/teardown and pointer reuse unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Loaded count is not active/visible/drawn count. Conservative32-record probe bound is not native capacity. Raw records retained without promoting undecoded bytes to semantic fields. Split initializes-1 and defaults count-1 if not overridden;renderer and malformed/zero-count behavior not validated. Snapshot non-atomic despite stable structural rereads."
+    },
+    {
+      "id": "environment.sky.layer_split",
+      "meaning": "Stored satellite insertion split selector",
+      "applicability": "shared render environment;not per-train state",
+      "value_type": "int32",
+      "units": "raw layer index/sentinel;renderer semantics require validation",
+      "extraction": "sky+4",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass182-byte-verification.json",
+        "pass182/006e3dd0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled",
+      "update_or_lifecycle": "environment load;runtime updates/teardown and pointer reuse unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Loaded count is not active/visible/drawn count. Conservative32-record probe bound is not native capacity. Raw records retained without promoting undecoded bytes to semantic fields. Split initializes-1 and defaults count-1 if not overridden;renderer and malformed/zero-count behavior not validated. Snapshot non-atomic despite stable structural rereads."
+    },
+    {
+      "id": "environment.sky.layer_array",
+      "meaning": "Loaded sky layer record identities",
+      "applicability": "shared render environment;not per-train state",
+      "value_type": "pointer32 plus bounded array",
+      "units": "record addresses,stride0x1ac",
+      "extraction": "array=[sky+8];count=[sky]",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass182-byte-verification.json",
+        "pass182/006e3dd0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled",
+      "update_or_lifecycle": "environment load;runtime updates/teardown and pointer reuse unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Loaded count is not active/visible/drawn count. Conservative32-record probe bound is not native capacity. Raw records retained without promoting undecoded bytes to semantic fields. Split initializes-1 and defaults count-1 if not overridden;renderer and malformed/zero-count behavior not validated. Snapshot non-atomic despite stable structural rereads."
+    },
+    {
+      "id": "environment.sky.satellite_count",
+      "meaning": "Loaded sky satellite record count",
+      "applicability": "shared render environment;not per-train state",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "sky+0x180",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass182-byte-verification.json",
+        "pass182/006e3dd0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled",
+      "update_or_lifecycle": "environment load;runtime updates/teardown and pointer reuse unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Loaded count is not active/visible/drawn count. Conservative32-record probe bound is not native capacity. Raw records retained without promoting undecoded bytes to semantic fields. Split initializes-1 and defaults count-1 if not overridden;renderer and malformed/zero-count behavior not validated. Snapshot non-atomic despite stable structural rereads."
+    },
+    {
+      "id": "environment.sky.satellite_array",
+      "meaning": "Loaded satellite record identities",
+      "applicability": "shared render environment;not per-train state",
+      "value_type": "pointer32 plus bounded array",
+      "units": "record addresses,stride0x1cd",
+      "extraction": "array=[sky+0x184];count=[sky+0x180]",
+      "evidence": [
+        "ENVIRONMENT-SELECTION-FINDINGS.md",
+        "pass182-byte-verification.json",
+        "pass182/006e3dd0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled",
+      "update_or_lifecycle": "environment load;runtime updates/teardown and pointer reuse unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Loaded count is not active/visible/drawn count. Conservative32-record probe bound is not native capacity. Raw records retained without promoting undecoded bytes to semantic fields. Split initializes-1 and defaults count-1 if not overridden;renderer and malformed/zero-count behavior not validated. Snapshot non-atomic despite stable structural rereads."
+    },
+    {
+      "id": "environment.satellite.low_scale",
+      "meaning": "Loaded low satellite scale",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "float32",
+      "units": "native length parameter after loader scaling",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x4",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.high_scale",
+      "meaning": "Loaded high satellite scale",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "float32",
+      "units": "native length parameter after loader scaling",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x8",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.rise_position",
+      "meaning": "Loaded satellite rise azimuth",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "float32",
+      "units": "radians; native degree conversion",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0xc",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.rise_time",
+      "meaning": "Loaded satellite rise clock",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "float32",
+      "units": "seconds of day",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x10",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.set_time",
+      "meaning": "Loaded satellite set clock",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "float32",
+      "units": "seconds of day; interval may wrap midnight",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x14",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.fade_time",
+      "meaning": "Loaded satellite fade duration",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "float32",
+      "units": "seconds; actual fade behavior separately interpreted",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x18",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.dir_rise_colour",
+      "meaning": "Loaded directional rise colour key",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "uint32",
+      "units": "packed native colour,not linear-light RGB",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x1c",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.dir_high_colour",
+      "meaning": "Loaded directional high colour key",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "uint32",
+      "units": "packed native colour,not current light output",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x20",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.dir_set_colour",
+      "meaning": "Loaded directional set colour key",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "uint32",
+      "units": "packed native colour,not current light output",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x24",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.amb_rise_colour",
+      "meaning": "Loaded ambient rise colour key",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "uint32",
+      "units": "packed native colour,not current ambient output",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x2c",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.amb_high_colour",
+      "meaning": "Loaded ambient high colour key",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "uint32",
+      "units": "packed native colour,not current ambient output",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x30",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.amb_set_colour",
+      "meaning": "Loaded ambient set colour key",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "uint32",
+      "units": "packed native colour,not current ambient output",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x34",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.light_pointer",
+      "meaning": "Satellite-created light object identity",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "pointer32",
+      "units": "pointer32;nonnull does not mean registered/active",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x40",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
+    },
+    {
+      "id": "environment.satellite.fog",
+      "meaning": "Loaded satellite fog byte",
+      "applicability": "loaded shared sky satellite records;not independent player/AI state",
+      "value_type": "uint8",
+      "units": "uint8 native render parameter;not fog distance",
+      "extraction": "sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x44",
+      "evidence": [
+        "SATELLITE-FIELDS-FINDINGS.md",
+        "satellite-fields.json",
+        "satellite-fields-summary.json",
+        "pass183-byte-verification.json",
+        "pass183/006e4cf0.c",
+        "captures/sky-structure-paused-01/sky.json"
+      ],
+      "evidence_status": "native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact",
+      "update_or_lifecycle": "loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated."
     }
   ]
 }

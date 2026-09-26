@@ -1,0 +1,117 @@
+{
+  "source": "captures\\environment-selection-paused-01\\selection.json",
+  "source_sha256": "8ba86648e84934791c978a125c3e51385a9870028c28dbf28a1b0d8c499ac2e2",
+  "files": {
+    "C:\\MSTS\\ROUTES\\USA2\\usa2.trk": {
+      "sha256": "5521dbe8b987656d5f61407b852c230b18fc39aca5bbeac9832ba20913b4714f",
+      "bytes": 4700
+    },
+    "C:\\MSTS\\ROUTES\\USA2\\ENVFILES\\USA2snow.env": {
+      "sha256": "b002da2ebad3092cd4e5397561ea746b51173574ae228057cfe46ee80a5ea683",
+      "bytes": 21246
+    }
+  },
+  "checks": [
+    {
+      "token": "SpringClear",
+      "declarations": [
+        "USA2sun.env"
+      ],
+      "loaded": "USA2sun.env",
+      "matches": true
+    },
+    {
+      "token": "SpringRain",
+      "declarations": [
+        "USA2rain.env"
+      ],
+      "loaded": "USA2rain.env",
+      "matches": true
+    },
+    {
+      "token": "SpringSnow",
+      "declarations": [
+        "USA2snow.env"
+      ],
+      "loaded": "USA2snow.env",
+      "matches": true
+    },
+    {
+      "token": "SummerClear",
+      "declarations": [
+        "USA2sun.env"
+      ],
+      "loaded": "USA2sun.env",
+      "matches": true
+    },
+    {
+      "token": "SummerRain",
+      "declarations": [
+        "USA2rain.env"
+      ],
+      "loaded": "USA2rain.env",
+      "matches": true
+    },
+    {
+      "token": "SummerSnow",
+      "declarations": [
+        "USA2snow.env"
+      ],
+      "loaded": "USA2snow.env",
+      "matches": true
+    },
+    {
+      "token": "AutumnClear",
+      "declarations": [
+        "USA2sun.env"
+      ],
+      "loaded": "USA2sun.env",
+      "matches": true
+    },
+    {
+      "token": "AutumnRain",
+      "declarations": [
+        "USA2rain.env"
+      ],
+      "loaded": "USA2rain.env",
+      "matches": true
+    },
+    {
+      "token": "AutumnSnow",
+      "declarations": [
+        "USA2snow.env"
+      ],
+      "loaded": "USA2snow.env",
+      "matches": true
+    },
+    {
+      "token": "WinterClear",
+      "declarations": [
+        "USA2sun.env"
+      ],
+      "loaded": "USA2sun.env",
+      "matches": true
+    },
+    {
+      "token": "WinterRain",
+      "declarations": [
+        "USA2rain.env"
+      ],
+      "loaded": "USA2rain.env",
+      "matches": true
+    },
+    {
+      "token": "WinterSnow",
+      "declarations": [
+        "USA2snow.env"
+      ],
+      "loaded": "USA2snow.env",
+      "matches": true
+    }
+  ],
+  "all_slots_match": true,
+  "selected_literal_matches_explicit_file": true,
+  "captured_selection_matches": true,
+  "stable": true,
+  "limitations": "Literal declarations and paused selected buffer match. Not an OS file-open trace or content identity stored in the runtime object. All seasons use the same three filenames in this route, so this asset comparison alone cannot distinguish season order. Editor, invalid-season and fallback-weather branches are statically traced but not exercised. No path from process memory was opened."
+}

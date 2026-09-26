@@ -710,6 +710,34 @@ for row in rows:
         row['evidence']+=['infrastructure-ai-clearance-01-crossings.json','PAIRED-INFRASTRUCTURE-FINDINGS.md','paired-player-crossing-01-crossings.json']
         row['limitations']=row['limitations'].replace('Rephysicalization and node crossing untested.','Rephysicalization remains untested; a later capture validates22abstract-record node crossings,not physical extent or direction semantics.')
         row['limitations']+=' The later paired series preserves45abstract records after physical AI removal;no node crossing occurs in that series. Earlier421-sample crossing evidence is separate. Direction correctness during crossing/reversal remains unvalidated.'
+selection_evidence=['ENVIRONMENT-SELECTION-FINDINGS.md','pass181-byte-verification.json','pass181/004935af.c','pass181/00493341.c','environment-selection-summary.json','captures/environment-selection-paused-01/selection.json']
+for name,meaning,typ,units,method in [
+    ('season_selector','Season selector consumed by ENV filename selection','uint32','raw0..3;out-of-range fallback','[0x79a3ac]'),
+    ('weather_selector','Weather selector consumed by ENV filename selection','uint32','1 snow,2 rain,other default slot;not route slot index','[0x7be0d8]'),
+    ('editor_override','Raw selector override choosing editor.env','uint32','zero/nonzero','[0x7be0f8]'),
+    ('route_filename_table','Loaded route season/weather ENV filename table','12 pointer32 to bounded UTF16 strings','filenames;four rows of clear/rain/snow slots','route=[0x7b8d3c];route+0x70+season*12+slot*4'),
+    ('selected_filename','Current selected ENV filename buffer','bounded UTF16 string','filename','buffer at0x7b8d48;not pointer indirection'),
+    ('route_directory','Route directory buffer used by path setup','bounded UTF16 string','installation-relative path','buffer at0x7b8310'),
+    ('env_directory','ENV directory buffer constructed by route setup','bounded UTF16 string','installation-relative path','buffer at0x7b74cc'),
+    ('env_texture_directory','ENV texture directory buffer constructed by route setup','bounded UTF16 string','installation-relative path','buffer at0x7b76d4')]:
+    add('environment.selection.'+name,meaning,'shared loaded route/environment context;not per-train state',typ,units,method,selection_evidence,'native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route','route/activity setup;alternate initialization/reset writers and change latency unvalidated',common+' One paused winter/snow sample. Selectors differ from activity-header addresses despite matching values. Selected string is not proof of current file contents or complete successful resource loading. Unknown season falls back to row1/default slot;editor and invalid/weather branches not exercised. Bounded string reads and endpoint checks do not prevent races/reuse. Allseasons share filenames here,so file comparison cannot independently establish season order.')
+sky_evidence=['ENVIRONMENT-SELECTION-FINDINGS.md','pass182-byte-verification.json','pass182/006e3dd0.c','captures/sky-structure-paused-01/sky.json']
+for name,meaning,typ,units,method in [
+    ('pointer','Loaded sky object identity','pointer32','session identity','sky=[[0x7b6d60]+0]'),
+    ('layer_count','Loaded sky layer record count','uint32','records','sky+0'),
+    ('layer_split','Stored satellite insertion split selector','int32','raw layer index/sentinel;renderer semantics require validation','sky+4'),
+    ('layer_array','Loaded sky layer record identities','pointer32 plus bounded array','record addresses,stride0x1ac','array=[sky+8];count=[sky]'),
+    ('satellite_count','Loaded sky satellite record count','uint32','records','sky+0x180'),
+    ('satellite_array','Loaded satellite record identities','pointer32 plus bounded array','record addresses,stride0x1cd','array=[sky+0x184];count=[sky+0x180]')]:
+    add('environment.sky.'+name,meaning,'shared render environment;not per-train state',typ,units,method,sky_evidence,'native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled','environment load;runtime updates/teardown and pointer reuse unvalidated',common+' Loaded count is not active/visible/drawn count. Conservative32-record probe bound is not native capacity. Raw records retained without promoting undecoded bytes to semantic fields. Split initializes-1 and defaults count-1 if not overridden;renderer and malformed/zero-count behavior not validated. Snapshot non-atomic despite stable structural rereads.')
+satellite_evidence=['SATELLITE-FIELDS-FINDINGS.md','satellite-fields.json','satellite-fields-summary.json','pass183-byte-verification.json','pass183/006e4cf0.c','captures/sky-structure-paused-01/sky.json']
+for name,offset,fmt,meaning,units in json.loads((ROOT/'satellite-fields.json').read_text()):
+    typ='pointer32' if name=='light_pointer' else {'f':'float32','I':'uint32','B':'uint8'}[fmt]
+    add('environment.satellite.'+name,meaning,'loaded shared sky satellite records;not independent player/AI state',typ,units,
+        f'sky=[[0x7b6d60]];base=[sky+0x184];index<[sky+0x180];record=base+index*0x1cd;record+0x{offset:x}',
+        satellite_evidence,'native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact',
+        'loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed',
+        common+' Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

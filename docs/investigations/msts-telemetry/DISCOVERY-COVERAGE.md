@@ -2,7 +2,7 @@
 
 This review checks the original research objective against the current artifacts. It is not a ranking or categorization of telemetry to retain. No candidate is removed. The goal remains incomplete: representative player and AI reads are substantial, but coverage of several extractable surfaces and the final handoff are not yet established.
 
-The inventory has 920 candidate entries: 321 direct fields/structures, 24 derived entries, 68 native cab channels and 507 configuration paths. These counts overlap in meaning: a cab channel can display an already-listed native field, and one configuration path can contain several values. They are not 920 independent, live-validated quantities. Nine native cab names were not found in the installed cab declarations. Configuration syntax does not establish a working native consumer.
+At the initial review the inventory had 920 candidate entries: 321 direct fields/structures, 24 derived entries, 68 native cab channels and 507 configuration paths. These counts overlap in meaning: a cab channel can display an already-listed native field, and one configuration path can contain several values. They are not 920 independent, live-validated quantities. Nine native cab names were not found in the installed cab declarations. Configuration syntax does not establish a working native consumer.
 
 ## Requirement-by-requirement evidence
 
@@ -32,3 +32,8 @@ The next new-surface investigation is the environment's active-file selection an
 The inventory builder now emits installed cab unit tokens as plain strings (for example `AMPS`) instead of stringified Python lists. Original CVF evidence remains unchanged; these are declared display units, not a claim that every underlying field uses them. The body-position row now distinguishes known local/body-versus-track observations from the still-unvalidated global origin transition. Relevant signal rows include the paired stationary series; presence rows distinguish the earlier successful AI node-crossing run from the later stationary-player run. All 920 candidate IDs and the 126 original asset hashes are preserved.
 
 This document is a requirements review, not a completion certificate. Current evidence proves useful breadth and several transitions; it does not yet prove comprehensive discovery of all realistically accessible surfaces.
+
+
+Follow-up: ENVIRONMENT-SELECTION-FINDINGS.md now covers selected ENV filename/selector inputs and bounded loaded sky enumeration. Inventory934. Dynamic file/season changes, individual layer/satellite semantics and cloud/sky behavior remain open; this strengthens one discovery surface without closing the broader review.
+
+Satellite follow-up: SATELLITE-FIELDS-FINDINGS.md adds14loaded parameters,948total. Native parser and two retained records support20exact literal/default comparisons. Layer/shader/current-output behavior and dynamic sky transitions remain incomplete.

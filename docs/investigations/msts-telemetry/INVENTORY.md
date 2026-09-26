@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 321, 'runtime_derived': 24, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 920}
+{'runtime_direct': 349, 'runtime_derived': 24, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 948}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -926,3 +926,31 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | camera.view_position | Player view-state position used by AI physicalization gate | native comparison/removal paths traced;paused distance inputs and disk/live threshold match |
 | service.physicalization_distance_squared_threshold | Native squared-distance threshold for AI physicalization | native comparison/removal paths traced;paused distance inputs and disk/live threshold match |
 | service.physicalization_endpoint_distances | Distances from both stored service endpoints to player view | native comparison/removal paths traced;paused distance inputs and disk/live threshold match |
+| environment.selection.season_selector | Season selector consumed by ENV filename selection | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.selection.weather_selector | Weather selector consumed by ENV filename selection | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.selection.editor_override | Raw selector override choosing editor.env | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.selection.route_filename_table | Loaded route season/weather ENV filename table | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.selection.selected_filename | Current selected ENV filename buffer | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.selection.route_directory | Route directory buffer used by path setup | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.selection.env_directory | ENV directory buffer constructed by route setup | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.selection.env_texture_directory | ENV texture directory buffer constructed by route setup | native selector/path setup traced and live bytes verified;paused12-slot table and selected name match installed route |
+| environment.sky.pointer | Loaded sky object identity | native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled |
+| environment.sky.layer_count | Loaded sky layer record count | native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled |
+| environment.sky.layer_split | Stored satellite insertion split selector | native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled |
+| environment.sky.layer_array | Loaded sky layer record identities | native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled |
+| environment.sky.satellite_count | Loaded sky satellite record count | native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled |
+| environment.sky.satellite_array | Loaded satellite record identities | native parser allocation/layout verified against disk/live;paused3layers2satellites and split2 sampled |
+| environment.satellite.low_scale | Loaded low satellite scale | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.high_scale | Loaded high satellite scale | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.rise_position | Loaded satellite rise azimuth | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.rise_time | Loaded satellite rise clock | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.set_time | Loaded satellite set clock | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.fade_time | Loaded satellite fade duration | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.dir_rise_colour | Loaded directional rise colour key | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.dir_high_colour | Loaded directional high colour key | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.dir_set_colour | Loaded directional set colour key | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.amb_rise_colour | Loaded ambient rise colour key | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.amb_high_colour | Loaded ambient high colour key | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.amb_set_colour | Loaded ambient set colour key | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.light_pointer | Satellite-created light object identity | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.satellite.fog | Loaded satellite fog byte | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |

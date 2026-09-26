@@ -14,9 +14,9 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 321 direct-read candidates/structures, 24 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 920 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
+Current inventory has 349 direct-read candidates/structures, 24 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 948 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
 
-Latest observed game state: Grain Train Through the Night paused at 74360.5859375, player stationary with 23 cars and no sampled derailment flags. The latest 601-sample paired capture confirms stationary forward-monitor continuity and repeats AI physical removal while abstract records persist. The attempted player crossing did not occur because brakes remained applied. See PAIRED-INFRASTRUCTURE-FINDINGS.md for the unsuccessful controls and the uncaptured tail. The earlier 421-sample capture validates 22 AI abstract-record crossings 300->310 and route release/acquisition. Inventory remains 920; publication history is recorded separately in RESEARCH-BRANCH.md.
+Latest observed game state: Grain Train Through the Night paused at 74360.5859375, player stationary with 23 cars and no sampled derailment flags. The latest 601-sample paired capture confirms stationary forward-monitor continuity and repeats AI physical removal while abstract records persist. The attempted player crossing did not occur because brakes remained applied. See PAIRED-INFRASTRUCTURE-FINDINGS.md for the unsuccessful controls and the uncaptured tail. The earlier 421-sample capture validates 22 AI abstract-record crossings 300->310 and route release/acquisition. Inventory now contains 948 candidates; publication history is recorded separately in RESEARCH-BRANCH.md.
 
 ## Test scenario and installation
 
@@ -256,3 +256,13 @@ Pass172/173 all6090+2467instructionbytesdisk/liveexact. Pass171 boundedrange was
 914candidates,443evidencepaths,126unchangedasset hashes,auditpass. infrastructure-ai-transitions-01 has241samples0errors/120wallseconds,20initialpaused,73934.734375..74045.2421875. No discreteclaims/signals/branch/presence-count transitions;AI22presence records shift1842.037109m withinroute310,player23remainfixed305. Fullregistryread max0.140271s,not isolated performance-overhead test. Do not repeat same shortwindow without selecting a reachable boundary.
 
 Gamepaused74054.6171875 afterunsampledtail. Pausedsame-clock infrastructure andphysicaltrack multisets agreeexactly forplayer23,butAI22presence records differ+9.65234375m each. Producer/updateage/reference unresolved;distinctsources retained. New sampler/analyzers/snapshotcheck preservehashes and dependencies. NormalUIresume/pauseonly,noasset/save/memorywrites;alljobsterminal. Next tracepresenceproducer/cadence and choose measurednodeboundary forclaimtransitions. PublishedPR9ed0801b remains909;local914researchpendingpublication. Goalactive.
+
+
+## Loaded environment selection and sky checkpoint
+
+ENVIRONMENT-SELECTION-FINDINGS.md adds14candidates: eight selector/path/table fields and six sky enumeration fields. Live selected USA2snow.env matches12route slots,season3/weather1/header values;sky has3layers,split2,2satellites. Both captures paused74360.5859375,stable endpoints. Native selection/loader/parser ranges match; broader callers retain documented live patches. Inventory934=335direct24derived68cab507config;489evidence paths126unchanged assets. Individual sky fields/dynamics remain open. NoUI/gamewrites;alljobs terminal. Local changes afterdc31402 pending next publication.
+
+
+## Satellite parameter checkpoint
+
+SATELLITE-FIELDS-FINDINGS.md adds14loaded satellite parameters from exact native parser evidence and retained paused records.20literal/default comparisons match;bothlightpointers nonzero despite source light1/0. This is loaded configuration,not dynamic output. Inventory948=349direct24derived68cab507config;494evidencepaths126unchangedassets. NoUI/gamewrites;alljobs terminal. Layer/shader/current-output semantics remain next.
