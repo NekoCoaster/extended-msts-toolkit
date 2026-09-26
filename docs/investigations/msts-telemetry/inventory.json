@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-26T17:01:55.953331+00:00",
+  "generated_utc": "2026-09-26T17:36:43.746235+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 295,
+    "runtime_direct": 301,
     "runtime_derived": 19,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 889
+    "total": 895
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -25501,11 +25501,14 @@
         "pass28-byte-verification.json",
         "pass29-byte-verification.json",
         "captures/service-schedule-paused-01/services.jsonl",
-        "SERVICE-UPDATE-FINDINGS.md"
+        "SERVICE-UPDATE-FINDINGS.md",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "ai-acceleration-summary.json",
+        "pass139-byte-verification.json"
       ],
-      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured",
+      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved."
     },
     {
       "id": "service.last_update_time",
@@ -25528,11 +25531,14 @@
         "pass28-byte-verification.json",
         "pass29-byte-verification.json",
         "captures/service-schedule-paused-01/services.jsonl",
-        "SERVICE-UPDATE-FINDINGS.md"
+        "SERVICE-UPDATE-FINDINGS.md",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "ai-acceleration-summary.json",
+        "pass139-byte-verification.json"
       ],
-      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured",
+      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved."
     },
     {
       "id": "service.travel_sign_selector",
@@ -25785,11 +25791,14 @@
         "pass12/005a33af.c",
         "captures/scheduled-traffic-01/lifecycle.jsonl",
         "scheduled-traffic-01-summary.json",
-        "AI-LIFECYCLE-FINDINGS.md"
+        "AI-LIFECYCLE-FINDINGS.md",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "ai-acceleration-summary.json",
+        "pass139-byte-verification.json"
       ],
-      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven",
+      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved."
     },
     {
       "id": "service.target_speed",
@@ -25807,15 +25816,18 @@
         "pass12/005a33af.c",
         "captures/scheduled-traffic-01/lifecycle.jsonl",
         "scheduled-traffic-01-summary.json",
-        "AI-LIFECYCLE-FINDINGS.md"
+        "AI-LIFECYCLE-FINDINGS.md",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "ai-acceleration-summary.json",
+        "pass139-byte-verification.json"
       ],
-      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven",
+      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved."
     },
     {
       "id": "service.acceleration",
-      "meaning": "AI acceleration used by kinematic integrator",
+      "meaning": "AI target-capped kinematic acceleration input",
       "applicability": "player and loaded AI services; AI driver fields differ from player controls",
       "value_type": "float32",
       "units": "m/s^2",
@@ -25829,30 +25841,44 @@
         "pass12/005a33af.c",
         "captures/scheduled-traffic-01/lifecycle.jsonl",
         "scheduled-traffic-01-summary.json",
-        "AI-LIFECYCLE-FINDINGS.md"
+        "AI-LIFECYCLE-FINDINGS.md",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "ai-acceleration-summary.json",
+        "pass139-byte-verification.json"
       ],
-      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven",
+      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved."
     },
     {
       "id": "service.efficiency_candidate",
-      "meaning": "Speed and acceleration scaling factor; matches configured Efficiency in observed services",
+      "meaning": "Effective service speed and acceleration scaling multiplier",
       "applicability": "player and loaded AI services; AI driver fields differ from player controls",
       "value_type": "float32",
       "units": "fraction candidate",
-      "extraction": "service+0x208; need initialization trace to establish exact configuration binding",
+      "extraction": "service+208;005a6b1d selects baseline204 or [service34]+24; baseline branch installed clamp approximately0.005..1 via004069aa return rewrite",
       "evidence": [
         "captures/service-registry-paused-01/services.jsonl",
         "pass10/005a7a5f.c",
         "pass10/005a8ecb.c",
         "pass11/005a41c2.c",
         "pass11/005a5c9a.c",
-        "pass12/005a33af.c"
+        "pass12/005a33af.c",
+        "SERVICE-EFFICIENCY-FINDINGS.md",
+        "pass142-byte-verification.json",
+        "pass143-byte-verification.json",
+        "captures/service-efficiency-paused-01/efficiency.json",
+        "service-token-map.json",
+        "pass147-byte-verification.json",
+        "pass148-byte-verification.json",
+        "pass149-byte-verification.json",
+        "maryland-record-comparison.json",
+        "captures/maryland-records-paused-01/records.json",
+        "captures/maryland-efficiency-paused-01/efficiency.json"
       ],
-      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated",
+      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Selected-record override bypasses baseline clamps; no universal0..1 guarantee. Baseline and effective values match0.75 in all three paused services; selected-record identity, override transition and asset-parser binding remain unresolved. Station-stop activity merge, arrival/departure semantics remain unvalidated despite numeric candidate matches. Live distance values differ slightly from asset declarations; no exact-copy assertion. Second-record efficiency0.289063 is populated but not yet observed as effective208."
     },
     {
       "id": "service.effective_speed_limit",
@@ -28578,11 +28604,18 @@
         "brake-release-summary.json",
         "captures/brake-release-02/samples.jsonl",
         "captures/brake-release-settling-01/samples.jsonl",
-        "captures/brake-released-paused-01/brakes.json"
+        "captures/brake-released-paused-01/brakes.json",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "pass137/005f9285.asm",
+        "pass137-byte-verification.json",
+        "pass138-byte-verification.json",
+        "ai-systems-moving-02-summary.json",
+        "captures/ai-systems-moving-02/samples.jsonl",
+        "captures/ai-systems-alert-final-01/samples.jsonl"
       ],
       "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields."
     },
     {
       "id": "car.brake_pipe_pressure",
@@ -28600,11 +28633,18 @@
         "brake-release-summary.json",
         "captures/brake-release-02/samples.jsonl",
         "captures/brake-release-settling-01/samples.jsonl",
-        "captures/brake-released-paused-01/brakes.json"
+        "captures/brake-released-paused-01/brakes.json",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "pass137/005f9285.asm",
+        "pass137-byte-verification.json",
+        "pass138-byte-verification.json",
+        "ai-systems-moving-02-summary.json",
+        "captures/ai-systems-moving-02/samples.jsonl",
+        "captures/ai-systems-alert-final-01/samples.jsonl"
       ],
       "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields."
     },
     {
       "id": "car.brake_force_candidate",
@@ -28622,11 +28662,18 @@
         "brake-release-summary.json",
         "captures/brake-release-02/samples.jsonl",
         "captures/brake-release-settling-01/samples.jsonl",
-        "captures/brake-released-paused-01/brakes.json"
+        "captures/brake-released-paused-01/brakes.json",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "pass137/005f9285.asm",
+        "pass137-byte-verification.json",
+        "pass138-byte-verification.json",
+        "ai-systems-moving-02-summary.json",
+        "captures/ai-systems-moving-02/samples.jsonl",
+        "captures/ai-systems-alert-final-01/samples.jsonl"
       ],
       "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields."
     },
     {
       "id": "car.max_brake_force",
@@ -29082,11 +29129,18 @@
         "captures/vehicle-motion-ai-01/samples.jsonl",
         "captures/vehicle-motion-final-paused-01/snapshot.json",
         "pass84-byte-verification.json",
-        "pass85-byte-verification.json"
+        "pass85-byte-verification.json",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "pass137/005f9285.asm",
+        "pass137-byte-verification.json",
+        "pass138-byte-verification.json",
+        "ai-systems-moving-02-summary.json",
+        "captures/ai-systems-moving-02/samples.jsonl",
+        "captures/ai-systems-alert-final-01/samples.jsonl"
       ],
       "evidence_status": "native sources traced; moving/braking player and changing-speed physical AI sampled; intact consists; no reader errors",
       "update_or_lifecycle": "motion physics update with branch gates; Durability copied during creation, later writers not exhaustively excluded",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only. AI skip flags bypass ordinary physics writer: stored acceleration stayed0 despite changing AI speed, so it is not validated AI acceleration. AI speed has service-driven producer005a7337 and predecessor copy00636475. Same-step stable reads still showed up to0.01524m/s speed reconstruction discrepancy for player; not atomic equality proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only. AI skip flags bypass ordinary physics writer: stored acceleration stayed0 despite changing AI speed, so it is not validated AI acceleration. AI speed has service-driven producer005a7337 and predecessor copy00636475. Same-step stable reads still showed up to0.01524m/s speed reconstruction discrepancy for player; not atomic equality proof. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields."
     },
     {
       "id": "car.stored_acceleration",
@@ -29107,11 +29161,18 @@
         "captures/vehicle-motion-ai-01/samples.jsonl",
         "captures/vehicle-motion-final-paused-01/snapshot.json",
         "pass84-byte-verification.json",
-        "pass85-byte-verification.json"
+        "pass85-byte-verification.json",
+        "AI-SYSTEM-UPDATE-FINDINGS.md",
+        "pass137/005f9285.asm",
+        "pass137-byte-verification.json",
+        "pass138-byte-verification.json",
+        "ai-systems-moving-02-summary.json",
+        "captures/ai-systems-moving-02/samples.jsonl",
+        "captures/ai-systems-alert-final-01/samples.jsonl"
       ],
       "evidence_status": "native sources traced; moving/braking player and changing-speed physical AI sampled; intact consists; no reader errors",
       "update_or_lifecycle": "motion physics update with branch gates; Durability copied during creation, later writers not exhaustively excluded",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only. AI skip flags bypass ordinary physics writer: stored acceleration stayed0 despite changing AI speed, so it is not validated AI acceleration. AI speed has service-driven producer005a7337 and predecessor copy00636475. Same-step stable reads still showed up to0.01524m/s speed reconstruction discrepancy for player; not atomic equality proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only. AI skip flags bypass ordinary physics writer: stored acceleration stayed0 despite changing AI speed, so it is not validated AI acceleration. AI speed has service-driven producer005a7337 and predecessor copy00636475. Same-step stable reads still showed up to0.01524m/s speed reconstruction discrepancy for player; not atomic equality proof. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields."
     },
     {
       "id": "car.loaded_durability",
@@ -31856,6 +31917,124 @@
       "evidence_status": "native caller/selector traced; paused loaded-range reconstruction matches stored1000hex mode; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "brake controller update; precedes pressure updater005d8db0",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Discrete codes depend on native selector semantics; installed Acela labels corroborate six enabled ranges only. Continuous-curve branch unvalidated. Holding-mode fraction is distinct from raw handle value. Initial release attempt stayed in holding; subsequent keyboard sequence crossed hold-lapped and release modes. Holding decrement alone does not refill pipe. Immediate command and selector reads can reflect different producer phases. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
+    },
+    {
+      "id": "service.efficiency_baseline",
+      "meaning": "Baseline source for effective service efficiency",
+      "applicability": "player and loaded AI services",
+      "value_type": "float32",
+      "units": "dimensionless multiplier",
+      "extraction": "service+204;005a6b1d copies into208 only when selected record+34 is null",
+      "evidence": [
+        "SERVICE-EFFICIENCY-FINDINGS.md",
+        "pass142-byte-verification.json",
+        "pass143-byte-verification.json",
+        "captures/service-efficiency-paused-01/efficiency.json",
+        "service-token-map.json",
+        "pass147-byte-verification.json",
+        "pass148-byte-verification.json",
+        "pass149-byte-verification.json",
+        "maryland-record-comparison.json",
+        "captures/maryland-records-paused-01/records.json",
+        "captures/maryland-efficiency-paused-01/efficiency.json"
+      ],
+      "evidence_status": "native source selection traced; all three paused services baseline/effective0.75;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected",
+      "update_or_lifecycle": "loaded service state; baseline writer/reset not yet mapped",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Baseline service-file binding traced; activity override merge remains unresolved. Effective208 can instead come from selected-record+24. Installed baseline clamp approximately0.005..1; override bypasses this clamp. No boundary/override transition test. Station-stop activity merge, arrival/departure semantics remain unvalidated despite numeric candidate matches. Live distance values differ slightly from asset declarations; no exact-copy assertion. Second-record efficiency0.289063 is populated but not yet observed as effective208."
+    },
+    {
+      "id": "service.ordered_operational_records",
+      "meaning": "Ordered station-stop records used by distance selector and efficiency override",
+      "applicability": "player and loaded AI services; current three lists empty",
+      "value_type": "list",
+      "units": "native record identities and provisional fields",
+      "extraction": "sentinel=[service+30]; circular nodes next0,record8;005a51ad selects record into service34;record24 overrides efficiency",
+      "evidence": [
+        "SERVICE-EFFICIENCY-FINDINGS.md",
+        "pass144-byte-verification.json",
+        "pass145-byte-verification.json",
+        "captures/service-records-paused-01/records.json",
+        "service-token-map.json",
+        "pass147-byte-verification.json",
+        "pass148-byte-verification.json",
+        "pass149-byte-verification.json",
+        "maryland-record-comparison.json",
+        "captures/maryland-records-paused-01/records.json",
+        "captures/maryland-efficiency-paused-01/efficiency.json"
+      ],
+      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected",
+      "update_or_lifecycle": "service lifetime and progress-dependent selection; record construction/reset unresolved",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Populated Maryland records sampled once; selection transition untested. Record timestamp meanings and loader binding unknown. Geometry helper may leave outputs unwritten on failed lookups; do not assume zero. Not proof of complete timetable extraction. Station-stop activity merge, arrival/departure semantics remain unvalidated despite numeric candidate matches. Live distance values differ slightly from asset declarations; no exact-copy assertion. Second-record efficiency0.289063 is populated but not yet observed as effective208."
+    },
+    {
+      "id": "station.recorded_arrival",
+      "meaning": "Recorded station arrival time; may be synthesized from schedule",
+      "applicability": "player station-stop records; AI writer applicability unvalidated",
+      "value_type": "float32",
+      "units": "day-clock seconds; zero/unset interpretation state-dependent",
+      "extraction": "record+0x8 in service30 station-stop list;player00586f58 writes clock80acd4",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "pass152-byte-verification.json",
+        "captures/maryland-records-paused-01/records.json",
+        "maryland-record-comparison.json"
+      ],
+      "evidence_status": "native player writes traced;two paused records sampled, no departure transition",
+      "update_or_lifecycle": "station-state event writes; retained record values, not continuous clocks",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. Departure10 zero in both samples. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved."
+    },
+    {
+      "id": "station.recorded_departure",
+      "meaning": "Recorded station departure-related event time",
+      "applicability": "player station-stop records; AI writer applicability unvalidated",
+      "value_type": "float32",
+      "units": "day-clock seconds; zero/unset interpretation state-dependent",
+      "extraction": "record+0x10 in service30 station-stop list;player00586f58 writes clock80acd4",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "pass152-byte-verification.json",
+        "captures/maryland-records-paused-01/records.json",
+        "maryland-record-comparison.json"
+      ],
+      "evidence_status": "native player writes traced;two paused records sampled, no departure transition",
+      "update_or_lifecycle": "station-state event writes; retained record values, not continuous clocks",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. Departure10 zero in both samples. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved."
+    },
+    {
+      "id": "station.scheduled_arrival",
+      "meaning": "Scheduled station arrival time",
+      "applicability": "service station-stop records;Maryland player populated,AI schedule population untested",
+      "value_type": "float32",
+      "units": "day-clock seconds",
+      "extraction": "record+0x4;005a1656 parses 4040d ArrivalTime;005a102e merges by platform/skip or distance fallback",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "pass153-byte-verification.json",
+        "station-schedule-dispatch.json",
+        "service-token-map.json",
+        "maryland-record-comparison.json"
+      ],
+      "evidence_status": "native label/parser/merge traced;two paused player records exactly match activity declarations",
+      "update_or_lifecycle": "schedule loading and merge;later mutation/reset paths incomplete",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not recorded arrival/departure. Merge fallback uses first matching platform and strict distance +/-1. Missing declaration,editing,time offsets and AI lifecycle unvalidated."
+    },
+    {
+      "id": "station.scheduled_departure",
+      "meaning": "Scheduled station departure time",
+      "applicability": "service station-stop records;Maryland player populated,AI schedule population untested",
+      "value_type": "float32",
+      "units": "day-clock seconds",
+      "extraction": "record+0xc;005a1656 parses 4040f DepartTime;005a102e merges by platform/skip or distance fallback",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "pass153-byte-verification.json",
+        "station-schedule-dispatch.json",
+        "service-token-map.json",
+        "maryland-record-comparison.json"
+      ],
+      "evidence_status": "native label/parser/merge traced;two paused player records exactly match activity declarations",
+      "update_or_lifecycle": "schedule loading and merge;later mutation/reset paths incomplete",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not recorded arrival/departure. Merge fallback uses first matching platform and strict distance +/-1. Missing declaration,editing,time offsets and AI lifecycle unvalidated."
     }
   ]
 }
