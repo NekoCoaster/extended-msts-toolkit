@@ -1,0 +1,45 @@
+{
+  "source": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.asv",
+  "sha256": "0c6ac34f45c65ae00890d9efaa5552df8d844281e52f76a273a1e5c5e441d443",
+  "bytes": 46934,
+  "header_ascii": "SIMISA@@@@@@@@@@JINX0v0b______\r\n",
+  "assumed_layout": "32-byte header then repeated uint32 native-token,uint32 payload-byte-length,payload",
+  "blocks": [
+    {
+      "offset": 32,
+      "token": "0x40495",
+      "label": "SaveHeader",
+      "payload_bytes": 680,
+      "end": 720,
+      "prefix16_hex": "0000000000010000000000000000000c"
+    },
+    {
+      "offset": 720,
+      "token": "0x40496",
+      "label": "SaveTDBs",
+      "payload_bytes": 35123,
+      "end": 35851,
+      "prefix16_hex": "00970404002a89000000990404006f4b"
+    },
+    {
+      "offset": 35851,
+      "token": "0x4049b",
+      "label": "SaveTrItems",
+      "payload_bytes": 100,
+      "end": 35959,
+      "prefix16_hex": "009c0404001900000000350100005498"
+    },
+    {
+      "offset": 35959,
+      "token": "0x404a6",
+      "label": "SaveActivity",
+      "payload_bytes": 10967,
+      "end": 46934,
+      "prefix16_hex": "000100000038000000bce44702000000"
+    }
+  ],
+  "terminal_offset": 46934,
+  "exact_partition": true,
+  "error": null,
+  "limitation": "Successful partition is structural consistency, not semantic decoding. Does not prove all ASV/SAV variants, live equivalence, or individual saved fields. No asset edits."
+}

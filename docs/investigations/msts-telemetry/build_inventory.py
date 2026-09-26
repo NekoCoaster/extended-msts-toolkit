@@ -860,6 +860,28 @@ for row in rows:
         row['evidence'].extend(['KEYBOARD-TRANSITION-FINDINGS.md','keyboard-transition-summary.json','captures/keyboard-shift-paused-01/metadata.json'])
         row['evidence_status']+=';one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero'
         row['limitations']+=' Later short-key test observes scan2a/value1and0 records but no sampled held interval. Nonempty-buffer evidence supersedes the earlier empty-only observation;it does not establish lossless capture or successful gameplay dispatch. Repeated buffer snapshots are not additional events;cursor distinguishes consumed entries.'
+header_evidence=['SAVE-HEADER-FINDINGS.md','save-header-prefix.json','save-token-map.json','pass203-byte-verification.json','pass203/0049f73c.asm','captures/save-header-sources-paused-01/sources.json']
+for name,meaning,method in [
+    ('route_display_label','Loaded route display label','route=[0x7b8d3c];UTF16 [route+4]'),
+    ('route_identifier_label','Loaded route identifier label used by header','route=[0x7b8d3c];UTF16 [route+0x14]'),
+    ('activity_context_label04','Loaded activity context label at+4','activity=[0x7b8d40];UTF16 [activity+4]'),
+    ('activity_context_label08','Loaded optional activity context label at+8','activity=[0x7b8d40];UTF16 [activity+8],null unavailable'),
+    ('activity_title','Loaded activity title used by save header','activity=[0x7b8d40];UTF16 [activity+0xc]'),
+    ('activity_path','Loaded activity source path;header emits basename','activity=[0x7b8d40];UTF16 [activity+0x1c]')]:
+    add('session.'+name,meaning,'shared loaded session;not individual AI service identity','bounded UTF16','text;labels not globally unique file identities',method,header_evidence,
+        'writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration',
+        'route/activity load context;reload/reuse and editor fallback not validated',
+        common+' Non-atomic strings;stable pointers do not guarantee stable contents. Current root branch only. Opaque context labels must not be named solely from valuesUSA2/USA2_2. Header stripsactivitypath basename andalternatebranch emits emptyroute strings. Installed ASV is not a current SAV,origin differs;no save/load round trip or file-content identity proof.')
+resource_evidence=['SAVE-HEADER-TAIL-FINDINGS.md','save-header-tail.json','save-header-lists.json','header-resource-comparison.json','captures/header-resource-versions-paused-01/versions.json','pass204-byte-verification.json','pass205-byte-verification.json','pass206-byte-verification.json','pass204/0049fe49.asm','pass204/0049ffa1.asm','pass204/0049ffe5.asm','pass205/0049fe93.asm']
+for name,meaning,method,applies in [
+    ('path_version_word','Loaded path raw word emitted in native Version_Path list','path=[service+0x130];uint32[path+0x18]','player and AI services with loaded path'),
+    ('consist_version_word','Loaded consist raw word emitted in native Version_Consist list','consist=[service+0x18];uint32[consist+0x88]','player and AI services with loaded consist;header requires loaded path'),
+    ('service_version_word','Loaded service raw word emitted in native Version_Service list','uint32[service+4]','player and registered AI services;header requires loaded path'),
+    ('traffic_version_word','Loaded traffic raw word emitted in native Version_Traffic block','uint32[0x809ae8];name UTF16[0x809ae0]','shared loaded activity traffic metadata')]:
+    add('resource.'+name,meaning,applies,'uint32','raw native Version_* metadata;producer meaning untraced',method,resource_evidence,
+        'writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree',
+        'loaded resource/service lifetime;reload and word mutation not observed',
+        common+' Resource metadata,not motion or simulation counters. No uniqueness/content-hash/revision-increment guarantee. Header filters missing path resources and deduplicates names via native comparison whose case rules remain untraced. Sequential reads are non-atomic. Installed ASV agreement is not a newly generated SAV or load round trip.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

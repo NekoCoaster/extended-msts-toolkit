@@ -276,3 +276,8 @@ Use C:/codex/repo/msts-unity-kb as the consolidated environment reference; read 
 ## Paused sky buffer checkpoint
 
 SKY-VERTEX-FINDINGS.md adds12CPUvertex/shader candidates,971total. Corrected61sample pausedseries has0errors,5shaderheaderchanges;layer0/2UV and4shaderclocksadvance while dayclockfixed74360.5859375. Original61sample guardfailure retained;FFFFFFFFframe index is nativeinitialization sentinel,never dereferenced. Pass1855functions6109bytes disk/liveexact. Alljobsended,nogameinputs/writes. Broadergoalactive;nextshaderclockproducer/reset andscene/time transition coverage,useconsolidatedUnityKB.
+
+
+## Serialization and session metadata checkpoint
+
+The current inventory is1015 candidates (414direct,26derived,68cab,507configuration), with no keep/drop decisions. SERIALIZATION-SURVEY-FINDINGS.md distinguishes the installed ASV reduced serialization path from full SAV output. SAVE-HEADER-FINDINGS.md and SAVE-HEADER-TAIL-FINDINGS.md cover the stored header and live source metadata. The prefix-only coverage note is superseded by a complete structural partition through offset720; field semantics, other writer branches and save/load lifecycle remain incomplete. Nine distinct stored resource name/word pairs match the live player/two AI service sources. These native Version_* words retain raw semantics pending producer tracing. Audit:570evidence paths,126original assets unchanged. No new saves, process writes or UI input in this checkpoint. The research goal remains active; station/player crossing, AI lifecycle/rephysicalization, origin rebasing and broader runtime validation remain open.

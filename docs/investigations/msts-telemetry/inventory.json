@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-26T20:46:10.507163+00:00",
+  "generated_utc": "2026-09-26T21:03:19.270896+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 404,
+    "runtime_direct": 414,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 1005
+    "total": 1015
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -33476,6 +33476,220 @@
       "evidence_status": "disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero",
       "update_or_lifecycle": "input polling clears/produces/consumes buffer;non-atomic external reads may miss events",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Do not invoke methods or write target pointers. Live dispatch patch fingerprint retained but full detour behavior unaudited. No complete-event guarantee or timestamp units. Nonempty buffer,held-key transitions and action invocation remain untested. Mode/filter/action units vary by event type;source flags not gameplay outcomes. Later short-key test observes scan2a/value1and0 records but no sampled held interval. Nonempty-buffer evidence supersedes the earlier empty-only observation;it does not establish lossless capture or successful gameplay dispatch. Repeated buffer snapshots are not additional events;cursor distinguishes consumed entries."
+    },
+    {
+      "id": "session.route_display_label",
+      "meaning": "Loaded route display label",
+      "applicability": "shared loaded session;not individual AI service identity",
+      "value_type": "bounded UTF16",
+      "units": "text;labels not globally unique file identities",
+      "extraction": "route=[0x7b8d3c];UTF16 [route+4]",
+      "evidence": [
+        "SAVE-HEADER-FINDINGS.md",
+        "save-header-prefix.json",
+        "save-token-map.json",
+        "pass203-byte-verification.json",
+        "pass203/0049f73c.asm",
+        "captures/save-header-sources-paused-01/sources.json"
+      ],
+      "evidence_status": "writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration",
+      "update_or_lifecycle": "route/activity load context;reload/reuse and editor fallback not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic strings;stable pointers do not guarantee stable contents. Current root branch only. Opaque context labels must not be named solely from valuesUSA2/USA2_2. Header stripsactivitypath basename andalternatebranch emits emptyroute strings. Installed ASV is not a current SAV,origin differs;no save/load round trip or file-content identity proof."
+    },
+    {
+      "id": "session.route_identifier_label",
+      "meaning": "Loaded route identifier label used by header",
+      "applicability": "shared loaded session;not individual AI service identity",
+      "value_type": "bounded UTF16",
+      "units": "text;labels not globally unique file identities",
+      "extraction": "route=[0x7b8d3c];UTF16 [route+0x14]",
+      "evidence": [
+        "SAVE-HEADER-FINDINGS.md",
+        "save-header-prefix.json",
+        "save-token-map.json",
+        "pass203-byte-verification.json",
+        "pass203/0049f73c.asm",
+        "captures/save-header-sources-paused-01/sources.json"
+      ],
+      "evidence_status": "writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration",
+      "update_or_lifecycle": "route/activity load context;reload/reuse and editor fallback not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic strings;stable pointers do not guarantee stable contents. Current root branch only. Opaque context labels must not be named solely from valuesUSA2/USA2_2. Header stripsactivitypath basename andalternatebranch emits emptyroute strings. Installed ASV is not a current SAV,origin differs;no save/load round trip or file-content identity proof."
+    },
+    {
+      "id": "session.activity_context_label04",
+      "meaning": "Loaded activity context label at+4",
+      "applicability": "shared loaded session;not individual AI service identity",
+      "value_type": "bounded UTF16",
+      "units": "text;labels not globally unique file identities",
+      "extraction": "activity=[0x7b8d40];UTF16 [activity+4]",
+      "evidence": [
+        "SAVE-HEADER-FINDINGS.md",
+        "save-header-prefix.json",
+        "save-token-map.json",
+        "pass203-byte-verification.json",
+        "pass203/0049f73c.asm",
+        "captures/save-header-sources-paused-01/sources.json"
+      ],
+      "evidence_status": "writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration",
+      "update_or_lifecycle": "route/activity load context;reload/reuse and editor fallback not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic strings;stable pointers do not guarantee stable contents. Current root branch only. Opaque context labels must not be named solely from valuesUSA2/USA2_2. Header stripsactivitypath basename andalternatebranch emits emptyroute strings. Installed ASV is not a current SAV,origin differs;no save/load round trip or file-content identity proof."
+    },
+    {
+      "id": "session.activity_context_label08",
+      "meaning": "Loaded optional activity context label at+8",
+      "applicability": "shared loaded session;not individual AI service identity",
+      "value_type": "bounded UTF16",
+      "units": "text;labels not globally unique file identities",
+      "extraction": "activity=[0x7b8d40];UTF16 [activity+8],null unavailable",
+      "evidence": [
+        "SAVE-HEADER-FINDINGS.md",
+        "save-header-prefix.json",
+        "save-token-map.json",
+        "pass203-byte-verification.json",
+        "pass203/0049f73c.asm",
+        "captures/save-header-sources-paused-01/sources.json"
+      ],
+      "evidence_status": "writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration",
+      "update_or_lifecycle": "route/activity load context;reload/reuse and editor fallback not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic strings;stable pointers do not guarantee stable contents. Current root branch only. Opaque context labels must not be named solely from valuesUSA2/USA2_2. Header stripsactivitypath basename andalternatebranch emits emptyroute strings. Installed ASV is not a current SAV,origin differs;no save/load round trip or file-content identity proof."
+    },
+    {
+      "id": "session.activity_title",
+      "meaning": "Loaded activity title used by save header",
+      "applicability": "shared loaded session;not individual AI service identity",
+      "value_type": "bounded UTF16",
+      "units": "text;labels not globally unique file identities",
+      "extraction": "activity=[0x7b8d40];UTF16 [activity+0xc]",
+      "evidence": [
+        "SAVE-HEADER-FINDINGS.md",
+        "save-header-prefix.json",
+        "save-token-map.json",
+        "pass203-byte-verification.json",
+        "pass203/0049f73c.asm",
+        "captures/save-header-sources-paused-01/sources.json"
+      ],
+      "evidence_status": "writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration",
+      "update_or_lifecycle": "route/activity load context;reload/reuse and editor fallback not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic strings;stable pointers do not guarantee stable contents. Current root branch only. Opaque context labels must not be named solely from valuesUSA2/USA2_2. Header stripsactivitypath basename andalternatebranch emits emptyroute strings. Installed ASV is not a current SAV,origin differs;no save/load round trip or file-content identity proof."
+    },
+    {
+      "id": "session.activity_path",
+      "meaning": "Loaded activity source path;header emits basename",
+      "applicability": "shared loaded session;not individual AI service identity",
+      "value_type": "bounded UTF16",
+      "units": "text;labels not globally unique file identities",
+      "extraction": "activity=[0x7b8d40];UTF16 [activity+0x1c]",
+      "evidence": [
+        "SAVE-HEADER-FINDINGS.md",
+        "save-header-prefix.json",
+        "save-token-map.json",
+        "pass203-byte-verification.json",
+        "pass203/0049f73c.asm",
+        "captures/save-header-sources-paused-01/sources.json"
+      ],
+      "evidence_status": "writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration",
+      "update_or_lifecycle": "route/activity load context;reload/reuse and editor fallback not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic strings;stable pointers do not guarantee stable contents. Current root branch only. Opaque context labels must not be named solely from valuesUSA2/USA2_2. Header stripsactivitypath basename andalternatebranch emits emptyroute strings. Installed ASV is not a current SAV,origin differs;no save/load round trip or file-content identity proof."
+    },
+    {
+      "id": "resource.path_version_word",
+      "meaning": "Loaded path raw word emitted in native Version_Path list",
+      "applicability": "player and AI services with loaded path",
+      "value_type": "uint32",
+      "units": "raw native Version_* metadata;producer meaning untraced",
+      "extraction": "path=[service+0x130];uint32[path+0x18]",
+      "evidence": [
+        "SAVE-HEADER-TAIL-FINDINGS.md",
+        "save-header-tail.json",
+        "save-header-lists.json",
+        "header-resource-comparison.json",
+        "captures/header-resource-versions-paused-01/versions.json",
+        "pass204-byte-verification.json",
+        "pass205-byte-verification.json",
+        "pass206-byte-verification.json",
+        "pass204/0049fe49.asm",
+        "pass204/0049ffa1.asm",
+        "pass204/0049ffe5.asm",
+        "pass205/0049fe93.asm"
+      ],
+      "evidence_status": "writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree",
+      "update_or_lifecycle": "loaded resource/service lifetime;reload and word mutation not observed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Resource metadata,not motion or simulation counters. No uniqueness/content-hash/revision-increment guarantee. Header filters missing path resources and deduplicates names via native comparison whose case rules remain untraced. Sequential reads are non-atomic. Installed ASV agreement is not a newly generated SAV or load round trip."
+    },
+    {
+      "id": "resource.consist_version_word",
+      "meaning": "Loaded consist raw word emitted in native Version_Consist list",
+      "applicability": "player and AI services with loaded consist;header requires loaded path",
+      "value_type": "uint32",
+      "units": "raw native Version_* metadata;producer meaning untraced",
+      "extraction": "consist=[service+0x18];uint32[consist+0x88]",
+      "evidence": [
+        "SAVE-HEADER-TAIL-FINDINGS.md",
+        "save-header-tail.json",
+        "save-header-lists.json",
+        "header-resource-comparison.json",
+        "captures/header-resource-versions-paused-01/versions.json",
+        "pass204-byte-verification.json",
+        "pass205-byte-verification.json",
+        "pass206-byte-verification.json",
+        "pass204/0049fe49.asm",
+        "pass204/0049ffa1.asm",
+        "pass204/0049ffe5.asm",
+        "pass205/0049fe93.asm"
+      ],
+      "evidence_status": "writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree",
+      "update_or_lifecycle": "loaded resource/service lifetime;reload and word mutation not observed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Resource metadata,not motion or simulation counters. No uniqueness/content-hash/revision-increment guarantee. Header filters missing path resources and deduplicates names via native comparison whose case rules remain untraced. Sequential reads are non-atomic. Installed ASV agreement is not a newly generated SAV or load round trip."
+    },
+    {
+      "id": "resource.service_version_word",
+      "meaning": "Loaded service raw word emitted in native Version_Service list",
+      "applicability": "player and registered AI services;header requires loaded path",
+      "value_type": "uint32",
+      "units": "raw native Version_* metadata;producer meaning untraced",
+      "extraction": "uint32[service+4]",
+      "evidence": [
+        "SAVE-HEADER-TAIL-FINDINGS.md",
+        "save-header-tail.json",
+        "save-header-lists.json",
+        "header-resource-comparison.json",
+        "captures/header-resource-versions-paused-01/versions.json",
+        "pass204-byte-verification.json",
+        "pass205-byte-verification.json",
+        "pass206-byte-verification.json",
+        "pass204/0049fe49.asm",
+        "pass204/0049ffa1.asm",
+        "pass204/0049ffe5.asm",
+        "pass205/0049fe93.asm"
+      ],
+      "evidence_status": "writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree",
+      "update_or_lifecycle": "loaded resource/service lifetime;reload and word mutation not observed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Resource metadata,not motion or simulation counters. No uniqueness/content-hash/revision-increment guarantee. Header filters missing path resources and deduplicates names via native comparison whose case rules remain untraced. Sequential reads are non-atomic. Installed ASV agreement is not a newly generated SAV or load round trip."
+    },
+    {
+      "id": "resource.traffic_version_word",
+      "meaning": "Loaded traffic raw word emitted in native Version_Traffic block",
+      "applicability": "shared loaded activity traffic metadata",
+      "value_type": "uint32",
+      "units": "raw native Version_* metadata;producer meaning untraced",
+      "extraction": "uint32[0x809ae8];name UTF16[0x809ae0]",
+      "evidence": [
+        "SAVE-HEADER-TAIL-FINDINGS.md",
+        "save-header-tail.json",
+        "save-header-lists.json",
+        "header-resource-comparison.json",
+        "captures/header-resource-versions-paused-01/versions.json",
+        "pass204-byte-verification.json",
+        "pass205-byte-verification.json",
+        "pass206-byte-verification.json",
+        "pass204/0049fe49.asm",
+        "pass204/0049ffa1.asm",
+        "pass204/0049ffe5.asm",
+        "pass205/0049fe93.asm"
+      ],
+      "evidence_status": "writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree",
+      "update_or_lifecycle": "loaded resource/service lifetime;reload and word mutation not observed",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Resource metadata,not motion or simulation counters. No uniqueness/content-hash/revision-increment guarantee. Header filters missing path resources and deduplicates names via native comparison whose case rules remain untraced. Sequential reads are non-atomic. Installed ASV agreement is not a newly generated SAV or load round trip."
     }
   ]
 }

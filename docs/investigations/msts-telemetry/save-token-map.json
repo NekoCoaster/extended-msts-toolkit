@@ -1,0 +1,281 @@
+{
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "labels": [
+    {
+      "label": "SaveActObjSpeedMon",
+      "address": "0x75b414",
+      "pairs": [
+        {
+          "entry": "0x796ff0",
+          "token": "0x404ad",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveActObjWagonList",
+      "address": "0x75b444",
+      "pairs": [
+        {
+          "entry": "0x796fe8",
+          "token": "0x404ac",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveActObjs",
+      "address": "0x75b474",
+      "pairs": [
+        {
+          "entry": "0x796fe0",
+          "token": "0x404ab",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveService",
+      "address": "0x75b490",
+      "pairs": [
+        {
+          "entry": "0x796fd8",
+          "token": "0x404aa",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveServices",
+      "address": "0x75b4ac",
+      "pairs": [
+        {
+          "entry": "0x796fd0",
+          "token": "0x404a9",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveEvent",
+      "address": "0x75b4cc",
+      "pairs": [
+        {
+          "entry": "0x796fc8",
+          "token": "0x404a8",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveEvents",
+      "address": "0x75b4e4",
+      "pairs": [
+        {
+          "entry": "0x796fc0",
+          "token": "0x404a7",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveActivity",
+      "address": "0x75b500",
+      "pairs": [
+        {
+          "entry": "0x796fb8",
+          "token": "0x404a6",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveController",
+      "address": "0x75b520",
+      "pairs": [
+        {
+          "entry": "0x796fb0",
+          "token": "0x404a5",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveTrain",
+      "address": "0x75b544",
+      "pairs": [
+        {
+          "entry": "0x796fa8",
+          "token": "0x404a4",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveEngine",
+      "address": "0x75b55c",
+      "pairs": [
+        {
+          "entry": "0x796fa0",
+          "token": "0x404a3",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveWagon",
+      "address": "0x75b578",
+      "pairs": [
+        {
+          "entry": "0x796f98",
+          "token": "0x404a2",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SavePhysobj",
+      "address": "0x75b590",
+      "pairs": [
+        {
+          "entry": "0x796f90",
+          "token": "0x404a1",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveCollobj",
+      "address": "0x75b5ac",
+      "pairs": [
+        {
+          "entry": "0x796f88",
+          "token": "0x404a0",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveStatic",
+      "address": "0x75b5c8",
+      "pairs": [
+        {
+          "entry": "0x796f80",
+          "token": "0x4049f",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveObj",
+      "address": "0x75b5e4",
+      "pairs": [
+        {
+          "entry": "0x796f78",
+          "token": "0x4049e",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveVNodeOwners",
+      "address": "0x75b5f8",
+      "pairs": [
+        {
+          "entry": "0x796f70",
+          "token": "0x4049d",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveTrItem",
+      "address": "0x75b620",
+      "pairs": [
+        {
+          "entry": "0x796f68",
+          "token": "0x4049c",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveTrItems",
+      "address": "0x75b63c",
+      "pairs": [
+        {
+          "entry": "0x796f60",
+          "token": "0x4049b",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveTDBNode",
+      "address": "0x75b658",
+      "pairs": [
+        {
+          "entry": "0x796f58",
+          "token": "0x4049a",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveTDBNodes",
+      "address": "0x75b674",
+      "pairs": [
+        {
+          "entry": "0x796f50",
+          "token": "0x40499",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveRDB",
+      "address": "0x75b694",
+      "pairs": [
+        {
+          "entry": "0x796f48",
+          "token": "0x40498",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveTDB",
+      "address": "0x75b6a8",
+      "pairs": [
+        {
+          "entry": "0x796f40",
+          "token": "0x40497",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveTDBs",
+      "address": "0x75b6bc",
+      "pairs": [
+        {
+          "entry": "0x796f38",
+          "token": "0x40496",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "label": "SaveHeader",
+      "address": "0x75b6d4",
+      "pairs": [
+        {
+          "entry": "0x796f30",
+          "token": "0x40495",
+          "disk_live_equal": true
+        }
+      ]
+    }
+  ],
+  "limitation": "Table labels/tokens only; writer payload layout and runtime applicability require native consumers. No saved activity created or loaded."
+}

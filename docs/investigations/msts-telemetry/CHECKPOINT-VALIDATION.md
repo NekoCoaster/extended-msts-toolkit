@@ -171,3 +171,10 @@ Inventory remains971 with513 evidence paths and126 unchanged original assets. Pa
 One Shift_L press in the visible pause dialog produced two distinct native records (press/release), seen inthree of5394samples withzero read errors. Cursor/count2/2 shows both records were already consumed. Every sampled held bitset remainedzero; pause/dayclock unchanged. This demonstrates event-versus-held sampling limits, not lossless capture or gameplay dispatch. No game-memory writes/assets/save changes; UI action was one modifier press.
 
 255JSON/119Python sources parse;8706old raw hashes unchanged,102added,8808total. Historical native-test and remote CI limitations remain above. Goal active,PR draft.
+
+
+## Save-header and loaded-resource checkpoint
+
+1015 candidates (414direct,26derived,68cab,507configuration);570evidence paths exist and126original source assets retain their hashes. Native passes201..206 match exported instruction bytes against disk/live. The46934-byte installed ASV partitions into four top-level blocks; its680-byte header partitions through file offset720. Six live session strings and four raw native Version_* words are newly inventoried. Nine distinct stored/live resource name-word pairs agree across the player/twoAI services and traffic metadata. All captured source-pointer/registry rereads agree; paused clock74360.5859375. No new save/load, UI input or process writes occurred.
+
+268JSON/128Python sources parse. All8808previous raw-evidence hashes verified unchanged;147new raw artifacts produce8955total. Inventory audit and resource comparison pass. Native Version_* producer semantics, optional writer branches and save/load continuity remain open. The historical DeviceGuard4551 native-test limitation remains unresolved and was not retried; remote CI was not inspected. Goal active and PR draft.

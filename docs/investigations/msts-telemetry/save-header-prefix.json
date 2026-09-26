@@ -1,0 +1,150 @@
+{
+  "source": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.asv",
+  "sha256": "0c6ac34f45c65ae00890d9efaa5552df8d844281e52f76a273a1e5c5e441d443",
+  "header_end": 720,
+  "prefix_end": 163,
+  "remaining_bytes": 557,
+  "fields": [
+    {
+      "name": "block_label_units",
+      "offset": 40,
+      "type": "B",
+      "value": 0,
+      "source": "binary block framing assumption"
+    },
+    {
+      "name": "initial_zero",
+      "offset": 41,
+      "type": "I",
+      "value": 0,
+      "source": "0049f79f EDX=0,writer+38"
+    },
+    {
+      "name": "non_explore_flag",
+      "offset": 45,
+      "type": "I",
+      "value": 1,
+      "source": "0049f7bb compares selected_context+28 to1"
+    },
+    {
+      "name": "route_string_14_units",
+      "offset": 49,
+      "type": "H",
+      "value": 0,
+      "source": "runtime route+14 or empty nonruntime"
+    },
+    {
+      "name": "route_string_14",
+      "offset": 51,
+      "type": "UTF16",
+      "value": "",
+      "source": "runtime route+14 or empty nonruntime"
+    },
+    {
+      "name": "route_string_04_units",
+      "offset": 51,
+      "type": "H",
+      "value": 0,
+      "source": "runtime route+4 or empty nonruntime"
+    },
+    {
+      "name": "route_string_04",
+      "offset": 53,
+      "type": "UTF16",
+      "value": "",
+      "source": "runtime route+4 or empty nonruntime"
+    },
+    {
+      "name": "activity_string_04_units",
+      "offset": 53,
+      "type": "H",
+      "value": 0,
+      "source": "runtime selected_context+4 or empty nonruntime"
+    },
+    {
+      "name": "activity_string_04",
+      "offset": 55,
+      "type": "UTF16",
+      "value": "",
+      "source": "runtime selected_context+4 or empty nonruntime"
+    },
+    {
+      "name": "activity_basename_units",
+      "offset": 55,
+      "type": "H",
+      "value": 12,
+      "source": "selected_context+1c basename"
+    },
+    {
+      "name": "activity_basename",
+      "offset": 57,
+      "type": "UTF16",
+      "value": "EveGrain.act",
+      "source": "selected_context+1c basename"
+    },
+    {
+      "name": "activity_string_0c_units",
+      "offset": 81,
+      "type": "H",
+      "value": 29,
+      "source": "selected_context+c"
+    },
+    {
+      "name": "activity_string_0c",
+      "offset": 83,
+      "type": "UTF16",
+      "value": "Grain Train Through the Night",
+      "source": "selected_context+c"
+    },
+    {
+      "name": "activity_string_08_units",
+      "offset": 141,
+      "type": "H",
+      "value": 0,
+      "source": "selected_context+8 or empty"
+    },
+    {
+      "name": "activity_string_08",
+      "offset": 143,
+      "type": "UTF16",
+      "value": "",
+      "source": "selected_context+8 or empty"
+    },
+    {
+      "name": "origin_tile_x",
+      "offset": 143,
+      "type": "i",
+      "value": -1,
+      "source": "[0079d118],writer+3c"
+    },
+    {
+      "name": "origin_tile_z",
+      "offset": 147,
+      "type": "i",
+      "value": -1,
+      "source": "[0079d11c],writer+3c"
+    },
+    {
+      "name": "activity_context_word0",
+      "offset": 151,
+      "type": "I",
+      "value": 56,
+      "source": "selected_context+0 orFFFFFFFF"
+    },
+    {
+      "name": "track_database_word22c",
+      "offset": 155,
+      "type": "I",
+      "value": 217,
+      "source": "first[[80a10c]] node+8 object+22c"
+    },
+    {
+      "name": "road_database_word22c",
+      "offset": 159,
+      "type": "I",
+      "value": 4294967295,
+      "source": "optional first[[80a110]] node+8 object+22c orFFFFFFFF"
+    }
+  ],
+  "limitations": "Partial stored header only. String lengths/framing are structurally corroborated by readable labels and bounds, not full binary-writer implementation. Scalar argument sources traced; unknown words are not named revisions/IDs. Saved origin is not current origin; tail/date/camera blocks undecoded."
+}

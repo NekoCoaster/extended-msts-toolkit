@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 404, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1005}
+{'runtime_direct': 414, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1015}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1011,3 +1011,13 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | input.buffer_cursor | Keyboard event consumption cursor | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |
 | input.buffer_count | Keyboard current buffered record count | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |
 | input.buffer_records | Keyboard buffered native input records | disk dispatcher semantics traced with existing live entry patch;keyboard update/getter ranges match disk/live;capacity12emptybuffer observed;one paused Shift_L press yields2distinct native records in3samples;5394samples0errors,held bits always zero |
+| session.route_display_label | Loaded route display label | writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration |
+| session.route_identifier_label | Loaded route identifier label used by header | writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration |
+| session.activity_context_label04 | Loaded activity context label at+4 | writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration |
+| session.activity_context_label08 | Loaded optional activity context label at+8 | writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration |
+| session.activity_title | Loaded activity title used by save header | writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration |
+| session.activity_path | Loaded activity source path;header emits basename | writer argument sources match disk/live;6live strings with stable pointer/root rereads;stored ASV title/basename corroboration |
+| resource.path_version_word | Loaded path raw word emitted in native Version_Path list | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
+| resource.consist_version_word | Loaded consist raw word emitted in native Version_Consist list | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
+| resource.service_version_word | Loaded service raw word emitted in native Version_Service list | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
+| resource.traffic_version_word | Loaded traffic raw word emitted in native Version_Traffic block | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |

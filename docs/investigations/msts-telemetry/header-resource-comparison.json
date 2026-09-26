@@ -1,0 +1,111 @@
+{
+  "comparisons": [
+    {
+      "kind": "path",
+      "stored": [
+        [
+          "EveGrain",
+          2
+        ],
+        [
+          "EveGrain (Traffic)",
+          1
+        ]
+      ],
+      "live": [
+        [
+          "EveGrain",
+          2
+        ],
+        [
+          "EveGrain (Traffic)",
+          1
+        ]
+      ],
+      "equal": true
+    },
+    {
+      "kind": "consist",
+      "stored": [
+        [
+          "Dash921gran",
+          2
+        ],
+        [
+          "2 x Dash 9, 20 Intermodal",
+          2
+        ],
+        [
+          "D9gds",
+          0
+        ]
+      ],
+      "live": [
+        [
+          "Dash921gran",
+          2
+        ],
+        [
+          "2 x Dash 9, 20 Intermodal",
+          2
+        ],
+        [
+          "D9gds",
+          0
+        ]
+      ],
+      "equal": true
+    },
+    {
+      "kind": "service",
+      "stored": [
+        [
+          "EveGrain",
+          9
+        ],
+        [
+          "EveGrain (Traffic)",
+          1
+        ],
+        [
+          "EveGrain (Traffic01)",
+          1
+        ]
+      ],
+      "live": [
+        [
+          "EveGrain",
+          9
+        ],
+        [
+          "EveGrain (Traffic)",
+          1
+        ],
+        [
+          "EveGrain (Traffic01)",
+          1
+        ]
+      ],
+      "equal": true
+    },
+    {
+      "kind": "traffic",
+      "stored": [
+        [
+          "EveGrain (Traffic)",
+          14
+        ]
+      ],
+      "live": [
+        [
+          "EveGrain (Traffic)",
+          14
+        ]
+      ],
+      "equal": true
+    }
+  ],
+  "all_equal": true,
+  "distinct_pairs": 9,
+  "limitations": "Retained installed ASV compared to paused loaded metadata, not a newly written save or a round trip. This exact-name fixture does not establish native case normalization, deduplication of conflicting words, or producer semantics."
+}

@@ -1,0 +1,134 @@
+{
+  "source": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.asv",
+  "sha256": "0c6ac34f45c65ae00890d9efaa5552df8d844281e52f76a273a1e5c5e441d443",
+  "fields": [
+    {
+      "name": "system_time_components",
+      "offset": 163,
+      "format": "6I",
+      "values": [
+        8,
+        53,
+        15,
+        6,
+        5,
+        2001
+      ],
+      "source": "49fda3, caller local date/time arrangement;date units need helper confirmation"
+    },
+    {
+      "name": "simulation_time_components",
+      "offset": 187,
+      "format": "6I",
+      "values": [
+        0,
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      "source": "80acc4/8/c then80acb8/bc/c0:second/minute/hour/day/month/year"
+    },
+    {
+      "name": "word809ec8",
+      "offset": 211,
+      "format": "I",
+      "values": [
+        173400
+      ],
+      "source": "[809ec8],unknown semantic"
+    },
+    {
+      "name": "camera_list_index",
+      "offset": 215,
+      "format": "I",
+      "values": [
+        4294967295
+      ],
+      "source": "index helper for[7c2a88] in[7c2ac8],orFFFFFFFF"
+    },
+    {
+      "name": "clock_state_raw",
+      "offset": 219,
+      "format": "11I",
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        0,
+        1193852928,
+        1065353216,
+        0,
+        0
+      ],
+      "source": "44bytes from80acb8 via writer+50"
+    },
+    {
+      "name": "condition_words",
+      "offset": 263,
+      "format": "3I",
+      "values": [
+        0,
+        1,
+        1
+      ],
+      "source": "normalized nonzero of7b7094/7b709c/7b70a0"
+    },
+    {
+      "name": "weather_season",
+      "offset": 275,
+      "format": "2i",
+      "values": [
+        0,
+        1
+      ],
+      "source": "7be0d8/79a3ac"
+    }
+  ],
+  "blocks": [
+    {
+      "offset": 283,
+      "token": "0x404c9",
+      "size": 83,
+      "end": 374,
+      "prefix24_hex": "006f02040017000000000800450076006500470072006100"
+    },
+    {
+      "offset": 374,
+      "token": "0x404c8",
+      "size": 128,
+      "end": 510,
+      "prefix24_hex": "006f0204001d000000000b00440061007300680039003200"
+    },
+    {
+      "offset": 510,
+      "token": "0x404cb",
+      "size": 138,
+      "end": 656,
+      "prefix24_hex": "006f02040017000000000800450076006500470072006100"
+    },
+    {
+      "offset": 656,
+      "token": "0x404ca",
+      "size": 43,
+      "end": 707,
+      "prefix24_hex": "00120045007600650047007200610069006e002000280054"
+    },
+    {
+      "offset": 707,
+      "token": "0x40068",
+      "size": 5,
+      "end": 720,
+      "prefix24_hex": "0000000000"
+    }
+  ],
+  "terminal_offset": 720,
+  "expected_end": 720,
+  "error": null,
+  "exact_partition": true,
+  "limitations": "Scalar order guided by native writer;raw clock words not independent new fields. System-time meaning requires helper proof. Nested payloads undecoded and equality of file/layout is not save/load roundtrip or live state identity."
+}
