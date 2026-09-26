@@ -14,4 +14,3 @@ $exportArgs+=@('-max-cpu','2','-log',(Join-Path $output 'ghidra.log'),'-scriptlo
 & (Join-Path $toolRoot 'ghidra_12.1.3_PUBLIC\support\analyzeHeadless.bat') @exportArgs *> (Join-Path $output 'console.log')
 Get-Content (Join-Path $output 'console.log') -Tail 15
 if(-not(Test-Path (Join-Path $output 'range.asm'))) {throw 'Export missing; inspect console.log'}
-
