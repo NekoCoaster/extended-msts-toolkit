@@ -42637,6 +42637,156 @@
       "bytes": 82,
       "sha256": "4885d4df7f868b185ad7fa53b0f2ed8018db7d815b4fbf32eccd810a5ad2c2e7",
       "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-01/capture_motion_context.py",
+      "bytes": 3650,
+      "sha256": "86646375816e65fd9870776c70b09e7cf499278eec8390a8790b712df26b24a5",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-01/metadata.json",
+      "bytes": 766,
+      "sha256": "d132da0d727b37c6bbc5816ea60fcd5d33fbb042292056bf6fafe7ce45b9c956",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-01/samples.jsonl",
+      "bytes": 70737586,
+      "sha256": "4904c67b8f9f31e2b54c17911f585d6ea27f958dee0672013e5681214cb5813d",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-final-paused-01/capture_motion_context.py",
+      "bytes": 3650,
+      "sha256": "86646375816e65fd9870776c70b09e7cf499278eec8390a8790b712df26b24a5",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-final-paused-01/metadata.json",
+      "bytes": 765,
+      "sha256": "4fe51f5b38d0fc8e720dad6029f47521d36e745c4f579778942860e018487a17",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-final-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-final-paused-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-ai-final-paused-01/samples.jsonl",
+      "bytes": 111749,
+      "sha256": "91d375a5d9c7c48c6c53db80788344bcdf410079307d9488c4d6f5bf2dde6c89",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-baseline-01/capture_motion_context.py",
+      "bytes": 3650,
+      "sha256": "86646375816e65fd9870776c70b09e7cf499278eec8390a8790b712df26b24a5",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-baseline-01/metadata.json",
+      "bytes": 765,
+      "sha256": "b3aa8055d7a8d7cb4e13aa5de95b9be7f3ee69b868ca0b73ef77af3713220e55",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-baseline-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-baseline-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-baseline-01/samples.jsonl",
+      "bytes": 456572,
+      "sha256": "8d09b31462d15d9df01daa622f6f5c141f3b076e20aca810a5a7b02a20b021c9",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-01/capture_motion_context.py",
+      "bytes": 3650,
+      "sha256": "86646375816e65fd9870776c70b09e7cf499278eec8390a8790b712df26b24a5",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-01/metadata.json",
+      "bytes": 766,
+      "sha256": "8a57596860d64ebb8f1036e31876664ef741156612ac6217e6517f74b52e4cdf",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-01/samples.jsonl",
+      "bytes": 43188238,
+      "sha256": "2d4d3f6c52060a83e88ba7c3655a1dae009049db386bf75ed5d9c17e77c7bd49",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-final-paused-01/capture_motion_context.py",
+      "bytes": 3650,
+      "sha256": "86646375816e65fd9870776c70b09e7cf499278eec8390a8790b712df26b24a5",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-final-paused-01/metadata.json",
+      "bytes": 765,
+      "sha256": "4fe51f5b38d0fc8e720dad6029f47521d36e745c4f579778942860e018487a17",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-final-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-final-paused-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/motion-context-grain-final-paused-01/samples.jsonl",
+      "bytes": 108304,
+      "sha256": "9dd4ef7f31938c4152742a9c765b894423f6919c22a7190b22e9c7e4cd845924",
+      "included": false
     }
   ]
 }

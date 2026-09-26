@@ -18,3 +18,5 @@ Run this audit in the original workspace. The published repository deliberately 
 Follow-up: CONFIG-PARSER-FINDINGS.md corrects a leaf-length cutoff and anonymous-group nesting. The current audit now covers769 IDs; the768 result above is the earlier checkpoint. See inventory-audit.json for the current inventory hash.
 
 Mixed-node follow-up: the current audit covers802 IDs and507 configuration paths; config-mixed-validation.json separately checks evidence for37 mixed paths and four leaf/mixed overlaps. Earlier counts above are historical checkpoints.
+
+Evidence-list isolation correction: build_inventory.py now copies each supplied evidence list when creating a candidate. Shared list aliasing previously caused later motion-specific additions to appear on unrelated candidates and repeat on siblings. Rebuilding keeps902candidates and418distinct referenced paths,with unchanged126asset hashes;it removes unintended cross-candidate propagation rather than deleting underlying evidence. This corrects metadata association,not native field semantics.

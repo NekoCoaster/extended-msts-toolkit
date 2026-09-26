@@ -9,7 +9,7 @@ def source(p):
 def read(p):
     data=p.read_bytes();return data.decode('utf-16') if data[:2] in (b'\xff\xfe',b'\xfe\xff') else data.decode('utf-8-sig',errors='replace')
 def add(id,meaning,applies,typ,unit,method,evidence,status,cadence,limits):
-    rows.append(dict(id=id,meaning=meaning,applicability=applies,value_type=typ,units=unit,extraction=method,evidence=evidence,
+    rows.append(dict(id=id,meaning=meaning,applicability=applies,value_type=typ,units=unit,extraction=method,evidence=list(evidence),
                      evidence_status=status,update_or_lifecycle=cadence,limitations=limits))
 common='MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.'
 ev=['captures/initial-briefing/samples.jsonl','captures/first-running/samples.jsonl','captures/registry-paused/registry.json','captures/ai-running-01/samples.jsonl']
@@ -581,6 +581,20 @@ for row in rows:
     if row['id'] in {'body.velocity','body.angular_velocity','car.connection_endpoint_velocity','car.connection_separation_rate'}:
         row['evidence']+=['pass162-byte-verification.json','angular-reset-provenance.json']
         row['limitations']+=' AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred.'
+for row in rows:
+    if row['id'] in {'body.velocity','body.angular_velocity','car.connection_endpoints','car.connection_endpoint_distance','car.connection_endpoint_velocity','car.connection_separation_rate'}:
+        row['evidence']+=['motion-context-grain-01-summary.json','captures/motion-context-grain-01/metadata.json','captures/motion-context-grain-final-paused-01/samples.jsonl']
+        row['limitations']+=' New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Endpoint trajectory analysis still pending;do not claim dynamic coupling validation from data availability alone.'
+for row in rows:
+    if row['id'] in {'body.velocity','body.angular_velocity','car.connection_endpoints','car.connection_endpoint_distance','car.connection_endpoint_velocity','car.connection_separation_rate'}:
+        row['evidence']+=['analyse_connection_motion.py','motion-context-ai-01-summary.json','motion-context-grain-01-connections.json','motion-context-ai-01-connections.json','captures/motion-context-ai-01/metadata.json','captures/motion-context-ai-final-paused-01/samples.jsonl']
+        row['evidence']=list(dict.fromkeys(row['evidence']))
+        row['limitations']=row['limitations'].replace('Endpoint trajectory analysis still pending;do not claim dynamic coupling validation from data availability alone.','Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets.').replace('captures lack definition400/414 for endpoint finite differences.','older captures lacked definition400/414; combined captures now include these inputs.').replace('No meaningful nonzero angular or opening/closing transition observed.','No validated nonzero angular transition; sampled gap changes may contain asynchronous placement artifacts.').replace('Definition414 asset meaning and physical AI transitions remain unvalidated.','Definition414 asset meaning remains unvalidated; moving physical AI sampled with non-atomic reads.')
+        row['limitations']+=' AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred.'
+        row['evidence_status']+='; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers'
+        if row['id'].startswith('car.connection_'):
+            row['applicability']='physical player and AI; paused and moving observations, with non-atomic phase limits'
+        if row['id']=='car.connection_separation_rate':row['meaning']='Projected relative stored-state velocity of connected solver endpoints; not universal gap derivative'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
