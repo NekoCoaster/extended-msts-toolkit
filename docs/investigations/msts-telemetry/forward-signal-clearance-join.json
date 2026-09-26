@@ -1,0 +1,48 @@
+{
+  "sources": [
+    {
+      "path": "captures\\clearance-forward-signal-paused-01\\details.jsonl",
+      "sha256": "831e524c72b9840d5333c837cef8a06bfc45579fb9d6f761540c3a9f50cb2e43"
+    },
+    {
+      "path": "captures\\infrastructure-clearance-final-paused-01\\owners.json",
+      "sha256": "dec3faacaa76ea7d0d60426cae12dca1794d8769d9049207365a4127d41bd78c"
+    },
+    {
+      "path": "captures\\infrastructure-ai-clearance-01\\samples.jsonl",
+      "sha256": "a9703d64aa044339199c3ed8b2a28841861f2dc70b2c445b854127e9ddb1a18f"
+    }
+  ],
+  "paused_time": 73997.5390625,
+  "head": 94419988,
+  "definition": 51529832,
+  "database": 51564896,
+  "database_item_index": 318,
+  "iterator_node": 113455676,
+  "iterator_item_index": 46,
+  "distance": 882.1513671875,
+  "observations": 421,
+  "history": [
+    {
+      "sample": 0,
+      "sim_time": 73800.6796875,
+      "sim_time_after": 73800.6796875,
+      "state": {
+        "aspect": 0,
+        "flags": 0,
+        "associated_service": 0
+      }
+    },
+    {
+      "sample": 287,
+      "sim_time": 73923.2265625,
+      "sim_time_after": 73923.34375,
+      "state": {
+        "aspect": 7,
+        "flags": 32768,
+        "associated_service": 8427664
+      }
+    }
+  ],
+  "limitations": "Current paused iterator joined by exact head/definition to same-clock route snapshot. Historical pointer/definition continuity within this run supports attribution;iterator itself was not continuously captured. Iterator index46 and database index318 are different index spaces. Not a portable signal ID or all-mode/route validation. No screenshot from this new join;earlier separate Stop/Clear validation supplies aspect interpretation."
+}

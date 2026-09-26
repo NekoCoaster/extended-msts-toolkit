@@ -12,9 +12,9 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 316 direct-read candidates/structures, 23 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 914 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
+Current inventory has 321 direct-read candidates/structures, 24 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 920 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
 
-Latest observed game state: Grain Train Through the Night paused at74054.6171875, player stopped and physical AI present. The latest within-node capture observed moving AI presence distances but no claim/aspect transitions;paused AI presence and physical-track distances differ by9.65234375m. Native producer/extrapolation paths explain different update ages;reconstructed AI travel matches this gap within0.000342m in one paused sample. Current local checkpoint is914;published draftPR9 remains909 ated0801b.
+Latest observed game state: Grain Train Through the Night paused at73997.5390625,player stopped safely before the signal with23cars and0derailed flags. The completed421sample capture validates22AIabstract-record crossings300->310,AIroute release and subsequent player acquisition/selected-branch changes. The paused forward monitor now joins to databaseitem318 and its0->7 transition in the421sample record;continuous iterator history and player crossing remain open. Inventory920;publication history is recorded separately in RESEARCH-BRANCH.md. Prior failed approach and continuing-gameplay-after-alert behavior are retained in the findings.
 
 ## Test scenario and installation
 

@@ -12,6 +12,14 @@ Aspect table is [[head+0x14]+0x50], records 12 bytes: speed at +4 and flags at +
 
 The 0x5a35d7 iterator updater is speed-sensitive; stationary iterator caching and route lifecycle still need explicit coverage. Head pointer identity is only session-local.
 
+## Forward monitor joined to the route-clearance capture
+
+clearance-forward-signal-paused-01 at73997.5390625 reads stable iterator[113455676,0,46,46],distance882.1513671875m and one normal head94419988,definition51529832,aspect7,flags32768,speed sentinel-1. Player is stationary. The same-time infrastructure-clearance-final-paused-01 snapshot has exactly one matching head/definition/direction/aspect/flags at database51564896 item318. Iterator index46 and database item318 belong to different index spaces;neither is a portable signal ID.
+
+join_forward_signal.py verifies that head and definition in all421 infrastructure-ai-clearance-01 samples. It remains aspect0,flags0,associationnull until sample287 at73923.2265625..73923.34375,then changes to aspect7,flags32768,player association8427664. The preceding interval begins73922.7265625. This is the player-forward signal joined to the route acquisition sequence after the last AIpresence record crossed300->310 and the AI releasedjunction302/vector300. Earlier independent signal-transition-01 screenshots establish0Stop/7Clear for this installed context. The new join itself is a pointer/definition and current-iterator verification;the forward iterator was not continuously captured during the clearance run,so historical attribution is conditional on this same-run continuity. No visual color timing or exact native call order is claimed.
+
+forward-signal-clearance-join.json preserves allthree raw source hashes and state changes. No new candidate count;this closes the previously missing item join for the captured stationary-player run. Player crossing,other direction/mode cases,origin changes and pointer reuse remain open.
+
 ## Cab table and producers
 
 `native-cab-map.json` maps all 68 names at 0x77fce0 against the installed-image jump tables, including 163 source excerpts. Nine names are absent from installed CVFs. Name presence and branch routing are not proof of live support. FUEL_GAUGE enum 67 is not handled by these base dispatchers. Bin helper 0x422f06 also accepts extended values; those need separate discovery.

@@ -1,0 +1,18 @@
+{
+  "source": "captures\\infrastructure-player-approach-01\\samples.jsonl",
+  "sha256": "ab9c277eb7630bcabdf1a0989888dcb1fc8bfff894b3389038f8a0648b9aec00",
+  "samples": 300,
+  "unique_records": 45,
+  "counts_by_service": {
+    "8427664": [
+      23
+    ],
+    "53785908": [
+      22
+    ]
+  },
+  "problems": [],
+  "crossing_count": 0,
+  "crossings": [],
+  "limitations": "Same record/configuration/service pointers across sequential samples are a bounded identity check,not a lifetime guarantee. Count sets omit absent services. Brackets are sample windows,not exact crossing instants. Nodes need not be adjacent if sampling skips intermediate state. Presence is abstract per-car state,not physical vehicle extent or block occupancy."
+}
