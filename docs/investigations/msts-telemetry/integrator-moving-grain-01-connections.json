@@ -1,0 +1,106 @@
+{
+  "capture": "integrator-moving-grain-01",
+  "clock": "gameplay",
+  "sha256": "b98b4ab48e10f4bbc16fe299084a3dfa6f52b38855b024d3a3aa87d4066cfc5c",
+  "trains": {
+    "400007": {
+      "is_player": true,
+      "eligible_pairs": 1692,
+      "cross_clock_pairs": 908,
+      "gap": {
+        "min": 0.0821193042251542,
+        "median": 0.2624434692660907,
+        "p95": 0.31888868392867536,
+        "max": 0.32307416686803736
+      },
+      "stored_state_rate": {
+        "min": -0.3407646769498789,
+        "median": 2.2658370733375313e-05,
+        "p95": 0.027216862533806986,
+        "max": 0.08717275285364079
+      },
+      "gap_difference_rate": {
+        "min": -1.179536142892604,
+        "median": -0.0002336159525360014,
+        "p95": 0.049422055124789206,
+        "max": 1.0705166882534713
+      },
+      "absolute_rate_difference": {
+        "min": 1.194143716675756e-06,
+        "median": 0.00442844539102618,
+        "p95": 0.034987787136486995,
+        "max": 1.1810577895690977
+      },
+      "same_clock_absolute_rate_difference": {
+        "min": 7.320682473025688e-06,
+        "median": 0.004791673962664467,
+        "p95": 0.03107667587770322,
+        "max": 1.0020670101939124
+      },
+      "worst": {
+        "pair": [
+          59281672,
+          59281004
+        ],
+        "time0": 73800.890625,
+        "time1": 73800.984375,
+        "gap0": 0.20010335839825225,
+        "gap1": 0.09106533925529264,
+        "rate": 0.001521646676493711,
+        "finite_difference": -1.179536142892604,
+        "error": 1.1810577895690977,
+        "same_clock": false
+      }
+    },
+    "400005": {
+      "is_player": false,
+      "eligible_pairs": 1649,
+      "cross_clock_pairs": 1376,
+      "gap": {
+        "min": 0.008152551336478443,
+        "median": 0.20005146155947423,
+        "p95": 0.20889024557524594,
+        "max": 0.505189020029267
+      },
+      "stored_state_rate": {
+        "min": -1.0876711643303183,
+        "median": 8.148765013015147e-08,
+        "p95": 0.14157073059237102,
+        "max": 1.1743179927393992
+      },
+      "gap_difference_rate": {
+        "min": -6.022745477845011,
+        "median": 0.0,
+        "p95": 0.017304855321392847,
+        "max": 4.439097261513016
+      },
+      "absolute_rate_difference": {
+        "min": 0.0,
+        "median": 0.0016874372689225723,
+        "p95": 0.9959675123419682,
+        "max": 6.556521750097092
+      },
+      "same_clock_absolute_rate_difference": {
+        "min": 0.0,
+        "median": 0.0013476358697927268,
+        "p95": 0.2156957634473735,
+        "max": 6.556521750097092
+      },
+      "worst": {
+        "pair": [
+          68764676,
+          68779556
+        ],
+        "time0": 73888.5703125,
+        "time1": 73888.671875,
+        "gap0": 0.8079571325262227,
+        "gap1": 0.21221666072247689,
+        "rate": 0.5337762722520807,
+        "finite_difference": -6.022745477845011,
+        "error": 6.556521750097092,
+        "same_clock": true
+      }
+    }
+  },
+  "limitations": "Adjacent unpaused samples with gameplay delta0..1s,unchanged origin,stable reciprocal car pairs/definitions and train speed>0.5 at either end. If integrator data exists, both clock choices require physics delta0..2s and stable integrator identity; same-clock subset checks both elapsed and integrator endpoints. Older captures use dayclock stability. Physics denominator must be explicitly selected; no automatic player/AI assumption. Endpoint formulas reconstructed in double precision;epsilon1e-7 approximate. Non-atomic reads and asynchronous placement can create apparent gap jumps. No force/slack truth claim;no sign-agreement guarantee or tolerances inferred from these distributions."
+}

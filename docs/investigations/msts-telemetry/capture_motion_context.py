@@ -6,6 +6,11 @@ from read_live import K
 
 def sample(r):
     out=dict(monotonic=time.perf_counter(),utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),sim_time=r.f(0x80acd4),elapsed_clock=r.f(0x80acd0),frame_dt=r.f(0x828fb4),time_scale=r.f(0x80acd8),paused=r.u(0x7be0f4),origin_tile=list(r.unpack(0x79d118,'ii')),trains=r.trains())
+    obj=r.u(0x80aa1c)
+    if not obj:raise ValueError('Simulation object absent')
+    vt=r.u(obj)
+    if vt!=0x773280:raise ValueError(f'Unexpected simulation vtable {vt:#x}')
+    out['integrator']=dict(address=obj,vtable=vt,virtual_slots=list(r.unpack(vt,'IIII')),status=r.u(obj+4),mode=r.u(obj+8),configured_step=r.f(obj+0xc),current_step=r.f(obj+0x10),time=r.f(obj+0x54),body_count=r.u(obj+0x6c),enabled_raw=r.u(obj+0x84),default_definition=r.u(obj+0x94))
     for t in out['trains']:
         a=t['address'];s=t['service_object']
         t['elapsed_accumulator']=r.f(a+0xd6);t['distance_accumulator']=r.f(a+0xda)
@@ -23,6 +28,8 @@ def sample(r):
             c['owner_stable']=r.u(p+0x98)==a
         t['service_stable']=r.u(a+0xe6)==s
     out['origin_stable']=list(r.unpack(0x79d118,'ii'))==out['origin_tile']
+    out['integrator_after']=dict(address=r.u(0x80aa1c),time=r.f(obj+0x54),current_step=r.f(obj+0x10),mode=r.u(obj+8))
+    out['integrator_pointer_stable']=out['integrator_after']['address']==obj
     out['sim_time_after']=r.f(0x80acd4);out['elapsed_clock_after']=r.f(0x80acd0)
     out['monotonic_after']=time.perf_counter()
     return out

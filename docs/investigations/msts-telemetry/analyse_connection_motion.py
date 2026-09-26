@@ -1,7 +1,7 @@
 """Compare derived connection-state rate with observed endpoint-gap changes."""
 import argparse,hashlib,json,math
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('name');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('name');p.add_argument('--clock',choices=('gameplay','physics'),default='gameplay');a=p.parse_args()
 if Path(a.name).name!=a.name:raise ValueError('Invalid name')
 root=Path(__file__).resolve().parent;path=root/'captures'/a.name/'samples.jsonl'
 norm=lambda x:math.sqrt(sum(v*v for v in x))
@@ -31,8 +31,13 @@ for line in path.read_text(encoding='utf-8').splitlines():
     if 'error' in r:previous=None;continue
     current={t['id']:(t,pairs(t)) for t in r['trains']}
     if previous is not None:
-        before,old=previous;dt=r['elapsed_clock']-before['elapsed_clock']
-        if 0<dt<=1 and not r['paused'] and not before['paused'] and r['origin_stable'] and before['origin_stable'] and r['origin_tile']==before['origin_tile']:
+        before,old=previous;game_dt=r['elapsed_clock']-before['elapsed_clock'];dt=game_dt;clock_ok=True
+        if 'integrator' in r and 'integrator' in before:
+            physics_dt=r['integrator']['time']-before['integrator']['time']
+            clock_ok=0<physics_dt<=2 and all(x['integrator_pointer_stable'] for x in (r,before)) and r['integrator']['address']==before['integrator']['address']
+            if a.clock=='physics':dt=physics_dt
+        elif a.clock=='physics':raise ValueError('Physics clock unavailable; no substitution allowed')
+        if clock_ok and 0<game_dt<=1 and not r['paused'] and not before['paused'] and r['origin_stable'] and before['origin_stable'] and r['origin_tile']==before['origin_tile']:
             for key,(t,ps) in current.items():
                 if key not in old:continue
                 ot,ops=old[key]
@@ -43,6 +48,8 @@ for line in path.read_text(encoding='utf-8').splitlines():
                     if o is None or not s['valid'] or not o['valid'] or s['definitions']!=o['definitions']:continue
                     fd=(s['gap']-o['gap'])/dt;rate=(s['rate']+o['rate'])*.5;error=abs(fd-rate)
                     same=all(x['sim_time']==x['sim_time_after'] for x in (r,before))
+                    if 'integrator' in r and 'integrator' in before:
+                        same=all(x['elapsed_clock']==x['elapsed_clock_after'] and x['integrator']['time']==x['integrator_after']['time'] for x in (r,before))
                     g['eligible_pairs']+=1;g['cross_clock_pairs']+=not same
                     for name,value in [('gap',s['gap']),('stored_state_rate',rate),('gap_difference_rate',fd),('absolute_rate_difference',error)]:g[name].append(value)
                     if same:g['same_clock_absolute_rate_difference'].append(error)
@@ -50,5 +57,6 @@ for line in path.read_text(encoding='utf-8').splitlines():
     previous=(r,current)
 for g in groups.values():
     for k in ('gap','stored_state_rate','gap_difference_rate','absolute_rate_difference','same_clock_absolute_rate_difference'):g[k]=stats(g[k])
-out=dict(capture=a.name,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),trains=groups,limitations='Adjacent unpaused samples with elapsed delta0..1s,unchanged origin,stable reciprocal car pairs/definitions and train speed>0.5 at either end. Endpoint formulas reconstructed in double precision;epsilon1e-7 approximate. Non-atomic reads and asynchronous placement can create apparent gap jumps. No force/slack truth claim;no sign-agreement guarantee or tolerances inferred from these distributions.')
-(root/(a.name+'-connections.json')).write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps(out,indent=2))
+out=dict(capture=a.name,clock=a.clock,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),trains=groups,limitations='Adjacent unpaused samples with gameplay delta0..1s,unchanged origin,stable reciprocal car pairs/definitions and train speed>0.5 at either end. If integrator data exists, both clock choices require physics delta0..2s and stable integrator identity; same-clock subset checks both elapsed and integrator endpoints. Older captures use dayclock stability. Physics denominator must be explicitly selected; no automatic player/AI assumption. Endpoint formulas reconstructed in double precision;epsilon1e-7 approximate. Non-atomic reads and asynchronous placement can create apparent gap jumps. No force/slack truth claim;no sign-agreement guarantee or tolerances inferred from these distributions.')
+suffix='-connections.json' if a.clock=='gameplay' else '-connections-physics.json'
+(root/(a.name+suffix)).write_text(json.dumps(out,indent=2),encoding='utf-8');print(json.dumps(out,indent=2))

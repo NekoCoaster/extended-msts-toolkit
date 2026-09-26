@@ -595,6 +595,31 @@ for row in rows:
         if row['id'].startswith('car.connection_'):
             row['applicability']='physical player and AI; paused and moving observations, with non-atomic phase limits'
         if row['id']=='car.connection_separation_rate':row['meaning']='Projected relative stored-state velocity of connected solver endpoints; not universal gap derivative'
+integrator_evidence=['INTEGRATOR-TIME-FINDINGS.md','pass163-byte-verification.json','pass164-byte-verification.json','pass165-byte-verification.json','captures/integrator-paused-01/metadata.json','captures/integrator-paused-01/samples.jsonl']
+for name,meaning,typ,units,offset in [
+ ('time','Stored physics integrator time accumulator','float32','seconds',0x54),
+ ('configured_step','Configured physics integration step','float32','seconds',0xc),
+ ('current_step','Current or last physics integration step','float32','seconds',0x10),
+ ('mode_raw','Physics solver selection code','uint32','native enum',8),
+ ('status_raw','Last simulation-object operation status code','uint32','native status',4),
+ ('body_count','Registered integration body count','uint32','bodies',0x6c),
+ ('enabled_raw','Physics loop continuation gate','uint32','zero/nonzero',0x84)]:
+    add('physics_integrator.'+name,meaning,'shared simulation object;player physics path and registered bodies,not independent AI-service clock',typ,units,f'object=[0x80aa1c];object+0x{offset:x};require current vtable0x773280',integrator_evidence,'native setter/getter/integrator traced;11paused samples stable at distinct physics/game elapsed times','step/time updated by native integrator;paused snapshot validates readability only',common+' Sequential non-atomic reads. Internal accumulator is not interchangeable with gameplay elapsed or wall time;paused270.662750 versus gameplay169.710281. Reset/cadence and movement correlation pending. Mode1/3/5/7 have observed dispatch branches;other accepted setter codes are not promised supported solver modes. Status can reflect the last getter/setter,not overall game health. Body count is not train count. Do not infer a universal timing correction.')
+for row in rows:
+    if row['id'].startswith('physics_integrator.') or row['id'] in {'body.velocity','body.angular_velocity','car.connection_endpoint_velocity','car.connection_separation_rate'}:
+        row['evidence']+=['INTEGRATOR-TIME-FINDINGS.md','analyse_integrator_motion.py','integrator-moving-grain-01-integrator-summary.json','captures/integrator-moving-grain-01/metadata.json','captures/integrator-moving-final-paused-01/samples.jsonl']
+        row['evidence']=list(dict.fromkeys(row['evidence']))
+        row['evidence_status']+='; combined moving player/AI comparison supports distinct motion time bases'
+        if row['id'].startswith('physics_integrator.'):
+            row['update_or_lifecycle']='native integrator step/time fields;moving130-second capture records accumulation independently of gameplay time,plus paused stability and lower post-reload value;exact per-frame cadence/reset order unproven'
+        row['limitations']=row['limitations'].replace('Reset/cadence and movement correlation pending.','Reload shows lower accumulator;moving cadence and position correlation now sampled,exact reset/producer execution still unproven.')
+        row['limitations']+=' In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis under physics time is pending.'
+for row in rows:
+    if row['id'] in {'car.connection_endpoints','car.connection_endpoint_distance','car.connection_endpoint_velocity','car.connection_separation_rate'}:
+        row['evidence']+=['INTEGRATOR-TIME-FINDINGS.md','integrator-moving-grain-01-connections.json','integrator-moving-grain-01-connections-physics.json']
+        row['evidence']=list(dict.fromkeys(row['evidence']))
+        row['limitations']=row['limitations'].replace('connection derivative reanalysis under physics time is pending.','connection derivative reanalysis now improves typical player agreement but retains significant same-clock outliers.')
+        row['limitations']+=' Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
