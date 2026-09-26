@@ -14,9 +14,9 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 349 direct-read candidates/structures, 24 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 948 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
+Current inventory has 372 direct-read candidates/structures, 24 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 971 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
 
-Latest observed game state: Grain Train Through the Night paused at 74360.5859375, player stationary with 23 cars and no sampled derailment flags. The latest 601-sample paired capture confirms stationary forward-monitor continuity and repeats AI physical removal while abstract records persist. The attempted player crossing did not occur because brakes remained applied. See PAIRED-INFRASTRUCTURE-FINDINGS.md for the unsuccessful controls and the uncaptured tail. The earlier 421-sample capture validates 22 AI abstract-record crossings 300->310 and route release/acquisition. Inventory now contains 948 candidates; publication history is recorded separately in RESEARCH-BRANCH.md.
+Latest observed game state: Grain Train Through the Night paused at 74360.5859375, player stationary with 23 cars and no sampled derailment flags. The latest 601-sample paired capture confirms stationary forward-monitor continuity and repeats AI physical removal while abstract records persist. The attempted player crossing did not occur because brakes remained applied. See PAIRED-INFRASTRUCTURE-FINDINGS.md for the unsuccessful controls and the uncaptured tail. The earlier 421-sample capture validates 22 AI abstract-record crossings 300->310 and route release/acquisition. Inventory now contains 971 candidates; publication history is recorded separately in RESEARCH-BRANCH.md.
 
 ## Test scenario and installation
 
@@ -266,3 +266,13 @@ ENVIRONMENT-SELECTION-FINDINGS.md adds14candidates: eight selector/path/table fi
 ## Satellite parameter checkpoint
 
 SATELLITE-FIELDS-FINDINGS.md adds14loaded satellite parameters from exact native parser evidence and retained paused records.20literal/default comparisons match;bothlightpointers nonzero despite source light1/0. This is loaded configuration,not dynamic output. Inventory948=349direct24derived68cab507config;494evidencepaths126unchangedassets. NoUI/gamewrites;alljobs terminal. Layer/shader/current-output semantics remain next.
+
+
+## Sky-layer and consolidated knowledge-base checkpoint
+
+Use C:/codex/repo/msts-unity-kb as the consolidated environment reference; read its docs/STATUS.md before historical reports. unity-kb-provenance.json pins consultedfiles/revision512f180. SKY-LAYER-FINDINGS.md adds11loaded geometry/timing/edge fields,959total.3layers4edges,24literal/default comparisons match;pass1845functions8791bytes disk/liveexact. Parser initializesface8;matching authored8 doesnot prove tokenconsumption. ExistingKB alreadycoversrenderlayout/UV/fades;reuseinstead of retracing. NoUI/gamewrites;gamepaused74360.5859375,alljobsterminal. Localafterpublished902c669;nextsamplecurrentvertexdiffuse/UV andrendercadence,thenpublishcoherentcheckpoint.
+
+
+## Paused sky buffer checkpoint
+
+SKY-VERTEX-FINDINGS.md adds12CPUvertex/shader candidates,971total. Corrected61sample pausedseries has0errors,5shaderheaderchanges;layer0/2UV and4shaderclocksadvance while dayclockfixed74360.5859375. Original61sample guardfailure retained;FFFFFFFFframe index is nativeinitialization sentinel,never dereferenced. Pass1855functions6109bytes disk/liveexact. Alljobsended,nogameinputs/writes. Broadergoalactive;nextshaderclockproducer/reset andscene/time transition coverage,useconsolidatedUnityKB.

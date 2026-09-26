@@ -738,6 +738,43 @@ for name,offset,fmt,meaning,units in json.loads((ROOT/'satellite-fields.json').r
         satellite_evidence,'native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact',
         'loaded during ENV parsing;subsequent writers/reset/teardown not completely surveyed',
         common+' Configuration inputs and session object identity,not current visible/render output. Approximate degree conversion and loader scale apply;scale ratio1observed here only. Six colours are packed native keys,not linear RGB. Fade2400 and fog255 defaults observed;fog token narrows tobyte. Light object is created even for authored light0,so pointer does not prove registration,visibility or active illumination. File order matters to initial light inputs. No dynamic sky transition or universal parser acceptance validated.')
+layer_evidence=['SKY-LAYER-FINDINGS.md','unity-kb-provenance.json','pass182-byte-verification.json','pass184-byte-verification.json','sky-layers-summary.json','captures/sky-layers-paused-01/layers.json']
+for name,meaning,typ,units,method in [
+    ('top_faces','Stored layer top face parameter','uint32','count;parser initializes8','layer+0'),
+    ('top_radius','Loaded layer top radius','float32','native length after loader scaling','layer+4'),
+    ('top_height','Loaded layer top height','float32','native length after loader scaling','layer+8'),
+    ('edge_count','Loaded edge-step count','uint32','records','layer+0xc'),
+    ('edge_array','Loaded edge-step record identities','pointer32 plus bounded array','stride8 record addresses','[layer+0x10]'),
+    ('edge_height','Loaded edge-step height','float32','native length after loader scaling','edge+0'),
+    ('edge_radius','Loaded edge-step radius','float32','native length after loader scaling','edge+4'),
+    ('fadein_start','Loaded layer fade-in start','float32','day-clock seconds','layer+0x14'),
+    ('fadein_end','Loaded layer fade-in end','float32','day-clock seconds','layer+0x18'),
+    ('fadeout_start','Loaded layer fade-out start','float32','day-clock seconds','layer+0x1c'),
+    ('fadeout_end','Loaded layer fade-out end','float32','day-clock seconds','layer+0x20')]:
+    add('environment.layer.'+name,meaning,'shared loaded sky layers;not per-train values',typ,units,
+        'sky=[[0x7b6d60]];layer=[sky+8]+index*0x1ac,index<[sky];edge=[layer+0x10]+edgeIndex*8,edgeIndex<[layer+0xc];'+method,
+        layer_evidence,'native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match',
+        'environment parsing/configuration;later mutation/reset writers and teardown unvalidated',
+        common+' Loaded parameters,not current alpha or draw visibility. Matching authored face8 cannot prove token consumption;parser initializes8. Geometry scaling ratio1here only. Missing fade declarations retainzero pairs;do not infer invisibility. Native edge tokenorder increments onradius. Pointer/header rereads do not prove atomicity. Consolidated UnityKB preserves earlier native evidence but its historical time-substitution/device tests are not current passive telemetry validation.')
+vertex_evidence=['SKY-VERTEX-FINDINGS.md','pass184-byte-verification.json','pass185-byte-verification.json','pass184/006e53c0.asm','pass184/006e1310.c','pass185/006e1070.c','sky-vertices-paused-01-summary.json','sky-vertices-paused-02-summary.json','captures/sky-vertices-paused-02/metadata.json']
+for name,meaning,typ,units,method in [
+    ('vertex_count','Allocated sky draw-object vertex count','uint32','vertices','draw+4'),
+    ('vertex_array','Sky CPU vertex buffer identity','pointer32','session identity,stride0x28','[draw+8]'),
+    ('vertex_position','Stored local sky mesh vertex position','3 float32','native local mesh coordinates,not world train position','vertex+0'),
+    ('vertex_diffuse','Stored sky vertex diffuse colour','uint32','packed native colour including alpha','vertex+0x18'),
+    ('vertex_secondary','Stored sky vertex secondary/specular word','uint32','raw packed render value;fog interpretation path-dependent','vertex+0x1c'),
+    ('vertex_uv','Stored mutable sky texture coordinates','2 float32','UV coordinates,not clamped0..1','vertex+0x20'),
+    ('frame_count','Loaded sky animated-shader frame count','uint32','frames','shader+0'),
+    ('frame_duration','Loaded sky animated-shader frame duration','float32','native animation time parameter;zero has special update branch','shader+4'),
+    ('animation_clock','Stored sky shader animation clock input','float32','seconds-like accumulator;advances while gameplay paused','shader+8'),
+    ('selected_frame','Raw selected sky shader frame index','uint32','index;FFFFFFFFparser initialization sentinel','shader+0xc'),
+    ('frame_array','Loaded sky shader frame records','pointer32 plus bounded array','stride0x20 records','[shader+0x10],count[shader]'),
+    ('frame_scroll','Selected frame texture scroll coefficients','2 float32','UV increment per native delta unit','frame+0x18;frame=[shader+0x10]+index*0x20,onlyifindex<count')]:
+    add('environment.render.'+name,meaning,'shared layer/satellite CPU sky state;not per-train or proof of visibility',typ,units,
+        'layerdraw=layer+0x190,layershader=layer+0x24;satellitedraw=satellite+0x1b1,satelliteshader=satellite+0x45;vertex=[draw+8]+index*0x28;'+method,
+        vertex_evidence,'native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes',
+        'render/animation updates can continue while gameplay clock paused;inactive objects may retain initialization/stale buffers',
+        common+' Initial61sample series entirelyfailed overstrictframe-index guard;retained separately. Correctedreader retainsFFFFFFFF withoutdereference. Pauseddayclock fixed yetlayer0/2UV and4shaderclocksadvance;no universal atomicity,drawvisibility,wall-time equivalence or producer rate. Inactivesatellite retainedtinyUV value;allocated doesnot meanmeaningful. Count/frame bounds are probe guards. Onlyone-frame configured objects observed;frame transitions/reload and broader shader cases unvalidated.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 349, 'runtime_derived': 24, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 948}
+{'runtime_direct': 372, 'runtime_derived': 24, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 971}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -954,3 +954,26 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | environment.satellite.amb_set_colour | Loaded ambient set colour key | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
 | environment.satellite.light_pointer | Satellite-created light object identity | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
 | environment.satellite.fog | Loaded satellite fog byte | native parser and caller match disk/live;two retained paused records decoded;20selected literal/default comparisons exact |
+| environment.layer.top_faces | Stored layer top face parameter | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.top_radius | Loaded layer top radius | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.top_height | Loaded layer top height | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.edge_count | Loaded edge-step count | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.edge_array | Loaded edge-step record identities | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.edge_height | Loaded edge-step height | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.edge_radius | Loaded edge-step radius | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.fadein_start | Loaded layer fade-in start | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.fadein_end | Loaded layer fade-in end | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.fadeout_start | Loaded layer fade-out start | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.layer.fadeout_end | Loaded layer fade-out end | native parser/render ranges verified;3layers4edges read with stable headers;24literal/default scalar/array comparisons match |
+| environment.render.vertex_count | Allocated sky draw-object vertex count | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.vertex_array | Sky CPU vertex buffer identity | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.vertex_position | Stored local sky mesh vertex position | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.vertex_diffuse | Stored sky vertex diffuse colour | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.vertex_secondary | Stored sky vertex secondary/specular word | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.vertex_uv | Stored mutable sky texture coordinates | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.frame_count | Loaded sky animated-shader frame count | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.frame_duration | Loaded sky animated-shader frame duration | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.animation_clock | Stored sky shader animation clock input | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.selected_frame | Raw selected sky shader frame index | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.frame_array | Loaded sky shader frame records | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.frame_scroll | Selected frame texture scroll coefficients | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
