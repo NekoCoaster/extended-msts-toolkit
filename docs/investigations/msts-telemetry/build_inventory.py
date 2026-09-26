@@ -620,6 +620,40 @@ for row in rows:
         row['evidence']=list(dict.fromkeys(row['evidence']))
         row['limitations']=row['limitations'].replace('connection derivative reanalysis under physics time is pending.','connection derivative reanalysis now improves typical player agreement but retains significant same-clock outliers.')
         row['limitations']+=' Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof.'
+owner_evidence=['INFRASTRUCTURE-OWNERS-FINDINGS.md','captures/infrastructure-owners-paused-01/owners.json','pass166-byte-verification.json','pass167-byte-verification.json','pass168-byte-verification.json','pass169-byte-verification.json','pass170-byte-verification.json']
+for name,meaning,typ,units,method in [
+ ('junction_service_association','Junction matching-service association used by release path','pointer32','service identity','kind2 node+0x58;00595b41 clears matching service then restores shape-defined branch'),
+ ('junction_flags4e','Junction raw flags containing cleanup-cleared bit2','uint16','bitfield','kind2 node+0x4e;005959d0 clears bit0x2;full semantics unresolved'),
+ ('vector_service_associations','Service values in vector-node routing list,distinct from per-car presence','list of pointer32','service identities','kind1 node+0x38 circular sentinel;next0,prev4,value8;bounded read;00595b6e removes service'),
+ ('vector_state35_raw','Vector-node byte set to3 when service list becomes empty','uint8','raw enum','kind1 node+0x35;00595b6e empty-list branch;other values unclassified')]:
+    add('infrastructure.'+name,meaning,'shared route nodes;paused player and AI service joins;ownership acquisition/transitions unvalidated',typ,units,method,owner_evidence,'typed release/native layout traced and verified;246junctions408vectors read;3junctions and5vector lists join services','service/route lifecycle;sequential snapshot only,update cadence and reset ordering unknown',common+' No occupancy,exclusive reservation,permission or whole-train extent claim. Selected branch and signal aspect remain separate. Null is not clear/safe. Raw state/flag meanings incomplete. List/pointer checks do not prevent non-atomic races or identity reuse. Route IDs are registry-derived for this route build.')
+acquisition_evidence=['INFRASTRUCTURE-OWNERS-FINDINGS.md','pass172-byte-verification.json','pass173-byte-verification.json','captures/infrastructure-acquisition-paused-01/owners.json']
+add('infrastructure.vector_constraint34_raw','Vector-node directional claim constraint/state input','shared route nodes;player/AI routing','uint8','raw enum','kind1 node+0x34;0059867c compares with requested direction/code and current35',acquisition_evidence,'native claim-check consumer traced;408paused nodes read with values0/1/3/4','route/service updates;producer and reset cadence unresolved',common+' Values0/1 used with direction requests;2/3special branches,4dominant in snapshot but meaning unresolved. Not occupancy,permission or universal blocked/clear enum. No live transitions validated.')
+for row in rows:
+    if row['id'] in {'infrastructure.junction_service_association','infrastructure.junction_flags4e','infrastructure.vector_service_associations','infrastructure.vector_state35_raw'}:
+        row['evidence']+=acquisition_evidence;row['evidence']=list(dict.fromkeys(row['evidence']))
+        row['evidence_status']+='; typed two-pass route claim and directional vector check/commit paths traced'
+        row['limitations']+=' Junction first pass checks owner/branch conflicts,second writes owner/branch. Vector commit may write35 before list insertion fails;list may contain repeated service values. Snapshot alone does not prove live acquisition/release timing or physical occupancy.'
+for row in rows:
+    if row['id']=='infrastructure.signal_service_association':
+        row['evidence']+=acquisition_evidence
+        row['evidence_status']+=';005c4e55 acquisition traced,including null-owner/flag8000 success without store'
+        row['limitations']=row['limitations'].replace('Signal association acquisition and reservation semantics remain unverified.','Signal acquisition helper traced statically;complete reservation semantics and live transitions remain unverified.')
+        row['limitations']+=' Acquisition returns success for null24 with existing8000 without assigning owner;success and ownership differ. No such null/8000 combination in the new paused292signal snapshot. Distinct signal28 writer remains separately unresolved.'
+for row in rows:
+    if row['id'] in {'infrastructure.vector_presence','infrastructure.presence_service','infrastructure.presence_node_distance','infrastructure.signal_service_association','infrastructure.junction_service_association','infrastructure.junction_flags4e','infrastructure.vector_service_associations','infrastructure.vector_state35_raw','infrastructure.vector_constraint34_raw'}:
+        row['evidence']+=['INFRASTRUCTURE-OWNERS-FINDINGS.md','infrastructure-ai-transitions-01-summary.json','presence-track-snapshot-check.json','captures/infrastructure-ai-transitions-01/metadata.json']
+        row['evidence']=list(dict.fromkeys(row['evidence']))
+        row['limitations']+=' New241sample within-node AIrun records moving presence distances but no discrete claim/signal/branch transitions. Paused sorted player presence/physical distances agree;AI22distances all differ+9.65234375m. Not a per-car identity proof or interchangeable position source;timing/reference cause unresolved.'
+        row['evidence_status']+=';moving AI within-node presence observed,typed infrastructure transitions not yet captured'
+for row in rows:
+    if 'timing/reference cause unresolved.' in row['limitations']:
+        row['limitations']=row['limitations'].replace('timing/reference cause unresolved.','Native stored-service versus physical extrapolation paths now traced; single paused AI gap agrees with reconstructed travel within0.000342m. No universal correction,per-car identity or cross-node validation.')
+    if row['id'] in {'infrastructure.vector_presence','infrastructure.presence_node_distance'}:
+        row['evidence']+=['pass177/005a5c32.asm','pass177/005a5b44.asm','pass177/005a5167.asm','pass178/005a4f86.asm','pass178/005a41c2.asm','pass178/005d0334.asm','pass177-byte-verification.json','pass178-byte-verification.json','pass174/005a5c9a.asm','pass174-byte-verification.json','pass179/0062924c.asm','pass179-byte-verification.json']
+        row['evidence_status']+=';typed record writer,stored-service and physical-car producer paths traced;paused extrapolation agrees within0.000342m'
+        row['update_or_lifecycle']='005a4f86/005a5b44 update from service track during gated service updates;005a5167 uses physical car128 for two supplied lists after005f9285 integration returns;complete list ownership and scheduler ordering unvalidated'
+        row['limitations']+=' Writer updates direction18 only when node changes;in-node reversal and insertion/move failures remain unvalidated.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

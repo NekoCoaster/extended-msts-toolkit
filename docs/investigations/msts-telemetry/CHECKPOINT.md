@@ -12,9 +12,9 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 295 direct-read candidates/structures, 19 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 889 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+Current inventory has 316 direct-read candidates/structures, 23 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 914 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
 
-Latest test leaves Acela Express paused at36104.00390625 on Northeast Corridor Explore Route, stationary, throttle idle, forward direction and pantograph control up. Steam and preferred diesel evidence are preserved in separate captures.
+Latest observed game state: Grain Train Through the Night paused at74054.6171875, player stopped and physical AI present. The latest within-node capture observed moving AI presence distances but no claim/aspect transitions;paused AI presence and physical-track distances differ by9.65234375m. Native producer/extrapolation paths explain different update ages;reconstructed AI travel matches this gap within0.000342m in one paused sample. Current local checkpoint is914;published draftPR9 remains909 ated0801b.
 
 ## Test scenario and installation
 
@@ -236,3 +236,21 @@ Normal UI exited/reloaded Grain Train Through the Night without saving;closedbri
 ## Connection time-base checkpoint (latest local)
 
 Inventory909,430evidence paths,126unchanged original assets. Reused integrator-moving-grain-01 with explicit clock choice and identical1692player/1649AIpair comparisons. Player median gap-rate discrepancy falls0.004428->0.000740m/s with physics time,butsame-clockmax remains0.650820m/s. AI relative rates nearzero cannot select its clock;absolute movement evidence still favors gameplaytime. No new capture/UI input/gamewrites this turn. All jobs terminal;last observed gamepaused73934.734375. Next investigate remaining producer-phase/outlier behavior and frame-step attribution,then continue broader infrastructure/station/lifecycle coverage. Full goal remains active. Preparing909checkpoint for existingissue7/PR9branch after7ead7fd.
+
+## Infrastructure ownership checkpoint (latest local)
+
+Inventory913=315direct23derived68cab507config,437evidence paths,126originalasset hashes unchanged;local audit passes. Added junction58service association,rawushort4e,vector38service list,andrawbyte35. Freshpausedsnapshot73934.734375 reads246junctions408vectors;3junctionowners allplayer,5vectorlists includeplayer andAIservice2;alljoin registry,0unstablepointerchecks. These differ from vector2cper-car presence and do not establish occupancy/permission/reservation exclusivity.
+
+Pass166-170 disk/liveexact. Typed release clearsmatchingjunctionowner then restores shape-defined branch;vector release removesonevalue and onempty clearslist andsetsbyte35=3. Signal005c14b9wasaspect evaluator,notacquisition. Genericremove export170expanded116functions;onlytypedcaller/helperused,no furtherbroadgeneric exportsneeded. Acquisition anddynamictransitionsstillopen. NoUI/gamewrites/save/settingschanges;alljobs terminal,game remainsobservedpaused. Next targettyped acquisition andoncomingAIinfrastructure transitions. PublishedPR9ed0801b remains909;local913pendingpublication. Fullgoalactive.
+
+## Typed infrastructure acquisition checkpoint (latest local)
+
+914candidates,440evidencepaths,126unchanged originalassets,auditpass. Boundedtyped writer scan andpasses172/173 locatejunction two-pass conflictcheck/claimwrite,vector34/35directional check/commit andsignal24acquisition. Signalhelper returns1withoutownerstore ifnull24and8000alreadyset;vectorcommit canwrite35beforefailedinsertion,listduplicatesneednotmeanmultipletrains. Freshpausedsnapshotreads34distribution392x4,8x0,7x1,1x3;5nonemptylists,3playerjunctionowners,5associatedsignals,noobservednull24/8000exception. Addedrawvector34candidate;producer/live transitionsremainunverified.
+
+Pass172/173 all6090+2467instructionbytesdisk/liveexact. Pass171 boundedrange wasnavigationonly;typedfunctions authoritative. NoUI/gamewrites/savechanges,alljobs terminal,gameobservedpaused73934.734375. Next boundedAItransition capture linking typedclaims,signalaspect andcarpresence;trace34producer anddistinctsignal28later. Local914notyetpublished;PR9ed0801b909. Fullgoalactive.
+
+## Within-node infrastructure observation checkpoint (latest local)
+
+914candidates,443evidencepaths,126unchangedasset hashes,auditpass. infrastructure-ai-transitions-01 has241samples0errors/120wallseconds,20initialpaused,73934.734375..74045.2421875. No discreteclaims/signals/branch/presence-count transitions;AI22presence records shift1842.037109m withinroute310,player23remainfixed305. Fullregistryread max0.140271s,not isolated performance-overhead test. Do not repeat same shortwindow without selecting a reachable boundary.
+
+Gamepaused74054.6171875 afterunsampledtail. Pausedsame-clock infrastructure andphysicaltrack multisets agreeexactly forplayer23,butAI22presence records differ+9.65234375m each. Producer/updateage/reference unresolved;distinctsources retained. New sampler/analyzers/snapshotcheck preservehashes and dependencies. NormalUIresume/pauseonly,noasset/save/memorywrites;alljobsterminal. Next tracepresenceproducer/cadence and choose measurednodeboundary forclaimtransitions. PublishedPR9ed0801b remains909;local914researchpendingpublication. Goalactive.
