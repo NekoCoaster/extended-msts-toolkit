@@ -55,3 +55,11 @@ Save/load identity follow-up: SAVE-LOAD-IDENTITY-FINDINGS.md traces staged IDs, 
 
 
 Observed save/reload: SAVE-RELOAD-RUNTIME-FINDINGS.md records a new native SAV and successful reload. All23vehicle addresses changed while IDs/positions/orientations matched.96of239transition samples contain registry errors,including oneownershipmismatch. This closes the no-observed-reload gap for this player fixture only;completefieldfidelity,loadcompletegate andphysicalAIremainopen. Inventory1015unchanged. Gamepausedinloadednotebook;researchsavepreserved.
+
+
+Moving restart follow-up: MOVING-PLAYER-ORIGIN-FINDINGS.md observes63player physical section changes,AI physical appearance,422unique monitor/infrastructure joins and oneoriginX+1rebase across45cars. Correctedmaxdisplacement9.561979m versus2052m rawjump. No playernodecrossing;run failedatredlightbeforeAIclearance,pausedalert73894.015625. Evaluationerrorlist/eventstopflag do notencode thisfailure. Inventory1015unchanged;origincontinuity gap now has onepositivefixture,broaderconventionsstillopen.
+
+
+Collision follow-up: COLLISION-STATE-FINDINGS.md covers23player/19AIpositive derailment flags,18AIresting+derailed overlap and nonzero angular states. All45tracksectionpointerchecks pass whilebody/trackseparationreaches69m,so geometric validity is not physicalon-trackvalidity. Impactunsampled;plannedN2approachnotyetexecuted. No newcandidatequantity.
+
+N2 restart follow-up: paired-n2-approach-01 adds381samples with zero outer/nested errors,81player/115AIphysical section changes,381unique monitor joins and a second observation of the same origin boundary across45cars. Raw2051.484205m maximum displacement becomes8.333364m after origin translation. It again fails at red before AI clearance; no successful signal/node passage. The collision exit additionally finalizes one active speed episode into a22.4140625s completed record,matching the rounded22s evaluation UI. Game last observed on retained failure alert at73904.5;all capture jobs ended.

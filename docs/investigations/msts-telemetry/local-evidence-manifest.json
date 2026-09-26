@@ -55345,6 +55345,318 @@
       "bytes": 82,
       "sha256": "36e1a160491a56a9a0954229bb8d69f71d0484294ab471dcf53c57a89cfaac49",
       "included": false
+    },
+    {
+      "path": "captures/collision-exit-evaluation-01/evaluation.json",
+      "bytes": 1141,
+      "sha256": "688c89bdf67ef3bda8870c445241736d6787d48853791496d387be53272f54d5",
+      "included": false
+    },
+    {
+      "path": "captures/collision-exit-evaluation-01/read_evaluation.py",
+      "bytes": 2239,
+      "sha256": "190f66440f30d39ad19ac81c54428afe8f6f3ae6116b1341b5a8e20255992713",
+      "included": false
+    },
+    {
+      "path": "captures/collision-exit-evaluation-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/collision-paused-01/metadata.json",
+      "bytes": 450,
+      "sha256": "d1c1fdf89c6e20bb9cff95125b40d30aa9fa07a518f6dc30002d53dc1c0e1bed",
+      "included": false
+    },
+    {
+      "path": "captures/collision-paused-01/reader.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/collision-paused-01/samples.jsonl",
+      "bytes": 62761,
+      "sha256": "82bd2ac224390e5a85cf1bf3f5b37da6b42a42a14b01b04c5d186f73e380f204",
+      "included": false
+    },
+    {
+      "path": "captures/collision-track-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/collision-track-paused-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/collision-track-paused-01/tracks.json",
+      "bytes": 101902,
+      "sha256": "7d00f568a32ebcc7a52e919244e0101182bb4bee93e42a254bef5b7420d54120",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/capture_infrastructure_transitions.py",
+      "bytes": 4229,
+      "sha256": "73afc2236bf108899d8b57cc26065d30d0634526ece5369161b31a556b66f931",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/metadata.json",
+      "bytes": 1157,
+      "sha256": "b3bf53c8042e80e5a4bec31725117d930b65769f1026850b579fe80aa9bc5445",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/read_infrastructure.py",
+      "bytes": 3390,
+      "sha256": "d07b3a057ca39f3b3b827e95a911dc85071bb0cf00a195c2fb5065eca46bac29",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/read_topology.py",
+      "bytes": 3467,
+      "sha256": "d29cb1d4f555d55cf8a312a79dfb5fcefe6f028f83d0205a088825d578ae2b8f",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-approach-02/samples.jsonl",
+      "bytes": 46047809,
+      "sha256": "49ae13a0bf9e3ad947cc980c8526ad0e9e3a66396bd2a89fe6f15cefdce96ef0",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/capture_infrastructure_transitions.py",
+      "bytes": 4229,
+      "sha256": "73afc2236bf108899d8b57cc26065d30d0634526ece5369161b31a556b66f931",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/metadata.json",
+      "bytes": 1156,
+      "sha256": "663cb5ce2d07db115940bb66be76d27e108acae0f4b7a3021c7a8c1dbbc4b1db",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/read_infrastructure.py",
+      "bytes": 3390,
+      "sha256": "d07b3a057ca39f3b3b827e95a911dc85071bb0cf00a195c2fb5065eca46bac29",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/read_topology.py",
+      "bytes": 3467,
+      "sha256": "d29cb1d4f555d55cf8a312a79dfb5fcefe6f028f83d0205a088825d578ae2b8f",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/paired-moving-restart-01/samples.jsonl",
+      "bytes": 30715326,
+      "sha256": "d51d3720c7fbd8cbc8e6cb0c403670d537787f7025949aa5825b9fc932a654cb",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/capture_infrastructure_transitions.py",
+      "bytes": 4229,
+      "sha256": "73afc2236bf108899d8b57cc26065d30d0634526ece5369161b31a556b66f931",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/metadata.json",
+      "bytes": 1157,
+      "sha256": "d9d67a41c25f6a7e82210b566e756aa382c9554abe8aa200ec7f0d91d38ed4bf",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/paired-analysis.log",
+      "bytes": 47423,
+      "sha256": "121b525440d680ea0fb3400783fba9b708e3d65d5a130f194074ecf12e04feae",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/read_infrastructure.py",
+      "bytes": 3390,
+      "sha256": "d07b3a057ca39f3b3b827e95a911dc85071bb0cf00a195c2fb5065eca46bac29",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/read_topology.py",
+      "bytes": 3467,
+      "sha256": "d29cb1d4f555d55cf8a312a79dfb5fcefe6f028f83d0205a088825d578ae2b8f",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/paired-n2-approach-01/samples.jsonl",
+      "bytes": 68905852,
+      "sha256": "b1cd1d350d406ce518b0a8438aa1928f13f8ef2bf5dcbb7ddd86795d52c1fc62",
+      "included": false
+    },
+    {
+      "path": "captures/post-red-collision-01/metadata.json",
+      "bytes": 450,
+      "sha256": "d1c1fdf89c6e20bb9cff95125b40d30aa9fa07a518f6dc30002d53dc1c0e1bed",
+      "included": false
+    },
+    {
+      "path": "captures/post-red-collision-01/reader.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/post-red-collision-01/samples.jsonl",
+      "bytes": 62741,
+      "sha256": "f26079e23b602a23ab436e6a74d9acdbf4784724646b81714f3c3e541e25004e",
+      "included": false
+    },
+    {
+      "path": "captures/post-red-collision-evaluation-01/evaluation.json",
+      "bytes": 890,
+      "sha256": "8dc526b4fbf4a65c7001f6f50ccea6624f0dbffe4e9c80d99dc7e28f0604b871",
+      "included": false
+    },
+    {
+      "path": "captures/post-red-collision-evaluation-01/read_evaluation.py",
+      "bytes": 2239,
+      "sha256": "190f66440f30d39ad19ac81c54428afe8f6f3ae6116b1341b5a8e20255992713",
+      "included": false
+    },
+    {
+      "path": "captures/post-red-collision-evaluation-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-activity-01/activity.json",
+      "bytes": 2427,
+      "sha256": "542a0e7921f13ee860276fd5195c15cacf1d6324b3b2d7875cb583b8cb2fc77c",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-activity-01/read_activity.py",
+      "bytes": 2006,
+      "sha256": "a27e98fff1c8237edbddda7eddc988e6f576b3be417f5d298f50f9a0ec4b7024",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-activity-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-evaluation-01/evaluation.json",
+      "bytes": 856,
+      "sha256": "dc85e2a18168460943865b1a78109ca7b3faaed946f5aed80651135ef000b174",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-evaluation-01/read_evaluation.py",
+      "bytes": 2239,
+      "sha256": "190f66440f30d39ad19ac81c54428afe8f6f3ae6116b1341b5a8e20255992713",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-evaluation-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-failure-01/metadata.json",
+      "bytes": 450,
+      "sha256": "d1c1fdf89c6e20bb9cff95125b40d30aa9fa07a518f6dc30002d53dc1c0e1bed",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-failure-01/reader.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/red-signal-failure-01/samples.jsonl",
+      "bytes": 57113,
+      "sha256": "f77a229a15d947526e5a5b7c8828cc14c959a37a2024e08bd6b4a06d513cf627",
+      "included": false
     }
   ]
 }

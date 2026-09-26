@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-26T21:20:33.252063+00:00",
+  "generated_utc": "2026-09-26T21:39:42.334085+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -89,11 +89,21 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated."
     },
     {
       "id": "train.identity",
@@ -526,11 +536,25 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "live player/AI movement sampled; local body and track reference points compared; clock and producer-phase differences documented",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track traversal uses the native 2048-m tile-origin translation; this does not prove the same inverse is a validated continuous body-world transform through an origin shift. Body and track reference points differ. Physical-body buffers can change and intermediate AI placement/reset phases can yield misleading derivatives. Player physics and AI service movement use distinct observed time bases; do not silently substitute gameplay time or infer a universal velocity correction. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track traversal uses the native 2048-m tile-origin translation; this does not prove the same inverse is a validated continuous body-world transform through an origin shift. Body and track reference points differ. Physical-body buffers can change and intermediate AI placement/reset phases can yield misleading derivatives. Player physics and AI service movement use distinct observed time bases; do not silently substitute gameplay time or infer a universal velocity correction. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "body.right",
@@ -697,11 +721,15 @@
         "pass207-byte-verification.json",
         "pass208-byte-verification.json",
         "pass209-byte-verification.json",
-        "pass210-byte-verification.json"
+        "pass210-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers; combined moving player/AI comparison supports distinct motion time bases",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis under physics time is pending. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis under physics time is pending. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "body.momentum",
@@ -745,11 +773,15 @@
         "pass207-byte-verification.json",
         "pass208-byte-verification.json",
         "pass209-byte-verification.json",
-        "pass210-byte-verification.json"
+        "pass210-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "body.inverse_mass",
@@ -793,11 +825,15 @@
         "pass207-byte-verification.json",
         "pass208-byte-verification.json",
         "pass209-byte-verification.json",
-        "pass210-byte-verification.json"
+        "pass210-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "body.derailed",
@@ -817,11 +853,15 @@
         "pass207-byte-verification.json",
         "pass208-byte-verification.json",
         "pass209-byte-verification.json",
-        "pass210-byte-verification.json"
+        "pass210-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "body.resting",
@@ -841,11 +881,15 @@
         "pass207-byte-verification.json",
         "pass208-byte-verification.json",
         "pass209-byte-verification.json",
-        "pass210-byte-verification.json"
+        "pass210-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "engine.definition",
@@ -989,11 +1033,21 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Clean AI pass changed UI Stop to Clear without these raw desired-velocity/flag fields mirroring it. Do not export as current signal aspect or assume this global profile is always current player state."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Clean AI pass changed UI Stop to Clear without these raw desired-velocity/flag fields mirroring it. Do not export as current signal aspect or assume this global profile is always current player state. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated."
     },
     {
       "id": "monitor.radius",
@@ -26064,11 +26118,21 @@
         "pass12/005a33af.c",
         "captures/scheduled-traffic-01/lifecycle.jsonl",
         "scheduled-traffic-01-summary.json",
-        "AI-LIFECYCLE-FINDINGS.md"
+        "AI-LIFECYCLE-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json"
       ],
       "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated."
     },
     {
       "id": "service.physicalized_raw",
@@ -26086,11 +26150,21 @@
         "pass12/005a33af.c",
         "captures/scheduled-traffic-01/lifecycle.jsonl",
         "scheduled-traffic-01-summary.json",
-        "AI-LIFECYCLE-FINDINGS.md"
+        "AI-LIFECYCLE-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json"
       ],
       "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated."
     },
     {
       "id": "service.flags_raw",
@@ -26437,11 +26511,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.geometry_radius",
@@ -26460,11 +26548,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.geometry_curve_angle",
@@ -26483,11 +26585,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.geometry_width",
@@ -26506,11 +26622,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.geometry_skew",
@@ -26529,11 +26659,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.geometry_flags_raw",
@@ -26552,11 +26696,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.section_angles",
@@ -26575,11 +26733,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.curvature_magnitude",
@@ -26598,11 +26770,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.straight_grade_candidate",
@@ -26621,11 +26807,25 @@
         "pass30-byte-verification.json",
         "captures/geometry-typed-paused-01/lifecycle.jsonl",
         "geometry-summary.json",
-        "TRACK-GEOMETRY-FINDINGS.md"
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.origin_tile",
@@ -26638,11 +26838,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.node",
@@ -26655,11 +26869,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.section_index",
@@ -26672,11 +26900,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.section",
@@ -26689,11 +26931,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.direction",
@@ -26706,11 +26962,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.node_distance",
@@ -26723,11 +26993,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.section_distance",
@@ -26740,11 +27024,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.local_position",
@@ -26757,11 +27055,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.angles_candidate",
@@ -26774,11 +27086,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.section_origin_tile",
@@ -26791,11 +27117,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.section_origin_offset",
@@ -26808,11 +27148,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.section_definition_index",
@@ -26825,11 +27179,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.node_length",
@@ -26842,11 +27210,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.node_section_count",
@@ -26859,11 +27241,25 @@
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
       "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "track.route_position_candidate",
@@ -26871,16 +27267,30 @@
       "applicability": "player and AI",
       "value_type": "derived 3 float64",
       "units": "metres in MSTS route grid, not latitude/longitude",
-      "extraction": "X=localX+2048*originTileX; Z=localZ+2048*originTileZ; Y retained. Native inverse mapping established; live origin-crossing validation pending.",
+      "extraction": "X=localX+2048*originTileX; Z=localZ+2048*originTileZ; Y retained; usefloat64 and stable origin/body identities.",
       "evidence": [
         "captures/track-paused-01/tracks.json",
         "pass13/005b277e.c",
         "pass14/005b3fad.asm",
-        "pass14-byte-verification.json"
+        "pass14-byte-verification.json",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "paired-moving-restart-01-paired-summary.json",
+        "paired-moving-restart-01-moving-tracks.json",
+        "paired-moving-restart-01-origin-shifts.json",
+        "paired-moving-approach-02-paired-summary.json",
+        "paired-moving-approach-02-moving-tracks.json",
+        "captures/red-signal-evaluation-01/evaluation.json",
+        "paired-n2-approach-01-paired-summary.json",
+        "paired-n2-approach-01-moving-tracks.json",
+        "paired-n2-approach-01-origin-shifts.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "collision-state-summary.json",
+        "captures/collision-paused-01/samples.jsonl",
+        "captures/collision-track-paused-01/tracks.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;one live origin rebase across23player+22AIcars reduces2048m local jump to maximum9.561979m corrected sampled displacement",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. This supersedes earlier no-origin-crossing observations for oneX-tile shift only;not exact integration or atomicity proof. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
     },
     {
       "id": "topology.reachable_graph",
@@ -29361,11 +29771,14 @@
         "captures/evaluation-paused-02/evaluation.json",
         "pass76-byte-verification.json",
         "pass77-byte-verification.json",
-        "pass78-byte-verification.json"
+        "pass78-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
       "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.speed_episode_duration",
@@ -29383,11 +29796,14 @@
         "captures/evaluation-paused-02/evaluation.json",
         "pass76-byte-verification.json",
         "pass77-byte-verification.json",
-        "pass78-byte-verification.json"
+        "pass78-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
       "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.speed_episode_active",
@@ -29405,11 +29821,14 @@
         "captures/evaluation-paused-02/evaluation.json",
         "pass76-byte-verification.json",
         "pass77-byte-verification.json",
-        "pass78-byte-verification.json"
+        "pass78-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
       "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.speed_episode_records",
@@ -29427,11 +29846,14 @@
         "captures/evaluation-paused-02/evaluation.json",
         "pass76-byte-verification.json",
         "pass77-byte-verification.json",
-        "pass78-byte-verification.json"
+        "pass78-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
       "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.operational_error_count",
@@ -29445,11 +29867,14 @@
         "captures/evaluation-paused-02/evaluation.json",
         "pass76/00586226.asm",
         "pass75/00585e59.asm",
-        "pass76-byte-verification.json"
+        "pass76-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native append path traced; two retained records match stored count, emission not observed",
       "update_or_lifecycle": "appended on traced rising controller conditions; initialization/reset and global bounds unresolved",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Raw codes4 and8 observed, not independently named UI errors. Retained timestamps do not establish capture-time causality. Location is marker-derived with unresolved route units. No AI equivalent established."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Raw codes4 and8 observed, not independently named UI errors. Retained timestamps do not establish capture-time causality. Location is marker-derived with unresolved route units. No AI equivalent established. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.operational_error_records",
@@ -29466,11 +29891,14 @@
         "pass76-byte-verification.json",
         "evaluation-label-map.json",
         "map_evaluation_labels.py",
-        "pass80-byte-verification.json"
+        "pass80-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "two retained records match count; native display dispatch maps codes4/8 to installed English resource labels; emission not observed",
       "update_or_lifecycle": "appended on traced rising controller conditions; initialization/reset and global bounds unresolved",
-      "limitations": "Exact-image/installed-resource mapping only; preserve raw code. Codes4 and32 are distinct. No causal input or live emission proof. Marker interpolation and route conversion remain unvalidated. No AI equivalent established."
+      "limitations": "Exact-image/installed-resource mapping only; preserve raw code. Codes4 and32 are distinct. No causal input or live emission proof. Marker interpolation and route conversion remain unvalidated. No AI equivalent established. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.freight_durability_count",
@@ -29486,11 +29914,14 @@
         "pass75/00586666.asm",
         "pass74/0043bc16.asm",
         "pass74-byte-verification.json",
-        "pass75-byte-verification.json"
+        "pass75-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
       "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.freight_durability_records",
@@ -29506,11 +29937,14 @@
         "pass75/00586666.asm",
         "pass74/0043bc16.asm",
         "pass74-byte-verification.json",
-        "pass75-byte-verification.json"
+        "pass75-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
       "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.passenger_comfort_count",
@@ -29526,11 +29960,14 @@
         "pass75/00586666.asm",
         "pass74/0043bc16.asm",
         "pass74-byte-verification.json",
-        "pass75-byte-verification.json"
+        "pass75-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
       "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.passenger_comfort_records",
@@ -29546,11 +29983,14 @@
         "pass75/00586666.asm",
         "pass74/0043bc16.asm",
         "pass74-byte-verification.json",
-        "pass75-byte-verification.json"
+        "pass75-byte-verification.json",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "native collector and installed display labels traced; empty paused lists read, no exceedance emission observed",
       "update_or_lifecycle": "shared30-second interval after either kind records; both disabled at either count40",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "car.stored_velocity",
@@ -29655,11 +30095,14 @@
         "pass87-byte-verification.json",
         "pass88-byte-verification.json",
         "pass89-byte-verification.json",
-        "C:/MSTS/TRAINS/TRAINSET/DEFAULT/default.wag"
+        "C:/MSTS/TRAINS/TRAINSET/DEFAULT/default.wag",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "constructor/parser/consumer traced; source values exactly match loaded float32",
       "update_or_lifecycle": "loaded Default definition; no mutation/reload cadence test",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration, not measured acceleration or per-car damage. Scale is a separately loaded value; do not assume reciprocal recomputation. Earlier reference_car probe label was incorrect. Full range/default overrides and nonzero evaluation events untested."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration, not measured acceleration or per-car damage. Scale is a separately loaded value; do not assume reciprocal recomputation. Earlier reference_car probe label was incorrect. Full range/default overrides and nonzero evaluation events untested. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "evaluation.durability_acceleration_scale",
@@ -29675,11 +30118,14 @@
         "pass87-byte-verification.json",
         "pass88-byte-verification.json",
         "pass89-byte-verification.json",
-        "C:/MSTS/TRAINS/TRAINSET/DEFAULT/default.wag"
+        "C:/MSTS/TRAINS/TRAINSET/DEFAULT/default.wag",
+        "COLLISION-STATE-FINDINGS.md",
+        "captures/post-red-collision-evaluation-01/evaluation.json",
+        "captures/collision-exit-evaluation-01/evaluation.json"
       ],
       "evidence_status": "constructor/parser/consumer traced; source values exactly match loaded float32",
       "update_or_lifecycle": "loaded Default definition; no mutation/reload cadence test",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration, not measured acceleration or per-car damage. Scale is a separately loaded value; do not assume reciprocal recomputation. Earlier reference_car probe label was incorrect. Full range/default overrides and nonzero evaluation events untested."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configuration, not measured acceleration or per-car damage. Scale is a separately loaded value; do not assume reciprocal recomputation. Earlier reference_car probe label was incorrect. Full range/default overrides and nonzero evaluation events untested. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
     },
     {
       "id": "camera.mode",

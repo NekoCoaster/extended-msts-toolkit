@@ -187,3 +187,11 @@ Inventory1015 unchanged;589evidence paths/126unchanged source assets. Writer/loa
 Native Save Activity created a new124746byteSAV and reload succeeded. Preserved trainID400007 and23vehicleIDs;all23caraddresses changed;positions/orientations equal. Controls preserved;postloadclock0.6875slater and tiny linear motion differences,so noexactrestorationclaim.239transitionsamples:0outerexceptions but96registryerrors(95null-address,1ownershipmismatch). No physicalAIreload validated. Researchsave retained,gamepausedinloadednotebook.
 
 281JSON/130Python sources parse.8955prior raw hashes unchanged;269new artifacts,9224total. Generated train226rawbytes and4referenceIDs match retained source. Inventoryaudit/analyse_save_reload pass. NativeDeviceGuard4551historical limitation not retried;remoteCI not inspected. Goalactive/PRdraft.
+
+## Moving origin and collision checkpoint
+
+Inventory remains1015 unique candidates:414direct,26derived,68cab channels and507configuration paths. The canonical audit passes605evidence paths and126unchanged source assets. All293published JSON files and133Python sources parse. All9224previous raw-evidence hashes remain unchanged;52new entries bring the local-only manifest to9276files.
+
+Two restarted moving runs independently observe the same origin boundary across45player/AIcars. Translation by2048metres per origin tile removes the large discontinuity. Physical section changes and monitor joins are observed; neither approach achieves successful passage of the initially red signal. The retained failure alerts are explicitly unsuccessful tests. A collision aftermath validates positive derailment/resting/angular observations and demonstrates body/track position divergence despite valid track pointers. A speed episode finalizes to one22.4140625s record on exit,corroborated by the UI's22seconds. These findings strengthen existing candidates without adding duplicate quantities.
+
+Source/toolchain checks and staged whitespace checks are performed for this documentation/probe checkpoint. No production source or runtime build changes. The historical DeviceGuard4551 full-native-suite block remains unresolved and was not retried;remote checks for this commit are not yet inspected. This checkpoint does not claim complete discovery or close the research goal.

@@ -696,7 +696,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | track.section_definition_index | Track geometry definition reference | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending |
 | track.node_length | Total track-node length | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending |
 | track.node_section_count | Number of sections in node | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending |
-| track.route_position_candidate | Origin-independent route coordinate reconstruction | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending |
+| track.route_position_candidate | Origin-independent route coordinate reconstruction | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;one live origin rebase across23player+22AIcars reduces2048m local jump to maximum9.561979m corrected sampled displacement |
 | topology.reachable_graph | Track graph reachable from loaded service positions | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
 | topology.node_kind | Native track node kind | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
 | topology.links | Connected node pointers and traversal direction bytes | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |

@@ -895,6 +895,24 @@ for row in rows:
     if row['id'] in {'train.registry','train.identity','train.first_car','train.last_car','train.lead_car','train.service_pointer','car.identity','car.train_owner','car.links','car.definition','engine.definition','body.position','body.right','body.up','body.forward'}:
         row['evidence'].extend(['SAVE-RELOAD-RUNTIME-FINDINGS.md','generated-save-structure.json','save-reload-comparison.json','captures/reload-transition-01/metadata.json','captures/after-reload-services-01/services.jsonl'])
         row['limitations']+=' Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated.'
+moving_evidence=['MOVING-PLAYER-ORIGIN-FINDINGS.md','paired-moving-restart-01-paired-summary.json','paired-moving-restart-01-moving-tracks.json','paired-moving-restart-01-origin-shifts.json','paired-moving-approach-02-paired-summary.json','paired-moving-approach-02-moving-tracks.json','captures/red-signal-evaluation-01/evaluation.json']
+moving_evidence.extend(['paired-n2-approach-01-paired-summary.json','paired-n2-approach-01-moving-tracks.json','paired-n2-approach-01-origin-shifts.json'])
+for row in rows:
+    if row['id'].startswith('track.') or row['id'] in {'body.position','train.registry','monitor.distance','service.physicalized_raw','service.train_pointer'}:
+        row['evidence'].extend(moving_evidence)
+        row['limitations']+=' Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated.'
+    if row['id']=='track.route_position_candidate':
+        row['extraction']='X=localX+2048*originTileX; Z=localZ+2048*originTileZ; Y retained; usefloat64 and stable origin/body identities.'
+        row['evidence_status']+=';one live origin rebase across23player+22AIcars reduces2048m local jump to maximum9.561979m corrected sampled displacement'
+        row['limitations']+=' This supersedes earlier no-origin-crossing observations for oneX-tile shift only;not exact integration or atomicity proof.'
+for row in rows:
+    if row['id'] in {'body.position','body.angular_velocity','body.angular_momentum','body.flags_raw','body.derailed','body.resting'} or row['id'].startswith('track.'):
+        row['evidence'].extend(['COLLISION-STATE-FINDINGS.md','collision-state-summary.json','captures/collision-paused-01/samples.jsonl','captures/collision-track-paused-01/tracks.json'])
+        row['limitations']+=' Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled.'
+for row in rows:
+    if row['id'].startswith('evaluation.'):
+        row['evidence'].extend(['COLLISION-STATE-FINDINGS.md','captures/post-red-collision-evaluation-01/evaluation.json','captures/collision-exit-evaluation-01/evaluation.json'])
+        row['limitations']+=' Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
