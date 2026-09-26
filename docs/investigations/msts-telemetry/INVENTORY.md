@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 301, 'runtime_derived': 19, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 895}
+{'runtime_direct': 304, 'runtime_derived': 23, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 902}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -29,8 +29,8 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | body.right | Orientation right basis | readable in live captures; semantics partly inherited/static |
 | body.up | Orientation up basis | readable in live captures; semantics partly inherited/static |
 | body.forward | Orientation forward basis | readable in live captures; semantics partly inherited/static |
-| body.velocity | Linear velocity vector | readable in live captures; semantics partly inherited/static |
-| body.angular_velocity | Angular velocity | readable in live captures; semantics partly inherited/static |
+| body.velocity | Stored physics-body linear velocity vector | readable in live captures; semantics partly inherited/static;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
+| body.angular_velocity | Stored physics-body angular velocity;not universal track-orientation derivative | readable in live captures; semantics partly inherited/static;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
 | body.momentum | Linear momentum | readable in live captures; semantics partly inherited/static |
 | body.angular_momentum | Angular momentum | readable in live captures; semantics partly inherited/static |
 | body.inverse_mass | Inverse mass | readable in live captures; semantics partly inherited/static |
@@ -51,10 +51,10 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | monitor.object | Referenced route/signal object identity | readable in live captures; semantics partly inherited/static |
 | signal.flags_raw | Referenced signal flags; full aspect mapping unresolved | readable in live captures; semantics partly inherited/static |
 | car.mass | Vehicle mass | derived candidate; not all computations implemented |
-| car.longitudinal_speed | Speed projected along body axis | derived candidate; not all computations implemented |
+| car.longitudinal_speed | Speed projected along body axis | derived candidate; not all computations implemented;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
 | train.car_count | Number of connected vehicles | derived candidate; not all computations implemented |
 | train.total_mass | Connected consist mass | derived candidate; not all computations implemented |
-| car.speed_magnitude | Total 3D speed | derived candidate; not all computations implemented |
+| car.speed_magnitude | Total 3D speed | derived candidate; not all computations implemented;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
 | car.acceleration | Sampled acceleration | derived candidate; not all computations implemented |
 | car.heading_pitch_roll | Orientation angles | derived candidate; not all computations implemented |
 | train.relative_motion | Relative train separation and closing speed | derived candidate; not all computations implemented |
@@ -804,7 +804,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.brake_force_candidate | Per-car requested brake-force quantity before adhesion limiting | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
 | car.max_brake_force | Loaded MaxBrakeForce configuration | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.brake_reference_pressure_candidate | Brake pressure used to scale configured force | static source tracing plus stopped-player values during running simulation; independent AI population untested |
-| car.connection_force_candidate | Connection-force quantity at one consist end | static source tracing plus stopped-player values during running simulation; independent AI population untested |
+| car.connection_force_candidate | Stored magnitude for current-to-following vehicle connection force | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.connection_break_threshold_candidate | Coupling-force threshold used to uncouple | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | body.force_accumulator_candidate | Body force accumulator | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | body.torque_accumulator_candidate | Body torque accumulator | static source tracing plus stopped-player values during running simulation; independent AI population untested |
@@ -896,8 +896,15 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | brake.train_selected_mode | Selected train brake controller mode after loaded-range lookup | native caller/selector traced; paused loaded-range reconstruction matches stored1000hex mode; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
 | brake.train_selected_fraction | Within-mode train brake controller fraction | native caller/selector traced; paused loaded-range reconstruction matches stored1000hex mode; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
 | service.efficiency_baseline | Baseline source for effective service efficiency | native source selection traced; all three paused services baseline/effective0.75;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected |
-| service.ordered_operational_records | Ordered station-stop records used by distance selector and efficiency override | native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected |
-| station.recorded_arrival | Recorded station arrival time; may be synthesized from schedule | native player writes traced;two paused records sampled, no departure transition |
-| station.recorded_departure | Recorded station departure-related event time | native player writes traced;two paused records sampled, no departure transition |
+| service.ordered_operational_records | Ordered station-stop records used by distance selector and efficiency override | native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition |
+| station.recorded_arrival | Recorded station arrival time; may be synthesized from schedule | native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged |
+| station.recorded_departure | Recorded station departure-related event time | native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged |
 | station.scheduled_arrival | Scheduled station arrival time | native label/parser/merge traced;two paused player records exactly match activity declarations |
-| station.scheduled_departure | Scheduled station departure time | native label/parser/merge traced;two paused player records exactly match activity declarations |
+| station.scheduled_departure | Scheduled station departure time | native label/parser/merge traced;two paused player records exactly match activity declarations;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged |
+| station.state_flags | Station record branch-local arrival, loading, departure and cue state | live first-stop0x22->0x62 while stationary; departure remained unset |
+| station.boarding_active | Player activity boarding countdown active state | native set/clear traced; sampled zero only |
+| station.boarding_remaining | Player activity remaining boarding countdown | native initialization/decrement/clamp traced; sampled zero only |
+| car.connection_endpoints | Native coupling-solver endpoint positions reconstructed from vehicle definition and body transform | native geometry path traced;8paused connections reconstructed at approximately0.14942..0.15048m |
+| car.connection_endpoint_distance | Nonnegative distance between current end0 and following end1 solver connection points | native geometry path traced;8paused connections reconstructed at approximately0.14942..0.15048m |
+| car.connection_endpoint_velocity | Connection endpoint velocity including body rotation | native vector helpers traced;8paused pairs yield near-zero residual rates,all angular velocity zero;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
+| car.connection_separation_rate | Signed rate of separation of connected solver endpoints | native vector helpers traced;8paused pairs yield near-zero residual rates,all angular velocity zero;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
