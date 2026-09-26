@@ -1,0 +1,10 @@
+{
+  "return_targets": [
+    "0x5eec06",
+    "0x5eecb7",
+    "0x5eed05"
+  ],
+  "table_live_matches": true,
+  "scale": 100.0,
+  "scale_live_matches": true
+}

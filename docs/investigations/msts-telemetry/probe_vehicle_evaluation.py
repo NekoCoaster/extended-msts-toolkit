@@ -25,7 +25,7 @@ def capture(r):
                 rebuilt_signed_velocity=math.sqrt(sum(x*x for x in car['velocity']))*sign(sum(x*y for x,y in zip(car['velocity'],car['forward']))),
                 evaluation_threshold=threshold,evaluation_kind='freight' if eligibility==2 else ('passenger' if eligibility==3 or passenger_value>0 else None),
                 comparison_true=durability<threshold,car_flags84=r.u(a+0x84),body_pointer_stable_after=r.u(a+0x5c)==b)
-    return dict(sim_time=start,reference_car=reference,reference_definition=definition,ceiling=ceiling,scale=scale,
+    return dict(sim_time=start,simulation_object=reference,default_wagon_definition=definition,ceiling=ceiling,scale=scale,
                 sign_negative=negative,sign_positive=positive,trains=trains,sim_time_after=r.f(0x80acd4),paused=r.u(0x7be0f4))
 
 if __name__=='__main__':

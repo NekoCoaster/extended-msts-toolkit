@@ -65,7 +65,7 @@ for id,meaning,applies,typ,unit,method in spec:
         applies='native forward-profile/signal references; current service context and caching unresolved'
         limits+=' Clean AI pass changed UI Stop to Clear without these raw desired-velocity/flag fields mirroring it. Do not export as current signal aspect or assume this global profile is always current player state.'
     if id in ('player.control_type','player.throttle','player.reverser'):
-        limits+=' Only diesel live-validated in this phase; steam/electric offsets are inherited candidates.'
+        limits+=' Diesel live validation and steam regulator/cutoff transitions are recorded; electric offsets remain inherited candidates.'
     add(id,meaning,applies,typ,unit,method,ev,'readable in live captures; semantics partly inherited/static','per sample; actual internal producer cadence not fully measured',limits)
 for id,meaning,unit,method in [
 ('car.mass','Vehicle mass','kg','1 / inverse_mass, rejecting zero/nonfinite values'),
@@ -323,9 +323,24 @@ for row in rows:
         row['limitations']='Exact-image/installed-resource mapping only; preserve raw code. Codes4 and32 are distinct. No causal input or live emission proof. Marker interpolation and route conversion remain unvalidated. No AI equivalent established.'
 for prefix,title,count_offset,list_offset in [('freight_durability','Freight durability',0x3c,0x2c),('passenger_comfort','Passenger comfort',0x40,0x30)]:
     for suffix,meaning,typ,units,method in [('count',title+' exceedance record count','uint32','records; both collectors stop if either count reaches40',f'[0x809790+{count_offset:#x}]'),('records',title+' exceedance time and marker-location records','list of8-byte records','time seconds; marker location raw',f'sentinel[0x809790+{list_offset:#x}]; node next+0,record+8; record float time+0/location+4')]:
-        add('evaluation.'+prefix+'_'+suffix,meaning,'player consist evaluation; not AI telemetry',typ,units,method,['EVALUATION-FINDINGS.md','captures/evaluation-paused-03/evaluation.json','vehicle-condition-labels.json','pass75/00586666.asm','pass74/0043bc16.asm','pass74-byte-verification.json','pass75-byte-verification.json'],'native collector and installed display labels traced; empty paused lists read, no exceedance emission observed','shared30-second interval after either kind records; both disabled at either count40',common+' Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Reference threshold initialization unresolved. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated.')
+        add('evaluation.'+prefix+'_'+suffix,meaning,'player consist evaluation; not AI telemetry',typ,units,method,['EVALUATION-FINDINGS.md','captures/evaluation-paused-03/evaluation.json','vehicle-condition-labels.json','pass75/00586666.asm','pass74/0043bc16.asm','pass74-byte-verification.json','pass75-byte-verification.json'],'native collector and installed display labels traced; empty paused lists read, no exceedance emission observed','shared30-second interval after either kind records; both disabled at either count40',common+' Sampled evaluation records, not complete event history or measured physical damage. No vehicle ID in records. Condition compares loaded Durability with a threshold derived from stored acceleration; see VEHICLE-MOTION-EVALUATION.md. Shared Default ExtraParameters indices23/24 resolved in DEFAULT-PARAMETER-FINDINGS.md. Freight branch takes precedence over passenger-bearing definition. Marker conversion and reset lifecycle unvalidated.')
 for name,meaning,unit,method in [('stored_velocity','Native stored car signed speed','m/s','car+0x1bc;0062924c signed magnitude of physics velocity; derailed branch unsigned'),('stored_acceleration','Native stored car signed acceleration','m/s squared','car+0x1c0;0062924c signed force magnitude times inverse mass; derailed branch unsigned'),('loaded_durability','Durability copied from service/consist definition','native dimensionless scalar','car+0x28e copied from definition+0xa0 by005a7821/005a7a5f; token4028c Durability')]:
     add('car.'+name,meaning,'physical player and AI cars; fresh validation player only','float32',unit,method,['VEHICLE-MOTION-EVALUATION.md','vehicle-evaluation-labels.json','captures/vehicle-evaluation-paused-02/snapshot.json','pass81-byte-verification.json','pass82-byte-verification.json','pass83-byte-verification.json'],'native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested','motion physics update with branch gates; Durability copied during creation, later writers not exhaustively excluded',common+' Stored signed magnitude is not longitudinal projection or finite-difference acceleration. Derailment changes sign semantics; skip flag and body swaps matter. Durability is loaded configuration, not damage. One debug call differs live outside relevant display instructions; exact-image offsets only.')
+for row in rows:
+    if row['id'] in {'car.stored_velocity','car.stored_acceleration','car.loaded_durability'}:
+        row['evidence'].extend(['vehicle-motion-summary.json','captures/vehicle-motion-restart-01/samples.jsonl','captures/vehicle-motion-ai-01/samples.jsonl','captures/vehicle-motion-final-paused-01/snapshot.json','pass84-byte-verification.json','pass85-byte-verification.json'])
+        row['applicability']='physical player and AI cars;23 player and22 AI cars sampled in restarted preferred activity'
+        row['evidence_status']='native sources traced; moving/braking player and changing-speed physical AI sampled; intact consists; no reader errors'
+        row['limitations']+=' AI skip flags bypass ordinary physics writer: stored acceleration stayed0 despite changing AI speed, so it is not validated AI acceleration. AI speed has service-driven producer005a7337 and predecessor copy00636475. Same-step stable reads still showed up to0.01524m/s speed reconstruction discrepancy for player; not atomic equality proof.'
+for name,meaning,offset,units in [('durability_acceleration_ceiling','Loaded shared evaluation acceleration ceiling',0x7cc,'m/s squared'),('durability_acceleration_scale','Loaded shared evaluation acceleration normalization scale',0x7d0,'reciprocal m/s squared')]:
+    add('evaluation.'+name,meaning,'shared Default wagon configuration used by player evaluation; not individual AI physics','float32',units,f'[[0x80aa1c]+0x94]+{offset:#x}; Default ExtraParameters indices23/24',['DEFAULT-PARAMETER-FINDINGS.md','default-parameters-map.json','captures/default-threshold-paused-01/snapshot.json','pass87-byte-verification.json','pass88-byte-verification.json','pass89-byte-verification.json','C:/MSTS/TRAINS/TRAINSET/DEFAULT/default.wag'],'constructor/parser/consumer traced; source values exactly match loaded float32','loaded Default definition; no mutation/reload cadence test',common+' Configuration, not measured acceleration or per-car damage. Scale is a separately loaded value; do not assume reciprocal recomputation. Earlier reference_car probe label was incorrect. Full range/default overrides and nonzero evaluation events untested.')
+steam_fields={f['channel']:f for f in json.loads((ROOT/'steam-cab-fields.json').read_text(encoding='utf-8'))}
+for row in rows:
+    if row['id'].startswith('cab.') and row['id'][4:] in steam_fields:
+        field=steam_fields[row['id'][4:]]
+        row['extraction']+=f"; steam-specific source: {field['base']}+{field['offset']:#x}; {field['display']}"
+        row['evidence'].extend(['STEAM-CAB-FINDINGS.md','steam-cab-fields.json','steam-cab-source-audit.json','pass90-byte-verification.json','captures/steam-probe-diesel-guard-01/steam.json','steam-runtime-summary.json','captures/steam-scotsman-baseline-01/steam.json','captures/steam-scotsman-final-paused-01/steam.json'])
+        row['limitations']+=' Steam offsets require player control type1 (cab-view type3 is a different enum). Positive Scotsman reads and selected control/pressure transitions are recorded in steam-runtime-summary.json; constant channels are not actuator validation. Engine-union offsets overlap diesel fields; no independent AI steam controls established.'
 camera_fields=[
     ('mode','Player view mode raw enum','uint32','observed 0 cab, 1 front exterior, 2 rear exterior, 3 trackside; others unresolved','[[0x7c2a88]+0x11c]'),
     ('tracking','Player camera tracking state used by native debug display','uint32','zero/nonzero; only interpreted for mode 1, 2 or 3','[[0x7c2a88]+0x110]'),
@@ -333,6 +348,88 @@ camera_fields=[
     ('render_basis','Current render-camera basis vectors','float32[3][3]','dimensionless native basis; axis conventions need camera-transition validation','[0x829224] +0x0c/+0x18/+0x24')]
 for name,meaning,typ,units,method in camera_fields:
     add('camera.'+name,meaning,'current player view/render scene; not independent AI viewpoints',typ,units,method,['CAMERA-FINDINGS.md','camera-transition-summary.json','captures/camera-final-paused-01/consist-check.json','captures/camera-paused-01/camera.json','pass61/004918e0.asm','pass62/006c0290.asm','pass62/006b63c0.asm','pass61-byte-verification.json','pass62-byte-verification.json'],'native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots','view/render update; paused values may retain last rendered frame',common+' View-state and render-camera pointers are distinct. Other mode names, transition timing, projection lifecycle and train-relative camera attachment remain unresolved. Stable pointer/time checks do not make external reads atomic.')
+firebox_evidence=['STEAM-CAB-FINDINGS.md','steam-firebox-labels.json','pass91-byte-verification.json','pass82-byte-verification.json','pass82/0060997a.asm','pass91/0041f05c.asm','captures/steam-firebox-paused-01/steam.json']
+for name,meaning,unit,method,cadence in [
+ ('fire_temperature','Native fire temperature','unresolved native temperature unit','steam lead+0x2c2','dynamic; producer cadence unresolved'),
+ ('fire_mass','Current fire mass','lb per native debug label and asset convention','steam lead+0x2ca','dynamic; producer cadence unresolved'),
+ ('ideal_fire_mass','Loaded ideal fire mass','lb','[steam lead+0x29a]+0x242','loaded locomotive definition parameter'),
+ ('maximum_fire_mass','Loaded maximum fire mass','lb','[steam lead+0x29a]+0x222','loaded locomotive definition parameter')]:
+    add('steam.'+name,meaning,'steam player locomotive; AI untested','float32',unit,method,firebox_evidence,'native debug labels and cab consumer traced; positive Scotsman snapshot',''+cadence,common+' Require steam control type1 before interpreting engine union. Loaded definition parameters are not independent dynamic state. Temperature units and physical producer laws remain unresolved; FIREBOX graphic is a separate compound candidate.')
+steam_debug_evidence=['STEAM-DEBUG-FINDINGS.md','steam-debug-fields.json','pass82/0060997a.asm','pass82-byte-verification.json','captures/steam-debug-paused-01/steam-debug.json']
+for f in json.loads((ROOT/'steam-debug-fields.json').read_text(encoding='utf-8')):
+    add('steam.'+f['name'],'Native steam debug '+f['name'].replace('_',' '),'steam player locomotive; AI untested','bool' if f['mask'] else 'float32',f['units'],f"{f['base']}+{f['offset']:#x}"+(f" & {f['mask']:#x}" if f['mask'] else ''),steam_debug_evidence,'native debug label and source traced; positive paused read only','loaded definition' if f['base']=='engine_definition' else 'simulation state; producer cadence unresolved',common+' Native labels do not establish update laws, rate timebase or physical correctness. Coal-burn line has inconsistent first argument; maximum rate may be inactive/stale. See steam debug findings.')
+for row in rows:
+    if row['id'] in ('cab.TENDER_WATER','cab.STEAM_PR','cab.STEAMCHEST_PR','cab.STEAMHEAT_PRESSURE'):
+        row['evidence'].extend(steam_debug_evidence)
+        row['limitations']+=' Native steam debug labels identify tender water as lb and the three pressures as PSI; cab volume conversion does not change raw mass units.'
+for row in rows:
+    if row['id'] in ('steam.generation_rate','steam.usage_rate','steam.usage_exceeds_exhaust_limit','cab.STEAM_PR'):
+        row['evidence'].extend(['STEAM-PRODUCER-FINDINGS.md','pass92/00604450.asm','pass93/0060384a.asm','pass93/00603340.asm','pass92-byte-verification.json','pass93-byte-verification.json'])
+        row['limitations']+=' Producer tracing shows generation can retain its prior value on a low-water path. Pressure integration divides the rate difference by3600 but rate timebase is not fully verified. Exhaust warning bit0x100 compares cylinder rate with definition+216.'
+update_evidence=['STEAM-PRODUCER-FINDINGS.md','pass94/0060435c.asm','pass95/00603691.asm','pass95/0060392e.asm','pass96/00607bd0.asm','pass94-byte-verification.json','pass95-byte-verification.json','pass96-byte-verification.json','captures/steam-update-paused-01/steam-debug.json']
+for name,meaning,typ,unit,method in [
+ ('train.engine_update_accumulator','Pending engine-update time accumulator','float32','native time unit; upstream seconds confirmation pending','train+0x8a'),
+ ('train.engine_update_interval','Configured engine-update interval','float32','native time unit; 0.25 observed','train+0x8e'),
+ ('steam.injector1_working','Injector 1 working branch state','uint32','0/1','steam lead+0x2ee'),
+ ('steam.injector2_working','Injector 2 working branch state','uint32','0/1','steam lead+0x2f2')]:
+    add(name,meaning,'player steam tested; other engines/AI untested',typ,unit,method,update_evidence,'native producer/scheduler traced; positive paused read only','engine-update scheduler; skipped branches can retain old state',common+' Injector working is distinct from control position and flow. No working transition tested. Scheduler drains accumulator only while strictly greater than interval; upstream timebase remains open.')
+for row in rows:
+    if row['id'] in ('steam.coal_burn_rate_raw','steam.usage_rate'):
+        row['evidence'].extend(update_evidence)
+        row['limitations']+=' Coal mass update subtracts interval*burn/3600; water mass subtracts interval*usage/3600*0.7. Upstream interval timebase still needs closure.'
+for row in rows:
+    if row['id'] in ('steam.coal_burn_rate_raw','train.engine_update_accumulator','train.engine_update_interval'):
+        row['units']='lb/hour; native producer and stationary live mass balance' if row['id']=='steam.coal_burn_rate_raw' else 'seconds; current-installation cadence corroborated'
+        row['evidence'].extend(['steam-cadence-summary.json','steam-cadence-mass-checks.json','captures/steam-cadence-01/samples.jsonl','captures/steam-cadence-final-paused-01/steam.json','pass97-byte-verification.json','pass98-byte-verification.json'])
+        row['limitations']+=' Subsequent cadence test corroborates seconds and coal lb/hour for this player steam session; prior upstream-timebase caveat is narrowed by this runtime evidence. No stock or AI cadence claim.'
+electric_fields={f['channel']:f for f in json.loads((ROOT/'electric-cab-fields.json').read_text(encoding='utf-8'))}
+for row in rows:
+    if row['id'].startswith('cab.') and row['id'][4:] in electric_fields:
+        f=electric_fields[row['id'][4:]]
+        row['extraction']+=f"; electric raw source: {f['base']}+{f['offset']:#x} ({f['type']})"
+        row['evidence'].extend(['ELECTRIC-CAB-FINDINGS.md','electric-cab-fields.json','pass102-byte-verification.json','captures/electric-probe-steam-guard-01/electric.json'])
+        row['limitations']+=' Electric probe requires player control type3; Acela positive reads and selected pantograph/reverser/throttle transitions are recorded in electric-runtime-summary.json; unactuated fields are not actuator validation. Cab-view type1 is a different enum. Shared source channels are not independent physical values.'
+    if row['id'] in ('cab.LINE_VOLTAGE','cab.CAB_SWITCH'):
+        row['evidence'].extend(['ELECTRIC-CAB-FINDINGS.md','pass102-byte-verification.json','pass103-byte-verification.json'])
+        row['limitations']+=' Electric voltage helper changes the return address, bypassing the apparent float comparison; CAB_SWITCH electric mapping yields an invalid out-of-image destination, not a supported branch. See electric findings.'
+for row in rows:
+    if row['id'].startswith('cab.') and row['id'][4:] in electric_fields:
+        row['evidence'].extend(['electric-runtime-summary.json','captures/electric-acela-baseline-01/electric.json','captures/electric-acela-pantograph-down-01/electric.json','captures/electric-acela-forward-01/electric.json','captures/electric-acela-throttle-01/electric.json','captures/electric-acela-final-paused-01/electric.json'])
+    if row['id']=='cab.LINE_VOLTAGE':
+        row['evidence'].extend(['pass104-byte-verification.json','pass104/0040bad4.asm','electric-runtime-summary.json'])
+        row['limitations']+=' Final helper semantics are traced in electric findings; its animation-object physical meaning remains unresolved. Acela route source stays25000 with pantograph control down.'
+voltage_evidence=['ELECTRIC-CAB-FINDINGS.md','electric-voltage-summary.json','pass102-byte-verification.json','pass103-byte-verification.json','pass104-byte-verification.json','captures/electric-voltage-up-paused-01/voltage.json','captures/electric-voltage-transition-01/samples.jsonl','captures/electric-voltage-restored-paused-01/voltage.json']
+for name,meaning,typ,unit,method in [
+ ('electric.route_voltage','Loaded route supply voltage source','float32','volts; native cab unit0x17 divides by1000','[0x7b8d3c]+0x58'),
+ ('electric.voltage_gate_enabled','Native electric voltage-display gate enabled setting','uint32','zero/nonzero','electric controller+0x258'),
+ ('electric.voltage_consist_condition','Consist condition used by patched native voltage display helper','derived boolean','true/false; unavailable when skipped or invalid','bounded lead then+a8 traversal; car flags80/84 and helper0040bad4 indirect value/bounds; see read_electric_voltage.py')]:
+    add(name,meaning,'electric player tested; other contexts untested',typ,unit,method,voltage_evidence,'native display consumers traced; Acela pantograph-down transition and separate restored snapshot','raw route source is configuration; derived condition follows flags/animation and can lag control',common+' Not measured traction power or independent overhead contact. Derived helper result is not a direct cab value; precision and non-atomic traversal limits apply.')
+for row in rows:
+    if row['id']=='cab.LINE_VOLTAGE':
+        row['evidence'].extend(voltage_evidence)
+        row['extraction']+='; derived native display value uses loaded route voltage, gate-enable setting and bounded consist condition; see read_electric_voltage.py'
+        row['limitations']+=' Acela transition observes delayed derived gate off after pantograph command; restored paused condition seen separately, not timed return latency.'
+traction_evidence=['ELECTRIC-TRACTION-FINDINGS.md','pass107-byte-verification.json','pass108-byte-verification.json','pass109-byte-verification.json','pass110-byte-verification.json','electric-traction-summary.json','captures/electric-traction-paused-01/traction.json','captures/electric-traction-braked-01/traction.json','captures/electric-traction-down-running-01/traction.json','captures/electric-traction-down-idle-01/traction.json','captures/electric-traction-down-voltage-01/voltage.json','captures/electric-traction-restored-idle-01/traction.json']
+for name,meaning,typ,unit,method in [
+ ('electric.traction_calculation_gate','Sampled bit used inside electric traction calculation; not a reliable cache freshness indicator','bit','boolean','electric lead+0x296 bit0x2'),
+ ('electric.cached_force_limit','Cached electric speed-dependent force calculation limit','float32','native force-like units; mapping not independently validated','electric lead+0x496'),
+ ('electric.cached_throttle','Throttle copied during enabled electric force calculation','float32','native controller fraction','electric lead+0x492')]:
+    add(name,meaning,'electric player; AI untested',typ,unit,method,traction_evidence,'native producers traced; stationary Acela throttle, pantograph and stale-cache observations','engine update; cached fields not refreshed on gate-false branch',common+' Not delivered wheel force or overhead contact. Cached throttle remained2.5% at idle with pantograph down despite sampled gate bit true; do not use bit alone to claim freshness. Moving behavior and optional modifier actuation untested.')
+event_evidence=['ELECTRIC-EVENT-FINDINGS.md','pass112-byte-verification.json','pass113-byte-verification.json','pass114-byte-verification.json','pass115-byte-verification.json','captures/electric-event-values-paused-01/event-routes.json']
+for name,meaning,typ,unit,offset in [
+ ('event.receiver_mask_1_32','Retained receiver event bits for ordinary event IDs1..32','uint32 bitmask','event presence bits',0x20),
+ ('event.receiver_mask_33_64','Retained receiver event bits for ordinary event IDs33..64','uint32 bitmask','event presence bits',0x24),
+ ('event.receiver_scalar1','Receiver retained scalar variable1','float32','native scalar; producer transformations unresolved',0x28),
+ ('event.receiver_scalar2','Receiver retained scalar variable2','float32','native scalar; producer transformations unresolved',0x2c),
+ ('event.receiver_scalar3','Receiver retained scalar variable3','float32','native scalar; physical meaning unresolved',0x30)]:
+    add(name,meaning,'two electric player receivers observed; other player and AI contexts untested',typ,unit,f'resolve lead+4b6 or+25c handle through[828108], then receiver+{offset:x}',event_evidence,'native receiver stores traced; stable paused Acela read','set by event/scalar dispatch; consumer/clearing/lifecycle untraced',common+' Event masks coalesce repeats, have no ordering/timestamps/counts and may alias out-of-range IDs. Not a complete event history. Scalar baseline zero only; units, modified producer paths and nonzero runtime transitions remain open.')
+for row in rows:
+    if row['id'].startswith('event.receiver_'):
+        row['evidence'].extend(['pass116-byte-verification.json','pass117-byte-verification.json','electric-event-helper-table.json','captures/electric-event-throttle-paused-01/event-routes.json','captures/electric-event-source-paused-01/traction.json','captures/electric-event-idle-restored-01/event-routes.json'])
+    if row['id']=='event.receiver_scalar1':
+        row['units']='throttle percent for tested electric producer; other producers unverified'
+        row['evidence_status']='electric broadcast producer traced; both lead receiver values0->2.5->0 match throttle actuation'
+        row['limitations']=common+' Nonzero electric scalar1 validated only. Receivers can retain values if broadcast filter skips their car. Other engine types, consumers and AI untested; not actual force or power.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

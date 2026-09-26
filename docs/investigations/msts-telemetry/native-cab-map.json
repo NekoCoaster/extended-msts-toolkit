@@ -9,7 +9,7 @@
     "pass01b/004218ae.asm",
     "pass04/00422f06.asm"
   ],
-  "warning": "CabViewType differs from player control type. Extended helper has bounded branch evidence, aliases and no-update branches; range114..120 overlaps adjacent table data and is not established supported telemetry. See EXTENDED-CAB-FINDINGS.md.",
+  "warning": "CabViewType mapping differs from player control-type enum. Base channels only; see EXTENDED-CAB-FINDINGS.md for extended aliases, no-update branches and range/table overlap.",
   "channels": [
     {
       "enum": 0,
@@ -2747,7 +2747,8 @@
           "function": "0x41f357",
           "jump_index": 175,
           "destination": "0xb7e8f44d",
-          "status": "static branch identified; runtime availability unverified"
+          "status": "invalid or out-of-dispatcher table destination; not a supported branch",
+          "warning": "Raw table arithmetic only; do not execute this destination or claim telemetry support."
         },
         {
           "engine": "diesel",
@@ -2800,6 +2801,5 @@
         }
       ]
     }
-  ],
-  "extended_helper_evidence": "EXTENDED-CAB-FINDINGS.md"
+  ]
 }

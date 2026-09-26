@@ -12,9 +12,9 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 233 direct-read candidates/structures, 18 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 826 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+Current inventory has 272 direct-read candidates/structures, 19 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 866 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
 
-Latest camera test leaves MSTS paused at 74600.2734375, player stopped with 23 intact vehicles.
+Latest test leaves Acela Express paused at36104.00390625 on Northeast Corridor Explore Route, stationary, throttle idle, forward direction and pantograph control up. Steam and preferred diesel evidence are preserved in separate captures.
 
 ## Test scenario and installation
 
@@ -110,3 +110,11 @@ Use Escape and the visible pause menu for long analysis work. The attempted Paus
 - Measure representative update cadence, pause behavior, reset behavior, sample consistency and collection overhead. Test alternate engine types, loading/restarting and later traffic. Keep explicit coverage boundaries.
 - Refine the flat inventory into individually meaningful telemetry candidates with specific source/units and evidence per row; remove parser artifacts or merge duplicate declarations only when they describe the same data point. This is cleanup, not keep/drop prioritization.
 - Produce a final evidence-backed report and NEMT handoff only after the above discovery coverage has been reviewed. No implementation/integration into NEMT is authorized by this research phase.
+
+[Steam debug findings](STEAM-DEBUG-FINDINGS.md) maps additional generation/use, stores, smoke and warning fields, with a positive paused read and explicit rate-unit/producer gaps.
+
+[Electric cab findings](ELECTRIC-CAB-FINDINGS.md) records13 raw source mappings, a negative type-gate test, voltage helper control-flow caveats and an invalid CAB_SWITCH mapping correction.
+
+[Electric traction findings](ELECTRIC-TRACTION-FINDINGS.md) separates the calculation gate, potentially stale cached throttle/force limit and current-source producer, with a guarded paused Acela baseline. Moving electric validation remains open.
+
+[Electric event findings](ELECTRIC-EVENT-FINDINGS.md) traces two registry-backed receivers, retained event bitmasks and three scalar slots. These do not provide a complete event history; clearing, playback, AI applicability and nonzero scalar transitions remain open.

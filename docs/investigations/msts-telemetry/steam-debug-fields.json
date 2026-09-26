@@ -1,0 +1,173 @@
+[
+  {
+    "name": "water_mass",
+    "offset": 718,
+    "base": "lead",
+    "mask": null,
+    "units": "lb",
+    "label_address": "0x771cd4",
+    "label": "Water mass: %.0f Ib"
+  },
+  {
+    "name": "generation_rate",
+    "offset": 790,
+    "base": "lead",
+    "mask": null,
+    "units": "unresolved rate unit",
+    "label_address": "0x771bcc",
+    "label": "Steam gen rate: %.0f"
+  },
+  {
+    "name": "usage_rate",
+    "offset": 786,
+    "base": "lead",
+    "mask": null,
+    "units": "unresolved rate unit",
+    "label_address": "0x771b94",
+    "label": "Steam usage rate: %.0f"
+  },
+  {
+    "name": "cylinder_rate",
+    "offset": 794,
+    "base": "lead",
+    "mask": null,
+    "units": "unresolved rate unit",
+    "label_address": "0x771b54",
+    "label": "Steam cylinder rate: %.0f"
+  },
+  {
+    "name": "exhaust_usage_rate",
+    "offset": 798,
+    "base": "lead",
+    "mask": null,
+    "units": "unresolved rate unit",
+    "label_address": "0x771b08",
+    "label": "Exhaust steam usage rate: %.0f"
+  },
+  {
+    "name": "wheel_omega",
+    "offset": 690,
+    "base": "lead",
+    "mask": null,
+    "units": "angular speed; unit unresolved",
+    "label_address": "0x771ad8",
+    "label": "Wheel omega: %.02f"
+  },
+  {
+    "name": "smoke_colour",
+    "offset": 810,
+    "base": "lead",
+    "mask": null,
+    "units": "native scalar; range unresolved",
+    "label_address": "0x771aa8",
+    "label": "Smoke colour: %.02f"
+  },
+  {
+    "name": "smoke_release_rate",
+    "offset": 818,
+    "base": "lead",
+    "mask": null,
+    "units": "unresolved rate unit",
+    "label_address": "0x771a68",
+    "label": "Smoke release rate: %.02f"
+  },
+  {
+    "name": "priming",
+    "offset": 822,
+    "base": "lead",
+    "mask": null,
+    "units": "native scalar; unit unresolved",
+    "label_address": "0x771a14",
+    "label": "Priming: %.02f"
+  },
+  {
+    "name": "blowback",
+    "offset": 826,
+    "base": "lead",
+    "mask": null,
+    "units": "native scalar; unit unresolved",
+    "label_address": "0x7719b0",
+    "label": "Blowback: %.02f"
+  },
+  {
+    "name": "critical_blowback",
+    "offset": 662,
+    "base": "lead",
+    "mask": 32,
+    "units": "boolean",
+    "label_address": "0x7719d8",
+    "label": "Critical Blowback! %.02f"
+  },
+  {
+    "name": "tender_water_capacity",
+    "offset": 478,
+    "base": "engine_definition",
+    "mask": null,
+    "units": "lb",
+    "label_address": "0x77195c",
+    "label": "Tender water mass: %.0f / %.0f Ib"
+  },
+  {
+    "name": "tender_coal_mass",
+    "offset": 738,
+    "base": "lead",
+    "mask": null,
+    "units": "lb",
+    "label_address": "0x77190c",
+    "label": "Tender coal mass: %.0f / %.0f Ib"
+  },
+  {
+    "name": "tender_coal_capacity",
+    "offset": 482,
+    "base": "engine_definition",
+    "mask": null,
+    "units": "lb",
+    "label_address": "0x77190c",
+    "label": "Tender coal mass: %.0f / %.0f Ib"
+  },
+  {
+    "name": "coal_burn_rate_raw",
+    "offset": 814,
+    "base": "lead",
+    "mask": null,
+    "units": "rate timebase unresolved",
+    "label_address": "0x7718c0",
+    "label": "Coal burn rate: %.0f / %.0f Ib"
+  },
+  {
+    "name": "energy_output",
+    "offset": 774,
+    "base": "lead",
+    "mask": null,
+    "units": "native energy/output unit unresolved",
+    "label_address": "0x77188c",
+    "label": "Energy output: %.02f"
+  },
+  {
+    "name": "wheel_slip",
+    "offset": 132,
+    "base": "lead",
+    "mask": 1,
+    "units": "boolean",
+    "label_address": "0x77185c",
+    "label": "Engine wheel slip!"
+  },
+  {
+    "name": "usage_exceeds_exhaust_limit",
+    "offset": 662,
+    "base": "lead",
+    "mask": 256,
+    "units": "boolean",
+    "label_address": "0x771814",
+    "label": "steam usage > exhaust limit!"
+  },
+  {
+    "name": "maximum_steam_rate",
+    "offset": 1198,
+    "base": "lead",
+    "mask": null,
+    "units": "unresolved rate unit",
+    "label_address": "0x771798",
+    "label": "max steam rate (display 3): %.02f,usage rate %.02f"
+  }
+]

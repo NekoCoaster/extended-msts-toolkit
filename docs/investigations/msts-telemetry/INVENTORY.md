@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 233, 'runtime_derived': 18, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 826}
+{'runtime_direct': 272, 'runtime_derived': 19, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 866}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -825,10 +825,50 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | evaluation.freight_durability_records | Freight durability exceedance time and marker-location records | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
 | evaluation.passenger_comfort_count | Passenger comfort exceedance record count | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
 | evaluation.passenger_comfort_records | Passenger comfort exceedance time and marker-location records | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
-| car.stored_velocity | Native stored car signed speed | native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested |
-| car.stored_acceleration | Native stored car signed acceleration | native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested |
-| car.loaded_durability | Durability copied from service/consist definition | native producers/display/parser traced;23 stopped player cars read; moving and AI behavior untested |
+| car.stored_velocity | Native stored car signed speed | native sources traced; moving/braking player and changing-speed physical AI sampled; intact consists; no reader errors |
+| car.stored_acceleration | Native stored car signed acceleration | native sources traced; moving/braking player and changing-speed physical AI sampled; intact consists; no reader errors |
+| car.loaded_durability | Durability copied from service/consist definition | native sources traced; moving/braking player and changing-speed physical AI sampled; intact consists; no reader errors |
+| evaluation.durability_acceleration_ceiling | Loaded shared evaluation acceleration ceiling | constructor/parser/consumer traced; source values exactly match loaded float32 |
+| evaluation.durability_acceleration_scale | Loaded shared evaluation acceleration normalization scale | constructor/parser/consumer traced; source values exactly match loaded float32 |
 | camera.mode | Player view mode raw enum | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
 | camera.tracking | Player camera tracking state used by native debug display | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
 | camera.render_position | Current render-camera position | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
 | camera.render_basis | Current render-camera basis vectors | native consumers traced; cab/front/rear/trackside/cab switches observed with matching post-input snapshots |
+| steam.fire_temperature | Native fire temperature | native debug labels and cab consumer traced; positive Scotsman snapshot |
+| steam.fire_mass | Current fire mass | native debug labels and cab consumer traced; positive Scotsman snapshot |
+| steam.ideal_fire_mass | Loaded ideal fire mass | native debug labels and cab consumer traced; positive Scotsman snapshot |
+| steam.maximum_fire_mass | Loaded maximum fire mass | native debug labels and cab consumer traced; positive Scotsman snapshot |
+| steam.water_mass | Native steam debug water mass | native debug label and source traced; positive paused read only |
+| steam.generation_rate | Native steam debug generation rate | native debug label and source traced; positive paused read only |
+| steam.usage_rate | Native steam debug usage rate | native debug label and source traced; positive paused read only |
+| steam.cylinder_rate | Native steam debug cylinder rate | native debug label and source traced; positive paused read only |
+| steam.exhaust_usage_rate | Native steam debug exhaust usage rate | native debug label and source traced; positive paused read only |
+| steam.wheel_omega | Native steam debug wheel omega | native debug label and source traced; positive paused read only |
+| steam.smoke_colour | Native steam debug smoke colour | native debug label and source traced; positive paused read only |
+| steam.smoke_release_rate | Native steam debug smoke release rate | native debug label and source traced; positive paused read only |
+| steam.priming | Native steam debug priming | native debug label and source traced; positive paused read only |
+| steam.blowback | Native steam debug blowback | native debug label and source traced; positive paused read only |
+| steam.critical_blowback | Native steam debug critical blowback | native debug label and source traced; positive paused read only |
+| steam.tender_water_capacity | Native steam debug tender water capacity | native debug label and source traced; positive paused read only |
+| steam.tender_coal_mass | Native steam debug tender coal mass | native debug label and source traced; positive paused read only |
+| steam.tender_coal_capacity | Native steam debug tender coal capacity | native debug label and source traced; positive paused read only |
+| steam.coal_burn_rate_raw | Native steam debug coal burn rate raw | native debug label and source traced; positive paused read only |
+| steam.energy_output | Native steam debug energy output | native debug label and source traced; positive paused read only |
+| steam.wheel_slip | Native steam debug wheel slip | native debug label and source traced; positive paused read only |
+| steam.usage_exceeds_exhaust_limit | Native steam debug usage exceeds exhaust limit | native debug label and source traced; positive paused read only |
+| steam.maximum_steam_rate | Native steam debug maximum steam rate | native debug label and source traced; positive paused read only |
+| train.engine_update_accumulator | Pending engine-update time accumulator | native producer/scheduler traced; positive paused read only |
+| train.engine_update_interval | Configured engine-update interval | native producer/scheduler traced; positive paused read only |
+| steam.injector1_working | Injector 1 working branch state | native producer/scheduler traced; positive paused read only |
+| steam.injector2_working | Injector 2 working branch state | native producer/scheduler traced; positive paused read only |
+| electric.route_voltage | Loaded route supply voltage source | native display consumers traced; Acela pantograph-down transition and separate restored snapshot |
+| electric.voltage_gate_enabled | Native electric voltage-display gate enabled setting | native display consumers traced; Acela pantograph-down transition and separate restored snapshot |
+| electric.voltage_consist_condition | Consist condition used by patched native voltage display helper | native display consumers traced; Acela pantograph-down transition and separate restored snapshot |
+| electric.traction_calculation_gate | Sampled bit used inside electric traction calculation; not a reliable cache freshness indicator | native producers traced; stationary Acela throttle, pantograph and stale-cache observations |
+| electric.cached_force_limit | Cached electric speed-dependent force calculation limit | native producers traced; stationary Acela throttle, pantograph and stale-cache observations |
+| electric.cached_throttle | Throttle copied during enabled electric force calculation | native producers traced; stationary Acela throttle, pantograph and stale-cache observations |
+| event.receiver_mask_1_32 | Retained receiver event bits for ordinary event IDs1..32 | native receiver stores traced; stable paused Acela read |
+| event.receiver_mask_33_64 | Retained receiver event bits for ordinary event IDs33..64 | native receiver stores traced; stable paused Acela read |
+| event.receiver_scalar1 | Receiver retained scalar variable1 | electric broadcast producer traced; both lead receiver values0->2.5->0 match throttle actuation |
+| event.receiver_scalar2 | Receiver retained scalar variable2 | native receiver stores traced; stable paused Acela read |
+| event.receiver_scalar3 | Receiver retained scalar variable3 | native receiver stores traced; stable paused Acela read |

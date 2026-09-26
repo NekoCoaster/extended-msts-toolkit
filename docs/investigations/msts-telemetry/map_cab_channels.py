@@ -20,6 +20,11 @@ for n in range(68):
             index=p.read(d['byte_map']+n-d['minimum'],1)[0];dest=p.u(d['jump_table']+index*4)
             result.update(jump_index=index,destination=hex(dest),status='static branch identified; runtime availability unverified')
             if dest==d['default']:result['status']='default branch; no display update established'
+            if not d['function']<=dest<d['jump_table']:
+                result['status']='invalid or out-of-dispatcher table destination; not a supported branch'
+                result['warning']='Raw table arithmetic only; do not execute this destination or claim telemetry support.'
+                row['dispatch'].append(result)
+                continue
             # The decompiler uses the remapped byte value as its switch case for electric/diesel,
             # but the actual enum for steam. Preserve source context, not inferred meanings.
             f=R/'pass01b'/f'{d["function"]:08x}.c';lines=f.read_text().splitlines();wanted=n if d['engine']=='steam' else index

@@ -1,0 +1,203 @@
+{
+  "captures": {
+    "vehicle-motion-running-01": {
+      "samples": 360,
+      "errors": [],
+      "sim_time_range": [
+        74600.2734375,
+        74727.203125
+      ],
+      "cross_step_samples": 56,
+      "paused_samples": 107,
+      "trains": {
+        "400007": {
+          "is_player": true,
+          "train_speed_range": [
+            0.0,
+            0.0
+          ],
+          "train_sample_speed_change_per_second_range": [
+            0.0,
+            0.0
+          ],
+          "car_count_range": [
+            23,
+            23
+          ],
+          "car_observations": 8280,
+          "same_step_stable_car_observations": 6984,
+          "ordinary_comparisons": 6984,
+          "stored_speed_range": [
+            0.0,
+            0.0
+          ],
+          "stored_acceleration_range": [
+            -7.762663756238908e-08,
+            7.762663045696172e-08
+          ],
+          "body_speed_range": [
+            0.0,
+            1.0644886230570422e-09
+          ],
+          "max_same_step_speed_rebuild_error": 0.0,
+          "max_same_step_acceleration_rebuild_error": 4.815227033413554e-15,
+          "durability_values": [
+            1.0
+          ],
+          "flags84": [
+            0
+          ],
+          "derailed_observations": 0,
+          "qualification_observations": 0
+        }
+      }
+    },
+    "vehicle-motion-restart-01": {
+      "samples": 350,
+      "errors": [],
+      "sim_time_range": [
+        73800.671875,
+        73849.1171875
+      ],
+      "cross_step_samples": 46,
+      "paused_samples": 108,
+      "trains": {
+        "400007": {
+          "is_player": true,
+          "train_speed_range": [
+            0.0,
+            11.021339416503906
+          ],
+          "train_sample_speed_change_per_second_range": [
+            -1.5822140987102802,
+            0.0
+          ],
+          "car_count_range": [
+            23,
+            23
+          ],
+          "car_observations": 8050,
+          "same_step_stable_car_observations": 6974,
+          "ordinary_comparisons": 6974,
+          "stored_speed_range": [
+            0.0,
+            11.283418655395508
+          ],
+          "stored_acceleration_range": [
+            -2.4855258464813232,
+            0.21034324169158936
+          ],
+          "body_speed_range": [
+            0.0,
+            11.283418306636108
+          ],
+          "max_same_step_speed_rebuild_error": 0.015231555430863963,
+          "max_same_step_acceleration_rebuild_error": 1.3674757814996497e-07,
+          "durability_values": [
+            1.0
+          ],
+          "flags84": [
+            0
+          ],
+          "derailed_observations": 0,
+          "qualification_observations": 0
+        }
+      }
+    },
+    "vehicle-motion-ai-01": {
+      "samples": 480,
+      "errors": [],
+      "sim_time_range": [
+        73851.8984375,
+        74030.6796875
+      ],
+      "cross_step_samples": 137,
+      "paused_samples": 122,
+      "trains": {
+        "400007": {
+          "is_player": true,
+          "train_speed_range": [
+            0.0,
+            0.0
+          ],
+          "train_sample_speed_change_per_second_range": [
+            0.0,
+            0.0
+          ],
+          "car_count_range": [
+            23,
+            23
+          ],
+          "car_observations": 11040,
+          "same_step_stable_car_observations": 7884,
+          "ordinary_comparisons": 7884,
+          "stored_speed_range": [
+            0.0,
+            0.0
+          ],
+          "stored_acceleration_range": [
+            -1.0430766650415535e-07,
+            1.1016113177220177e-07
+          ],
+          "body_speed_range": [
+            0.0,
+            8.511648433412917e-10
+          ],
+          "max_same_step_speed_rebuild_error": 0.0,
+          "max_same_step_acceleration_rebuild_error": 8.168762489619092e-15,
+          "durability_values": [
+            1.0
+          ],
+          "flags84": [
+            0
+          ],
+          "derailed_observations": 0,
+          "qualification_observations": 0
+        },
+        "400005": {
+          "is_player": false,
+          "train_speed_range": [
+            14.959239959716797,
+            24.81072235107422
+          ],
+          "train_sample_speed_change_per_second_range": [
+            -1.6709681919642858,
+            1.0715971447172619
+          ],
+          "car_count_range": [
+            22,
+            22
+          ],
+          "car_observations": 9944,
+          "same_step_stable_car_observations": 7084,
+          "ordinary_comparisons": 0,
+          "stored_speed_range": [
+            14.959242820739746,
+            24.810718536376953
+          ],
+          "stored_acceleration_range": [
+            0.0,
+            0.0
+          ],
+          "body_speed_range": [
+            14.959241941579895,
+            24.81072054383756
+          ],
+          "max_same_step_speed_rebuild_error": null,
+          "max_same_step_acceleration_rebuild_error": null,
+          "durability_values": [
+            1.0
+          ],
+          "flags84": [
+            2,
+            6,
+            1048578
+          ],
+          "derailed_observations": 0,
+          "qualification_observations": 0
+        }
+      }
+    }
+  },
+  "limitations": "Same-step and stable-pointer checks do not guarantee an atomic read or same producer phase. Ranges aggregate car observations, not independent events. Stored motion may be stale in skipped branches; no finite-difference validation."
+}

@@ -1,0 +1,37 @@
+{
+  "samples": 798,
+  "errors": [],
+  "unstable": 0,
+  "cross_step": 14,
+  "paused": 302,
+  "route_voltage_values": [
+    25000.0
+  ],
+  "events": [
+    {
+      "index": 0,
+      "time": 36057.609375,
+      "pantograph": 1,
+      "gate": true,
+      "derived_voltage": 25000.0,
+      "cars_checked": 1
+    },
+    {
+      "index": 455,
+      "time": 36065.30078125,
+      "pantograph": 0,
+      "gate": true,
+      "derived_voltage": 25000.0,
+      "cars_checked": 1
+    },
+    {
+      "index": 458,
+      "time": 36065.45703125,
+      "pantograph": 0,
+      "gate": false,
+      "derived_voltage": 0,
+      "cars_checked": 8
+    }
+  ],
+  "limitations": "Derived native display rule, not direct cab-object output or traction power. Sample timing is external and non-atomic."
+}
