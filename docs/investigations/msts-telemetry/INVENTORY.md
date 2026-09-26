@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 372, 'runtime_derived': 24, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 971}
+{'runtime_direct': 382, 'runtime_derived': 25, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 982}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -977,3 +977,14 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | environment.render.selected_frame | Raw selected sky shader frame index | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
 | environment.render.frame_array | Loaded sky shader frame records | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
 | environment.render.frame_scroll | Selected frame texture scroll coefficients | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| audio.stream.state_identity | Per-receiver stream runtime record identity | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.backend_identity | Native stream backend object identity | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.backend_flags | Native stream backend flags | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.queue_head | Stream linked pending-record head | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.queue_count | Number of linked stream pending records when traversal completes | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.cached_volume_curve | Cached stream volume-curve result | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.cached_frequency_curve | Cached stream frequency-curve result | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.trigger_enable_words | Stream trigger-enable mask words | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.volume_factor | Stored stream volume factor | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.interface_identities | Stored buffer and spatial-interface identities | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.stream.trigger_count | Loaded per-stream trigger record count | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |

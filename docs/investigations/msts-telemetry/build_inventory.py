@@ -776,6 +776,23 @@ for name,meaning,typ,units,method in [
         vertex_evidence,'native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes',
         'render/animation updates can continue while gameplay clock paused;inactive objects may retain initialization/stale buffers',
         common+' Initial61sample series entirelyfailed overstrictframe-index guard;retained separately. Correctedreader retainsFFFFFFFF withoutdereference. Pauseddayclock fixed yetlayer0/2UV and4shaderclocksadvance;no universal atomicity,drawvisibility,wall-time equivalence or producer rate. Inactivesatellite retainedtinyUV value;allocated doesnot meanmeaningful. Count/frame bounds are probe guards. Onlyone-frame configured objects observed;frame transitions/reload and broader shader cases unvalidated.')
+audio_stream_evidence=['AUDIO-STREAM-FINDINGS.md','audio-streams-summary.json','pass189-byte-verification.json','pass189/0053f153.asm','pass189/005384fe.c','pass189/0053e2d2.c','captures/audio-streams-paused-01/streams.json','captures/audio-streams-paused-02/streams.json']
+for name,meaning,typ,units,method in [
+    ('state_identity','Per-receiver stream runtime record identity','pointer32','session address;stride0x1c','state=[receiver+0x14]+stream_index*0x1c'),
+    ('backend_identity','Native stream backend object identity','pointer32','session address;may be replaced by condition transitions','[state]'),
+    ('backend_flags','Native stream backend flags','uint32','raw bits;helper005384fe testsbit2;not audibility','[backend+4]'),
+    ('queue_head','Stream linked pending-record head','pointer32','session address;zero empty','[state+4];node next at+8'),
+    ('queue_count','Number of linked stream pending records when traversal completes','derived uint32 or unavailable','records;not seconds or playback position','bounded traversal from[state+4] following node+8;unavailable on bound/cycle/error'),
+    ('cached_volume_curve','Cached stream volume-curve result','float32','native multiplier before global/receiver scaling;not final output volume','state+8'),
+    ('cached_frequency_curve','Cached stream frequency-curve result','float32','native frequency parameter before clamp;not measured hardware output','state+0xc'),
+    ('trigger_enable_words','Stream trigger-enable mask words','2 uint32','bit indexed by trigger index;not firing history','state+0x10 and+0x14'),
+    ('volume_factor','Stored stream volume factor','float32','native multiplier combined with receiver/global and optional curve','state+0x18'),
+    ('interface_identities','Stored buffer and spatial-interface identities','2 pointer32','session addresses;presence not playing/audible','backend+0x30 and+0x74;never invoke from probe'),
+    ('trigger_count','Loaded per-stream trigger record count','uint32','configured triggers;not events fired','stream_definition=[definition+0x14]+index*0x20;count at+0')]:
+    add('audio.stream.'+name,meaning,'shared audio receiver streams;50 player-associated observed;physical AI unvalidated',typ,units,method,
+        audio_stream_evidence,'native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved',
+        'audio processing may continue while gameplay paused;backend replacement and receiver lifetime can invalidate identity',
+        common+' Sequential snapshot;stable rereads and zero observed lock words do not prove atomicity or lifetime. No native/API calls. One stream exceeds256-node research bound;its full queue count is unavailable. Firing history, audio duration, final output volume/frequency and actual audibility are not measured. Cached curve values may remain stale when branches skip them. Mask storage covers64bits;larger trigger counts require separate layout validation. No AI receiver association in this paused session.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

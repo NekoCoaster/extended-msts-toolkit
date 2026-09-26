@@ -33,6 +33,8 @@ The inventory builder now emits installed cab unit tokens as plain strings (for 
 
 This document is a requirements review, not a completion certificate. Current evidence proves useful breadth and several transitions; it does not yet prove comprehensive discovery of all realistically accessible surfaces.
 
+Current follow-up: inventory982 includes loaded ENV selection, sky/layer/satellite parameters and CPU buffers, shader phase semantics, and per-stream audio records. AUDIO-STREAM-FINDINGS.md covers67 live stream states, pending-chain bounds, masks, curve caches and backend identities. Actual audibility, waveform/command payloads and AI audio lifetimes remain open. The historical table above describes the initial920-field review; follow-up findings supersede its listed discovery gaps only within their stated evidence scope. Next audio investigation can decode pending-node payloads and their sample/action links using the verified enqueue routine, without treating a bounded chain as a complete count.
+
 
 Follow-up: ENVIRONMENT-SELECTION-FINDINGS.md now covers selected ENV filename/selector inputs and bounded loaded sky enumeration. Inventory934. Dynamic file/season changes, individual layer/satellite semantics and cloud/sky behavior remain open; this strengthens one discovery surface without closing the broader review.
 

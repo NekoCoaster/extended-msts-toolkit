@@ -151,3 +151,9 @@ Pass181 disk ranges match; three live spans differ in extra callers, with select
 Inventory remains971 with513 evidence paths and126 unchanged original assets. Pass188 verifies3functions453instructions1457bytes disk/live; pass186 rejected clock-writer lead also verifies8functions4228instructions14235bytes. Offline UV comparison excludes unavailable frames and unstable endpoints and reports nonzero-scroll axes separately. Clock wrapping and update ordering are native evidence; multi-frame wrap transitions and shader-list membership are not live validated. No game controls or writes in this checkpoint.
 
 242JSON/108Python sources parse. Raw manifest verifies8529 prior files unchanged and adds49 (8578total). Historical native-test limitations above remain unchanged; no new full native suite or remote CI result is claimed. Goal remains active and PR draft.
+
+## Audio stream checkpoint
+
+982 candidates (382direct25derived68cab507config);521 evidence paths and126 unchanged original assets. Pass189 sixfunctions2645instructions8915bytes match disk/live. Two paused snapshots cover33receivers67streams; first has one retained guard failure, second records256distinct nodes then a research-bound stop for that stream. Its complete queue count is unavailable;66other chains terminate. All67 second-snapshot rereads agree, without an atomicity claim. Seven native bit2 predicates are true, onlyone with a buffer pointer. AI/audio playback transitions remain unvalidated.
+
+244JSON/110Python sources parse;8578old raw hashes unchanged,34added,8612total. No production, game-memory, asset or save changes. Historical native/remote CI limitations remain; goal active,PR draft.
