@@ -178,3 +178,12 @@ One Shift_L press in the visible pause dialog produced two distinct native recor
 1015 candidates (414direct,26derived,68cab,507configuration);570evidence paths exist and126original source assets retain their hashes. Native passes201..206 match exported instruction bytes against disk/live. The46934-byte installed ASV partitions into four top-level blocks; its680-byte header partitions through file offset720. Six live session strings and four raw native Version_* words are newly inventoried. Nine distinct stored/live resource name-word pairs agree across the player/twoAI services and traffic metadata. All captured source-pointer/registry rereads agree; paused clock74360.5859375. No new save/load, UI input or process writes occurred.
 
 268JSON/128Python sources parse. All8808previous raw-evidence hashes verified unchanged;147new raw artifacts produce8955total. Inventory audit and resource comparison pass. Native Version_* producer semantics, optional writer branches and save/load continuity remain open. The historical DeviceGuard4551 native-test limitation remains unresolved and was not retried; remote CI was not inspected. Goal active and PR draft.
+
+
+## Physical save/load and observed reload checkpoint
+
+Inventory1015 unchanged;589evidence paths/126unchanged source assets. Writer/loader/fixup passes207..216 checked;focused routines match disk/live,while213/214 include the known494bc1livepatch in main loading caller. Reused caller exports overlap. Decompiled unreachable-branch artifacts are resolved from assembly,not accepted as native behavior.
+
+Native Save Activity created a new124746byteSAV and reload succeeded. Preserved trainID400007 and23vehicleIDs;all23caraddresses changed;positions/orientations equal. Controls preserved;postloadclock0.6875slater and tiny linear motion differences,so noexactrestorationclaim.239transitionsamples:0outerexceptions but96registryerrors(95null-address,1ownershipmismatch). No physicalAIreload validated. Researchsave retained,gamepausedinloadednotebook.
+
+281JSON/130Python sources parse.8955prior raw hashes unchanged;269new artifacts,9224total. Generated train226rawbytes and4referenceIDs match retained source. Inventoryaudit/analyse_save_reload pass. NativeDeviceGuard4551historical limitation not retried;remoteCI not inspected. Goalactive/PRdraft.

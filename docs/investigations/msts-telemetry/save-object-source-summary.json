@@ -1,0 +1,25 @@
+{
+  "trains": 1,
+  "cars": 23,
+  "raw_spans": 57,
+  "all_raw_rereads_equal": true,
+  "references": 74,
+  "all_reference_rereads_equal": true,
+  "subobjects": 8,
+  "subobject_indices": [
+    0,
+    1,
+    2,
+    3,
+    4294967295,
+    4294967295,
+    4294967295,
+    4294967295
+  ],
+  "all_subobject_pointer_rereads_equal": true,
+  "invalid_definition_links": 0,
+  "registry_stable": true,
+  "paused": 1,
+  "dayclock": 74360.5859375,
+  "limitations": "Only one physical player train; AI physical objects absent. Readable source ranges do not establish valid save output, field semantics, or loader behavior."
+}

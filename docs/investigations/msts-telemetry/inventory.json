@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-26T21:03:19.270896+00:00",
+  "generated_utc": "2026-09-26T21:20:33.252063+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -77,11 +77,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "train.identity",
@@ -94,11 +106,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "train.kind_raw",
@@ -111,11 +135,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "train.is_player",
@@ -145,11 +176,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "train.first_car",
@@ -162,11 +200,30 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "train.last_car",
@@ -179,11 +236,30 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "train.lead_car",
@@ -196,11 +272,30 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "train.service_pointer",
@@ -213,11 +308,30 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "car.identity",
@@ -230,11 +344,16 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "car.train_owner",
@@ -247,11 +366,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "car.links",
@@ -264,11 +395,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "car.definition",
@@ -281,11 +424,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "car.asset_directory",
@@ -332,11 +487,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.position",
@@ -352,11 +514,23 @@
         "captures/ai-running-01/samples.jsonl",
         "TRACK-POSITION-FINDINGS.md",
         "MOTION-DIFFERENCE-FINDINGS.md",
-        "INTEGRATOR-TIME-FINDINGS.md"
+        "INTEGRATOR-TIME-FINDINGS.md",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "live player/AI movement sampled; local body and track reference points compared; clock and producer-phase differences documented",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track traversal uses the native 2048-m tile-origin translation; this does not prove the same inverse is a validated continuous body-world transform through an origin shift. Body and track reference points differ. Physical-body buffers can change and intermediate AI placement/reset phases can yield misleading derivatives. Player physics and AI service movement use distinct observed time bases; do not silently substitute gameplay time or infer a universal velocity correction."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track traversal uses the native 2048-m tile-origin translation; this does not prove the same inverse is a validated continuous body-world transform through an origin shift. Body and track reference points differ. Physical-body buffers can change and intermediate AI placement/reset phases can yield misleading derivatives. Player physics and AI service movement use distinct observed time bases; do not silently substitute gameplay time or infer a universal velocity correction. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "body.right",
@@ -369,11 +543,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "body.up",
@@ -386,11 +572,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "body.forward",
@@ -403,11 +601,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "body.velocity",
@@ -438,11 +648,18 @@
         "analyse_integrator_motion.py",
         "integrator-moving-grain-01-integrator-summary.json",
         "captures/integrator-moving-grain-01/metadata.json",
-        "captures/integrator-moving-final-paused-01/samples.jsonl"
+        "captures/integrator-moving-final-paused-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers; combined moving player/AI comparison supports distinct motion time bases",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis under physics time is pending."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis under physics time is pending. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.angular_velocity",
@@ -473,11 +690,18 @@
         "analyse_integrator_motion.py",
         "integrator-moving-grain-01-integrator-summary.json",
         "captures/integrator-moving-grain-01/metadata.json",
-        "captures/integrator-moving-final-paused-01/samples.jsonl"
+        "captures/integrator-moving-final-paused-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers; combined moving player/AI comparison supports distinct motion time bases",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis under physics time is pending."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis under physics time is pending. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.momentum",
@@ -490,11 +714,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.angular_momentum",
@@ -507,11 +738,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.inverse_mass",
@@ -524,11 +762,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.flags_raw",
@@ -541,11 +786,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.derailed",
@@ -558,11 +810,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "body.resting",
@@ -575,11 +834,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-OBJECT-SURFACE-FINDINGS.md",
+        "save-object-source-summary.json",
+        "captures/save-object-sources-paused-01/sources.json",
+        "pass207-byte-verification.json",
+        "pass208-byte-verification.json",
+        "pass209-byte-verification.json",
+        "pass210-byte-verification.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs."
     },
     {
       "id": "engine.definition",
@@ -592,11 +858,23 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SAVE-LOAD-IDENTITY-FINDINGS.md",
+        "pass211-byte-verification.json",
+        "pass212-byte-verification.json",
+        "pass213-byte-verification.json",
+        "pass214-byte-verification.json",
+        "pass215-byte-verification.json",
+        "pass216-byte-verification.json",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md",
+        "generated-save-structure.json",
+        "save-reload-comparison.json",
+        "captures/reload-transition-01/metadata.json",
+        "captures/after-reload-services-01/services.jsonl"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
     },
     {
       "id": "engine.max_power",

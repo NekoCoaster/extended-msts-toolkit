@@ -46,3 +46,12 @@ Current1005 follow-up: audio pending/nested records and native input structures 
 ## Serialization and session metadata checkpoint
 
 The current inventory is1015 candidates (414direct,26derived,68cab,507configuration), with no keep/drop decisions. SERIALIZATION-SURVEY-FINDINGS.md distinguishes the installed ASV reduced serialization path from full SAV output. SAVE-HEADER-FINDINGS.md and SAVE-HEADER-TAIL-FINDINGS.md cover the stored header and live source metadata. The prefix-only coverage note is superseded by a complete structural partition through offset720; field semantics, other writer branches and save/load lifecycle remain incomplete. Nine distinct stored resource name/word pairs match the live player/two AI service sources. These native Version_* words retain raw semantics pending producer tracing. Audit:570evidence paths,126original assets unchanged. No new saves, process writes or UI input in this checkpoint. The research goal remains active; station/player crossing, AI lifecycle/rephysicalization, origin rebasing and broader runtime validation remain open.
+
+
+Physical save-surface follow-up: SAVE-OBJECT-SURFACE-FINDINGS.md maps SaveTrain/Engine/Wagon/Physobj/Collobj/Static writer inputs, raw byte ranges, reference IDs and four engine-definition indexes. Paused source snapshot covers23player vehicles,57stable raw rereads,74reference rereads and8subobject links. No physicalAI or save/load test;inventory stays1015. Raw ranges are evidence for further semantic discovery,not new telemetry channels.
+
+
+Save/load identity follow-up: SAVE-LOAD-IDENTITY-FINDINGS.md traces staged IDs, cleared copied pointers, definition-index reconstruction and later car/train/service fixups.9existing association rows gain lifecycle constraints;count1015unchanged. A live save/load and reliable external completion gate remain unvalidated. Broad caller494850 retains known live patch494bc1;focused loaders/fixups match.
+
+
+Observed save/reload: SAVE-RELOAD-RUNTIME-FINDINGS.md records a new native SAV and successful reload. All23vehicle addresses changed while IDs/positions/orientations matched.96of239transition samples contain registry errors,including oneownershipmismatch. This closes the no-observed-reload gap for this player fixture only;completefieldfidelity,loadcompletegate andphysicalAIremainopen. Inventory1015unchanged. Gamepausedinloadednotebook;researchsavepreserved.
