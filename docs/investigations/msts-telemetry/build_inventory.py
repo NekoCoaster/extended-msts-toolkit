@@ -426,10 +426,58 @@ for name,meaning,typ,unit,offset in [
 for row in rows:
     if row['id'].startswith('event.receiver_'):
         row['evidence'].extend(['pass116-byte-verification.json','pass117-byte-verification.json','electric-event-helper-table.json','captures/electric-event-throttle-paused-01/event-routes.json','captures/electric-event-source-paused-01/traction.json','captures/electric-event-idle-restored-01/event-routes.json'])
+        row['evidence'].extend([f'pass{i}-byte-verification.json' for i in range(118,124)]+['event-receiver-references/references.tsv','event-class-references/references.tsv','event-update-references/references.tsv'])
     if row['id']=='event.receiver_scalar1':
         row['units']='throttle percent for tested electric producer; other producers unverified'
         row['evidence_status']='electric broadcast producer traced; both lead receiver values0->2.5->0 match throttle actuation'
         row['limitations']=common+' Nonzero electric scalar1 validated only. Receivers can retain values if broadcast filter skips their car. Other engine types, consumers and AI untested; not actual force or power.'
+processing_evidence=['ELECTRIC-EVENT-FINDINGS.md','pass124-byte-verification.json','captures/electric-event-processing-paused-01/event-routes.json','captures/electric-event-processing-paused-02/event-routes.json']
+for row in rows:
+    if row['id'].startswith('event.receiver_'):
+        row['evidence'].extend(processing_evidence)
+        row['update_or_lifecycle']='receiver processing can continue while simulation paused; selected event bits cleared, scalars copied to previous fields unless flags1c bit0x200; no measured cadence'
+        row['limitations']=row['limitations'].replace('consumers and AI untested','full consumer action semantics and AI untested').replace('consumers and AI','full consumer action semantics and AI')
+for name,meaning,typ,unit,offset in [
+ ('event.receiver_previous_scalar1','Scalar1 retained at previous completed normal receiver processing','float32','electric throttle percent in tested producer',0x3c),
+ ('event.receiver_previous_scalar2','Scalar2 retained at previous completed normal receiver processing','float32','same units as receiver scalar2; unresolved',0x40),
+ ('event.receiver_previous_scalar3','Scalar3 retained at previous completed normal receiver processing','float32','same units as receiver scalar3; unresolved',0x44),
+ ('event.receiver_last_processing_tick','Windows tick saved by normal receiver processing','uint32','milliseconds of Windows uptime modulo2^32',0x50)]:
+    add(name,meaning,'two electric player receivers observed; AI and other contexts untested',typ,unit,f'receiver+0x{offset:x}; resolve handles as read_electric_event_routes.py',processing_evidence,'native processing stores traced; paused tick advances with unchanged simulation time','normal receiver processing; skipped in flags1c bit0x200 path; not physics cadence',common+' Non-atomic reads. Scalar previous values validated at zero only. Tick is not simulation time or event timestamp; wraparound and cadence not validated. Normal pass timestamp does not prove every stream processed or sound played.')
+receiver_list_evidence=['RECEIVER-LIST-FINDINGS.md','pass120-byte-verification.json','pass123-byte-verification.json','pass124-byte-verification.json','captures/receiver-list-paused-01/receivers.json','captures/receiver-list-labels-paused-01/receivers.json']
+for name,meaning,typ,unit,method in [
+ ('event.receiver_list','Native processing-list receiver identities and physical-car handle matches','bounded object list','handles/pointers; session scoped','sentinel=[[7c32f0]+14a]; node next+0 receiver+8; verify receiver+4 in registry'),
+ ('event.receiver_definition_label','Loaded receiver definition label','UTF16 string','text; not a unique identity','[[[receiver+10]+4]+4]; bounded512 code units'),
+ ('event.receiver_stream_count','Loaded definition stream count','uint32','declared streams, not audible count','[receiver+10]+10'),
+ ('event.receiver_trigger_state_slots','Loaded definition indexed trigger-state allocation count','uint32','four-byte state slots, not event count','[receiver+10]+0c')]:
+    add(name,meaning,'session receiver list;9 player-associated and11 unassociated observed; AI untested',typ,unit,method,receiver_list_evidence,'native traversal/allocation/label sources traced;20 live receivers with48 streams','list changes with receiver lifecycle; metadata loaded with definitions; cadence unmeasured',common+' Non-atomic. Probe bounds are not native capacities.11 unassociated receivers are not assumed AI or environmental. Duplicate labels exist; paths and owner semantics not inferred. Declared stream/state counts do not prove playback.')
+distance_evidence=['RECEIVER-LIST-FINDINGS.md','pass125-byte-verification.json','pass126-byte-verification.json','receiver-distance-summary.json','captures/receiver-distance-paused-01/receivers.json']
+for name,meaning,typ,unit,method in [
+ ('event.receiver_position','Receiver position used by audio distance calculation','float32 vector3','native coordinates; unit/origin unverified','receiver+58/+5c/+60'),
+ ('event.listener_position','Listener position used by receiver distance calculation','float32 vector3','native coordinates; unit/origin unverified','[7c32f0]+14e/+152/+156'),
+ ('event.receiver_squared_distance','Stored squared receiver-to-listener separation','float32','native coordinate units squared','receiver+38; update skipped when flags1c bit4 set'),
+ ('event.receiver_activation_distance_threshold','Loaded activation squared-distance threshold','float32','native coordinate units squared; compare only when activation flag8 set','[receiver+10]+1c; flags at definition+18'),
+ ('event.receiver_deactivation_distance_threshold','Loaded deactivation squared-distance threshold','float32','native coordinate units squared; compare only when deactivation flag10hex set','[receiver+10]+28; flags at definition+24')]:
+    add(name,meaning,'session receivers; player-associated and unassociated observed; AI untested',typ,unit,method,distance_evidence,'vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence','audio processing independent of paused simulation; thresholds are loaded configuration',common+' Not linear distance. Skip-flag receiver retains0 despite nonzero separation. Coordinate origin/units, moving accuracy and scalability selection remain unverified. Zero disabled threshold is not zero range.')
+camera_receiver_evidence=['RECEIVER-LIST-FINDINGS.md','pass127-byte-verification.json','receiver-camera-summary.json','captures/receiver-external-camera-01/receivers.json','captures/receiver-cab-restored-01/receivers.json']
+add('event.receiver_inactive_condition','Receiver inactive-condition bit selected by camera/distance conditions','session receiver list; player and unassociated sources tested; AI untested','bit','boolean','receiver+1c bit0x2',camera_receiver_evidence,'set/clear native writers traced;12 of20 flags change during cab/external/cab and all20 restore','audio condition processing; changes while receivers remain registered',common+' Not actual playback or audibility. Triggers may still be examined while inactive. Camera and distance changed together; separated snapshots do not measure latency.')
+brake_event_evidence=['VEHICLE-SYSTEM-FINDINGS.md','pass128-byte-verification.json','pass129-byte-verification.json','pass130-byte-verification.json','captures/brake-reference-paused-01/brakes.json','pass131-byte-verification.json','brake-adjustments-summary.json','captures/brake-adjustments-01/samples.jsonl','captures/brake-adjustments-paused-02/brakes.json']
+for name,meaning,typ,unit,method in [
+ ('event.brake_pressure_reference','Retained cylinder-pressure reference for brake sound events','float32','PSI','car+268; producer005dcdab requires locomotive context equal player lead'),
+ ('event.brake_pressure_rise_latch','Latch suppressing repeated rising-pressure sound events','uint32','boolean-like 0/1','car+26c'),
+ ('event.brake_pressure_fall_latch','Latch suppressing repeated falling-pressure sound events','uint32','boolean-like 0/1','car+270'),
+ ('event.brake_pressure_rise_timer','Shared rising-pressure event timer','float32','simulation time units; nominal seconds','global80a1f0'),
+ ('event.brake_pressure_fall_timer','Shared falling-pressure event timer','float32','simulation time units; nominal seconds','global80a1ec')]:
+    add(name,meaning,'player-gated producer; lead reference observed, follower references zero; AI unvalidated',typ,unit,method,brake_event_evidence,'native producer and caller traced; eight-car series; lead rising latch and reference transition observed','brake update path; timers decremented by train+8e, exact invocation cadence unmeasured',common+' Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling.')
+brake_map=json.loads((ROOT/'brake-parameter-map.json').read_text(encoding='utf-8'))
+for entry in brake_map['entries']:
+    for row in rows:
+        if row['id'] in ('config..eng:Wagon.'+entry['label'],'config..wag:Wagon.'+entry['label']):
+            row['extraction']+=' Loaded vehicle definition: [car+94]+'+entry['definition_offset']+'; token'+entry['token']+' parser branch'+entry['parser_target']+'.'
+            row['evidence']+=['brake-parameter-map.json','VEHICLE-SYSTEM-FINDINGS.md']
+            row['evidence_status']+='; native token/destination mapped and Acela loaded values read'
+            row['limitations']+=' Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type.'
+for name,meaning,offset in [('car.auxiliary_reservoir_pressure','Current distributor auxiliary-reservoir pressure',0x224),('car.emergency_reservoir_pressure','Current distributor emergency-reservoir pressure',0x228)]:
+    add(name,meaning,'eight player Acela cars observed; AI and other brake types unvalidated','float32','PSI in tested distributor model',f'car+{offset:#x}; distinguish loaded definition998/99c',['VEHICLE-SYSTEM-FINDINGS.md','brake-parameter-map.json','pass131-byte-verification.json','pass58-byte-verification.json'],'native reservoir consumers and configuration limits traced; live paused values read','brake update replenishment/application branches; independent cadence unmeasured',common+' Other brake types may reuse these fields differently. car234 supplying these reservoirs is not yet semantically named. Unit conversion and release/AI transitions untested.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

@@ -58,3 +58,16 @@ New evidence covers moving player/AI stored motion, shared Default parameters, s
 Pass101 has three live entry-span mismatches, separately recorded; it was an exploratory path rather than evidence that all native instructions match. Earlier pass70/71/82 exceptions remain documented. No blanket byte-equality claim follows from the newer passing targeted comparisons. Moving electric traction, event clearing, broader AI systems and the full remaining scope in CHECKPOINT.md are still open.
 
 The full native batch remains incomplete due to the previously observed Device Guard exit4551. No policy bypass or equivalent retry is part of this documentation checkpoint. Current validation passed: source/toolchain/corresponding-source checks for507 files,28 frontend source guards,29 repository-tool tests and both existing frontend/runtime PE import audits. These are documentation/tooling checks using unchanged binaries, not new full native gameplay validation.
+
+
+## Receiver lifecycle and brake systems checkpoint — 27 September 2026
+
+887 candidates:293 direct-read candidates/structures,19 derived,68 cab and507 configuration paths.151 published JSON files and63 Python sources parse. The canonical audit checks346 evidence paths and126 unchanged asset hashes.6122 existing raw evidence hashes remain unchanged;224 entries added (6346 total). Native exports/captures remain local and inventory decompiler excerpts are stripped in publication.
+
+Receiver-list discovery observed20 receivers,9 linked to player cars,48 declared streams, camera/distance activation changes and processing timestamps advancing while simulation remained paused. Event masks coalesce and clear; they cannot represent a complete ordered event history or prove playback. Twelve flags changed during cab/external/cab observation and all returned to baseline.
+
+Brake observation captured1740 samples, zero reader errors, and13920 exact pressure-to-force formula comparisons. A rising pressure reference/latch transition was observed; full release/falling events, actual wheel force and AI brakes remain unverified.23 named configuration fields now have loaded native-definition mappings; two new candidates read actual auxiliary/emergency reservoir pressures. The loaded configuration values are not the live reservoir values. Six unequal-cylinder samples cannot establish physical propagation timing under sequential reads.
+
+Previous66f5bd1 remote workflow36254778869 completed successfully. This checkpoint's new remote checks are separate. The prior full-native DeviceGuard4551 block remains unresolved; no policy bypass or equivalent retry was attempted. Production sources and binaries remain unchanged. Goal remains active and PR remains draft.
+
+Validation passed:534 source files and complete bundled toolchain/source verified;28 frontend source guards,29 repository-tool tests and both PE import audits passed using unchanged binaries. JSON/Python parsing and diff whitespace checks passed. These checks do not prove complete discovery or replace runtime validation.

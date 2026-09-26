@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 272, 'runtime_derived': 19, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 866}
+{'runtime_direct': 293, 'runtime_derived': 19, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 887}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -426,15 +426,15 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..eng:Wagon | Wagon configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Adheasion | Wagon.Adheasion configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.AntiSlip | Wagon.AntiSlip configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeAirPressureGainInResForOnePoundFromPipe | Wagon.BrakeAirPressureGainInResForOnePoundFromPipe configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce | Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeDistributorApplicationRate | Wagon.BrakeDistributorApplicationRate configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeDistributorEmergencyResPressure | Wagon.BrakeDistributorEmergencyResPressure configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeDistributorFullServicePressure | Wagon.BrakeDistributorFullServicePressure configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeDistributorMaxAuxilaryResPressure | Wagon.BrakeDistributorMaxAuxilaryResPressure configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeDistributorNormalFullReleasePressure | Wagon.BrakeDistributorNormalFullReleasePressure configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeDistributorReleaseRate | Wagon.BrakeDistributorReleaseRate configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.BrakeDistributorTrainPipeControlRatio | Wagon.BrakeDistributorTrainPipeControlRatio configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon.BrakeAirPressureGainInResForOnePoundFromPipe | Wagon.BrakeAirPressureGainInResForOnePoundFromPipe configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce | Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeDistributorApplicationRate | Wagon.BrakeDistributorApplicationRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeDistributorEmergencyResPressure | Wagon.BrakeDistributorEmergencyResPressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeDistributorFullServicePressure | Wagon.BrakeDistributorFullServicePressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeDistributorMaxAuxilaryResPressure | Wagon.BrakeDistributorMaxAuxilaryResPressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeDistributorNormalFullReleasePressure | Wagon.BrakeDistributorNormalFullReleasePressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeDistributorReleaseRate | Wagon.BrakeDistributorReleaseRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.BrakeDistributorTrainPipeControlRatio | Wagon.BrakeDistributorTrainPipeControlRatio configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..eng:Wagon.BrakeEquipmentType | Wagon.BrakeEquipmentType configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.BrakeSystemType | Wagon.BrakeSystemType configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Buffers.Angle | Wagon.Buffers.Angle configured value | static configuration extracted; not a live changing value |
@@ -457,9 +457,9 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..eng:Wagon.DerailRailForce | Wagon.DerailRailForce configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.DerailRailHeight | Wagon.DerailRailHeight configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.EmergencyBrakeResMaxPressure | Wagon.EmergencyBrakeResMaxPressure configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.EmergencyResCapacity | Wagon.EmergencyResCapacity configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.EmergencyResChargingRate | Wagon.EmergencyResChargingRate configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.EmergencyResVolumeMultiplier | Wagon.EmergencyResVolumeMultiplier configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon.EmergencyResCapacity | Wagon.EmergencyResCapacity configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.EmergencyResChargingRate | Wagon.EmergencyResChargingRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.EmergencyResVolumeMultiplier | Wagon.EmergencyResVolumeMultiplier configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..eng:Wagon.Friction | Wagon.Friction configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.InertiaTensor.Box | Wagon.InertiaTensor.Box configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Inside.PassengerCabinFile | Wagon.Inside.PassengerCabinFile configured value | static configuration extracted; not a live changing value |
@@ -486,18 +486,18 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..eng:Wagon.Lights.Light.States.State.Transition | Wagon.Lights.Light.States.State.Transition configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Lights.Light.Type | Wagon.Lights.Light.Type configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Mass | Wagon.Mass configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.MaxApplicationRate | Wagon.MaxApplicationRate configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.MaxAuxilaryChargingRate | Wagon.MaxAuxilaryChargingRate configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon.MaxApplicationRate | Wagon.MaxApplicationRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..eng:Wagon.MaxAuxilaryChargingRate | Wagon.MaxAuxilaryChargingRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..eng:Wagon.MaxBrakeForce | Wagon.MaxBrakeForce configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.MaxHandbrakeForce | Wagon.MaxHandbrakeForce configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.MaxReleaseRate | Wagon.MaxReleaseRate configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon.MaxReleaseRate | Wagon.MaxReleaseRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..eng:Wagon.NumWheels | Wagon.NumWheels configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.NumberOfHandbrakeLeverSteps | Wagon.NumberOfHandbrakeLeverSteps configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.PassengerCapacity | Wagon.PassengerCapacity configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Size | Wagon.Size configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Sound | Wagon.Sound configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.Thumbnail | Wagon.Thumbnail configured value | static configuration extracted; not a live changing value |
-| config..eng:Wagon.TripleValveRatio | Wagon.TripleValveRatio configured value | static configuration extracted; not a live changing value |
+| config..eng:Wagon.TripleValveRatio | Wagon.TripleValveRatio configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..eng:Wagon.Type | Wagon.Type configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.WagonShape | Wagon.WagonShape configured value | static configuration extracted; not a live changing value |
 | config..eng:Wagon.WheelRadius | Wagon.WheelRadius configured value | static configuration extracted; not a live changing value |
@@ -527,14 +527,14 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..wag:Wagon.Adheasion | Wagon.Adheasion configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.AntiSlip | Wagon.AntiSlip configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.AuxilaryLeakRate | Wagon.AuxilaryLeakRate configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce | Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeDistributorApplicationRate | Wagon.BrakeDistributorApplicationRate configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeDistributorEmergencyResPressure | Wagon.BrakeDistributorEmergencyResPressure configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeDistributorFullServicePressure | Wagon.BrakeDistributorFullServicePressure configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeDistributorMaxAuxilaryResPressure | Wagon.BrakeDistributorMaxAuxilaryResPressure configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeDistributorNormalFullReleasePressure | Wagon.BrakeDistributorNormalFullReleasePressure configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeDistributorReleaseRate | Wagon.BrakeDistributorReleaseRate configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.BrakeDistributorTrainPipeControlRatio | Wagon.BrakeDistributorTrainPipeControlRatio configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce | Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.BrakeDistributorApplicationRate | Wagon.BrakeDistributorApplicationRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.BrakeDistributorEmergencyResPressure | Wagon.BrakeDistributorEmergencyResPressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.BrakeDistributorFullServicePressure | Wagon.BrakeDistributorFullServicePressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.BrakeDistributorMaxAuxilaryResPressure | Wagon.BrakeDistributorMaxAuxilaryResPressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.BrakeDistributorNormalFullReleasePressure | Wagon.BrakeDistributorNormalFullReleasePressure configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.BrakeDistributorReleaseRate | Wagon.BrakeDistributorReleaseRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.BrakeDistributorTrainPipeControlRatio | Wagon.BrakeDistributorTrainPipeControlRatio configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..wag:Wagon.BrakeEquipmentType | Wagon.BrakeEquipmentType configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.BrakeSystemType | Wagon.BrakeSystemType configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Buffers.Angle | Wagon.Buffers.Angle configured value | static configuration extracted; not a live changing value |
@@ -558,8 +558,8 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..wag:Wagon.Door | Wagon.Door configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.EmergencyBrakeResMaxPressure | Wagon.EmergencyBrakeResMaxPressure configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.EmergencyBrakeTriggerRate | Wagon.EmergencyBrakeTriggerRate configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.EmergencyResCapacity | Wagon.EmergencyResCapacity configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.EmergencyResChargingRate | Wagon.EmergencyResChargingRate configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.EmergencyResCapacity | Wagon.EmergencyResCapacity configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.EmergencyResChargingRate | Wagon.EmergencyResChargingRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..wag:Wagon.ExtraParameters | Wagon.ExtraParameters configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.FreightAnim | Wagon.FreightAnim configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Friction | Wagon.Friction configured value | static configuration extracted; not a live changing value |
@@ -600,11 +600,11 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..wag:Wagon.Lights.Light.States.State.Transition | Wagon.Lights.Light.States.State.Transition configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Lights.Light.Type | Wagon.Lights.Light.Type configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Mass | Wagon.Mass configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.MaxApplicationRate | Wagon.MaxApplicationRate configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.MaxAuxilaryChargingRate | Wagon.MaxAuxilaryChargingRate configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.MaxApplicationRate | Wagon.MaxApplicationRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
+| config..wag:Wagon.MaxAuxilaryChargingRate | Wagon.MaxAuxilaryChargingRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..wag:Wagon.MaxBrakeForce | Wagon.MaxBrakeForce configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.MaxHandbrakeForce | Wagon.MaxHandbrakeForce configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.MaxReleaseRate | Wagon.MaxReleaseRate configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.MaxReleaseRate | Wagon.MaxReleaseRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..wag:Wagon.MaxTilt | Wagon.MaxTilt configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Mirror | Wagon.Mirror configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.NumWheels | Wagon.NumWheels configured value | static configuration extracted; not a live changing value |
@@ -615,12 +615,12 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | config..wag:Wagon.QuickReleaseMagnification | Wagon.QuickReleaseMagnification configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.QuickReleaseTriggerRate | Wagon.QuickReleaseTriggerRate configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Relaxation | Wagon.Relaxation configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.RetainingValveSlowReleaseRate | Wagon.RetainingValveSlowReleaseRate configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.RetainingValveSlowReleaseRate | Wagon.RetainingValveSlowReleaseRate configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..wag:Wagon.Size | Wagon.Size configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Sound | Wagon.Sound configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.Thumbnail | Wagon.Thumbnail configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.TrainPipeLeakRate | Wagon.TrainPipeLeakRate configured value | static configuration extracted; not a live changing value |
-| config..wag:Wagon.TripleValveRatio | Wagon.TripleValveRatio configured value | static configuration extracted; not a live changing value |
+| config..wag:Wagon.TripleValveRatio | Wagon.TripleValveRatio configured value | static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read |
 | config..wag:Wagon.Type | Wagon.Type configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.WagonShape | Wagon.WagonShape configured value | static configuration extracted; not a live changing value |
 | config..wag:Wagon.WheelRadius | Wagon.WheelRadius configured value | static configuration extracted; not a live changing value |
@@ -872,3 +872,24 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | event.receiver_scalar1 | Receiver retained scalar variable1 | electric broadcast producer traced; both lead receiver values0->2.5->0 match throttle actuation |
 | event.receiver_scalar2 | Receiver retained scalar variable2 | native receiver stores traced; stable paused Acela read |
 | event.receiver_scalar3 | Receiver retained scalar variable3 | native receiver stores traced; stable paused Acela read |
+| event.receiver_previous_scalar1 | Scalar1 retained at previous completed normal receiver processing | native processing stores traced; paused tick advances with unchanged simulation time |
+| event.receiver_previous_scalar2 | Scalar2 retained at previous completed normal receiver processing | native processing stores traced; paused tick advances with unchanged simulation time |
+| event.receiver_previous_scalar3 | Scalar3 retained at previous completed normal receiver processing | native processing stores traced; paused tick advances with unchanged simulation time |
+| event.receiver_last_processing_tick | Windows tick saved by normal receiver processing | native processing stores traced; paused tick advances with unchanged simulation time |
+| event.receiver_list | Native processing-list receiver identities and physical-car handle matches | native traversal/allocation/label sources traced;20 live receivers with48 streams |
+| event.receiver_definition_label | Loaded receiver definition label | native traversal/allocation/label sources traced;20 live receivers with48 streams |
+| event.receiver_stream_count | Loaded definition stream count | native traversal/allocation/label sources traced;20 live receivers with48 streams |
+| event.receiver_trigger_state_slots | Loaded definition indexed trigger-state allocation count | native traversal/allocation/label sources traced;20 live receivers with48 streams |
+| event.receiver_position | Receiver position used by audio distance calculation | vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence |
+| event.listener_position | Listener position used by receiver distance calculation | vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence |
+| event.receiver_squared_distance | Stored squared receiver-to-listener separation | vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence |
+| event.receiver_activation_distance_threshold | Loaded activation squared-distance threshold | vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence |
+| event.receiver_deactivation_distance_threshold | Loaded deactivation squared-distance threshold | vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence |
+| event.receiver_inactive_condition | Receiver inactive-condition bit selected by camera/distance conditions | set/clear native writers traced;12 of20 flags change during cab/external/cab and all20 restore |
+| event.brake_pressure_reference | Retained cylinder-pressure reference for brake sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| event.brake_pressure_rise_latch | Latch suppressing repeated rising-pressure sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| event.brake_pressure_fall_latch | Latch suppressing repeated falling-pressure sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| event.brake_pressure_rise_timer | Shared rising-pressure event timer | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| event.brake_pressure_fall_timer | Shared falling-pressure event timer | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| car.auxiliary_reservoir_pressure | Current distributor auxiliary-reservoir pressure | native reservoir consumers and configuration limits traced; live paused values read |
+| car.emergency_reservoir_pressure | Current distributor emergency-reservoir pressure | native reservoir consumers and configuration limits traced; live paused values read |

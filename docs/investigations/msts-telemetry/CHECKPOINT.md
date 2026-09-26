@@ -12,7 +12,7 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 272 direct-read candidates/structures, 19 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 866 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+Current inventory has 293 direct-read candidates/structures, 19 derived candidates, 68 native cab channels (59 declared in installed cab files) and 507 configuration paths (474 leaf paths and 37 paths with direct values beside children, with four shared paths), totaling 887 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
 
 Latest test leaves Acela Express paused at36104.00390625 on Northeast Corridor Explore Route, stationary, throttle idle, forward direction and pantograph control up. Steam and preferred diesel evidence are preserved in separate captures.
 
@@ -118,3 +118,11 @@ Use Escape and the visible pause menu for long analysis work. The attempted Paus
 [Electric traction findings](ELECTRIC-TRACTION-FINDINGS.md) separates the calculation gate, potentially stale cached throttle/force limit and current-source producer, with a guarded paused Acela baseline. Moving electric validation remains open.
 
 [Electric event findings](ELECTRIC-EVENT-FINDINGS.md) traces two registry-backed receivers, retained event bitmasks and three scalar slots. These do not provide a complete event history; clearing, playback, AI applicability and nonzero scalar transitions remain open.
+
+[Receiver list findings](RECEIVER-LIST-FINDINGS.md) records20 live receiver identities, loaded labels,48 declared streams and bounded player-car associations. Eleven unmatched receivers remain without verified ownership.
+
+Brake checkpoint: passes128–130 trace the brake dispatcher, caller and pressure sound-event references. Five additional candidates preserve the retained reference, directional latches and shared timers. Eight paused Acela cars were read without writes; pressure propagation and active event transitions remain untested. See VEHICLE-SYSTEM-FINDINGS.md and read_brake_state.py. This checkpoint extends published66f5bd1; discovery goal remains active.
+
+Brake transition follow-up:1740 samples and13920 exact per-car pressure/force comparisons on Acela, with rising sound-reference/latch transition. Pipe values match across cars; six cylinder differences cannot establish propagation timing under sequential reads. Full release/falling events and AI brake tests remain open. Details: VEHICLE-SYSTEM-FINDINGS.md and brake-adjustments-summary.json.
+
+Reservoir mapping:23 native brake parameter labels are bound to loaded definition offsets, enriching existing configuration candidates. Two current reservoir-pressure candidates added; configuration pressure defaults are explicitly separated from live pressure. See brake-parameter-map.json. This research checkpoint extends66f5bd1.

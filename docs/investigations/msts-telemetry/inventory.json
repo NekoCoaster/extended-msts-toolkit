@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-26T16:12:10.846877+00:00",
+  "generated_utc": "2026-09-26T16:43:13.977201+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 272,
+    "runtime_direct": 293,
     "runtime_derived": 19,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 866
+    "total": 887
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -17537,7 +17537,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x958; token0x401b5 parser branch0x616119.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
@@ -17546,11 +17546,13 @@
             "0.25"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeCylinderPressureForMaxBrakeBrakeForce",
@@ -17558,7 +17560,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x954; token0x401a8 parser branch0x615e70.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
@@ -17583,11 +17585,13 @@
             "70"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeDistributorApplicationRate",
@@ -17595,7 +17599,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x980; token0x401af parser branch0x61604b.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
@@ -17612,11 +17616,13 @@
             "15"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeDistributorEmergencyResPressure",
@@ -17624,7 +17630,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x978; token0x401ad parser branch0x615fc5.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
@@ -17641,11 +17647,13 @@
             "110"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeDistributorFullServicePressure",
@@ -17653,7 +17661,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x96c; token0x401aa parser branch0x615efc.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
@@ -17670,11 +17678,13 @@
             "82"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeDistributorMaxAuxilaryResPressure",
@@ -17682,7 +17692,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x974; token0x401ac parser branch0x615f82.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
@@ -17699,11 +17709,13 @@
             "110"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeDistributorNormalFullReleasePressure",
@@ -17711,7 +17723,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x990; token0x401b3 parser branch0x6161ea.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
@@ -17728,11 +17740,13 @@
             "110"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeDistributorReleaseRate",
@@ -17740,7 +17754,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x97c; token0x401ae parser branch0x616008.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
@@ -17757,11 +17771,13 @@
             "10"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeDistributorTrainPipeControlRatio",
@@ -17769,7 +17785,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x98c; token0x401b2 parser branch0x6161a4.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acela.eng",
@@ -17786,11 +17802,13 @@
             "2.03"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.BrakeEquipmentType",
@@ -18631,7 +18649,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x95c; token0x401a5 parser branch0x615d9f.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
@@ -18656,11 +18674,13 @@
             "10"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.EmergencyResChargingRate",
@@ -18668,7 +18688,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x960; token0x401a6 parser branch0x615de5.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
@@ -18693,11 +18713,13 @@
             "30"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.EmergencyResVolumeMultiplier",
@@ -18705,7 +18727,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x968; token0x401a9 parser branch0x615eb6.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
@@ -18714,11 +18736,13 @@
             "1.15"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.Friction",
@@ -19776,7 +19800,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x94c; token0x401a3 parser branch0x615d14.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
@@ -19801,11 +19825,13 @@
             "15"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.MaxAuxilaryChargingRate",
@@ -19813,7 +19839,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x950; token0x401a4 parser branch0x615d5a.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
@@ -19838,11 +19864,13 @@
             "15"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.MaxBrakeForce",
@@ -19924,7 +19952,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x948; token0x401a2 parser branch0x615cce.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
@@ -19949,11 +19977,13 @@
             "15"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.NumWheels",
@@ -20189,7 +20219,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x944; token0x401a1 parser branch0x615c89.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000.eng",
@@ -20214,11 +20244,13 @@
             "2.5"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..eng:Wagon.Type",
@@ -21249,7 +21281,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x954; token0x401a8 parser branch0x615e70.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
@@ -21274,11 +21306,13 @@
             "50"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeDistributorApplicationRate",
@@ -21286,7 +21320,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x980; token0x401af parser branch0x61604b.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
@@ -21311,11 +21345,13 @@
             "15"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeDistributorEmergencyResPressure",
@@ -21323,7 +21359,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x978; token0x401ad parser branch0x615fc5.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
@@ -21348,11 +21384,13 @@
             "110"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeDistributorFullServicePressure",
@@ -21360,7 +21398,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x96c; token0x401aa parser branch0x615efc.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
@@ -21385,11 +21423,13 @@
             "82"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeDistributorMaxAuxilaryResPressure",
@@ -21397,7 +21437,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x974; token0x401ac parser branch0x615f82.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
@@ -21422,11 +21462,13 @@
             "110"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeDistributorNormalFullReleasePressure",
@@ -21434,7 +21476,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x990; token0x401b3 parser branch0x6161ea.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
@@ -21459,11 +21501,13 @@
             "110"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeDistributorReleaseRate",
@@ -21471,7 +21515,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x97c; token0x401ae parser branch0x616008.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
@@ -21496,11 +21540,13 @@
             "10"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeDistributorTrainPipeControlRatio",
@@ -21508,7 +21554,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x98c; token0x401b2 parser branch0x6161a4.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\acelabistrocar.wag",
@@ -21533,11 +21579,13 @@
             "2.03"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.BrakeEquipmentType",
@@ -22401,7 +22449,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x95c; token0x401a5 parser branch0x615d9f.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
@@ -22426,11 +22474,13 @@
             "14"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.EmergencyResChargingRate",
@@ -22438,7 +22488,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x960; token0x401a6 parser branch0x615de5.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
@@ -22463,11 +22513,13 @@
             "18"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.ExtraParameters",
@@ -23932,7 +23984,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x94c; token0x401a3 parser branch0x615d14.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
@@ -23957,11 +24009,13 @@
             "20"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.MaxAuxilaryChargingRate",
@@ -23969,7 +24023,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x950; token0x401a4 parser branch0x615d5a.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
@@ -23994,11 +24048,13 @@
             "29"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.MaxBrakeForce",
@@ -24080,7 +24136,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x948; token0x401a2 parser branch0x615cce.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
@@ -24105,11 +24161,13 @@
             "30"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.MaxTilt",
@@ -24376,7 +24434,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x964; token0x401a7 parser branch0x615e2b.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhlbc.wag",
@@ -24401,11 +24459,13 @@
             "17"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.Size",
@@ -24567,7 +24627,7 @@
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
       "value_type": "SIMIS direct node tokens",
       "units": "as written in source; infer no units",
-      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity Loaded vehicle definition: [car+94]+0x944; token0x401a1 parser branch0x615c89.",
       "evidence": [
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\30000\\30000car.wag",
@@ -24592,11 +24652,13 @@
             "2.5"
           ],
           "syntax": "leaf atoms"
-        }
+        },
+        "brake-parameter-map.json",
+        "VEHICLE-SYSTEM-FINDINGS.md"
       ],
-      "evidence_status": "static configuration extracted; not a live changing value",
+      "evidence_status": "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read",
       "update_or_lifecycle": "asset load or reload",
-      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart. Loaded parameters can be defaults and are not current reservoir pressures; branch applicability differs by brake type."
     },
     {
       "id": "config..wag:Wagon.Type",
@@ -30706,33 +30768,98 @@
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
-        "captures/electric-event-idle-restored-01/event-routes.json"
+        "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
       ],
       "evidence_status": "native receiver stores traced; stable paused Acela read",
-      "update_or_lifecycle": "set by event/scalar dispatch; consumer/clearing/lifecycle untraced",
+      "update_or_lifecycle": "receiver processing can continue while simulation paused; selected event bits cleared, scalars copied to previous fields unless flags1c bit0x200; no measured cadence",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Event masks coalesce repeats, have no ordering/timestamps/counts and may alias out-of-range IDs. Not a complete event history. Scalar baseline zero only; units, modified producer paths and nonzero runtime transitions remain open."
     },
     {
@@ -30755,33 +30882,98 @@
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
-        "captures/electric-event-idle-restored-01/event-routes.json"
+        "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
       ],
       "evidence_status": "native receiver stores traced; stable paused Acela read",
-      "update_or_lifecycle": "set by event/scalar dispatch; consumer/clearing/lifecycle untraced",
+      "update_or_lifecycle": "receiver processing can continue while simulation paused; selected event bits cleared, scalars copied to previous fields unless flags1c bit0x200; no measured cadence",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Event masks coalesce repeats, have no ordering/timestamps/counts and may alias out-of-range IDs. Not a complete event history. Scalar baseline zero only; units, modified producer paths and nonzero runtime transitions remain open."
     },
     {
@@ -30804,34 +30996,99 @@
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
-        "captures/electric-event-idle-restored-01/event-routes.json"
+        "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
       ],
       "evidence_status": "electric broadcast producer traced; both lead receiver values0->2.5->0 match throttle actuation",
-      "update_or_lifecycle": "set by event/scalar dispatch; consumer/clearing/lifecycle untraced",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Nonzero electric scalar1 validated only. Receivers can retain values if broadcast filter skips their car. Other engine types, consumers and AI untested; not actual force or power."
+      "update_or_lifecycle": "receiver processing can continue while simulation paused; selected event bits cleared, scalars copied to previous fields unless flags1c bit0x200; no measured cadence",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Nonzero electric scalar1 validated only. Receivers can retain values if broadcast filter skips their car. Other engine types, full consumer action semantics and AI untested; not actual force or power."
     },
     {
       "id": "event.receiver_scalar2",
@@ -30853,33 +31110,98 @@
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
-        "captures/electric-event-idle-restored-01/event-routes.json"
+        "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
       ],
       "evidence_status": "native receiver stores traced; stable paused Acela read",
-      "update_or_lifecycle": "set by event/scalar dispatch; consumer/clearing/lifecycle untraced",
+      "update_or_lifecycle": "receiver processing can continue while simulation paused; selected event bits cleared, scalars copied to previous fields unless flags1c bit0x200; no measured cadence",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Event masks coalesce repeats, have no ordering/timestamps/counts and may alias out-of-range IDs. Not a complete event history. Scalar baseline zero only; units, modified producer paths and nonzero runtime transitions remain open."
     },
     {
@@ -30902,34 +31224,495 @@
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
         "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
         "pass116-byte-verification.json",
         "pass117-byte-verification.json",
         "electric-event-helper-table.json",
         "captures/electric-event-throttle-paused-01/event-routes.json",
         "captures/electric-event-source-paused-01/traction.json",
-        "captures/electric-event-idle-restored-01/event-routes.json"
+        "captures/electric-event-idle-restored-01/event-routes.json",
+        "pass118-byte-verification.json",
+        "pass119-byte-verification.json",
+        "pass120-byte-verification.json",
+        "pass121-byte-verification.json",
+        "pass122-byte-verification.json",
+        "pass123-byte-verification.json",
+        "event-receiver-references/references.tsv",
+        "event-class-references/references.tsv",
+        "event-update-references/references.tsv",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json",
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
       ],
       "evidence_status": "native receiver stores traced; stable paused Acela read",
-      "update_or_lifecycle": "set by event/scalar dispatch; consumer/clearing/lifecycle untraced",
+      "update_or_lifecycle": "receiver processing can continue while simulation paused; selected event bits cleared, scalars copied to previous fields unless flags1c bit0x200; no measured cadence",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Event masks coalesce repeats, have no ordering/timestamps/counts and may alias out-of-range IDs. Not a complete event history. Scalar baseline zero only; units, modified producer paths and nonzero runtime transitions remain open."
+    },
+    {
+      "id": "event.receiver_previous_scalar1",
+      "meaning": "Scalar1 retained at previous completed normal receiver processing",
+      "applicability": "two electric player receivers observed; AI and other contexts untested",
+      "value_type": "float32",
+      "units": "electric throttle percent in tested producer",
+      "extraction": "receiver+0x3c; resolve handles as read_electric_event_routes.py",
+      "evidence": [
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
+      ],
+      "evidence_status": "native processing stores traced; paused tick advances with unchanged simulation time",
+      "update_or_lifecycle": "normal receiver processing; skipped in flags1c bit0x200 path; not physics cadence",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic reads. Scalar previous values validated at zero only. Tick is not simulation time or event timestamp; wraparound and cadence not validated. Normal pass timestamp does not prove every stream processed or sound played."
+    },
+    {
+      "id": "event.receiver_previous_scalar2",
+      "meaning": "Scalar2 retained at previous completed normal receiver processing",
+      "applicability": "two electric player receivers observed; AI and other contexts untested",
+      "value_type": "float32",
+      "units": "same units as receiver scalar2; unresolved",
+      "extraction": "receiver+0x40; resolve handles as read_electric_event_routes.py",
+      "evidence": [
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
+      ],
+      "evidence_status": "native processing stores traced; paused tick advances with unchanged simulation time",
+      "update_or_lifecycle": "normal receiver processing; skipped in flags1c bit0x200 path; not physics cadence",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic reads. Scalar previous values validated at zero only. Tick is not simulation time or event timestamp; wraparound and cadence not validated. Normal pass timestamp does not prove every stream processed or sound played."
+    },
+    {
+      "id": "event.receiver_previous_scalar3",
+      "meaning": "Scalar3 retained at previous completed normal receiver processing",
+      "applicability": "two electric player receivers observed; AI and other contexts untested",
+      "value_type": "float32",
+      "units": "same units as receiver scalar3; unresolved",
+      "extraction": "receiver+0x44; resolve handles as read_electric_event_routes.py",
+      "evidence": [
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
+      ],
+      "evidence_status": "native processing stores traced; paused tick advances with unchanged simulation time",
+      "update_or_lifecycle": "normal receiver processing; skipped in flags1c bit0x200 path; not physics cadence",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic reads. Scalar previous values validated at zero only. Tick is not simulation time or event timestamp; wraparound and cadence not validated. Normal pass timestamp does not prove every stream processed or sound played."
+    },
+    {
+      "id": "event.receiver_last_processing_tick",
+      "meaning": "Windows tick saved by normal receiver processing",
+      "applicability": "two electric player receivers observed; AI and other contexts untested",
+      "value_type": "uint32",
+      "units": "milliseconds of Windows uptime modulo2^32",
+      "extraction": "receiver+0x50; resolve handles as read_electric_event_routes.py",
+      "evidence": [
+        "ELECTRIC-EVENT-FINDINGS.md",
+        "pass124-byte-verification.json",
+        "captures/electric-event-processing-paused-01/event-routes.json",
+        "captures/electric-event-processing-paused-02/event-routes.json"
+      ],
+      "evidence_status": "native processing stores traced; paused tick advances with unchanged simulation time",
+      "update_or_lifecycle": "normal receiver processing; skipped in flags1c bit0x200 path; not physics cadence",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic reads. Scalar previous values validated at zero only. Tick is not simulation time or event timestamp; wraparound and cadence not validated. Normal pass timestamp does not prove every stream processed or sound played."
+    },
+    {
+      "id": "event.receiver_list",
+      "meaning": "Native processing-list receiver identities and physical-car handle matches",
+      "applicability": "session receiver list;9 player-associated and11 unassociated observed; AI untested",
+      "value_type": "bounded object list",
+      "units": "handles/pointers; session scoped",
+      "extraction": "sentinel=[[7c32f0]+14a]; node next+0 receiver+8; verify receiver+4 in registry",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass120-byte-verification.json",
+        "pass123-byte-verification.json",
+        "pass124-byte-verification.json",
+        "captures/receiver-list-paused-01/receivers.json",
+        "captures/receiver-list-labels-paused-01/receivers.json"
+      ],
+      "evidence_status": "native traversal/allocation/label sources traced;20 live receivers with48 streams",
+      "update_or_lifecycle": "list changes with receiver lifecycle; metadata loaded with definitions; cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic. Probe bounds are not native capacities.11 unassociated receivers are not assumed AI or environmental. Duplicate labels exist; paths and owner semantics not inferred. Declared stream/state counts do not prove playback."
+    },
+    {
+      "id": "event.receiver_definition_label",
+      "meaning": "Loaded receiver definition label",
+      "applicability": "session receiver list;9 player-associated and11 unassociated observed; AI untested",
+      "value_type": "UTF16 string",
+      "units": "text; not a unique identity",
+      "extraction": "[[[receiver+10]+4]+4]; bounded512 code units",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass120-byte-verification.json",
+        "pass123-byte-verification.json",
+        "pass124-byte-verification.json",
+        "captures/receiver-list-paused-01/receivers.json",
+        "captures/receiver-list-labels-paused-01/receivers.json"
+      ],
+      "evidence_status": "native traversal/allocation/label sources traced;20 live receivers with48 streams",
+      "update_or_lifecycle": "list changes with receiver lifecycle; metadata loaded with definitions; cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic. Probe bounds are not native capacities.11 unassociated receivers are not assumed AI or environmental. Duplicate labels exist; paths and owner semantics not inferred. Declared stream/state counts do not prove playback."
+    },
+    {
+      "id": "event.receiver_stream_count",
+      "meaning": "Loaded definition stream count",
+      "applicability": "session receiver list;9 player-associated and11 unassociated observed; AI untested",
+      "value_type": "uint32",
+      "units": "declared streams, not audible count",
+      "extraction": "[receiver+10]+10",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass120-byte-verification.json",
+        "pass123-byte-verification.json",
+        "pass124-byte-verification.json",
+        "captures/receiver-list-paused-01/receivers.json",
+        "captures/receiver-list-labels-paused-01/receivers.json"
+      ],
+      "evidence_status": "native traversal/allocation/label sources traced;20 live receivers with48 streams",
+      "update_or_lifecycle": "list changes with receiver lifecycle; metadata loaded with definitions; cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic. Probe bounds are not native capacities.11 unassociated receivers are not assumed AI or environmental. Duplicate labels exist; paths and owner semantics not inferred. Declared stream/state counts do not prove playback."
+    },
+    {
+      "id": "event.receiver_trigger_state_slots",
+      "meaning": "Loaded definition indexed trigger-state allocation count",
+      "applicability": "session receiver list;9 player-associated and11 unassociated observed; AI untested",
+      "value_type": "uint32",
+      "units": "four-byte state slots, not event count",
+      "extraction": "[receiver+10]+0c",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass120-byte-verification.json",
+        "pass123-byte-verification.json",
+        "pass124-byte-verification.json",
+        "captures/receiver-list-paused-01/receivers.json",
+        "captures/receiver-list-labels-paused-01/receivers.json"
+      ],
+      "evidence_status": "native traversal/allocation/label sources traced;20 live receivers with48 streams",
+      "update_or_lifecycle": "list changes with receiver lifecycle; metadata loaded with definitions; cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Non-atomic. Probe bounds are not native capacities.11 unassociated receivers are not assumed AI or environmental. Duplicate labels exist; paths and owner semantics not inferred. Declared stream/state counts do not prove playback."
+    },
+    {
+      "id": "event.receiver_position",
+      "meaning": "Receiver position used by audio distance calculation",
+      "applicability": "session receivers; player-associated and unassociated observed; AI untested",
+      "value_type": "float32 vector3",
+      "units": "native coordinates; unit/origin unverified",
+      "extraction": "receiver+58/+5c/+60",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass125-byte-verification.json",
+        "pass126-byte-verification.json",
+        "receiver-distance-summary.json",
+        "captures/receiver-distance-paused-01/receivers.json"
+      ],
+      "evidence_status": "vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence",
+      "update_or_lifecycle": "audio processing independent of paused simulation; thresholds are loaded configuration",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not linear distance. Skip-flag receiver retains0 despite nonzero separation. Coordinate origin/units, moving accuracy and scalability selection remain unverified. Zero disabled threshold is not zero range."
+    },
+    {
+      "id": "event.listener_position",
+      "meaning": "Listener position used by receiver distance calculation",
+      "applicability": "session receivers; player-associated and unassociated observed; AI untested",
+      "value_type": "float32 vector3",
+      "units": "native coordinates; unit/origin unverified",
+      "extraction": "[7c32f0]+14e/+152/+156",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass125-byte-verification.json",
+        "pass126-byte-verification.json",
+        "receiver-distance-summary.json",
+        "captures/receiver-distance-paused-01/receivers.json"
+      ],
+      "evidence_status": "vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence",
+      "update_or_lifecycle": "audio processing independent of paused simulation; thresholds are loaded configuration",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not linear distance. Skip-flag receiver retains0 despite nonzero separation. Coordinate origin/units, moving accuracy and scalability selection remain unverified. Zero disabled threshold is not zero range."
+    },
+    {
+      "id": "event.receiver_squared_distance",
+      "meaning": "Stored squared receiver-to-listener separation",
+      "applicability": "session receivers; player-associated and unassociated observed; AI untested",
+      "value_type": "float32",
+      "units": "native coordinate units squared",
+      "extraction": "receiver+38; update skipped when flags1c bit4 set",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass125-byte-verification.json",
+        "pass126-byte-verification.json",
+        "receiver-distance-summary.json",
+        "captures/receiver-distance-paused-01/receivers.json"
+      ],
+      "evidence_status": "vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence",
+      "update_or_lifecycle": "audio processing independent of paused simulation; thresholds are loaded configuration",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not linear distance. Skip-flag receiver retains0 despite nonzero separation. Coordinate origin/units, moving accuracy and scalability selection remain unverified. Zero disabled threshold is not zero range."
+    },
+    {
+      "id": "event.receiver_activation_distance_threshold",
+      "meaning": "Loaded activation squared-distance threshold",
+      "applicability": "session receivers; player-associated and unassociated observed; AI untested",
+      "value_type": "float32",
+      "units": "native coordinate units squared; compare only when activation flag8 set",
+      "extraction": "[receiver+10]+1c; flags at definition+18",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass125-byte-verification.json",
+        "pass126-byte-verification.json",
+        "receiver-distance-summary.json",
+        "captures/receiver-distance-paused-01/receivers.json"
+      ],
+      "evidence_status": "vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence",
+      "update_or_lifecycle": "audio processing independent of paused simulation; thresholds are loaded configuration",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not linear distance. Skip-flag receiver retains0 despite nonzero separation. Coordinate origin/units, moving accuracy and scalability selection remain unverified. Zero disabled threshold is not zero range."
+    },
+    {
+      "id": "event.receiver_deactivation_distance_threshold",
+      "meaning": "Loaded deactivation squared-distance threshold",
+      "applicability": "session receivers; player-associated and unassociated observed; AI untested",
+      "value_type": "float32",
+      "units": "native coordinate units squared; compare only when deactivation flag10hex set",
+      "extraction": "[receiver+10]+28; flags at definition+24",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass125-byte-verification.json",
+        "pass126-byte-verification.json",
+        "receiver-distance-summary.json",
+        "captures/receiver-distance-paused-01/receivers.json"
+      ],
+      "evidence_status": "vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence",
+      "update_or_lifecycle": "audio processing independent of paused simulation; thresholds are loaded configuration",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not linear distance. Skip-flag receiver retains0 despite nonzero separation. Coordinate origin/units, moving accuracy and scalability selection remain unverified. Zero disabled threshold is not zero range."
+    },
+    {
+      "id": "event.receiver_inactive_condition",
+      "meaning": "Receiver inactive-condition bit selected by camera/distance conditions",
+      "applicability": "session receiver list; player and unassociated sources tested; AI untested",
+      "value_type": "bit",
+      "units": "boolean",
+      "extraction": "receiver+1c bit0x2",
+      "evidence": [
+        "RECEIVER-LIST-FINDINGS.md",
+        "pass127-byte-verification.json",
+        "receiver-camera-summary.json",
+        "captures/receiver-external-camera-01/receivers.json",
+        "captures/receiver-cab-restored-01/receivers.json"
+      ],
+      "evidence_status": "set/clear native writers traced;12 of20 flags change during cab/external/cab and all20 restore",
+      "update_or_lifecycle": "audio condition processing; changes while receivers remain registered",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not actual playback or audibility. Triggers may still be examined while inactive. Camera and distance changed together; separated snapshots do not measure latency."
+    },
+    {
+      "id": "event.brake_pressure_reference",
+      "meaning": "Retained cylinder-pressure reference for brake sound events",
+      "applicability": "player-gated producer; lead reference observed, follower references zero; AI unvalidated",
+      "value_type": "float32",
+      "units": "PSI",
+      "extraction": "car+268; producer005dcdab requires locomotive context equal player lead",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "pass128-byte-verification.json",
+        "pass129-byte-verification.json",
+        "pass130-byte-verification.json",
+        "captures/brake-reference-paused-01/brakes.json",
+        "pass131-byte-verification.json",
+        "brake-adjustments-summary.json",
+        "captures/brake-adjustments-01/samples.jsonl",
+        "captures/brake-adjustments-paused-02/brakes.json"
+      ],
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+    },
+    {
+      "id": "event.brake_pressure_rise_latch",
+      "meaning": "Latch suppressing repeated rising-pressure sound events",
+      "applicability": "player-gated producer; lead reference observed, follower references zero; AI unvalidated",
+      "value_type": "uint32",
+      "units": "boolean-like 0/1",
+      "extraction": "car+26c",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "pass128-byte-verification.json",
+        "pass129-byte-verification.json",
+        "pass130-byte-verification.json",
+        "captures/brake-reference-paused-01/brakes.json",
+        "pass131-byte-verification.json",
+        "brake-adjustments-summary.json",
+        "captures/brake-adjustments-01/samples.jsonl",
+        "captures/brake-adjustments-paused-02/brakes.json"
+      ],
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+    },
+    {
+      "id": "event.brake_pressure_fall_latch",
+      "meaning": "Latch suppressing repeated falling-pressure sound events",
+      "applicability": "player-gated producer; lead reference observed, follower references zero; AI unvalidated",
+      "value_type": "uint32",
+      "units": "boolean-like 0/1",
+      "extraction": "car+270",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "pass128-byte-verification.json",
+        "pass129-byte-verification.json",
+        "pass130-byte-verification.json",
+        "captures/brake-reference-paused-01/brakes.json",
+        "pass131-byte-verification.json",
+        "brake-adjustments-summary.json",
+        "captures/brake-adjustments-01/samples.jsonl",
+        "captures/brake-adjustments-paused-02/brakes.json"
+      ],
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+    },
+    {
+      "id": "event.brake_pressure_rise_timer",
+      "meaning": "Shared rising-pressure event timer",
+      "applicability": "player-gated producer; lead reference observed, follower references zero; AI unvalidated",
+      "value_type": "float32",
+      "units": "simulation time units; nominal seconds",
+      "extraction": "global80a1f0",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "pass128-byte-verification.json",
+        "pass129-byte-verification.json",
+        "pass130-byte-verification.json",
+        "captures/brake-reference-paused-01/brakes.json",
+        "pass131-byte-verification.json",
+        "brake-adjustments-summary.json",
+        "captures/brake-adjustments-01/samples.jsonl",
+        "captures/brake-adjustments-paused-02/brakes.json"
+      ],
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+    },
+    {
+      "id": "event.brake_pressure_fall_timer",
+      "meaning": "Shared falling-pressure event timer",
+      "applicability": "player-gated producer; lead reference observed, follower references zero; AI unvalidated",
+      "value_type": "float32",
+      "units": "simulation time units; nominal seconds",
+      "extraction": "global80a1ec",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "pass128-byte-verification.json",
+        "pass129-byte-verification.json",
+        "pass130-byte-verification.json",
+        "captures/brake-reference-paused-01/brakes.json",
+        "pass131-byte-verification.json",
+        "brake-adjustments-summary.json",
+        "captures/brake-adjustments-01/samples.jsonl",
+        "captures/brake-adjustments-paused-02/brakes.json"
+      ],
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+    },
+    {
+      "id": "car.auxiliary_reservoir_pressure",
+      "meaning": "Current distributor auxiliary-reservoir pressure",
+      "applicability": "eight player Acela cars observed; AI and other brake types unvalidated",
+      "value_type": "float32",
+      "units": "PSI in tested distributor model",
+      "extraction": "car+0x224; distinguish loaded definition998/99c",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "brake-parameter-map.json",
+        "pass131-byte-verification.json",
+        "pass58-byte-verification.json"
+      ],
+      "evidence_status": "native reservoir consumers and configuration limits traced; live paused values read",
+      "update_or_lifecycle": "brake update replenishment/application branches; independent cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Other brake types may reuse these fields differently. car234 supplying these reservoirs is not yet semantically named. Unit conversion and release/AI transitions untested."
+    },
+    {
+      "id": "car.emergency_reservoir_pressure",
+      "meaning": "Current distributor emergency-reservoir pressure",
+      "applicability": "eight player Acela cars observed; AI and other brake types unvalidated",
+      "value_type": "float32",
+      "units": "PSI in tested distributor model",
+      "extraction": "car+0x228; distinguish loaded definition998/99c",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "brake-parameter-map.json",
+        "pass131-byte-verification.json",
+        "pass58-byte-verification.json"
+      ],
+      "evidence_status": "native reservoir consumers and configuration limits traced; live paused values read",
+      "update_or_lifecycle": "brake update replenishment/application branches; independent cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Other brake types may reuse these fields differently. car234 supplying these reservoirs is not yet semantically named. Unit conversion and release/AI transitions untested."
     }
   ]
 }

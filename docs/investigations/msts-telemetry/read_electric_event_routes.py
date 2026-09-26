@@ -16,6 +16,9 @@ try:
         class_id=r.u(obj);row['class_handle']=class_id
         row['event_masks']=[r.u(obj+0x20),r.u(obj+0x24)]
         row['scalar_values']=[r.f(obj+0x28),r.f(obj+0x2c),r.f(obj+0x30)]
+        row['previous_scalar_values']=[r.f(obj+0x3c),r.f(obj+0x40),r.f(obj+0x44)]
+        row['last_processing_tick_ms']=r.u(obj+0x50)
+        row['receiver_flags']=r.u(obj+0x1c)
         if not 0<class_id<1000000:row['unavailable']='Class handle outside research bound';continue
         cls=r.u(table+class_id*8);row['class_object']=cls
         if not cls:continue
