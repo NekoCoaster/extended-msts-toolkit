@@ -12,7 +12,7 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 193 direct-read candidates/structures, 16 derived candidates, 68 native cab channels (59 declared in installed cab files) and 473 configuration leaf paths, totaling 750 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+Current inventory has 206 direct-read candidates/structures, 16 derived candidates, 68 native cab channels (59 declared in installed cab files) and 473 configuration leaf paths, totaling 763 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
 
 ## Test scenario and installation
 

@@ -22,3 +22,11 @@ Historical gameplay findings and native-byte verification are documented in thei
 The inventory now has 750 unique entries. Updated JSON and Python sources parse successfully. Native pass36/pass37 instruction verification passed; all stored platform/siding/speed-post comparisons and common item fields agreed with the installed TDB within documented tolerances.
 
 GitHub Actions run 36245441062 (Verify source and native frontend) completed successfully for checkpoint commit eb0e87fee5fdeca90d2e4a7437cf80c38509ed03. This is remote workflow evidence for that commit; it does not remove the local Device Guard observation or prove gameplay findings beyond their cited captures. New follow-up commit checks are separate.
+
+## Speed-cap and track-interaction checkpoint
+
+763 unique candidates:206 direct-read candidates/structures,16 derived,68 cab channels,473 configuration leaf paths. All51 published JSON files and28 Python scripts parsed; every inventory row has the required provenance/meaning/lifecycle/limitation fields. This verifies structure, not complete live semantics.
+
+Source guards28 and repository-tool tests29 passed. Frontend and committed runtime PE import audits passed using the existing unchanged binaries. Native byte comparisons for passes38-47 and50-54 matched the installed disk/live process. The paused captures verified speed-cap reproduction, freight class, pickup absence and retained sound-region values; no new moving crossing/refill/hazard test was performed.
+
+Production code and build inputs remain unchanged. The full native batch was not rerun for this research-only update: its earlier Device Guard block remains unresolved, with no bypass attempted. The initial build/model/GUI results above remain historical evidence, not new tests of this checkpoint.

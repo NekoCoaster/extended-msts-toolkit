@@ -1,15 +1,15 @@
 {
-  "generated_utc": "2026-09-26T13:35:52.519971+00:00",
+  "generated_utc": "2026-09-26T13:56:19.673815+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "First runtime probes plus installed cab/rolling-stock and preferred-activity leaf declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 193,
+    "runtime_direct": 206,
     "runtime_derived": 16,
     "cab_channels": 68,
     "installed_cab_channels": 59,
     "config_leaf_paths": 473,
     "files_scanned": 126,
-    "total": 750
+    "total": 763
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -21978,6 +21978,54 @@
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified."
     },
     {
+      "id": "service.posted_speed_cap",
+      "meaning": "Posted speed restriction retained by the service",
+      "applicability": "player and loaded AI services; AI driver fields differ from player controls",
+      "value_type": "float32",
+      "units": "m/s; -1 disabled",
+      "extraction": "service+0x224; 0x4f5862 subtype 2 converts speedpost byte+0x2a using float32 0.44704 when flag0x100 is set, otherwise 0.27777; setter0x4faf30 enables service flag0x10; subtype3 clears value and flag via0x4faf90; effective selector0x5a33af requires that flag",
+      "evidence": [
+        "captures/service-registry-paused-01/services.jsonl",
+        "pass10/005a7a5f.c",
+        "pass10/005a8ecb.c",
+        "pass11/005a41c2.c",
+        "pass11/005a5c9a.c",
+        "pass12/005a33af.c",
+        "SPEED-CAP-FINDINGS.md",
+        "captures/speed-caps-paused-01/snapshot.json",
+        "pass45/004f5862.asm",
+        "pass46/004faf10.asm",
+        "pass46-byte-verification.json"
+      ],
+      "evidence_status": "native setters and effective selection traced; all three paused service caps reproduced exactly; posted-limit crossing transition not captured",
+      "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Speedpost byte, not float payload, feeds traced cap conversion. Direction and applicability gates matter. Inactive service can retain a numerical cap. Additional cap has multiple producer contexts; no universal temporary/permanent label."
+    },
+    {
+      "id": "service.additional_speed_cap",
+      "meaning": "Additional retained cap set by certain speedposts and service initialization",
+      "applicability": "player and loaded AI services; AI driver fields differ from player controls",
+      "value_type": "float32",
+      "units": "m/s; -1 disabled",
+      "extraction": "service+0x228; setter0x4faf10 used by speedpost subtype0 with flag0x8 and initialization0x58aa22/0x5addfe; do not call universally temporary or permanent; effective selector0x5a33af accepts clear sign bit",
+      "evidence": [
+        "captures/service-registry-paused-01/services.jsonl",
+        "pass10/005a7a5f.c",
+        "pass10/005a8ecb.c",
+        "pass11/005a41c2.c",
+        "pass11/005a5c9a.c",
+        "pass12/005a33af.c",
+        "SPEED-CAP-FINDINGS.md",
+        "captures/speed-caps-paused-01/snapshot.json",
+        "pass45/004f5862.asm",
+        "pass46/004faf10.asm",
+        "pass46-byte-verification.json"
+      ],
+      "evidence_status": "native setters and effective selection traced; all three paused service caps reproduced exactly; posted-limit crossing transition not captured",
+      "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Speedpost byte, not float payload, feeds traced cap conversion. Direction and applicability gates matter. Inactive service can retain a numerical cap. Additional cap has multiple producer contexts; no universal temporary/permanent label."
+    },
+    {
       "id": "service.scheduled_start",
       "meaning": "Loaded service scheduled activation time",
       "applicability": "player and loaded AI services; AI driver fields differ from player controls",
@@ -22298,7 +22346,7 @@
       "applicability": "player and loaded AI services; AI driver fields differ from player controls",
       "value_type": "uint32",
       "units": "bitfield",
-      "extraction": "service+0; interpretation is per-bit and partial",
+      "extraction": "service+0; interpretation is per-bit and partial; class bit0x4 means freight found at initialization; bit0x2 default non-freight, not passenger occupancy;0x10 posted cap enabled;0x20 conditional route cap enabled",
       "evidence": [
         "captures/service-registry-paused-01/services.jsonl",
         "pass10/005a7a5f.c",
@@ -22306,13 +22354,17 @@
         "pass11/005a41c2.c",
         "pass11/005a5c9a.c",
         "pass12/005a33af.c",
+        "SPEED-CAP-FINDINGS.md",
+        "pass47/005a5eb1.asm",
+        "pass50/00614c8e.asm",
+        "captures/service-class-paused-01/snapshot.json",
         "captures/scheduled-traffic-01/lifecycle.jsonl",
         "scheduled-traffic-01-summary.json",
         "AI-LIFECYCLE-FINDINGS.md"
       ],
       "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Class is traced at initialization and corroborated on the paused freight player; non-freight runtime and post-coupling reclassification untested. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md."
     },
     {
       "id": "service.speed",
@@ -22401,7 +22453,7 @@
     },
     {
       "id": "service.effective_speed_limit",
-      "meaning": "Combined positive speed cap used by driver and player UI",
+      "meaning": "Combined effective speed cap used by driver and player UI",
       "applicability": "player and loaded AI services; AI driver fields differ from player controls",
       "value_type": "float32",
       "units": "m/s",
@@ -22412,11 +22464,16 @@
         "pass10/005a8ecb.c",
         "pass11/005a41c2.c",
         "pass11/005a5c9a.c",
-        "pass12/005a33af.c"
+        "pass12/005a33af.c",
+        "SPEED-CAP-FINDINGS.md",
+        "captures/speed-caps-paused-01/snapshot.json",
+        "pass45/004f5862.asm",
+        "pass46/004faf10.asm",
+        "pass46-byte-verification.json"
       ],
-      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated",
+      "evidence_status": "native setters and effective selection traced; all three paused service caps reproduced exactly; posted-limit crossing transition not captured",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Speedpost byte, not float payload, feeds traced cap conversion. Direction and applicability gates matter. Inactive service can retain a numerical cap. Additional cap has multiple producer contexts; no universal temporary/permanent label."
     },
     {
       "id": "service.signal_speed_cap",
@@ -23357,6 +23414,245 @@
       "evidence_status": "native traversal/release traced; complete 732-node route match; paused presence and associations readable",
       "update_or_lifecycle": "route and service lifecycles; dynamic acquisition/release cadence untested",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Presence is not a track-block occupancy boolean or proof of physical simulation. Signal association acquisition and reservation semantics remain unverified. Null association is not a clear aspect or movement permission. All-node coverage verified only for current loaded route."
+    },
+    {
+      "id": "pickup.eligibility_flags",
+      "meaning": "Pickup proximity and speed eligibility flags",
+      "applicability": "route pickup; physical player/AI trains",
+      "value_type": "uint32",
+      "units": "bitfield",
+      "extraction": "kind2 item+0x2c; bits8/0x10 reset by004dcc65 and set by004dcc7f",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json",
+        "captures/pickup-hazard-paused-01/snapshot.json",
+        "pass53/004dcc7f.asm",
+        "pass53/004d3a19.asm",
+        "pass54/004dcc65.asm",
+        "pass53-byte-verification.json",
+        "pass54-byte-verification.json"
+      ],
+      "evidence_status": "native traced; paused route pickup flags0",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated. Pickup candidate pointer can outlive eligibility bits; resource transfer is unproven. Hazard state numbers are not animation names; no loaded hazard was sampled."
+    },
+    {
+      "id": "pickup.candidate_vehicle",
+      "meaning": "Last vehicle selected by pickup eligibility scan",
+      "applicability": "physical player/AI vehicles",
+      "value_type": "pointer32",
+      "units": "session vehicle identity",
+      "extraction": "kind2 item+0x34; use only with eligibility flags and valid vehicle lifetime",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json",
+        "captures/pickup-hazard-paused-01/snapshot.json",
+        "pass53/004dcc7f.asm",
+        "pass53/004d3a19.asm",
+        "pass54/004dcc65.asm",
+        "pass53-byte-verification.json",
+        "pass54-byte-verification.json"
+      ],
+      "evidence_status": "native writer traced; paused value null; nonnull transition untested",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated. Pickup candidate pointer can outlive eligibility bits; resource transfer is unproven. Hazard state numbers are not animation names; no loaded hazard was sampled."
+    },
+    {
+      "id": "hazard.state_candidate",
+      "meaning": "Hazard current-state candidate",
+      "applicability": "loaded route hazard; physical player/AI interactions",
+      "value_type": "uint32",
+      "units": "raw enum",
+      "extraction": "kind4 linked world object+0xac; compared with9 by004d3a19",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json",
+        "captures/pickup-hazard-paused-01/snapshot.json",
+        "pass53/004dcc7f.asm",
+        "pass53/004d3a19.asm",
+        "pass54/004dcc65.asm",
+        "pass53-byte-verification.json",
+        "pass54-byte-verification.json"
+      ],
+      "evidence_status": "native consumer traced; live world object unavailable",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated. Pickup candidate pointer can outlive eligibility bits; resource transfer is unproven. Hazard state numbers are not animation names; no loaded hazard was sampled."
+    },
+    {
+      "id": "hazard.requested_state",
+      "meaning": "Hazard requested state",
+      "applicability": "loaded route hazard; physical player/AI interactions",
+      "value_type": "uint32",
+      "units": "raw enum; observed code writes5/7/9",
+      "extraction": "kind4 linked world object+0xb0; written by004d3a19",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json",
+        "captures/pickup-hazard-paused-01/snapshot.json",
+        "pass53/004dcc7f.asm",
+        "pass53/004d3a19.asm",
+        "pass54/004dcc65.asm",
+        "pass53-byte-verification.json",
+        "pass54-byte-verification.json"
+      ],
+      "evidence_status": "native writer traced; live world object unavailable",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated. Pickup candidate pointer can outlive eligibility bits; resource transfer is unproven. Hazard state numbers are not animation names; no loaded hazard was sampled."
+    },
+    {
+      "id": "hazard.trigger_latch",
+      "meaning": "Hazard trigger latch candidate",
+      "applicability": "loaded route hazard; physical player/AI interactions",
+      "value_type": "uint8",
+      "units": "boolean-like",
+      "extraction": "kind4 linked world object+0xcc; gates and records trigger handling",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json",
+        "captures/pickup-hazard-paused-01/snapshot.json",
+        "pass53/004dcc7f.asm",
+        "pass53/004d3a19.asm",
+        "pass54/004dcc65.asm",
+        "pass53-byte-verification.json",
+        "pass54-byte-verification.json"
+      ],
+      "evidence_status": "native read/write traced; reset and live transition unverified",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated. Pickup candidate pointer can outlive eligibility bits; resource transfer is unproven. Hazard state numbers are not animation names; no loaded hazard was sampled."
+    },
+    {
+      "id": "crossing.request_state",
+      "meaning": "Aggregated crossing request; animation meaning unverified",
+      "applicability": "route crossing; player and AI services",
+      "value_type": "uint32",
+      "units": "raw enum 0..4",
+      "extraction": "kind7 item+8 indexes [828108] stride8; linked object+0x90",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json"
+      ],
+      "evidence_status": "native traced; no linked crossing objects in paused capture",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated."
+    },
+    {
+      "id": "crossing.flags_raw",
+      "meaning": "Crossing flags including player warning logic",
+      "applicability": "route crossing; some player-only bits",
+      "value_type": "uint32",
+      "units": "bitfield",
+      "extraction": "linked crossing object+0x84; bits8/0x10 used by004d7e0c",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json"
+      ],
+      "evidence_status": "native traced; no linked crossing objects in paused capture",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated."
+    },
+    {
+      "id": "sound.region_item_index",
+      "meaning": "Region index used by sound interaction handler",
+      "applicability": "route metadata for physical player/AI",
+      "value_type": "uint32",
+      "units": "region index",
+      "extraction": "kind10 item+0x2a; unaligned",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json"
+      ],
+      "evidence_status": "1030 paused item reads; playback not validated",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated."
+    },
+    {
+      "id": "sound.reference_distance_candidate",
+      "meaning": "Sound-region reference distance candidate",
+      "applicability": "physical player and AI trains",
+      "value_type": "float32",
+      "units": "distance candidate; units unverified",
+      "extraction": "[[train+0xea]+0]",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json"
+      ],
+      "evidence_status": "native consumer traced; paused player readable",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated."
+    },
+    {
+      "id": "sound.nearest_distance_candidate",
+      "meaning": "Nearest sound-region boundary distance candidate",
+      "applicability": "physical player and AI trains",
+      "value_type": "float32",
+      "units": "distance candidate; units unverified",
+      "extraction": "[[train+0xea]+4]",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json"
+      ],
+      "evidence_status": "native minimum-selection writer traced; paused player readable",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated."
+    },
+    {
+      "id": "sound.selected_region",
+      "meaning": "Selected sound-region index",
+      "applicability": "physical player and AI trains",
+      "value_type": "uint32",
+      "units": "region index",
+      "extraction": "[[train+0xea]+8]",
+      "evidence": [
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/track-interactions-paused-01/snapshot.json",
+        "pass51/004d7e0c.asm",
+        "pass51/004ef178.asm",
+        "pass51-byte-verification.json",
+        "pass52-byte-verification.json"
+      ],
+      "evidence_status": "native selection writer traced; paused player readable",
+      "update_or_lifecycle": "interaction dispatch; exact refresh/reset cadence unmeasured",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated."
     },
     {
       "id": "track_item.node_distance",

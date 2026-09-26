@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 193, 'runtime_derived': 16, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_leaf_paths': 473, 'files_scanned': 126, 'total': 750}
+{'runtime_direct': 206, 'runtime_derived': 16, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_leaf_paths': 473, 'files_scanned': 126, 'total': 763}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -608,6 +608,8 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | signal.aspect | Live aspect of directional head; select maximum aspect among normal heads for monitor | native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear |
 | signal.aspect_speed | Speed associated with current signal aspect | native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear |
 | signal.aspect_flags | Flags associated with aspect definition | native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear |
+| service.posted_speed_cap | Posted speed restriction retained by the service | native setters and effective selection traced; all three paused service caps reproduced exactly; posted-limit crossing transition not captured |
+| service.additional_speed_cap | Additional retained cap set by certain speedposts and service initialization | native setters and effective selection traced; all three paused service caps reproduced exactly; posted-limit crossing transition not captured |
 | service.scheduled_start | Loaded service scheduled activation time | native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured |
 | service.update_active | Gate admitting AI service to scheduled kinematic update | native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured |
 | service.integration_interval | Service scheduler integration interval | native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured |
@@ -627,7 +629,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | service.target_speed | AI target speed used by kinematic integrator | native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven |
 | service.acceleration | AI acceleration used by kinematic integrator | native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven |
 | service.efficiency_candidate | Speed and acceleration scaling factor; matches configured Efficiency in observed services | native code traced and paused values readable; lifecycle and changing driver transitions not yet validated |
-| service.effective_speed_limit | Combined positive speed cap used by driver and player UI | native code traced and paused values readable; lifecycle and changing driver transitions not yet validated |
+| service.effective_speed_limit | Combined effective speed cap used by driver and player UI | native setters and effective selection traced; all three paused service caps reproduced exactly; posted-limit crossing transition not captured |
 | service.signal_speed_cap | Signal-related cap retained by driver | native code traced and paused values readable; lifecycle and changing driver transitions not yet validated |
 | service.configured_speed_cap_candidate | Base speed cap before service efficiency scaling | native code traced and paused values readable; lifecycle and changing driver transitions not yet validated |
 | service.stop_timer_remaining | Timed stop countdown candidate | native code traced and paused values readable; lifecycle and changing driver transitions not yet validated |
@@ -677,6 +679,17 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | infrastructure.vector_presence | Abstract per-car position records linked to a vector track segment | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.presence_service | Service identity attached to track-presence record | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.presence_node_distance | Position of abstract car record along its track node | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
+| pickup.eligibility_flags | Pickup proximity and speed eligibility flags | native traced; paused route pickup flags0 |
+| pickup.candidate_vehicle | Last vehicle selected by pickup eligibility scan | native writer traced; paused value null; nonnull transition untested |
+| hazard.state_candidate | Hazard current-state candidate | native consumer traced; live world object unavailable |
+| hazard.requested_state | Hazard requested state | native writer traced; live world object unavailable |
+| hazard.trigger_latch | Hazard trigger latch candidate | native read/write traced; reset and live transition unverified |
+| crossing.request_state | Aggregated crossing request; animation meaning unverified | native traced; no linked crossing objects in paused capture |
+| crossing.flags_raw | Crossing flags including player warning logic | native traced; no linked crossing objects in paused capture |
+| sound.region_item_index | Region index used by sound interaction handler | 1030 paused item reads; playback not validated |
+| sound.reference_distance_candidate | Sound-region reference distance candidate | native consumer traced; paused player readable |
+| sound.nearest_distance_candidate | Nearest sound-region boundary distance candidate | native minimum-selection writer traced; paused player readable |
+| sound.selected_region | Selected sound-region index | native selection writer traced; paused player readable |
 | track_item.node_distance | Track-item distance along its associated track segment | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.flags | Common track-item data flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.platform_name | Platform display name | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |

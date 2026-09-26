@@ -177,6 +177,14 @@ for name,meaning,typ,unit,method in service_fields:
     add('service.'+name,meaning,'player and loaded AI services; AI driver fields differ from player controls',typ,unit,method,['captures/service-registry-paused-01/services.jsonl','pass10/005a7a5f.c','pass10/005a8ecb.c','pass11/005a41c2.c','pass11/005a5c9a.c','pass12/005a33af.c'],'native code traced and paused values readable; lifecycle and changing driver transitions not yet validated','service lifetime; physics instantiation is separate; per-field producer cadence unmeasured',common+' Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files.')
 payload_extra+=len(service_fields)
 for row in rows:
+    if row['id']=='service.flags_raw':
+        row['evidence'].extend(['SPEED-CAP-FINDINGS.md','pass47/005a5eb1.asm','pass50/00614c8e.asm','captures/service-class-paused-01/snapshot.json'])
+        row['extraction'] += '; class bit0x4 means freight found at initialization; bit0x2 default non-freight, not passenger occupancy;0x10 posted cap enabled;0x20 conditional route cap enabled'
+        row['limitations'] += ' Class is traced at initialization and corroborated on the paused freight player; non-freight runtime and post-coupling reclassification untested.'
+    if row['id'] in {'service.posted_speed_cap','service.additional_speed_cap','service.effective_speed_limit'}:
+        row['evidence'].extend(['SPEED-CAP-FINDINGS.md','captures/speed-caps-paused-01/snapshot.json','pass45/004f5862.asm','pass46/004faf10.asm','pass46-byte-verification.json'])
+        row['evidence_status']='native setters and effective selection traced; all three paused service caps reproduced exactly; posted-limit crossing transition not captured'
+        row['limitations'] += ' Speedpost byte, not float payload, feeds traced cap conversion. Direction and applicability gates matter. Inactive service can retain a numerical cap. Additional cap has multiple producer contexts; no universal temporary/permanent label.'
     if row['id'] in {'service.registry','service.train_pointer','service.physicalized_raw','service.flags_raw','service.speed','service.target_speed','service.acceleration'}:
         row['evidence'].extend(['captures/scheduled-traffic-01/lifecycle.jsonl','scheduled-traffic-01-summary.json','AI-LIFECYCLE-FINDINGS.md'])
         row['evidence_status']='native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven'
@@ -207,6 +215,25 @@ for row in rows:
         row['evidence'].append('infrastructure-summary.json')
         row['evidence_status']='all 732 registry-derived route IDs validated in current route; earlier geometry ambiguity resolved'
         row['limitations']=common+' This is index-derived identity for the tested route, not a native embedded ID field; validate after route edits/reload.'
+interaction_specs=[
+('pickup.eligibility_flags','Pickup proximity and speed eligibility flags','route pickup; physical player/AI trains','uint32','bitfield','kind2 item+0x2c; bits8/0x10 reset by004dcc65 and set by004dcc7f','native traced; paused route pickup flags0'),
+('pickup.candidate_vehicle','Last vehicle selected by pickup eligibility scan','physical player/AI vehicles','pointer32','session vehicle identity','kind2 item+0x34; use only with eligibility flags and valid vehicle lifetime','native writer traced; paused value null; nonnull transition untested'),
+('hazard.state_candidate','Hazard current-state candidate','loaded route hazard; physical player/AI interactions','uint32','raw enum','kind4 linked world object+0xac; compared with9 by004d3a19','native consumer traced; live world object unavailable'),
+('hazard.requested_state','Hazard requested state','loaded route hazard; physical player/AI interactions','uint32','raw enum; observed code writes5/7/9','kind4 linked world object+0xb0; written by004d3a19','native writer traced; live world object unavailable'),
+('hazard.trigger_latch','Hazard trigger latch candidate','loaded route hazard; physical player/AI interactions','uint8','boolean-like','kind4 linked world object+0xcc; gates and records trigger handling','native read/write traced; reset and live transition unverified'),
+('crossing.request_state','Aggregated crossing request; animation meaning unverified','route crossing; player and AI services','uint32','raw enum 0..4','kind7 item+8 indexes [828108] stride8; linked object+0x90','native traced; no linked crossing objects in paused capture'),
+('crossing.flags_raw','Crossing flags including player warning logic','route crossing; some player-only bits','uint32','bitfield','linked crossing object+0x84; bits8/0x10 used by004d7e0c','native traced; no linked crossing objects in paused capture'),
+('sound.region_item_index','Region index used by sound interaction handler','route metadata for physical player/AI','uint32','region index','kind10 item+0x2a; unaligned','1030 paused item reads; playback not validated'),
+('sound.reference_distance_candidate','Sound-region reference distance candidate','physical player and AI trains','float32','distance candidate; units unverified','[[train+0xea]+0]','native consumer traced; paused player readable'),
+('sound.nearest_distance_candidate','Nearest sound-region boundary distance candidate','physical player and AI trains','float32','distance candidate; units unverified','[[train+0xea]+4]','native minimum-selection writer traced; paused player readable'),
+('sound.selected_region','Selected sound-region index','physical player and AI trains','uint32','region index','[[train+0xea]+8]','native selection writer traced; paused player readable')]
+for key,meaning,applies,typ,unit,method,status in interaction_specs:
+    add(key,meaning,applies,typ,unit,method,['TRACK-INTERACTION-FINDINGS.md','captures/track-interactions-paused-01/snapshot.json','pass51/004d7e0c.asm','pass51/004ef178.asm','pass51-byte-verification.json','pass52-byte-verification.json'],status,'interaction dispatch; exact refresh/reset cadence unmeasured',common+' Null world linkage means unavailable, not inactive. Request enum is not verified barrier animation; sound selection is not audible playback. Physical AI sound state and all transitions remain unvalidated.')
+payload_extra+=len(interaction_specs)
+for row in rows:
+    if row['id'].startswith(('pickup.','hazard.')):
+        row['evidence'].extend(['captures/pickup-hazard-paused-01/snapshot.json','pass53/004dcc7f.asm','pass53/004d3a19.asm','pass54/004dcc65.asm','pass53-byte-verification.json','pass54-byte-verification.json'])
+        row['limitations'] += ' Pickup candidate pointer can outlive eligibility bits; resource transfer is unproven. Hazard state numbers are not animation names; no loaded hazard was sampled.'
 track_item_fields=json.loads((ROOT/'track-item-fields.json').read_text())
 for name,meaning,typ,unit,method in track_item_fields:
     add('track_item.'+name,meaning,'shared route metadata joined to player/AI track context; subtype-specific',typ,unit,method,['captures/track-items-paused-01/items.json','track-item-summary.json','pass36-byte-verification.json','pass37-byte-verification.json','TRACK-ITEM-FINDINGS.md'],'native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances','loaded configuration; runtime updates and reload lifecycle not validated',common+' This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested.')
