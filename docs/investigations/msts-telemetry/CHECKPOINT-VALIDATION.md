@@ -71,3 +71,13 @@ Brake observation captured1740 samples, zero reader errors, and13920 exact press
 Previous66f5bd1 remote workflow36254778869 completed successfully. This checkpoint's new remote checks are separate. The prior full-native DeviceGuard4551 block remains unresolved; no policy bypass or equivalent retry was attempted. Production sources and binaries remain unchanged. Goal remains active and PR remains draft.
 
 Validation passed:534 source files and complete bundled toolchain/source verified;28 frontend source guards,29 repository-tool tests and both PE import audits passed using unchanged binaries. JSON/Python parsing and diff whitespace checks passed. These checks do not prove complete discovery or replace runtime validation.
+
+## Brake release and moving powered-car checkpoint
+
+889 candidates:295 direct-read candidates/structures,19 derived,68 cab channels and507 configuration paths.158 published JSON files and70 Python sources parse. Canonical audit checks363 evidence paths and126 unchanged installed-asset hashes. All6346 previous raw-evidence hashes were verified unchanged;88 added (6434 total). Raw evidence remains local; publication strips embedded decompiler excerpts.
+
+Acela brake selector modes and mode-relative fractions now have native lookup evidence. A failed release attempt is preserved separately from the successful release and settling captures. All eight cars reached zero cylinder pressure and110 pipe pressure; a12.9296875 simulation-second capture gap prevents claiming exact time to zero. The pressure-event reference retained a nonzero residual despite zero cylinder pressure.
+
+Moving electric capture:1182 samples, zero reader errors, positive force/current under released brakes and zero outputs while subsequently coasting. Paired-powered-car capture:875 samples, zero errors, identical front/rear stored force and power, rear current always zero and rear sampled gate bit clear. Neither rear current nor the lead gate interpretation can be generalized to independent per-car measurements. Shared force ramp native tracing retains the unusual car-field predicate, asymmetric time factors and untested reverse behavior; no claim of actual wheel-rail force or AI validation.
+
+Validation:548 source files and complete bundled toolchain/source verified;28 source guards,29 repository-tool tests and both existing-binary PE import audits passed. Production code and binaries remain unchanged. Previous e695189 remote workflow36256558628 succeeded. New commit checks are separate. The earlier full native Device Guard4551 block remains unresolved; no equivalent retry or bypass was attempted. The full discovery goal remains active and incomplete.

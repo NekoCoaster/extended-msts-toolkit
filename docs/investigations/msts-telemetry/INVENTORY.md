@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 293, 'runtime_derived': 19, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 887}
+{'runtime_direct': 295, 'runtime_derived': 19, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 889}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -799,9 +799,9 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | activity.event.location_condition | Reconstructed location-event spatial and optional stop predicate | native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition |
 | session.internal_calendar | Internal clock day/month/year | native clock update/setter traced and paused values read; current clock additions patched |
 | session.clock_components | Internal clock second/minute/hour | native clock update/setter traced and paused values read; current clock additions patched |
-| car.brake_cylinder_pressure | Per-car brake cylinder pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested |
-| car.brake_pipe_pressure | Per-car brake-pipe pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested |
-| car.brake_force_candidate | Per-car requested brake-force quantity before adhesion limiting | static source tracing plus stopped-player values during running simulation; independent AI population untested |
+| car.brake_cylinder_pressure | Per-car brake cylinder pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
+| car.brake_pipe_pressure | Per-car brake-pipe pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
+| car.brake_force_candidate | Per-car requested brake-force quantity before adhesion limiting | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
 | car.max_brake_force | Loaded MaxBrakeForce configuration | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.brake_reference_pressure_candidate | Brake pressure used to scale configured force | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.connection_force_candidate | Connection-force quantity at one consist end | static source tracing plus stopped-player values during running simulation; independent AI population untested |
@@ -864,9 +864,9 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | electric.route_voltage | Loaded route supply voltage source | native display consumers traced; Acela pantograph-down transition and separate restored snapshot |
 | electric.voltage_gate_enabled | Native electric voltage-display gate enabled setting | native display consumers traced; Acela pantograph-down transition and separate restored snapshot |
 | electric.voltage_consist_condition | Consist condition used by patched native voltage display helper | native display consumers traced; Acela pantograph-down transition and separate restored snapshot |
-| electric.traction_calculation_gate | Sampled bit used inside electric traction calculation; not a reliable cache freshness indicator | native producers traced; stationary Acela throttle, pantograph and stale-cache observations |
-| electric.cached_force_limit | Cached electric speed-dependent force calculation limit | native producers traced; stationary Acela throttle, pantograph and stale-cache observations |
-| electric.cached_throttle | Throttle copied during enabled electric force calculation | native producers traced; stationary Acela throttle, pantograph and stale-cache observations |
+| electric.traction_calculation_gate | Sampled bit used inside electric traction calculation; not a reliable cache freshness indicator | native producers traced; stationary controls/stale-cache observations plus released-brake low-speed movement |
+| electric.cached_force_limit | Cached electric speed-dependent force calculation limit | native producers traced; stationary controls/stale-cache observations plus released-brake low-speed movement |
+| electric.cached_throttle | Throttle copied during enabled electric force calculation | native producers traced; stationary controls/stale-cache observations plus released-brake low-speed movement |
 | event.receiver_mask_1_32 | Retained receiver event bits for ordinary event IDs1..32 | native receiver stores traced; stable paused Acela read |
 | event.receiver_mask_33_64 | Retained receiver event bits for ordinary event IDs33..64 | native receiver stores traced; stable paused Acela read |
 | event.receiver_scalar1 | Receiver retained scalar variable1 | electric broadcast producer traced; both lead receiver values0->2.5->0 match throttle actuation |
@@ -886,10 +886,12 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | event.receiver_activation_distance_threshold | Loaded activation squared-distance threshold | vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence |
 | event.receiver_deactivation_distance_threshold | Loaded deactivation squared-distance threshold | vector producer traced;19 non-skipped live distance comparisons,13 exact; Acela threshold/file correspondence |
 | event.receiver_inactive_condition | Receiver inactive-condition bit selected by camera/distance conditions | set/clear native writers traced;12 of20 flags change during cab/external/cab and all20 restore |
-| event.brake_pressure_reference | Retained cylinder-pressure reference for brake sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| event.brake_pressure_reference | Retained cylinder-pressure reference for brake sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
 | event.brake_pressure_rise_latch | Latch suppressing repeated rising-pressure sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
-| event.brake_pressure_fall_latch | Latch suppressing repeated falling-pressure sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| event.brake_pressure_fall_latch | Latch suppressing repeated falling-pressure sound events | native producer and caller traced; eight-car series; lead rising latch and reference transition observed; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
 | event.brake_pressure_rise_timer | Shared rising-pressure event timer | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
-| event.brake_pressure_fall_timer | Shared falling-pressure event timer | native producer and caller traced; eight-car series; lead rising latch and reference transition observed |
+| event.brake_pressure_fall_timer | Shared falling-pressure event timer | native producer and caller traced; eight-car series; lead rising latch and reference transition observed; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
 | car.auxiliary_reservoir_pressure | Current distributor auxiliary-reservoir pressure | native reservoir consumers and configuration limits traced; live paused values read |
 | car.emergency_reservoir_pressure | Current distributor emergency-reservoir pressure | native reservoir consumers and configuration limits traced; live paused values read |
+| brake.train_selected_mode | Selected train brake controller mode after loaded-range lookup | native caller/selector traced; paused loaded-range reconstruction matches stored1000hex mode; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
+| brake.train_selected_fraction | Within-mode train brake controller fraction | native caller/selector traced; paused loaded-range reconstruction matches stored1000hex mode; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |

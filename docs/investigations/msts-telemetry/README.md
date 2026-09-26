@@ -4,7 +4,7 @@ Related to [issue #7: External Telemetry and control bridge](https://github.com/
 
 **Status: active and incomplete.** This is an independent discovery/testing phase for eventual NEMT integration. It adds no runtime integration, external protocol, transport or control input. No telemetry candidates have been ranked or selected for retention.
 
-Start with [the findings and coverage checkpoint](CHECKPOINT.md), [the flat inventory](INVENTORY.md), and its detailed machine-readable counterpart, `inventory.json`. The current 887 entries include 293 direct-read candidates/structures, 19 derived candidates, 68 cab channels and 507 static configuration paths (474 leaf and 37 mixed paths with four overlaps). These counts are not independent verified live values. Configuration leaf cleanup and further semantic validation remain open.
+Start with [the findings and coverage checkpoint](CHECKPOINT.md), [the flat inventory](INVENTORY.md), and its detailed machine-readable counterpart, `inventory.json`. The current 889 entries include 295 direct-read candidates/structures, 19 derived candidates, 68 cab channels and 507 static configuration paths (474 leaf and 37 mixed paths with four overlaps). These counts are not independent verified live values. Configuration leaf cleanup and further semantic validation remain open.
 
 The preferred activity is Marias Pass **Grain Train Through the Night** (`evegrain.act`). Completed observations include player and AI motion, a native Stop-to-Clear signal transition, physical/offscreen AI lifecycle, inactive-service stale values, track geometry, all 732 route nodes, abstract track-presence records and signal/service associations. See the individual findings documents for confidence and limitations.
 

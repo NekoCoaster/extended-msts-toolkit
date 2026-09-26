@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-26T16:43:13.977201+00:00",
+  "generated_utc": "2026-09-26T17:01:55.953331+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 293,
+    "runtime_direct": 295,
     "runtime_derived": 19,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 887
+    "total": 889
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -28574,11 +28574,15 @@
         "pass24/00635dfb.c",
         "pass25/006171f8.asm",
         "pass26/0062c679.c",
-        "pass26/0062d335.c"
+        "pass26/0062d335.c",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
     },
     {
       "id": "car.brake_pipe_pressure",
@@ -28592,11 +28596,15 @@
         "pass24/00635dfb.c",
         "pass25/006171f8.asm",
         "pass26/0062c679.c",
-        "pass26/0062d335.c"
+        "pass26/0062d335.c",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
     },
     {
       "id": "car.brake_force_candidate",
@@ -28610,11 +28618,15 @@
         "pass24/00635dfb.c",
         "pass25/006171f8.asm",
         "pass26/0062c679.c",
-        "pass26/0062d335.c"
+        "pass26/0062d335.c",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
     },
     {
       "id": "car.max_brake_force",
@@ -30692,11 +30704,20 @@
         "captures/electric-traction-down-running-01/traction.json",
         "captures/electric-traction-down-idle-01/traction.json",
         "captures/electric-traction-down-voltage-01/voltage.json",
-        "captures/electric-traction-restored-idle-01/traction.json"
+        "captures/electric-traction-restored-idle-01/traction.json",
+        "electric-moving-summary.json",
+        "captures/electric-moving-01/samples.jsonl",
+        "captures/electric-coasting-paused-01/traction.json",
+        "pass134-byte-verification.json",
+        "captures/shared-force-paused-01/shared-force.json",
+        "pass135-byte-verification.json",
+        "electric-powered-distribution-summary.json",
+        "captures/electric-powered-distribution-01/samples.jsonl",
+        "captures/shared-force-paired-final-01/shared-force.json"
       ],
-      "evidence_status": "native producers traced; stationary Acela throttle, pantograph and stale-cache observations",
+      "evidence_status": "native producers traced; stationary controls/stale-cache observations plus released-brake low-speed movement",
       "update_or_lifecycle": "engine update; cached fields not refreshed on gate-false branch",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not delivered wheel force or overhead contact. Cached throttle remained2.5% at idle with pantograph down despite sampled gate bit true; do not use bit alone to claim freshness. Moving behavior and optional modifier actuation untested."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not delivered wheel force or overhead contact. Cached throttle remained2.5% at idle with pantograph down despite sampled gate bit true; do not use bit alone to claim freshness. Low forward movement observed to0.414m/s; cached limit changes with speed and outputs settle to zero at idle while coasting. Higher-speed/reverse behavior and optional modifier actuation untested. Shared helper tests car102 separately from definition102; current paused ramp predicate false. Downstream per-powered-car force can be altered after current calculation; see shared-force assembly findings. Rear Acela receives matching nonzero shared force/power with bit2 clear and current field0; lead current/gate semantics cannot be extended to followers."
     },
     {
       "id": "electric.cached_force_limit",
@@ -30717,11 +30738,20 @@
         "captures/electric-traction-down-running-01/traction.json",
         "captures/electric-traction-down-idle-01/traction.json",
         "captures/electric-traction-down-voltage-01/voltage.json",
-        "captures/electric-traction-restored-idle-01/traction.json"
+        "captures/electric-traction-restored-idle-01/traction.json",
+        "electric-moving-summary.json",
+        "captures/electric-moving-01/samples.jsonl",
+        "captures/electric-coasting-paused-01/traction.json",
+        "pass134-byte-verification.json",
+        "captures/shared-force-paused-01/shared-force.json",
+        "pass135-byte-verification.json",
+        "electric-powered-distribution-summary.json",
+        "captures/electric-powered-distribution-01/samples.jsonl",
+        "captures/shared-force-paired-final-01/shared-force.json"
       ],
-      "evidence_status": "native producers traced; stationary Acela throttle, pantograph and stale-cache observations",
+      "evidence_status": "native producers traced; stationary controls/stale-cache observations plus released-brake low-speed movement",
       "update_or_lifecycle": "engine update; cached fields not refreshed on gate-false branch",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not delivered wheel force or overhead contact. Cached throttle remained2.5% at idle with pantograph down despite sampled gate bit true; do not use bit alone to claim freshness. Moving behavior and optional modifier actuation untested."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not delivered wheel force or overhead contact. Cached throttle remained2.5% at idle with pantograph down despite sampled gate bit true; do not use bit alone to claim freshness. Low forward movement observed to0.414m/s; cached limit changes with speed and outputs settle to zero at idle while coasting. Higher-speed/reverse behavior and optional modifier actuation untested. Shared helper tests car102 separately from definition102; current paused ramp predicate false. Downstream per-powered-car force can be altered after current calculation; see shared-force assembly findings. Rear Acela receives matching nonzero shared force/power with bit2 clear and current field0; lead current/gate semantics cannot be extended to followers."
     },
     {
       "id": "electric.cached_throttle",
@@ -30742,11 +30772,20 @@
         "captures/electric-traction-down-running-01/traction.json",
         "captures/electric-traction-down-idle-01/traction.json",
         "captures/electric-traction-down-voltage-01/voltage.json",
-        "captures/electric-traction-restored-idle-01/traction.json"
+        "captures/electric-traction-restored-idle-01/traction.json",
+        "electric-moving-summary.json",
+        "captures/electric-moving-01/samples.jsonl",
+        "captures/electric-coasting-paused-01/traction.json",
+        "pass134-byte-verification.json",
+        "captures/shared-force-paused-01/shared-force.json",
+        "pass135-byte-verification.json",
+        "electric-powered-distribution-summary.json",
+        "captures/electric-powered-distribution-01/samples.jsonl",
+        "captures/shared-force-paired-final-01/shared-force.json"
       ],
-      "evidence_status": "native producers traced; stationary Acela throttle, pantograph and stale-cache observations",
+      "evidence_status": "native producers traced; stationary controls/stale-cache observations plus released-brake low-speed movement",
       "update_or_lifecycle": "engine update; cached fields not refreshed on gate-false branch",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not delivered wheel force or overhead contact. Cached throttle remained2.5% at idle with pantograph down despite sampled gate bit true; do not use bit alone to claim freshness. Moving behavior and optional modifier actuation untested."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not delivered wheel force or overhead contact. Cached throttle remained2.5% at idle with pantograph down despite sampled gate bit true; do not use bit alone to claim freshness. Low forward movement observed to0.414m/s; cached limit changes with speed and outputs settle to zero at idle while coasting. Higher-speed/reverse behavior and optional modifier actuation untested. Shared helper tests car102 separately from definition102; current paused ramp predicate false. Downstream per-powered-car force can be altered after current calculation; see shared-force assembly findings. Rear Acela receives matching nonzero shared force/power with bit2 clear and current field0; lead current/gate semantics cannot be extended to followers."
     },
     {
       "id": "event.receiver_mask_1_32",
@@ -31586,11 +31625,23 @@
         "pass131-byte-verification.json",
         "brake-adjustments-summary.json",
         "captures/brake-adjustments-01/samples.jsonl",
-        "captures/brake-adjustments-paused-02/brakes.json"
+        "captures/brake-adjustments-paused-02/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
-      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer subsequently observed active during release. Reference can retain an intermediate pressure missed by50ms sampling. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
     },
     {
       "id": "event.brake_pressure_rise_latch",
@@ -31608,7 +31659,19 @@
         "pass131-byte-verification.json",
         "brake-adjustments-summary.json",
         "captures/brake-adjustments-01/samples.jsonl",
-        "captures/brake-adjustments-paused-02/brakes.json"
+        "captures/brake-adjustments-paused-02/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
       "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
       "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
@@ -31630,11 +31693,23 @@
         "pass131-byte-verification.json",
         "brake-adjustments-summary.json",
         "captures/brake-adjustments-01/samples.jsonl",
-        "captures/brake-adjustments-paused-02/brakes.json"
+        "captures/brake-adjustments-paused-02/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
-      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer subsequently observed active during release. Reference can retain an intermediate pressure missed by50ms sampling. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
     },
     {
       "id": "event.brake_pressure_rise_timer",
@@ -31652,7 +31727,19 @@
         "pass131-byte-verification.json",
         "brake-adjustments-summary.json",
         "captures/brake-adjustments-01/samples.jsonl",
-        "captures/brake-adjustments-paused-02/brakes.json"
+        "captures/brake-adjustments-paused-02/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
       "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
       "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
@@ -31674,11 +31761,23 @@
         "pass131-byte-verification.json",
         "brake-adjustments-summary.json",
         "captures/brake-adjustments-01/samples.jsonl",
-        "captures/brake-adjustments-paused-02/brakes.json"
+        "captures/brake-adjustments-paused-02/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
       ],
-      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed",
+      "evidence_status": "native producer and caller traced; eight-car series; lead rising latch and reference transition observed; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
       "update_or_lifecycle": "brake update path; timers decremented by train+8e, exact invocation cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer only zero. Reference can retain an intermediate pressure missed by50ms sampling."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reference updates only beyond absolute1 PSI difference; not previous-frame pressure. Shared timers are not per-car timestamps. Inactive/unmaintained fields can retain zero; non-atomic snapshot. Rising latch observed0/1 and timer0..1.25; falling latch/timer subsequently observed active during release. Reference can retain an intermediate pressure missed by50ms sampling. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
     },
     {
       "id": "car.auxiliary_reservoir_pressure",
@@ -31713,6 +31812,50 @@
       "evidence_status": "native reservoir consumers and configuration limits traced; live paused values read",
       "update_or_lifecycle": "brake update replenishment/application branches; independent cadence unmeasured",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Other brake types may reuse these fields differently. car234 supplying these reservoirs is not yet semantically named. Unit conversion and release/AI transitions untested."
+    },
+    {
+      "id": "brake.train_selected_mode",
+      "meaning": "Selected train brake controller mode after loaded-range lookup",
+      "applicability": "electric Acela player lead observed; AI and other types unvalidated",
+      "value_type": "uint32",
+      "units": "native mode code",
+      "extraction": "player lead+0x3f2; producer005d857d, engine definition452 ranges",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "pass133-byte-verification.json",
+        "captures/brake-selector-paused-01/selector.json",
+        "brake-release-attempt-summary.json",
+        "captures/brake-release-01/samples.jsonl",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
+      ],
+      "evidence_status": "native caller/selector traced; paused loaded-range reconstruction matches stored1000hex mode; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
+      "update_or_lifecycle": "brake controller update; precedes pressure updater005d8db0",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Discrete codes depend on native selector semantics; installed Acela labels corroborate six enabled ranges only. Continuous-curve branch unvalidated. Holding-mode fraction is distinct from raw handle value. Initial release attempt stayed in holding; subsequent keyboard sequence crossed hold-lapped and release modes. Holding decrement alone does not refill pipe. Immediate command and selector reads can reflect different producer phases. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
+    },
+    {
+      "id": "brake.train_selected_fraction",
+      "meaning": "Within-mode train brake controller fraction",
+      "applicability": "electric Acela player lead observed; AI and other types unvalidated",
+      "value_type": "float32",
+      "units": "mode-relative fraction; not whole-handle percent",
+      "extraction": "player lead+0x3f6; producer005d857d, engine definition452 ranges",
+      "evidence": [
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "pass133-byte-verification.json",
+        "captures/brake-selector-paused-01/selector.json",
+        "brake-release-attempt-summary.json",
+        "captures/brake-release-01/samples.jsonl",
+        "brake-release-summary.json",
+        "captures/brake-release-02/samples.jsonl",
+        "captures/brake-release-settling-01/samples.jsonl",
+        "captures/brake-released-paused-01/brakes.json"
+      ],
+      "evidence_status": "native caller/selector traced; paused loaded-range reconstruction matches stored1000hex mode; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
+      "update_or_lifecycle": "brake controller update; precedes pressure updater005d8db0",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Discrete codes depend on native selector semantics; installed Acela labels corroborate six enabled ranges only. Continuous-curve branch unvalidated. Holding-mode fraction is distinct from raw handle value. Initial release attempt stayed in holding; subsequent keyboard sequence crossed hold-lapped and release modes. Holding decrement alone does not refill pipe. Immediate command and selector reads can reflect different producer phases. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated."
     }
   ]
 }
