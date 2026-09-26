@@ -207,6 +207,14 @@ for row in rows:
         row['evidence'].append('infrastructure-summary.json')
         row['evidence_status']='all 732 registry-derived route IDs validated in current route; earlier geometry ambiguity resolved'
         row['limitations']=common+' This is index-derived identity for the tested route, not a native embedded ID field; validate after route edits/reload.'
+track_item_fields=json.loads((ROOT/'track-item-fields.json').read_text())
+for name,meaning,typ,unit,method in track_item_fields:
+    add('track_item.'+name,meaning,'shared route metadata joined to player/AI track context; subtype-specific',typ,unit,method,['captures/track-items-paused-01/items.json','track-item-summary.json','pass36-byte-verification.json','pass37-byte-verification.json','TRACK-ITEM-FINDINGS.md'],'native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances','loaded configuration; runtime updates and reload lifecycle not validated',common+' This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested.')
+for row in rows:
+    if row['id']=='infrastructure.item_kind':
+        row['units']='0 signal, 2 pickup, 3 platform, 4 HazzardItem, 6 siding, 7 level crossing, 8 speedpost, 9 empty, 10 sound region; other kinds unobserved'
+        row['evidence'].extend(['track-item-summary.json','pass36/005b5475.asm'])
+        row['evidence_status']='all 2970 live item indexes matched TDB subtype names; native serializer supports observed mapping'
 environment_fields=json.loads((ROOT/'environment-fields.json').read_text())
 for name,meaning,typ,unit,method in environment_fields:
     add('environment.'+name,meaning,'current rendered environment; shared scene state, not independent per-train weather',typ,unit,method,['captures/environment-paused-01/environment.json','pass15/0053314d.c','pass16/004902e2.asm','../msts-precipitation/SPECIFICATION.md','../msts-precipitation/terrain-research/TERRAIN-SHADER-SPEC.md'],'inherited native research plus current paused read; scene transitions not tested in this phase','render/environment lifecycle; paused samples may retain last rendered state',common+' Null subsystems must be represented as absent. Density is not rainfall intensity. Particle position units depend on state; counts are not proof of visible draw count. Wind and lighting are render values, not validated train-force or adhesion inputs.')

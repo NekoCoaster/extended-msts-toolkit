@@ -12,7 +12,7 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 - `runtime-provenance.json` and `installed-settings-observed.ini`: tested image and pre-existing installation configuration.
 - `pass01b` through later numbered passes: targeted native decompiler/assembly evidence. `pass01` is a retained failed export, not evidence of successful decompilation.
 
-Current inventory has 178 direct-read candidates/structures, 16 derived candidates, 68 native cab channels (59 declared in installed cab files) and 473 configuration leaf paths, totaling 735 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
+Current inventory has 193 direct-read candidates/structures, 16 derived candidates, 68 native cab channels (59 declared in installed cab files) and 473 configuration leaf paths, totaling 750 entries. This is **not** a count of confirmed independent live values. Pointers are useful extraction/identity metadata, static configuration is not dynamic telemetry, cab declarations are not proof that every field is simulated, and derived candidates still need validation.
 
 ## Test scenario and installation
 
@@ -27,6 +27,8 @@ Disk executable SHA256: `2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e0
 The running installation already enables IgnoreRedSignal, PreventActivityEnd, EnableCrawl, CounterTilt and UnlockFPS. These settings were not changed. After derailment the capture is modified by the pre-existing NEMT runtime; it is not a stock-MSTS physics validation. The source repository at `C:\codex\repo\NEMT` remains clean at `5cd5896`.
 
 ## Direct findings
+
+[Track-item findings](TRACK-ITEM-FINDINGS.md) identifies all 2,970 live item kinds and verifies stored platform, siding and speed-post payloads against the route file. Dynamic behavior and effective restriction semantics remain open.
 
 [Infrastructure findings](INFRASTRUCTURE-FINDINGS.md) enumerates all 732 route nodes with validated route IDs, resolving earlier disconnected/ambiguous coverage. It also records 78 service-linked track-presence records and seven signal/service associations; reservation semantics remain unverified.
 

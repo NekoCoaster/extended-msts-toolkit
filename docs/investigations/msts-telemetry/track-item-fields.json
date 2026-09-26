@@ -1,0 +1,17 @@
+[
+ ["node_distance","Track-item distance along its associated track segment","float32","metres","nonempty item+0xc; TrItemSData serializer 0x5b5d9f"],
+ ["flags","Common track-item data flags","uint32","bitfield","nonempty item+0x10; matches TrItemSData flags; subtype flags are separate"],
+ ["platform_name","Platform display name","UTF-16 string or null","text","kind3 [item+0x2c]"],
+ ["station_name","Station name for platform","UTF-16 string or null","text","kind3 [item+0x28]"],
+ ["platform_flags","Platform subtype flags","uint32","bitfield","kind3 item+0x30; PlatformTrItemData first value"],
+ ["platform_paired_item","Other platform endpoint item ID","uint32","TDB item index","kind3 item+0x34; PlatformTrItemData second value"],
+ ["platform_minimum_wait","Stored minimum platform waiting time","float32","seconds candidate","kind3 item+0x38; PlatformMinWaitingTime; scheduling behavior untested"],
+ ["platform_waiting_passengers","Stored waiting passenger count","uint32","count","kind3 item+0x3c; PlatformNumPassengersWaiting; dynamic passenger changes untested"],
+ ["siding_name","Siding display name","UTF-16 string or null","text","kind6 [item+0x14]"],
+ ["siding_flags","Siding subtype flags","uint32","bitfield","kind6 item+0x18; SidingTrItemData first value"],
+ ["siding_paired_item","Other siding endpoint item ID","uint32","TDB item index","kind6 item+0x1c; SidingTrItemData second value"],
+ ["speedpost_flags","Speed-post subtype/control flags","uint16","bitfield","kind8 item+0x28; low bits determine payload interpretation; native serializer 0x4f5703"],
+ ["speedpost_byte_value","Conditional speed-post byte payload","uint8","raw source value; restriction units unresolved","kind8 item+0x2a; serialized for low3bits 1/2 or low3bits0 with bit8 set"],
+ ["speedpost_float_value","Conditional speed-post floating payload","float32","source value; can represent distance marker, not universally speed","kind8 item+0x2c; serialized for low3bits0 or flag0x10; subtype/unit semantics still to trace"],
+ ["speedpost_angle","Stored speed-post orientation angle","float32","radians candidate","kind8 item+0x30; final SpeedpostTrItemData value"]
+]

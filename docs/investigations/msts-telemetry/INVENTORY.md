@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 178, 'runtime_derived': 16, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_leaf_paths': 473, 'files_scanned': 126, 'total': 735}
+{'runtime_direct': 193, 'runtime_derived': 16, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_leaf_paths': 473, 'files_scanned': 126, 'total': 750}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -672,11 +672,26 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | infrastructure.route_databases | Loaded track database registry | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.all_nodes | All registered track nodes including disconnected components | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.track_items | Database-wide track-item registry | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
-| infrastructure.item_kind | Native track-item subtype discriminator | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
+| infrastructure.item_kind | Native track-item subtype discriminator | all 2970 live item indexes matched TDB subtype names; native serializer supports observed mapping |
 | infrastructure.signal_service_association | Service associated with a signal object | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.vector_presence | Abstract per-car position records linked to a vector track segment | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.presence_service | Service identity attached to track-presence record | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.presence_node_distance | Position of abstract car record along its track node | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
+| track_item.node_distance | Track-item distance along its associated track segment | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.flags | Common track-item data flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.platform_name | Platform display name | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.station_name | Station name for platform | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.platform_flags | Platform subtype flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.platform_paired_item | Other platform endpoint item ID | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.platform_minimum_wait | Stored minimum platform waiting time | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.platform_waiting_passengers | Stored waiting passenger count | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.siding_name | Siding display name | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.siding_flags | Siding subtype flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.siding_paired_item | Other siding endpoint item ID | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.speedpost_flags | Speed-post subtype/control flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.speedpost_byte_value | Conditional speed-post byte payload | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.speedpost_float_value | Conditional speed-post floating payload | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.speedpost_angle | Stored speed-post orientation angle | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | environment.pointer | Active render environment identity | inherited native research plus current paused read; scene transitions not tested in this phase |
 | environment.precipitation.flags | Precipitation type and screen-mode flags | inherited native research plus current paused read; scene transitions not tested in this phase |
 | environment.precipitation.frame_count | Precipitation texture animation frame count | inherited native research plus current paused read; scene transitions not tested in this phase |

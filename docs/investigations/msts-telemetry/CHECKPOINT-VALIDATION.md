@@ -16,3 +16,9 @@ Passed locally:
 Incomplete local gate: `TEST NEMT.bat --ci` stopped when Windows Device Guard blocked `build/high-resolution-test.exe` (exit 4551). The later native tests in that batch were not run. This is not a passed full native suite, and the policy was not bypassed or changed. Remote PR checks may provide additional evidence separately.
 
 Historical gameplay findings and native-byte verification are documented in their individual reports. This publication check did not repeat the historical captures and does not establish complete telemetry discovery.
+
+## Track-item follow-up
+
+The inventory now has 750 unique entries. Updated JSON and Python sources parse successfully. Native pass36/pass37 instruction verification passed; all stored platform/siding/speed-post comparisons and common item fields agreed with the installed TDB within documented tolerances.
+
+GitHub Actions run 36245441062 (Verify source and native frontend) completed successfully for checkpoint commit eb0e87fee5fdeca90d2e4a7437cf80c38509ed03. This is remote workflow evidence for that commit; it does not remove the local Device Guard observation or prove gameplay findings beyond their cited captures. New follow-up commit checks are separate.

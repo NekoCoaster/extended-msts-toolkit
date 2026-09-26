@@ -1,15 +1,15 @@
 {
-  "generated_utc": "2026-09-26T13:25:55.470951+00:00",
+  "generated_utc": "2026-09-26T13:35:52.519971+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "First runtime probes plus installed cab/rolling-stock and preferred-activity leaf declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 178,
+    "runtime_direct": 193,
     "runtime_derived": 16,
     "cab_channels": 68,
     "installed_cab_channels": 59,
     "config_leaf_paths": 473,
     "files_scanned": 126,
-    "total": 735
+    "total": 750
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -23261,7 +23261,7 @@
       "meaning": "Native track-item subtype discriminator",
       "applicability": "route-wide; presence and signal associations join to player/AI services",
       "value_type": "uint32",
-      "units": "native enum; signal=0, other meanings pending",
+      "units": "0 signal, 2 pickup, 3 platform, 4 HazzardItem, 6 siding, 7 level crossing, 8 speedpost, 9 empty, 10 sound region; other kinds unobserved",
       "extraction": "item+0; validate before reading subtype layout",
       "evidence": [
         "captures/infrastructure-paused-01/infrastructure.json",
@@ -23270,9 +23270,11 @@
         "pass35/005d04d3.asm",
         "pass35/005c4ecf.asm",
         "pass35-byte-verification.json",
-        "INFRASTRUCTURE-FINDINGS.md"
+        "INFRASTRUCTURE-FINDINGS.md",
+        "track-item-summary.json",
+        "pass36/005b5475.asm"
       ],
-      "evidence_status": "native traversal/release traced; complete 732-node route match; paused presence and associations readable",
+      "evidence_status": "all 2970 live item indexes matched TDB subtype names; native serializer supports observed mapping",
       "update_or_lifecycle": "route and service lifecycles; dynamic acquisition/release cadence untested",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Presence is not a track-block occupancy boolean or proof of physical simulation. Signal association acquisition and reservation semantics remain unverified. Null association is not a clear aspect or movement permission. All-node coverage verified only for current loaded route."
     },
@@ -23355,6 +23357,276 @@
       "evidence_status": "native traversal/release traced; complete 732-node route match; paused presence and associations readable",
       "update_or_lifecycle": "route and service lifecycles; dynamic acquisition/release cadence untested",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Presence is not a track-block occupancy boolean or proof of physical simulation. Signal association acquisition and reservation semantics remain unverified. Null association is not a clear aspect or movement permission. All-node coverage verified only for current loaded route."
+    },
+    {
+      "id": "track_item.node_distance",
+      "meaning": "Track-item distance along its associated track segment",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "float32",
+      "units": "metres",
+      "extraction": "nonempty item+0xc; TrItemSData serializer 0x5b5d9f",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.flags",
+      "meaning": "Common track-item data flags",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint32",
+      "units": "bitfield",
+      "extraction": "nonempty item+0x10; matches TrItemSData flags; subtype flags are separate",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.platform_name",
+      "meaning": "Platform display name",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "UTF-16 string or null",
+      "units": "text",
+      "extraction": "kind3 [item+0x2c]",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.station_name",
+      "meaning": "Station name for platform",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "UTF-16 string or null",
+      "units": "text",
+      "extraction": "kind3 [item+0x28]",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.platform_flags",
+      "meaning": "Platform subtype flags",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint32",
+      "units": "bitfield",
+      "extraction": "kind3 item+0x30; PlatformTrItemData first value",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.platform_paired_item",
+      "meaning": "Other platform endpoint item ID",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint32",
+      "units": "TDB item index",
+      "extraction": "kind3 item+0x34; PlatformTrItemData second value",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.platform_minimum_wait",
+      "meaning": "Stored minimum platform waiting time",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "float32",
+      "units": "seconds candidate",
+      "extraction": "kind3 item+0x38; PlatformMinWaitingTime; scheduling behavior untested",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.platform_waiting_passengers",
+      "meaning": "Stored waiting passenger count",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint32",
+      "units": "count",
+      "extraction": "kind3 item+0x3c; PlatformNumPassengersWaiting; dynamic passenger changes untested",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.siding_name",
+      "meaning": "Siding display name",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "UTF-16 string or null",
+      "units": "text",
+      "extraction": "kind6 [item+0x14]",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.siding_flags",
+      "meaning": "Siding subtype flags",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint32",
+      "units": "bitfield",
+      "extraction": "kind6 item+0x18; SidingTrItemData first value",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.siding_paired_item",
+      "meaning": "Other siding endpoint item ID",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint32",
+      "units": "TDB item index",
+      "extraction": "kind6 item+0x1c; SidingTrItemData second value",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.speedpost_flags",
+      "meaning": "Speed-post subtype/control flags",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint16",
+      "units": "bitfield",
+      "extraction": "kind8 item+0x28; low bits determine payload interpretation; native serializer 0x4f5703",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.speedpost_byte_value",
+      "meaning": "Conditional speed-post byte payload",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "uint8",
+      "units": "raw source value; restriction units unresolved",
+      "extraction": "kind8 item+0x2a; serialized for low3bits 1/2 or low3bits0 with bit8 set",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.speedpost_float_value",
+      "meaning": "Conditional speed-post floating payload",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "float32",
+      "units": "source value; can represent distance marker, not universally speed",
+      "extraction": "kind8 item+0x2c; serialized for low3bits0 or flag0x10; subtype/unit semantics still to trace",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+    },
+    {
+      "id": "track_item.speedpost_angle",
+      "meaning": "Stored speed-post orientation angle",
+      "applicability": "shared route metadata joined to player/AI track context; subtype-specific",
+      "value_type": "float32",
+      "units": "radians candidate",
+      "extraction": "kind8 item+0x30; final SpeedpostTrItemData value",
+      "evidence": [
+        "captures/track-items-paused-01/items.json",
+        "track-item-summary.json",
+        "pass36-byte-verification.json",
+        "pass37-byte-verification.json",
+        "TRACK-ITEM-FINDINGS.md"
+      ],
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
     },
     {
       "id": "environment.pointer",
