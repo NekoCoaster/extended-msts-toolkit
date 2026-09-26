@@ -14,7 +14,7 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 
 Current inventory has 321 direct-read candidates/structures, 24 derived candidates, 68 native cab channels (59 installed) and 507 configuration paths, totaling 920 entries. This is not a count of independently validated live signals. See inventory.json for current evidence and limitations; appended checkpoints below are historical.
 
-Latest observed game state: Grain Train Through the Night paused at73997.5390625,player stopped safely before the signal with23cars and0derailed flags. The completed421sample capture validates22AIabstract-record crossings300->310,AIroute release and subsequent player acquisition/selected-branch changes. The paused forward monitor now joins to databaseitem318 and its0->7 transition in the421sample record;continuous iterator history and player crossing remain open. Inventory920;publication history is recorded separately in RESEARCH-BRANCH.md. Prior failed approach and continuing-gameplay-after-alert behavior are retained in the findings.
+Latest observed game state: Grain Train Through the Night paused at 74360.5859375, player stationary with 23 cars and no sampled derailment flags. The latest 601-sample paired capture confirms stationary forward-monitor continuity and repeats AI physical removal while abstract records persist. The attempted player crossing did not occur because brakes remained applied. See PAIRED-INFRASTRUCTURE-FINDINGS.md for the unsuccessful controls and the uncaptured tail. The earlier 421-sample capture validates 22 AI abstract-record crossings 300->310 and route release/acquisition. Inventory remains 920; publication history is recorded separately in RESEARCH-BRANCH.md.
 
 ## Test scenario and installation
 

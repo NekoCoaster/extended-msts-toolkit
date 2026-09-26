@@ -48181,6 +48181,168 @@
       "bytes": 81,
       "sha256": "79e4c5f17b499ce7a5187fa54833d5eacb6ef9970c64f60fd91039dd84a7d1f5",
       "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/capture_infrastructure_transitions.py",
+      "bytes": 4229,
+      "sha256": "73afc2236bf108899d8b57cc26065d30d0634526ece5369161b31a556b66f931",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/metadata.json",
+      "bytes": 1155,
+      "sha256": "10735bff1a3715ef9f8927430e8576e54cf7f839ea168ef178da1cd5e281ffe9",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/read_infrastructure.py",
+      "bytes": 3390,
+      "sha256": "d07b3a057ca39f3b3b827e95a911dc85071bb0cf00a195c2fb5065eca46bac29",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/read_topology.py",
+      "bytes": 3467,
+      "sha256": "d29cb1d4f555d55cf8a312a79dfb5fcefe6f028f83d0205a088825d578ae2b8f",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/paired-control-attempt-final-paused-01/samples.jsonl",
+      "bytes": 159275,
+      "sha256": "6da90725471a6a191555ca0d55c6d6fc0ecf7ba9d4cd111cea195092d5c03223",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/capture_infrastructure_transitions.py",
+      "bytes": 4229,
+      "sha256": "73afc2236bf108899d8b57cc26065d30d0634526ece5369161b31a556b66f931",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/metadata.json",
+      "bytes": 1157,
+      "sha256": "2a6219b35cba0085fb09b7aa68e219955ca9c54588ae20b616b7dcfdef46f5f2",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/read_infrastructure.py",
+      "bytes": 3390,
+      "sha256": "d07b3a057ca39f3b3b827e95a911dc85071bb0cf00a195c2fb5065eca46bac29",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/read_topology.py",
+      "bytes": 3467,
+      "sha256": "d29cb1d4f555d55cf8a312a79dfb5fcefe6f028f83d0205a088825d578ae2b8f",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-crossing-01/samples.jsonl",
+      "bytes": 102408774,
+      "sha256": "53b7a4d6185bebe405e4ac189bbefb742c8d7577ec4e242fe104e8aa77d07d82",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/capture_infrastructure_transitions.py",
+      "bytes": 4229,
+      "sha256": "73afc2236bf108899d8b57cc26065d30d0634526ece5369161b31a556b66f931",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/metadata.json",
+      "bytes": 1155,
+      "sha256": "6d221a9b1b8664a6ae195beda547def6a517194345894167f2fd0ff16dad2a1b",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/read_infrastructure.py",
+      "bytes": 3390,
+      "sha256": "d07b3a057ca39f3b3b827e95a911dc85071bb0cf00a195c2fb5065eca46bac29",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/read_topology.py",
+      "bytes": 3467,
+      "sha256": "d29cb1d4f555d55cf8a312a79dfb5fcefe6f028f83d0205a088825d578ae2b8f",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/paired-player-preflight-paused-01/samples.jsonl",
+      "bytes": 193014,
+      "sha256": "249cdc24ed9c4c18c1d868294ee95b7c95ba83078ef6882310cb9243eeb98b69",
+      "included": false
     }
   ]
 }
