@@ -2,6 +2,8 @@
 
 Status: **active, incomplete**. This workspace is separate from NEMT. No production code, game assets, installation settings, or executable have been edited. In-game controls and activity restarts are part of testing. Do not rank candidates or make keep/drop decisions yet.
 
+[Discovery coverage review](DISCOVERY-COVERAGE.md) checks the original objective against current evidence and distinguishes missing surfaces from remaining runtime validation. It is the current scope review; appended historical checkpoints do not establish completion.
+
 ## Deliverables so far
 
 - `inventory.json`: flat candidate inventory with applicability, type, units, extraction method, source evidence, lifecycle and limitations. `INVENTORY.md` is its compact readable index.

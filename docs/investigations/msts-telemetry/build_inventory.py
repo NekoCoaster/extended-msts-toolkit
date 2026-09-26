@@ -136,7 +136,7 @@ for p in files:
                 param[key][-1]=sample
 for name,examples in sorted(cab.items()):
     add('cab.'+name,name.replace('_',' ').lower()+' native cab input/display channel','player where cab/engine supports it; AI unknown','native channel dependent',
-        sorted({str(e['units']) for e in examples if e['units']}) or ['not declared in sampled CVF controls; native units unresolved'],'CVF Type declares channel; trace native cab dispatchers 0x41f357 / 0x42064b / 0x4218ae to actual producers',examples,
+        sorted({unit for e in examples for unit in (e['units'] or [])}) or ['not declared in sampled CVF controls; native units unresolved'],'CVF Type declares channel; trace native cab dispatchers 0x41f357 / 0x42064b / 0x4218ae to actual producers',examples,
         'installed asset declaration; raw field/meaning not yet fully traced','cab render/update; underlying simulation producer may differ','Asset declaration alone does not prove live population, accuracy, units or AI availability. Duplicate displays share channels.')
 for key,examples in sorted(param.items()):
     add('config.'+key,key.split(':',1)[1]+' configured value','asset/service/activity dependent; bind by actual runtime identity','SIMIS direct node tokens','as written in source; infer no units',
@@ -691,6 +691,25 @@ for row in rows:
         row['evidence']+=['SIGNALS-AND-CAB-FINDINGS.md','forward-signal-clearance-join.json','captures/clearance-forward-signal-paused-01/details.jsonl']
         row['evidence_status']+=';paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history'
         row['limitations']+=' Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing.'
+# Consolidate later evidence without treating historical capture limitations as
+# permanent absence of evidence. Candidate IDs and underlying raw files persist.
+for row in rows:
+    if row['id']=='body.position':
+        row['meaning']='Physics-body reference position in local simulation coordinates'
+        row['units']='metres; current local origin, not geographic coordinates'
+        row['evidence']+=['TRACK-POSITION-FINDINGS.md','MOTION-DIFFERENCE-FINDINGS.md','INTEGRATOR-TIME-FINDINGS.md']
+        row['evidence_status']='live player/AI movement sampled; local body and track reference points compared; clock and producer-phase differences documented'
+        row['limitations']=common+' Track traversal uses the native 2048-m tile-origin translation; this does not prove the same inverse is a validated continuous body-world transform through an origin shift. Body and track reference points differ. Physical-body buffers can change and intermediate AI placement/reset phases can yield misleading derivatives. Player physics and AI service movement use distinct observed time bases; do not silently substitute gameplay time or infer a universal velocity correction.'
+    if row['id'] in {'signal.next_iterator','signal.next_distance','signal.head_identity','signal.aspect','infrastructure.signal_service_association'}:
+        row['evidence']+=['PAIRED-INFRASTRUCTURE-FINDINGS.md','paired-player-crossing-01-paired-summary.json','captures/paired-player-crossing-01/metadata.json']
+        row['evidence_status']+=';601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements'
+        row['limitations']+=' Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity.'
+    if row['id'] in {'infrastructure.vector_presence','infrastructure.presence_node_distance','infrastructure.presence_service','infrastructure.presence_direction_raw'}:
+        # The crossing analyzer checks identity and node changes, not physical extent
+        # or direction correctness. Never broaden its result to those properties.
+        row['evidence']+=['infrastructure-ai-clearance-01-crossings.json','PAIRED-INFRASTRUCTURE-FINDINGS.md','paired-player-crossing-01-crossings.json']
+        row['limitations']=row['limitations'].replace('Rephysicalization and node crossing untested.','Rephysicalization remains untested; a later capture validates22abstract-record node crossings,not physical extent or direction semantics.')
+        row['limitations']+=' The later paired series preserves45abstract records after physical AI removal;no node crossing occurs in that series. Earlier421-sample crossing evidence is separate. Direction correctness during crossing/reversal remains unvalidated.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

@@ -1,5 +1,7 @@
 # Catalogue evidence audit
 
+Latest scope review: DISCOVERY-COVERAGE.md. The current catalogue has 920 unique IDs, 480 referenced evidence paths and 126 unchanged original assets. The latest metadata correction preserves every ID, normalizes 17 installed cab unit lists, and consolidates body-position, paired-signal and presence-crossing caveats. Earlier counts below are historical. Neither the structural audit nor the coverage review proves comprehensive completion.
+
 audit_inventory.py checks the canonical local catalogue for unique IDs, nonempty required metadata, existence of path-based evidence, and current hashes of the126 source assets recorded in source-manifest.json. inventory-audit.json records the inventory hash so its result is tied to a particular generated catalogue. Rebuilding inventory.json changes its generation timestamp/hash; rerun the audit afterward.
 
 Current result:768 unique IDs, no empty required metadata,173 distinct evidence paths present,126 source hashes matching. Native cab routing dictionaries are structured evidence and are not treated as filenames. These are structural/provenance checks only; file presence does not prove the claim citing it, and unique IDs do not prove semantic uniqueness.
