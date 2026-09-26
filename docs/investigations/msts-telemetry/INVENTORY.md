@@ -973,7 +973,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | environment.render.vertex_uv | Stored mutable sky texture coordinates | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
 | environment.render.frame_count | Loaded sky animated-shader frame count | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
 | environment.render.frame_duration | Loaded sky animated-shader frame duration | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
-| environment.render.animation_clock | Stored sky shader animation clock input | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
+| environment.render.animation_clock | Stored sky shader animation phase accumulator | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
 | environment.render.selected_frame | Raw selected sky shader frame index | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
 | environment.render.frame_array | Loaded sky shader frame records | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |
 | environment.render.frame_scroll | Selected frame texture scroll coefficients | native layout/update/init match current disk/live;61corrected paused samples,0read errors,5shader reread changes |

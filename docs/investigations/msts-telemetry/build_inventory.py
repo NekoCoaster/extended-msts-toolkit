@@ -757,6 +757,7 @@ for name,meaning,typ,units,method in [
         'environment parsing/configuration;later mutation/reset writers and teardown unvalidated',
         common+' Loaded parameters,not current alpha or draw visibility. Matching authored face8 cannot prove token consumption;parser initializes8. Geometry scaling ratio1here only. Missing fade declarations retainzero pairs;do not infer invisibility. Native edge tokenorder increments onradius. Pointer/header rereads do not prove atomicity. Consolidated UnityKB preserves earlier native evidence but its historical time-substitution/device tests are not current passive telemetry validation.')
 vertex_evidence=['SKY-VERTEX-FINDINGS.md','pass184-byte-verification.json','pass185-byte-verification.json','pass184/006e53c0.asm','pass184/006e1310.c','pass185/006e1070.c','sky-vertices-paused-01-summary.json','sky-vertices-paused-02-summary.json','captures/sky-vertices-paused-02/metadata.json']
+vertex_evidence += ['SKY-CLOCK-FINDINGS.md','sky-scroll-summary.json','pass188-byte-verification.json','pass188/006e1470.asm','pass188/006e1520.asm','pass188/0053314d.asm']
 for name,meaning,typ,units,method in [
     ('vertex_count','Allocated sky draw-object vertex count','uint32','vertices','draw+4'),
     ('vertex_array','Sky CPU vertex buffer identity','pointer32','session identity,stride0x28','[draw+8]'),
@@ -766,7 +767,7 @@ for name,meaning,typ,units,method in [
     ('vertex_uv','Stored mutable sky texture coordinates','2 float32','UV coordinates,not clamped0..1','vertex+0x20'),
     ('frame_count','Loaded sky animated-shader frame count','uint32','frames','shader+0'),
     ('frame_duration','Loaded sky animated-shader frame duration','float32','native animation time parameter;zero has special update branch','shader+4'),
-    ('animation_clock','Stored sky shader animation clock input','float32','seconds-like accumulator;advances while gameplay paused','shader+8'),
+    ('animation_clock','Stored sky shader animation phase accumulator','float32','native render time;can wrap by frame count times frame duration;advances while gameplay paused','shader+8'),
     ('selected_frame','Raw selected sky shader frame index','uint32','index;FFFFFFFFparser initialization sentinel','shader+0xc'),
     ('frame_array','Loaded sky shader frame records','pointer32 plus bounded array','stride0x20 records','[shader+0x10],count[shader]'),
     ('frame_scroll','Selected frame texture scroll coefficients','2 float32','UV increment per native delta unit','frame+0x18;frame=[shader+0x10]+index*0x20,onlyifindex<count')]:
