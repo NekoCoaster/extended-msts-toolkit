@@ -793,6 +793,32 @@ for name,meaning,typ,units,method in [
         audio_stream_evidence,'native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved',
         'audio processing may continue while gameplay paused;backend replacement and receiver lifetime can invalidate identity',
         common+' Sequential snapshot;stable rereads and zero observed lock words do not prove atomicity or lifetime. No native/API calls. One stream exceeds256-node research bound;its full queue count is unavailable. Firing history, audio duration, final output volume/frequency and actual audibility are not measured. Cached curve values may remain stale when branches skip them. Mask storage covers64bits;larger trigger counts require separate layout validation. No AI receiver association in this paused session.')
+pending_evidence=['AUDIO-PENDING-FINDINGS.md','audio-pending-summary.json','pass190-byte-verification.json','pass191-byte-verification.json','pass192-byte-verification.json','pass190/0053e203.asm','pass191/005416cc.c','pass192/0053e55a.c','captures/audio-pending-paused-01/pending.json']
+for name,meaning,typ,units,method in [
+    ('kind','Pending audio record type discriminator','uint8','native type;1sample-reference record;2different nested payload','node+0'),
+    ('control_bytes','Pending audio record raw control bytes','3 uint8','raw values;individual meanings not fully traced','node+1,+2,+3'),
+    ('sample_identity','Type1 requested sample-reference identity','pointer32','session address;not current playback identity','[node+4] only when[node+0]==1'),
+    ('sample_path_parts','Loaded directory and filename labels for requested sample','two bounded UTF16 strings','path labels;not independently verified file content identity','sample=[node+4] forkind1;pair=[sample+8];strings=[pair] and[pair+4]'),
+    ('acquisition_counter','Sample load/acquisition reference counter candidate','uint32','successful acquisition increments;release accounting untraced;not play count','sample+4 forkind1'),
+    ('resource_identity','Loaded resource object for requested sample','pointer32','session address;not proof of successful/current audio output','[sample+0x14] forkind1')]:
+    add('audio.pending.'+name,meaning,'shared pending audio requests;five samples observed on unassociated receivers;AI/player applicability beyond structure unvalidated',typ,units,method,
+        pending_evidence,'typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads',
+        'audio enqueue/processing and resource lifetime;non-atomic reads;no release/reset transition observed',
+        common+' Type2payload is not a sample pointer and nested structures are not traversed. One chain remains incomplete at256nodes;raw bytes retain uncertainty. Paths are loaded labels,not hash-verified files or observed playback. Counter cannot be inferred from partial queue counts. No AI association from filenames. Native flag2 can be set without a buffer playback call in flag10 branch.')
+nested_evidence=['AUDIO-NESTED-FINDINGS.md','audio-nested-summary.json','captures/audio-nested-paused-01/nested.json','pass190/0053e2d2.c','pass192-byte-verification.json']
+for row in rows:
+    if row['id'].startswith('audio.pending.'):
+        row['evidence'].extend(nested_evidence)
+        row['applicability']='shared pending audio requests;player engine/cab and unassociated sources observed;AI unvalidated'
+        row['limitations']=row['limitations'].replace('Type2payload is not a sample pointer and nested structures are not traversed.','Type2payload is not a sample pointer;follow its child ring only with the verified wrapper-return traversal.')
+        row['limitations']+=' Follow-up bounded type2 traversal resolves12 type1 children returning to4wrappers and8samples including player engine/cab. Sample identity can be shared by different receiver/stream/car associations;retain all levels. Raw control-byte meanings and current playback remain unvalidated.'
+for name,meaning,typ,units,method in [
+    ('nested_children','Type2 pending-record child ring identities','bounded pointer32 array','session identities;128-child probe bound not native capacity','first=[wrapper+4],follow child+8 until wrapper;require child kind1'),
+    ('nested_child_count','Child count for a completely traversed type2 pending record','derived uint32 or unavailable','records,not audio duration or playback position','count children only on successful return to wrapper;unavailable on null/type/cycle/bound/error')]:
+    add('audio.pending.'+name,meaning,'player engine/cab and unassociated source wrappers observed;AI unvalidated',typ,units,method,
+        nested_evidence,'verified native construction rule;4wrappers3children each with stable full-record rereads',
+        'pending request enqueue/processing;no lifetime or removal transition tested',
+        common+' Return to wrapper is expected;other cycles are invalid to this probe. Counts are structural,not playing voices. Sample references can be shared. Top-level traffic chain remains incomplete. No actual playback, sound segment meaning, AI owner or global reference-accounting proof.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 382, 'runtime_derived': 25, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 982}
+{'runtime_direct': 389, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 990}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -988,3 +988,11 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | audio.stream.volume_factor | Stored stream volume factor | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
 | audio.stream.interface_identities | Stored buffer and spatial-interface identities | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
 | audio.stream.trigger_count | Loaded per-stream trigger record count | native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved |
+| audio.pending.kind | Pending audio record type discriminator | typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads |
+| audio.pending.control_bytes | Pending audio record raw control bytes | typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads |
+| audio.pending.sample_identity | Type1 requested sample-reference identity | typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads |
+| audio.pending.sample_path_parts | Loaded directory and filename labels for requested sample | typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads |
+| audio.pending.acquisition_counter | Sample load/acquisition reference counter candidate | typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads |
+| audio.pending.resource_identity | Loaded resource object for requested sample | typed constructors/load helper match disk/live;262nodes and5kind1 sample objects read with stable rereads |
+| audio.pending.nested_children | Type2 pending-record child ring identities | verified native construction rule;4wrappers3children each with stable full-record rereads |
+| audio.pending.nested_child_count | Child count for a completely traversed type2 pending record | verified native construction rule;4wrappers3children each with stable full-record rereads |

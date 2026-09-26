@@ -157,3 +157,9 @@ Inventory remains971 with513 evidence paths and126 unchanged original assets. Pa
 982 candidates (382direct25derived68cab507config);521 evidence paths and126 unchanged original assets. Pass189 sixfunctions2645instructions8915bytes match disk/live. Two paused snapshots cover33receivers67streams; first has one retained guard failure, second records256distinct nodes then a research-bound stop for that stream. Its complete queue count is unavailable;66other chains terminate. All67 second-snapshot rereads agree, without an atomicity claim. Seven native bit2 predicates are true, onlyone with a buffer pointer. AI/audio playback transitions remain unvalidated.
 
 244JSON/110Python sources parse;8578old raw hashes unchanged,34added,8612total. No production, game-memory, asset or save changes. Historical native/remote CI limitations remain; goal active,PR draft.
+
+## Typed and nested pending audio checkpoint
+
+990 candidates (389direct26derived68cab507config);534 evidence paths and126 unchanged original assets. Pass190/191/192 verify5/11/5functions and2608/4254/1794instruction bytes against disk/live. Type1 payloads resolve loaded sample labels; type2 payloads require child-ring traversal returning to the wrapper. Separate paused captures preserve262top-level nodes, then12children across4wrappers and8sample identities. Two player engine streams shareone sample; no unique owner or actual playback is inferred. The traffic outer chain remains incomplete at256observed nodes.
+
+249JSON/114Python sources parse;8612old raw hashes unchanged,94added,8706total. No game controls/process writes/assets/saves changed. Native-test limitations and remote CI status remain as above. Goal incomplete,PR draft.
