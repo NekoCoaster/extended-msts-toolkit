@@ -23,6 +23,8 @@ At the initial review the inventory had 920 candidate entries: 321 direct fields
 
 ## Discovery versus validation
 
+A working extraction handoff is now available in `EXTRACTION-HANDOFF.md`. It specifies the retained-evidence access recipe, supported disk build, actual probe guards and their limits, nested-error handling, clock/origin/lifecycle constraints, and reproducible capture commands. `verify_evidence_manifest.py` matched all 9,276 currently published raw-evidence entries; offline fixture tests exercise corruption, missing files and malformed manifests. This closes the missing access/validity documentation portion of the handoff requirement. It does not close the remaining discovery gaps, semantic validation or final completion audit.
+
 A known field can remain a legitimate candidate when its lifecycle, units or nonzero runtime state is uncertain; those limitations belong in its row. Conversely, repeating a paused zero or an unchanged signal does not discover missing surfaces. The unsuccessful player-brake experiment is evidence about that test method, not evidence that the requested telemetry cannot be read.
 
 The next new-surface investigation is the environment's active-file selection and sky/cloud/satellite state, using existing native environment research as a starting point. This is a concrete open area in the original objective, not a decision that environment telemetry should be retained or prioritized in NEMT. Moving-player and station validation remain open rather than being erased from the scope.

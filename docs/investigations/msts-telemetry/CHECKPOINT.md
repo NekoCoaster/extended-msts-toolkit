@@ -6,6 +6,7 @@ Status: **active, incomplete**. This workspace is separate from NEMT. No product
 
 ## Deliverables so far
 
+- [Extraction and evidence handoff](EXTRACTION-HANDOFF.md): build assumptions, actual read guards, lifecycle and timing limits, retained-evidence access, and reproducible manifest verification. This is a working handoff, not a completion certificate.
 - `inventory.json`: flat candidate inventory with applicability, type, units, extraction method, source evidence, lifecycle and limitations. `INVENTORY.md` is its compact readable index.
 - `source-manifest.json`: hashes for the 126 installed asset files inspected in the first discovery sweep.
 - `read_live.py`: external read-only process sampler. Uses only QUERY_LIMITED_INFORMATION and VM_READ. No Frida, code injection, debugger attachment, remote function calls or process writes.
