@@ -926,6 +926,18 @@ for row in rows:
     if row['id'] in {'car.identity','car.train_owner','car.links','car.body_pointer'}:
         row['evidence'].extend(physical_evidence)
         row['limitations']+=' Independent physical-list probe matches45connected player/AIcars;no positive detached/static fixture yet.'
+lifecycle_evidence=['PHYSICAL-REGISTRY-LIFECYCLE.md','pass217-byte-verification.json','pass222-byte-verification.json','pass223-byte-verification.json','pass224-byte-verification.json','pass225-byte-verification.json','captures/physical-registry-lifecycle-paused-01/registry.json']
+for ident,meaning,typ,unit,method in [
+ ('car.physical_registry_stored_count','Stored manager physical-object list count','uint32','objects','[[0x7bdecc]+0x1c]'),
+ ('car.registered_bit','Object registration flag used by insertion and teardown','bool','boolean','(uint32[verified vehicle+0x18] & 4) != 0')]:
+    add(ident,meaning,'physical objects;player and AI vehicles observed',typ,unit,method,lifecycle_evidence,
+        'insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45',
+        'list registration/removal;can precede completed initialization',
+        common+' Not a load-complete or coherent-read gate. Cleanup clears bit after removal request even if no node found. No live count/bit transition or detached/static fixture yet.')
+for row in rows:
+    if row['id']=='car.physical_registry':
+        row['evidence'].extend(lifecycle_evidence)
+        row['limitations']+=' Insertion precedes later setup;listnodes are recycled by native unlink helper. Never cache node addresses as stable identities.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

@@ -12,6 +12,7 @@ class PhysicalRegistryReader(Reader):
         manager = self.u(0x7bdecc)
         table = self.u(0x828108)
         root = self.u(manager + 0x18)
+        stored_count = self.u(manager + 0x1c)
         header = self.read(root, 8)
         node = self.u(root)
         seen, rows = set(), []
@@ -47,6 +48,8 @@ class PhysicalRegistryReader(Reader):
                        class_object=cls, method=method, native_kind=kind)
             if kind in (0x4000d, 0x4000e):
                 row.update(object_id=self.u(obj + 0x50), owner=self.u(obj + 0x98),
+                           object_flags=self.u(obj + 0x18), registered_bit=bool(self.u(obj + 0x18) & 4),
+                           self_index_matches=self.u(obj + 4) == index,
                            physics=self.car(obj))
             row['stable'] = (raw == self.read(node, 12) and
                              obj == self.u(table + index * 8) and
@@ -60,7 +63,18 @@ class PhysicalRegistryReader(Reader):
         trains = self.trains()
         connected = {c['address'] for t in trains for c in t['cars']}
         physical = {x['address'] for x in rows if x['native_kind'] in (0x4000d, 0x4000e)}
+        parent_methods = []
+        for address in (0x80a7b8, 0x7c0188):
+            ci = self.u(address)
+            if ci >= 100000: raise ValueError('Parent class index bound')
+            cls = self.u(table + ci * 8)
+            slot = self.u(cls + 0xac)
+            if slot >= 1024: raise ValueError('Parent method slot bound')
+            parent_methods.append(dict(global_address=address, class_index=ci, class_object=cls,
+                                       method_number=0x12, slot=slot, target=self.u(cls + 0x1064 + slot*4)))
         return dict(manager=manager, table=table, root=root, objects=rows,
+                    stored_count=stored_count, stored_count_after=self.u(manager + 0x1c),
+                    parent_methods=parent_methods,
                     roots_stable=(manager == self.u(0x7bdecc) and table == self.u(0x828108)
                                   and root == self.u(manager + 0x18) and header == self.read(root, 8)),
                     physical_not_in_train_chains=sorted(physical-connected),

@@ -14,7 +14,9 @@ public class TelemetryExport extends GhidraScript {
   try(PrintWriter refs=new PrintWriter(new File(out,"references.tsv"))){
    refs.println("target\tfrom\ttype\tfunction");
    for(int i=1;i<args.length;i++){
+    if(args[i].equals("--no-callers"))continue;
     Address a=toAddr(args[i]);if(a==null)throw new IllegalArgumentException("Invalid address: "+args[i]);Function f=getFunctionContaining(a);if(f!=null)fs.add(f);
+    if(Arrays.asList(args).contains("--no-callers"))continue;
     for(Reference r:getReferencesTo(a)){
      Function caller=getFunctionContaining(r.getFromAddress());
      refs.println(a+"\t"+r.getFromAddress()+"\t"+r.getReferenceType()+"\t"+(caller==null?"":caller.getEntryPoint()));

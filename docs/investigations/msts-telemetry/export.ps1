@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Pass,[Parameter(Mandatory=$true)][string[]]$Addresses)
+param([Parameter(Mandatory=$true)][string]$Pass,[Parameter(Mandatory=$true)][string[]]$Addresses,[switch]$NoCallers)
 $ErrorActionPreference='Stop'
 $toolRoot='C:\codex\reference\historical-tasks\2026-09-05\referenced-chatgpt-conversation-this-is-an\work\tools'
 $env:JAVA_HOME=Join-Path $toolRoot 'jdk-21.0.12.1+1'
@@ -10,6 +10,7 @@ $output=Join-Path $PSScriptRoot $Pass
 New-Item -ItemType Directory -Path $output -Force | Out-Null
 $exportArgs=@('C:\dev\Codex\2026-09-10\msts-precipitation\ghidra-projects','MSTS','-process','train.exe','-noanalysis','-readOnly','-scriptPath',$PSScriptRoot,'-postScript','TelemetryExport.java',$output)
 $exportArgs+=$Addresses
+if($NoCallers) {$exportArgs+='--no-callers'}
 $exportArgs+=@('-max-cpu','2','-log',(Join-Path $output 'ghidra.log'),'-scriptlog',(Join-Path $output 'script.log'))
 & (Join-Path $toolRoot 'ghidra_12.1.3_PUBLIC\support\analyzeHeadless.bat') @exportArgs *> (Join-Path $output 'console.log')
 Get-Content (Join-Path $output 'console.log') -Tail 15
