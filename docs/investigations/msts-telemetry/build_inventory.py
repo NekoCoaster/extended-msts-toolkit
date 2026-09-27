@@ -1064,6 +1064,20 @@ for row in rows:
         row['evidence'].extend(['WHEEL-ADHESION-FINDINGS.md','read_body_accumulators.py','analyse_body_accumulators.py','body-accumulators-summary.json','captures/body-accumulators-paused-01/accumulators.json','pass273/0062e5d6.asm','pass273-byte-verification.json'])
         row['evidence_status']=row['evidence_status'].replace('independent AI population untested','independent AI force evolution unvalidated')+';guarded paused capture covers23player and22AI bodies with stable local rereads'
         row['limitations']+=' Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic.'
+# Consolidate current lifecycle statements after chronological evidence additions.
+for row in rows:
+    if row['id']=='engine.vigilance_monitor_state':
+        row['update_or_lifecycle']='Player UI-enabled run observed 0.25 countdown decrements, alarm/action rising edges and penalty brake response; initializer/reset paths traced. Acknowledgement, complete reload restoration and other monitor interventions remain unvalidated.'
+        row['units']='Enable/action/alarm/latch words; countdown floats use caller engine simulation interval (seconds), distinct from activity-clock elapsed time; other cached inputs retain field-specific or unresolved units'
+        row['limitations']+=' Enabled capture contains one differing vigilance reread away from the reported event edges; no claim of wholly stable or atomic capture.'
+    elif row['id'] in {'session.vigilance_update_suppressed','session.aws_update_suppressed'}:
+        row['update_or_lifecycle']='Global command/settings gate. Normal UI Alerter enable plus activity restart yielded0; restoring the option plus restart yielded1. Exact write timing, process-restart persistence and shortcut dispatch remain unvalidated.'
+        row['limitations']=row['limitations'].replace('do not claim successful dispatch or settings persistence.','do not claim successful shortcut dispatch or process-restart persistence.')
+    elif row['id']=='car.shape_node_transform':
+        row['update_or_lifecycle']='Allocated with animation object; dispatcher/callback updates traced. Representative player/AI type5 wheel matrices changed during motion and stayed unchanged between consecutive paused samples. Exact frame cadence, allocation/reload lifetime and other node classes remain unvalidated.'
+        row['limitations']=row['limitations'].replace('transforms not reread.','initial paused node probe did not reread transforms; subsequent moving probe did.')
+    elif row['id']=='car.wheel_transform_groups':
+        row['update_or_lifecycle']='Native type4 branch directly supplies group context and matrices to callbacks. Representative player/AI wagon wheel matrices changed during motion and stayed unchanged between consecutive paused samples. Exact frame cadence and allocation/reload lifetime remain unvalidated.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

@@ -312,3 +312,7 @@ Two280sample sequences confirm representative type5locomotive/type4wagon matrix 
 ## Body accumulator checkpoint
 
 Pass273: 35 instructions/94 bytes match disk and live PID33612. Guarded paused capture:45vehicles,23player/22AI,zero errors or reread differences. Shared accumulator is not standalone resistance;AI zeros are qualified. Inventory1037 unchanged;753evidence paths and126source hashes pass structural audit. Sync verifies10929old raw hashes and adds14entries;362JSON/168Python parse. Research-only changes;native build not repeated (previous DeviceGuard limitation remains). Goal incomplete;moving force/torque semantics remain open.
+
+## Scoped lifecycle consistency review
+
+Corrected five monitor/gate/wheel lifecycle records against retained evidence; no candidate count change or new runtime claim. Monitor event and player/AI wheel summaries reproduce byte-identically from raw captures. Restored gate snapshot confirms1/1 after UI restoration/reload. Inventory audit:1037unique candidates,753evidence paths,126unchangedsource hashes. Sync verifies10943raw hashes,362JSON/168Python parse. Full semantic review remains incomplete; no native code changed or native build repeated.
