@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T10:47:50.219824+00:00",
+  "generated_utc": "2026-09-27T15:57:35.185933+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -568,7 +568,7 @@
     {
       "id": "body.position",
       "meaning": "Physics-body reference position in local simulation coordinates",
-      "applicability": "player and registered AI",
+      "applicability": "player and registered AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "3 float32",
       "units": "metres; current local origin, not geographic coordinates",
       "extraction": "body+0x30",
@@ -613,11 +613,17 @@
         "pass278/005e1561.asm",
         "pass278/005e15b5.asm",
         "pass278/005e150d.asm",
-        "pass276/005e17a0.asm"
+        "pass276/005e17a0.asm",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "live player/AI movement sampled; local body and track reference points compared; clock and producer-phase differences documented",
+      "evidence_status": "live player/AI movement sampled; local body and track reference points compared; clock and producer-phase differences documented;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track traversal uses the native 2048-m tile-origin translation; this does not prove the same inverse is a validated continuous body-world transform through an origin shift. Body and track reference points differ. Physical-body buffers can change and intermediate AI placement/reset phases can yield misleading derivatives. Player physics and AI service movement use distinct observed time bases; do not silently substitute gameplay time or infer a universal velocity correction. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Collision table callback computes selected body velocity + angular_velocity cross(point-position),compares squared magnitude to49. At initial pair construction,body selection is opposite the object receiving flags2;later helper005df0b8 can swap bodies/callbacks without objects,so attribution is phase-dependent. Not relative impact speed or observed damage. Current45vehicle fixture uses a different callback. Point validity,frame agreement and actual invocation remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track traversal uses the native 2048-m tile-origin translation; this does not prove the same inverse is a validated continuous body-world transform through an origin shift. Body and track reference points differ. Physical-body buffers can change and intermediate AI placement/reset phases can yield misleading derivatives. Player physics and AI service movement use distinct observed time bases; do not silently substitute gameplay time or infer a universal velocity correction. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Collision table callback computes selected body velocity + angular_velocity cross(point-position),compares squared magnitude to49. At initial pair construction,body selection is opposite the object receiving flags2;later helper005df0b8 can swap bodies/callbacks without objects,so attribution is phase-dependent. Not relative impact speed or observed damage. Current45vehicle fixture uses a different callback. Point validity,frame agreement and actual invocation remain unvalidated. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "body.right",
@@ -27041,7 +27047,7 @@
     {
       "id": "track.node",
       "meaning": "Track node identity",
-      "applicability": "player and AI vehicle track records",
+      "applicability": "player and AI vehicle track records;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "pointer32",
       "units": "session identity",
       "extraction": "record+0; car record=car+0x128; service record=service+0x4c",
@@ -27069,16 +27075,22 @@
         "analyse_player_track_caps.py",
         "player-track-caps-moving-01-summary.json",
         "captures/player-track-caps-moving-01/samples.jsonl",
-        "captures/post-signal-track-paused-01/tracks.json"
+        "captures/post-signal-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.section_index",
       "meaning": "Section ordinal within track node",
-      "applicability": "player and AI",
+      "applicability": "player and AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "uint32",
       "units": "zero-based index",
       "extraction": "record+4",
@@ -27106,16 +27118,22 @@
         "analyse_player_track_caps.py",
         "player-track-caps-moving-01-summary.json",
         "captures/player-track-caps-moving-01/samples.jsonl",
-        "captures/post-signal-track-paused-01/tracks.json"
+        "captures/post-signal-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.section",
       "meaning": "Track section instance identity",
-      "applicability": "player and AI",
+      "applicability": "player and AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "pointer32",
       "units": "session identity",
       "extraction": "record+8; verify [node+0x18]+index*0x40",
@@ -27143,16 +27161,22 @@
         "analyse_player_track_caps.py",
         "player-track-caps-moving-01-summary.json",
         "captures/player-track-caps-moving-01/samples.jsonl",
-        "captures/post-signal-track-paused-01/tracks.json"
+        "captures/post-signal-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.direction",
       "meaning": "Track traversal direction",
-      "applicability": "player and AI",
+      "applicability": "player and AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "uint32",
       "units": "native 0/1",
       "extraction": "record+0xc; value 1 increments distances for positive movement",
@@ -27180,16 +27204,22 @@
         "analyse_player_track_caps.py",
         "player-track-caps-moving-01-summary.json",
         "captures/player-track-caps-moving-01/samples.jsonl",
-        "captures/post-signal-track-paused-01/tracks.json"
+        "captures/post-signal-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.node_distance",
       "meaning": "Distance along current node",
-      "applicability": "player and AI",
+      "applicability": "player and AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "float32",
       "units": "metres",
       "extraction": "record+0x10; native traversal compares against node length",
@@ -27217,16 +27247,22 @@
         "analyse_player_track_caps.py",
         "player-track-caps-moving-01-summary.json",
         "captures/player-track-caps-moving-01/samples.jsonl",
-        "captures/post-signal-track-paused-01/tracks.json"
+        "captures/post-signal-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.section_distance",
       "meaning": "Distance along current section",
-      "applicability": "player and AI",
+      "applicability": "player and AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "float32",
       "units": "metres",
       "extraction": "record+0x14; native traversal rolls into adjacent section",
@@ -27254,16 +27290,22 @@
         "analyse_player_track_caps.py",
         "player-track-caps-moving-01-summary.json",
         "captures/player-track-caps-moving-01/samples.jsonl",
-        "captures/post-signal-track-paused-01/tracks.json"
+        "captures/post-signal-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;eight matched player car/body pairs cross a node boundary with local direction1to0 during positive motion;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Later coasting capture validates eight player car node changes,not lead/service crossing:both already on new node at capture start. Node-local distance resets and direction changes;neither is cumulative route distance or universal train direction. Full samples are asynchronous. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.local_position",
       "meaning": "Track reference point in current local coordinates",
-      "applicability": "player and AI",
+      "applicability": "player and AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "3 float32",
       "units": "metres",
       "extraction": "record+0x48; different reference point from physics body centre",
@@ -27285,11 +27327,17 @@
         "COLLISION-STATE-FINDINGS.md",
         "collision-state-summary.json",
         "captures/collision-paused-01/samples.jsonl",
-        "captures/collision-track-paused-01/tracks.json"
+        "captures/collision-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.angles_candidate",
@@ -27387,7 +27435,7 @@
     {
       "id": "track.section_definition_index",
       "meaning": "Track geometry definition reference",
-      "applicability": "route section joined to player/AI",
+      "applicability": "route section joined to player/AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "uint16",
       "units": "index",
       "extraction": "section+0; used to index [0x80a118]+0xc table with 0x18 stride",
@@ -27409,16 +27457,22 @@
         "COLLISION-STATE-FINDINGS.md",
         "collision-state-summary.json",
         "captures/collision-paused-01/samples.jsonl",
-        "captures/collision-track-paused-01/tracks.json"
+        "captures/collision-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.node_length",
       "meaning": "Total track-node length",
-      "applicability": "route node joined to player/AI",
+      "applicability": "route node joined to player/AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "float32",
       "units": "metres",
       "extraction": "node+0x28",
@@ -27440,16 +27494,22 @@
         "COLLISION-STATE-FINDINGS.md",
         "collision-state-summary.json",
         "captures/collision-paused-01/samples.jsonl",
-        "captures/collision-track-paused-01/tracks.json"
+        "captures/collision-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.node_section_count",
       "meaning": "Number of sections in node",
-      "applicability": "route node joined to player/AI",
+      "applicability": "route node joined to player/AI;loaded owner-null loose vehicles validated in paused yard fixture",
       "value_type": "uint32",
       "units": "count",
       "extraction": "node+0x1c",
@@ -27471,11 +27531,17 @@
         "COLLISION-STATE-FINDINGS.md",
         "collision-state-summary.json",
         "captures/collision-paused-01/samples.jsonl",
-        "captures/collision-track-paused-01/tracks.json"
+        "captures/collision-track-paused-01/tracks.json",
+        "LOOSE-TRACK-FINDINGS.md",
+        "read_loose_track_context.py",
+        "analyse_loose_track_context.py",
+        "loose-track-context-summary.json",
+        "captures/loose-yard-track-01/context.json",
+        "captures/loose-yard-topology-01/topology.json"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending",
+      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;39loose vehicle track records have valid node/section joins and bounded distances",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred."
     },
     {
       "id": "track.route_position_candidate",

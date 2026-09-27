@@ -364,3 +364,7 @@ Two completed captures:2383/1788 samples,zero read or signal errors,zero iterato
 ## Positive loose-stock fixture
 
 Normal UI saved grain run to a new timestamped file,then loaded Setting Out Westbound Pickup. Earlier save hash unchanged,new save copied with provenance;new restoration untested. Paused39600.76953125:physical list40vs1train-owned player engine,39owner-null loose vehicles in6reciprocal components5/3/1/16/13/1matching configured sizes.38wagons1engine,all39bodies/registration/rereads valid,velocity0/resting. Manager counts0/52/1342/40/1. Actual coupling/detachment and exact activity/native-ID joins unvalidated. Inventory1039unchanged,834evidence paths127sourcehashes pass. Sync11173prior raw hashes plus10newfiles;385JSON184Python parse. No production/native changes.
+
+## Loose-stock track context
+
+Paused fixture40vehicle track joins,39owner-null,zero node/index/section-pointer/distance/owner checks failed. Independent726node topology has zero nonreciprocal links. Body-track vertical difference1.970032..2.833313m scoped to loose fixture;no universal correction. Nearest centre91.676m is on another track;shortest graph route is not a direct drivable connection. UI activation failed twice after fresh selection;no coupling input executed. Inventory1039,840evidence paths127asset hashes pass. Sync11183prior hashes plus9newfiles,386JSON186Python parse. Research only.

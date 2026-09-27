@@ -1,0 +1,13 @@
+# Track telemetry for loaded loose stock
+
+`read_loose_track_context.py` joins the type-validated physical registry to car track records without requiring a train owner. It captures each recognized vehicle's body position, length, track node/section/direction/distances and geometry references. `loose-yard-track-01` contains 40 vehicles, including all 39 owner-null loose vehicles, at paused day-seconds 39600.76953125. Start/end clocks and origin agree. Each owner reread is stable.
+
+An independently retained connected topology snapshot (`loose-yard-topology-01`) contains 406 vector nodes, 246 junctions and 74 ends, with no nonreciprocal links. `analyse_loose_track_context.py` verifies all 40 track nodes are present and vector-kind, section indices are bounded, section pointers equal node table base plus index times stride, and node distances lie inside node lengths. There are zero failed checks. This validates positive extraction for loaded loose rolling stock, not every remote or derailed state.
+
+For the 39 loose vehicles, body minus track-reference coordinates differ by approximately -0.000336..0.000298 m in X and -0.000977..0.001160 m in Z, but by 1.970032..2.833313 m in Y. These are measured differences at this fixture, not a universal vertical correction. A body centre and a track reference must not be silently substituted for one another. Fields need explicit reference-frame meaning even when horizontal values nearly coincide.
+
+## Coupling approach planning
+
+The nearest loose vehicle centre is approximately 91.676 m from the player, but it is on a different node (112890584 versus player112890136). This distance is neither track travel distance nor a coupler gap. The five-car cut lies on node112203216. The shortest graph path is player112890136 -> junction54015008 -> target112203216. Both vector nodes occupy output pins of this junction; a drivable shunting maneuver requires using its input leg112890200 and reversing. The retained branch selection is0, pointing at the target siding. The player is392.665955m from its node origin. This is a planning interpretation, not an executed switch command or proof of permission/clearance.
+
+No coupling or movement occurred this turn. Computer Use could capture an occluded MSTS window but twice failed to activate it with `failed to activate captured window`, including a refreshed unique window reference. UI inputs stopped after the documented recovery attempt. MSTS remained in the opening paused yard notebook. Continue by reobserving live UI and registry state, then capture ownership and link transitions while performing normal shunting controls; do not treat these paused records as transition evidence.
