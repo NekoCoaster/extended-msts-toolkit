@@ -938,6 +938,27 @@ for row in rows:
     if row['id']=='car.physical_registry':
         row['evidence'].extend(lifecycle_evidence)
         row['limitations']+=' Insertion precedes later setup;listnodes are recycled by native unlink helper. Never cache node addresses as stable identities.'
+wheel_evidence=['WHEEL-ADHESION-FINDINGS.md','pass228-byte-verification.json','pass229-byte-verification.json','adhesion-constant-map.json','pass229/0062c679.asm','pass229/0062da12.asm','pass58/00614c8e.asm']
+for ident,meaning,applies,unit,method in [
+ ('car.wheel_rate_stored','Stored ordinary wheel angular-rate candidate','physical vehicles;player/AI update applicability unvalidated','rad/s from speed/radius formula;animation use unvalidated','float32 car+0x1b0;ordinary branch divides longitudinal speed by definition+0x448;excess-braking branch can zero it'),
+ ('engine.driver_rotation_rate','Stored powered driver rotation-rate candidate','powered vehicles;player/AI update applicability unvalidated','rev/s formula candidate;slip branches unvalidated','float32 engine+0x2b2;ordinary branch speed/(2*engine_definition112*pi);other branches zero or force-excess adjusted'),
+ ('engine.adhesion_force_limit','Stored powered-vehicle adhesion limit candidate','powered vehicles;player/AI update applicability unvalidated','N candidate from mass*gravity*coefficient','float32 engine+0x2aa;producer0062c679 includes coefficient and denominator max(engine_definition integer11a,1)')]:
+    add(ident,meaning,applies,'float32',unit,method,wheel_evidence,
+        'native producers and selected constants verified;no live field or transition observation in this checkpoint',
+        'vehicle force update;caller eligibility and AI refresh remain unvalidated',
+        common+' Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values.')
+wheel_followup=['WHEEL-ADHESION-FINDINGS.md','pass230-byte-verification.json','pass232-byte-verification.json','adhesion-constant-map.json','pass232/00637dc4.asm']
+add('engine.driver_animation_phase','Stored powered-driver animation phase accumulator',
+    'powered vehicles with eligible shape/animation branch;AI runtime applicability unvalidated',
+    'float32','native animation phase units;not radians or validated frame index',
+    'car+0x1dc;00637dc4 adds frame_delta[828fb4]*engine2b2*selected definition4e8 factor;orientation bit can negate factor',
+    wheel_followup,'native consumer/store verified;no live phase or visual-transition observation',
+    'eligible animation update;shape type5,definition powered,car80bit800 and other prerequisites',
+    common+' Default versus local definition multiplier selected by definition90bit10. No wrap proven in this branch;downstream mapping/render submission and pause/AI cadence unvalidated.')
+for row in rows:
+    if row['id'] in {'engine.driver_rotation_rate','engine.adhesion_force_limit','car.wheel_rate_stored'}:
+        row['evidence'].extend(wheel_followup)
+        row['limitations']+=' Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

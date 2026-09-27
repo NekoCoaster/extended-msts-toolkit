@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 419, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1020}
+{'runtime_direct': 423, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1024}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1026,3 +1026,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.object_id | Native vehicle identifier used by object lookup and save references | native consumers and exact constant-return methods traced;45paused objects match connected train membership |
 | car.physical_registry_stored_count | Stored manager physical-object list count | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45 |
 | car.registered_bit | Object registration flag used by insertion and teardown | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45 |
+| car.wheel_rate_stored | Stored ordinary wheel angular-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
+| engine.driver_rotation_rate | Stored powered driver rotation-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
+| engine.adhesion_force_limit | Stored powered-vehicle adhesion limit candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
+| engine.driver_animation_phase | Stored powered-driver animation phase accumulator | native consumer/store verified;no live phase or visual-transition observation |
