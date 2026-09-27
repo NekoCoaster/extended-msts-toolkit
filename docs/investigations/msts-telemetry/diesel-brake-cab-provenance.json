@@ -1,0 +1,20 @@
+{
+  "path": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\CABVIEW\\dash9.cvf",
+  "sha256": "9b4a7bb96056f2085a1fb199242b7c48bfc074fd7444b71e055767891c2174c5",
+  "first_line": 160,
+  "excerpt": [
+    "\t\t\tType ( TRAIN_BRAKE LEVER )",
+    "\t\t\tPosition ( 330 377 67 81 )",
+    "\t\t\tGraphic ( AutoBrake.ace )",
+    "\t\t\tStyle ( NOT_SPRUNG )",
+    "\t\t\tMouseControl ( 1 )",
+    "\t\t\tNumFrames ( 16 4 4 )",
+    "\t\t\tNumPositions ( 5 0 1 13 14 15 )",
+    "\t\t\tNumValues ( 5 0 0.3 0.85 0.9 0.95 )",
+    "\t\t\tOrientation ( 1 )",
+    "\t\t\tDirIncrease ( 1 )",
+    "\t\t\tScaleRange ( 0 1 )",
+    "\t\t)"
+  ],
+  "limitation": "Installed cab declaration;does not by itself prove scaled mouse interaction or release direction."
+}

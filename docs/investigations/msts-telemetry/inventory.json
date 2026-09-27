@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T10:09:08.654934+00:00",
+  "generated_utc": "2026-09-27T10:13:56.541440+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -25704,11 +25704,17 @@
         "captures/clearance-forward-signal-paused-01/details.jsonl",
         "PAIRED-INFRASTRUCTURE-FINDINGS.md",
         "paired-player-crossing-01-paired-summary.json",
-        "captures/paired-player-crossing-01/metadata.json"
+        "captures/paired-player-crossing-01/metadata.json",
+        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+        "analyse_diesel_emergency_reset.py",
+        "diesel-emergency-reset-summary.json",
+        "diesel-brake-cab-provenance.json",
+        "captures/diesel-emergency-reset-01/samples.jsonl",
+        "captures/diesel-reset-signal-paused-01/details.jsonl"
       ],
       "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage."
     },
     {
       "id": "signal.head_identity",
@@ -25773,11 +25779,17 @@
         "captures/clearance-forward-signal-paused-01/details.jsonl",
         "PAIRED-INFRASTRUCTURE-FINDINGS.md",
         "paired-player-crossing-01-paired-summary.json",
-        "captures/paired-player-crossing-01/metadata.json"
+        "captures/paired-player-crossing-01/metadata.json",
+        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+        "analyse_diesel_emergency_reset.py",
+        "diesel-emergency-reset-summary.json",
+        "diesel-brake-cab-provenance.json",
+        "captures/diesel-emergency-reset-01/samples.jsonl",
+        "captures/diesel-reset-signal-paused-01/details.jsonl"
       ],
       "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage."
     },
     {
       "id": "signal.aspect_speed",
@@ -25792,11 +25804,17 @@
         "pass08/005c1457.c",
         "captures/detail-clear-paused/details.jsonl",
         "captures/signal-transition-01/details.jsonl",
-        "pass09-byte-verification.json"
+        "pass09-byte-verification.json",
+        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+        "analyse_diesel_emergency_reset.py",
+        "diesel-emergency-reset-summary.json",
+        "diesel-brake-cab-provenance.json",
+        "captures/diesel-emergency-reset-01/samples.jsonl",
+        "captures/diesel-reset-signal-paused-01/details.jsonl"
       ],
       "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage."
     },
     {
       "id": "signal.aspect_flags",
@@ -25811,11 +25829,17 @@
         "pass08/005c1457.c",
         "captures/detail-clear-paused/details.jsonl",
         "captures/signal-transition-01/details.jsonl",
-        "pass09-byte-verification.json"
+        "pass09-byte-verification.json",
+        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+        "analyse_diesel_emergency_reset.py",
+        "diesel-emergency-reset-summary.json",
+        "diesel-brake-cab-provenance.json",
+        "captures/diesel-emergency-reset-01/samples.jsonl",
+        "captures/diesel-reset-signal-paused-01/details.jsonl"
       ],
       "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage."
     },
     {
       "id": "service.posted_speed_cap",
@@ -29503,11 +29527,17 @@
         "signal-approach-emergency-summary.json",
         "emergency-binding-provenance.json",
         "captures/signal-approach-emergency-01/samples.jsonl",
-        "captures/approach-stopped-signal-01/details.jsonl"
+        "captures/approach-stopped-signal-01/details.jsonl",
+        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+        "analyse_diesel_emergency_reset.py",
+        "diesel-emergency-reset-summary.json",
+        "diesel-brake-cab-provenance.json",
+        "captures/diesel-emergency-reset-01/samples.jsonl",
+        "captures/diesel-reset-signal-paused-01/details.jsonl"
       ],
       "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5;preferred diesel fixture UI emergency stop captured across23player/22AI cars",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No diesel release or successful signal passage yet."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No diesel release or successful signal passage yet. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage."
     },
     {
       "id": "car.brake_pipe_pressure",
@@ -29538,11 +29568,17 @@
         "signal-approach-emergency-summary.json",
         "emergency-binding-provenance.json",
         "captures/signal-approach-emergency-01/samples.jsonl",
-        "captures/approach-stopped-signal-01/details.jsonl"
+        "captures/approach-stopped-signal-01/details.jsonl",
+        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+        "analyse_diesel_emergency_reset.py",
+        "diesel-emergency-reset-summary.json",
+        "diesel-brake-cab-provenance.json",
+        "captures/diesel-emergency-reset-01/samples.jsonl",
+        "captures/diesel-reset-signal-paused-01/details.jsonl"
       ],
       "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5;preferred diesel fixture UI emergency stop captured across23player/22AI cars",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No diesel release or successful signal passage yet."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No diesel release or successful signal passage yet. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage."
     },
     {
       "id": "car.brake_force_candidate",

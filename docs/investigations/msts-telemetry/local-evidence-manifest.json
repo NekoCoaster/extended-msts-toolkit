@@ -66625,6 +66625,66 @@
       "bytes": 20339877,
       "sha256": "47097fab26c0f795b99e5b2dafad0c67f19d9371e96c5fd135cf3da7d525a9d5",
       "included": false
+    },
+    {
+      "path": "captures/diesel-emergency-reset-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-emergency-reset-01/metadata.json",
+      "bytes": 177,
+      "sha256": "218c2080d377b5c002316b8047cea988804ef23b14dda93d402a0fa43471654d",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-emergency-reset-01/read_brake_series.py",
+      "bytes": 1829,
+      "sha256": "68391975c5e219b16662d09b4fa8e3a1b25e0ecf056d948adc91b74296273e63",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-emergency-reset-01/read_brake_state.py",
+      "bytes": 1747,
+      "sha256": "bb06b4d81a6fd3b1a838b5b5360bc3faf4b61f9b114fedb412a0cc67eb2f4692",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-emergency-reset-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-emergency-reset-01/samples.jsonl",
+      "bytes": 43099425,
+      "sha256": "8405a679dbcff39622828c871fa6da6f017151f7a932e7d98a28bf811cdbad87",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-reset-signal-paused-01/details.jsonl",
+      "bytes": 1096,
+      "sha256": "1568053114e9f14762935fe5510d2910cd0e8107f036e87934137de2e7c77501",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-reset-signal-paused-01/metadata.json",
+      "bytes": 552,
+      "sha256": "a0e902c3feecc9cbf8c4b5343b17369fc1763658995ea675e883f742dded9279",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-reset-signal-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/diesel-reset-signal-paused-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
     }
   ]
 }

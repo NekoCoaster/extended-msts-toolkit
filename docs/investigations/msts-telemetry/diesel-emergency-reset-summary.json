@@ -1,0 +1,139 @@
+{
+  "samples": 3316,
+  "errors": 0,
+  "day_range": [
+    73905.859375,
+    74078.3359375
+  ],
+  "paused_samples": 1108,
+  "clock_crossings": 732,
+  "speed_range": [
+    0.0,
+    0.0
+  ],
+  "transitions": [
+    {
+      "day": 73905.859375,
+      "mode": "0x100000",
+      "handle": 0.949999988079071
+    },
+    {
+      "day": 73946.6015625,
+      "mode": "0x80000",
+      "handle": 0.8999999761581421
+    },
+    {
+      "day": 73970.796875,
+      "mode": "0x80000",
+      "handle": 0.8500000238418579
+    },
+    {
+      "day": 73970.8828125,
+      "mode": "0x40000",
+      "handle": 0.8500000238418579
+    },
+    {
+      "day": 73979.8203125,
+      "mode": "0x40000",
+      "handle": 0.8375000357627869
+    },
+    {
+      "day": 73979.8984375,
+      "mode": "0x1000",
+      "handle": 0.8375000357627869
+    }
+  ],
+  "final": {
+    "sim_time": 74078.3359375,
+    "paused": 1,
+    "speed": 0.0,
+    "selected_mode": 4096,
+    "train_brake": 0.8375000357627869,
+    "pipe_command": 0.0
+  },
+  "signals": [
+    {
+      "capture": "approach-stopped-signal-01",
+      "day": 73905.859375,
+      "paused": 1,
+      "speed": 0.0,
+      "throttle": 0.25,
+      "signal": {
+        "iterator": [
+          114971836,
+          0,
+          46,
+          46
+        ],
+        "distance": 481.982421875,
+        "heads": [
+          {
+            "address": 62412704,
+            "index": 46,
+            "definition": 53450808,
+            "function_type": 0,
+            "flags": 0,
+            "direction": 0,
+            "aspect": 0,
+            "aspect_speed": 0.0,
+            "aspect_flags": 0
+          }
+        ],
+        "selected_normal": {
+          "address": 62412704,
+          "index": 46,
+          "definition": 53450808,
+          "function_type": 0,
+          "flags": 0,
+          "direction": 0,
+          "aspect": 0,
+          "aspect_speed": 0.0,
+          "aspect_flags": 0
+        },
+        "selected_speed": null
+      }
+    },
+    {
+      "capture": "diesel-reset-signal-paused-01",
+      "day": 74078.3359375,
+      "paused": 1,
+      "speed": 0.0,
+      "throttle": 0.0,
+      "signal": {
+        "iterator": [
+          114971836,
+          0,
+          46,
+          46
+        ],
+        "distance": 481.982421875,
+        "heads": [
+          {
+            "address": 62412704,
+            "index": 46,
+            "definition": 53450808,
+            "function_type": 0,
+            "flags": 32768,
+            "direction": 0,
+            "aspect": 7,
+            "aspect_speed": -1.0,
+            "aspect_flags": 0
+          }
+        ],
+        "selected_normal": {
+          "address": 62412704,
+          "index": 46,
+          "definition": 53450808,
+          "function_type": 0,
+          "flags": 32768,
+          "direction": 0,
+          "aspect": 7,
+          "aspect_speed": -1.0,
+          "aspect_flags": 0
+        },
+        "selected_speed": null
+      }
+    }
+  ],
+  "limitations": "Three semicolon presses after throttleIdle and Backspace. Two lever drags did not yield release. Selector/control updates can straddle reads. Signal sampled only at interval endpoints;exact clearance time and exclusive causal attribution unproven. No successful passage or brake release."
+}

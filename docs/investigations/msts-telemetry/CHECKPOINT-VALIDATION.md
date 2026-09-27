@@ -340,3 +340,7 @@ Pass28142instructions108bytes match disk/live33612;only record-bit mutation,no c
 ## Preferred activity emergency stop
 
 Normal UI Backspace stop captured1268samples808paused460running,zeroerrors;23player22AI owner rereads stable,170clock-crossing samples retained. Player stopped;final paused73905.859375,next signal46aspect0,distance481.9824m. No passage/release claim. Inventory1039unchanged;795evidence paths126asset hashes pass. Original assets/saves/settings and production code untouched. Native build not repeated.
+
+## Diesel reset and stopped signal clearance
+
+3316samples1108paused,zeroerrors,speed0throughout;732clock-crossing reads qualified. UIIdle,reset plus3semicolon inputs reachSelfLap98%;two drags ineffective. Final paused74078.3359375. Bracketing same signal46 aspect0->7 atunchanged481.9824m;AI visibly passed,exact eventtime unmeasured. No release/passage claim. Inventory1039unchanged,800evidence paths126asset hashes pass. No production changes/native build.
