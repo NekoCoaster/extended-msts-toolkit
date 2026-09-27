@@ -348,3 +348,7 @@ Normal UI Backspace stop captured1268samples808paused460running,zeroerrors;23pla
 ## Diesel release and rollback
 
 5658brake/1788signal samples,zeroerrors. Release mode4 and all23player cylinders0observed;rollback signed speed minimum-6.092225m/s with signal46distance increasing,then emergency stop. Traction current0at sampledN1,causeunresolved. Finalpaused74229.078125,Idle,brakesapplied.429clock-crossing reads,zeroowner differences qualified. Inventory1039unchanged,804evidence paths126asset hashes pass. No forward passage or production change;native build not repeated.
+
+## Diesel emergency acknowledgement and effort gates
+
+Pass2853functions569instructions2032bytes match disk/live33612.1397monitor samples,zeroerrors/context or monitor reread differences;emergency action/alarm/penalty clear after UIZ. Separate runningN1snapshot current225.000015A,cut conjunctionfalse;legacyPaused boilerplate explicitly corrected in findings/root probe,raw preserved. Final paused74293.1015625,Idle,brakesContinuousService. Inventory1039unchanged,815evidence paths126asset hashes pass. No production change/native build.

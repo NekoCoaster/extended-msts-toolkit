@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T10:20:16.280125+00:00",
+  "generated_utc": "2026-09-27T10:26:45.294797+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -35167,11 +35167,22 @@
         "monitor-running-opening-01-summary.json",
         "captures/monitor-running-opening-01/samples.jsonl",
         "read_monitor_caller_gates.py",
-        "captures/monitor-caller-gates-paused-01/gates.json"
+        "captures/monitor-caller-gates-paused-01/gates.json",
+        "DIESEL-EFFORT-GATE-FINDINGS.md",
+        "read_diesel_effort_gates.py",
+        "analyse_diesel_acknowledgement.py",
+        "diesel-acknowledgement-summary.json",
+        "diesel-acknowledgement-binding.json",
+        "captures/diesel-acknowledgement-01/samples.jsonl",
+        "captures/diesel-effort-gates-paused-01/gates.json",
+        "captures/diesel-effort-after-ack-01/gates.json",
+        "pass285-byte-verification.json",
+        "pass285/005ead0d.asm",
+        "pass285/006107a0.asm"
       ],
-      "evidence_status": "native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot",
-      "update_or_lifecycle": "initializer/reset and controller overrides traced;countdown/action transitions and reload lifecycle unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null definition link means unavailable. Enable word does not prove enforcement;action word0 is not measured absence of brake/power intervention. Trailing player and both AI engines have null links in tested fixture. Raw timers/state words not all named;no event history or audible alarm claim. Sequential rereads are not atomic. Four save helper slots do not correspond one-to-one to these four named devices;overspeed is at5ba,not57a. Trigger branches can skip writes when definition thresholds are disabled,so caches are not universal current-condition flags. RPM branch uses engine maximumRPM+1 with configured trigger value only as enable;speed threshold multiplies by2.236936092. Preserve these native formulas rather than silently substituting expected conversions. Any nonzero trigger invokes helper setting+4/+8/+c to1. Countdown producers00610153/0061004a subtract caller-supplied float delta before the enable gate;reset helpers may overwrite them in the same invocation. Diesel delta is player train+8e fixed engine interval;effective simulation seconds inherit shared-scheduler steam runtime corroboration. Direct monitor cadence/intervention remain unvalidated. Diesel overspeed state+20 caches absolute(speed*2.236936092) in mph even when disabled;it need not equal current speed at sample time. Opening run1197samples:disabled overspeed input changed150times;vigilance enable1 yet timers25/17 unchanged. Post-run caller globals790d88/790d8c both1,which suppress their update branches. Gates not sampled throughout run. No observed action/alarm/penalty latch or paused-state changes;no live countdown-rate or intervention proof."
+      "evidence_status": "native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot;UIZ acknowledgement clears emergency action/alarm/penalty with stable local rereads;subsequentN1current225A observed",
+      "update_or_lifecycle": "Native emergency action/CutsPower and controller370 gate pre-current effort. UI acknowledgement observed clearing action/alarm/penalty;full reload and other reset conditions unvalidated.",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null definition link means unavailable. Enable word does not prove enforcement;action word0 is not measured absence of brake/power intervention. Trailing player and both AI engines have null links in tested fixture. Raw timers/state words not all named;no event history or audible alarm claim. Sequential rereads are not atomic. Four save helper slots do not correspond one-to-one to these four named devices;overspeed is at5ba,not57a. Trigger branches can skip writes when definition thresholds are disabled,so caches are not universal current-condition flags. RPM branch uses engine maximumRPM+1 with configured trigger value only as enable;speed threshold multiplies by2.236936092. Preserve these native formulas rather than silently substituting expected conversions. Any nonzero trigger invokes helper setting+4/+8/+c to1. Countdown producers00610153/0061004a subtract caller-supplied float delta before the enable gate;reset helpers may overwrite them in the same invocation. Diesel delta is player train+8e fixed engine interval;effective simulation seconds inherit shared-scheduler steam runtime corroboration. Emergency acknowledgement is now observed;other monitor intervention claims remain scoped to their own evidence. Diesel overspeed state+20 caches absolute(speed*2.236936092) in mph even when disabled;it need not equal current speed at sample time. Opening run1197samples:disabled overspeed input changed150times;vigilance enable1 yet timers25/17 unchanged. Post-run caller globals790d88/790d8c both1,which suppress their update branches. Gates not sampled throughout run. No observed action/alarm/penalty latch or paused-state changes;no live countdown-rate or intervention proof. Follow-up1397samples validates emergency acknowledgement,not earlier rollback causality. InitialIdle snapshot and subsequentN1snapshot differ in throttle. Cab current is calculated before reverser/optional brake-force cutoff,not actual rail force. After-ack capture paused0 overrides erroneous legacyPaused boilerplate;raw evidence preserved."
     },
     {
       "id": "engine.overspeed_monitor_state",
