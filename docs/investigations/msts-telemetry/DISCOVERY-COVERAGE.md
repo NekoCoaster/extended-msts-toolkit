@@ -20,7 +20,7 @@ Current inventory: **1,039 candidates** (438 direct fields/structures,26derived,
 | Environment and rendering | ENVIRONMENT-SELECTION, SKY-LAYER, SKY-VERTEX and SKY-CLOCK findings cover active selection, loaded layers/satellites, CPU buffers and paused render-side changes. | Inactive buffers, satellite validity, animated frame/wrap/reload behavior and weather/physics coupling. This is no longer an entirely missing surface. |
 | Audio and input | AUDIO-STREAM/PENDING/NESTED and INPUT-BINDINGS/DISPATCH plus the retained short input test cover streams, queue/sample links, nested records, bindings and transient events. | Audibility, AI sound lifecycle, truncated traffic queue, peripherals and unnamed event words. Polling can miss brief events. |
 | Beyond the initial examples | Serializer survey, complete header partition, object raw ranges and loader-fixup findings. Actual player reload changed23addresses while preserving tested IDs/poses. | Unnamed saved fields/subobjects, optional branches and physical-AI reload. Raw copied bytes are not a semantic schema or portable pointers. |
-| Per-candidate metadata and reproducibility | Inventory has1,039unique IDs with required metadata. Current audit checks800evidence paths and126unchanged assets. Exact capture probes, byte reports and raw manifest retain provenance. | Structural checks do not prove each meaning/unit/lifecycle. Unknowns and disk/live differences remain explicit. |
+| Per-candidate metadata and reproducibility | Inventory has1,039unique IDs with required metadata. Current audit checks804evidence paths and126unchanged assets. Exact capture probes, byte reports and raw manifest retain provenance. | Structural checks do not prove each meaning/unit/lifecycle. Unknowns and disk/live differences remain explicit. |
 | Handoff and completion | EXTRACTION-HANDOFF documents build/read-validity assumptions, raw-evidence access and reproduction. Published CHECKPOINT-VALIDATION records checks. | Access recipe is now present; the former missing-handoff statement is obsolete. A scoped review corrected five stale monitor/wheel lifecycle entries; the inventory-wide semantic and objective completion audits remain incomplete. |
 
 ## Discovery gaps versus runtime validation
@@ -33,7 +33,7 @@ The objective is not satisfied just because the inventory is large or all eviden
 
 ## Fixture and next work
 
-Last gameplay capture:PID33612,paused1 at74078.3359375,cab Escape menu. Player speed0,throttleIdle,brakesSelfLap98%(raw0.8375),pipe0. Same forward signal46 now aspect7 at481.9824m after AI visibly passed. Reobserve before input;this is historical state.
+Last gameplay capture:PID33612,paused1 at74229.078125,cab Escape menu. Player stopped after observed rollback,Idle,emergency brakes applied. Signal46aspect7 remains ahead at699.4258m. Diesel release is verified,butN1 sampled traction current stayed0;resolve actual traction before another release. Reobserve before input.
 
 Emergency braking has stopped the player before the red signal. Establish diesel brake release and observe clearance before further approach. Moving-transform captures now cover representative player/AI locomotives and wagons before/during/after motion;angle/axes/frame cadence remain open. Independently, remaining unnamed engine serialization subobjects provide further read-only discovery without advancing the simulator. Preserve assets and retained saves.
 
@@ -62,3 +62,5 @@ Collision post-builder005f952e only updates record bit0x1,no callback calls. Exa
 Preferred-activity emergency stop now captured successfully;diesel brake release,waiting for clearance and successful player passage remain open. See SIGNAL-APPROACH-BRAKING-FINDINGS.md for current controls/state and qualified AI comparison.
 
 Stopped-player signal46 transition0->7 observed at bracketing endpoints while AI passed. Diesel emergency reset reachedSelfLap98%,not release;keyboard decrement remains the verified method. Exact clearance time and player passage remain open.
+
+Diesel brake release now validated with selector/pressure changes. Train rolled backward atIdle and sampledN1current0;negative speed and increasing forward signal distance recorded,then emergency stop. Forward passage remains open.

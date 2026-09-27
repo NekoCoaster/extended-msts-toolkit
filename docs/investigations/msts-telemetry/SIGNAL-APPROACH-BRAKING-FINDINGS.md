@@ -20,3 +20,16 @@ diesel-emergency-reset-01:3316samples,1108paused,zeroerrors,clock73905.859375..7
 Bracketing signal snapshots:at73905.859375 signal46 aspect0,flags0,speed0;at74078.3359375 same signal46 aspect7,flags32768,aspect speed-1. Distance481.982421875metres unchanged and player speed0. The AI passed during this interval,but exact clearance time and exclusive causal attribution are not measured. Do not interpret aspect speed-1 as negative permitted speed. This closes an additional stopped-player signal-state transition observation,not successful player passage.
 
 Final UI verified cab Escape pause menu,Idle throttle,forward reverser,brakes applied. Next experiment should use verified keyboard decrements from raw0.8375 toward the release notch,with a fresh bounded capture;many steps may be needed. Signal clearance is now observed,so after verified release the approach can proceed under monitoring. Goal remains incomplete;no assets/settings/saves/production changes.
+
+
+## Confirmed diesel release and rollback
+
+From pausedIdle/SelfLap98%,normal UI resumed,one semicolon decrement showedSelfLap95%,then a fixed44semicolon sequence reached Released. Pipe/equalizing pressure rose to90PSI and cylinder indication fell to0. Player began rolling with throttleIdle. N1 was selected after this pressure recovery,but signed speed later showed negative motion while forward signal distance increased. Cab speed showed a positive magnitude,so it cannot independently establish direction. EmergencyStop was applied to arrest rollback,then throttle returnedIdle and Escape paused. No forward signal passage occurred.
+
+Read-only brake and signal series retain the release and second application,including final paused intervals. analyse_diesel_release_rollback.py summarizes each series separately;their start times differ. Input times are not embedded in the sampler,so timing claims use sampled state only. The signal remainsindex46/aspect7;its distance increases to699.42578125metres. UI forward reverser remained displayed;that is commanded direction,not actual motion direction.
+
+Sampled traction current remains0 while throttle values include0.125(N1). The reason is unresolved;do not attribute backward motion solely to grade,insufficient power or a specific safety latch without checking that path. Brake release itself is demonstrated by selector and pressure changes. Negative speed/increasing distance provide direct rollback evidence. Next attempt must establish actual traction while holding the train,then coordinate brake release;anotherIdle release would repeat the known rollback condition.
+
+Final last verified UI is cab Escape pause menu,clock74229.078125,speed0,Idle,brakes applied,signal46/aspect7 at699.4258m. Original assets/settings/saves and NEMT production remain unchanged.
+
+Final analysis:5658brake samples and1788signal samples,zeroerrors. Release mode4 first sampled74122.3984375;all23player cylinders first simultaneously sampled0at74135.59375;emergency mode100000hex at74188.265625. Signed speed range-6.09222507477..0.00826698262m/s. Signal46/aspect7 throughout its stream,distance481.0546875..699.42578125m.429brake clock-crossing reads,zeroowner reread differences;no atomicity claim.
