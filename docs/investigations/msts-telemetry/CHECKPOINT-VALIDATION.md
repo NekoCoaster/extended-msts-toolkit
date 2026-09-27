@@ -263,3 +263,7 @@ Inventory1026;673 evidence references126unchanged assets pass. Native rate*delta
 ## Loaded wheel-node registration
 
 Inventory1029=428direct26derived68cab507config;678evidence paths126asset hashes pass. Corrected node probe reads24wheel nodes on four engines,all owner links match,flags byte2=7,stable slot/identity/data rereads.41othervehicles explicitly unsupported;firstprobe's missed thunk/generic errors retained and explained. No moving matrix or visible-angle claim. Pass257twoinstructions10bytes matchdisk/live. Manifest10686priorhashes22new10708total;334JSON152Python parse. No gameplay/production edits;native DeviceGuard4551 and remoteCI limitations unchanged.
+
+## Type-4 wagon coverage
+
+Inventory1030=429direct26derived68cab507config;682evidence references126asset hashes pass. Paused41wagons82groups164wheelmatrices82basematrices read without errors;allownerlinks and sampled identity/context/matrix rereads stable. Stored transforms now cover all45physicalvehicles in this fixture across separate type4/type5probes;movingcadence/worldpose/universalcoverage remain unproven. Pass25862instructions176bytes matchdisk/live. Manifest10708priorhashes14new10722total;335JSON153Python parse. No gameplay/production edits;DeviceGuard4551 and uninspected remoteCI limits remain.

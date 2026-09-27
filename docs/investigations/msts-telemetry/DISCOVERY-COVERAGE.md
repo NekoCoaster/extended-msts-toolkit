@@ -111,3 +111,5 @@ The retained first diagnostic capture gates-01 read definition kind as a dword i
 Last verified simulator state: external camera, Escape pause menu, paused1 at73894.7265625. No failure alert. The train is very close in simulation time to earlier failed approaches; apply verified braking controls immediately on any next resume, or restart the fixture before a longer run. Research goal remains active and incomplete.
 
 Loaded node follow-up: inventory1029 adds node count,callback bindings and stored transforms. Four locomotives expose24ordinary wheel nodes with matching callback owners;41othervehicles unsupported by type5probe. Paused matrices are readable;moving pose,cadence,other shape types and world-space interpretation remain open. See WHEEL-ADHESION-FINDINGS.md.
+
+Type4follow-up: inventory1030 includes wheel transform groups;41wagons82groups164wheelmatrices read with matching owners and stable rereads. Together with24type5locomotive wheel nodes,the fixture now has stored wheel transforms for all45vehicles. Moving cadence,coordinate semantics and universal shape coverage remain unvalidated. See WHEEL-ADHESION-FINDINGS.md.
