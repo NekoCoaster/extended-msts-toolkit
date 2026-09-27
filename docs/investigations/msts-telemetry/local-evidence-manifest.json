@@ -63589,6 +63589,102 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "included": false
+    },
+    {
+      "path": "captures/wheel-external-view-01/capture_wheel_sequence.py",
+      "bytes": 2076,
+      "sha256": "3c1b7516ae592abdf2b5c0157deb1711ad62aaff0f1a60b932c102efd9bcdb61",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-external-view-01/metadata.json",
+      "bytes": 601,
+      "sha256": "496f9a6af369a52bb33f4079fc7f8005c26eda2460e8dba378862c63e834159d",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-external-view-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-external-view-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-external-view-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-external-view-01/samples.jsonl",
+      "bytes": 3326065,
+      "sha256": "3fc6e71707b908d9f2a23c83b6b95daacfe4d9500e02fd05c7c63fcc42132f7d",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-01/gates.json",
+      "bytes": 5383,
+      "sha256": "626f7acb99683b201b261851eb6d3ed8f813481e45bf690f8e64aee6b62438c9",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-01/read_wheel_gates.py",
+      "bytes": 2292,
+      "sha256": "5a0e06d6410fa0a4f12294af7fb8b9c461e787d05fbaad98b1a288270dc3eab3",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-02/gates.json",
+      "bytes": 5351,
+      "sha256": "d9db321ea53b99e0d8846c6a8bbe0a45818e87dc16d526dec2568c421ec40838",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-02/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-02/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-02/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-gates-external-paused-02/read_wheel_gates.py",
+      "bytes": 2335,
+      "sha256": "6e80fd7dc642d15d2ed740110b272460d0388c3650da5920c3092952631021ff",
+      "included": false
     }
   ]
 }

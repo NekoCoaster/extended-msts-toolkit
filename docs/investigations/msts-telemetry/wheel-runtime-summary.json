@@ -217,6 +217,146 @@
           }
         }
       }
+    },
+    {
+      "capture": "wheel-external-view-01",
+      "samples": 180,
+      "clock_first": 73877.21875,
+      "clock_last": 73894.7265625,
+      "paused_samples": 155,
+      "outer_errors": 0,
+      "vehicle_errors": 0,
+      "unstable_vehicle_identity": 0,
+      "unstable_shape_identity": 0,
+      "vehicle_counts": [
+        45
+      ],
+      "engines": {
+        "200223": {
+          "train": {
+            "train_id": 400007,
+            "is_player": true
+          },
+          "rates": {
+            "min": 1.660861611366272,
+            "max": 1.830262541770935,
+            "distinct": 27
+          },
+          "adhesion": {
+            "min": 668360.0625,
+            "max": 668360.0625,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          }
+        },
+        "200224": {
+          "train": {
+            "train_id": 400007,
+            "is_player": true
+          },
+          "rates": {
+            "min": 1.6605768203735352,
+            "max": 1.830475091934204,
+            "distinct": 27
+          },
+          "adhesion": {
+            "min": 668360.0625,
+            "max": 668360.0625,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          }
+        },
+        "200146": {
+          "train": {
+            "train_id": 400005,
+            "is_player": false
+          },
+          "rates": {
+            "min": 4.463515758514404,
+            "max": 5.441091537475586,
+            "distinct": 22
+          },
+          "adhesion": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          }
+        },
+        "200147": {
+          "train": {
+            "train_id": 400005,
+            "is_player": false
+          },
+          "rates": {
+            "min": 4.463515758514404,
+            "max": 5.441091537475586,
+            "distinct": 22
+          },
+          "adhesion": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          }
+        }
+      }
     }
   ],
   "manager_surveys": [

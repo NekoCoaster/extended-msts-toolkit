@@ -96,3 +96,16 @@ Both sequences have zero outer/vehicle read errors and zero flagged vehicle/shap
 Both samplers ended before the final UI pause: the opening run has an unsampled tail to73864.640625, and the paired run to73877.21875. Do not describe the entire moving interval as captured. Escape successfully opens the pause menu and sets paused1; the Pause key did not. Last verified game state is paused at73877.21875. No failure alert was present. Prior runs failed near73904, so the next test must control approach speed before letting the activity advance substantially.
 
 Inventory remains1026 candidates. These observations strengthen existing rows without adding fields or making keep/drop decisions. Physical angle, external-view animation eligibility, resistance-force magnitude and AI force freshness remain open.
+
+
+## External camera and loaded branch eligibility
+
+`wheel-external-view-01` captures180samples,25unpaused, clock73877.21875..73894.7265625, all45vehicles with zero outer/vehicle errors or flagged vehicle/shape identity changes. Normal UI switched from cab to external camera2, then Escape paused. Unlike the two earlier runs, this sampler continues through the final paused interval. The camera transition was visually confirmed but not timestamped inside the memory stream; do not assign an exact sample to it or infer visible wheel rotation from the distant screenshots.
+
+Both player processed shape times now have three distinct values between0 and approximately2e-7, whereas earlier cab-view processed values stayed0. All four driver accumulators still stay0 while engine rates change. This is an association with the external-view run, not isolated proof of camera causation.
+
+`read_wheel_gates.py` and `wheel-gates-external-paused-02/gates.json` inspect the traced branch inputs. All four engines have car+80=1, excluding the0x800 capability bit tested at638695. Native definition kind is byte+88=1. Shared Default Wheelset is0.30000001192092896. Thus the traced powered phase branch is ineligible at this paused observation; a zero phase is not a general wheel-angle measurement. The local+4e8 raw value is unselected (definition90bit10 clear), so its very large finite value must not be interpreted as a meaningful loaded multiplier. The reported selected multiplier is what the later selection would choose if execution reached it, not proof it was consumed. Frame delta is a paused stored value, not elapsed pause time.
+
+The retained first diagnostic capture gates-01 read definition kind as a dword instead of the native byte and is superseded for that field. Assembly63830f establishes byte width; corrected gates-02 reads1 on all four engines. Original raw evidence and exact erroneous probe copy are preserved. No new inventory candidates;1026total. Eligibility transitions, other ordinary-wheel animation paths and visible physical angle remain open.
+
+Last verified simulator state: external camera, Escape pause menu, paused1 at73894.7265625. No failure alert. The train is very close in simulation time to earlier failed approaches; apply verified braking controls immediately on any next resume, or restart the fixture before a longer run. Research goal remains active and incomplete.

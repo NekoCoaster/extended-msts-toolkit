@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 root=Path(__file__).resolve().parent
 report=dict(sequences=[],manager_surveys=[],limitations='Short sampled moving intervals;unsampled tails exist before final UI pause. Stored rates/zeros do not prove physical slip,visible animation or all-AI cadence.')
-for name in ('wheel-moving-opening-01','wheel-moving-player-ai-01'):
+for name in ('wheel-moving-opening-01','wheel-moving-player-ai-01','wheel-external-view-01'):
     path=root/'captures'/name/'samples.jsonl'
     rows=[json.loads(line) for line in path.read_text().splitlines()]
     cars=[v for row in rows for v in row.get('sample',{}).get('vehicles') or []]
