@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 429, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1030}
+{'runtime_direct': 433, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1034}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1036,3 +1036,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.shape_node_callbacks | Per-node animation callback bindings and ordinary-wheel context | native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners |
 | car.shape_node_transform | Stored per-node animation transform | native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners |
 | car.wheel_transform_groups | Type-4 per-vehicle wheel transform groups | native bounded type4branch and base-transform consumer traced;paused41vehicle snapshot reads82groups164wheelmatrices82basematrices |
+| engine.aws_monitor_state | AWSMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
+| engine.vigilance_monitor_state | VigilanceMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
+| engine.emergency_stop_monitor_state | EmergencyStopMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
+| engine.overspeed_monitor_state | OverspeedMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |

@@ -271,3 +271,7 @@ Inventory1030=429direct26derived68cab507config;682evidence references126asset ha
 ## Current objective review
 
 Replaced stale chronological coverage overview with a current requirement/evidence review;preserved prior text in DISCOVERY-COVERAGE-HISTORY.md. Environment/sky/audio/header/handoff work is no longer misidentified as wholly missing. New-surface leads and remaining runtime validation are distinguished without keep/drop decisions. Completion audit remains unmet. Inventory unchanged1030,audit682paths126assets passes. Sync verifies10722raw hashes,adds0;335JSON153Python parse. No simulator input or production edits.
+
+## Engine safety-monitor discovery
+
+Inventory1034=433direct26derived68cab507config;693evidence paths126asset hashes pass. Four monitor runtime mappings identified by native parser labels/dispatch and initializer assembly. Pausedlead has expected links;trailing/AI linksnull. Allsampled identity/state/definition rereads stable. No warning/intervention/countdown validation claimed. Pass259598instructions2396bytes,26089/283,261611/2196 matchdisk/live;69selected parser/table/string checks match. Manifest10722priorhashes47new10769total;339JSON155Python parse. No gameplay/production changes;historical DeviceGuard4551/currentremoteCI limits unchanged.

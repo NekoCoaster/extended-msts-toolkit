@@ -2,7 +2,7 @@
 
 Research is **active and incomplete**. This review follows the original objective without ranking candidates or selecting exports for NEMT. It supersedes the changing next-step statements in [the chronological coverage history](DISCOVERY-COVERAGE-HISTORY.md). Individual findings preserve historical observations; the generated inventory consolidates candidate metadata.
 
-Current inventory: **1,030 candidates** (429 direct fields/structures,26derived,68cab,507configuration). Structured records may contain many values; cab/config/native records may overlap. Counts are not independently validated live quantities or proof that every extractable field has been found.
+Current inventory: **1,034 candidates** (433 direct fields/structures,26derived,68cab,507configuration). Structured records may contain many values; cab/config/native records may overlap. Counts are not independently validated live quantities or proof that every extractable field has been found.
 
 ## Requirements and current evidence
 
@@ -20,7 +20,7 @@ Current inventory: **1,030 candidates** (429 direct fields/structures,26derived,
 | Environment and rendering | ENVIRONMENT-SELECTION, SKY-LAYER, SKY-VERTEX and SKY-CLOCK findings cover active selection, loaded layers/satellites, CPU buffers and paused render-side changes. | Inactive buffers, satellite validity, animated frame/wrap/reload behavior and weather/physics coupling. This is no longer an entirely missing surface. |
 | Audio and input | AUDIO-STREAM/PENDING/NESTED and INPUT-BINDINGS/DISPATCH plus the retained short input test cover streams, queue/sample links, nested records, bindings and transient events. | Audibility, AI sound lifecycle, truncated traffic queue, peripherals and unnamed event words. Polling can miss brief events. |
 | Beyond the initial examples | Serializer survey, complete header partition, object raw ranges and loader-fixup findings. Actual player reload changed23addresses while preserving tested IDs/poses. | Unnamed saved fields/subobjects, optional branches and physical-AI reload. Raw copied bytes are not a semantic schema or portable pointers. |
-| Per-candidate metadata and reproducibility | Inventory has1,030unique IDs with required metadata. Current audit checks682evidence paths and126unchanged assets. Exact capture probes, byte reports and raw manifest retain provenance. | Structural checks do not prove each meaning/unit/lifecycle. Unknowns and disk/live differences remain explicit. |
+| Per-candidate metadata and reproducibility | Inventory has1,034unique IDs with required metadata. Current audit checks693evidence paths and126unchanged assets. Exact capture probes, byte reports and raw manifest retain provenance. | Structural checks do not prove each meaning/unit/lifecycle. Unknowns and disk/live differences remain explicit. |
 | Handoff and completion | EXTRACTION-HANDOFF documents build/read-validity assumptions, raw-evidence access and reproduction. Published CHECKPOINT-VALIDATION records checks. | Access recipe is now present; the former missing-handoff statement is obsolete. Final semantic consistency and objective-wide completion audits have not passed. |
 
 ## Discovery gaps versus runtime validation
@@ -35,6 +35,8 @@ The objective is not satisfied just because the inventory is large or all eviden
 
 Last capture: PID33612, paused1 at73894.7265625, Grain Train Through the Night/Marias Pass,45physical vehicles. UI was last observed in the external-camera Escape pause menu. Reobserve before input; this is historical state, not a guarantee that the user has not changed it.
 
-The player is near the time of earlier failed red-signal approaches. Establish reliable braking or restart before longer motion. Moving-transform work needs reusable bounded sampling across before/during/after motion. Independently, unnamed engine serialization subobjects provide further read-only discovery without advancing the simulator. Preserve assets and retained saves.
+The player is near the time of earlier failed red-signal approaches. Establish reliable braking or restart before longer motion. Moving-transform work needs reusable bounded sampling across before/during/after motion. Independently, remaining unnamed engine serialization subobjects provide further read-only discovery without advancing the simulator. Preserve assets and retained saves.
 
 No completion or blocked audit passed. Previous wheel checkpoints were concrete progress, and further research is possible.
+
+Safety-monitor follow-up: ENGINE-MONITOR-FINDINGS.md identifies AWS/vigilance/emergency-stop/overspeed state and expected definition links. Positive lead snapshot;trailing/AI links null. Countdown/action producers and interventions remain unvalidated;unnamed slot57a remains a lead.
