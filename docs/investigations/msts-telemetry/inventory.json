@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T09:54:02.811800+00:00",
+  "generated_utc": "2026-09-27T09:56:45.625873+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -35234,10 +35234,10 @@
     },
     {
       "id": "car.collision_callback_state",
-      "meaning": "Collision-object callback binding and unnamed stored state",
+      "meaning": "Collision flags and callback binding (native CollideFlags/CollideFunction)",
       "applicability": "guarded physical player/AI vehicles;positive fixture23player22AI",
       "value_type": "structured uint32 callback pointer and state",
-      "units": "address and unnamed state code",
+      "units": "Process callback address (or mode-dependent index);uint32 collision bitmask",
       "extraction": "car+0x74 callback pointer;car+0x78 uint32 state;save encoder maps two table entries at0x7a09b0 to0/1 and special stubs402bc6/401dbb to100/101",
       "evidence": [
         "COLLISION-CALLBACK-FINDINGS.md",
@@ -35248,11 +35248,18 @@
         "pass275-byte-verification.json",
         "pass276-byte-verification.json",
         "pass275/005e143c.asm",
-        "pass210/005e2534.asm"
+        "pass210/005e2534.asm",
+        "map_collision_tokens.py",
+        "collision-token-map.json",
+        "pass277-byte-verification.json",
+        "pass277/005e1ef3.asm",
+        "pass277/005e2411.asm",
+        "pass277/005fb0fd.asm",
+        "pass277/005df360.asm"
       ],
-      "evidence_status": "disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads",
-      "update_or_lifecycle": "serialized state;callback005e143c has a conditional state2 writer;initialization,other writers and live transitions unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Callback binding is not a collision event or invocation count. Three mapped targets return0 without state writes. Current45vehicles select one of these targets. State5 meaning unknown;state2 branch not observed. No damage,derailment,contact count,impact speed or AI collision simulation claim. Raw pointers are process-specific;sequential rereads not atomic. No deliberate collision performed."
+      "evidence_status": "disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads;native parser labels,flags consumers,initializer and load callback reconstruction traced and byte-verified",
+      "update_or_lifecycle": "Initializer clears flags;parser loads CollideFlags and ORs0x200;pair-processing code tests masks and may set0x80. Save loader rebuilds callback from code and restores flags. Actual reload/flag transitions unvalidated.",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Callback binding is not a collision event or invocation count. Three mapped targets return0 without state writes. Current45vehicles select one of these targets. State5 meaning unknown;state2 branch not observed. No damage,derailment,contact count,impact speed or AI collision simulation claim. Raw pointers are process-specific;sequential rereads not atomic. No deliberate collision performed. Follow-up establishes state is a bitmask;stored5 sets0x1/0x4 but full bit meanings remain unknown. Callback+74 can hold a raw index when global7be0f8!=0. Null/unrecognized restored callback is unavailable. Static reconstruction does not prove live reload fidelity or invocation;do not reuse raw pointer as persistent identity."
     }
   ]
 }

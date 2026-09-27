@@ -320,3 +320,7 @@ Corrected five monitor/gate/wheel lifecycle records against retained evidence; n
 ## Collision callback discovery
 
 One structured candidate added:1038total437direct. Guarded paused45vehicle capture has callback402bc6/state5,zeroerrors/reread differences. Callback map disk/live stable;pass2754functions76instructions220bytes andpass2762functions72instructions198bytes match disk/live. Pass274 zero-function export retained as negative evidence. No collision semantics or transitions claimed. Inventory762evidence paths126source hashes pass;sync10943old hashes+41new,365JSON170Python parse. Research only;native build limitation unchanged.
+
+## Collision flags interpretation
+
+Native CollideFlags/CollideFunction token pairs and strings match disk/live. Pass2775functions1923instructions6695bytes match disk/live without errors;initializer,bitmask consumers and load reconstruction documented. Existing candidate enriched,1038total unchanged. Audit769evidence paths126source hashes pass. No live collision or reload claim;no production changes or repeated native build.

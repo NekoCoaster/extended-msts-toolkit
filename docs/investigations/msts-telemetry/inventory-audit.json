@@ -1,10 +1,10 @@
 {
-  "inventory_sha256": "275e13a28c779ce115087f49ac4fc91c33500aeab1c674ac7ab9558eb6381f63",
+  "inventory_sha256": "657a68ff2b42d62b512fcd2b06e82095af3f8d75b6195eb006e8795ad13d39d2",
   "candidate_count": 1038,
   "unique_ids": 1038,
   "duplicate_ids": [],
   "empty_required_fields": [],
-  "evidence_paths_checked": 762,
+  "evidence_paths_checked": 769,
   "missing_evidence": {},
   "unrecognized_evidence": [],
   "source_files_checked": 126,

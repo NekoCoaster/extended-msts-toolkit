@@ -1084,6 +1084,14 @@ add('car.collision_callback_state','Collision-object callback binding and unname
     'disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads',
     'serialized state;callback005e143c has a conditional state2 writer;initialization,other writers and live transitions unvalidated',
     common+' Callback binding is not a collision event or invocation count. Three mapped targets return0 without state writes. Current45vehicles select one of these targets. State5 meaning unknown;state2 branch not observed. No damage,derailment,contact count,impact speed or AI collision simulation claim. Raw pointers are process-specific;sequential rereads not atomic. No deliberate collision performed.')
+for row in rows:
+    if row['id']=='car.collision_callback_state':
+        row['meaning']='Collision flags and callback binding (native CollideFlags/CollideFunction)'
+        row['units']='Process callback address (or mode-dependent index);uint32 collision bitmask'
+        row['evidence'].extend(['map_collision_tokens.py','collision-token-map.json','pass277-byte-verification.json','pass277/005e1ef3.asm','pass277/005e2411.asm','pass277/005fb0fd.asm','pass277/005df360.asm'])
+        row['evidence_status']+=';native parser labels,flags consumers,initializer and load callback reconstruction traced and byte-verified'
+        row['update_or_lifecycle']='Initializer clears flags;parser loads CollideFlags and ORs0x200;pair-processing code tests masks and may set0x80. Save loader rebuilds callback from code and restores flags. Actual reload/flag transitions unvalidated.'
+        row['limitations']+=' Follow-up establishes state is a bitmask;stored5 sets0x1/0x4 but full bit meanings remain unknown. Callback+74 can hold a raw index when global7be0f8!=0. Null/unrecognized restored callback is unavailable. Static reconstruction does not prove live reload fidelity or invocation;do not reuse raw pointer as persistent identity.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
