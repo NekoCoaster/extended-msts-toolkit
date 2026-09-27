@@ -324,3 +324,7 @@ One structured candidate added:1038total437direct. Guarded paused45vehicle captu
 ## Collision flags interpretation
 
 Native CollideFlags/CollideFunction token pairs and strings match disk/live. Pass2775functions1923instructions6695bytes match disk/live without errors;initializer,bitmask consumers and load reconstruction documented. Existing candidate enriched,1038total unchanged. Audit769evidence paths126source hashes pass. No live collision or reload claim;no production changes or repeated native build.
+
+## Collision point velocity
+
+Pass2783functions108instructions292bytes match disk/live33612. Independent thunk/constant map verifies401aa0->5e17a0 and49.0 threshold. Formula selected-body v+omega cross(point-position),opposite pair object receives flags2;not relative impact speed. Existing candidates enriched,1038unchanged. Inventory776evidence paths126source hashes pass. No simulator input,native code changes or repeated native build.
