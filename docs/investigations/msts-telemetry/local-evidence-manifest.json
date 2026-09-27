@@ -66973,6 +66973,72 @@
       "bytes": 4838,
       "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
       "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/capture_player_track_caps.py",
+      "bytes": 2973,
+      "sha256": "d6d3717ca054b28bb01c6b13bc20099954f93aec279010134e3a6aa103fdb91e",
+      "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/metadata.json",
+      "bytes": 983,
+      "sha256": "de77a9f639a7353b9bf08636e639ec0fbc92189ba01a541533f1e24e70ccad13",
+      "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/read_speed_caps.py",
+      "bytes": 2954,
+      "sha256": "fcb4211a3d07933645c3162ff5f37428418f6eaea91a997a5b96320562bfb42e",
+      "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/player-track-caps-moving-01/samples.jsonl",
+      "bytes": 24742128,
+      "sha256": "720deec2f4ffa21faa050c0634003ac2e8cbe6b9077763b9fcd6a039f36d3174",
+      "included": false
+    },
+    {
+      "path": "captures/post-signal-track-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/post-signal-track-paused-01/read_track.py",
+      "bytes": 3391,
+      "sha256": "e2437ec8a6dbae8bd54cde839ae5b76d0d78f500ff68a548025a01c94546c824",
+      "included": false
+    },
+    {
+      "path": "captures/post-signal-track-paused-01/tracks.json",
+      "bytes": 52536,
+      "sha256": "2245d3a693a4420d3aff541f65491896fca82a815d0095a3a4a02df23a979b8f",
+      "included": false
     }
   ]
 }

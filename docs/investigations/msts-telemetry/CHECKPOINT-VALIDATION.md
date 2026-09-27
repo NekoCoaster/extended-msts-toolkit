@@ -356,3 +356,7 @@ Pass2853functions569instructions2032bytes match disk/live33612.1397monitor sampl
 ## Forward start and next-signal selection
 
 Two completed captures:2383/1788 samples,zero read or signal errors,zero iterator reread differences,three clock-crossings each. Separate streams have55.71875simulation-second gap;the second captures consecutive stable rows bracketing iterator46to21 at74410.078125..74410.25. Exact geometric crossing unclaimed. Final paused74421.9296875,N4,14.246537m/s. Inventory1039unchanged,821evidence paths126asset hashes pass. Sync verifies11154old raw hashes and adds8files;383JSON180Python parse. Research only;native build not repeated.
+
+## Player track boundaries and AI cap activation
+
+721samples246paused,zero read/track errors.587section-or-node changes include8player car node crossings;lead/service already beyond boundary.2163cap comparisons include193pre-activation AIservice3cache mismatches,all gate0;activation gate0to1 accompanies posted/effective13.4112m/s. Playercap unchanged. Multiple normal heads4/0 fixture and iterator21to2..3 captured;no exact geometric passage/authority claim.184full-sample clock crossings,zero player/origin reread differences. Inventory1039,827evidence paths126unchanged assets pass. Sync11162prior raw hashes plus11newfiles;384JSON182Python parse. No production change/native build.
