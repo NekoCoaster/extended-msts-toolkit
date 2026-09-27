@@ -291,3 +291,7 @@ Reconnected diesel monitor delta to player fixed-step scheduler and reused earli
 ## Unnamed fifth monitor candidate
 
 Added explicit unnamed monitor structure without inventing a subsystem identity. Initializer disables it through verified helper/thunk;diesel current coefficient verified1.0199999809265137. Pass27011instructions25bytes matchdisk/live;paused positive definition/state evidence reused,not a new trip test. Inventory1035=434direct26derived68cab507config;audit720paths126assets passes. Sync10866priorrawhashes9new10875total;351JSON159Python parse. Production/gameplay unchanged;existing build/CI limits remain.
+
+## Running monitor capture
+
+Normal UI restart and short opening run,then Escape pause at73832.0546875.1197samples787paused410unpaused,0errors/unstablecontexts or monitor rereads. Disabled overspeed input changed150times;vigilance timers25/17 unchanged despite enable1. Post-run globals790d88/790d8c1 suppress caller updates;not a time-series gate claim. No action/alarm/penalty transitions. Inventory1035;audit726paths126assets passes. Sync10875priorhashes7new10882total;352JSON162Python parse. No production/assets/save edits;native build/remoteCI limitations unchanged.

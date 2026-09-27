@@ -65251,6 +65251,48 @@
       "bytes": 81,
       "sha256": "8e4241eebf104687bafe4de893b1f9095d1e6a88480f47ffcfa106ce212724e9",
       "included": false
+    },
+    {
+      "path": "captures/monitor-caller-gates-paused-01/gates.json",
+      "bytes": 522,
+      "sha256": "40be7ddfbb9f8c9a4220474202ddf1da8f9bc51ea26ed2212f333fb17ce65cec",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-caller-gates-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-caller-gates-paused-01/read_monitor_caller_gates.py",
+      "bytes": 1221,
+      "sha256": "d8d9123ff20921b622cc9a334d04c49e8127f030d2c29637104e2803daf0814c",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-running-opening-01/metadata.json",
+      "bytes": 400,
+      "sha256": "3cd1687ce075f893deb1a74c499ea4d0f3ba240e22d774c1c00870be4a9a1180",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-running-opening-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-running-opening-01/sample_monitor_cadence.py",
+      "bytes": 2398,
+      "sha256": "5a62202beba44adee07a28927ca8d6b791a1d6a2435cfc4e69df1bba46b27e50",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-running-opening-01/samples.jsonl",
+      "bytes": 1447051,
+      "sha256": "faf519f64370da3a75f9e9ef43e609c1b4b55681b3abfdb877e35a58d85717b7",
+      "included": false
     }
   ]
 }
