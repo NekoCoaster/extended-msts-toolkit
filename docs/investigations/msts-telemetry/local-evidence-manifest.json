@@ -65443,6 +65443,66 @@
       "bytes": 81,
       "sha256": "ee5dc79c2fbdf1730e00695a8b7a396fad56f2b4f03e5020068e325a202d3b44",
       "included": false
+    },
+    {
+      "path": "captures/alerter-penalty-evaluation-01/evaluation.json",
+      "bytes": 1003,
+      "sha256": "33404dc2b9d5028413aef50cc9ede0f46309cbc57719be2292654c46537b5163",
+      "included": false
+    },
+    {
+      "path": "captures/alerter-penalty-evaluation-01/read_evaluation.py",
+      "bytes": 2239,
+      "sha256": "190f66440f30d39ad19ac81c54428afe8f6f3ae6116b1341b5a8e20255992713",
+      "included": false
+    },
+    {
+      "path": "captures/alerter-penalty-evaluation-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-alerter-enabled-01/metadata.json",
+      "bytes": 400,
+      "sha256": "c8fd1545b152619e318bf8d1c8ddc373b002911fdba43de9190cae9f71863ee8",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-alerter-enabled-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-alerter-enabled-01/sample_monitor_cadence.py",
+      "bytes": 2635,
+      "sha256": "cb529b2aaf0a2162cbd5a63958af1add700aefe330805d34a0175da2449d9e74",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-alerter-enabled-01/samples.jsonl",
+      "bytes": 1915241,
+      "sha256": "eb339832b40e64c5f34a34329fd3b3c1a92a07b6ab66a07425d25da71b00ca4d",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-options-restored-01/gates.json",
+      "bytes": 522,
+      "sha256": "29451943ef837e8a548fba90459e58b7fc2384c929f3fce3c744bc896f01b9a1",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-options-restored-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-options-restored-01/read_monitor_caller_gates.py",
+      "bytes": 1411,
+      "sha256": "8572c1b6e849b11d1bdb30c0159e12e3b244df9855d466e3a4189ada46d734b0",
+      "included": false
     }
   ]
 }

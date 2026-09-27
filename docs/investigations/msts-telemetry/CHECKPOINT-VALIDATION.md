@@ -299,3 +299,7 @@ Normal UI restart and short opening run,then Escape pause at73832.0546875.1197sa
 ## Alerter suppression gates
 
 Native command registration/string/installed key declaration mapped;handler toggles both suppression gates and overspeed enable. Pass27146instructions162bytes,272871/3402 matchdisk/live.90second sequence1796samples1421paused375running,0errors/unstable reads;attempted Ctrl+numpad4 produced no sampled toggle,original gates1/1 retained. Finalpaused73861.3828125. Inventory1037=436direct26derived68cab507config;audit735paths126assets passes. Sync10882oldhashes25new10907total;356JSON163Python parse. No production/assets/save edits;build/CI limits unchanged. No successful activation/countdown/intervention claim.
+
+## UI-enabled vigilance penalty sequence
+
+Temporarily checked Alerter through normal General Options;1397samples883paused514running,zero read errors/unstable contexts. Both gates0;188observed countdown changes each exactly-0.25. Alarm/action edges,pressure response and nearly stopped speed observed. Evaluation UI reports penalty brake20:30:21;retained code2 record73821.1875/mile1178.2211914 corroborates. Restored checkbox off and reloaded;gates1/1,paused73800.6796875 opening notebook verified. No asset/save/production edits. Inventory1037,audit741paths126assets passes. Sync10907oldhashes10new10917total;358JSON164Python parse. Native build/remoteCI limits unchanged;acknowledgement,other monitors and AI remain open.

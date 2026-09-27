@@ -819,8 +819,8 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | evaluation.speed_episode_duration | Total duration of closed speed-violation episodes | native collector and storage traced; empty paused state read, no nonzero episode validation |
 | evaluation.speed_episode_active | Current speed-violation episode state and retained details | native collector and storage traced; empty paused state read, no nonzero episode validation |
 | evaluation.speed_episode_records | Completed speed-violation episode records | native collector and storage traced; empty paused state read, no nonzero episode validation |
-| evaluation.operational_error_count | Retained operational-error record count | native append path traced; two retained records match stored count, emission not observed |
-| evaluation.operational_error_records | Operational-error records with time, marker location and raw code | two retained records match count; native display dispatch maps codes4/8 to installed English resource labels; emission not observed |
+| evaluation.operational_error_count | Retained operational-error record count | native append path traced; two retained records match stored count, emission not observed;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
+| evaluation.operational_error_records | Operational-error records with time, marker location and raw code | two retained records match count; native display dispatch maps codes4/8 to installed English resource labels; emission not observed;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | evaluation.freight_durability_count | Freight durability exceedance record count | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
 | evaluation.freight_durability_records | Freight durability exceedance time and marker-location records | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
 | evaluation.passenger_comfort_count | Passenger comfort exceedance record count | native collector and installed display labels traced; empty paused lists read, no exceedance emission observed |
@@ -1037,9 +1037,9 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.shape_node_transform | Stored per-node animation transform | native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners |
 | car.wheel_transform_groups | Type-4 per-vehicle wheel transform groups | native bounded type4branch and base-transform consumer traced;paused41vehicle snapshot reads82groups164wheelmatrices82basematrices |
 | engine.aws_monitor_state | AWSMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
-| engine.vigilance_monitor_state | VigilanceMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
+| engine.vigilance_monitor_state | VigilanceMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | engine.emergency_stop_monitor_state | EmergencyStopMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
 | engine.overspeed_monitor_state | OverspeedMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
 | engine.unnamed_monitor_slot3_state | Unnamed fifth engine monitor runtime state | native layout,initializer disable and diesel conditional current trigger traced;paused disabled state read with valid definition |
-| session.vigilance_update_suppressed | Vigilance update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1 |
-| session.aws_update_suppressed | AWS update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1 |
+| session.vigilance_update_suppressed | Vigilance update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
+| session.aws_update_suppressed | AWS update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
