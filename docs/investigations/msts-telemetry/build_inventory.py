@@ -1107,6 +1107,11 @@ for row in rows:
         row['evidence'].extend(['pass281-byte-verification.json','pass281/005f952e.asm','map_collision_generation_stub.py','collision-generation-stub-map.json'])
         row['extraction']+=';record dword0 bit0x1 set/cleared by005f952e according to caller+44==1'
         row['limitations']+=' Post-builder005f952e only changes record flags and makes no callbacks;record flags differ from vehicle CollideFlags. Exact stub4038c3 is JMP despite stored CALL reference. Misaligned pass283 is rejected as instruction evidence. Callback invocation remains unresolved.'
+for row in rows:
+    if row['id'] in {'car.brake_cylinder_pressure','car.brake_pipe_pressure'}:
+        row['evidence'].extend(['SIGNAL-APPROACH-BRAKING-FINDINGS.md','analyse_signal_approach_emergency.py','signal-approach-emergency-summary.json','emergency-binding-provenance.json','captures/signal-approach-emergency-01/samples.jsonl','captures/approach-stopped-signal-01/details.jsonl'])
+        row['evidence_status']+=';preferred diesel fixture UI emergency stop captured across23player/22AI cars'
+        row['limitations']+=' Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No diesel release or successful signal passage yet.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

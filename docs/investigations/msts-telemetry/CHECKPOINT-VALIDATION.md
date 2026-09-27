@@ -336,3 +336,7 @@ Pass2796functions2076instructions7741bytes andpass2804functions433instructions15
 ## Collision post-builder qualification
 
 Pass28142instructions108bytes match disk/live33612;only record-bit mutation,no callback invocation. Exact JMP stub/pointer independently verified;stored CALL reference mismatch and misaligned pass283 explicitly rejected as instruction evidence. Inventory1039unchanged;789evidence paths126source hashes pass. No game controls or production changes;native build not repeated.
+
+## Preferred activity emergency stop
+
+Normal UI Backspace stop captured1268samples808paused460running,zeroerrors;23player22AI owner rereads stable,170clock-crossing samples retained. Player stopped;final paused73905.859375,next signal46aspect0,distance481.9824m. No passage/release claim. Inventory1039unchanged;795evidence paths126asset hashes pass. Original assets/saves/settings and production code untouched. Native build not repeated.
