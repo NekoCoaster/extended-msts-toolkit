@@ -267,3 +267,7 @@ Inventory1029=428direct26derived68cab507config;678evidence paths126asset hashes 
 ## Type-4 wagon coverage
 
 Inventory1030=429direct26derived68cab507config;682evidence references126asset hashes pass. Paused41wagons82groups164wheelmatrices82basematrices read without errors;allownerlinks and sampled identity/context/matrix rereads stable. Stored transforms now cover all45physicalvehicles in this fixture across separate type4/type5probes;movingcadence/worldpose/universalcoverage remain unproven. Pass25862instructions176bytes matchdisk/live. Manifest10708priorhashes14new10722total;335JSON153Python parse. No gameplay/production edits;DeviceGuard4551 and uninspected remoteCI limits remain.
+
+## Current objective review
+
+Replaced stale chronological coverage overview with a current requirement/evidence review;preserved prior text in DISCOVERY-COVERAGE-HISTORY.md. Environment/sky/audio/header/handoff work is no longer misidentified as wholly missing. New-surface leads and remaining runtime validation are distinguished without keep/drop decisions. Completion audit remains unmet. Inventory unchanged1030,audit682paths126assets passes. Sync verifies10722raw hashes,adds0;335JSON153Python parse. No simulator input or production edits.
