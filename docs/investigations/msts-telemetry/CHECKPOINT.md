@@ -286,3 +286,5 @@ The current inventory is1015 candidates (414direct,26derived,68cab,507configurat
 Latest monitor runtime checkpoint: restarted preferred activity through UI,then captured1197samples before/during/after motion. Paused at73832.0546875. Disabled overspeed input updated150times;enabled vigilance timers stayed25/17. Post-run caller gates suppress vigilance/AWS updates. See ENGINE-MONITOR-FINDINGS.md for bounds;no timer-rate/intervention claim.
 
 UI-enabled Alerter follow-up validates vigilance countdown,alarm/action latches and penalty braking,with matching evaluation code2. Original option restored and activity reloaded to paused73800.6796875 opening notebook. See ENGINE-MONITOR-FINDINGS.md and monitor-enabled-events.json.
+
+Latest wheel checkpoint:representative player/AI locomotive and wagon matrices change during motion and remain unchanged between paused samples. Two280sample captures;context-reread qualifications retained. Current simulator paused73871.1953125 in exterior view.

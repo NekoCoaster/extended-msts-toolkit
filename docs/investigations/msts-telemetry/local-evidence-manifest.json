@@ -65503,6 +65503,78 @@
       "bytes": 1411,
       "sha256": "8572c1b6e849b11d1bdb30c0159e12e3b244df9855d466e3a4189ada46d734b0",
       "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-moving-01/metadata.json",
+      "bytes": 555,
+      "sha256": "27e66356ef071f297c6b3267dc32943d0c5dfbf4c6ca61aecea72c3254f4c59f",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-moving-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-moving-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-moving-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-moving-01/sample_wheel_matrices.py",
+      "bytes": 3616,
+      "sha256": "8cccedc5e25c3cc22b5cdf7ef5ce188b1129ff0b91a953a7e266ea96d376909d",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-moving-01/samples.jsonl",
+      "bytes": 583648,
+      "sha256": "f83c9030eb79e70c3d0e7454d1067b3840916e3fc8eda428dbc9463249038997",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-player-ai-01/metadata.json",
+      "bytes": 555,
+      "sha256": "27e66356ef071f297c6b3267dc32943d0c5dfbf4c6ca61aecea72c3254f4c59f",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-player-ai-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-player-ai-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-player-ai-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-player-ai-01/sample_wheel_matrices.py",
+      "bytes": 3616,
+      "sha256": "8cccedc5e25c3cc22b5cdf7ef5ce188b1129ff0b91a953a7e266ea96d376909d",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-matrix-player-ai-01/samples.jsonl",
+      "bytes": 860661,
+      "sha256": "e82e35144f9a8590a750a75d6793d9fffbf2debeb0cac3bc91139fe155a0894b",
+      "included": false
     }
   ]
 }
