@@ -279,3 +279,7 @@ Inventory1034=433direct26derived68cab507config;693evidence paths126asset hashes 
 ## Monitor trigger and reset-source semantics
 
 Inventory1034unchanged;700evidence paths126asset hashes pass.14parameter labels/constants mapped;60fa46cached trigger predicates and610623latch writes traced. Native overspeed conversion and RPM comparison preserved literally;disabled branches may leave caches unchanged. Existing snapshot decoded without advancing gameplay;no actual penalties/timer cadence claimed. Pass263191instructions669bytes and26414instructions48bytes matchdisk/live. Manifest10769priorhashes23new10792total;343JSON157Python parse. Production unchanged;historical native/CI limits remain.
+
+## Monitor countdown producers
+
+Pass265:919instructions3505bytes;pass266:340instructions1136bytes,all disk/live equal. Float subtraction verified in assembly;countdown/reset/trigger updates precede enable gating. Diesel call sites identify monitor subobjects;upstream clock units/cadence and actual intervention remain unvalidated. Inventory1034 unchanged,audit706evidence paths126unchanged assets passes. Sync verified10792priorrawhashes,added24,total10816;345JSON157Python parsed. Simulator not advanced;no production changes. Historical DeviceGuard4551 limitation and uninspected current remote CI remain.
