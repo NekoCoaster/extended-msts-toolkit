@@ -10,5 +10,7 @@ for name in ('aws','vigilance','emergency','unnamed','overspeed'):
   values=[struct.unpack_from('<'+fmt,b,off)[0] for b in raw];deltas=collections.Counter(round(b-a,8) for a,b in zip(values,values[1:]) if a!=b)
   fields[label]=dict(min=min(values),max=max(values),changes=sum(deltas.values()),deltas=dict(deltas.most_common(12)))
  result['monitors'][name]=dict(fields=fields,unstable_reads=sum(not x['monitors'][name]['stable'] for x in ok),changes_between_paused_samples=sum(raw[i]!=raw[i-1] for i in range(1,len(ok)) if ok[i]['paused'] and ok[i-1]['paused']))
+result['gate_values']={k:sorted(set(x[k] for x in ok if k in x)) for k in ('vigilance_global','aws_global')}
+result['final_state']={k:ok[-1][k] for k in ('day','paused','clock','physics_time')}
 result['limitations']='Sequential50ms samples may miss intermediate changes;no direct alarm audibility,intervention or AI-monitor test. Paused transitions are separated but not atomic. Compare clocks without assuming identical cadence.'
 (root/(a.name+'-summary.json')).write_text(json.dumps(result,indent=2));print(json.dumps(result))

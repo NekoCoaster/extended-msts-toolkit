@@ -18,7 +18,7 @@ try:
     if not train:raise ValueError('No player train')
     lead=r.u(train+0x6a);ed=r.u(lead+0x29a);obj=r.u(0x80aa1c);ident=r.u(lead+0x50)
     if not lead or not ed or not obj:raise ValueError('Missing context')
-    d.update(day=r.f(0x80acd4),clock=r.f(0x80acd0),paused=r.u(0x7be0f4),train=train,lead=lead,object_id=ident,definition=ed,interval=r.f(train+0x8e),accumulator=r.f(train+0x8a),physics_time=r.f(obj+0x54),speed=r.f(lead+0x1bc),monitors={})
+    d.update(vigilance_global=r.u(0x790d88),aws_global=r.u(0x790d8c),day=r.f(0x80acd4),clock=r.f(0x80acd0),paused=r.u(0x7be0f4),train=train,lead=lead,object_id=ident,definition=ed,interval=r.f(train+0x8e),accumulator=r.f(train+0x8a),physics_time=r.f(obj+0x54),speed=r.f(lead+0x1bc),monitors={})
     for name,off,def_off in [('aws',0x4ba,0xb0c),('vigilance',0x4fa,0xb78),('emergency',0x53a,0xbe4),('unnamed',0x57a,0xc50),('overspeed',0x5ba,0xcbc)]:
      raw=r.read(lead+off,64)
      if struct.unpack_from('<I',raw,60)[0]!=ed+def_off:raise ValueError('Unexpected monitor link')

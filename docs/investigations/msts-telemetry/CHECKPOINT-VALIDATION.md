@@ -295,3 +295,7 @@ Added explicit unnamed monitor structure without inventing a subsystem identity.
 ## Running monitor capture
 
 Normal UI restart and short opening run,then Escape pause at73832.0546875.1197samples787paused410unpaused,0errors/unstablecontexts or monitor rereads. Disabled overspeed input changed150times;vigilance timers25/17 unchanged despite enable1. Post-run globals790d88/790d8c1 suppress caller updates;not a time-series gate claim. No action/alarm/penalty transitions. Inventory1035;audit726paths126assets passes. Sync10875priorhashes7new10882total;352JSON162Python parse. No production/assets/save edits;native build/remoteCI limitations unchanged.
+
+## Alerter suppression gates
+
+Native command registration/string/installed key declaration mapped;handler toggles both suppression gates and overspeed enable. Pass27146instructions162bytes,272871/3402 matchdisk/live.90second sequence1796samples1421paused375running,0errors/unstable reads;attempted Ctrl+numpad4 produced no sampled toggle,original gates1/1 retained. Finalpaused73861.3828125. Inventory1037=436direct26derived68cab507config;audit735paths126assets passes. Sync10882oldhashes25new10907total;356JSON163Python parse. No production/assets/save edits;build/CI limits unchanged. No successful activation/countdown/intervention claim.
