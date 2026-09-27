@@ -502,5 +502,9 @@
   "C:\\MSTS\\ROUTES\\USA2\\PATHS\\evegrain.pat": {
     "sha256": "2baca7ec00c4f1ee8a274978244e506ddf33dac0be00553306ece50fd1d70d52",
     "bytes": 2674
+  },
+  "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\yard_one.act": {
+    "sha256": "fc252534188e07dccb7053df00ab70c43c8afe9a774e04b08f94afdda796dd06",
+    "bytes": 19130
   }
 }

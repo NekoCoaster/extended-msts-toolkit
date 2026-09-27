@@ -59,7 +59,7 @@ Observe the UI while driving and pause for analysis. The unchanged N3 and N2 app
 
 ## Remaining handoff boundaries
 
-The catalogue covers broad player/AI runtime, configuration and ancillary surfaces, but further discovery and semantic validation remain in the requirements review. Open work includes static/detached vehicle enumeration, remaining adhesion/resistance and wheel/axle sources, unsupported cab-branch reachability, populated station operations, successful player node/signal passage, repeated AI rephysicalization, additional lifecycle/clock boundaries, AI audio applicability, and complete save fidelity. Raw byte blocks or untraced names do not close those gaps.
+The catalogue covers broad player/AI runtime, configuration and ancillary surfaces, but further discovery and semantic validation remain in the requirements review. Loaded loose-stock enumeration, player car node changes and next-signal selection transitions now have positive runtime evidence. Open work includes coupling/detachment transitions, remote loose-stock coverage, remaining adhesion/resistance and wheel/axle sources, unsupported cab-branch reachability, populated station operations, player speedpost changes and exact passage timing, repeated AI rephysicalization, additional lifecycle/clock boundaries, AI audio applicability, and complete save fidelity. Raw byte blocks or untraced names do not close those gaps.
 
 The preserved data and scripts are research tools with per-probe guards, not a production-ready telemetry collector. Production design, export format, polling policy, compatibility support and keep/drop decisions remain outside this phase. Completion must still be audited against the full original objective.
 

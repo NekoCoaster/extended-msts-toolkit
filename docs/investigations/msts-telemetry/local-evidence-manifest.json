@@ -67039,6 +67039,66 @@
       "bytes": 52536,
       "sha256": "2245d3a693a4420d3aff541f65491896fca82a815d0095a3a4a02df23a979b8f",
       "included": false
+    },
+    {
+      "path": "captures/loose-fixture-provenance-01/evegrain_27092026_184329.sav",
+      "bytes": 124886,
+      "sha256": "6064ec5975dca19d0d392df318bd1b15c432381ab19ca5f3cdf4d1c5f17c6010",
+      "included": false
+    },
+    {
+      "path": "captures/loose-fixture-provenance-01/preserve_loose_fixture.py",
+      "bytes": 1228,
+      "sha256": "58b5acacba8ae1e6ae474b08e523256579d32907ca6d7b6728cbee2959de71ab",
+      "included": false
+    },
+    {
+      "path": "captures/loose-fixture-provenance-01/provenance.json",
+      "bytes": 848,
+      "sha256": "d84dae60a2689ca66388907e7bd4b853ae2a85798b2d4bd629a824bc36cf213a",
+      "included": false
+    },
+    {
+      "path": "captures/loose-fixture-provenance-01/yard_one.act",
+      "bytes": 19130,
+      "sha256": "fc252534188e07dccb7053df00ab70c43c8afe9a774e04b08f94afdda796dd06",
+      "included": false
+    },
+    {
+      "path": "captures/loose-yard-manager-01/manager.json",
+      "bytes": 323047,
+      "sha256": "45aba12968faa00a4c594d9be3a3ce7f9bd994b4de23fd2a6b1c0827e7848fe9",
+      "included": false
+    },
+    {
+      "path": "captures/loose-yard-manager-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/loose-yard-manager-01/read_manager_lists.py",
+      "bytes": 3166,
+      "sha256": "7512817e010ab856bf8e15ca2ed1f23bc4d867841e400432dc3ddec9993aae45",
+      "included": false
+    },
+    {
+      "path": "captures/loose-yard-notebook-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/loose-yard-notebook-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/loose-yard-notebook-01/registry.json",
+      "bytes": 73430,
+      "sha256": "4fa9ea3c08146bbf14d593e4cfc418e3d2a6fd6ad61e00a53d71d7b3af40d5ad",
+      "included": false
     }
   ]
 }

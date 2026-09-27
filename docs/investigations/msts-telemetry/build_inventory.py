@@ -1146,6 +1146,17 @@ for row in rows:
         else:
             row['evidence_status']+=';multiple normal-head fixture aspects4and0 selects4 under traced maximum rule'
             row['limitations']+=' Next iterator21to2..3 observed with stable signal subreads;head2aspect4 and head3aspect0 coexist. Emulated selection is not independent rendered-monitor,appearance or movement-authority validation.'
+loose_fixture_path=GAME/'ROUTES/USA2/ACTIVITIES/yard_one.act'
+loose_fixture_bytes=loose_fixture_path.read_bytes()
+sources[str(loose_fixture_path)]={'sha256':hashlib.sha256(loose_fixture_bytes).hexdigest(),'bytes':len(loose_fixture_bytes)}
+for row in rows:
+    if row['id'] in {'car.physical_registry','car.native_kind','car.object_id','car.physical_registry_stored_count','car.registered_bit','car.identity','car.train_owner','car.links','car.body_pointer'}:
+        row['evidence'].extend(['LOOSE-STOCK-FINDINGS.md','analyse_loose_yard.py','loose-yard-summary.json','captures/loose-yard-notebook-01/registry.json','captures/loose-yard-manager-01/manager.json','captures/loose-fixture-provenance-01/provenance.json','captures/loose-fixture-provenance-01/yard_one.act'])
+        row['applicability']='player, physical AI and loaded loose rolling stock; remote/unphysicalized coverage unproven'
+        row['evidence_status']+=';positive yard fixture has39owner-null loose vehicles outside train chains in6linked components'
+        row['limitations']=row['limitations'].replace('no positive detached/static fixture yet.','that earlier fixture had no loose-stock set difference.').replace('No live count/bit transition or detached/static fixture yet.','No live count/bit transition in that earlier fixture.')
+        row['limitations']+=' Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry.'
+        if row['id']=='car.identity':row['extraction']='bounded train-chain or independently type-validated physical-registry enumeration; session-local address'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

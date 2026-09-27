@@ -18,13 +18,13 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | train.last_car | Last car pointer | readable in live captures; semantics partly inherited/static |
 | train.lead_car | Lead/controlled car pointer | readable in live captures; semantics partly inherited/static |
 | train.service_pointer | Associated service/runtime object; fields not decoded yet | readable in live captures; semantics partly inherited/static |
-| car.identity | Vehicle instance address | readable in live captures; semantics partly inherited/static |
-| car.train_owner | Owning train | readable in live captures; semantics partly inherited/static |
-| car.links | Connections at both ends | readable in live captures; semantics partly inherited/static |
+| car.identity | Vehicle instance address | readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
+| car.train_owner | Owning train | readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
+| car.links | Connections at both ends | readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
 | car.definition | Shared vehicle definition | readable in live captures; semantics partly inherited/static |
 | car.asset_directory | Trainset directory/name string | readable in live captures; semantics partly inherited/static |
 | car.powered | Definition identifies powered vehicle | readable in live captures; semantics partly inherited/static |
-| car.body_pointer | Current integration body pointer | readable in live captures; semantics partly inherited/static |
+| car.body_pointer | Current integration body pointer | readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
 | body.position | Physics-body reference position in local simulation coordinates | live player/AI movement sampled; local body and track reference points compared; clock and producer-phase differences documented |
 | body.right | Orientation right basis | readable in live captures; semantics partly inherited/static |
 | body.up | Orientation up basis | readable in live captures; semantics partly inherited/static |
@@ -1021,11 +1021,11 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | resource.consist_version_word | Loaded consist raw word emitted in native Version_Consist list | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
 | resource.service_version_word | Loaded service raw word emitted in native Version_Service list | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
 | resource.traffic_version_word | Loaded traffic raw word emitted in native Version_Traffic block | writer callbacks match disk/live;paused player and2AI service sources readable;9distinct stored/live name-word pairs agree |
-| car.physical_registry | Physical-object list independently of train-owned consist chains | native consumers and exact constant-return methods traced;45paused objects match connected train membership |
-| car.native_kind | Native vehicle class discriminator | native consumers and exact constant-return methods traced;45paused objects match connected train membership |
-| car.object_id | Native vehicle identifier used by object lookup and save references | native consumers and exact constant-return methods traced;45paused objects match connected train membership |
-| car.physical_registry_stored_count | Stored manager physical-object list count | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45 |
-| car.registered_bit | Object registration flag used by insertion and teardown | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45 |
+| car.physical_registry | Physical-object list independently of train-owned consist chains | native consumers and exact constant-return methods traced;45paused objects match connected train membership;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
+| car.native_kind | Native vehicle class discriminator | native consumers and exact constant-return methods traced;45paused objects match connected train membership;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
+| car.object_id | Native vehicle identifier used by object lookup and save references | native consumers and exact constant-return methods traced;45paused objects match connected train membership;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
+| car.physical_registry_stored_count | Stored manager physical-object list count | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
+| car.registered_bit | Object registration flag used by insertion and teardown | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components |
 | car.wheel_rate_stored | Stored ordinary wheel angular-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained |
 | engine.driver_rotation_rate | Stored powered driver rotation-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained |
 | engine.adhesion_force_limit | Stored powered-vehicle adhesion limit candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained |

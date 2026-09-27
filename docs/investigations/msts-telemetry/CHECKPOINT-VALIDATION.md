@@ -360,3 +360,7 @@ Two completed captures:2383/1788 samples,zero read or signal errors,zero iterato
 ## Player track boundaries and AI cap activation
 
 721samples246paused,zero read/track errors.587section-or-node changes include8player car node crossings;lead/service already beyond boundary.2163cap comparisons include193pre-activation AIservice3cache mismatches,all gate0;activation gate0to1 accompanies posted/effective13.4112m/s. Playercap unchanged. Multiple normal heads4/0 fixture and iterator21to2..3 captured;no exact geometric passage/authority claim.184full-sample clock crossings,zero player/origin reread differences. Inventory1039,827evidence paths126unchanged assets pass. Sync11162prior raw hashes plus11newfiles;384JSON182Python parse. No production change/native build.
+
+## Positive loose-stock fixture
+
+Normal UI saved grain run to a new timestamped file,then loaded Setting Out Westbound Pickup. Earlier save hash unchanged,new save copied with provenance;new restoration untested. Paused39600.76953125:physical list40vs1train-owned player engine,39owner-null loose vehicles in6reciprocal components5/3/1/16/13/1matching configured sizes.38wagons1engine,all39bodies/registration/rereads valid,velocity0/resting. Manager counts0/52/1342/40/1. Actual coupling/detachment and exact activity/native-ID joins unvalidated. Inventory1039unchanged,834evidence paths127sourcehashes pass. Sync11173prior raw hashes plus10newfiles;385JSON184Python parse. No production/native changes.
