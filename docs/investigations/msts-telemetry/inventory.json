@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-27T09:50:31.709033+00:00",
+  "generated_utc": "2026-09-27T09:54:02.811800+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 436,
+    "runtime_direct": 437,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 1037
+    "total": 1038
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -35231,6 +35231,28 @@
       "evidence_status": "native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed",
       "update_or_lifecycle": "Global command/settings gate. Normal UI Alerter enable plus activity restart yielded0; restoring the option plus restart yielded1. Exact write timing, process-restart persistence and shortcut dispatch remain unvalidated.",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Independent of per-monitor enable word. Command toggles both gates and changes player overspeed enable to0x40000000 when vigilance gate0,otherwise0. Ctrl+numpad4 declaration exists but tested keypress produced no sampled toggle;do not claim successful shortcut dispatch or process-restart persistence.  UI-enabled follow-up validates player vigilance quarter-step countdown,alarm/action rising edges and penalty brake response;UI evaluation and code2 record agree. Gates0 during1397sample run;original Alerter option restored with gates1 after reload. Timers continue negative after latching. This does not validate every monitor,AI,acknowledgement,audio or process-restart option persistence."
+    },
+    {
+      "id": "car.collision_callback_state",
+      "meaning": "Collision-object callback binding and unnamed stored state",
+      "applicability": "guarded physical player/AI vehicles;positive fixture23player22AI",
+      "value_type": "structured uint32 callback pointer and state",
+      "units": "address and unnamed state code",
+      "extraction": "car+0x74 callback pointer;car+0x78 uint32 state;save encoder maps two table entries at0x7a09b0 to0/1 and special stubs402bc6/401dbb to100/101",
+      "evidence": [
+        "COLLISION-CALLBACK-FINDINGS.md",
+        "map_collision_callbacks.py",
+        "collision-callback-map.json",
+        "read_collision_callbacks.py",
+        "captures/collision-callback-paused-01/callbacks.json",
+        "pass275-byte-verification.json",
+        "pass276-byte-verification.json",
+        "pass275/005e143c.asm",
+        "pass210/005e2534.asm"
+      ],
+      "evidence_status": "disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads",
+      "update_or_lifecycle": "serialized state;callback005e143c has a conditional state2 writer;initialization,other writers and live transitions unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Callback binding is not a collision event or invocation count. Three mapped targets return0 without state writes. Current45vehicles select one of these targets. State5 meaning unknown;state2 branch not observed. No damage,derailment,contact count,impact speed or AI collision simulation claim. Raw pointers are process-specific;sequential rereads not atomic. No deliberate collision performed."
     }
   ]
 }

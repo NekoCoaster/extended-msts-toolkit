@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 436, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1037}
+{'runtime_direct': 437, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1038}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1043,3 +1043,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | engine.unnamed_monitor_slot3_state | Unnamed fifth engine monitor runtime state | native layout,initializer disable and diesel conditional current trigger traced;paused disabled state read with valid definition |
 | session.vigilance_update_suppressed | Vigilance update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | session.aws_update_suppressed | AWS update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
+| car.collision_callback_state | Collision-object callback binding and unnamed stored state | disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads |

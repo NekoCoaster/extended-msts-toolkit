@@ -316,3 +316,7 @@ Pass273: 35 instructions/94 bytes match disk and live PID33612. Guarded paused c
 ## Scoped lifecycle consistency review
 
 Corrected five monitor/gate/wheel lifecycle records against retained evidence; no candidate count change or new runtime claim. Monitor event and player/AI wheel summaries reproduce byte-identically from raw captures. Restored gate snapshot confirms1/1 after UI restoration/reload. Inventory audit:1037unique candidates,753evidence paths,126unchangedsource hashes. Sync verifies10943raw hashes,362JSON/168Python parse. Full semantic review remains incomplete; no native code changed or native build repeated.
+
+## Collision callback discovery
+
+One structured candidate added:1038total437direct. Guarded paused45vehicle capture has callback402bc6/state5,zeroerrors/reread differences. Callback map disk/live stable;pass2754functions76instructions220bytes andpass2762functions72instructions198bytes match disk/live. Pass274 zero-function export retained as negative evidence. No collision semantics or transitions claimed. Inventory762evidence paths126source hashes pass;sync10943old hashes+41new,365JSON170Python parse. Research only;native build limitation unchanged.
