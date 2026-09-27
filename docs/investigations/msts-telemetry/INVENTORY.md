@@ -806,8 +806,8 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.brake_reference_pressure_candidate | Brake pressure used to scale configured force | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.connection_force_candidate | Stored magnitude for current-to-following vehicle connection force | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | car.connection_break_threshold_candidate | Coupling-force threshold used to uncouple | static source tracing plus stopped-player values during running simulation; independent AI population untested |
-| body.force_accumulator_candidate | Body force accumulator | static source tracing plus stopped-player values during running simulation; independent AI population untested |
-| body.torque_accumulator_candidate | Body torque accumulator | static source tracing plus stopped-player values during running simulation; independent AI population untested |
+| body.force_accumulator_candidate | Body force accumulator | static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads |
+| body.torque_accumulator_candidate | Body torque accumulator | static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads |
 | body.inverse_inertia_world | World inverse inertia tensor | static source tracing plus stopped-player values during running simulation; independent AI population untested |
 | session.weather_raw | Loaded activity weather selection | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.season_raw | Loaded activity season selection | loaded values match ACT; elapsed is derived and midnight semantics untested |

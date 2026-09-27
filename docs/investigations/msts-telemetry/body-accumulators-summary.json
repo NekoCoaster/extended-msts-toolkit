@@ -1,0 +1,98 @@
+{
+  "capture": "captures/body-accumulators-paused-01/accumulators.json",
+  "day": 73871.1953125,
+  "paused": 1,
+  "groups": {
+    "player": {
+      "vehicles": 23,
+      "errors": [],
+      "nonzero_force": 23,
+      "nonzero_torque": 0,
+      "unstable_identity": 0,
+      "unstable_state": 0,
+      "unstable_definition": 0,
+      "example": {
+        "object_id": 200223,
+        "car": 62619068,
+        "train": {
+          "train_id": 400007,
+          "is_player": true
+        },
+        "body": 55575228,
+        "definition": 55527944,
+        "force": [
+          992.9259643554688,
+          7.835206985473633,
+          -844.4482421875
+        ],
+        "torque": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "velocity": [
+          4.1807661056518555,
+          0.032908666878938675,
+          -3.5555856227874756
+        ],
+        "coefficients": [
+          100.0,
+          1.0,
+          -0.44703999161720276,
+          0.0,
+          1.0
+        ],
+        "raw": "433b784404bafa40b01c53c4000000000000000000000000",
+        "state_stable": true,
+        "definition_stable": true,
+        "identity_stable": true
+      }
+    },
+    "AI": {
+      "vehicles": 22,
+      "errors": [],
+      "nonzero_force": 0,
+      "nonzero_torque": 0,
+      "unstable_identity": 0,
+      "unstable_state": 0,
+      "unstable_definition": 0,
+      "example": {
+        "object_id": 200146,
+        "car": 55355628,
+        "train": {
+          "train_id": 400005,
+          "is_player": false
+        },
+        "body": 55584543,
+        "definition": 55527944,
+        "force": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "torque": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "velocity": [
+          1.4940168857574463,
+          0.0,
+          19.744203567504883
+        ],
+        "coefficients": [
+          100.0,
+          1.0,
+          -0.44703999161720276,
+          0.0,
+          1.0
+        ],
+        "raw": "000000000000000000000000000000000000000000000000",
+        "state_stable": true,
+        "definition_stable": true,
+        "identity_stable": true
+      }
+    }
+  },
+  "limitation": "Total body accumulators contain multiple contributions. Paused values do not establish force decomposition,solver phase,AI dynamics or a standalone resistance measurement."
+}

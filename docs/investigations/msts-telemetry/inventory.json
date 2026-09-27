@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T09:41:08.745351+00:00",
+  "generated_utc": "2026-09-27T09:48:50.988333+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -29627,11 +29627,18 @@
         "pass24/00635dfb.c",
         "pass25/006171f8.asm",
         "pass26/0062c679.c",
-        "pass26/0062d335.c"
+        "pass26/0062d335.c",
+        "WHEEL-ADHESION-FINDINGS.md",
+        "read_body_accumulators.py",
+        "analyse_body_accumulators.py",
+        "body-accumulators-summary.json",
+        "captures/body-accumulators-paused-01/accumulators.json",
+        "pass273/0062e5d6.asm",
+        "pass273-byte-verification.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic."
     },
     {
       "id": "body.torque_accumulator_candidate",
@@ -29645,11 +29652,18 @@
         "pass24/00635dfb.c",
         "pass25/006171f8.asm",
         "pass26/0062c679.c",
-        "pass26/0062d335.c"
+        "pass26/0062d335.c",
+        "WHEEL-ADHESION-FINDINGS.md",
+        "read_body_accumulators.py",
+        "analyse_body_accumulators.py",
+        "body-accumulators-summary.json",
+        "captures/body-accumulators-paused-01/accumulators.json",
+        "pass273/0062e5d6.asm",
+        "pass273-byte-verification.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic."
     },
     {
       "id": "body.inverse_inertia_world",

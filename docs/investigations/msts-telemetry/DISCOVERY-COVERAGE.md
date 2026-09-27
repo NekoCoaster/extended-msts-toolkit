@@ -46,3 +46,5 @@ Alerter command registration/toggle semantics traced. Ctrl+numpad4 attempt did n
 UI-enabled Alerter test closes representative player vigilance countdown/intervention gap:1397samples,quarter-step decrements,alarm/action edges,brake pressure response and evaluation code2. Original option restored and verified after activity reload.
 
 Wheel-matrix runtime follow-up:two280sample captures confirm moving stored matrices and paused stability for representative player/AI type4/type5 vehicles. Wagon context reread differences are retained;no exact angle/world-pose claim.
+
+Body accumulator follow-up: guarded paused snapshot covers23player and22AI vehicles. Player forces nonzero,AI forces zero despite nonzero velocity;alltorques zero. Native resistance path adds into the shared force accumulator,so no dedicated resistance-force measurement is claimed. Moving cadence,decomposition,torque meaning and AI applicability remain open.

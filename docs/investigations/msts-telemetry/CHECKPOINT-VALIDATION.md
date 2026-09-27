@@ -308,3 +308,7 @@ Enabled-capture reread qualification:one vigilance state reread differs at day73
 ## Moving player/AI wheel matrices
 
 Two280sample sequences confirm representative type5locomotive/type4wagon matrix changes and paused stability. Opening player462/436changes(462/424stable endpoints),follow-up player540/360(540/352stable) plus AI114/76(allstable endpoints). Player wagon context rereads differ2then1times;no matrix reread/identity differences or exceptions. No exact angle/frame/visibility claim. Finalpaused73871.1953125. Inventory1037;audit747paths126assets passes. Sync10917oldhashes12new10929total;360JSON166Python parse. Assets/saves/production unchanged;prior native build/remoteCI limits remain.
+
+## Body accumulator checkpoint
+
+Pass273: 35 instructions/94 bytes match disk and live PID33612. Guarded paused capture:45vehicles,23player/22AI,zero errors or reread differences. Shared accumulator is not standalone resistance;AI zeros are qualified. Inventory1037 unchanged;753evidence paths and126source hashes pass structural audit. Sync verifies10929old raw hashes and adds14entries;362JSON/168Python parse. Research-only changes;native build not repeated (previous DeviceGuard limitation remains). Goal incomplete;moving force/torque semantics remain open.
