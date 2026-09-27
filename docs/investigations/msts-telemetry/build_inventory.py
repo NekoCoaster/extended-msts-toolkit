@@ -959,6 +959,13 @@ for row in rows:
     if row['id'] in {'engine.driver_rotation_rate','engine.adhesion_force_limit','car.wheel_rate_stored'}:
         row['evidence'].extend(wheel_followup)
         row['limitations']+=' Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics.'
+for row in rows:
+    if row['id'] in {'engine.driver_rotation_rate','engine.adhesion_force_limit'}:
+        row['evidence'].extend(['engine-wheel-parser-map.json','map_engine_wheel_parser.py','pass58/0061949d.asm'])
+        row['limitations']+=' Selected engine parser dispatch confirms definition112 is WheelRadius and definition11a is native NumWheels;NumWheels is not established as axle count. Loaded values and live transitions remain unobserved.'
+    if row['id']=='engine.driver_animation_phase':
+        row['evidence'].extend(['wheelset-parser-map.json','map_wheelset_parser.py','pass234-byte-verification.json','pass234/00639549.asm'])
+        row['limitations']+=' Multiplier definition4e8 is parsed from Wheelset. Parser declaration8cbit10 versus runtime override90bit10 propagation unresolved. Setup00639549 clears phase and passes innercar1c4 to shape virtual44;inner phase offset18 is a tracing lead,not verified downstream interpretation.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
