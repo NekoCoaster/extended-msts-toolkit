@@ -283,3 +283,7 @@ Inventory1034unchanged;700evidence paths126asset hashes pass.14parameter labels/
 ## Monitor countdown producers
 
 Pass265:919instructions3505bytes;pass266:340instructions1136bytes,all disk/live equal. Float subtraction verified in assembly;countdown/reset/trigger updates precede enable gating. Diesel call sites identify monitor subobjects;upstream clock units/cadence and actual intervention remain unvalidated. Inventory1034 unchanged,audit706evidence paths126unchanged assets passes. Sync verified10792priorrawhashes,added24,total10816;345JSON157Python parsed. Simulator not advanced;no production changes. Historical DeviceGuard4551 limitation and uninspected current remote CI remain.
+
+## Monitor scheduler and cached input
+
+Reconnected diesel monitor delta to player fixed-step scheduler and reused earlier steam timebase corroboration. New paused snapshot records0.25interval and disabled overspeed's nonzero cached mph input;cached/current speed discrepancy retained. Pass267637instructions2397bytes,268110/394,269252/825 all checked disk/live equal;268/269 overlap prior scheduler work.16parameterlabels/fourconstants checked. Inventory1034,audit715paths126assets pass. Sync10816priorhashes50new10866total;349JSON158Python parse. No gameplay advancement or production edits;native build/remoteCI limits unchanged.

@@ -64897,6 +64897,306 @@
       "bytes": 81,
       "sha256": "76e0b1988ba0cb143e45acdad99df0574a649a058d380fcb6f32e0e85d1ee92d",
       "included": false
+    },
+    {
+      "path": "captures/engine-monitor-timing-paused-01/monitors.json",
+      "bytes": 17981,
+      "sha256": "ab5b780500af28e5617a26011c19579ff70d4320bc7eaf193e2c7a6008fbad81",
+      "included": false
+    },
+    {
+      "path": "captures/engine-monitor-timing-paused-01/read_engine_monitors.py",
+      "bytes": 3446,
+      "sha256": "05ef0b285b410004e07008d88bd3fb41971e187614477963f0dbcbba357aec90",
+      "included": false
+    },
+    {
+      "path": "captures/engine-monitor-timing-paused-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/engine-monitor-timing-paused-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/engine-monitor-timing-paused-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "pass267/004011a9.asm",
+      "bytes": 26,
+      "sha256": "5ab40d8aa742dd51e13fb9e927d84d5b2842a209d6ae250141ae9c1caacc23ca",
+      "included": false
+    },
+    {
+      "path": "pass267/004011a9.bytes.tsv",
+      "bytes": 21,
+      "sha256": "2ee62f85f639a36da4c6492de30af1f91614c6c1f5f31d7c067ebb37690634f5",
+      "included": false
+    },
+    {
+      "path": "pass267/004011a9.c",
+      "bytes": 7806,
+      "sha256": "eeb588ab49d8d5f65cf305c3acbc415fcaae75c72c764ca39ca6b1a4ffb8e2a8",
+      "included": false
+    },
+    {
+      "path": "pass267/005ea220.asm",
+      "bytes": 20899,
+      "sha256": "9a3a7768ffa1cb2818e0e81b35bcfb9fac42a4748932dfa386751c66af025cb6",
+      "included": false
+    },
+    {
+      "path": "pass267/005ea220.bytes.tsv",
+      "bytes": 11102,
+      "sha256": "c1e888c090846e5bd6d8b61ab414d2b472a0eac4dfcb04bbd1cba08d08880c77",
+      "included": false
+    },
+    {
+      "path": "pass267/005ea220.c",
+      "bytes": 7781,
+      "sha256": "2e23cf3d396184a11098e43b16a28c90d58ae2766842f602f1a1cae9ae0d6c34",
+      "included": false
+    },
+    {
+      "path": "pass267/005f5630.asm",
+      "bytes": 1284,
+      "sha256": "84fbc5bf5bd9f20fd2aedced6a12db996f241236698d08ca7d5ea02caa322b59",
+      "included": false
+    },
+    {
+      "path": "pass267/005f5630.bytes.tsv",
+      "bytes": 678,
+      "sha256": "07a74128084273536549900adccfc39b3c256c558fd562461913374612dd8160",
+      "included": false
+    },
+    {
+      "path": "pass267/005f5630.c",
+      "bytes": 380,
+      "sha256": "290177a1e7625b4ace2430d28898766c54de057501bba694ad137d54ac116d7a",
+      "included": false
+    },
+    {
+      "path": "pass267/console.log",
+      "bytes": 6027,
+      "sha256": "6c14fb3101ed002e3d03fde506c0000e16dc66ee7314e536d835e834d7cb263e",
+      "included": false
+    },
+    {
+      "path": "pass267/functions.tsv",
+      "bytes": 93,
+      "sha256": "d654b46d930575f328d6dcae80279a03e679d8c46015326b77ece3ebb9627869",
+      "included": false
+    },
+    {
+      "path": "pass267/ghidra.log",
+      "bytes": 6043,
+      "sha256": "29642e65ccd8341a8423680fe065b39d20cdf14e6d8a0c553ab7feeb1df1ae82",
+      "included": false
+    },
+    {
+      "path": "pass267/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass267/references.tsv",
+      "bytes": 121,
+      "sha256": "51b8c5048636551786f33fbd8bfdfaf83dfd4343b8e93ce27ae4b03e9519b314",
+      "included": false
+    },
+    {
+      "path": "pass267/script.log",
+      "bytes": 81,
+      "sha256": "08fdfa03e7fd92931233c31be559691b217fdb77424b9c2d180ddfe5bcb10000",
+      "included": false
+    },
+    {
+      "path": "pass268/00403558.asm",
+      "bytes": 26,
+      "sha256": "3210b39b001e3aca3b1d679581ca137b31479dfc7ac057982f382d18f8fd707b",
+      "included": false
+    },
+    {
+      "path": "pass268/00403558.bytes.tsv",
+      "bytes": 21,
+      "sha256": "2c4f40471481c27618caad3196e32beaad3c5e078c73d1af921af1bfb053a9ae",
+      "included": false
+    },
+    {
+      "path": "pass268/00403558.c",
+      "bytes": 386,
+      "sha256": "1c778e26b35abae422559672634edf7931d37f1bd629155471416a1a14b77cfa",
+      "included": false
+    },
+    {
+      "path": "pass268/005f5630.asm",
+      "bytes": 1284,
+      "sha256": "84fbc5bf5bd9f20fd2aedced6a12db996f241236698d08ca7d5ea02caa322b59",
+      "included": false
+    },
+    {
+      "path": "pass268/005f5630.bytes.tsv",
+      "bytes": 678,
+      "sha256": "07a74128084273536549900adccfc39b3c256c558fd562461913374612dd8160",
+      "included": false
+    },
+    {
+      "path": "pass268/005f5630.c",
+      "bytes": 380,
+      "sha256": "290177a1e7625b4ace2430d28898766c54de057501bba694ad137d54ac116d7a",
+      "included": false
+    },
+    {
+      "path": "pass268/00607bd0.asm",
+      "bytes": 2324,
+      "sha256": "95ed8f8f9de5446814741fa61ec2789b0de119d8c2b6bbcc949abf32086da59d",
+      "included": false
+    },
+    {
+      "path": "pass268/00607bd0.bytes.tsv",
+      "bytes": 1299,
+      "sha256": "3c3f1378d38d19b3f408c42866eff20758a1de4dd72e1c9537eafa3188197917",
+      "included": false
+    },
+    {
+      "path": "pass268/00607bd0.c",
+      "bytes": 828,
+      "sha256": "1a6c12bb220ef7516770b1096e7132eaf1d41246e6712ebbd48f971bbf39b809",
+      "included": false
+    },
+    {
+      "path": "pass268/console.log",
+      "bytes": 6027,
+      "sha256": "e5ef300292bc2d78423fb5d1005a8506f07886dbbfaed195d88a77f60f569462",
+      "included": false
+    },
+    {
+      "path": "pass268/functions.tsv",
+      "bytes": 93,
+      "sha256": "cd2364cec27e082ba25e5cb7480f25084f4dd07fcf9b3df83c0b6713d6420e14",
+      "included": false
+    },
+    {
+      "path": "pass268/ghidra.log",
+      "bytes": 6043,
+      "sha256": "75fd9ec476845a2645f735533aee72097b413ab1db658e869cedf5965eb3f8aa",
+      "included": false
+    },
+    {
+      "path": "pass268/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass268/references.tsv",
+      "bytes": 121,
+      "sha256": "5f47fb02b43569271d0f5733bc44a0f059ad5a6030825e344597a8b99acc467f",
+      "included": false
+    },
+    {
+      "path": "pass268/script.log",
+      "bytes": 81,
+      "sha256": "ce121f78029ab9c5b246d98e4b883356ecbebf7d4f2b8893be93f734b069402b",
+      "included": false
+    },
+    {
+      "path": "pass269/00403076.asm",
+      "bytes": 26,
+      "sha256": "f231ae440365cf08c487af3458a63c3c9ad91a5334e45a2ea94abcd7a2251811",
+      "included": false
+    },
+    {
+      "path": "pass269/00403076.bytes.tsv",
+      "bytes": 21,
+      "sha256": "7c04e62d5726b29c431aab2b4415d41552fb83e93d722ea166769994f2e9389c",
+      "included": false
+    },
+    {
+      "path": "pass269/00403076.c",
+      "bytes": 834,
+      "sha256": "f2ed863ef08fb186d95a0c63c558e28ba66a334000b6e2945e45590fc2a5fe57",
+      "included": false
+    },
+    {
+      "path": "pass269/005f9285.asm",
+      "bytes": 6531,
+      "sha256": "2c76d46c37aa356d7a26f70b29c5f31ad92e12355d80dd5eabe70c1ce65fa899",
+      "included": false
+    },
+    {
+      "path": "pass269/005f9285.bytes.tsv",
+      "bytes": 3102,
+      "sha256": "a15f843ca115a50d7d412f3d1b6fb8f3b7f3f50b9111825e9b414db9918a4c33",
+      "included": false
+    },
+    {
+      "path": "pass269/005f9285.c",
+      "bytes": 1720,
+      "sha256": "494071595c34ac4bfef92b9d0e919420f9026e9970f586949de11e3bab95b5fa",
+      "included": false
+    },
+    {
+      "path": "pass269/00607bd0.asm",
+      "bytes": 2324,
+      "sha256": "95ed8f8f9de5446814741fa61ec2789b0de119d8c2b6bbcc949abf32086da59d",
+      "included": false
+    },
+    {
+      "path": "pass269/00607bd0.bytes.tsv",
+      "bytes": 1299,
+      "sha256": "3c3f1378d38d19b3f408c42866eff20758a1de4dd72e1c9537eafa3188197917",
+      "included": false
+    },
+    {
+      "path": "pass269/00607bd0.c",
+      "bytes": 828,
+      "sha256": "1a6c12bb220ef7516770b1096e7132eaf1d41246e6712ebbd48f971bbf39b809",
+      "included": false
+    },
+    {
+      "path": "pass269/console.log",
+      "bytes": 6027,
+      "sha256": "7ca4efcbd6c601168042615a3ad576ec78eea6cfd1b04b70db9867c8554762af",
+      "included": false
+    },
+    {
+      "path": "pass269/functions.tsv",
+      "bytes": 93,
+      "sha256": "a90f4756d24af55fd31074ca2d11b143dba51f3e61b48af1badc3cc65bde9063",
+      "included": false
+    },
+    {
+      "path": "pass269/ghidra.log",
+      "bytes": 6043,
+      "sha256": "c9ecfed67a6bf285b54c0e4689f4e9237e7d5bc106ebb8a76fb1c8372912b9da",
+      "included": false
+    },
+    {
+      "path": "pass269/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass269/references.tsv",
+      "bytes": 121,
+      "sha256": "d11b466d44ddc36602796dc15be4c1f8284af898c7e422fe6a2a960fcdfb35d4",
+      "included": false
+    },
+    {
+      "path": "pass269/script.log",
+      "bytes": 81,
+      "sha256": "18d57c1d11b03260a3dd8669059ad032a5d356d57b46c3b86e6bd43203ea5fab",
+      "included": false
     }
   ]
 }

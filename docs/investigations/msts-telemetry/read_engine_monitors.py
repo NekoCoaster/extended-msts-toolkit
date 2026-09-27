@@ -9,13 +9,16 @@ if Path(a.name).name!=a.name or a.name in ('.','..'):p.error('Invalid name')
 root=Path(__file__).resolve().parent;out=root/'captures'/a.name;out.mkdir(exist_ok=False);r=PhysicalRegistryReader(a.pid)
 mapping=[('AWSMonitor',0x4ba,0xb0c),('VigilanceMonitor',0x4fa,0xb78),('EmergencyStopMonitor',0x53a,0xbe4),('unnamed_slot3',0x57a,0xc50),('OverspeedMonitor',0x5ba,0xcbc)]
 try:
-    result=dict(pid=a.pid,sha256=r.sha,utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),clock=r.f(0x80acd4),paused=r.u(0x7be0f4),engines=[])
+    player=r.u(0x7c2ac0)
+    timing=dict(player_train=player,interval=r.f(player+0x8e),accumulator=r.f(player+0x8a))
+    result=dict(player_timing=timing,pid=a.pid,sha256=r.sha,utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),clock=r.f(0x80acd4),paused=r.u(0x7be0f4),engines=[])
     for car in sample(r)['vehicles'] or []:
         if not car.get('driver'):continue
         row=dict(object_id=car['object_id'],address=car['address'],train=car.get('train'),monitors=[])
         try:
             if not car['identity_stable'] or not car['driver']['definition_stable']:raise ValueError('Unstable engine source')
             ed=car['driver']['definition']
+            row['stored_speed']=r.f(car['address']+0x1bc)
             for name,offset,definition_offset in mapping:
                 addr=car['address']+offset;raw=r.read(addr,64);words=struct.unpack('<16I',raw);definition=words[15]
                 m=dict(name=name,address=addr,definition=definition,raw=raw.hex(),words=list(words),available=False)
@@ -29,6 +32,7 @@ try:
         except (OSError,ValueError) as e:row['error']=str(e)
         result['engines'].append(row)
     result['clock_after']=r.f(0x80acd4);result['sources']={}
+    timing['stable']=r.u(0x7c2ac0)==player and r.f(player+0x8e)==timing['interval'] and r.f(player+0x8a)==timing['accumulator']
     for name in ('read_live.py','read_physical_registry.py','read_wheel_animation.py','read_engine_monitors.py'):
         b=(root/name).read_bytes();(out/name).write_bytes(b);result['sources'][name]=hashlib.sha256(b).hexdigest()
     (out/'monitors.json').write_text(json.dumps(result,indent=2));print(json.dumps(dict(clock=result['clock'],paused=result['paused'],engines=[dict(id=e['object_id'],error=e.get('error'),monitors=[dict(name=m['name'],available=m['available'],enable=m.get('enable_raw'),action=m.get('active_action_raw')) for m in e['monitors']]) for e in result['engines']])))

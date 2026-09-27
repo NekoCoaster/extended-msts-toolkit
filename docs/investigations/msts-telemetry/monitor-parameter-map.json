@@ -3,6 +3,22 @@
   "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
   "parameters": [
     {
+      "token": "0x4045e",
+      "name": "MonitoringDeviceCriticalLevel",
+      "definition_offset": "0x10",
+      "destination_instruction": "0x6110ec",
+      "table": "0x796d78",
+      "table_bytes": "bcc175005e040400"
+    },
+    {
+      "token": "0x4045f",
+      "name": "MonitoringDeviceResetLevel",
+      "definition_offset": "0x14",
+      "destination_instruction": "0x611126",
+      "table": "0x796d80",
+      "table_bytes": "7cc175005f040400"
+    },
+    {
       "token": "0x4045b",
       "name": "MonitoringDeviceMonitorTimeLimit",
       "definition_offset": "0x0",
@@ -130,6 +146,11 @@
       "address": "0x753e48",
       "bytes": "f6290f40",
       "float32": 2.236936092376709
+    },
+    {
+      "address": "0x752d0c",
+      "bytes": "00000000",
+      "float32": 0.0
     }
   ],
   "limitation": "Labels and constants checked now;destination mapping follows pass261 assembly. Timer units/runtime producers and unusual trigger formulas need independent interpretation."
