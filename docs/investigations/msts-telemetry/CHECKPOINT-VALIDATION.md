@@ -231,3 +231,11 @@ Pass2285functions181instructions547bytes,2292/674/2615,2301/917/3810,and2321/673
 Inventory remains1024;metadata now links the engine WheelRadius/NumWheels parser proof and Wheelset/phase initialization evidence. Audit632evidencepaths126unchangedassets passes. Selected engine dispatch/write checks32instructions157bytes and Wheelset checks18instructions83bytes matchdisk/live33612,including supporting label/table bytes. Phase setup00639549 matches92instructions329bytes. These are selected native checks,not live vehicle or rendering validation. NumWheels is retained as a native label,not inferred axle count. Declaration8c versus override90 flag propagation remains unresolved.
 
 Publication parses309JSON141Python;10319priorrawhashesverified22new=10341total. Bounded wheel-field scan and pass233 are navigation only. Pass234 exported only00639549 after an incorrectly parsed unquoted address;no second-function verification is claimed. NoUIretry or production/gameplay changes. HistoricalDeviceGuard4551 and currentremoteCIlimitations unchanged.
+
+## Shape animation time and callback checkpoint
+
+Inventory1026=425direct26derived68cab507config;644evidencepaths126unchangedassetsauditpasses. Two separate current/processed shape animation scalars supplement the vehicle driverphase. Setter/callback/storage paths and lifecycle are traced,but no live vehicle/visual/AIcadence validation is claimed. Coverage review updates earlier save/reload and same-boundary origin observations without expanding them to complete fidelity or all coordinates.
+
+Pass2351function45instructions132bytes;2361/240/684;2385/1989/5481;2394/822/2305;2401/261/708;241range44/96includingpadding matchdisk/live33612. Drivercallbacktable/labels/epsilon matched;shape vtable is liveinitialized data only. Pass237callerexports andshape-animation-references are navigation. Phase units remain unresolved;storedcurrent/processed equality is not a rendering-complete gate.
+
+317JSON143Pythonparse;10341priorrawhashesverified156new10497total. No gameplay changes or UIretry. Productionunchanged;historicalfullnativeDeviceGuard4551 remains unresolved and currentremoteCIuninspected.

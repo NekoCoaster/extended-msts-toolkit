@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 423, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1024}
+{'runtime_direct': 425, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1026}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1030,3 +1030,5 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | engine.driver_rotation_rate | Stored powered driver rotation-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
 | engine.adhesion_force_limit | Stored powered-vehicle adhesion limit candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
 | engine.driver_animation_phase | Stored powered-driver animation phase accumulator | native consumer/store verified;no live phase or visual-transition observation |
+| car.shape_animation_time | Stored current shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled |
+| car.shape_animation_processed_time | Stored previous processed shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled |

@@ -966,6 +966,17 @@ for row in rows:
     if row['id']=='engine.driver_animation_phase':
         row['evidence'].extend(['wheelset-parser-map.json','map_wheelset_parser.py','pass234-byte-verification.json','pass234/00639549.asm'])
         row['limitations']+=' Multiplier definition4e8 is parsed from Wheelset. Parser declaration8cbit10 versus runtime override90bit10 propagation unresolved. Setup00639549 clears phase and passes innercar1c4 to shape virtual44;inner phase offset18 is a tracing lead,not verified downstream interpretation.'
+shape_animation_evidence=['WHEEL-ADHESION-FINDINGS.md','driver-animation-callback-map.json','shape-animation-method-map.json','pass235-byte-verification.json','pass236-byte-verification.json','pass238-byte-verification.json','pass239-byte-verification.json','pass240-byte-verification.json','pass241-byte-verification.json','pass239/006a54d0.asm','pass239/006d6200.asm','pass240/006a5fd0.asm','pass241/range.asm']
+for ident,meaning,method,lifecycle in [
+    ('car.shape_animation_time','Stored current shape animation scalar','float32 [[car+0x10]+0x94];require type5 shape and supported initialized virtual table','shape setter and interpolation may change scalar'),
+    ('car.shape_animation_processed_time','Stored previous processed shape animation scalar','float32 [[car+0x10]+0x90];require type5 shape and supported initialized virtual table','dispatcher copies current scalar when processed range ends at animation node count')]:
+    add(ident,meaning,'vehicles with type5 shape;player/AI live applicability unvalidated','float32','native animation time units;conversion to seconds/frames unresolved',method,shape_animation_evidence,
+        'native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled',lifecycle,
+        common+' Embedded animation object begins at shape+0x8c. Current and processed values are distinct from car+0x1dc driver accumulator. Equality is not proof of full rendering,visibility or gameplay freshness. Interpolation can clamp/loop current scalar;not vehicle accumulator. Null/unloaded shape means unavailable. No AI/paused update cadence established.')
+for row in rows:
+    if row['id']=='engine.driver_animation_phase':
+        row['evidence'].extend(shape_animation_evidence)
+        row['limitations']+=' Wheel/rod callback6390cf reads inner18 and passes phase to type5 setter6a5fd0,which stores shape94;downstream interpolation may mutate that separate scalar. Shape90 is processed-time cache,not the descriptor duration compared by callback.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

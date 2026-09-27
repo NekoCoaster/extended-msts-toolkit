@@ -1,0 +1,37 @@
+{
+  "pid": 33612,
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "methods": [
+    {
+      "table": "0x828be0",
+      "slot": "0x28",
+      "target": "0x6a5fc0"
+    },
+    {
+      "table": "0x828be0",
+      "slot": "0x2c",
+      "target": "0x6a5fd0"
+    },
+    {
+      "table": "0x828be0",
+      "slot": "0x38",
+      "target": "0x6a6300"
+    },
+    {
+      "table": "0x828be0",
+      "slot": "0x3c",
+      "target": "0x6a6310"
+    },
+    {
+      "table": "0x828be0",
+      "slot": "0x40",
+      "target": "0x6a6330"
+    },
+    {
+      "table": "0x828be0",
+      "slot": "0x44",
+      "target": "0x6a6340"
+    }
+  ],
+  "limitation": "Initialized live table values only; no disk-table equality, loaded shape instance or method invocation is claimed. Constructor and method code checked separately."
+}
