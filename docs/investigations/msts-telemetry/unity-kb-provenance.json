@@ -1,0 +1,31 @@
+{
+  "repository": "C:\\codex\\repo\\msts-unity-kb",
+  "commit": "512f1801b1b6497ec1cae7e033fad7ca92c36768",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "5d2a6b9d292881da682cb535286a60467dd366d80021d064745bac186d3f6457"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "sha256": "fdd2798f5945ccaa47dde3d25abdca95fc35ba64dcc8258a663815b550bd39b0"
+    },
+    {
+      "path": "docs/RESEARCH-MAP.md",
+      "sha256": "a1b7b9eaa0b64395444270bff28380f49a49cb289edfed6e3e30542e33ba7b3e"
+    },
+    {
+      "path": "docs/sky/history/FINDINGS-06.md",
+      "sha256": "2de3cb8884bc3618bb2e91541f67ffa2c351f3ad479ebb11c79397e92ecd28da"
+    },
+    {
+      "path": "docs/sky/history/FINDINGS-19-UNDEFINED-FOG-COLOUR.md",
+      "sha256": "bf9a8ffe23598d4a258ac7389e069eedc5b0933c7acb0c81b0047eee6de402ea"
+    },
+    {
+      "path": "docs/sky/history/FINDINGS-09.md",
+      "sha256": "48976a505a18fe80f9251aecd93b484da06785ababfd509e74aaa73925acdd9a"
+    }
+  ],
+  "use": "Consolidated current status and native layout navigation; historical tests are not new live validation. No repository changes."
+}

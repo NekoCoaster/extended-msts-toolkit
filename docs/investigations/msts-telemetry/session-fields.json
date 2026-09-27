@@ -1,0 +1,8 @@
+[
+ ["weather_raw","Loaded activity weather selection","uint32","raw enum; observed1 in current snow scene","activity0x809810+0x30"],
+ ["season_raw","Loaded activity season selection","uint32","raw enum; observed3","activity+0x34"],
+ ["start_hms","Loaded activity starting clock","3 uint32","hours/minutes/seconds","activity+0x38"],
+ ["duration_hm","Configured activity duration","2 uint32","hours/minutes","activity+0x70; not a hard completion deadline"],
+ ["start_seconds","Activity start clock in seconds","float32","seconds since midnight","activity+0x7c; initialized from start_hms by0x58bf90"],
+ ["elapsed_candidate","Elapsed simulation time since activity start","derived float64","seconds","simulation.time - session.start_seconds; midnight wrapping and saved-game semantics require tests"]
+]

@@ -1,0 +1,37 @@
+{
+  "capture": "captures\\consist-totals-paused-01\\snapshot.json",
+  "capture_sha256": "9e8ab43db11fbf51d3d496ab3e4a9d98002432a938293fd1b193c12a2cf745ae",
+  "scope": "Two explicitly mapped installed assets, not automatic asset resolution or arbitrary units",
+  "comparisons": [
+    {
+      "definition": 53769572,
+      "asset": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\dash9.eng",
+      "sha256": "74d1426c765460845e323adb5b4d739b63951355448252c58eef79a9dae4b886",
+      "declared_mass_tonnes": "155",
+      "declared_size_m": [
+        "3.594",
+        "4.431",
+        "21.8"
+      ],
+      "native_mass": 155000.0,
+      "native_length": 21.799999237060547,
+      "mass_matches": true,
+      "length_matches": true
+    },
+    {
+      "definition": 61185844,
+      "asset": "C:\\MSTS\\TRAINS\\TRAINSET\\US2GRAINCAR\\us2graincar.wag",
+      "sha256": "f7595a40ccfb0f27e08f18d4cd16fc1b18fa62207dfb6d2f43151cf03448c8b3",
+      "declared_mass_tonnes": "106.747",
+      "declared_size_m": [
+        "3",
+        "3.5",
+        "19.6"
+      ],
+      "native_mass": 106747.0,
+      "native_length": 19.600000381469727,
+      "mass_matches": true,
+      "length_matches": true
+    }
+  ]
+}

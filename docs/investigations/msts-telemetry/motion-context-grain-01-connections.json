@@ -1,0 +1,56 @@
+{
+  "capture": "motion-context-grain-01",
+  "sha256": "2d4d3f6c52060a83e88ba7c3655a1dae009049db386bf75ed5d9c17e77c7bd49",
+  "trains": {
+    "400007": {
+      "is_player": true,
+      "eligible_pairs": 2021,
+      "cross_clock_pairs": 1104,
+      "gap": {
+        "min": 0.06063989296698571,
+        "median": 0.2823150574080442,
+        "p95": 0.31882257093847827,
+        "max": 0.4009924349192551
+      },
+      "stored_state_rate": {
+        "min": -0.3129062194527853,
+        "median": 2.2977854444342947e-05,
+        "p95": 0.03000405383039672,
+        "max": 0.11696861632299038
+      },
+      "gap_difference_rate": {
+        "min": -1.1492451970275805,
+        "median": -0.0001555038054395251,
+        "p95": 0.0740029990235051,
+        "max": 1.1760752127901608
+      },
+      "absolute_rate_difference": {
+        "min": 6.672712550620822e-06,
+        "median": 0.003162777159385753,
+        "p95": 0.04657297530923582,
+        "max": 1.1506842716695769
+      },
+      "same_clock_absolute_rate_difference": {
+        "min": 6.672712550620822e-06,
+        "median": 0.003437642822606363,
+        "p95": 0.05013176843525584,
+        "max": 1.12812935958357
+      },
+      "worst": {
+        "pair": [
+          59262860,
+          59281412
+        ],
+        "time0": 73801.2578125,
+        "time1": 73801.3515625,
+        "gap0": 0.2000098025042934,
+        "gap1": 0.09294525976014718,
+        "rate": 0.0014390746419962602,
+        "finite_difference": -1.1492451970275805,
+        "error": 1.1506842716695769,
+        "same_clock": false
+      }
+    }
+  },
+  "limitations": "Adjacent unpaused samples with elapsed delta0..1s,unchanged origin,stable reciprocal car pairs/definitions and train speed>0.5 at either end. Endpoint formulas reconstructed in double precision;epsilon1e-7 approximate. Non-atomic reads and asynchronous placement can create apparent gap jumps. No force/slack truth claim;no sign-agreement guarantee or tolerances inferred from these distributions."
+}

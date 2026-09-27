@@ -1,0 +1,80 @@
+{
+  "capture": "motion-context-ai-01",
+  "sha256": "4904c67b8f9f31e2b54c17911f585d6ea27f958dee0672013e5681214cb5813d",
+  "samples": 649,
+  "errors": 0,
+  "sim_time_range": [
+    73885.8046875,
+    73929.921875
+  ],
+  "paused_samples": 210,
+  "max_read_seconds": 0.01464559999294579,
+  "origin_tiles": [
+    [
+      -12560,
+      14766
+    ]
+  ],
+  "trains": {
+    "400007": {
+      "is_player": true,
+      "eligible_moving_pairs": 0,
+      "cross_clock_pairs": 0,
+      "rejected_pairs": 14904,
+      "body_minus_speed": null,
+      "track_minus_speed": null,
+      "body_minus_track": null,
+      "stored_speed": null,
+      "day_elapsed_ratio": null,
+      "worst_body": null
+    },
+    "400005": {
+      "is_player": false,
+      "eligible_moving_pairs": 1880,
+      "cross_clock_pairs": 1639,
+      "rejected_pairs": 12376,
+      "body_minus_speed": {
+        "min": -4.745844461658027,
+        "median": -0.053159559916174715,
+        "p95": 3.731025083462999,
+        "max": 15.127529058770682
+      },
+      "track_minus_speed": {
+        "min": -4.062438339482437,
+        "median": -0.06846229552969163,
+        "p95": 3.7592395373570575,
+        "max": 15.129729845464249
+      },
+      "body_minus_track": {
+        "min": -4.317281372493959,
+        "median": -0.0014653686511856279,
+        "p95": 1.6470378806817223,
+        "max": 4.737752171291248
+      },
+      "stored_speed": {
+        "min": 11.339213243966645,
+        "median": 23.64921757583977,
+        "p95": 24.81071920693787,
+        "max": 24.810720067961512
+      },
+      "day_elapsed_ratio": {
+        "min": 0.9203366288095433,
+        "median": 0.9997746901990237,
+        "p95": 1.0538851723884437,
+        "max": 1.0700104493207943
+      },
+      "worst_body": {
+        "car": 68256672,
+        "time0": 73902.4921875,
+        "time1": 73902.5859375,
+        "elapsed_dt": 0.093841552734375,
+        "body_speed": 26.466742302737327,
+        "track_speed": 26.468943089430894,
+        "stored_speed": 11.339213243966645,
+        "difference": 15.127529058770682,
+        "same_clock": false
+      }
+    }
+  },
+  "limitations": "Eligible adjacent moving car pairs only:stored mean speed>0.5m/s,elapsed-clock delta0..1s,both unpaused,not derailed,stable pointers/links,unchanged origin,node and direction. Rejected pairs include stationary samples. Non-atomic;beginning clocks precede individual car reads. Norm displacement and absolute track increment are unsigned average speeds,not exact instantaneous velocity. No origin shift or node-crossing inference."
+}

@@ -1,0 +1,1810 @@
+{
+  "source": "captures\\paired-moving-restart-01\\samples.jsonl",
+  "sha256": "d51d3720c7fbd8cbc8e6cb0c403670d537787f7025949aa5825b9fc932a654cb",
+  "samples": 181,
+  "nested_errors": [],
+  "max_read_seconds": 0.13962910004192963,
+  "unstable_origins": 0,
+  "unstable_iterators": 0,
+  "signal_join_counts": {
+    "1": 181
+  },
+  "signal_aspect_disagreements": [],
+  "distinct_monitor_states": [
+    {
+      "database_index": 318,
+      "distance": 1009.890625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1024.55859375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1039.3779296875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1054.48046875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1069.275390625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1085.0654296875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1102.01953125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1119.0947265625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1136.6552734375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 1145.7314453125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 211.7138671875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 226.021484375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 240.8525390625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 255.5185546875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 269.8544921875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 283.857421875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 297.3564453125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 311.171875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 324.4189453125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 337.5908203125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 350.6904296875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 363.1171875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 376.01171875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 388.2646484375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 400.2763671875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 412.4931640625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 424.1767578125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 435.4384765625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 446.8251953125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 458.318359375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 469.6455078125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 480.7890625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 491.6767578125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 502.38671875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 513.3876953125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 523.8662109375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 535.154296875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 545.8330078125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 556.2177734375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 566.953125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 577.3291015625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 587.6064453125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 597.3466796875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 607.01953125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 616.9169921875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 627.0107421875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 636.9052734375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 646.9423828125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 656.11328125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 666.193359375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 675.5849609375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 684.939453125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 693.6865234375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 702.744140625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 710.4462890625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 718.2626953125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 726.189453125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 735.375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 744.7646484375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 753.736328125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 762.9833984375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 772.7314453125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 782.435546875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 791.75390625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 801.5009765625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 811.390625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 821.68359375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 831.8408203125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 841.9296875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 852.3798828125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 863.275390625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 874.5029296875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 885.59765625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 896.8935546875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 908.57421875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 920.3720703125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 931.974609375,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 944.744140625,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 957.611328125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 969.7529296875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 982.70703125,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    },
+    {
+      "database_index": 318,
+      "distance": 996.23046875,
+      "head": {
+        "address": 94419988,
+        "aspect": 0,
+        "aspect_flags": 0,
+        "aspect_speed": 0.0,
+        "definition": 51591800,
+        "direction": 0,
+        "flags": 0,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455932,
+        0,
+        46,
+        46
+      ]
+    }
+  ],
+  "player_speed_range": [
+    5.601778984069824,
+    10.998846054077148
+  ],
+  "cab_ranges": {
+    "throttle": [
+      0.25,
+      0.375
+    ],
+    "reverser": [
+      1.0,
+      1.0
+    ],
+    "main_res_psi": [
+      93.12289428710938,
+      130.0
+    ],
+    "eq_res_psi": [
+      90.0,
+      90.0
+    ],
+    "brake_cyl_psi": [
+      0.0,
+      0.0
+    ],
+    "brake_pipe_psi": [
+      90.0,
+      90.0
+    ],
+    "current_traction_amps": [
+      203.05845642089844,
+      601.5635986328125
+    ],
+    "dynamic_braking_raw": [
+      0.0,
+      0.0
+    ],
+    "current_dynamic_amps": [
+      0.0,
+      0.0
+    ],
+    "fuel_raw": [
+      5297.8125,
+      5298.94921875
+    ],
+    "engine_rotation_raw": [
+      335.0,
+      534.3748779296875
+    ],
+    "ammeter_amps": [
+      203.05845642089844,
+      601.5635986328125
+    ]
+  },
+  "physical_count_transitions": [
+    {
+      "before": {
+        "sample": 134,
+        "time": 73858.0625,
+        "time_after": 73858.1796875,
+        "physical_cars": 23,
+        "physical_trains": 1
+      },
+      "after": {
+        "sample": 135,
+        "time": 73858.5625,
+        "time_after": 73858.6796875,
+        "physical_cars": 45,
+        "physical_trains": 2
+      }
+    }
+  ],
+  "limitations": "Infrastructure, monitor and physical tracks are successive phases, not an atomic snapshot. Pointer/clock rereads cannot exclude intermediate mutations or pointer reuse. Stationary monitor continuity does not validate moving distance updates or node crossing. Read duration is not a measurement of gameplay performance impact."
+}

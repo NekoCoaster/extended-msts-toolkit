@@ -1,0 +1,199 @@
+{
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "asset_path": "C:\\MSTS\\TRAINS\\TRAINSET\\DEFAULT\\default.wag",
+  "asset_sha256": "727da147e8c1c076fe10dd5838d2a5cbb47d023df30a67f4d4f68e5784342cc4",
+  "sim_time": 74030.6796875,
+  "simulation_object": 51786352,
+  "default_definition": 51803192,
+  "loaded_name": "Default",
+  "parameters": [
+    {
+      "index": 0,
+      "offset": "0x770",
+      "source_expression": "0.01",
+      "source_comment": "Default coefficent of restitution",
+      "loaded_float": 0.009999999776482582
+    },
+    {
+      "index": 1,
+      "offset": "0x774",
+      "source_expression": "1",
+      "source_comment": "Floor contact ratio friction scaling factor",
+      "loaded_float": 1.0
+    },
+    {
+      "index": 2,
+      "offset": "0x778",
+      "source_expression": "5e4N/m/s",
+      "source_comment": "Linear water friction",
+      "loaded_float": 50000.0
+    },
+    {
+      "index": 3,
+      "offset": "0x77c",
+      "source_expression": "5e4N/rad/s",
+      "source_comment": "Angular water friction",
+      "loaded_float": 50000.0
+    },
+    {
+      "index": 4,
+      "offset": "0x780",
+      "source_expression": "0.05m/s",
+      "source_comment": "Collision threshold velocity",
+      "loaded_float": 0.05000000074505806
+    },
+    {
+      "index": 5,
+      "offset": "0x784",
+      "source_expression": "0",
+      "source_comment": "On-track solver: 0=euler 1=rungekutta",
+      "loaded_float": 0.0
+    },
+    {
+      "index": 6,
+      "offset": "0x788",
+      "source_expression": "10ms",
+      "source_comment": "On-track solver timestep",
+      "loaded_float": 0.010000000707805157
+    },
+    {
+      "index": 7,
+      "offset": "0x78c",
+      "source_expression": "1",
+      "source_comment": "Off-track solver",
+      "loaded_float": 1.0
+    },
+    {
+      "index": 8,
+      "offset": "0x790",
+      "source_expression": "30ms",
+      "source_comment": "Off-track timestep",
+      "loaded_float": 0.030000001192092896
+    },
+    {
+      "index": 9,
+      "offset": "0x794",
+      "source_expression": "0",
+      "source_comment": "Reposition colliding objects: 0=no 1=yes",
+      "loaded_float": 0.0
+    },
+    {
+      "index": 10,
+      "offset": "0x798",
+      "source_expression": "0",
+      "source_comment": "Collision method: 0=impulse 1=penalty",
+      "loaded_float": 0.0
+    },
+    {
+      "index": 11,
+      "offset": "0x79c",
+      "source_expression": "0",
+      "source_comment": "Orientation representation: 0=matrix 1=quaternion",
+      "loaded_float": 0.0
+    },
+    {
+      "index": 12,
+      "offset": "0x7a0",
+      "source_expression": "0.7*1.5m/s",
+      "source_comment": "Linear freeze velocity",
+      "loaded_float": 1.0499999523162842
+    },
+    {
+      "index": 13,
+      "offset": "0x7a4",
+      "source_expression": "0.7*1.5m/s/7m",
+      "source_comment": "Angular freeze velocity",
+      "loaded_float": 0.14999999105930328
+    },
+    {
+      "index": 14,
+      "offset": "0x7a8",
+      "source_expression": "3",
+      "source_comment": "Impulse collision handler flags - 1 for force, 2 for momentum",
+      "loaded_float": 3.0
+    },
+    {
+      "index": 15,
+      "offset": "0x7ac",
+      "source_expression": "10",
+      "source_comment": "DerailRailForce scaling factor for track-orthogonal forces",
+      "loaded_float": 10.0
+    },
+    {
+      "index": 16,
+      "offset": "0x7b0",
+      "source_expression": "50",
+      "source_comment": "DerailBufferForce scaling factor for track-tangential forces",
+      "loaded_float": 50.0
+    },
+    {
+      "index": 17,
+      "offset": "0x7b4",
+      "source_expression": "1e5N/m/s",
+      "source_comment": "Friction force for full friction everywhere on the body",
+      "loaded_float": 100000.0
+    },
+    {
+      "index": 18,
+      "offset": "0x7b8",
+      "source_expression": "30cm",
+      "source_comment": "Minimum couple distance",
+      "loaded_float": 0.29999998211860657
+    },
+    {
+      "index": 19,
+      "offset": "0x7bc",
+      "source_expression": "0.8",
+      "source_comment": "Coefficient of restitution for car/car collisions",
+      "loaded_float": 0.800000011920929
+    },
+    {
+      "index": 20,
+      "offset": "0x7c0",
+      "source_expression": "1.0N/kg/m/s",
+      "source_comment": "Friction when cars dig themselves into banks",
+      "loaded_float": 1.0
+    },
+    {
+      "index": 21,
+      "offset": "0x7c4",
+      "source_expression": "0.2",
+      "source_comment": "min coupling velocity",
+      "loaded_float": 0.20000000298023224
+    },
+    {
+      "index": 22,
+      "offset": "0x7c8",
+      "source_expression": "3.0",
+      "source_comment": "max coupling velocity",
+      "loaded_float": 3.0
+    },
+    {
+      "index": 23,
+      "offset": "0x7cc",
+      "source_expression": "29.4",
+      "source_comment": "durability max acceleration",
+      "loaded_float": 29.399999618530273,
+      "expected_float32": 29.399999618530273,
+      "exact_match": true
+    },
+    {
+      "index": 24,
+      "offset": "0x7d0",
+      "source_expression": "0.034013605442176",
+      "source_comment": "1 / durability max acceleration",
+      "loaded_float": 0.03401360660791397,
+      "expected_float32": 0.03401360660791397,
+      "exact_match": true
+    }
+  ],
+  "sim_time_after": 74030.6796875,
+  "paused": 1,
+  "limitations": "Only indices23/24 numerically compared; other expressions/comments retained as configuration provenance, not validated runtime semantics. No asset expression execution.",
+  "parser_dispatch": {
+    "token": "0x4017b",
+    "selector": 3,
+    "target": "0x616a70",
+    "live_selected_data_match": true
+  }
+}

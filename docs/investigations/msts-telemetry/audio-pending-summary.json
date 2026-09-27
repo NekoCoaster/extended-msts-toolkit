@@ -1,0 +1,77 @@
+{
+  "source": "captures\\audio-pending-paused-01\\pending.json",
+  "sha256": "5a108b5f0f245b6b30f13c9dbe101d2cb7906c32349274a8bd4fe1dcf3d686c2",
+  "time": 74360.5859375,
+  "paused": 1,
+  "node_count": 262,
+  "kinds": {
+    "2": 4,
+    "1": 258
+  },
+  "stable_nodes": 262,
+  "node_errors": [],
+  "sample_objects": 5,
+  "sample_rows": [
+    {
+      "address": 68773004,
+      "name": "obj_veh3_moving.wav",
+      "directory": "C:\\MSTS\\Sound\\",
+      "reference_count": 1,
+      "loaded_resource": 69497632,
+      "stable_header": true,
+      "stable_pair": true,
+      "observed_type1_references": 1
+    },
+    {
+      "address": 68773076,
+      "name": "obj_veh2_moving.wav",
+      "directory": "C:\\MSTS\\Sound\\",
+      "reference_count": 1,
+      "loaded_resource": 69497280,
+      "stable_header": true,
+      "stable_pair": true,
+      "observed_type1_references": 1
+    },
+    {
+      "address": 68773148,
+      "name": "obj_veh2_random_b.wav",
+      "directory": "C:\\MSTS\\Sound\\",
+      "reference_count": 144,
+      "loaded_resource": 69496104,
+      "stable_header": true,
+      "stable_pair": true,
+      "observed_type1_references": 86
+    },
+    {
+      "address": 68773196,
+      "name": "obj_veh4_random_a.wav",
+      "directory": "C:\\MSTS\\Sound\\",
+      "reference_count": 143,
+      "loaded_resource": 69502872,
+      "stable_header": true,
+      "stable_pair": true,
+      "observed_type1_references": 85
+    },
+    {
+      "address": 68773172,
+      "name": "obj_veh3_random_b.wav",
+      "directory": "C:\\MSTS\\Sound\\",
+      "reference_count": 143,
+      "loaded_resource": 69502308,
+      "stable_header": true,
+      "stable_pair": true,
+      "observed_type1_references": 85
+    }
+  ],
+  "queue_stops": [
+    {
+      "label": "traf_m_m.sms",
+      "index": 2,
+      "stop": {
+        "reason": "research_bound",
+        "address": 72666776
+      }
+    }
+  ],
+  "limitations": "Node type2 payloads are not sample references. Partial chain counts cannot explain global sample reference counts. Loaded path labels not file hash identity, output playback, or AI ownership."
+}

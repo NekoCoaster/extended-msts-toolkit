@@ -1,0 +1,13 @@
+"""Reproduce diesel release, rollback and stop observations from retained streams."""
+import json
+from pathlib import Path
+root=Path(__file__).resolve().parent
+br=[json.loads(l) for l in (root/'captures/diesel-keyboard-release-01/samples.jsonl').read_text().splitlines()];b=[x for x in br if 'error'not in x]
+sr=[json.loads(l) for l in (root/'captures/cleared-player-approach-01/details.jsonl').read_text().splitlines()];s=[x for x in sr if 'error'not in x]
+mode=[];prev=None
+for r in b:
+ if r['selected_mode']!=prev:mode.append(dict(day=r['sim_time'],mode=hex(r['selected_mode']),handle=r['train_brake']));prev=r['selected_mode']
+player=lambda r:next(t for t in r['trains'] if t['is_player'])
+released=[r for r in b if r['selected_mode']==4];allzero=next((r for r in released if all(c['floats']['0x230']==0 for c in player(r)['cars'])),None)
+report=dict(brake_samples=len(br),brake_errors=len(br)-len(b),signal_samples=len(sr),signal_errors=len(sr)-len(s),mode_transitions=mode,first_all_player_cylinders_zero=None if allzero is None else allzero['sim_time'],brake_day_range=[b[0]['sim_time'],b[-1]['sim_time']],signal_day_range=[s[0]['sim_time'],s[-1]['sim_time']],speed_range=[min(r['speed'] for r in b),max(r['speed'] for r in b)],signal_distance_range=[min(r['next_signal']['distance'] for r in s),max(r['next_signal']['distance'] for r in s)],signal_indices=sorted(set(r['next_signal']['selected_normal']['index'] for r in s if r['next_signal']['selected_normal'])),signal_aspects=sorted(set(r['next_signal']['selected_normal']['aspect'] for r in s if r['next_signal']['selected_normal'])),traction_current_range=[min(r['diesel_cab']['current_traction_amps'] for r in s),max(r['diesel_cab']['current_traction_amps'] for r in s)],throttle_values=sorted(set(r['diesel_cab']['throttle'] for r in s)),brake_clock_crossings=sum(r['sim_time']!=r['sim_time_after'] for r in b),owner_reread_differences=sum(not c['owner_stable'] for r in b for t in r['trains'] for c in t['cars']),final=dict(day=s[-1]['sim_time'],paused=s[-1]['paused'],speed=s[-1]['player']['speed'],distance=s[-1]['next_signal']['distance'],cab=s[-1]['diesel_cab']),limitations='Fixed44decrement sequence after one separate decrement,thenN1 after observed release. Backspace applied on negative-speed/increasing-distance evidence;thenIdle andPause. Input times not precisely logged. Grade causation and absent traction reason unresolved. No forward passage;capture series start at different times and must not be silently joined as simultaneous/atomic.')
+(root/'diesel-release-rollback-summary.json').write_text(json.dumps(report,indent=2));print(json.dumps(report))

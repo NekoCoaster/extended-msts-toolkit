@@ -1,0 +1,39 @@
+{
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "sim_time": 28919.865234375,
+  "paused": 1,
+  "reset_vector_address": "0083db48",
+  "reset_vector": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "captures": {
+    "vehicle-motion-ai-01": {
+      "sha256": "3f632238bda3a39396a984db5607aec493dec168d5c7c1d834fccde8bb97bfbc",
+      "trains": {
+        "400007": {
+          "observations": 11040,
+          "nonzero_angular_momentum": 0,
+          "nonzero_angular_velocity": 0
+        },
+        "400005": {
+          "observations": 9944,
+          "nonzero_angular_momentum": 0,
+          "nonzero_angular_velocity": 0
+        }
+      }
+    },
+    "vehicle-motion-restart-01": {
+      "sha256": "f007b0e8653aedbb84e6a10a392da10d8f40d8f1a5af28d3d132894e84e35e73",
+      "trains": {
+        "400007": {
+          "observations": 8050,
+          "nonzero_angular_momentum": 0,
+          "nonzero_angular_velocity": 0
+        }
+      }
+    }
+  },
+  "limitations": "Current live reset vector plus archived state counts,not an execution trace at each reset. All samples counted here,including paused and flagged unstable reads;finite-difference eligible subset is separate. No writes or native calls."
+}

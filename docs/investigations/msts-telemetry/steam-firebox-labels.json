@@ -1,0 +1,22 @@
+{
+  "fire_temperature": {
+    "label_address": "0x771d68",
+    "label": "Fire temp: %.0f",
+    "source": "lead+0x2c2",
+    "instruction": "0060bb71"
+  },
+  "fire_mass": {
+    "label_address": "0x771d04",
+    "label": "Fire mass: %.0f Ib, ideal %.0f, max %.0f",
+    "source": "lead+0x2ca; engine_definition+0x242 ideal; +0x222 maximum",
+    "instruction": "0060bc2b"
+  },
+  "display_constants": {
+    "0x753e1c": 300.0,
+    "0x753e18": 700.0,
+    "0x753c38": 1.0,
+    "0x753d78": 30.0,
+    "0x753e14": 0.75
+  },
+  "limits": "Native debug labels and display consumers; temperature unit and simulation producers unresolved. Pass82 has a known unrelated live call patch at0060c996."
+}

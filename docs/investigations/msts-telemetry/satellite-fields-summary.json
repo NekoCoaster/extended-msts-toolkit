@@ -1,0 +1,255 @@
+{
+  "source": "captures\\sky-structure-paused-01\\sky.json",
+  "source_sha256": "ea4193c1842e9b29145f47986ec28de9085d65676f6e1f5f12b582241d0ba94e",
+  "asset": "C:\\MSTS\\ROUTES\\USA2\\ENVFILES\\USA2snow.env",
+  "asset_sha256": "b002da2ebad3092cd4e5397561ea746b51173574ae228057cfe46ee80a5ea683",
+  "rows": [
+    {
+      "index": 0,
+      "address": 53863748,
+      "values": {
+        "low_scale": 200.0,
+        "high_scale": 150.0,
+        "rise_position": 1.6580615043640137,
+        "rise_time": 21600.0,
+        "set_time": 68400.0,
+        "fade_time": 2400.0,
+        "dir_rise_colour": 4294962827,
+        "dir_high_colour": 4294967295,
+        "dir_set_colour": 4294948211,
+        "amb_rise_colour": 4280624421,
+        "amb_high_colour": 4286940549,
+        "amb_set_colour": 4280624421,
+        "light_pointer": 53749756,
+        "fog": 255
+      },
+      "comparisons": [
+        {
+          "field": "low_scale",
+          "loaded": 200.0,
+          "declared": "200",
+          "observed_ratio_to_authored": 1.0
+        },
+        {
+          "field": "high_scale",
+          "loaded": 150.0,
+          "declared": "150",
+          "observed_ratio_to_authored": 1.0
+        },
+        {
+          "field": "rise_position",
+          "loaded": 1.6580615043640137,
+          "declared": "95",
+          "nominal_radian_error": -1.2850305994849265e-06
+        },
+        {
+          "field": "rise_time",
+          "loaded": 21600.0,
+          "declared": "06:00:00",
+          "expected": 21600.0,
+          "exact": true,
+          "default_used": false
+        },
+        {
+          "field": "set_time",
+          "loaded": 68400.0,
+          "declared": "19:00:00",
+          "expected": 68400.0,
+          "exact": true,
+          "default_used": false
+        },
+        {
+          "field": "fade_time",
+          "loaded": 2400.0,
+          "declared": null,
+          "expected": 2400,
+          "exact": true,
+          "default_used": true
+        },
+        {
+          "field": "dir_rise_colour",
+          "loaded": 4294962827,
+          "declared": "ffffee8b",
+          "expected": 4294962827,
+          "exact": true
+        },
+        {
+          "field": "dir_high_colour",
+          "loaded": 4294967295,
+          "declared": "ffffffff",
+          "expected": 4294967295,
+          "exact": true
+        },
+        {
+          "field": "dir_set_colour",
+          "loaded": 4294948211,
+          "declared": "ffffb573",
+          "expected": 4294948211,
+          "exact": true
+        },
+        {
+          "field": "amb_rise_colour",
+          "loaded": 4280624421,
+          "declared": "ff252525",
+          "expected": 4280624421,
+          "exact": true
+        },
+        {
+          "field": "amb_high_colour",
+          "loaded": 4286940549,
+          "declared": "ff858585",
+          "expected": 4286940549,
+          "exact": true
+        },
+        {
+          "field": "amb_set_colour",
+          "loaded": 4280624421,
+          "declared": "ff252525",
+          "expected": 4280624421,
+          "exact": true
+        },
+        {
+          "field": "light_pointer",
+          "loaded": 53749756,
+          "declared": null,
+          "light_token": [
+            "1 "
+          ]
+        },
+        {
+          "field": "fog",
+          "loaded": 255,
+          "declared": null,
+          "expected": 255,
+          "exact": true,
+          "default_used": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "address": 53864209,
+      "values": {
+        "low_scale": 200.0,
+        "high_scale": 150.0,
+        "rise_position": 0.0,
+        "rise_time": 66600.0,
+        "set_time": 28800.0,
+        "fade_time": 2400.0,
+        "dir_rise_colour": 4279571760,
+        "dir_high_colour": 4279571760,
+        "dir_set_colour": 4279571760,
+        "amb_rise_colour": 4279242784,
+        "amb_high_colour": 4279242784,
+        "amb_set_colour": 4279242784,
+        "light_pointer": 53755580,
+        "fog": 96
+      },
+      "comparisons": [
+        {
+          "field": "low_scale",
+          "loaded": 200.0,
+          "declared": "200",
+          "observed_ratio_to_authored": 1.0
+        },
+        {
+          "field": "high_scale",
+          "loaded": 150.0,
+          "declared": "150",
+          "observed_ratio_to_authored": 1.0
+        },
+        {
+          "field": "rise_position",
+          "loaded": 0.0,
+          "declared": "0",
+          "nominal_radian_error": 0.0
+        },
+        {
+          "field": "rise_time",
+          "loaded": 66600.0,
+          "declared": "18:30:00",
+          "expected": 66600.0,
+          "exact": true,
+          "default_used": false
+        },
+        {
+          "field": "set_time",
+          "loaded": 28800.0,
+          "declared": "08:00:00",
+          "expected": 28800.0,
+          "exact": true,
+          "default_used": false
+        },
+        {
+          "field": "fade_time",
+          "loaded": 2400.0,
+          "declared": null,
+          "expected": 2400,
+          "exact": true,
+          "default_used": true
+        },
+        {
+          "field": "dir_rise_colour",
+          "loaded": 4279571760,
+          "declared": "ff151530",
+          "expected": 4279571760,
+          "exact": true
+        },
+        {
+          "field": "dir_high_colour",
+          "loaded": 4279571760,
+          "declared": "ff151530",
+          "expected": 4279571760,
+          "exact": true
+        },
+        {
+          "field": "dir_set_colour",
+          "loaded": 4279571760,
+          "declared": "ff151530",
+          "expected": 4279571760,
+          "exact": true
+        },
+        {
+          "field": "amb_rise_colour",
+          "loaded": 4279242784,
+          "declared": "ff101020",
+          "expected": 4279242784,
+          "exact": true
+        },
+        {
+          "field": "amb_high_colour",
+          "loaded": 4279242784,
+          "declared": "ff101020",
+          "expected": 4279242784,
+          "exact": true
+        },
+        {
+          "field": "amb_set_colour",
+          "loaded": 4279242784,
+          "declared": "ff101020",
+          "expected": 4279242784,
+          "exact": true
+        },
+        {
+          "field": "light_pointer",
+          "loaded": 53755580,
+          "declared": null,
+          "light_token": [
+            "0 "
+          ]
+        },
+        {
+          "field": "fog",
+          "loaded": 96,
+          "declared": "96",
+          "expected": 96,
+          "exact": true,
+          "default_used": false
+        }
+      ]
+    }
+  ],
+  "exact_comparisons": 20,
+  "mismatches": [],
+  "limitations": "Decodes an existing paused capture. Literal parser is scoped to these blocks,not a complete SIMIS parser. Scale ratio observed,not proof of loader argument or world-size semantics. Nominal angle comparison is not bit-exact native conversion. Keys/times are loaded parameters,not current output or evidence of active visibility. Light token0 may still allocate a light."
+}

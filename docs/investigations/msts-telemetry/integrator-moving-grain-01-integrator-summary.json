@@ -1,0 +1,172 @@
+{
+  "capture": "integrator-moving-grain-01",
+  "sha256": "b98b4ab48e10f4bbc16fe299084a3dfa6f52b38855b024d3a3aa87d4066cfc5c",
+  "samples": 1296,
+  "errors": 0,
+  "paused_samples": 98,
+  "time_range": [
+    73800.6875,
+    73921.015625
+  ],
+  "elapsed_range": [
+    0.6836535930633545,
+    121.0185317993164
+  ],
+  "physics_range": [
+    0.7206538319587708,
+    195.23484802246094
+  ],
+  "modes": [
+    1
+  ],
+  "configured_steps": {
+    "n": 1296,
+    "min": 0.008354599587619305,
+    "median": 0.010000000707805157,
+    "p95": 0.010000000707805157,
+    "max": 0.010000000707805157
+  },
+  "clock_pairs": 1197,
+  "physics_game_ratio": {
+    "n": 1197,
+    "min": 1.1144984048209854,
+    "median": 1.616826810405437,
+    "p95": 1.8161984691300463,
+    "max": 2.0384694307345046
+  },
+  "trains": {
+    "400007": {
+      "is_player": true,
+      "pairs": 1802,
+      "same_clock_pairs": 814,
+      "body_game_abs_error": {
+        "n": 1802,
+        "min": 0.3855283169735598,
+        "median": 5.179555574692884,
+        "p95": 7.554566879251345,
+        "max": 10.266155049809331
+      },
+      "body_physics_abs_error": {
+        "n": 1802,
+        "min": 2.4614382461152218e-06,
+        "median": 0.0024792925772985086,
+        "p95": 0.5312126755755129,
+        "max": 1.362031005669861
+      },
+      "track_game_abs_error": {
+        "n": 1802,
+        "min": 0.3930581536391238,
+        "median": 5.157435618119184,
+        "p95": 7.551735750330174,
+        "max": 10.471724432111651
+      },
+      "track_physics_abs_error": {
+        "n": 1802,
+        "min": 2.6618653489407507e-05,
+        "median": 0.008972272417668847,
+        "p95": 0.02948475841173881,
+        "max": 1.3755873654881405
+      },
+      "same_clock_body_game_abs_error": {
+        "n": 814,
+        "min": 0.3855283169735598,
+        "median": 5.115863841013507,
+        "p95": 7.3124018438020375,
+        "max": 7.6084675474566605
+      },
+      "same_clock_body_physics_abs_error": {
+        "n": 814,
+        "min": 2.4614382461152218e-06,
+        "median": 0.0023817959507166364,
+        "p95": 0.5348366527311441,
+        "max": 1.2957775762465786
+      },
+      "physics_game_ratio": {
+        "n": 1802,
+        "min": 1.2842172672760086,
+        "median": 1.5970759224083348,
+        "p95": 1.777480612307359,
+        "max": 2.0384694307345046
+      },
+      "worst_physics": {
+        "car": 59218824,
+        "time0": 73800.984375,
+        "time1": 73801.0859375,
+        "game_dt": 0.10278123617172241,
+        "physics_dt": 0.15999794006347656,
+        "body_game_speed": 19.07783906759611,
+        "body_physics_speed": 12.255432051655012,
+        "stored_speed": 10.89340104598515,
+        "error": 1.362031005669861,
+        "same_clocks": false
+      }
+    },
+    "400005": {
+      "is_player": false,
+      "pairs": 1790,
+      "same_clock_pairs": 285,
+      "body_game_abs_error": {
+        "n": 1790,
+        "min": 0.00013714319768354244,
+        "median": 0.66411506022326,
+        "p95": 3.527157863340893,
+        "max": 6.515392305738946
+      },
+      "body_physics_abs_error": {
+        "n": 1790,
+        "min": 4.000656371510084,
+        "median": 8.205888776149486,
+        "p95": 10.804165437680657,
+        "max": 12.959142210099015
+      },
+      "track_game_abs_error": {
+        "n": 1790,
+        "min": 0.0021648785858801034,
+        "median": 0.7558799603156885,
+        "p95": 3.526222263203511,
+        "max": 5.324747559896103
+      },
+      "track_physics_abs_error": {
+        "n": 1790,
+        "min": 4.62675230546381,
+        "median": 8.626316319163609,
+        "p95": 10.805561520008954,
+        "max": 11.885868498835134
+      },
+      "same_clock_body_game_abs_error": {
+        "n": 285,
+        "min": 0.01398206708008587,
+        "median": 0.30312971078813433,
+        "p95": 0.9850786495600481,
+        "max": 6.074172911875188
+      },
+      "same_clock_body_physics_abs_error": {
+        "n": 285,
+        "min": 4.625129857873926,
+        "median": 8.62941455417028,
+        "p95": 10.80563947568633,
+        "max": 10.81673666952016
+      },
+      "physics_game_ratio": {
+        "n": 1790,
+        "min": 1.327863200717093,
+        "median": 1.605638118584342,
+        "p95": 1.9495659363373294,
+        "max": 2.0033984706881904
+      },
+      "worst_physics": {
+        "car": 68779556,
+        "time0": 73914.6953125,
+        "time1": 73914.78125,
+        "game_dt": 0.0910186767578125,
+        "physics_dt": 0.179901123046875,
+        "body_game_speed": 23.42499276627224,
+        "body_physics_speed": 11.851576068771324,
+        "stored_speed": 24.81071827887034,
+        "error": 12.959142210099015,
+        "same_clocks": false
+      }
+    }
+  },
+  "limitations": "Paired unsigned movement speeds versus stored mean velocity norm;no outlier removal. Physics/game clocks and car fields are sequential non-atomic reads. Same-clock means unchanged elapsed and integrator clocks within each endpoint read,not proven atomic or common producer phase. Unchanged origin,node,direction and stable identities required. Counts are correlated car pairs. Clock ratio is a measurement of this run,not a correction factor or universal solver behavior."
+}

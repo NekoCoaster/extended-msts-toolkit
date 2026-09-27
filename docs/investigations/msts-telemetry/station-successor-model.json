@@ -1,0 +1,54 @@
+{
+  "source": "pass155/00690280.asm; pass154/005a5254.asm",
+  "capture": "captures/maryland-records-paused-01/records.json",
+  "cases": [
+    {
+      "case": "null starts first",
+      "records": [
+        111689260,
+        111690460
+      ],
+      "current": 0,
+      "result": 111689260,
+      "expected": 111689260
+    },
+    {
+      "case": "first advances second",
+      "records": [
+        111689260,
+        111690460
+      ],
+      "current": 111689260,
+      "result": 111690460,
+      "expected": 111690460
+    },
+    {
+      "case": "last returns null",
+      "records": [
+        111689260,
+        111690460
+      ],
+      "current": 111690460,
+      "result": 0,
+      "expected": 0
+    },
+    {
+      "case": "empty returns null",
+      "records": [],
+      "current": 0,
+      "result": 0,
+      "expected": 0
+    },
+    {
+      "case": "missing identity returns null",
+      "records": [
+        111689260,
+        111690460
+      ],
+      "current": 1,
+      "result": 0,
+      "expected": 0
+    }
+  ],
+  "limitations": "Offline model and boundary examples, not runtime execution or observed selection transitions. Assumes a valid circular list and unique record identities. Native search chooses the first matching identity; corrupted/cyclic lists are not protected by the native helper. Null does not distinguish exhausted list, empty list or missing identity."
+}

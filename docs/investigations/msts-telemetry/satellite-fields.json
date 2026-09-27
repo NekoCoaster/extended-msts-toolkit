@@ -1,0 +1,16 @@
+[
+  ["low_scale",4,"f","Loaded low satellite scale","native length parameter after loader scaling"],
+  ["high_scale",8,"f","Loaded high satellite scale","native length parameter after loader scaling"],
+  ["rise_position",12,"f","Loaded satellite rise azimuth","radians; native degree conversion"],
+  ["rise_time",16,"f","Loaded satellite rise clock","seconds of day"],
+  ["set_time",20,"f","Loaded satellite set clock","seconds of day; interval may wrap midnight"],
+  ["fade_time",24,"f","Loaded satellite fade duration","seconds; actual fade behavior separately interpreted"],
+  ["dir_rise_colour",28,"I","Loaded directional rise colour key","packed native colour,not linear-light RGB"],
+  ["dir_high_colour",32,"I","Loaded directional high colour key","packed native colour,not current light output"],
+  ["dir_set_colour",36,"I","Loaded directional set colour key","packed native colour,not current light output"],
+  ["amb_rise_colour",44,"I","Loaded ambient rise colour key","packed native colour,not current ambient output"],
+  ["amb_high_colour",48,"I","Loaded ambient high colour key","packed native colour,not current ambient output"],
+  ["amb_set_colour",52,"I","Loaded ambient set colour key","packed native colour,not current ambient output"],
+  ["light_pointer",64,"I","Satellite-created light object identity","pointer32;nonnull does not mean registered/active"],
+  ["fog",68,"B","Loaded satellite fog byte","uint8 native render parameter;not fog distance"]
+]

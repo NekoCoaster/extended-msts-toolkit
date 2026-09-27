@@ -1,0 +1,59 @@
+{
+  "samples": 587,
+  "errors": 0,
+  "segments": [
+    {
+      "paused": 1,
+      "samples": 144,
+      "wall_span": 14.631699699966703,
+      "simulation_delta": 0.0,
+      "elapsed_candidate_delta": 0.0,
+      "observed_elapsed_changes": 0,
+      "max_abs_player_speed": 0.0
+    },
+    {
+      "paused": 0,
+      "samples": 223,
+      "wall_span": 22.729077800002415,
+      "simulation_delta": 22.734375,
+      "elapsed_candidate_delta": 22.73516845703125,
+      "observed_elapsed_changes": 222,
+      "max_abs_player_speed": 0.0
+    },
+    {
+      "paused": 1,
+      "samples": 220,
+      "wall_span": 22.42181609995896,
+      "simulation_delta": 0.0,
+      "elapsed_candidate_delta": 0.0,
+      "observed_elapsed_changes": 0,
+      "max_abs_player_speed": 0.0
+    }
+  ],
+  "sim_time_range": [
+    74525.53125,
+    74548.40625
+  ],
+  "cross_step_samples": 27,
+  "audio_record_variants": 1,
+  "audio_selection_variants": 1,
+  "mass_variants": 1,
+  "length_variants": 1,
+  "distance_range": [
+    136.4184112548828,
+    136.4184112548828
+  ],
+  "cap_mismatches": 0,
+  "service_cap_variants": {
+    "0": [
+      17.88159942626953
+    ],
+    "2": [
+      15.64639949798584
+    ],
+    "3": [
+      13.411199569702148
+    ]
+  },
+  "limitation": "0.1s target external sampling cannot count all simulation callbacks; paused stationary player with existing default audio only. No moving post crossing, audio expiry or coupling transition."
+}

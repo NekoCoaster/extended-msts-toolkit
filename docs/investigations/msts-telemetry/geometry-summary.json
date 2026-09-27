@@ -1,0 +1,296 @@
+{
+  "capture": "geometry-services-paused-01",
+  "source": {
+    "path": "C:\\MSTS\\GLOBAL\\tsection.dat",
+    "sha256": "73c6dd2486d77b3e0d0d28a0db74443cea1ac56d13de50ac9913a13b43e27bef"
+  },
+  "definitions": {
+    "3": {
+      "native": {
+        "address": 52050584,
+        "raw_hex": "00007a4300000000000000000000c03f0000000000000000",
+        "length": 250.0,
+        "radius_candidate": 0.0,
+        "curve_angle_candidate": 0.0,
+        "remaining_float_candidates": [
+          1.5,
+          0.0,
+          0.0
+        ]
+      },
+      "asset_excerpt": "TrackSection ( 3\r\n    SectionSize ( 1.5   250 )\r\n\t)",
+      "expected_radius": 0.0,
+      "expected_angle_radians": 0.0,
+      "expected_length": 250.0,
+      "length_error": 0.0,
+      "radius_error": 0.0,
+      "angle_error": 0.0
+    },
+    "59": {
+      "native": {
+        "address": 52051928,
+        "raw_hex": "c3f72e43859f7a44bab832be0000c03f0000000000000000",
+        "length": 174.9678192138672,
+        "radius_candidate": 1002.4924926757812,
+        "curve_angle_candidate": -0.17453280091285706,
+        "remaining_float_candidates": [
+          1.5,
+          0.0,
+          0.0
+        ]
+      },
+      "asset_excerpt": "TrackSection ( 59\r\n    SectionSize ( 1.5   0 )\r\n    SectionCurve ( 1002.4925   -10 )\r\n\t)",
+      "expected_radius": 1002.4925,
+      "expected_angle_radians": -0.17453292519943295,
+      "expected_length": 174.96794851549254,
+      "length_error": -0.00012930162534985357,
+      "radius_error": -7.324218699977791e-06,
+      "angle_error": 1.2428657589214076e-07
+    },
+    "15": {
+      "native": {
+        "address": 52050872,
+        "raw_hex": "aaa9ad42f6c0f843bab832be0000c03f0000000000000000",
+        "length": 86.83137512207031,
+        "radius_candidate": 497.50750732421875,
+        "curve_angle_candidate": -0.17453280091285706,
+        "remaining_float_candidates": [
+          1.5,
+          0.0,
+          0.0
+        ]
+      },
+      "asset_excerpt": "TrackSection ( 15\r\n    SectionSize ( 1.5   0 )\r\n    SectionCurve ( 497.5075   -10 )\r\n\t)",
+      "expected_radius": 497.5075,
+      "expected_angle_radians": -0.17453292519943295,
+      "expected_length": 86.83143928365689,
+      "length_error": -6.416158657884807e-05,
+      "radius_error": 7.32421875682121e-06,
+      "angle_error": 1.2428657589214076e-07
+    },
+    "57": {
+      "native": {
+        "address": 52051880,
+        "raw_hex": "08192e437b607944bab832be0000c03f0000000000000000",
+        "length": 174.0977783203125,
+        "radius_candidate": 997.5075073242188,
+        "curve_angle_candidate": -0.17453280091285706,
+        "remaining_float_candidates": [
+          1.5,
+          0.0,
+          0.0
+        ]
+      },
+      "asset_excerpt": "TrackSection ( 57\r\n    SectionSize ( 1.5   0 )\r\n    SectionCurve ( 997.5075   -10 )\r\n\t)",
+      "expected_radius": 997.5075,
+      "expected_angle_radians": -0.17453292519943295,
+      "expected_length": 174.09790188337337,
+      "length_error": -0.00012356306086758195,
+      "radius_error": 7.324218699977791e-06,
+      "angle_error": 1.2428657589214076e-07
+    }
+  },
+  "grade_comparisons": [
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -20.7958984375,
+      "dy_per_path_distance": 0.015702042733035923,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": -5.310774219616926e-06
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.6826171875,
+      "dy_per_path_distance": 0.015715703299429423,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": 8.349792173883291e-06
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.7001953125,
+      "dy_per_path_distance": 0.015695484062856292,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": -1.1869444399247725e-05
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.6845703125,
+      "dy_per_path_distance": 0.01571414396983678,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": 6.7904625812402475e-06
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.693359375,
+      "dy_per_path_distance": 0.01571332936626004,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": 5.975859004501288e-06
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.669921875,
+      "dy_per_path_distance": 0.015725846489921556,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": 1.8492982666016428e-05
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.7236328125,
+      "dy_per_path_distance": 0.015689211269000348,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": -1.8142238255192122e-05
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.71875,
+      "dy_per_path_distance": 0.015699286846275754,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": -8.066660979785811e-06
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.6728515625,
+      "dy_per_path_distance": 0.01573591461901216,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": 2.8561111756621183e-05
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.7373046875,
+      "dy_per_path_distance": 0.01568452822720301,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": -2.28252800525304e-05
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.705078125,
+      "dy_per_path_distance": 0.01572256913470116,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": 1.5215627445618746e-05
+    },
+    {
+      "section": 94,
+      "definition": 3,
+      "direction": 1,
+      "radius": 0.0,
+      "distance_delta": -19.7314453125,
+      "dy_per_path_distance": 0.015701559020044543,
+      "negative_sine_pitch": 0.01570735350725554,
+      "error": -5.794487210997179e-06
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.7373046875,
+      "dy_per_path_distance": 0.0258646281727772,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": -0.00031228176122524015
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.7646484375,
+      "dy_per_path_distance": 0.025902959632392905,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": -0.00027395030160953446
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.7333984375,
+      "dy_per_path_distance": 0.026018211510862574,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": -0.00015869842313986568
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.7314453125,
+      "dy_per_path_distance": 0.02607646622123237,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": -0.0001004437127700708
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.77734375,
+      "dy_per_path_distance": 0.026071499111198895,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": -0.00010541082280354427
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.7158203125,
+      "dy_per_path_distance": 0.026196195948288672,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": 1.9286014286232223e-05
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.8046875,
+      "dy_per_path_distance": 0.026121794871794873,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": -5.51150622075669e-05
+    },
+    {
+      "section": 93,
+      "definition": 57,
+      "direction": 1,
+      "radius": 997.5075073242188,
+      "distance_delta": -19.798828125,
+      "dy_per_path_distance": 0.026154187629476175,
+      "negative_sine_pitch": 0.02617690993400244,
+      "error": -2.2722304526264642e-05
+    }
+  ],
+  "limitations": "Grade comparisons use separate car reference points, float precision and section interpolation. Curves can change tangent gradient. This does not establish signed grade in arbitrary travel direction or native HUD convention."
+}

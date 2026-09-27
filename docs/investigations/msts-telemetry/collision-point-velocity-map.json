@@ -1,0 +1,20 @@
+{
+  "pid": 33612,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "thunk": {
+    "address": "0x401aa0",
+    "bytes": "e9fbfc1d00",
+    "target": "0x5e17a0"
+  },
+  "comparison": {
+    "address": "0x77138c",
+    "bytes": "00004442",
+    "float32": 49.0
+  },
+  "branch_immediate_floats": {
+    "0x3ca3d70a": 0.019999999552965164,
+    "0x3c23d70a": 0.009999999776482582,
+    "0x3f4ccccd": 0.800000011920929
+  },
+  "limitation": "Only thunk and scalar bytes verified;units follow existing body-field mapping,not independent contact measurement or exact host-float emulation."
+}

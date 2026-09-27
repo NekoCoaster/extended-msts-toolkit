@@ -1,0 +1,45 @@
+# Scheduled AI lifecycle observation
+
+Independent read-only research, incomplete. Capture `captures/scheduled-traffic-01/lifecycle.jsonl` contains 539 samples, zero top-level read errors, simulation time 74000.0546875 through 74522.0390625. 171 samples crossed a simulation step; successful reads are not atomic snapshots. Reproduce the summary with `python analyse_lifecycle.py scheduled-traffic-01`.
+
+## Observed transitions
+
+| Service | Observation | Boundary |
+|---|---|---|
+| EveGrain (Traffic), ID 2 | Physical train pointer and physicalization flag became zero at 74064.96875; service remained loaded | Object disappearance is not service deletion |
+| EveGrain (Traffic01), ID 3 | Flags changed 4 to 20 at 74460.765625, near configured 20:41 start; movement followed | No physical train instance appeared during this capture |
+| Player, ID 0 | Physical train remained present; speed stayed zero | Player physicalization flag remained zero despite valid train |
+
+First AI crossed 37 section boundaries. Later AI crossed two after initialization; initial null-to-valid track record is excluded from boundary counts. Later AI reached 6.78867 m/s in the capture, with target 13.41120 m/s and acceleration 0.1396845 m/s². Among 33 eligible position/speed comparisons its largest chord-speed discrepancy was 0.05009 m/s. These observations support offscreen kinematic movement for this service, not complete equivalence with physical train simulation.
+
+## Positive speed does not always establish movement
+
+Follow-up: [Service update findings](SERVICE-UPDATE-FINDINGS.md) identifies the disabled update gate and stopped AI update clock. The exact deactivation trigger and earlier doubled-position outlier remain unproven. The discussion below preserves the initial observation.
+
+First AI retained speed 4.42694664 m/s while track position was stationary from the later portion of the run. At sample 338 (74321.140625), the position-derived speed was zero with a one-second interval and unchanged coordinate origin. This persisted through the end. A prior outlier at sample 215 gave position-derived speed 31.05023 m/s versus native speed 15.64640 m/s. `scheduled-traffic-01-summary.json` preserves representative anomalous comparisons.
+
+The discrepancy is unresolved: stale completed-service fields, coarse updating, and other lifecycle conditions require native producer tracing. Do not label positive speed as proof of active movement, or apply physical-train velocity semantics to every loaded service. Even same-simulation-time sampling does not prove all fields were produced together.
+
+Final paused check at 74525.53125 (`captures/service-lifecycle-final-paused/services.jsonl`) still showed ID 2 speed 4.42694664, target zero, no physical train, flags 20. Stop-state words +0x1e0, +0x1e4, +0x1e8 and +0x214 were zero; +0x1dc was one. These candidates do not by themselves explain the freeze. ID 3 speed was then 7.207724 m/s, still without a physical train.
+
+## Sampling and remaining work
+
+Origin stayed [-12560,14766], so this run does not validate origin shifts. Player remained stopped; no event-trigger or alternative-engine validation was performed. AI physical reappearance and service removal remain untested.
+
+`captures/reader-cost-01/measurement.json` measures 30 combined external snapshots: median 2.80785 ms, maximum 6.0994 ms; eight crossed a simulation step. This measures reader execution cost only, not game frame-time impact.
+
+Game left paused at 74525.53125 with player intact (23 cars, zero derailment flags), emergency brake applied. NEMT production code and game assets were unchanged; no save was made. Existing runtime modifications remain an explicit limitation of this installation.
+
+## Repeated removal and native distance gate
+
+The later presence-identity-moving-01 run repeats physical removal near74064.7 and additionally records all22presence+10 physical-car associations clearing to null while their abstract records persist and move. See INFRASTRUCTURE-OWNERS-FINDINGS.md for exact sample boundaries and read-timing limitations. This is a repeat of the earlier service-level removal,with new per-car evidence,not a newly discovered kind of lifecycle event.
+
+Pass180 resolves the matching cleanup:005a7d3d walks service12c,passes each record14 index with operation9 to005a7c66,then sets record10=0. It calls that same helper with service154 index and then sets service158=0. Caller005a58af first invokes005a779a (operation0x12 through005a7732 for each car index and service index),then005a7d3d,then clears service134. Exact helper operation semantics and object destruction internals need separate tracing;the explicit pointer clearing is established. Exported8functions501instructions1904bytes match disk/live with0errors.
+
+005a58af tests two 3D squared distances: service94 andservicefc against [[7c2a88]+38]. These are stored front/rear track-position vectors and the player-view position,distinct from render-camera position at[[829224]+30]. For finite values,unphysicalized AI enters creation when either endpoint is strictly inside the threshold;physicalized AI enters removal only when both are strictly outside. Equality does not trigger either transition in these branches. No active view pointer skips the body. Other initialization/scheduler gates and allocation success still matter.
+
+read_ai_distance_gate.py captures the inputs at paused74119.125. Constant770718 is1960000.0 in both disk/live,corresponding to1400native distance units (world position convention is metres). Service2 endpoints are2627.409626 and2244.163987m from view position;train158 andphysicalized134 are0,update144 is1. This is consistent with remaining unphysicalized after removal,not a capture of the threshold crossing. Service3 has zero/uninitialized endpoints,update144=0,and would numerically satisfy the inside-distance test;it remains unphysicalized. This is a concrete example of why the distance predicate alone is not a physicalization status or prediction.
+
+New flat candidates retain the view-state position vector,physicalization squared-distance threshold,and derived paired endpoint distances. Origin shifts,other camera modes,threshold-crossing replay and physical reappearance remain untested. Raw floats and code/image provenance are retained. No native calls,writes,UI changes or game asset edits in this follow-up. Current game remains paused74119.125.
+
+Planning correction: the previous scheduled-traffic capture reaches service2 path-end handling around74316 with frozen later track state. The current AI's many-kilometre remaining node distance therefore does not justify a blind long wait for a node crossing. A crossing test needs the player's reachable path or another active service with a verified boundary ahead. Full route/signal transitions remain open.

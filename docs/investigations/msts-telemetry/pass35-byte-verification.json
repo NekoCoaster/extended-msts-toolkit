@@ -1,0 +1,974 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass35",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00401c12",
+      "instructions": 1,
+      "bytes": 5,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0040245f",
+      "instructions": 1,
+      "bytes": 5,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004075cc",
+      "instructions": 325,
+      "bytes": 1523,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004597e0",
+      "instructions": 141,
+      "bytes": 601,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00468ff5",
+      "instructions": 637,
+      "bytes": 2496,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00490579",
+      "instructions": 238,
+      "bytes": 926,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004937bf",
+      "instructions": 904,
+      "bytes": 4241,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00494850",
+      "instructions": 1512,
+      "bytes": 6990,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "00494bc1",
+          "expected": "e891c7f6ff",
+          "actual": "e82e573a02"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "0049e96c",
+      "instructions": 40,
+      "bytes": 130,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0049ed02",
+      "instructions": 104,
+      "bytes": 297,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0049ee2b",
+      "instructions": 47,
+      "bytes": 120,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0049f0ec",
+      "instructions": 60,
+      "bytes": 158,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0049f34f",
+      "instructions": 339,
+      "bytes": 1005,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0049f73c",
+      "instructions": 545,
+      "bytes": 1639,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004a2ed8",
+      "instructions": 41,
+      "bytes": 122,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004a2f52",
+      "instructions": 80,
+      "bytes": 266,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004c3138",
+      "instructions": 16,
+      "bytes": 43,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004c74c7",
+      "instructions": 79,
+      "bytes": 262,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004d043b",
+      "instructions": 192,
+      "bytes": 620,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004d06f1",
+      "instructions": 39,
+      "bytes": 130,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004d1325",
+      "instructions": 123,
+      "bytes": 467,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004edc06",
+      "instructions": 78,
+      "bytes": 257,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004edd07",
+      "instructions": 99,
+      "bytes": 324,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004ee11c",
+      "instructions": 240,
+      "bytes": 901,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00506039",
+      "instructions": 162,
+      "bytes": 525,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00506bb1",
+      "instructions": 208,
+      "bytes": 719,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00507149",
+      "instructions": 35,
+      "bytes": 97,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00507399",
+      "instructions": 113,
+      "bytes": 366,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00507507",
+      "instructions": 34,
+      "bytes": 103,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0050834f",
+      "instructions": 119,
+      "bytes": 394,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0050962a",
+      "instructions": 195,
+      "bytes": 661,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00509eb5",
+      "instructions": 148,
+      "bytes": 468,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0050be1c",
+      "instructions": 186,
+      "bytes": 589,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00520ba0",
+      "instructions": 45,
+      "bytes": 130,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00530ec5",
+      "instructions": 156,
+      "bytes": 512,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00564893",
+      "instructions": 406,
+      "bytes": 1429,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058782c",
+      "instructions": 221,
+      "bytes": 651,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00589a96",
+      "instructions": 236,
+      "bytes": 931,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058ac85",
+      "instructions": 134,
+      "bytes": 394,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058be48",
+      "instructions": 112,
+      "bytes": 328,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058e500",
+      "instructions": 20,
+      "bytes": 57,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058e7a9",
+      "instructions": 26,
+      "bytes": 81,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0058e830",
+      "instructions": 26,
+      "bytes": 81,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005959d0",
+      "instructions": 99,
+      "bytes": 308,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00595e76",
+      "instructions": 61,
+      "bytes": 183,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00595f2d",
+      "instructions": 127,
+      "bytes": 413,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005960ca",
+      "instructions": 121,
+      "bytes": 381,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00599078",
+      "instructions": 79,
+      "bytes": 205,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0059a8d5",
+      "instructions": 174,
+      "bytes": 542,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0059ab0f",
+      "instructions": 164,
+      "bytes": 531,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0059b430",
+      "instructions": 120,
+      "bytes": 361,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0059db5a",
+      "instructions": 109,
+      "bytes": 326,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0059dda8",
+      "instructions": 109,
+      "bytes": 326,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a11b7",
+      "instructions": 338,
+      "bytes": 1183,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a1656",
+      "instructions": 352,
+      "bytes": 1188,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a2abc",
+      "instructions": 241,
+      "bytes": 775,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a3941",
+      "instructions": 584,
+      "bytes": 2177,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a41c2",
+      "instructions": 752,
+      "bytes": 3524,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a52a9",
+      "instructions": 224,
+      "bytes": 827,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a55e4",
+      "instructions": 68,
+      "bytes": 195,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a56a7",
+      "instructions": 46,
+      "bytes": 135,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a581e",
+      "instructions": 53,
+      "bytes": 145,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a80e6",
+      "instructions": 35,
+      "bytes": 104,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005a847d",
+      "instructions": 265,
+      "bytes": 1032,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b0d14",
+      "instructions": 102,
+      "bytes": 346,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b4865",
+      "instructions": 71,
+      "bytes": 197,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b813d",
+      "instructions": 74,
+      "bytes": 220,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b824c",
+      "instructions": 54,
+      "bytes": 156,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b8378",
+      "instructions": 161,
+      "bytes": 512,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b879c",
+      "instructions": 265,
+      "bytes": 869,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b9261",
+      "instructions": 70,
+      "bytes": 210,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b9333",
+      "instructions": 91,
+      "bytes": 272,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005b9443",
+      "instructions": 83,
+      "bytes": 252,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005bd3aa",
+      "instructions": 107,
+      "bytes": 347,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005bfdf0",
+      "instructions": 61,
+      "bytes": 182,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c189a",
+      "instructions": 70,
+      "bytes": 220,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c1c70",
+      "instructions": 10,
+      "bytes": 25,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c1c89",
+      "instructions": 19,
+      "bytes": 70,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c1ccf",
+      "instructions": 10,
+      "bytes": 25,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c23d6",
+      "instructions": 40,
+      "bytes": 107,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c27e1",
+      "instructions": 117,
+      "bytes": 376,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c3640",
+      "instructions": 100,
+      "bytes": 350,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c379e",
+      "instructions": 67,
+      "bytes": 206,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005c4ecf",
+      "instructions": 25,
+      "bytes": 73,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005ca1ff",
+      "instructions": 48,
+      "bytes": 141,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cdeb2",
+      "instructions": 34,
+      "bytes": 147,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cdf45",
+      "instructions": 74,
+      "bytes": 237,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005ce032",
+      "instructions": 496,
+      "bytes": 2086,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cee7d",
+      "instructions": 66,
+      "bytes": 217,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cef56",
+      "instructions": 48,
+      "bytes": 144,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cf0a6",
+      "instructions": 25,
+      "bytes": 121,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cf11f",
+      "instructions": 36,
+      "bytes": 108,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cf1d3",
+      "instructions": 12,
+      "bytes": 29,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cf237",
+      "instructions": 20,
+      "bytes": 54,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005cfbd1",
+      "instructions": 129,
+      "bytes": 430,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005d04d3",
+      "instructions": 30,
+      "bytes": 86,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005d1da7",
+      "instructions": 255,
+      "bytes": 798,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005d24a5",
+      "instructions": 66,
+      "bytes": 199,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00647efd",
+      "instructions": 99,
+      "bytes": 383,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00648183",
+      "instructions": 72,
+      "bytes": 266,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00649698",
+      "instructions": 106,
+      "bytes": 338,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064b942",
+      "instructions": 33,
+      "bytes": 108,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064bf5e",
+      "instructions": 182,
+      "bytes": 720,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064e310",
+      "instructions": 233,
+      "bytes": 754,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0064e64e",
+      "instructions": 47,
+      "bytes": 162,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00651dff",
+      "instructions": 228,
+      "bytes": 905,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00652acf",
+      "instructions": 39,
+      "bytes": 107,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00653036",
+      "instructions": 159,
+      "bytes": 574,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00653290",
+      "instructions": 37,
+      "bytes": 136,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00653318",
+      "instructions": 219,
+      "bytes": 767,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "006548e0",
+      "instructions": 60,
+      "bytes": 186,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00655022",
+      "instructions": 323,
+      "bytes": 1102,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0065b0f0",
+      "instructions": 41,
+      "bytes": 174,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0065d85b",
+      "instructions": 118,
+      "bytes": 396,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "006603b6",
+      "instructions": 263,
+      "bytes": 873,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00668290",
+      "instructions": 353,
+      "bytes": 1238,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0066e101",
+      "instructions": 66,
+      "bytes": 199,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0066e1c8",
+      "instructions": 152,
+      "bytes": 632,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0066ecfd",
+      "instructions": 301,
+      "bytes": 1066,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0066f451",
+      "instructions": 416,
+      "bytes": 1429,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

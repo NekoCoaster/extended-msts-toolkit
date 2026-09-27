@@ -1,0 +1,46 @@
+{
+  "source": "captures\\presence-identity-paused-01\\identity.json",
+  "sha256": "0ed5b60847228ecee907fa2f21567b9821418301b7e7f50462a9c74747948656",
+  "sim_time": 74054.6171875,
+  "records": 45,
+  "unjoined": 0,
+  "groups": [
+    {
+      "is_player": true,
+      "count": 23,
+      "unique_car_pointers": 23,
+      "bad_backlinks": 0,
+      "bad_services": 0,
+      "unstable": 0,
+      "different_nodes": 0,
+      "direction_pairs": {
+        "(1, 1)": 23
+      },
+      "delta_min": 0.0,
+      "delta_max": 0.0,
+      "in_refresh_lists": [
+        23,
+        0
+      ]
+    },
+    {
+      "is_player": false,
+      "count": 22,
+      "unique_car_pointers": 22,
+      "bad_backlinks": 0,
+      "bad_services": 0,
+      "unstable": 0,
+      "different_nodes": 0,
+      "direction_pairs": {
+        "(0, 0)": 22
+      },
+      "delta_min": 9.65234375,
+      "delta_max": 9.65234375,
+      "in_refresh_lists": [
+        0,
+        0
+      ]
+    }
+  ],
+  "limitations": "Exact pointer/backlink joins at one paused state;not proof of stable lifetime identity,creation/destruction,reversal,or other consists/routes. Refresh-list ownership inferred only for this snapshot."
+}

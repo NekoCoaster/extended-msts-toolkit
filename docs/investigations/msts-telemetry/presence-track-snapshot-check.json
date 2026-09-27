@@ -1,0 +1,44 @@
+{
+  "sim_time": 74054.6171875,
+  "sources": [
+    {
+      "path": "captures\\infrastructure-transition-final-paused-01\\samples.jsonl",
+      "sha256": "94a726356f2260aad93225cec6e4674067cc4dd86d3fdba7e68aeaa2ff826442"
+    },
+    {
+      "path": "captures\\infrastructure-transition-track-check-01\\tracks.json",
+      "sha256": "2e56a8964119b477c8362708d085d49954abff5bd992eb40acccfa756a186aca"
+    }
+  ],
+  "trains": [
+    {
+      "train": 400007,
+      "service": 8427664,
+      "count": 23,
+      "same_nodes": true,
+      "max_distance_difference": 0.0,
+      "presence_minus_physical_min": 0.0,
+      "presence_minus_physical_max": 0.0
+    },
+    {
+      "train": 400005,
+      "service": 53786524,
+      "count": 22,
+      "same_nodes": true,
+      "max_distance_difference": 9.65234375,
+      "presence_minus_physical_min": 9.65234375,
+      "presence_minus_physical_max": 9.65234375,
+      "ai_extrapolation": {
+        "age": 0.6171875,
+        "speed": 15.64639949798584,
+        "acceleration": -0.021407032385468483,
+        "target": 15.6298246383667,
+        "branch": "accelerating toward target",
+        "predicted_distance": 9.652685002384885,
+        "predicted_speed": 15.633187345185434,
+        "max_absolute_gap_residual": 0.00034125238488513787
+      }
+    }
+  ],
+  "limitations": "Paused sorted multiset comparison,not one-to-one configuration-reference/car identity proof;no cross-node/detached-vehicle/lifecycle guarantee or atomic snapshot claim. Extrapolation is a single same-day sample reconstructed with Python double arithmetic,not instruction-exact x87/float execution. Numerical agreement does not prove the presence writer or justify a universal offset correction."
+}

@@ -1,0 +1,107 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass70",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00403f5d",
+      "instructions": 1,
+      "bytes": 5,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00451d30",
+      "instructions": 38,
+      "bytes": 134,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0048fdd0",
+      "instructions": 156,
+      "bytes": 751,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "0048fdd6",
+          "expected": "e88638f7ff",
+          "actual": "e8e6d63a02"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "004fae92",
+      "instructions": 14,
+      "bytes": 43,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004faebf",
+      "instructions": 5,
+      "bytes": 15,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00645af0",
+      "instructions": 136,
+      "bytes": 419,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "00645b13",
+          "expected": "d945fc",
+          "actual": "e8e8a4"
+        },
+        {
+          "address": "00645b16",
+          "expected": "d84018",
+          "actual": "250290"
+        },
+        {
+          "address": "00645b22",
+          "expected": "d945fc",
+          "actual": "e819a5"
+        },
+        {
+          "address": "00645b25",
+          "expected": "d8421c",
+          "actual": "250290"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "00645d12",
+      "instructions": 45,
+      "bytes": 138,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00645ef6",
+      "instructions": 45,
+      "bytes": 128,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00645fab",
+      "instructions": 29,
+      "bytes": 72,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

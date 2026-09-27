@@ -1,0 +1,70 @@
+> Start a new chat with NEW-CHAT-HANDOFF.md. Later findings supersede historical status notes below.
+
+# Current discovery coverage review
+
+Research is **incomplete and paused for a new-chat handoff**. This review follows the original objective without ranking candidates or selecting exports for NEMT. It supersedes the changing next-step statements in [the chronological coverage history](DISCOVERY-COVERAGE-HISTORY.md). Individual findings preserve historical observations; the generated inventory consolidates candidate metadata.
+
+Current inventory: **1,039 candidates** (438 direct fields/structures,26derived,68cab,507configuration). Structured records may contain many values; cab/config/native records may overlap. Counts are not independently validated live quantities or proof that every extractable field has been found.
+
+## Requirements and current evidence
+
+| Requirement | Evidence inspected and established scope | Outstanding work |
+|---|---|---|
+| Independent research and preserved assets | Branch history, read-only probes, source manifest and extraction handoff. Prior native/Unity work supplies context; new runtime evidence remains distinct. | Maintain boundary through final delivery. No production integration or keep/drop decisions. |
+| Session, clock and state | CLOCK, UPDATE-CADENCE, INTEGRATOR-TIME and SAVE-RELOAD-RUNTIME findings distinguish gameplay, physics and pause state. | Midnight/reset, full calendar interpretation, load-complete indicator and full restoration fidelity. |
+| Player controls, instruments and engine systems | Native cab map:68channels,59found in installed declarations. Diesel, steam and electric findings separate producers and display conversions. | Extended cab caller contexts/reachability, some units and inactive cache validity. Labels alone do not establish support. |
+| Trains, vehicles, physics and connections | Physical registry/lifecycle, vehicle systems, coupling and motion findings. Independent list covers23player+22AI connected vehicles; LOOSE-STOCK findings add39owner-null vehicles in six configured loose cuts. | Actual coupling/detachment transitions, remote loose-stock coverage, identity reuse, unnamed force/default bindings and resistance interpretation. |
+| Wheel and shape state | WHEEL-ADHESION findings:24locomotive wheel-node matrices plus164wagon wheel matrices cover all45physical vehicles in this scene. Ordinary rate feeds trigonometric rotation; powered phase can be ineligible; shape time can be an update marker. | Exact frame cadence, coordinate meaning and broader shape coverage; representative moving/paused player and AI wheel matrices are now observed. Live hooked entries limit native-only conclusions. |
+| AI services, paths, schedules and lifecycle | AI-SERVICE, SERVICE-UPDATE, AI-LIFECYCLE and AI-SYSTEM-UPDATE distinguish persistent services, abstract movement and physical appearance/removal. | Rephysicalization, reverse cases, populated station stops, driver reasons and force/brake applicability. Player controls are not AI controls. |
+| Track location, topology and geometry | Track/infrastructure findings enumerate732route nodes and2970track items; two observations of one origin boundary retained. PLAYER-TRACK-CAP-TRANSITION findings add eight player car node changes. LOOSE-TRACK validates39owner-null vehicle track joins. | Other origin boundaries, leading-car/service and speedpost crossings, broader grade/curve validation. |
+| Signals, limits, switches and traffic | Signal/cab, speed-cap, infrastructure-owner and paired-monitor findings include22AI abstract-record crossings and ownership/branch changes. PLAYER-SIGNAL-PASSAGE findings now validate a forward player next-signal selection transition after clearance. | Exact geometric crossing timing, other aspects/functions and precise occupancy/authority meaning. Iterator advancement is not an exact zero-distance event. |
+| Activities, events, stations and evaluation | Event/evaluator, station-time and evaluation reports identify predicates, outcomes, schedule/recorded time, successor selection and cue state. | Actual outcomes, boarding countdown, departure/next-stop transitions and some evaluation writers. Null selection does not prove completion. |
+| Environment and rendering | ENVIRONMENT-SELECTION, SKY-LAYER, SKY-VERTEX and SKY-CLOCK findings cover active selection, loaded layers/satellites, CPU buffers and paused render-side changes. | Inactive buffers, satellite validity, animated frame/wrap/reload behavior and weather/physics coupling. This is no longer an entirely missing surface. |
+| Audio and input | AUDIO-STREAM/PENDING/NESTED and INPUT-BINDINGS/DISPATCH plus the retained short input test cover streams, queue/sample links, nested records, bindings and transient events. | Audibility, AI sound lifecycle, truncated traffic queue, peripherals and unnamed event words. Polling can miss brief events. |
+| Beyond the initial examples | Serializer survey, complete header partition, object raw ranges and loader-fixup findings. Actual player reload changed23addresses while preserving tested IDs/poses. | Unnamed saved fields/subobjects, optional branches and physical-AI reload. Raw copied bytes are not a semantic schema or portable pointers. |
+| Per-candidate metadata and reproducibility | Inventory has1,039unique IDs with required metadata. Current audit checks845evidence paths and127unchanged assets, including the added yard fixture. Exact capture probes, byte reports and raw manifest retain provenance. | Structural checks do not prove each meaning/unit/lifecycle. Unknowns and disk/live differences remain explicit. |
+| Handoff and completion | EXTRACTION-HANDOFF documents build/read-validity assumptions, raw-evidence access and reproduction. Published CHECKPOINT-VALIDATION records checks. | Access recipe is now present; the former missing-handoff statement is obsolete. A scoped review corrected five stale monitor/wheel lifecycle entries; the inventory-wide semantic and objective completion audits remain incomplete. |
+
+## Discovery gaps versus runtime validation
+
+New-surface leads remain in unnamed saved engine subobjects/callback payloads, unresolved extended cab contexts, remote loose-stock enumeration, resistance/force meanings and raw action fields. Loaded loose-stock enumeration now has a positive fixture. Do not count serializer copies or callback aliases as independent quantities merely to grow the catalogue.
+
+Already discovered surfaces need targeted runtime evidence: station boarding/departure, event outcomes, player node/speedpost crossings, AI rephysicalization/reverse cases, wheel-angle/axis interpretation and reset/midnight behavior. A representative forward next-signal transition is now captured. These are not wholly absent candidate families. Further experiments should discriminate a stated uncertainty; repeating unchanged paused values does not close these gaps.
+
+The objective is not satisfied just because the inventory is large or all evidence files exist. Completion also must not be redefined as reversing every executable byte. The final audit must demonstrate a bounded, comprehensive survey of realistically accessible gameplay surfaces, preserve unresolved leads and validate representative player/AI extraction with honest limits.
+
+## Fixture and next work
+
+Latest checkpoint: player coupling and F9 separation complete; see COUPLING-LIFECYCLE-FINDINGS.md and NEW-CHAT-HANDOFF.md. PID33612,Setting Out Westbound Pickup,paused40371.26171875,speed0,one player engine and39loose vehicles. New yard save preserved; both grain saves unchanged. UI activation recovered; the earlier activation failure is historical, not a current blocker.
+
+The five-car cut transitions owner0toPlayerTo0 and player chain1to6to1 while stored physical count stays40. Object identity persists; body pointers alternate. Five incomplete samples show why stable roots/count alone are insufficient. No AI coupling, exact coupler force or remote-stock lifecycle claim. This bounded investigation is complete; major goal remains incomplete and is being paused at the user's request for a new-chat handoff.
+
+No completion or blocked audit passed. Previous wheel checkpoints were concrete progress, and further research is possible.
+
+Safety-monitor follow-up: ENGINE-MONITOR-FINDINGS.md identifies AWS/vigilance/emergency-stop/overspeed state and expected definition links. Positive lead snapshot;trailing/AI links null. Countdown/update and configured action branches traced, including updates before enable gating;diesel interval traced to player scheduler with inherited seconds corroboration;player vigilance countdown/alarm/penalty now validated through UI-enabled capture;other monitor interventions and acknowledgement remain unvalidated. Unnamed slot57a is retained as an explicitly unnamed candidate. Opening runtime capture validates disabled overspeed input updates;vigilance timers remain unchanged,with suppressing caller gates observed after the run.
+
+Alerter command registration/toggle semantics traced. Ctrl+numpad4 attempt did not change gates in1796samples;both suppression globals remained1. The subsequent General Options test successfully enabled the gates after activity restart;do not repeat the failed shortcut unchanged.
+
+UI-enabled Alerter test closes representative player vigilance countdown/intervention gap:1397samples,quarter-step decrements,alarm/action edges,brake pressure response and evaluation code2. Original option restored and verified after activity reload.
+
+Wheel-matrix runtime follow-up:two280sample captures confirm moving stored matrices and paused stability for representative player/AI type4/type5 vehicles. Wagon context reread differences are retained;no exact angle/world-pose claim.
+
+Body accumulator follow-up: guarded paused snapshot covers23player and22AI vehicles. Player forces nonzero,AI forces zero despite nonzero velocity;alltorques zero. Native resistance path adds into the shared force accumulator,so no dedicated resistance-force measurement is claimed. Moving cadence,decomposition,torque meaning and AI applicability remain open.
+
+Collision-object follow-up adds one structured callback/state candidate:45physical vehicles expose callback402bc6 and unnamed state5. Three mapped targets return zero;fourth has a conditional state2 writer. No collision/damage meaning or live transition established;see COLLISION-CALLBACK-FINDINGS.md.
+
+Collision flags follow-up resolves native CollideFlags/CollideFunction labels and bitmask nature;initializer/parser and save-loader callback reconstruction are traced. Full bit meanings,invocation and live reload transitions remain open. Candidate count unchanged.
+
+Collision point-velocity helper formula and49squared threshold traced;uses the opposite pair body to the object receiving flags2. No relative impact-speed or damage claim. Pair-buffer lifecycle/invocation remain open;candidate count unchanged.
+
+Collision work-buffer discovery adds one structured candidate with reset/rebuild/growth/teardown evidence. Paused header count0/capacity4000;populated records and callback invocation remain unvalidated. It is temporary processing state,not collision history.
+
+Collision post-builder005f952e only updates record bit0x1,no callback calls. Exact generation stub is a JMP despite stored CALL reference;misaligned range retained as rejected navigation evidence. Indirect-entry ownership and populated runtime records remain open.
+
+Preferred-activity emergency stop now captured successfully;diesel brake release,waiting for clearance and successful player passage remain open. See SIGNAL-APPROACH-BRAKING-FINDINGS.md for current controls/state and qualified AI comparison.
+
+Stopped-player signal46 transition0->7 observed at bracketing endpoints while AI passed. Diesel emergency reset reachedSelfLap98%,not release;keyboard decrement remains the verified method. Exact clearance time and player passage remain open.
+
+Diesel brake release now validated with selector/pressure changes. Train rolled backward atIdle and sampledN1current0;negative speed and increasing forward signal distance recorded,then emergency stop. Forward passage remains open.
+
+Emergency monitor acknowledgement and subsequent positive diesel current now observed;see DIESEL-EFFORT-GATE-FINDINGS.md. Earlier rollback cause remains qualified,forward passage still open.

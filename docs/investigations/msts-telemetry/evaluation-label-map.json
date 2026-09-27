@@ -1,0 +1,89 @@
+{
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "resource_path": "C:\\MSTS\\string.dll",
+  "resource_sha256": "3512ee02a388cfcb1e9fc97a5e80e194e0b4cdc088488ee290ab6578d1fda112",
+  "rows": [
+    {
+      "code": 2,
+      "branch": "0x43c361",
+      "resource_id": 1096,
+      "labels": [
+        {
+          "language_id": 1033,
+          "text": "you incurred a penalty brake application."
+        }
+      ]
+    },
+    {
+      "code": 4,
+      "branch": "0x43c380",
+      "resource_id": 1097,
+      "labels": [
+        {
+          "language_id": 1033,
+          "text": "emergency brake applied."
+        }
+      ]
+    },
+    {
+      "code": 8,
+      "branch": "0x43c39c",
+      "resource_id": 1098,
+      "labels": [
+        {
+          "language_id": 1033,
+          "text": "you incurred a penalty power cutout"
+        }
+      ]
+    },
+    {
+      "code": 16,
+      "branch": "0x43c3b8",
+      "resource_id": 1099,
+      "labels": [
+        {
+          "language_id": 1033,
+          "text": "you incurred a penalty engine shutdown."
+        }
+      ]
+    },
+    {
+      "code": 32,
+      "branch": "0x43c3d4",
+      "resource_id": 1100,
+      "labels": [
+        {
+          "language_id": 1033,
+          "text": "you applied the emergency brake"
+        }
+      ]
+    },
+    {
+      "code": 64,
+      "branch": "0x43c3f0",
+      "resource_id": 1120,
+      "labels": [
+        {
+          "language_id": 1033,
+          "text": "left a station while loading passengers"
+        }
+      ]
+    }
+  ],
+  "display_unit_labels": {
+    "1091": [
+      {
+        "language_id": 1033,
+        "text": "mile"
+      }
+    ],
+    "1092": [
+      {
+        "language_id": 1033,
+        "text": "km"
+      }
+    ]
+  },
+  "live_dispatch_bytes_match": true,
+  "limitations": "Installed English resources and selected switch bytes only; no proof of new event emission or all code producers."
+}

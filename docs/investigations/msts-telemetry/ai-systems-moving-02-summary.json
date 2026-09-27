@@ -1,0 +1,228 @@
+{
+  "capture": "ai-systems-moving-02",
+  "samples": 1097,
+  "errors": 0,
+  "clock_crossings": 318,
+  "trains": [
+    {
+      "id": 400007,
+      "is_player": true,
+      "samples": 1097,
+      "car_counts": [
+        23
+      ],
+      "speed": [
+        5.489932060241699,
+        9.890128135681152
+      ],
+      "service": {
+        "speed": [
+          5.489932060241699,
+          9.890128135681152
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "acceleration": [
+          0.00827226135879755,
+          0.09360102564096451
+        ]
+      },
+      "unstable_trains": 0,
+      "unstable_cars": 2306,
+      "car_fields": {
+        "0x1bc": [
+          5.487812042236328,
+          9.9082612991333
+        ],
+        "0x1c0": [
+          -2.0651485919952393,
+          3.9472763538360596
+        ],
+        "0x198": [
+          0.0,
+          0.0
+        ],
+        "0x19c": [
+          0.0,
+          0.0
+        ],
+        "0x224": [
+          90.0,
+          90.0
+        ],
+        "0x228": [
+          90.0,
+          90.0
+        ],
+        "0x22c": [
+          0.0,
+          0.0
+        ],
+        "0x230": [
+          0.0,
+          0.0
+        ],
+        "0x234": [
+          90.0,
+          90.0
+        ],
+        "0x238": [
+          90.0,
+          90.0
+        ],
+        "0x268": [
+          0.0,
+          0.0
+        ]
+      },
+      "powered_fields": {
+        "0x29e": [
+          82642.3671875,
+          148709.25
+        ],
+        "0x2a2": [
+          1274608.875,
+          1274608.875
+        ],
+        "0x2c2": [
+          0.0,
+          411.3988342285156
+        ]
+      },
+      "flags84": [
+        0
+      ]
+    },
+    {
+      "id": 400005,
+      "is_player": false,
+      "samples": 1075,
+      "car_counts": [
+        22
+      ],
+      "speed": [
+        14.959239959716797,
+        24.81072235107422
+      ],
+      "service": {
+        "speed": [
+          14.959242820739746,
+          24.810718536376953
+        ],
+        "target": [
+          14.959242820739746,
+          24.810718536376953
+        ],
+        "acceleration": [
+          -9.536681175231934,
+          0.5721225142478943
+        ]
+      },
+      "unstable_trains": 0,
+      "unstable_cars": 3390,
+      "car_fields": {
+        "0x1bc": [
+          14.959242820739746,
+          24.810718536376953
+        ],
+        "0x1c0": [
+          0.0,
+          0.0
+        ],
+        "0x198": [
+          0.0,
+          0.0
+        ],
+        "0x19c": [
+          0.0,
+          0.0
+        ],
+        "0x224": [
+          90.0,
+          90.0
+        ],
+        "0x228": [
+          90.0,
+          90.0
+        ],
+        "0x22c": [
+          0.0,
+          0.0
+        ],
+        "0x230": [
+          0.0,
+          0.0
+        ],
+        "0x234": [
+          90.0,
+          90.0
+        ],
+        "0x238": [
+          90.0,
+          90.0
+        ],
+        "0x268": [
+          0.0,
+          0.0
+        ]
+      },
+      "powered_fields": {
+        "0x29e": [
+          0.0,
+          0.0
+        ],
+        "0x2a2": [
+          0.0,
+          0.0
+        ],
+        "0x2c2": [
+          0.0,
+          0.0
+        ]
+      },
+      "flags84": [
+        2,
+        6,
+        1048578,
+        1048582
+      ]
+    }
+  ],
+  "paused_samples": 666,
+  "sim_time_range": [
+    73856.3046875,
+    73903.4375
+  ],
+  "ai_stable_subset": [
+    {
+      "id": 400005,
+      "car_observations": 20260,
+      "powered_observations": 1884,
+      "brake_force": [
+        0.0,
+        0.0
+      ],
+      "cylinder_pressure": [
+        0.0,
+        0.0
+      ],
+      "powered_fields": {
+        "0x29e": [
+          0.0,
+          0.0
+        ],
+        "0x2a2": [
+          0.0,
+          0.0
+        ],
+        "0x2c2": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "limitations": "Ranges combine vehicles and samples; not per-car transitions. Sequential reads, not atomic. Stability failure combines owner/definition/body checks and cannot uniquely diagnose a lifecycle change. No inference that zero/unmoving fields mean actual zero force or pressure."
+}

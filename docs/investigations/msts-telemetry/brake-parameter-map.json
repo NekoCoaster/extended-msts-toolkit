@@ -1,0 +1,504 @@
+{
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "sim_time": 36308.75,
+  "paused": 1,
+  "entries": [
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a1",
+      "label": "TripleValveRatio",
+      "table_entry": "0x795790",
+      "parser_target": "0x615c89",
+      "definition_offset": "0x944"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a2",
+      "label": "MaxReleaseRate",
+      "table_entry": "0x795798",
+      "parser_target": "0x615cce",
+      "definition_offset": "0x948"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a3",
+      "label": "MaxApplicationRate",
+      "table_entry": "0x7957a0",
+      "parser_target": "0x615d14",
+      "definition_offset": "0x94c"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a4",
+      "label": "MaxAuxilaryChargingRate",
+      "table_entry": "0x7957a8",
+      "parser_target": "0x615d5a",
+      "definition_offset": "0x950"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a5",
+      "label": "EmergencyResCapacity",
+      "table_entry": "0x7957b0",
+      "parser_target": "0x615d9f",
+      "definition_offset": "0x95c"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a6",
+      "label": "EmergencyResChargingRate",
+      "table_entry": "0x7957b8",
+      "parser_target": "0x615de5",
+      "definition_offset": "0x960"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a7",
+      "label": "RetainingValveSlowReleaseRate",
+      "table_entry": "0x7957c0",
+      "parser_target": "0x615e2b",
+      "definition_offset": "0x964"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a8",
+      "label": "BrakeCylinderPressureForMaxBrakeBrakeForce",
+      "table_entry": "0x7957c8",
+      "parser_target": "0x615e70",
+      "definition_offset": "0x954"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401a9",
+      "label": "EmergencyResVolumeMultiplier",
+      "table_entry": "0x7957d0",
+      "parser_target": "0x615eb6",
+      "definition_offset": "0x968"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401aa",
+      "label": "BrakeDistributorFullServicePressure",
+      "table_entry": "0x7957d8",
+      "parser_target": "0x615efc",
+      "definition_offset": "0x96c"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401ab",
+      "label": "BrakeDistributorEmergencyApplicationPressure",
+      "table_entry": "0x7957e0",
+      "parser_target": "0x615f3f",
+      "definition_offset": "0x970"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401ac",
+      "label": "BrakeDistributorMaxAuxilaryResPressure",
+      "table_entry": "0x7957e8",
+      "parser_target": "0x615f82",
+      "definition_offset": "0x974"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401ad",
+      "label": "BrakeDistributorEmergencyResPressure",
+      "table_entry": "0x7957f0",
+      "parser_target": "0x615fc5",
+      "definition_offset": "0x978"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401ae",
+      "label": "BrakeDistributorReleaseRate",
+      "table_entry": "0x7957f8",
+      "parser_target": "0x616008",
+      "definition_offset": "0x97c"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401af",
+      "label": "BrakeDistributorApplicationRate",
+      "table_entry": "0x795800",
+      "parser_target": "0x61604b",
+      "definition_offset": "0x980"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b0",
+      "label": "BrakeDistributorEmergencyApplicationRate",
+      "table_entry": "0x795808",
+      "parser_target": "0x61608e",
+      "definition_offset": "0x984"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b1",
+      "label": "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication",
+      "table_entry": "0x795810",
+      "parser_target": "0x61615f",
+      "definition_offset": "0x988"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b2",
+      "label": "BrakeDistributorTrainPipeControlRatio",
+      "table_entry": "0x795818",
+      "parser_target": "0x6161a4",
+      "definition_offset": "0x98c"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b3",
+      "label": "BrakeDistributorNormalFullReleasePressure",
+      "table_entry": "0x795820",
+      "parser_target": "0x6161ea",
+      "definition_offset": "0x990"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b4",
+      "label": "MaxBrakeCylinderPressure",
+      "table_entry": "0x795828",
+      "parser_target": "0x6160d3",
+      "definition_offset": "0x994"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b5",
+      "label": "BrakeAirPressureGainInResForOnePoundFromPipe",
+      "table_entry": "0x795830",
+      "parser_target": "0x616119",
+      "definition_offset": "0x958"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b6",
+      "label": "BrakeAuxilaryResPressure",
+      "table_entry": "0x795838",
+      "parser_target": "0x616230",
+      "definition_offset": "0x998"
+    },
+    {
+      "parser_destination_bytes_verified": 29,
+      "token": "0x401b7",
+      "label": "BrakeEmergencyResPressure",
+      "table_entry": "0x795840",
+      "parser_target": "0x616275",
+      "definition_offset": "0x99c"
+    }
+  ],
+  "trains": [
+    {
+      "address": 53894216,
+      "is_player": true,
+      "cars": [
+        {
+          "address": 54492752,
+          "definition": 53937136,
+          "powered": true,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 20.0,
+            "MaxApplicationRate": 20.0,
+            "MaxAuxilaryChargingRate": 30.0,
+            "EmergencyResCapacity": 10.0,
+            "EmergencyResChargingRate": 30.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 70.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 82.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 110.0,
+            "BrakeDistributorEmergencyResPressure": 110.0,
+            "BrakeDistributorReleaseRate": 10.0,
+            "BrakeDistributorApplicationRate": 15.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.37179565429688,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        },
+        {
+          "address": 53943232,
+          "definition": 54508532,
+          "powered": false,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 15.0,
+            "MaxApplicationRate": 15.0,
+            "MaxAuxilaryChargingRate": 15.0,
+            "EmergencyResCapacity": 7.0,
+            "EmergencyResChargingRate": 15.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 50.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 82.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 110.0,
+            "BrakeDistributorEmergencyResPressure": 110.0,
+            "BrakeDistributorReleaseRate": 10.0,
+            "BrakeDistributorApplicationRate": 15.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.308349609375,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        },
+        {
+          "address": 53942564,
+          "definition": 54531812,
+          "powered": false,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 15.0,
+            "MaxApplicationRate": 15.0,
+            "MaxAuxilaryChargingRate": 15.0,
+            "EmergencyResCapacity": 7.0,
+            "EmergencyResChargingRate": 15.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 50.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 50.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 70.0,
+            "BrakeDistributorEmergencyResPressure": 100.0,
+            "BrakeDistributorReleaseRate": 25.0,
+            "BrakeDistributorApplicationRate": 20.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.308349609375,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        },
+        {
+          "address": 54462016,
+          "definition": 54528720,
+          "powered": false,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 15.0,
+            "MaxApplicationRate": 15.0,
+            "MaxAuxilaryChargingRate": 15.0,
+            "EmergencyResCapacity": 7.0,
+            "EmergencyResChargingRate": 15.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 50.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 82.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 110.0,
+            "BrakeDistributorEmergencyResPressure": 110.0,
+            "BrakeDistributorReleaseRate": 10.0,
+            "BrakeDistributorApplicationRate": 15.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.308349609375,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        },
+        {
+          "address": 54492076,
+          "definition": 54508532,
+          "powered": false,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 15.0,
+            "MaxApplicationRate": 15.0,
+            "MaxAuxilaryChargingRate": 15.0,
+            "EmergencyResCapacity": 7.0,
+            "EmergencyResChargingRate": 15.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 50.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 82.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 110.0,
+            "BrakeDistributorEmergencyResPressure": 110.0,
+            "BrakeDistributorReleaseRate": 10.0,
+            "BrakeDistributorApplicationRate": 15.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.308349609375,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        },
+        {
+          "address": 54523112,
+          "definition": 54531812,
+          "powered": false,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 15.0,
+            "MaxApplicationRate": 15.0,
+            "MaxAuxilaryChargingRate": 15.0,
+            "EmergencyResCapacity": 7.0,
+            "EmergencyResChargingRate": 15.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 50.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 50.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 70.0,
+            "BrakeDistributorEmergencyResPressure": 100.0,
+            "BrakeDistributorReleaseRate": 25.0,
+            "BrakeDistributorApplicationRate": 20.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.308349609375,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        },
+        {
+          "address": 54522444,
+          "definition": 54546876,
+          "powered": false,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 15.0,
+            "MaxApplicationRate": 15.0,
+            "MaxAuxilaryChargingRate": 15.0,
+            "EmergencyResCapacity": 7.0,
+            "EmergencyResChargingRate": 15.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 50.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 82.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 110.0,
+            "BrakeDistributorEmergencyResPressure": 110.0,
+            "BrakeDistributorReleaseRate": 10.0,
+            "BrakeDistributorApplicationRate": 15.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.308349609375,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        },
+        {
+          "address": 54575228,
+          "definition": 53937136,
+          "powered": true,
+          "parameters": {
+            "TripleValveRatio": 2.5,
+            "MaxReleaseRate": 20.0,
+            "MaxApplicationRate": 20.0,
+            "MaxAuxilaryChargingRate": 30.0,
+            "EmergencyResCapacity": 10.0,
+            "EmergencyResChargingRate": 30.0,
+            "RetainingValveSlowReleaseRate": 15.0,
+            "BrakeCylinderPressureForMaxBrakeBrakeForce": 70.0,
+            "EmergencyResVolumeMultiplier": 1.5,
+            "BrakeDistributorFullServicePressure": 82.0,
+            "BrakeDistributorEmergencyApplicationPressure": 70.0,
+            "BrakeDistributorMaxAuxilaryResPressure": 110.0,
+            "BrakeDistributorEmergencyResPressure": 110.0,
+            "BrakeDistributorReleaseRate": 10.0,
+            "BrakeDistributorApplicationRate": 15.0,
+            "BrakeDistributorEmergencyApplicationRate": 40.0,
+            "BrakeDistributorTrainPipeAuxResPressureDifferenceForApplication": 2.0,
+            "BrakeDistributorTrainPipeControlRatio": 2.0299999713897705,
+            "BrakeDistributorNormalFullReleasePressure": 110.0,
+            "MaxBrakeCylinderPressure": 0.0,
+            "BrakeAirPressureGainInResForOnePoundFromPipe": 0.30000001192092896,
+            "BrakeAuxilaryResPressure": 0.0,
+            "BrakeEmergencyResPressure": 0.0
+          },
+          "raw_pressures": {
+            "0x224": 93.308349609375,
+            "0x228": 110.0,
+            "0x230": 30.788328170776367,
+            "0x234": 70.0,
+            "0x238": 94.83333587646484
+          },
+          "owner_stable": true
+        }
+      ]
+    }
+  ],
+  "limitations": "Labels and selected parser data match disk/live. Units follow named pressure/rate semantics; unit conversion helper not revalidated. Configuration may be defaulted. No AI in this snapshot; no universal brake-type applicability."
+}

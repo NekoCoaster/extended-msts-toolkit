@@ -1,0 +1,15 @@
+{
+  "pid": 33612,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "disable_thunk": {
+    "address": "0x4033e6",
+    "bytes": "e94ec42000",
+    "target": "0x60f839"
+  },
+  "current_multiplier": {
+    "address": "0x771430",
+    "bytes": "5c8f823f",
+    "float32": 1.0199999809265137
+  },
+  "limitation": "Selected thunk and constant only; does not establish a native subsystem name or live trip."
+}

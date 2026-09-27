@@ -1,0 +1,488 @@
+{
+  "captures": {
+    "vehicle-motion-running-01": {
+      "source_sha256": "89497ac308936d23c19afac59569c0077470732f8fd1629ec55ec1afb547f3e7",
+      "error_rows": 0,
+      "trains": {
+        "400007": {
+          "is_player": true,
+          "eligible_pairs": 4546,
+          "rejected_pairs": 3711,
+          "cross_clock_pairs": 1064,
+          "changed_forward_with_zero_omega": 0,
+          "same_clock_changed_forward_with_zero_omega": 0,
+          "linear": {
+            "min": 0.0,
+            "median": 1.2446504906859105e-10,
+            "p95": 4.36055242708983e-10,
+            "max": 8.57031920221504e-10
+          },
+          "angular": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "speed": {
+            "min": 0.0,
+            "median": 1.2446504906859105e-10,
+            "p95": 4.36055242708983e-10,
+            "max": 8.57031920221504e-10
+          },
+          "omega": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "same_clock_linear": {
+            "min": 0.0,
+            "median": 1.2465800756974826e-10,
+            "p95": 4.3172383635598276e-10,
+            "max": 8.253602403933298e-10
+          },
+          "same_clock_angular": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "wall_linear": {
+            "min": 0.0,
+            "median": 1.2446504906859105e-10,
+            "p95": 4.36055242708983e-10,
+            "max": 8.57031920221504e-10
+          },
+          "sim_to_wall_ratio": {
+            "min": 0.9677247924345176,
+            "median": 0.9995344169306088,
+            "p95": 1.0153656755231135,
+            "max": 1.04588266651881
+          },
+          "worst_linear": {
+            "error": 8.57031920221504e-10,
+            "car": 59727788,
+            "time0": 74642.6796875,
+            "time1": 74643.171875,
+            "dt": 0.4921875,
+            "wall_dt": 0.5005283000064082,
+            "finite_difference_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mean_velocity": [
+              6.001085739448797e-10,
+              2.2370522968773177e-11,
+              -6.114515282984456e-10
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_clock": false,
+            "displacement_norm": 0.0
+          },
+          "worst_angular": {
+            "error": 0.0,
+            "car": 59208188,
+            "time0": 74600.65625,
+            "time1": 74601.1640625,
+            "dt": 0.5078125,
+            "wall_dt": 0.500096499978099,
+            "finite_difference_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mean_velocity": [
+              -8.069972814994664e-11,
+              -1.3878075934541795e-12,
+              6.863383819610824e-11
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_clock": true,
+            "displacement_norm": 0.0
+          }
+        }
+      }
+    },
+    "vehicle-motion-ai-01": {
+      "source_sha256": "3f632238bda3a39396a984db5607aec493dec168d5c7c1d834fccde8bb97bfbc",
+      "error_rows": 0,
+      "trains": {
+        "400007": {
+          "is_player": true,
+          "eligible_pairs": 5715,
+          "rejected_pairs": 5302,
+          "cross_clock_pairs": 2525,
+          "changed_forward_with_zero_omega": 0,
+          "same_clock_changed_forward_with_zero_omega": 0,
+          "linear": {
+            "min": 0.0,
+            "median": 1.2581632959530152e-10,
+            "p95": 4.744966577153023e-10,
+            "max": 8.25498856713381e-10
+          },
+          "angular": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "speed": {
+            "min": 0.0,
+            "median": 1.2581632959530152e-10,
+            "p95": 4.744966577153023e-10,
+            "max": 8.25498856713381e-10
+          },
+          "omega": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "same_clock_linear": {
+            "min": 0.0,
+            "median": 1.266519763806751e-10,
+            "p95": 4.778926004420614e-10,
+            "max": 8.25498856713381e-10
+          },
+          "same_clock_angular": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "wall_linear": {
+            "min": 0.0,
+            "median": 1.2581632959530152e-10,
+            "p95": 4.744966577153023e-10,
+            "max": 8.25498856713381e-10
+          },
+          "sim_to_wall_ratio": {
+            "min": 0.9680497128021305,
+            "median": 0.9992263988476949,
+            "p95": 1.0150742207880221,
+            "max": 1.0305811528977808
+          },
+          "worst_linear": {
+            "error": 8.25498856713381e-10,
+            "car": 61142072,
+            "time0": 74009.5234375,
+            "time1": 74010.0234375,
+            "dt": 0.5,
+            "wall_dt": 0.5002836000057869,
+            "finite_difference_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mean_velocity": [
+              6.287526332915405e-10,
+              1.2976245945817144e-11,
+              -5.347430276358978e-10
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_clock": true,
+            "displacement_norm": 0.0
+          },
+          "worst_angular": {
+            "error": 0.0,
+            "car": 59306424,
+            "time0": 73852.40625,
+            "time1": 73852.90625,
+            "dt": 0.5,
+            "wall_dt": 0.5004596000071615,
+            "finite_difference_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "mean_velocity": [
+              3.0047426352597384e-11,
+              2.3687773747713137e-13,
+              -2.55542219329552e-11
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_clock": true,
+            "displacement_norm": 0.0
+          }
+        },
+        "400005": {
+          "is_player": false,
+          "eligible_pairs": 4673,
+          "rejected_pairs": 5249,
+          "cross_clock_pairs": 1945,
+          "changed_forward_with_zero_omega": 3875,
+          "same_clock_changed_forward_with_zero_omega": 2266,
+          "linear": {
+            "min": 5.068848520629239e-06,
+            "median": 0.0016580540860594954,
+            "p95": 0.6613791419828415,
+            "max": 1.0076479960140265
+          },
+          "angular": {
+            "min": 0.0,
+            "median": 1.8054911037932035e-05,
+            "p95": 0.08304149792108641,
+            "max": 0.15053142440354886
+          },
+          "speed": {
+            "min": 14.955234545614402,
+            "median": 17.636144336312665,
+            "p95": 24.81071769571167,
+            "max": 24.810720067961512
+          },
+          "omega": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "same_clock_linear": {
+            "min": 5.068848520629239e-06,
+            "median": 0.0004038639415772034,
+            "p95": 0.15586328759011434,
+            "max": 0.9809316163310808
+          },
+          "same_clock_angular": {
+            "min": 0.0,
+            "median": 1.746854044687585e-05,
+            "p95": 0.08303449100259852,
+            "max": 0.14913216855261172
+          },
+          "wall_linear": {
+            "min": 0.0015083261845554058,
+            "median": 0.0328306454074962,
+            "p95": 0.40823167575072855,
+            "max": 0.987555941758917
+          },
+          "sim_to_wall_ratio": {
+            "min": 0.9677688758786377,
+            "median": 0.9992445711683573,
+            "p95": 1.015167565439132,
+            "max": 1.0305811528977808
+          },
+          "worst_linear": {
+            "error": 1.0076479960140265,
+            "car": 67277328,
+            "time0": 73907.4453125,
+            "time1": 73907.9375,
+            "dt": 0.4921875,
+            "wall_dt": 0.5003800000413321,
+            "finite_difference_velocity": [
+              -16.460069444444443,
+              0.0,
+              19.89105902777778
+            ],
+            "mean_velocity": [
+              -15.817758083343506,
+              0.0,
+              19.114663124084473
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              -5.534338572668651e-05,
+              0.0,
+              -4.57763671875e-05
+            ],
+            "same_clock": false,
+            "displacement_norm": 12.707477896857606
+          },
+          "worst_angular": {
+            "error": 0.15053142440354886,
+            "car": 67276400,
+            "time0": 73905.9453125,
+            "time1": 73906.4375,
+            "dt": 0.4921875,
+            "wall_dt": 0.5002978999982588,
+            "finite_difference_velocity": [
+              -10.560019841269842,
+              0.0,
+              22.370907738095237
+            ],
+            "mean_velocity": [
+              -10.549263954162598,
+              0.0,
+              22.35093116760254
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              -0.13613794720362102,
+              0.0,
+              -0.06423526340060765
+            ],
+            "same_clock": false,
+            "displacement_norm": 12.175763105544766
+          }
+        }
+      }
+    },
+    "vehicle-motion-restart-01": {
+      "source_sha256": "f007b0e8653aedbb84e6a10a392da10d8f40d8f1a5af28d3d132894e84e35e73",
+      "error_rows": 0,
+      "trains": {
+        "400007": {
+          "is_player": true,
+          "eligible_pairs": 4484,
+          "rejected_pairs": 3543,
+          "cross_clock_pairs": 859,
+          "changed_forward_with_zero_omega": 2881,
+          "same_clock_changed_forward_with_zero_omega": 2339,
+          "linear": {
+            "min": 7.361659339960975e-13,
+            "median": 3.8621389630964598,
+            "p95": 6.9187413612350195,
+            "max": 8.572566577108294
+          },
+          "angular": {
+            "min": 0.0,
+            "median": 1.5407432118998302e-05,
+            "p95": 0.01606776901623828,
+            "max": 0.021325136425688406
+          },
+          "speed": {
+            "min": 7.361659339960975e-13,
+            "median": 6.368782493777105,
+            "p95": 10.142782098947022,
+            "max": 11.25650970125103
+          },
+          "omega": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "same_clock_linear": {
+            "min": 7.361659339960975e-13,
+            "median": 3.8570894236248283,
+            "p95": 6.811423049494104,
+            "max": 8.572566577108294
+          },
+          "same_clock_angular": {
+            "min": 0.0,
+            "median": 1.5407104658365043e-05,
+            "p95": 0.015922533749455188,
+            "max": 0.01990783213029706
+          },
+          "wall_linear": {
+            "min": 7.361659339960975e-13,
+            "median": 3.930418095722805,
+            "p95": 6.878594802525333,
+            "max": 8.835120289855142
+          },
+          "sim_to_wall_ratio": {
+            "min": 0.8979974812289792,
+            "median": 1.0135462167505287,
+            "p95": 1.0524678451986336,
+            "max": 1.169124051188532
+          },
+          "worst_linear": {
+            "error": 8.572566577108294,
+            "car": 59306424,
+            "time0": 73800.8359375,
+            "time1": 73801.0390625,
+            "dt": 0.203125,
+            "wall_dt": 0.20047059998614714,
+            "finite_difference_velocity": [
+              15.103064903846153,
+              0.3112980769230769,
+              -12.844951923076923
+            ],
+            "mean_velocity": [
+              8.573692321777344,
+              0.1769111081957817,
+              -7.29174280166626
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_clock": true,
+            "displacement_norm": 4.0277811181999565
+          },
+          "worst_angular": {
+            "error": 0.021325136425688406,
+            "car": 59611728,
+            "time0": 73802.234375,
+            "time1": 73802.4375,
+            "dt": 0.203125,
+            "wall_dt": 0.20028270001057535,
+            "finite_difference_velocity": [
+              14.024188701923077,
+              0.39242788461538464,
+              -12.070913461538462
+            ],
+            "mean_velocity": [
+              8.136461734771729,
+              0.2623700276017189,
+              -6.995521306991577
+            ],
+            "mean_angular_velocity": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "forward_derivative": [
+              0.010904752291165866,
+              -0.01370225502894475,
+              0.012169471153846154
+            ],
+            "same_clock": false,
+            "displacement_norm": 3.759397749428675
+          }
+        }
+      }
+    }
+  },
+  "method": "Adjacent successful rows only;0<dt<=1s;both unpaused,not derailed,stable body reads,same train address/car address/definition/links. Compare position difference/dt with mean linear velocity,and forward-vector difference/dt with mean angular velocity cross mean forward vector. Same-clock subset reported separately. No outlier clipping.",
+  "limitations": "Finite samples,phase/order and origin shifts can create discrepancies. Stable pointers/clock do not prove atomicity or exclude reuse. Body pointer identity itself may swap and is not required equal across samples. This tests consistency,not causation,accuracy bounds or a native derivative guarantee. Missing definition400/414 prevents endpoint reconstruction;no coupling validation."
+}

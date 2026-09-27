@@ -1,0 +1,18 @@
+{
+  "path": "C:\\MSTS\\GLOBAL\\diesel.txt",
+  "sha256": "cba2de360f7743c27df4433d2b7f99281207c2442e0345a0c93329c3e08eebd6",
+  "bindings": [
+    {
+      "line": 25,
+      "text": "       io_map ( QUOTE           \"BrakeTrainInc\"                        ALL_UP )"
+    },
+    {
+      "line": 26,
+      "text": "       io_map ( SEMICOLON       \"BrakeTrainDec\"                        ALL_UP )"
+    },
+    {
+      "line": 46,
+      "text": "       io_map (BACKSPACE       \"EmergencyStopToggle\"                   ALL_UP )"
+    }
+  ]
+}

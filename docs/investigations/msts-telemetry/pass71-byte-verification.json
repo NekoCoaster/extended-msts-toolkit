@@ -1,0 +1,100 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass71",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00451d30",
+      "instructions": 38,
+      "bytes": 134,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00451f29",
+      "instructions": 104,
+      "bytes": 413,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0048fdd0",
+      "instructions": 156,
+      "bytes": 751,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "0048fdd6",
+          "expected": "e88638f7ff",
+          "actual": "e8e6d63a02"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "004932c0",
+      "instructions": 31,
+      "bytes": 108,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004937bf",
+      "instructions": 904,
+      "bytes": 4241,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "00494850",
+      "instructions": 1512,
+      "bytes": 6990,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "00494bc1",
+          "expected": "e891c7f6ff",
+          "actual": "e82e573a02"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "0049ea7c",
+      "instructions": 30,
+      "bytes": 105,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0049f73c",
+      "instructions": 545,
+      "bytes": 1639,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004a521d",
+      "instructions": 19,
+      "bytes": 57,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "004a7522",
+      "instructions": 50,
+      "bytes": 174,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

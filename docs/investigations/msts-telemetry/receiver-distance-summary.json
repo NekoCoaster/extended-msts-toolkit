@@ -1,0 +1,236 @@
+{
+  "rows": [
+    {
+      "handle": 6166,
+      "label": "AcelaEng.sms",
+      "skipped": false,
+      "stored": 61.81269073486328,
+      "reconstructed": 61.81269073486328,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6167,
+      "label": "AcelaWag.sms",
+      "skipped": false,
+      "stored": 953.582763671875,
+      "reconstructed": 953.5827026367188,
+      "absolute_error": 6.103515625e-05
+    },
+    {
+      "handle": 6168,
+      "label": "AcelaWag.sms",
+      "skipped": false,
+      "stored": 3235.85009765625,
+      "reconstructed": 3235.85009765625,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6169,
+      "label": "AcelaWag.sms",
+      "skipped": false,
+      "stored": 6963.7001953125,
+      "reconstructed": 6963.70068359375,
+      "absolute_error": 0.00048828125
+    },
+    {
+      "handle": 6170,
+      "label": "AcelaWag.sms",
+      "skipped": false,
+      "stored": 12106.6337890625,
+      "reconstructed": 12106.6337890625,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6171,
+      "label": "AcelaWag.sms",
+      "skipped": false,
+      "stored": 18528.1796875,
+      "reconstructed": 18528.177734375,
+      "absolute_error": 0.001953125
+    },
+    {
+      "handle": 6172,
+      "label": "AcelaWag.sms",
+      "skipped": false,
+      "stored": 26312.30078125,
+      "reconstructed": 26312.30078125,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6173,
+      "label": "AcelaEng.sms",
+      "skipped": false,
+      "stored": 34564.625,
+      "reconstructed": 34564.625,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6174,
+      "label": "USATrack0Ex.sms",
+      "skipped": false,
+      "stored": 14.786498069763184,
+      "reconstructed": 14.7864990234375,
+      "absolute_error": 9.5367431640625e-07
+    },
+    {
+      "handle": 6175,
+      "label": "USATrack0In.sms",
+      "skipped": false,
+      "stored": 14.786498069763184,
+      "reconstructed": 14.7864990234375,
+      "absolute_error": 9.5367431640625e-07
+    },
+    {
+      "handle": 6225,
+      "label": "AcelaPas.sms",
+      "skipped": false,
+      "stored": 3235.85009765625,
+      "reconstructed": 3235.85009765625,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6226,
+      "label": "AcelaCab.sms",
+      "skipped": false,
+      "stored": 61.81269073486328,
+      "reconstructed": 61.81269073486328,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6228,
+      "label": "clear_in.sms",
+      "skipped": false,
+      "stored": 409319.09375,
+      "reconstructed": 409319.09375,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6229,
+      "label": "clear_ex.sms",
+      "skipped": false,
+      "stored": 409319.09375,
+      "reconstructed": 409319.09375,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 6230,
+      "label": "ingame.sms",
+      "skipped": true,
+      "stored": 0.0,
+      "reconstructed": 409319.09375,
+      "absolute_error": 409319.09375
+    },
+    {
+      "handle": 5827,
+      "label": "sta_dc_lite2.sms",
+      "skipped": false,
+      "stored": 4546492.5,
+      "reconstructed": 4546492.5,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 5828,
+      "label": "gen_dc_ind1.sms",
+      "skipped": false,
+      "stored": 2950211.5,
+      "reconstructed": 2950211.5,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 5829,
+      "label": "sta_dc_ful2.sms",
+      "skipped": false,
+      "stored": 8592.908203125,
+      "reconstructed": 8592.908203125,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 5423,
+      "label": "gen_dc_res2.sms",
+      "skipped": false,
+      "stored": 286927.0,
+      "reconstructed": 286927.0,
+      "absolute_error": 0.0
+    },
+    {
+      "handle": 5424,
+      "label": "gen_dc_ind1.sms",
+      "skipped": false,
+      "stored": 4881139.0,
+      "reconstructed": 4881139.5,
+      "absolute_error": 0.5
+    }
+  ],
+  "assets": [
+    {
+      "path": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\SOUND\\acelacab.sms",
+      "sha256": "a45db497c4d6d83d92702c68e64a6708e566628e2c1916992027561fe01a6aa1",
+      "distance_declarations": [
+        "100",
+        "100",
+        "100",
+        "100",
+        "100",
+        "100"
+      ],
+      "stream_count_declarations": [
+        "9",
+        "7",
+        "4"
+      ],
+      "limitations": "All literal occurrences; not a scalability-group resolver or full SMS parser."
+    },
+    {
+      "path": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\SOUND\\acelaeng.sms",
+      "sha256": "b3dbe3efb627ec6a9f843e65d329c6c19a4e4722861cd4e4a6a94cb4bd85b812",
+      "distance_declarations": [
+        "1000",
+        "1000",
+        "1000",
+        "1000",
+        "1000",
+        "1000",
+        "500",
+        "500"
+      ],
+      "stream_count_declarations": [
+        "8",
+        "6",
+        "3",
+        "1"
+      ],
+      "limitations": "All literal occurrences; not a scalability-group resolver or full SMS parser."
+    },
+    {
+      "path": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\SOUND\\acelawag.sms",
+      "sha256": "47eca2ad5858c3621a2efe4b7011630fc10dcda7673d277aa72a22918079e420",
+      "distance_declarations": [
+        "55",
+        "55",
+        "55",
+        "55",
+        "55",
+        "55",
+        "55",
+        "55"
+      ],
+      "stream_count_declarations": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "limitations": "All literal occurrences; not a scalability-group resolver or full SMS parser."
+    },
+    {
+      "path": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\SOUND\\acelapas.sms",
+      "sha256": "a1e46ebca572dfe6e0e2c54e349bfb1a9d4af57d7f7a9583a79a978494bbddef",
+      "distance_declarations": [],
+      "stream_count_declarations": [
+        "1"
+      ],
+      "limitations": "All literal occurrences; not a scalability-group resolver or full SMS parser."
+    }
+  ],
+  "limitations": "Float32 coordinate differences, then double sum and float32 rounding approximate native x87 path. Snapshot only; not moving accuracy or global coordinate-origin validation."
+}

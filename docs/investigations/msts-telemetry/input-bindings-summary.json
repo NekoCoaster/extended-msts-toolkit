@@ -1,0 +1,44 @@
+{
+  "source": "captures\\input-bindings-paused-01\\input.json",
+  "sha256": "198fbebecdcc55c4733f0993560c8db604440c6c3539ce2a03fac55b5af42708",
+  "time": 74360.5859375,
+  "paused": 1,
+  "mode": 0,
+  "device_kinds": [
+    2,
+    1
+  ],
+  "keyboards": [
+    {
+      "count": 238,
+      "bitset_bytes": 30,
+      "held_indices": [],
+      "stable_bits": true,
+      "stable_device": true
+    }
+  ],
+  "retained_bindings": 73,
+  "bindings_with_action": 6,
+  "unique_actions": 5,
+  "listener_references": 6,
+  "unique_listeners": 5,
+  "unique_targets": 1,
+  "callback_references": 6,
+  "destination_references": 0,
+  "binding_reread_changes": 0,
+  "action_reread_changes": 0,
+  "listener_reread_changes": 0,
+  "stable_list": true,
+  "provenance": {
+    "repository": "C:\\codex\\repo\\NEMT",
+    "commit": "5cd5896cfa22a3752328176d65b1db5608ee9471",
+    "files": {
+      "runtime/crawl_controls.h": "b48c2f987f4730829a6946fa1273aea75bd9881cf529b899700eb9eeb068e977",
+      "runtime/editor_keyboard.h": "df6be215e17d1caae2dbbcda3fa86407685962e8d39ebbc6adb7cb656be22145",
+      "docs/technical/physics.md": "a7ab95592f0b942eaf0c426665ca6f76d765f52f04a2ae2f6cac3e2e5ea90e02",
+      "docs/technical/editors.md": "1dbcf92387a154f9ccd6a10ad1bd9a22a8394de9e1f67c8638602cc4b66cbca7"
+    },
+    "status": ""
+  },
+  "limitations": "Paused zero-held snapshot does not validate key presses/releases or dispatch. Native layout reused from pinned NEMT source; helper bytes match current image. Counts can include several references to the same action/listener. No UI input or global OS keyboard read."
+}

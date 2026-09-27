@@ -1,0 +1,348 @@
+{
+  "capture": "monitor-alerter-toggle-01",
+  "samples": 1796,
+  "errors": 0,
+  "unstable_context": 0,
+  "paused_samples": 1421,
+  "day_range": [
+    73832.0546875,
+    73861.3828125
+  ],
+  "physics_range": [
+    38.12443542480469,
+    72.72793579101562
+  ],
+  "intervals": [
+    0.25
+  ],
+  "monitors": {
+    "aws": {
+      "fields": {
+        "enable": {
+          "min": 1,
+          "max": 1,
+          "changes": 0,
+          "deltas": {}
+        },
+        "action": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_latch": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "monitor_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "overspeed_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "input": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        }
+      },
+      "unstable_reads": 0,
+      "changes_between_paused_samples": 0
+    },
+    "vigilance": {
+      "fields": {
+        "enable": {
+          "min": 1,
+          "max": 1,
+          "changes": 0,
+          "deltas": {}
+        },
+        "action": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_latch": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "monitor_remaining": {
+          "min": 25.0,
+          "max": 25.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm_remaining": {
+          "min": 17.0,
+          "max": 17.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "overspeed_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "input": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        }
+      },
+      "unstable_reads": 0,
+      "changes_between_paused_samples": 0
+    },
+    "emergency": {
+      "fields": {
+        "enable": {
+          "min": 1,
+          "max": 1,
+          "changes": 0,
+          "deltas": {}
+        },
+        "action": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_latch": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "monitor_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "overspeed_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "input": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        }
+      },
+      "unstable_reads": 0,
+      "changes_between_paused_samples": 0
+    },
+    "unnamed": {
+      "fields": {
+        "enable": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "action": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_latch": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "monitor_remaining": {
+          "min": -1.0,
+          "max": -1.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm_remaining": {
+          "min": -1.0,
+          "max": -1.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_remaining": {
+          "min": -1.0,
+          "max": -1.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "overspeed_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "input": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        }
+      },
+      "unstable_reads": 0,
+      "changes_between_paused_samples": 0
+    },
+    "overspeed": {
+      "fields": {
+        "enable": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "action": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_latch": {
+          "min": 0,
+          "max": 0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "monitor_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "alarm_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "penalty_remaining": {
+          "min": 0.0,
+          "max": 0.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "overspeed_remaining": {
+          "min": 5.0,
+          "max": 5.0,
+          "changes": 0,
+          "deltas": {}
+        },
+        "input": {
+          "min": 12.05739688873291,
+          "max": 14.31818962097168,
+          "changes": 138,
+          "deltas": {
+            "-0.00296879": 2,
+            "-0.03782463": 1,
+            "-0.02858829": 1,
+            "-0.03529453": 1,
+            "-0.03615665": 1,
+            "-0.03076649": 1,
+            "-0.03571415": 1,
+            "-0.03525448": 1,
+            "-0.03134346": 1,
+            "-0.03281689": 1,
+            "-0.03572464": 1,
+            "-0.03017426": 1
+          }
+        }
+      },
+      "unstable_reads": 0,
+      "changes_between_paused_samples": 0
+    }
+  },
+  "gate_values": {
+    "vigilance_global": [
+      1
+    ],
+    "aws_global": [
+      1
+    ]
+  },
+  "final_state": {
+    "day": 73861.3828125,
+    "paused": 1,
+    "clock": 61.383907318115234,
+    "physics_time": 72.72793579101562
+  },
+  "limitations": "Sequential50ms samples may miss intermediate changes;no direct alarm audibility,intervention or AI-monitor test. Paused transitions are separated but not atomic. Compare clocks without assuming identical cadence."
+}

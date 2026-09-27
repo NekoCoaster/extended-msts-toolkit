@@ -1,0 +1,68 @@
+{
+  "capture": "motion-context-grain-01",
+  "sha256": "2d4d3f6c52060a83e88ba7c3655a1dae009049db386bf75ed5d9c17e77c7bd49",
+  "samples": 748,
+  "errors": 0,
+  "sim_time_range": [
+    73800.6796875,
+    73865.9296875
+  ],
+  "paused_samples": 98,
+  "max_read_seconds": 0.00861560000339523,
+  "origin_tiles": [
+    [
+      -12560,
+      14766
+    ]
+  ],
+  "trains": {
+    "400007": {
+      "is_player": true,
+      "eligible_moving_pairs": 2162,
+      "cross_clock_pairs": 1209,
+      "rejected_pairs": 15019,
+      "body_minus_speed": {
+        "min": 0.215190297264084,
+        "median": 5.349602029631427,
+        "p95": 7.765138411088735,
+        "max": 10.073359941467592
+      },
+      "track_minus_speed": {
+        "min": 0.2778766440469379,
+        "median": 5.354168405616031,
+        "p95": 7.693238895813733,
+        "max": 10.037988836550896
+      },
+      "body_minus_track": {
+        "min": -2.341373904435212,
+        "median": 0.0008583266665382894,
+        "p95": 0.05709683888624184,
+        "max": 2.257371212100974
+      },
+      "stored_speed": {
+        "min": 0.5055252770447691,
+        "median": 8.816953302466725,
+        "p95": 10.731267077421174,
+        "max": 11.244875651995313
+      },
+      "day_elapsed_ratio": {
+        "min": 0.9291932510988232,
+        "median": 1.0033540606745808,
+        "p95": 1.0466445918465126,
+        "max": 1.0672821009138453
+      },
+      "worst_body": {
+        "car": 59220364,
+        "time0": 73801.765625,
+        "time1": 73801.8671875,
+        "elapsed_dt": 0.09813797473907471,
+        "body_speed": 20.920440089803126,
+        "track_speed": 18.697766510657267,
+        "stored_speed": 10.847080148335534,
+        "difference": 10.073359941467592,
+        "same_clock": true
+      }
+    }
+  },
+  "limitations": "Eligible adjacent moving car pairs only:stored mean speed>0.5m/s,elapsed-clock delta0..1s,both unpaused,not derailed,stable pointers/links,unchanged origin,node and direction. Rejected pairs include stationary samples. Non-atomic;beginning clocks precede individual car reads. Norm displacement and absolute track increment are unsigned average speeds,not exact instantaneous velocity. No origin shift or node-crossing inference."
+}
