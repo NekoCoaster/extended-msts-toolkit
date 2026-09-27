@@ -1,0 +1,299 @@
+{
+  "sequences": [
+    {
+      "capture": "wheel-moving-opening-01",
+      "samples": 80,
+      "clock_first": 73800.6796875,
+      "clock_last": 73807.15625,
+      "paused_samples": 71,
+      "outer_errors": 0,
+      "vehicle_errors": 0,
+      "unstable_vehicle_identity": 0,
+      "unstable_shape_identity": 0,
+      "vehicle_counts": [
+        23
+      ],
+      "engines": {
+        "200223": {
+          "train": {
+            "train_id": 400007,
+            "is_player": true
+          },
+          "rates": {
+            "min": 2.858487367630005,
+            "max": 3.3635506629943848,
+            "distinct": 10
+          },
+          "adhesion": {
+            "min": 668360.0625,
+            "max": 668360.0625,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          }
+        },
+        "200224": {
+          "train": {
+            "train_id": 400007,
+            "is_player": true
+          },
+          "rates": {
+            "min": 2.8621480464935303,
+            "max": 3.345364570617676,
+            "distinct": 10
+          },
+          "adhesion": {
+            "min": 668360.0625,
+            "max": 668360.0625,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          }
+        }
+      }
+    },
+    {
+      "capture": "wheel-moving-player-ai-01",
+      "samples": 50,
+      "clock_first": 73864.640625,
+      "clock_last": 73868.234375,
+      "paused_samples": 45,
+      "outer_errors": 0,
+      "vehicle_errors": 0,
+      "unstable_vehicle_identity": 0,
+      "unstable_shape_identity": 0,
+      "vehicle_counts": [
+        45
+      ],
+      "engines": {
+        "200223": {
+          "train": {
+            "train_id": 400007,
+            "is_player": true
+          },
+          "rates": {
+            "min": 1.6238725185394287,
+            "max": 1.628426194190979,
+            "distinct": 6
+          },
+          "adhesion": {
+            "min": 668360.0625,
+            "max": 668360.0625,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 2
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          }
+        },
+        "200224": {
+          "train": {
+            "train_id": 400007,
+            "is_player": true
+          },
+          "rates": {
+            "min": 1.6234132051467896,
+            "max": 1.6282598972320557,
+            "distinct": 6
+          },
+          "adhesion": {
+            "min": 668360.0625,
+            "max": 668360.0625,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 2
+          },
+          "shape_processed": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          }
+        },
+        "200146": {
+          "train": {
+            "train_id": 400005,
+            "is_player": false
+          },
+          "rates": {
+            "min": 6.384370803833008,
+            "max": 6.973692893981934,
+            "distinct": 6
+          },
+          "adhesion": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 1.0000000116860974e-07,
+            "max": 2.0000000233721948e-07,
+            "distinct": 2
+          }
+        },
+        "200147": {
+          "train": {
+            "train_id": 400005,
+            "is_player": false
+          },
+          "rates": {
+            "min": 6.384370803833008,
+            "max": 6.973692893981934,
+            "distinct": 6
+          },
+          "adhesion": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "phase": {
+            "min": 0.0,
+            "max": 0.0,
+            "distinct": 1
+          },
+          "shape_current": {
+            "min": 0.0,
+            "max": 2.0000000233721948e-07,
+            "distinct": 3
+          },
+          "shape_processed": {
+            "min": 1.0000000116860974e-07,
+            "max": 2.0000000233721948e-07,
+            "distinct": 2
+          }
+        }
+      }
+    }
+  ],
+  "manager_surveys": [
+    {
+      "capture": "manager-loaded-01",
+      "sim_time": 73800.6796875,
+      "roots_stable": true,
+      "lists": [
+        {
+          "offset": 0,
+          "stored": 0,
+          "observed": 0,
+          "stable": true
+        },
+        {
+          "offset": 8,
+          "stored": 6,
+          "observed": 6,
+          "stable": true
+        },
+        {
+          "offset": 16,
+          "stored": 1364,
+          "observed": 1364,
+          "stable": true
+        },
+        {
+          "offset": 24,
+          "stored": 23,
+          "observed": 23,
+          "stable": true
+        },
+        {
+          "offset": 32,
+          "stored": 1,
+          "observed": 1,
+          "stable": true
+        }
+      ]
+    },
+    {
+      "capture": "manager-after-motion-01",
+      "sim_time": 73864.640625,
+      "roots_stable": true,
+      "lists": [
+        {
+          "offset": 0,
+          "stored": 0,
+          "observed": 0,
+          "stable": true
+        },
+        {
+          "offset": 8,
+          "stored": 6,
+          "observed": 6,
+          "stable": true
+        },
+        {
+          "offset": 16,
+          "stored": 1364,
+          "observed": 1364,
+          "stable": true
+        },
+        {
+          "offset": 24,
+          "stored": 45,
+          "observed": 45,
+          "stable": true
+        },
+        {
+          "offset": 32,
+          "stored": 2,
+          "observed": 2,
+          "stable": true
+        }
+      ]
+    }
+  ],
+  "limitations": "Short sampled moving intervals;unsampled tails exist before final UI pause. Stored rates/zeros do not prove physical slip,visible animation or all-AI cadence."
+}

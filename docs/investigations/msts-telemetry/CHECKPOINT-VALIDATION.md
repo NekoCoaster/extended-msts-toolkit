@@ -245,3 +245,9 @@ Pass2351function45instructions132bytes;2361/240/684;2385/1989/5481;2394/822/2305
 Inventory1026unchanged;652evidencepaths126unchangedassetsauditpasses. Native parser/frame-rate arithmetic and initialized zero clocks add unit/lifecycle evidence. Pass24252instructions131bytes andpass243557instructions1551bytes matchdisk/live. OpenRails format parser is separately cited only for Frame/FrameRate names. Six synthetic wheel-reader checks pass;fresh native capture reportsmanager-null/unavailable,not zero telemetry or populated-branch validation.
 
 320JSON146Pythonparse;10497priorrawhashesverified29new10526total. Reader retains identity/reread flags andpervehicleerrors;not atomic,not ABA-proof,andnot a rendering/load-complete gate. NoUIretry or gameplay changes. HistoricalDeviceGuard4551/currentremoteCIlimitations remain unchanged.
+
+## Populated wheel observations and resistance lead
+
+Inventory1026 unchanged;659 evidence references and126 original asset hashes pass. Two live sequences retain130 samples,14 unpaused, with zero outer/vehicle errors or flagged identity changes. Player and AI engine rates change; adhesion and phase interpretation limits and unsampled motion tails are explicit. Five-list surveys cover23 then45 physical vehicles. User loaded the activity and authorized autonomous normal UI control; the earlier UI blocker is resolved. Last verified paused clock73877.21875.
+
+Passes244–248 retain selected resistance/norm/CRT arithmetic with disk/live byte checks; lookup table is initialized live data. No portable resistance formula or new force candidate is claimed. Publication verifies10526 prior raw hashes and adds72 files (10598 total);327 JSON and149 Python files parse. Historical full native DeviceGuard4551 remains unresolved; current remote CI was not inspected. Production code and original assets are unchanged.

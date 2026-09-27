@@ -1026,9 +1026,9 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.object_id | Native vehicle identifier used by object lookup and save references | native consumers and exact constant-return methods traced;45paused objects match connected train membership |
 | car.physical_registry_stored_count | Stored manager physical-object list count | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45 |
 | car.registered_bit | Object registration flag used by insertion and teardown | insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45 |
-| car.wheel_rate_stored | Stored ordinary wheel angular-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
-| engine.driver_rotation_rate | Stored powered driver rotation-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
-| engine.adhesion_force_limit | Stored powered-vehicle adhesion limit candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint |
-| engine.driver_animation_phase | Stored powered-driver animation phase accumulator | native consumer/store verified;no live phase or visual-transition observation |
-| car.shape_animation_time | Stored current shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled |
-| car.shape_animation_processed_time | Stored previous processed shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled |
+| car.wheel_rate_stored | Stored ordinary wheel angular-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained |
+| engine.driver_rotation_rate | Stored powered driver rotation-rate candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained |
+| engine.adhesion_force_limit | Stored powered-vehicle adhesion limit candidate | native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained |
+| engine.driver_animation_phase | Stored powered-driver animation phase accumulator | native consumer/store verified;no live phase or visual-transition observation; populated player/AI reads and short moving sequences retained |
+| car.shape_animation_time | Stored current shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled; populated player/AI reads and short moving sequences retained |
+| car.shape_animation_processed_time | Stored previous processed shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled; populated player/AI reads and short moving sequences retained |

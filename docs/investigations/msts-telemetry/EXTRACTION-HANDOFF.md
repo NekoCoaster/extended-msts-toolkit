@@ -4,7 +4,7 @@ This is a working handoff for the independent research phase associated with iss
 
 ## Catalogue and evidence
 
-Start with `inventory.json`: each `data_points` entry has an ID, meaning, applicability, type, units, extraction description, evidence, evidence status, lifecycle and limitations. The 1,015 entries are candidate records, not 1,015 independent verified live quantities. Cab channels and native fields may describe overlapping quantities; configuration paths may contain several values. Unknown units, raw flags, unavailable branches and engine-specific limits remain explicit.
+Start with `inventory.json`: each `data_points` entry has an ID, meaning, applicability, type, units, extraction description, evidence, evidence status, lifecycle and limitations. The 1,026 entries are candidate records, not 1,026 independent verified live quantities. Cab channels and native fields may describe overlapping quantities; configuration paths may contain several values. Unknown units, raw flags, unavailable branches and engine-specific limits remain explicit.
 
 Read the referenced findings before implementing a field. `DISCOVERY-COVERAGE.md` contains the initial requirements review followed by later evidence updates; its initial 920-entry table is historical. `CHECKPOINT-VALIDATION.md` in the published checkout records validation at each checkpoint. Passing structural checks establishes neither field semantics nor complete discovery.
 
@@ -62,3 +62,18 @@ Observe the UI while driving and pause for analysis. The unchanged N3 and N2 app
 The catalogue covers broad player/AI runtime, configuration and ancillary surfaces, but further discovery and semantic validation remain in the requirements review. Open work includes static/detached vehicle enumeration, remaining adhesion/resistance and wheel/axle sources, unsupported cab-branch reachability, populated station operations, successful player node/signal passage, repeated AI rephysicalization, additional lifecycle/clock boundaries, AI audio applicability, and complete save fidelity. Raw byte blocks or untraced names do not close those gaps.
 
 The preserved data and scripts are research tools with per-probe guards, not a production-ready telemetry collector. Production design, export format, polling policy, compatibility support and keep/drop decisions remain outside this phase. Completion must still be audited against the full original objective.
+
+
+## Populated player and AI wheel observations
+
+The user loaded the activity and authorized autonomous normal UI control. The earlier unavailable-manager/UI limitation is superseded. `wheel-runtime-summary.json`, reproduced by `analyse_wheel_runtime.py`, summarizes two sequences and two manager surveys. `capture_wheel_sequence.py` retains exact reader copies and per-sample clocks, pause state, errors and identity checks.
+
+At clock73800.6796875 the paused baseline has23player vehicles. At73864.640625 it has45vehicles:23player and22AI. The five manager lists have counts0/6/1364/23/1 then0/6/1364/45/2; stored counts agree with traversal, roots and sampled backlinks/identities are stable. The first list remains empty; this does not identify static or detached vehicles.
+
+Opening sequence:80samples,71paused, sampled clock73800.6796875..73807.15625. Player engine200223 rate ranges2.8584873676..3.363550663;200224 ranges2.8621480465..3.3453645706. Paired sequence:50samples,45paused, clock73864.640625..73868.234375. Player rates range1.6238725185..1.6284261942 and1.6234132051..1.6282598972; both AI engines200146/200147 range6.3843708038..6.973692894. These are short positive stored-rate transitions, not complete gameplay coverage.
+
+Both sequences have zero outer/vehicle read errors and zero flagged vehicle/shape identity changes. Player adhesion cache remains668360.0625; AI cache is0. All four powered driver accumulators remain0. Shape current times vary only between0 and approximately2e-7; player processed time remains0 and AI processed time varies approximately1e-7..2e-7. Zero AI cache is not proof of zero physical adhesion, and these cab-view observations do not validate visible wheel movement, physical slip or general animation cadence.
+
+Both samplers ended before the final UI pause: the opening run has an unsampled tail to73864.640625, and the paired run to73877.21875. Do not describe the entire moving interval as captured. Escape successfully opens the pause menu and sets paused1; the Pause key did not. Last verified game state is paused at73877.21875. No failure alert was present. Prior runs failed near73904, so the next test must control approach speed before letting the activity advance substantially.
+
+Inventory remains1026 candidates. These observations strengthen existing rows without adding fields or making keep/drop decisions. Physical angle, external-view animation eligibility, resistance-force magnitude and AI force freshness remain open.

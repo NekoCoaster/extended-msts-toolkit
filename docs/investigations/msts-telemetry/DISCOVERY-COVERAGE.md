@@ -81,3 +81,18 @@ Wheel context/consumer follow-up: shared simulation vtable773280+20=>40419c=>62a
 Shape animation checkpoint: native type5constructor,live virtual table,phase setter,callback/data slots and dispatcher establish two additional stored candidates:shape current94 andprocessed90. Inventory1026;644evidencepaths126unchangedassets auditpass. Wheel/rod callback uses car1dcvia inner18;setter copies toshape94 and downstream interpolation may modify that separate scalar. End-rangecachecopy/equality does not prove visibility,completeframe,orAI freshness. WHEEL-ADHESION-FINDINGS.md retains exact passes and limits. No new loadedvehicle or visualcapture. Read-only initialized-table checks do not resolve the pending gameplay/UI limitation.
 
 Animation units/probe follow-up: native key loader divides authored frame by the animation block's rate,with zero-ratefallback;shape current/processed time units now have formula-based seconds evidence,not live cadence proof. read_wheel_animation.py has six passing synthetic coherence/rejection checks and a fresh manager-null capture. The populated player/AI branch remains unvalidated. Count1026unchanged;652evidencepaths126unchangedassetsaudit. No UI retry or gameplay changes.
+
+
+## Populated player and AI wheel observations
+
+The user loaded the activity and authorized autonomous normal UI control. The earlier unavailable-manager/UI limitation is superseded. `wheel-runtime-summary.json`, reproduced by `analyse_wheel_runtime.py`, summarizes two sequences and two manager surveys. `capture_wheel_sequence.py` retains exact reader copies and per-sample clocks, pause state, errors and identity checks.
+
+At clock73800.6796875 the paused baseline has23player vehicles. At73864.640625 it has45vehicles:23player and22AI. The five manager lists have counts0/6/1364/23/1 then0/6/1364/45/2; stored counts agree with traversal, roots and sampled backlinks/identities are stable. The first list remains empty; this does not identify static or detached vehicles.
+
+Opening sequence:80samples,71paused, sampled clock73800.6796875..73807.15625. Player engine200223 rate ranges2.8584873676..3.363550663;200224 ranges2.8621480465..3.3453645706. Paired sequence:50samples,45paused, clock73864.640625..73868.234375. Player rates range1.6238725185..1.6284261942 and1.6234132051..1.6282598972; both AI engines200146/200147 range6.3843708038..6.973692894. These are short positive stored-rate transitions, not complete gameplay coverage.
+
+Both sequences have zero outer/vehicle read errors and zero flagged vehicle/shape identity changes. Player adhesion cache remains668360.0625; AI cache is0. All four powered driver accumulators remain0. Shape current times vary only between0 and approximately2e-7; player processed time remains0 and AI processed time varies approximately1e-7..2e-7. Zero AI cache is not proof of zero physical adhesion, and these cab-view observations do not validate visible wheel movement, physical slip or general animation cadence.
+
+Both samplers ended before the final UI pause: the opening run has an unsampled tail to73864.640625, and the paired run to73877.21875. Do not describe the entire moving interval as captured. Escape successfully opens the pause menu and sets paused1; the Pause key did not. Last verified game state is paused at73877.21875. No failure alert was present. Prior runs failed near73904, so the next test must control approach speed before letting the activity advance substantially.
+
+Inventory remains1026 candidates. These observations strengthen existing rows without adding fields or making keep/drop decisions. Physical angle, external-view animation eligibility, resistance-force magnitude and AI force freshness remain open.

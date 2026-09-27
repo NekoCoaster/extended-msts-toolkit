@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T08:19:28.249053+00:00",
+  "generated_utc": "2026-09-27T08:33:56.623730+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -34551,11 +34551,18 @@
         "pass232/00637dc4.asm",
         "read_wheel_animation.py",
         "test_wheel_animation.py",
-        "captures/wheel-animation-availability-01/wheel-animation.json"
+        "captures/wheel-animation-availability-01/wheel-animation.json",
+        "wheel-runtime-summary.json",
+        "analyse_wheel_runtime.py",
+        "capture_wheel_sequence.py",
+        "captures/wheel-animation-loaded-01/wheel-animation.json",
+        "captures/wheel-animation-after-motion-01/wheel-animation.json",
+        "captures/wheel-moving-opening-01/samples.jsonl",
+        "captures/wheel-moving-player-ai-01/samples.jsonl"
       ],
-      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint",
+      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained",
       "update_or_lifecycle": "vehicle force update;caller eligibility and AI refresh remain unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native branch is not yet validated. Reread flags detect some changes,not atomic snapshots or ABA address reuse."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     },
     {
       "id": "engine.driver_rotation_rate",
@@ -34582,11 +34589,18 @@
         "pass58/0061949d.asm",
         "read_wheel_animation.py",
         "test_wheel_animation.py",
-        "captures/wheel-animation-availability-01/wheel-animation.json"
+        "captures/wheel-animation-availability-01/wheel-animation.json",
+        "wheel-runtime-summary.json",
+        "analyse_wheel_runtime.py",
+        "capture_wheel_sequence.py",
+        "captures/wheel-animation-loaded-01/wheel-animation.json",
+        "captures/wheel-animation-after-motion-01/wheel-animation.json",
+        "captures/wheel-moving-opening-01/samples.jsonl",
+        "captures/wheel-moving-player-ai-01/samples.jsonl"
       ],
-      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint",
+      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained",
       "update_or_lifecycle": "vehicle force update;caller eligibility and AI refresh remain unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Selected engine parser dispatch confirms definition112 is WheelRadius and definition11a is native NumWheels;NumWheels is not established as axle count. Loaded values and live transitions remain unobserved. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native branch is not yet validated. Reread flags detect some changes,not atomic snapshots or ABA address reuse."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Selected engine parser dispatch confirms definition112 is WheelRadius and definition11a is native NumWheels;NumWheels is not established as axle count. Loaded values and short moving observations are now retained; see wheel-runtime-summary.json. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     },
     {
       "id": "engine.adhesion_force_limit",
@@ -34613,11 +34627,18 @@
         "pass58/0061949d.asm",
         "read_wheel_animation.py",
         "test_wheel_animation.py",
-        "captures/wheel-animation-availability-01/wheel-animation.json"
+        "captures/wheel-animation-availability-01/wheel-animation.json",
+        "wheel-runtime-summary.json",
+        "analyse_wheel_runtime.py",
+        "capture_wheel_sequence.py",
+        "captures/wheel-animation-loaded-01/wheel-animation.json",
+        "captures/wheel-animation-after-motion-01/wheel-animation.json",
+        "captures/wheel-moving-opening-01/samples.jsonl",
+        "captures/wheel-moving-player-ai-01/samples.jsonl"
       ],
-      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint",
+      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained",
       "update_or_lifecycle": "vehicle force update;caller eligibility and AI refresh remain unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Selected engine parser dispatch confirms definition112 is WheelRadius and definition11a is native NumWheels;NumWheels is not established as axle count. Loaded values and live transitions remain unobserved. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native branch is not yet validated. Reread flags detect some changes,not atomic snapshots or ABA address reuse."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Selected engine parser dispatch confirms definition112 is WheelRadius and definition11a is native NumWheels;NumWheels is not established as axle count. Loaded values and short moving observations are now retained; see wheel-runtime-summary.json. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     },
     {
       "id": "engine.driver_animation_phase",
@@ -34651,11 +34672,18 @@
         "pass241/range.asm",
         "read_wheel_animation.py",
         "test_wheel_animation.py",
-        "captures/wheel-animation-availability-01/wheel-animation.json"
+        "captures/wheel-animation-availability-01/wheel-animation.json",
+        "wheel-runtime-summary.json",
+        "analyse_wheel_runtime.py",
+        "capture_wheel_sequence.py",
+        "captures/wheel-animation-loaded-01/wheel-animation.json",
+        "captures/wheel-animation-after-motion-01/wheel-animation.json",
+        "captures/wheel-moving-opening-01/samples.jsonl",
+        "captures/wheel-moving-player-ai-01/samples.jsonl"
       ],
-      "evidence_status": "native consumer/store verified;no live phase or visual-transition observation",
+      "evidence_status": "native consumer/store verified;no live phase or visual-transition observation; populated player/AI reads and short moving sequences retained",
       "update_or_lifecycle": "eligible animation update;shape type5,definition powered,car80bit800 and other prerequisites",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Default versus local definition multiplier selected by definition90bit10. No wrap proven in this branch;downstream mapping/render submission and pause/AI cadence unvalidated. Multiplier definition4e8 is parsed from Wheelset. Parser declaration8cbit10 versus runtime override90bit10 propagation unresolved. Setup00639549 clears phase and passes innercar1c4 to shape virtual44;inner phase offset18 is a tracing lead,not verified downstream interpretation. Wheel/rod callback6390cf reads inner18 and passes phase to type5 setter6a5fd0,which stores shape94;downstream interpolation may mutate that separate scalar. Shape90 is processed-time cache,not the descriptor duration compared by callback. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native branch is not yet validated. Reread flags detect some changes,not atomic snapshots or ABA address reuse."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Default versus local definition multiplier selected by definition90bit10. No wrap proven in this branch;downstream mapping/render submission and pause/AI cadence unvalidated. Multiplier definition4e8 is parsed from Wheelset. Parser declaration8cbit10 versus runtime override90bit10 propagation unresolved. Setup00639549 clears phase and passes innercar1c4 to shape virtual44;inner phase offset18 is a tracing lead,not verified downstream interpretation. Wheel/rod callback6390cf reads inner18 and passes phase to type5 setter6a5fd0,which stores shape94;downstream interpolation may mutate that separate scalar. Shape90 is processed-time cache,not the descriptor duration compared by callback. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     },
     {
       "id": "car.shape_animation_time",
@@ -34685,11 +34713,18 @@
         "pass243/006d5550.asm",
         "read_wheel_animation.py",
         "test_wheel_animation.py",
-        "captures/wheel-animation-availability-01/wheel-animation.json"
+        "captures/wheel-animation-availability-01/wheel-animation.json",
+        "wheel-runtime-summary.json",
+        "analyse_wheel_runtime.py",
+        "capture_wheel_sequence.py",
+        "captures/wheel-animation-loaded-01/wheel-animation.json",
+        "captures/wheel-animation-after-motion-01/wheel-animation.json",
+        "captures/wheel-moving-opening-01/samples.jsonl",
+        "captures/wheel-moving-player-ai-01/samples.jsonl"
       ],
-      "evidence_status": "native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled",
+      "evidence_status": "native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled; populated player/AI reads and short moving sequences retained",
       "update_or_lifecycle": "shape setter and interpolation may change scalar",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Embedded animation object begins at shape+0x8c. Current and processed values are distinct from car+0x1dc driver accumulator. Equality is not proof of full rendering,visibility or gameplay freshness. Interpolation can clamp/loop current scalar;not vehicle accumulator. Null/unloaded shape means unavailable. No AI/paused update cadence established. Loader second animation integer supplies reciprocal rate;zero rate maps parsed key times to zero. Open Rails ShapeFile format names corroborate Frame/FrameRate;native arithmetic is independently traced. Initializer zeros current/processed scalars. Render/gameclock cadence remains separate. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native branch is not yet validated. Reread flags detect some changes,not atomic snapshots or ABA address reuse."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Embedded animation object begins at shape+0x8c. Current and processed values are distinct from car+0x1dc driver accumulator. Equality is not proof of full rendering,visibility or gameplay freshness. Interpolation can clamp/loop current scalar;not vehicle accumulator. Null/unloaded shape means unavailable. No AI/paused update cadence established. Loader second animation integer supplies reciprocal rate;zero rate maps parsed key times to zero. Open Rails ShapeFile format names corroborate Frame/FrameRate;native arithmetic is independently traced. Initializer zeros current/processed scalars. Render/gameclock cadence remains separate. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     },
     {
       "id": "car.shape_animation_processed_time",
@@ -34719,11 +34754,18 @@
         "pass243/006d5550.asm",
         "read_wheel_animation.py",
         "test_wheel_animation.py",
-        "captures/wheel-animation-availability-01/wheel-animation.json"
+        "captures/wheel-animation-availability-01/wheel-animation.json",
+        "wheel-runtime-summary.json",
+        "analyse_wheel_runtime.py",
+        "capture_wheel_sequence.py",
+        "captures/wheel-animation-loaded-01/wheel-animation.json",
+        "captures/wheel-animation-after-motion-01/wheel-animation.json",
+        "captures/wheel-moving-opening-01/samples.jsonl",
+        "captures/wheel-moving-player-ai-01/samples.jsonl"
       ],
-      "evidence_status": "native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled",
+      "evidence_status": "native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled; populated player/AI reads and short moving sequences retained",
       "update_or_lifecycle": "dispatcher copies current scalar when processed range ends at animation node count",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Embedded animation object begins at shape+0x8c. Current and processed values are distinct from car+0x1dc driver accumulator. Equality is not proof of full rendering,visibility or gameplay freshness. Interpolation can clamp/loop current scalar;not vehicle accumulator. Null/unloaded shape means unavailable. No AI/paused update cadence established. Loader second animation integer supplies reciprocal rate;zero rate maps parsed key times to zero. Open Rails ShapeFile format names corroborate Frame/FrameRate;native arithmetic is independently traced. Initializer zeros current/processed scalars. Render/gameclock cadence remains separate. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native branch is not yet validated. Reread flags detect some changes,not atomic snapshots or ABA address reuse."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Embedded animation object begins at shape+0x8c. Current and processed values are distinct from car+0x1dc driver accumulator. Equality is not proof of full rendering,visibility or gameplay freshness. Interpolation can clamp/loop current scalar;not vehicle accumulator. Null/unloaded shape means unavailable. No AI/paused update cadence established. Loader second animation integer supplies reciprocal rate;zero rate maps parsed key times to zero. Open Rails ShapeFile format names corroborate Frame/FrameRate;native arithmetic is independently traced. Initializer zeros current/processed scalars. Render/gameclock cadence remains separate. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     }
   ]
 }

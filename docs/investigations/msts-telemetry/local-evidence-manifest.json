@@ -63157,6 +63157,438 @@
       "bytes": 81,
       "sha256": "3e31fdc32c78fee9ffcc8eb4866e94f920225c81a7541e7fe0f998029447fe37",
       "included": false
+    },
+    {
+      "path": "captures/manager-after-motion-01/manager.json",
+      "bytes": 319015,
+      "sha256": "2a4bce116954b6871bf267e45efdfdcd2893a49720fe3decf6fcd658b192f945",
+      "included": false
+    },
+    {
+      "path": "captures/manager-after-motion-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/manager-after-motion-01/read_manager_lists.py",
+      "bytes": 3166,
+      "sha256": "7512817e010ab856bf8e15ca2ed1f23bc4d867841e400432dc3ddec9993aae45",
+      "included": false
+    },
+    {
+      "path": "captures/manager-loaded-01/manager.json",
+      "bytes": 313842,
+      "sha256": "80c3be33da1612e8ced6f5f555cd1a23d7f592e5186912dc05b9aa54b1e8b3b2",
+      "included": false
+    },
+    {
+      "path": "captures/manager-loaded-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/manager-loaded-01/read_manager_lists.py",
+      "bytes": 3166,
+      "sha256": "7512817e010ab856bf8e15ca2ed1f23bc4d867841e400432dc3ddec9993aae45",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-after-motion-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-after-motion-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-after-motion-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-after-motion-01/wheel-animation.json",
+      "bytes": 28736,
+      "sha256": "dcfe54b4329dfb1a7a53dc06e6fcddfb096804325587427b5c8bb27bcd8f9ddd",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-loaded-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-loaded-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-loaded-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-animation-loaded-01/wheel-animation.json",
+      "bytes": 15079,
+      "sha256": "5fca7fe14b9902d28be9ebf2a58183f4415c5de01beef7b9a9be22aef32526b4",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-opening-01/capture_wheel_sequence.py",
+      "bytes": 2076,
+      "sha256": "3c1b7516ae592abdf2b5c0157deb1711ad62aaff0f1a60b932c102efd9bcdb61",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-opening-01/metadata.json",
+      "bytes": 601,
+      "sha256": "33a51deef2dacb8bc5ebed92fcd61754e0ccb353b5d1d30c694b7efeb7e0bd79",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-opening-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-opening-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-opening-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-opening-01/samples.jsonl",
+      "bytes": 772492,
+      "sha256": "92fd86602e229a64f801420cb3bfe0e029441a04af7ce80d41c3722a1a6ffbdc",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-player-ai-01/capture_wheel_sequence.py",
+      "bytes": 2076,
+      "sha256": "3c1b7516ae592abdf2b5c0157deb1711ad62aaff0f1a60b932c102efd9bcdb61",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-player-ai-01/metadata.json",
+      "bytes": 601,
+      "sha256": "150319cf88993282ef7efbd41c5b74cd1a31b95af3a6a7e1ec4416941fc91d32",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-player-ai-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-player-ai-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-player-ai-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-moving-player-ai-01/samples.jsonl",
+      "bytes": 926852,
+      "sha256": "f5d922801da5f497d40b330daa758f45e78a4ca05168ea749bdced5c23315ce7",
+      "included": false
+    },
+    {
+      "path": "pass244/0062c601.asm",
+      "bytes": 1420,
+      "sha256": "d9d8cd91a1bd5e12aee2ee096df37794d08fb536225c105096b1dd3858ef7cb7",
+      "included": false
+    },
+    {
+      "path": "pass244/0062c601.bytes.tsv",
+      "bytes": 735,
+      "sha256": "824648f193d1d978815af07e5a14bf14f74fbe756b993fcf289dc24e2e940525",
+      "included": false
+    },
+    {
+      "path": "pass244/0062c601.c",
+      "bytes": 706,
+      "sha256": "76383d7e40e61a6504308bda7302b9d5ff815d7f03857836977167795d4d135a",
+      "included": false
+    },
+    {
+      "path": "pass244/console.log",
+      "bytes": 6042,
+      "sha256": "afeb77c66b24d5c4b1785168476944ac263655a527448fadebec7ea15fb520db",
+      "included": false
+    },
+    {
+      "path": "pass244/functions.tsv",
+      "bytes": 29,
+      "sha256": "2ec7b93ceb2e2df088ac4cca7a33070e766ef9c32fde24371d17e1fda19c4e28",
+      "included": false
+    },
+    {
+      "path": "pass244/ghidra.log",
+      "bytes": 6058,
+      "sha256": "0f2b6c81c2370001e77eeb2d82d79b1c634dee1e6a08cc5a8aef0e5d235875bb",
+      "included": false
+    },
+    {
+      "path": "pass244/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass244/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "pass244/script.log",
+      "bytes": 81,
+      "sha256": "b8021dde567b80b2154ea535ea8798a9060723c98fa1c7b9e3da011f929f577b",
+      "included": false
+    },
+    {
+      "path": "pass245/0052a810.asm",
+      "bytes": 399,
+      "sha256": "a58c99be97d81b33844c0d9ff4ba1fa8668c504c4b76f2e9d44c2b7aa97f0116",
+      "included": false
+    },
+    {
+      "path": "pass245/0052a810.bytes.tsv",
+      "bytes": 243,
+      "sha256": "e71d48862b42a9991e176d0774e71cd8bae392f3c562d673c738b54e8422adb1",
+      "included": false
+    },
+    {
+      "path": "pass245/0052a810.c",
+      "bytes": 159,
+      "sha256": "0ab1ef3e3dd0fb7553b715f2d4c8caa8c75d00fd511b56cf5e1e5011afe13d9b",
+      "included": false
+    },
+    {
+      "path": "pass245/0062e845.asm",
+      "bytes": 310,
+      "sha256": "b6f636990b547972ef884b2bed76b27941b6d7a8f9bb3f628d346600446bd2fc",
+      "included": false
+    },
+    {
+      "path": "pass245/0062e845.bytes.tsv",
+      "bytes": 188,
+      "sha256": "726936c504909daf0e4f26b7747008491c13dc69453c9e6e147366e1bf125ce8",
+      "included": false
+    },
+    {
+      "path": "pass245/0062e845.c",
+      "bytes": 169,
+      "sha256": "63fd015439285fa3de71d4598996a74a9c3e2ae422704b24da38ca0122f972b9",
+      "included": false
+    },
+    {
+      "path": "pass245/console.log",
+      "bytes": 6053,
+      "sha256": "8ec37c995d533aadec55b1c78a3dcd23e87b553bda3a86194e199dc1dad4480f",
+      "included": false
+    },
+    {
+      "path": "pass245/functions.tsv",
+      "bytes": 58,
+      "sha256": "098f678c663600393aead76d8b8923cc1c392d7617fe32074efc2e8d094436e7",
+      "included": false
+    },
+    {
+      "path": "pass245/ghidra.log",
+      "bytes": 6069,
+      "sha256": "d49697050d5066a6a7b81102d428983c571037718cd263dce52d0239ae1ee9a8",
+      "included": false
+    },
+    {
+      "path": "pass245/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass245/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "pass245/script.log",
+      "bytes": 81,
+      "sha256": "404b3af42c0a39fdaae03fc6d5bb27198f3b334a15275142ce63c456feaecb76",
+      "included": false
+    },
+    {
+      "path": "pass246/0062e861.asm",
+      "bytes": 811,
+      "sha256": "9df0e396fa924ae6d179b3e7a679b9040ce85579b939123855e0217b6a373863",
+      "included": false
+    },
+    {
+      "path": "pass246/0062e861.bytes.tsv",
+      "bytes": 439,
+      "sha256": "f4bb689c939d6ccc9af1cc42212579f903dd9ec292d4c4f33ee3a85c76cbf7ba",
+      "included": false
+    },
+    {
+      "path": "pass246/0062e861.c",
+      "bytes": 274,
+      "sha256": "2d774308ecab511bb247b08e6db1eb40377b06b865ffb0fb3386d23c1cd3a8bf",
+      "included": false
+    },
+    {
+      "path": "pass246/0062e8b3.asm",
+      "bytes": 661,
+      "sha256": "0adb8a6c1961326a84c8cc831f38333a18eb7162f777225dd68d4ffbfbef29be",
+      "included": false
+    },
+    {
+      "path": "pass246/0062e8b3.bytes.tsv",
+      "bytes": 329,
+      "sha256": "afb944d4202f9ae7999999f8911e18528d3056f1c1dbd9c03feafe9086c58898",
+      "included": false
+    },
+    {
+      "path": "pass246/0062e8b3.c",
+      "bytes": 208,
+      "sha256": "7f7f803486cb03d4a29b106ac340bf33049d90c094dafecfd8b8f9780c9b68e9",
+      "included": false
+    },
+    {
+      "path": "pass246/0071d309.asm",
+      "bytes": 58,
+      "sha256": "9f425f6eb8665dd8866de69d23387fc5c6df21f12e533632cd1efffffbfde224",
+      "included": false
+    },
+    {
+      "path": "pass246/0071d309.bytes.tsv",
+      "bytes": 40,
+      "sha256": "83affea875558d0b5d8cfd8298857b39e967abc411f9220500850676eb1194c9",
+      "included": false
+    },
+    {
+      "path": "pass246/0071d309.c",
+      "bytes": 121,
+      "sha256": "c886dbf8736ddbcf07b185a7184f97f2794e285826e4ea1684f4663f0199b74d",
+      "included": false
+    },
+    {
+      "path": "pass246/console.log",
+      "bytes": 6064,
+      "sha256": "3c7e21ba35ed5bb69f3c64d182cda2b041ced6699a71501f00574cb97979f28d",
+      "included": false
+    },
+    {
+      "path": "pass246/functions.tsv",
+      "bytes": 87,
+      "sha256": "64f1107df0f01f3185ac1ca3123943aefd0deaea35758bd5ec52bade92fafcbf",
+      "included": false
+    },
+    {
+      "path": "pass246/ghidra.log",
+      "bytes": 6080,
+      "sha256": "ba7bb9dcddbd150b819efb538238683dd6ed38609215086487a59b818fe3d096",
+      "included": false
+    },
+    {
+      "path": "pass246/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass246/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "pass246/script.log",
+      "bytes": 81,
+      "sha256": "9101c15f4f44a5ca521705bea75333d67cdd0c5b5c781167396fa18a39ccb7b6",
+      "included": false
+    },
+    {
+      "path": "pass247/console.log",
+      "bytes": 5960,
+      "sha256": "1551f6e6219395d0d63b8f275413e415918c103d2b736147e20ac77f5a4e0278",
+      "included": false
+    },
+    {
+      "path": "pass247/ghidra.log",
+      "bytes": 5956,
+      "sha256": "3d235ccbeeb512080d228329a3eda81ec5cce48941935bc03d410289d8359a1c",
+      "included": false
+    },
+    {
+      "path": "pass247/range.asm",
+      "bytes": 550,
+      "sha256": "fea3ebc50a53ca905a8101c29f7d7696ed204348527bd4f4efd69729d104b2b0",
+      "included": false
+    },
+    {
+      "path": "pass247/range.bytes.tsv",
+      "bytes": 396,
+      "sha256": "513695bdcae8f7315db03f0c384b5553a2680482259f82ed0c4b471c5b3b93c4",
+      "included": false
+    },
+    {
+      "path": "pass247/script.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
+    },
+    {
+      "path": "pass248/console.log",
+      "bytes": 5960,
+      "sha256": "9c2d31110543987760d9fa372cedd401d78ddc6f5430925f7ab45608b5457a10",
+      "included": false
+    },
+    {
+      "path": "pass248/ghidra.log",
+      "bytes": 5956,
+      "sha256": "96447402595ea7be427eb0d819ec729cdd15ae88a43581eef9da712ee365be86",
+      "included": false
+    },
+    {
+      "path": "pass248/range.asm",
+      "bytes": 809,
+      "sha256": "35996768b84acaecd1c07dd4cb8e69d0cb16223e6fd289027b531e5d417d87af",
+      "included": false
+    },
+    {
+      "path": "pass248/range.bytes.tsv",
+      "bytes": 577,
+      "sha256": "17ad90baf777ee5edcde34353c43fdef0726166300c296bf397c632cc3f9ad03",
+      "included": false
+    },
+    {
+      "path": "pass248/script.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
     }
   ]
 }

@@ -81,3 +81,31 @@ The two shape-time inventory rows now retain that formula-based unit instead of 
 Six synthetic tests in `test_wheel_animation.py` pass:manager-null without enumeration,unsupportedshape without layout dereference,distincttimes/rawprovenance,nonfinite rejection,descriptorchange detection,and recycledvehicle identity rejection. These validate reader behavior,not native layout or visible motion. The live `wheel-animation-availability-01` capture inPID33612 findsmanagernull and returnsavailable:false/vehicles:null. No populated native wheel/shape values are claimed. Read-only availability checking did not interact with the failed UI activation.
 
 Registry traversal and new fields are sequential. Reread flags are necessary evidence to retain but cannot prove atomicity,absence of ABA reuse,field freshness,AI cadence,or loaded-session completion. The probe's runtime type5/virtual-table checks are additional layout guards,not a complete live-code integrity audit. Existing focused native-byte reports provide separate evidence. Wider populated traversal and gameplay tests remain required.
+
+## Resistance lead, not yet a new candidate
+
+Verified caller0062ad6a uses current vehicle definition+478/+47c/+480/+484/+488 with helper0062c601,and scales an input vector by negative helper result divided by local_dc before summing. Pass244 verifies0062c601 (45instructions120bytes),disk/live33612equal. It selects its first branch when input<=threshold or threshold signbit is set. Otherwise it combines two calls to0052a810 and coefficients. The exact nested operation,caller vector/speed provenance and zero-speed handling still require tracing;do not yet present a Davis formula,units or a reliable derived resistance quantity. No live force observation or candidate count change.
+
+
+## Populated player and AI wheel observations
+
+The user loaded the activity and authorized autonomous normal UI control. The earlier unavailable-manager/UI limitation is superseded. `wheel-runtime-summary.json`, reproduced by `analyse_wheel_runtime.py`, summarizes two sequences and two manager surveys. `capture_wheel_sequence.py` retains exact reader copies and per-sample clocks, pause state, errors and identity checks.
+
+At clock73800.6796875 the paused baseline has23player vehicles. At73864.640625 it has45vehicles:23player and22AI. The five manager lists have counts0/6/1364/23/1 then0/6/1364/45/2; stored counts agree with traversal, roots and sampled backlinks/identities are stable. The first list remains empty; this does not identify static or detached vehicles.
+
+Opening sequence:80samples,71paused, sampled clock73800.6796875..73807.15625. Player engine200223 rate ranges2.8584873676..3.363550663;200224 ranges2.8621480465..3.3453645706. Paired sequence:50samples,45paused, clock73864.640625..73868.234375. Player rates range1.6238725185..1.6284261942 and1.6234132051..1.6282598972; both AI engines200146/200147 range6.3843708038..6.973692894. These are short positive stored-rate transitions, not complete gameplay coverage.
+
+Both sequences have zero outer/vehicle read errors and zero flagged vehicle/shape identity changes. Player adhesion cache remains668360.0625; AI cache is0. All four powered driver accumulators remain0. Shape current times vary only between0 and approximately2e-7; player processed time remains0 and AI processed time varies approximately1e-7..2e-7. Zero AI cache is not proof of zero physical adhesion, and these cab-view observations do not validate visible wheel movement, physical slip or general animation cadence.
+
+Both samplers ended before the final UI pause: the opening run has an unsampled tail to73864.640625, and the paired run to73877.21875. Do not describe the entire moving interval as captured. Escape successfully opens the pause menu and sets paused1; the Pause key did not. Last verified game state is paused at73877.21875. No failure alert was present. Prior runs failed near73904, so the next test must control approach speed before letting the activity advance substantially.
+
+Inventory remains1026 candidates. These observations strengthen existing rows without adding fields or making keep/drop decisions. Physical angle, external-view animation eligibility, resistance-force magnitude and AI force freshness remain open.
+
+
+## Resistance input and lookup norm follow-up
+
+Pass245 verifies0052a810 and0062e845 (27instructions67bytes);pass246 verifies0062e861/0062e8b3 plus the exported71d309 entry (48instructions140bytes). Because the CRT entry was truncated by recovered analysis, bounded passes247 and248 retain additional aligned ranges (20instructions88bytes and31instructions118bytes). All selected bytes match disk/live33612. This is not a full CRT special-case audit.
+
+Caller62ad6a supplies body+88 velocity to62e845. Helper62e8b3 sums squared components, and62e845 rounds the sum tofloat32 before62e861 applies an exponent/mantissa lookup. `map_velocity_norm_table.py` retains the1024 live initialized words at82b630 and a stable reread; this is not disk-table equality. The offline reconstruction yields approximately7.66564817265e-20 for squared input0 and1.4140625 for input2. Replacing the helper with exact sqrt changes native results. The reconstruction does not emulate the full x87 accumulation path or execute native code.
+
+For inputv and definition coefficients a,b,t,c,d at478/47c/480/484/488, helper62c601 selects a*power(v,b) when v<=t or t has its sign bit set. Otherwise it forms float32(a*power(t,b)) + c*(t + power(v-t,d)), with a float32 result. The nested threshold addition is retained literally; this is not labeled a Davis formula. The positive CRT branch uses FYL2X and an exponent helper, with the checked error label pow. Remaining special domains/rounding need tracing before treating this as a portable force formula. Caller scales the velocity by negative result/norm; final force accumulation through62e5d6 remains to verify. No new resistance candidate or live force claim is added.
