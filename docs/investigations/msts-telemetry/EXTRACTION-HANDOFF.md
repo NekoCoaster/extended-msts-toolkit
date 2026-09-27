@@ -1,3 +1,5 @@
+> New-chat continuation: see [NEW-CHAT-HANDOFF.md](NEW-CHAT-HANDOFF.md). Coupling/separation checkpoint is complete; the major goal remains incomplete.
+
 # Extraction and evidence handoff
 
 This is a working handoff for the independent research phase associated with issue 7. Discovery remains incomplete. It specifies how to use the existing evidence and probes; it does not authorize or implement production NEMT integration, prescribe export frequency, or select telemetry to retain.

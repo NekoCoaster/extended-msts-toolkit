@@ -1,3 +1,5 @@
+> New-chat continuation: see [NEW-CHAT-HANDOFF.md](NEW-CHAT-HANDOFF.md). Coupling/separation checkpoint is complete; the major goal remains incomplete.
+
 # MSTS telemetry discovery — independent research
 
 Status: **active, incomplete**. This workspace is separate from NEMT. No production code, game assets, installation settings, or executable have been edited. In-game controls and activity restarts are part of testing. Do not rank candidates or make keep/drop decisions yet.

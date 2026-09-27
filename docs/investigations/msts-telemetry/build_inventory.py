@@ -1163,6 +1163,12 @@ for row in rows:
         row['applicability']+=';loaded owner-null loose vehicles validated in paused yard fixture'
         row['evidence_status']+=';39loose vehicle track records have valid node/section joins and bounded distances'
         row['limitations']+=' Paused loose-stock fixture validates40total track joins,39owner-null;body vs trackY differs1.970032..2.833313m and horizontal rounding differences remain. Not a universal offset,track travel distance or coupler gap. No coupling/turnout transition or remote loose-stock coverage inferred.'
+for row in rows:
+    if row['id'] in {'train.registry','train.first_car','train.last_car','train.lead_car','car.physical_registry','car.physical_registry_stored_count','car.identity','car.object_id','car.train_owner','car.links','car.body_pointer'}:
+        row['evidence'].extend(['COUPLING-LIFECYCLE-FINDINGS.md','analyse_coupling_transition.py','coupling-transition-summary.json','captures/yard-coupling-maneuver-01/samples.jsonl','captures/yard-final-save-01/final-paused.json'])
+        row['evidence_status']+=';player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40'
+        row['limitations']=row['limitations'].replace('coupling/detachment transitions remain unvalidated.','coupling/detachment transitions are now validated for this player fixture.')
+        row['limitations']+=' Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

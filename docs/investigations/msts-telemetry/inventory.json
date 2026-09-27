@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T15:57:35.185933+00:00",
+  "generated_utc": "2026-09-27T17:31:48.543115+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -99,11 +99,16 @@
         "captures/red-signal-evaluation-01/evaluation.json",
         "paired-n2-approach-01-paired-summary.json",
         "paired-n2-approach-01-moving-tracks.json",
-        "paired-n2-approach-01-origin-shifts.json"
+        "paired-n2-approach-01-origin-shifts.json",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "train.identity",
@@ -240,11 +245,16 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "train.last_car",
@@ -276,11 +286,16 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "train.lead_car",
@@ -312,11 +327,16 @@
         "generated-save-structure.json",
         "save-reload-comparison.json",
         "captures/reload-transition-01/metadata.json",
-        "captures/after-reload-services-01/services.jsonl"
+        "captures/after-reload-services-01/services.jsonl",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "train.service_pointer",
@@ -381,11 +401,16 @@
         "captures/loose-yard-notebook-01/registry.json",
         "captures/loose-yard-manager-01/manager.json",
         "captures/loose-fixture-provenance-01/provenance.json",
-        "captures/loose-fixture-provenance-01/yard_one.act"
+        "captures/loose-fixture-provenance-01/yard_one.act",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions are now validated for this player fixture. Null train owner does not invalidate vehicle/body telemetry. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "car.train_owner",
@@ -421,11 +446,16 @@
         "captures/loose-yard-notebook-01/registry.json",
         "captures/loose-yard-manager-01/manager.json",
         "captures/loose-fixture-provenance-01/provenance.json",
-        "captures/loose-fixture-provenance-01/yard_one.act"
+        "captures/loose-fixture-provenance-01/yard_one.act",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions are now validated for this player fixture. Null train owner does not invalidate vehicle/body telemetry. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "car.links",
@@ -461,11 +491,16 @@
         "captures/loose-yard-notebook-01/registry.json",
         "captures/loose-yard-manager-01/manager.json",
         "captures/loose-fixture-provenance-01/provenance.json",
-        "captures/loose-fixture-provenance-01/yard_one.act"
+        "captures/loose-fixture-provenance-01/yard_one.act",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live. Follow-up native UI save/reload succeeds for one23-vehicle player fixture: numeric train/vehicle IDs preserved,all23caraddresses change,positions/orientations exact. This supersedes prior no-round-trip notes only for these observed checks.96of239transition samples have recorded registry errors;AIphysicalreload and a reliable load-complete gate remain unvalidated. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions are now validated for this player fixture. Null train owner does not invalidate vehicle/body telemetry. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "car.definition",
@@ -559,11 +594,16 @@
         "captures/loose-yard-notebook-01/registry.json",
         "captures/loose-yard-manager-01/manager.json",
         "captures/loose-fixture-provenance-01/provenance.json",
-        "captures/loose-fixture-provenance-01/yard_one.act"
+        "captures/loose-fixture-provenance-01/yard_one.act",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Independent physical-list probe matches45connected player/AIcars;that earlier fixture had no loose-stock set difference. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions are now validated for this player fixture. Null train owner does not invalidate vehicle/body telemetry. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "body.position",
@@ -34784,11 +34824,16 @@
         "captures/loose-yard-notebook-01/registry.json",
         "captures/loose-yard-manager-01/manager.json",
         "captures/loose-fixture-provenance-01/provenance.json",
-        "captures/loose-fixture-provenance-01/yard_one.act"
+        "captures/loose-fixture-provenance-01/yard_one.act",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "native consumers and exact constant-return methods traced;45paused objects match connected train membership;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components",
+      "evidence_status": "native consumers and exact constant-return methods traced;45paused objects match connected train membership;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "physical object creation/removal and load reconstruction;no persistent identity guarantee",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage. Insertion precedes later setup;listnodes are recycled by native unlink helper. Never cache node addresses as stable identities. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage. Insertion precedes later setup;listnodes are recycled by native unlink helper. Never cache node addresses as stable identities. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions are now validated for this player fixture. Null train owner does not invalidate vehicle/body telemetry. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "car.native_kind",
@@ -34832,11 +34877,16 @@
         "captures/loose-yard-notebook-01/registry.json",
         "captures/loose-yard-manager-01/manager.json",
         "captures/loose-fixture-provenance-01/provenance.json",
-        "captures/loose-fixture-provenance-01/yard_one.act"
+        "captures/loose-fixture-provenance-01/yard_one.act",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "native consumers and exact constant-return methods traced;45paused objects match connected train membership;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components",
+      "evidence_status": "native consumers and exact constant-return methods traced;45paused objects match connected train membership;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "physical object creation/removal and load reconstruction;no persistent identity guarantee",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Fourengines/41wagons observed. No physical objects outside train chains in this fixture. Unknown method targets remain unknown;do not decode vehicle fields from arbitrary table objects. Stable roots/links do not establish atomicity or exhaustive static/detached coverage. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions are now validated for this player fixture. Null train owner does not invalidate vehicle/body telemetry. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "car.physical_registry_stored_count",
@@ -34859,11 +34909,16 @@
         "captures/loose-yard-notebook-01/registry.json",
         "captures/loose-yard-manager-01/manager.json",
         "captures/loose-fixture-provenance-01/provenance.json",
-        "captures/loose-fixture-provenance-01/yard_one.act"
+        "captures/loose-fixture-provenance-01/yard_one.act",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "analyse_coupling_transition.py",
+        "coupling-transition-summary.json",
+        "captures/yard-coupling-maneuver-01/samples.jsonl",
+        "captures/yard-final-save-01/final-paused.json"
       ],
-      "evidence_status": "insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components",
+      "evidence_status": "insertion/removal consumers traced;45paused vehicles have bit4 and storedcount45;positive yard fixture has39owner-null loose vehicles outside train chains in6linked components;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40",
       "update_or_lifecycle": "list registration/removal;can precede completed initialization",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a load-complete or coherent-read gate. Cleanup clears bit after removal request even if no node found. No live count/bit transition in that earlier fixture. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions remain unvalidated. Null train owner does not invalidate vehicle/body telemetry."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a load-complete or coherent-read gate. Cleanup clears bit after removal request even if no node found. No live count/bit transition in that earlier fixture. Yard opening snapshot has40physical objects versus1train-owned player engine;39loose objects have null owner,stable valid bodies and reciprocal links. Component sizes5/3/1/16/13/1 match configured cuts;38wagons and1engine. Exact activity-ID/native-ID join and coupling/detachment transitions are now validated for this player fixture. Null train owner does not invalidate vehicle/body telemetry. Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization."
     },
     {
       "id": "car.registered_bit",
