@@ -977,6 +977,15 @@ for row in rows:
     if row['id']=='engine.driver_animation_phase':
         row['evidence'].extend(shape_animation_evidence)
         row['limitations']+=' Wheel/rod callback6390cf reads inner18 and passes phase to type5 setter6a5fd0,which stores shape94;downstream interpolation may mutate that separate scalar. Shape90 is processed-time cache,not the descriptor duration compared by callback.'
+for row in rows:
+    if row['id'] in {'car.shape_animation_time','car.shape_animation_processed_time'}:
+        row['units']='animation seconds from key Frame/FrameRate formula;not validated against live wall/game time'
+        row['evidence'].extend(['animation-time-token-map.json','pass242-byte-verification.json','pass243-byte-verification.json','pass243/006d51d0.asm','pass243/006d5550.asm'])
+        row['limitations']+=' Loader second animation integer supplies reciprocal rate;zero rate maps parsed key times to zero. Open Rails ShapeFile format names corroborate Frame/FrameRate;native arithmetic is independently traced. Initializer zeros current/processed scalars. Render/gameclock cadence remains separate.'
+for row in rows:
+    if row['id'] in {'car.wheel_rate_stored','engine.driver_rotation_rate','engine.adhesion_force_limit','engine.driver_animation_phase','car.shape_animation_time','car.shape_animation_processed_time'}:
+        row['evidence'].extend(['read_wheel_animation.py','test_wheel_animation.py','captures/wheel-animation-availability-01/wheel-animation.json'])
+        row['limitations']+=' Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native branch is not yet validated. Reread flags detect some changes,not atomic snapshots or ABA address reuse.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

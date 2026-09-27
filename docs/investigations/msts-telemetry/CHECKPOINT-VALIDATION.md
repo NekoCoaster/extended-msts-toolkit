@@ -239,3 +239,9 @@ Inventory1026=425direct26derived68cab507config;644evidencepaths126unchangedasset
 Pass2351function45instructions132bytes;2361/240/684;2385/1989/5481;2394/822/2305;2401/261/708;241range44/96includingpadding matchdisk/live33612. Drivercallbacktable/labels/epsilon matched;shape vtable is liveinitialized data only. Pass237callerexports andshape-animation-references are navigation. Phase units remain unresolved;storedcurrent/processed equality is not a rendering-complete gate.
 
 317JSON143Pythonparse;10341priorrawhashesverified156new10497total. No gameplay changes or UIretry. Productionunchanged;historicalfullnativeDeviceGuard4551 remains unresolved and currentremoteCIuninspected.
+
+## Animation units and standalone reader
+
+Inventory1026unchanged;652evidencepaths126unchangedassetsauditpasses. Native parser/frame-rate arithmetic and initialized zero clocks add unit/lifecycle evidence. Pass24252instructions131bytes andpass243557instructions1551bytes matchdisk/live. OpenRails format parser is separately cited only for Frame/FrameRate names. Six synthetic wheel-reader checks pass;fresh native capture reportsmanager-null/unavailable,not zero telemetry or populated-branch validation.
+
+320JSON146Pythonparse;10497priorrawhashesverified29new10526total. Reader retains identity/reread flags andpervehicleerrors;not atomic,not ABA-proof,andnot a rendering/load-complete gate. NoUIretry or gameplay changes. HistoricalDeviceGuard4551/currentremoteCIlimitations remain unchanged.
