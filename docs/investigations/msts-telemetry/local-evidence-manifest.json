@@ -65197,6 +65197,60 @@
       "bytes": 81,
       "sha256": "18d57c1d11b03260a3dd8669059ad032a5d356d57b46c3b86e6bd43203ea5fab",
       "included": false
+    },
+    {
+      "path": "pass270/0060f839.asm",
+      "bytes": 316,
+      "sha256": "d78f5088f86c1bd642cb7f1954bdc29aa7135b27d3272ae34a01e5cdac5c79c7",
+      "included": false
+    },
+    {
+      "path": "pass270/0060f839.bytes.tsv",
+      "bytes": 171,
+      "sha256": "30953a0f116c639c89c7d963253687430141459756641200caa99eb51521c15f",
+      "included": false
+    },
+    {
+      "path": "pass270/0060f839.c",
+      "bytes": 106,
+      "sha256": "cb91ed7c7e971a2c066ce76d2f7500574e546e1d62d3c85167c3ea62d6bfb338",
+      "included": false
+    },
+    {
+      "path": "pass270/console.log",
+      "bytes": 6042,
+      "sha256": "0629d26579f316ca609f3fe503fe89530ba784cd5495c1d74611cc4ae9e55d27",
+      "included": false
+    },
+    {
+      "path": "pass270/functions.tsv",
+      "bytes": 29,
+      "sha256": "23bf92bb58fabcd5f8a1ed1387127651c5405673fe9a687b5ed870ea3c1ce315",
+      "included": false
+    },
+    {
+      "path": "pass270/ghidra.log",
+      "bytes": 6058,
+      "sha256": "f39aa5698a91bc4da5bb5698f20019f31e7d2737bf121c16e0bcf75c8b489075",
+      "included": false
+    },
+    {
+      "path": "pass270/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass270/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "pass270/script.log",
+      "bytes": 81,
+      "sha256": "8e4241eebf104687bafe4de893b1f9095d1e6a88480f47ffcfa106ce212724e9",
+      "included": false
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 433, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1034}
+{'runtime_direct': 434, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1035}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1040,3 +1040,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | engine.vigilance_monitor_state | VigilanceMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
 | engine.emergency_stop_monitor_state | EmergencyStopMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
 | engine.overspeed_monitor_state | OverspeedMonitor runtime state | native parser/initializer/selected consumers traced and bytes matched;paused lead-state snapshot |
+| engine.unnamed_monitor_slot3_state | Unnamed fifth engine monitor runtime state | native layout,initializer disable and diesel conditional current trigger traced;paused disabled state read with valid definition |
