@@ -66925,6 +66925,54 @@
       "bytes": 81,
       "sha256": "a949838cc4dea1dd6b84e1b2ce82dc4ba4eadd73082070a4f3775f01a11193c7",
       "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-01/details.jsonl",
+      "bytes": 2654988,
+      "sha256": "87ff1682b2db019f5084ba4dadea380cc00037dc203598c94d332256eefdbe8e",
+      "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-01/metadata.json",
+      "bytes": 553,
+      "sha256": "78c8034cb34683d7c804f444864d839e6f427092af290cf6f5e54054cc2b3e95",
+      "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-01/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-02/details.jsonl",
+      "bytes": 2007916,
+      "sha256": "1a3da3a08b5a11a52905698aedf9aca1447d696965406914f8ddbdf990cc2254",
+      "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-02/metadata.json",
+      "bytes": 553,
+      "sha256": "2227ab02faa530a1163fb16c2962bffed06095ed26b986753570c8df3a8c1234",
+      "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-02/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/player-cleared-passage-02/read_signals_cab.py",
+      "bytes": 4838,
+      "sha256": "199821c64d6e3b3cc1396f09395ff8ac31ea355c763f3484efb23987b6583fc8",
+      "included": false
     }
   ]
 }

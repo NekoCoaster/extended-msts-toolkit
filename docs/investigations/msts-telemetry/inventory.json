@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T10:26:45.294797+00:00",
+  "generated_utc": "2026-09-27T10:34:20.296869+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -198,11 +198,17 @@
         "analyse_diesel_release_rollback.py",
         "diesel-release-rollback-summary.json",
         "captures/diesel-keyboard-release-01/samples.jsonl",
-        "captures/cleared-player-approach-01/details.jsonl"
+        "captures/cleared-player-approach-01/details.jsonl",
+        "PLAYER-SIGNAL-PASSAGE-FINDINGS.md",
+        "analyse_player_signal_passage.py",
+        "player-cleared-passage-01-summary.json",
+        "player-cleared-passage-02-summary.json",
+        "captures/player-cleared-passage-01/details.jsonl",
+        "captures/player-cleared-passage-02/details.jsonl"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
+      "evidence_status": "readable in live captures; semantics partly inherited/static;forward player next-signal selection transition observed after clearance",
       "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. No forward signal passage or exclusive grade causality claim."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Save-writer coverage follow-up traces containing raw ranges or explicit references and captures one paused23-vehicle player train. This is not an independent proof of field units, portable serialization, physical AI coverage, or successful save/load. Raw blocks retain pointers alongside separately encoded IDs. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. That rollback capture provides no forward passage or exclusive grade causality claim. LaterN4/release run has positive signed speed and stable-reread iterator transition from node-local46to21 at74410.078125..74410.25;distance7.915m switches to2710.103m. This is next-signal selection,not exact zero-distance or geometric crossing timing. Direction selector0to1 does not indicate train reversal. Two capture series have a55.71875simulation-second gap."
     },
     {
       "id": "train.first_car",
@@ -25684,11 +25690,17 @@
         "captures/clearance-forward-signal-paused-01/details.jsonl",
         "PAIRED-INFRASTRUCTURE-FINDINGS.md",
         "paired-player-crossing-01-paired-summary.json",
-        "captures/paired-player-crossing-01/metadata.json"
+        "captures/paired-player-crossing-01/metadata.json",
+        "PLAYER-SIGNAL-PASSAGE-FINDINGS.md",
+        "analyse_player_signal_passage.py",
+        "player-cleared-passage-01-summary.json",
+        "player-cleared-passage-02-summary.json",
+        "captures/player-cleared-passage-01/details.jsonl",
+        "captures/player-cleared-passage-02/details.jsonl"
       ],
-      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements",
+      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements;forward player next-signal selection transition observed after clearance",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. LaterN4/release run has positive signed speed and stable-reread iterator transition from node-local46to21 at74410.078125..74410.25;distance7.915m switches to2710.103m. This is next-signal selection,not exact zero-distance or geometric crossing timing. Direction selector0to1 does not indicate train reversal. Two capture series have a55.71875simulation-second gap."
     },
     {
       "id": "signal.next_distance",
@@ -25720,11 +25732,17 @@
         "analyse_diesel_release_rollback.py",
         "diesel-release-rollback-summary.json",
         "captures/diesel-keyboard-release-01/samples.jsonl",
-        "captures/cleared-player-approach-01/details.jsonl"
+        "captures/cleared-player-approach-01/details.jsonl",
+        "PLAYER-SIGNAL-PASSAGE-FINDINGS.md",
+        "analyse_player_signal_passage.py",
+        "player-cleared-passage-01-summary.json",
+        "player-cleared-passage-02-summary.json",
+        "captures/player-cleared-passage-01/details.jsonl",
+        "captures/player-cleared-passage-02/details.jsonl"
       ],
-      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements",
+      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements;forward player next-signal selection transition observed after clearance",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. No forward signal passage or exclusive grade causality claim."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage in that earlier capture. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. That rollback capture provides no forward passage or exclusive grade causality claim. LaterN4/release run has positive signed speed and stable-reread iterator transition from node-local46to21 at74410.078125..74410.25;distance7.915m switches to2710.103m. This is next-signal selection,not exact zero-distance or geometric crossing timing. Direction selector0to1 does not indicate train reversal. Two capture series have a55.71875simulation-second gap."
     },
     {
       "id": "signal.head_identity",
@@ -25745,11 +25763,17 @@
         "captures/clearance-forward-signal-paused-01/details.jsonl",
         "PAIRED-INFRASTRUCTURE-FINDINGS.md",
         "paired-player-crossing-01-paired-summary.json",
-        "captures/paired-player-crossing-01/metadata.json"
+        "captures/paired-player-crossing-01/metadata.json",
+        "PLAYER-SIGNAL-PASSAGE-FINDINGS.md",
+        "analyse_player_signal_passage.py",
+        "player-cleared-passage-01-summary.json",
+        "player-cleared-passage-02-summary.json",
+        "captures/player-cleared-passage-01/details.jsonl",
+        "captures/player-cleared-passage-02/details.jsonl"
       ],
-      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements",
+      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements;forward player next-signal selection transition observed after clearance",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. LaterN4/release run has positive signed speed and stable-reread iterator transition from node-local46to21 at74410.078125..74410.25;distance7.915m switches to2710.103m. This is next-signal selection,not exact zero-distance or geometric crossing timing. Direction selector0to1 does not indicate train reversal. Two capture series have a55.71875simulation-second gap."
     },
     {
       "id": "signal.function_type",
@@ -25795,11 +25819,17 @@
         "diesel-emergency-reset-summary.json",
         "diesel-brake-cab-provenance.json",
         "captures/diesel-emergency-reset-01/samples.jsonl",
-        "captures/diesel-reset-signal-paused-01/details.jsonl"
+        "captures/diesel-reset-signal-paused-01/details.jsonl",
+        "PLAYER-SIGNAL-PASSAGE-FINDINGS.md",
+        "analyse_player_signal_passage.py",
+        "player-cleared-passage-01-summary.json",
+        "player-cleared-passage-02-summary.json",
+        "captures/player-cleared-passage-01/details.jsonl",
+        "captures/player-cleared-passage-02/details.jsonl"
       ],
-      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements",
+      "evidence_status": "native source traced; same-head aspect 0 to 7 observed with UI Stop to Clear;paused forward head joins to databaseitem318 and same-run421sample0->7 clearance history;601-sample stationary-player paired series has unique head/definition joins and zero aspect disagreements;forward player next-signal selection transition observed after clearance",
       "update_or_lifecycle": "head state live; iterator refresh conditions and cadence need validation",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Bounds and direction must be validated. Do not interpret cached forward-profile flags as aspect. Only Stop/Clear transition tested; other aspect semantics and AI iterators remain unverified. Current iterator index46 is databaseitem318,distinct index spaces. Head/definition continuous in421samples;iterator itself not continuously sampled. Clear attribution remains scoped to current run and prior aspect UI validation,not portable ID or exact causal timing. Separate paired series continuously samples iterator/head/distance while player stays stopped;distance882.151367m and aspect7 remain constant. This does not validate moving refresh or player crossing. Infrastructure/monitor/tracks are sequential phases;stable rereads do not establish atomicity. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage in that earlier capture. LaterN4/release run has positive signed speed and stable-reread iterator transition from node-local46to21 at74410.078125..74410.25;distance7.915m switches to2710.103m. This is next-signal selection,not exact zero-distance or geometric crossing timing. Direction selector0to1 does not indicate train reversal. Two capture series have a55.71875simulation-second gap."
     },
     {
       "id": "signal.aspect_speed",

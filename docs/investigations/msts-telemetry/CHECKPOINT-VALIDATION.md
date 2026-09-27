@@ -352,3 +352,7 @@ Normal UI Backspace stop captured1268samples808paused460running,zeroerrors;23pla
 ## Diesel emergency acknowledgement and effort gates
 
 Pass2853functions569instructions2032bytes match disk/live33612.1397monitor samples,zeroerrors/context or monitor reread differences;emergency action/alarm/penalty clear after UIZ. Separate runningN1snapshot current225.000015A,cut conjunctionfalse;legacyPaused boilerplate explicitly corrected in findings/root probe,raw preserved. Final paused74293.1015625,Idle,brakesContinuousService. Inventory1039unchanged,815evidence paths126asset hashes pass. No production change/native build.
+
+## Forward start and next-signal selection
+
+Two completed captures:2383/1788 samples,zero read or signal errors,zero iterator reread differences,three clock-crossings each. Separate streams have55.71875simulation-second gap;the second captures consecutive stable rows bracketing iterator46to21 at74410.078125..74410.25. Exact geometric crossing unclaimed. Final paused74421.9296875,N4,14.246537m/s. Inventory1039unchanged,821evidence paths126asset hashes pass. Sync verifies11154old raw hashes and adds8files;383JSON180Python parse. Research only;native build not repeated.
