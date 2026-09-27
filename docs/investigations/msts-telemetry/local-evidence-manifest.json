@@ -64117,6 +64117,138 @@
       "bytes": 81,
       "sha256": "dd372ff455c7251a2380c3fe3b27d2e55119a68fd698cd24b99f2bc989fc86d0",
       "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-01/nodes.json",
+      "bytes": 23490,
+      "sha256": "e66ddad14558ebc9ca69801e5751421e7f55947347d5f9303ba4b85f5564494d",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-01/read_wheel_nodes.py",
+      "bytes": 3609,
+      "sha256": "4e3f2930dc10671b81abb77ce9fe7ed02d8365ff21e451e42dd558cd37e0e381",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-02/nodes.json",
+      "bytes": 48353,
+      "sha256": "e3466093b74bb8a5b2c98326ff689ac27a327fe04be5078d787c46de21027da8",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-02/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-02/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-02/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/wheel-node-registration-02/read_wheel_nodes.py",
+      "bytes": 4039,
+      "sha256": "f25003cb7b4728420be196588289d521f1f19cfc62f11f78223f8a8b5485a0ae",
+      "included": false
+    },
+    {
+      "path": "pass257/00402c61.asm",
+      "bytes": 26,
+      "sha256": "e8f2ab8404fd79062b14aa018fd2230793562084c07df34eac82ab9e539747ff",
+      "included": false
+    },
+    {
+      "path": "pass257/00402c61.bytes.tsv",
+      "bytes": 21,
+      "sha256": "d81296fccc45ef68a7994770d3480a18e7edc026d2f3e79113c5bc5ea8e59a1e",
+      "included": false
+    },
+    {
+      "path": "pass257/00402c61.c",
+      "bytes": 1012,
+      "sha256": "9353876e4c23c063d7a87ab15ec89bc36694d294441c2387c64e39d9c1315dd3",
+      "included": false
+    },
+    {
+      "path": "pass257/00403512.asm",
+      "bytes": 26,
+      "sha256": "75b8958795f4849a8d74e87cb6f8d2685b8e2944ffa5a00ec8972019b5312753",
+      "included": false
+    },
+    {
+      "path": "pass257/00403512.bytes.tsv",
+      "bytes": 21,
+      "sha256": "8f442f25a66e2ff752409385e3bcb22b35fbf27aed3b2c767b9aec38e97432f4",
+      "included": false
+    },
+    {
+      "path": "pass257/00403512.c",
+      "bytes": 381,
+      "sha256": "639bd3e5950ab05573ee7a80aa369f6be4d543159a1a6d452f64870feb8ec2a1",
+      "included": false
+    },
+    {
+      "path": "pass257/console.log",
+      "bytes": 6053,
+      "sha256": "c6c851056c3cd277504e21a3fa66bd6789999722471ed1bcd03f1f193e51b766",
+      "included": false
+    },
+    {
+      "path": "pass257/functions.tsv",
+      "bytes": 70,
+      "sha256": "d649ea57ccc81a52df666bfef5d30663da321409e8f6d3a3ff54bd5152767a83",
+      "included": false
+    },
+    {
+      "path": "pass257/ghidra.log",
+      "bytes": 6069,
+      "sha256": "1cc225c5c473044fa23eb728cf394fb592193bb4104868998eaa90d5add01fa7",
+      "included": false
+    },
+    {
+      "path": "pass257/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "pass257/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "pass257/script.log",
+      "bytes": 81,
+      "sha256": "8ab8184efac9f0d3632a6b649a5b23ce1fccbd44d0baa13105c24a3e97315153",
+      "included": false
     }
   ]
 }

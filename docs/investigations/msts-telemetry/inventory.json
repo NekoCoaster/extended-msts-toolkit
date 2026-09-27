@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-09-27T08:46:24.358828+00:00",
+  "generated_utc": "2026-09-27T08:49:34.407938+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 425,
+    "runtime_direct": 428,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 474,
     "config_mixed_paths": 37,
     "files_scanned": 126,
-    "total": 1026
+    "total": 1029
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -34790,6 +34790,66 @@
       "evidence_status": "native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled; populated player/AI reads and short moving sequences retained",
       "update_or_lifecycle": "dispatcher copies current scalar when processed range ends at animation node count",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Embedded animation object begins at shape+0x8c. Current and processed values are distinct from car+0x1dc driver accumulator. Equality is not proof of full rendering,visibility or gameplay freshness. Interpolation can clamp/loop current scalar;not vehicle accumulator. Null/unloaded shape means unavailable. No AI/paused update cadence established. Loader second animation integer supplies reciprocal rate;zero rate maps parsed key times to zero. Open Rails ShapeFile format names corroborate Frame/FrameRate;native arithmetic is independently traced. Initializer zeros current/processed scalars. Render/gameclock cadence remains separate. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence. External-view follow-up: 180 samples,25 unpaused,all45vehicles stable; all four driver phases remain zero. Paused car+80 flags equal1,so required bit0x800 is absent for the traced powered driver-phase branch. Default Wheelset is0.3000000119. This branch is ineligible at the sampled state; other wheel animation paths and eligibility transitions remain open. Initial gates-01 read kind with wrong width; corrected gates-02 uses native byte+88. Native animation tail deliberately cycles shape94 through0/epsilon/2epsilon to trigger processing. It is not necessarily elapsed playback time. Live entry405694 is redirected; original native body alone does not prove full live behavior."
+    },
+    {
+      "id": "car.shape_node_count",
+      "meaning": "Stored animation node count",
+      "applicability": "player/AI vehicles with supported type5shape;positive fixture four locomotives",
+      "value_type": "uint32",
+      "units": "nodes",
+      "extraction": "uint32 shape+0x98 for guarded type5shape",
+      "evidence": [
+        "WHEEL-ADHESION-FINDINGS.md",
+        "read_wheel_nodes.py",
+        "captures/wheel-node-registration-02/nodes.json",
+        "pass239/006d6200.asm",
+        "pass242/006d6100.asm",
+        "pass257-byte-verification.json",
+        "pass257/00403512.asm"
+      ],
+      "evidence_status": "native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners",
+      "update_or_lifecycle": "allocated with animation object;dispatcher and callbacks can update node transforms;cadence/reload untested",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Snapshot has18nodes per engine,6ordinary wheel callbacks each,allwheel flags byte2=7. Other41vehicles unsupported by this type5probe,not absent animation. Identity/slot/data rereads are not atomic or ABA-proof;transforms not reread. Raw matrix is not world pose or guaranteed visible wheel angle. Firstprobe missed thunk callbacks and conflated unsupported shapes with errors;secondcorrected. Wheel targetentry is hooked inliveprocess;binary attribution and finalrendering remain open."
+    },
+    {
+      "id": "car.shape_node_callbacks",
+      "meaning": "Per-node animation callback bindings and ordinary-wheel context",
+      "applicability": "player/AI vehicles with supported type5shape;positive fixture four locomotives",
+      "value_type": "array of structures",
+      "units": "addresses/raw flags/node indices",
+      "extraction": "16byte records at [shape+0xa0]+node*16;callback,data,two key cursor words. Verified wheel stub403512->5d5381 uses data byte2bit1 and car pointerdata+4.",
+      "evidence": [
+        "WHEEL-ADHESION-FINDINGS.md",
+        "read_wheel_nodes.py",
+        "captures/wheel-node-registration-02/nodes.json",
+        "pass239/006d6200.asm",
+        "pass242/006d6100.asm",
+        "pass257-byte-verification.json",
+        "pass257/00403512.asm"
+      ],
+      "evidence_status": "native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners",
+      "update_or_lifecycle": "allocated with animation object;dispatcher and callbacks can update node transforms;cadence/reload untested",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Snapshot has18nodes per engine,6ordinary wheel callbacks each,allwheel flags byte2=7. Other41vehicles unsupported by this type5probe,not absent animation. Identity/slot/data rereads are not atomic or ABA-proof;transforms not reread. Raw matrix is not world pose or guaranteed visible wheel angle. Firstprobe missed thunk callbacks and conflated unsupported shapes with errors;secondcorrected. Wheel targetentry is hooked inliveprocess;binary attribution and finalrendering remain open."
+    },
+    {
+      "id": "car.shape_node_transform",
+      "meaning": "Stored per-node animation transform",
+      "applicability": "player/AI vehicles with supported type5shape;positive fixture four locomotives",
+      "value_type": "float32[12] per node",
+      "units": "rotation coefficients;translation coordinate units not independently validated",
+      "extraction": "48byte transform at [shape+0x9c]+node*48;current probe samples verified ordinary-wheel nodes only",
+      "evidence": [
+        "WHEEL-ADHESION-FINDINGS.md",
+        "read_wheel_nodes.py",
+        "captures/wheel-node-registration-02/nodes.json",
+        "pass239/006d6200.asm",
+        "pass242/006d6100.asm",
+        "pass257-byte-verification.json",
+        "pass257/00403512.asm"
+      ],
+      "evidence_status": "native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners",
+      "update_or_lifecycle": "allocated with animation object;dispatcher and callbacks can update node transforms;cadence/reload untested",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Snapshot has18nodes per engine,6ordinary wheel callbacks each,allwheel flags byte2=7. Other41vehicles unsupported by this type5probe,not absent animation. Identity/slot/data rereads are not atomic or ABA-proof;transforms not reread. Raw matrix is not world pose or guaranteed visible wheel angle. Firstprobe missed thunk callbacks and conflated unsupported shapes with errors;secondcorrected. Wheel targetentry is hooked inliveprocess;binary attribution and finalrendering remain open."
     }
   ]
 }

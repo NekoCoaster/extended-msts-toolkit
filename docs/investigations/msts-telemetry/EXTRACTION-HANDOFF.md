@@ -4,7 +4,7 @@ This is a working handoff for the independent research phase associated with iss
 
 ## Catalogue and evidence
 
-Start with `inventory.json`: each `data_points` entry has an ID, meaning, applicability, type, units, extraction description, evidence, evidence status, lifecycle and limitations. The 1,026 entries are candidate records, not 1,026 independent verified live quantities. Cab channels and native fields may describe overlapping quantities; configuration paths may contain several values. Unknown units, raw flags, unavailable branches and engine-specific limits remain explicit.
+Start with `inventory.json`: each `data_points` entry has an ID, meaning, applicability, type, units, extraction description, evidence, evidence status, lifecycle and limitations. The 1,029 entries are candidate records, not 1,029 independent verified live quantities. Cab channels and native fields may describe overlapping quantities; configuration paths may contain several values. Unknown units, raw flags, unavailable branches and engine-specific limits remain explicit.
 
 Read the referenced findings before implementing a field. `DISCOVERY-COVERAGE.md` contains the initial requirements review followed by later evidence updates; its initial 920-entry table is historical. `CHECKPOINT-VALIDATION.md` in the published checkout records validation at each checkpoint. Passing structural checks establishes neither field semantics nor complete discovery.
 

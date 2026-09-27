@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 425, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1026}
+{'runtime_direct': 428, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1029}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1032,3 +1032,6 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | engine.driver_animation_phase | Stored powered-driver animation phase accumulator | native consumer/store verified;no live phase or visual-transition observation; populated player/AI reads and short moving sequences retained |
 | car.shape_animation_time | Stored current shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled; populated player/AI reads and short moving sequences retained |
 | car.shape_animation_processed_time | Stored previous processed shape animation scalar | native constructor/setter/dispatch traced and bytes verified;no loaded shape values sampled; populated player/AI reads and short moving sequences retained |
+| car.shape_node_count | Stored animation node count | native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners |
+| car.shape_node_callbacks | Per-node animation callback bindings and ordinary-wheel context | native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners |
+| car.shape_node_transform | Stored per-node animation transform | native slot/transform layout traced;paused four-engine snapshot with24wheel nodes and matching owners |
