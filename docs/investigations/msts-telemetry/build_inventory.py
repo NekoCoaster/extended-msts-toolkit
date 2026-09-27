@@ -996,6 +996,14 @@ for row in rows:
     if row['id'] in {'engine.driver_animation_phase','car.shape_animation_time','car.shape_animation_processed_time'}:
         row['evidence'].extend(['captures/wheel-external-view-01/samples.jsonl','captures/wheel-gates-external-paused-02/gates.json','read_wheel_gates.py'])
         row['limitations']+=' External-view follow-up: 180 samples,25 unpaused,all45vehicles stable; all four driver phases remain zero. Paused car+80 flags equal1,so required bit0x800 is absent for the traced powered driver-phase branch. Default Wheelset is0.3000000119. This branch is ineligible at the sampled state; other wheel animation paths and eligibility transitions remain open. Initial gates-01 read kind with wrong width; corrected gates-02 uses native byte+88.'
+for row in rows:
+    if row['id'] in {'car.shape_animation_time','car.shape_animation_processed_time'}:
+        row['evidence'].extend(['pass250-byte-verification.json','pass250/range.asm','pass253-byte-verification.json','pass253/00405694.asm'])
+        row['limitations']+=' Native animation tail deliberately cycles shape94 through0/epsilon/2epsilon to trigger processing. It is not necessarily elapsed playback time. Live entry405694 is redirected; original native body alone does not prove full live behavior.'
+    if row['id']=='car.wheel_rate_stored':
+        row['evidence'].extend(['pass254/005d5381.asm','pass254-byte-verification.json','pass255/005d55b5.asm','pass255-byte-verification.json','pass256/005d5684.asm','pass256-byte-verification.json','captures/wheel-hook-provenance-01/provenance.json'])
+        row['units']='rad/s from speed/radius producer and rate*frame_delta FSINCOS transform consumer'
+        row['limitations']+=' Ordinary callback5d5381 reads car through callbackdata+4,negates by car84bit4,and when callbackdata byte2bit1 is set rotates supplied transform using rate*frame_delta. No accumulated angle stored here. Live callback entry is redirected; NEMT source has matching crawl hook sites and conditional temporary rate replacement for eligible derailed vehicles,but binary attribution/full hook execution remain unverified.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

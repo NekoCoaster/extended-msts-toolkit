@@ -255,3 +255,7 @@ Passes244–248 retain selected resistance/norm/CRT arithmetic with disk/live by
 ## External-view follow-up
 
 180 samples include25 unpaused and the final paused interval. All45vehicles retained with zero read errors or flagged identity changes. Loaded car+80=1 excludes powered driver-phase bit0x800 on all four engines; Default Wheelset is nonzero. Initial diagnostic kind width was corrected from dword to byte using native assembly, with both raw attempts preserved. No visible wheel-angle or general cadence claim. Inventory1026;662 evidence paths and126 asset hashes pass. Manifest10598 prior hashes verified plus16new=10614. Publication327JSON150Python parse. Production unchanged; historical DeviceGuard4551/current remote CI limitations remain.
+
+## Ordinary-wheel consumer checkpoint
+
+Inventory1026;673 evidence references126unchanged assets pass. Native rate*delta -> FSINCOS transform chain corroborates ordinary-wheel rad/s; shape-time epsilon cycling is explicit. Live entries405694/5d5381 are redirected:passes253/254 each report three entry instruction mismatches, not full live equality. Hook provenance retains jump bytes and existing NEMT source copies without claiming DLL attribution. Pass25012instructions17bytes,252230/760,25573/207,25624/51 match disk/live. Scans249/251 are navigation only. Manifest10614prior hashes plus72new=10686;333JSON151Python parse. No gameplay or production changes. Full native DeviceGuard4551 and remote CI limits unchanged.
