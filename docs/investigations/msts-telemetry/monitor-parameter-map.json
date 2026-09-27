@@ -1,0 +1,136 @@
+{
+  "pid": 33612,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "parameters": [
+    {
+      "token": "0x4045b",
+      "name": "MonitoringDeviceMonitorTimeLimit",
+      "definition_offset": "0x0",
+      "destination_instruction": "0x611005",
+      "table": "0x796d60",
+      "table_bytes": "a0c275005b040400"
+    },
+    {
+      "token": "0x4045c",
+      "name": "MonitoringDeviceAlarmTimeLimit",
+      "definition_offset": "0x4",
+      "destination_instruction": "0x611078",
+      "table": "0x796d68",
+      "table_bytes": "54c275005c040400"
+    },
+    {
+      "token": "0x4045d",
+      "name": "MonitoringDevicePenaltyTimeLimit",
+      "definition_offset": "0xc",
+      "destination_instruction": "0x6110b2",
+      "table": "0x796d70",
+      "table_bytes": "04c275005d040400"
+    },
+    {
+      "token": "0x40464",
+      "name": "MonitoringDeviceAlarmTimeBeforeOverSpeed",
+      "definition_offset": "0x8",
+      "destination_instruction": "0x61103c",
+      "table": "0x796da8",
+      "table_bytes": "bcbf750064040400"
+    },
+    {
+      "token": "0x40460",
+      "name": "MonitoringDeviceAppliesFullBrake",
+      "definition_offset": "0x18",
+      "destination_instruction": "0x611160",
+      "table": "0x796d88",
+      "table_bytes": "2cc1750060040400"
+    },
+    {
+      "token": "0x40461",
+      "name": "MonitoringDeviceAppliesEmergencyBrake",
+      "definition_offset": "0x1c",
+      "destination_instruction": "0x61119d",
+      "table": "0x796d90",
+      "table_bytes": "d0c0750061040400"
+    },
+    {
+      "token": "0x40462",
+      "name": "MonitoringDeviceAppliesCutsPower",
+      "definition_offset": "0x20",
+      "destination_instruction": "0x6111da",
+      "table": "0x796d98",
+      "table_bytes": "80c0750062040400"
+    },
+    {
+      "token": "0x40463",
+      "name": "MonitoringDeviceAppliesShutsDownEngine",
+      "definition_offset": "0x24",
+      "destination_instruction": "0x611219",
+      "table": "0x796da0",
+      "table_bytes": "20c0750063040400"
+    },
+    {
+      "token": "0x4046f",
+      "name": "MonitoringDeviceTriggerOnOverspeed",
+      "definition_offset": "0x50",
+      "destination_instruction": "0x6114ce",
+      "table": "0x796e00",
+      "table_bytes": "fcbb75006f040400"
+    },
+    {
+      "token": "0x40470",
+      "name": "MonitoringDeviceTriggerOnHighCurrent",
+      "definition_offset": "0x54",
+      "destination_instruction": "0x61158b",
+      "table": "0x796e08",
+      "table_bytes": "a4bb750070040400"
+    },
+    {
+      "token": "0x40471",
+      "name": "MonitoringDeviceTriggerOnLowMainResPressire",
+      "definition_offset": "0x58",
+      "destination_instruction": "0x6115ca",
+      "table": "0x796e10",
+      "table_bytes": "38bb750071040400"
+    },
+    {
+      "token": "0x40472",
+      "name": "MonitoringDeviceTriggerOnOverRPM",
+      "definition_offset": "0x5c",
+      "destination_instruction": "0x611606",
+      "table": "0x796e18",
+      "table_bytes": "e8ba750072040400"
+    },
+    {
+      "token": "0x40473",
+      "name": "MonitoringDeviceTriggerOnTrackOverspeed",
+      "definition_offset": "0x60",
+      "destination_instruction": "0x61150d",
+      "table": "0x796e20",
+      "table_bytes": "88ba750073040400"
+    },
+    {
+      "token": "0x40474",
+      "name": "MonitoringDeviceTriggerOnTrackOverspeedMargin",
+      "definition_offset": "0x64",
+      "destination_instruction": "0x61154c",
+      "table": "0x796e28",
+      "table_bytes": "18ba750074040400"
+    }
+  ],
+  "constants": [
+    {
+      "address": "0x758b84",
+      "bytes": "000080bf",
+      "float32": -1.0
+    },
+    {
+      "address": "0x753c38",
+      "bytes": "0000803f",
+      "float32": 1.0
+    },
+    {
+      "address": "0x753e48",
+      "bytes": "f6290f40",
+      "float32": 2.236936092376709
+    }
+  ],
+  "limitation": "Labels and constants checked now;destination mapping follows pass261 assembly. Timer units/runtime producers and unusual trigger formulas need independent interpretation."
+}

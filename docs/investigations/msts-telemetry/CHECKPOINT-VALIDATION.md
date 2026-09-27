@@ -275,3 +275,7 @@ Replaced stale chronological coverage overview with a current requirement/eviden
 ## Engine safety-monitor discovery
 
 Inventory1034=433direct26derived68cab507config;693evidence paths126asset hashes pass. Four monitor runtime mappings identified by native parser labels/dispatch and initializer assembly. Pausedlead has expected links;trailing/AI linksnull. Allsampled identity/state/definition rereads stable. No warning/intervention/countdown validation claimed. Pass259598instructions2396bytes,26089/283,261611/2196 matchdisk/live;69selected parser/table/string checks match. Manifest10722priorhashes47new10769total;339JSON155Python parse. No gameplay/production changes;historical DeviceGuard4551/currentremoteCI limits unchanged.
+
+## Monitor trigger and reset-source semantics
+
+Inventory1034unchanged;700evidence paths126asset hashes pass.14parameter labels/constants mapped;60fa46cached trigger predicates and610623latch writes traced. Native overspeed conversion and RPM comparison preserved literally;disabled branches may leave caches unchanged. Existing snapshot decoded without advancing gameplay;no actual penalties/timer cadence claimed. Pass263191instructions669bytes and26414instructions48bytes matchdisk/live. Manifest10769priorhashes23new10792total;343JSON157Python parse. Production unchanged;historical native/CI limits remain.
