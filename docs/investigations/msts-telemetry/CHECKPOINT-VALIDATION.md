@@ -328,3 +328,7 @@ Native CollideFlags/CollideFunction token pairs and strings match disk/live. Pas
 ## Collision point velocity
 
 Pass2783functions108instructions292bytes match disk/live33612. Independent thunk/constant map verifies401aa0->5e17a0 and49.0 threshold. Formula selected-body v+omega cross(point-position),opposite pair object receives flags2;not relative impact speed. Existing candidates enriched,1038unchanged. Inventory776evidence paths126source hashes pass. No simulator input,native code changes or repeated native build.
+
+## Collision work buffer
+
+Pass2796functions2076instructions7741bytes andpass2804functions433instructions1523bytes match disk/live33612. Paused header count0/capacity4000,stable reread;no populated records claimed. Builder resets count;records mutate and body/callback swaps qualify prior attribution. One candidate added,1039total438direct. Audit785evidence paths126source hashes pass. Research only;native build not repeated.

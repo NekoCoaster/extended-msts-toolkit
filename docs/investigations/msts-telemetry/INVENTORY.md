@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 437, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1038}
+{'runtime_direct': 438, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 507, 'config_leaf_paths': 474, 'config_mixed_paths': 37, 'files_scanned': 126, 'total': 1039}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1044,3 +1044,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | session.vigilance_update_suppressed | Vigilance update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | session.aws_update_suppressed | AWS update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | car.collision_callback_state | Collision flags and callback binding (native CollideFlags/CollideFunction) | disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads;native parser labels,flags consumers,initializer and load callback reconstruction traced and byte-verified |
+| physics.collision_work_buffer | Transient collision processing buffer | allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation |
