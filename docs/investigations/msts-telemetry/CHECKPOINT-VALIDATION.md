@@ -332,3 +332,7 @@ Pass2783functions108instructions292bytes match disk/live33612. Independent thunk
 ## Collision work buffer
 
 Pass2796functions2076instructions7741bytes andpass2804functions433instructions1523bytes match disk/live33612. Paused header count0/capacity4000,stable reread;no populated records claimed. Builder resets count;records mutate and body/callback swaps qualify prior attribution. One candidate added,1039total438direct. Audit785evidence paths126source hashes pass. Research only;native build not repeated.
+
+## Collision post-builder qualification
+
+Pass28142instructions108bytes match disk/live33612;only record-bit mutation,no callback invocation. Exact JMP stub/pointer independently verified;stored CALL reference mismatch and misaligned pass283 explicitly rejected as instruction evidence. Inventory1039unchanged;789evidence paths126source hashes pass. No game controls or production changes;native build not repeated.

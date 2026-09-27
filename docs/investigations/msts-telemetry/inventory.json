@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T10:02:06.290846+00:00",
+  "generated_utc": "2026-09-27T10:04:55.890433+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -35299,7 +35299,7 @@
       "applicability": "global physical collision machinery;player/AI record attribution requires validated object links",
       "value_type": "structured header and bounded raw records",
       "units": "pointer,count,capacity;record field units incomplete",
-      "extraction": "globals80a76c pointer,80a770 count/construction index,80a774 capacity;stride0x62;record object pointers+4/+8,body pointers+c/+10,callbacks+14/+18;raw remaining bytes",
+      "extraction": "globals80a76c pointer,80a770 count/construction index,80a774 capacity;stride0x62;record object pointers+4/+8,body pointers+c/+10,callbacks+14/+18;raw remaining bytes;record dword0 bit0x1 set/cleared by005f952e according to caller+44==1",
       "evidence": [
         "COLLISION-CALLBACK-FINDINGS.md",
         "read_collision_buffer.py",
@@ -35310,11 +35310,15 @@
         "pass279/005def40.asm",
         "pass279/005df0b8.asm",
         "pass279/005f49f9.asm",
-        "pass280/00629dbc.asm"
+        "pass280/00629dbc.asm",
+        "pass281-byte-verification.json",
+        "pass281/005f952e.asm",
+        "map_collision_generation_stub.py",
+        "collision-generation-stub-map.json"
       ],
       "evidence_status": "allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation",
       "update_or_lifecycle": "builder resets count and reconstructs records;later processing mutates them;capacity can grow,teardown nulls buffer without explicit count reset",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Scratch buffer is not collision history or guaranteed current contacts. Count is also construction index during rebuild. Null buffer means unavailable even if stale count remains. Probe caps128records and does not dereference pointers. Body/callback pairs can swap without object pointers swapping;phase-dependent attribution. Sequential rereads not atomic;empty fixture provides no contact semantics or AI simulation proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Scratch buffer is not collision history or guaranteed current contacts. Count is also construction index during rebuild. Null buffer means unavailable even if stale count remains. Probe caps128records and does not dereference pointers. Body/callback pairs can swap without object pointers swapping;phase-dependent attribution. Sequential rereads not atomic;empty fixture provides no contact semantics or AI simulation proof. Post-builder005f952e only changes record flags and makes no callbacks;record flags differ from vehicle CollideFlags. Exact stub4038c3 is JMP despite stored CALL reference. Misaligned pass283 is rejected as instruction evidence. Callback invocation remains unresolved."
     }
   ]
 }

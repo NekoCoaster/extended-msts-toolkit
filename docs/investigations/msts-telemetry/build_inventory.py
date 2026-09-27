@@ -1102,6 +1102,11 @@ add('physics.collision_work_buffer','Transient collision processing buffer','glo
     'allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation',
     'builder resets count and reconstructs records;later processing mutates them;capacity can grow,teardown nulls buffer without explicit count reset',
     common+' Scratch buffer is not collision history or guaranteed current contacts. Count is also construction index during rebuild. Null buffer means unavailable even if stale count remains. Probe caps128records and does not dereference pointers. Body/callback pairs can swap without object pointers swapping;phase-dependent attribution. Sequential rereads not atomic;empty fixture provides no contact semantics or AI simulation proof.')
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row['evidence'].extend(['pass281-byte-verification.json','pass281/005f952e.asm','map_collision_generation_stub.py','collision-generation-stub-map.json'])
+        row['extraction']+=';record dword0 bit0x1 set/cleared by005f952e according to caller+44==1'
+        row['limitations']+=' Post-builder005f952e only changes record flags and makes no callbacks;record flags differ from vehicle CollideFlags. Exact stub4038c3 is JMP despite stored CALL reference. Misaligned pass283 is rejected as instruction evidence. Callback invocation remains unresolved.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

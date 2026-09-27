@@ -48,3 +48,12 @@ Pass280:4functions433instructions1523bytes match disk/live. Caller00629dbc gates
 read_collision_buffer.py records a bounded read-only snapshot atpaused73871.1953125:base56223236,count0,capacity4000,header rereadstable. Zero records were read;record stability is vacuous here,not positive record validation. Probe caps reads at128records,checks count/capacity and header reread,and does not dereference record pointers. Retained exact probe/read_live copies are in captures/collision-buffer-paused-01. A populated fixture and registry-qualified object links remain required before publishing these as contacts. Empty scratch state does not prove absence of prior or current physical contact.
 
 Added one structured work-buffer candidate retaining pointer/count/capacity and bounded raw records with partial object/body/callback fields. This exposes potentially useful transient data without naming it an event stream. Unknown record fields,validity,swaps,allocation changes and processing-phase races are explicit.
+
+
+## Post-builder record flags and reference caveat
+
+Pass281 verifies005f952e,42instructions108bytes,disk/live33612equal. This routine traverses caller+74 for caller+78 records,stride0x62,and sets record dword0 bit1 when caller+44==1,otherwise clears that bit. It makes no calls and does not invoke record callbacks. The post-builder path traced so far therefore establishes record flag mutation,not contact response or callback execution. Record flags must not be confused with per-vehicle CollideFlags+78.
+
+Pass282 caller navigation found a reference from4038c3 to629dbc,typed UNCONDITIONAL_CALL in the stored analysis database. The exact five disk/live bytes are e9f4642200: JMP rel32 to629dbc. map_collision_generation_stub.py verifies these bytes and the pointer at773298 to4038c3. Pass284 finds only that data reference,no caller function. This is an indirect-entry lead,not proof of its caller or execution timing.
+
+Pass283 attempted a small disassembly range starting4038b8,which was not an established instruction boundary. It produced misaligned instructions and is retained only as failed navigation evidence;do not use its listing for semantics. The independently verified exact stub supersedes it. Byte equality alone does not validate a stored reference type or instruction boundary. Next useful work should identify the owning dispatch table and its consumer,or acquire populated runtime records;repeating empty paused buffers would not establish invocation.
