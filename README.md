@@ -92,6 +92,9 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 
 [Explore the options](docs/features.md).
 
+Development branch only: [experimental ground walking](docs/walking.md), with
+shared editor movement bindings and an extended F5 status display. Not yet a release.
+
 ## Compatibility
 
 NEMT requires at least **MSTS Bin 1.8.052113** but is compatible with patched versions such as the Widescreen patch & LAA or both.

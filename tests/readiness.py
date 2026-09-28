@@ -14,7 +14,7 @@ harness = r'''
 #include <stdlib.h>
 #include <wchar.h>
 static WCHAR root[MAX_PATH]=L"C:\\fixture\\";
-static int config_valid=1,prevent_end=1,unlock_cameras=1,crawl_requested=1,cab_needles=0,write_status_json=0;
+static int config_valid=1,prevent_end=1,unlock_cameras=1,crawl_requested=1,cab_needles=0,write_status_json=0,walking_requested=0;
 static int polls,scenario,installed,toolset;
 static void die(const char *s){fprintf(stderr,"FAIL %s (scenario %d poll %d)\n",s,scenario,polls);exit(1);}
 static int has_toolset(const char *s){return toolset;}
@@ -24,6 +24,7 @@ static void write_status(void){}
 static void fail(const char *s){die(s);}
 static int install_cab_hooks(void){installed++;return 1;}
 static int start_native(void){installed++;return 1;}
+static int install_walking_hooks(void){return 1;}
 static void test_sleep(DWORD ms){if(ms!=250||++polls>200)die("wait bound");}
 #define Sleep test_sleep
 static int read_memory(DWORD address,void *out,SIZE_T size){

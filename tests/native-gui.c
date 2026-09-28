@@ -181,14 +181,17 @@ int main(void) {
     settings_defaults(&s);s.prefer_pcores=1;s.crawl=1;s.prevent_end=1;s.counter_tilt=1;s.strength=77;s.hud_left=0;
     strcpy(s.monitor,"\\\\.\\DISPLAY99");
     s.high_resolution=1;
+    s.walking=1;s.walking_height_cm=175;strcpy(s.walking_key,"F11");
     CHECK(install_settings(&info,&s,0,err,sizeof(err)));
     CHECK(load_selection_settings(&info,&loaded,err,sizeof(err)));
     CHECK(loaded.prefer_pcores && loaded.crawl && loaded.strength==77 && !loaded.hud_left);
     CHECK(!strcmp(loaded.monitor,s.monitor));
     CHECK(loaded.high_resolution);
+    CHECK(loaded.walking && loaded.walking_height_cm==175 && !strcmp(loaded.walking_key,"F11"));
     /* A partial old INI must not clear CenterWindowed's true default. */
     CHECK(write_all(ini,"[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n",(DWORD)strlen("[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n")));
     load_settings(ini,&loaded);CHECK(loaded.center_windowed && loaded.window_features);
+    CHECK(!loaded.walking && loaded.walking_height_cm==200 && !strcmp(loaded.walking_key,"F12"));
     CHECK(!strcmp(loaded.derail_key,"F8") && !strcmp(loaded.key_forward,"i"));
     /* Lock only the manifest against replacement. Earlier commits must roll
      * back rather than leaving the user's INI/DLL changed after this failure. */
