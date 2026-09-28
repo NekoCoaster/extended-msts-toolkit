@@ -12,6 +12,7 @@ static unsigned editor_key_parse(const WCHAR *s){
   {L"COMMA",0x33},{L"PERIOD",0x34},{L"SLASH",0x35},{L"SEMICOLON",0x27},
   {L"APOSTROPHE",0x28},{L"BACKQUOTE",0x29},{L"LBRACKET",0x1a},{L"RBRACKET",0x1b},{L"BACKSLASH",0x2b}};
  WCHAR c=s[0],*end;unsigned n,i;
+ if(s[0]==L'`'&&!s[1])return 0x29;
  if(c>=L'a'&&c<=L'z')c-=32;
  if(!s[1]){if(c>=L'A'&&c<=L'Z')return letters[c-L'A'];if(c>=L'1'&&c<=L'9')return c-L'1'+2;if(c==L'0')return 0x0b;}
  if(c==L'F'){n=wcstoul(s+1,&end,10);if(end!=s+1&&!*end&&n>=1&&n<=12)return n<=10?0x3a+n:0x57+n-11;}

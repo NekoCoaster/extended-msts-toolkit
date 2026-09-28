@@ -15,7 +15,8 @@ Select options in NEMT.exe, click **Apply**, and restart MSTS. The options are i
 | **Unmute while in background** | Keeps game audio active when another application has focus. |
 | **Continue after passing a red signal (Resume after failure message)** | Displays the built-in activity-failure message and permits continued simulation after dismissal. This does not turn the failed activity into a successful one or bypass unrelated failure conditions. |
 | **Remove derailment activity-end message** | Prevents the derailment activity-end message from ending the session. Other activity-ending conditions remain separate. |
-| **Unlock camera modes during derailment** | Keeps camera controls available after derailment. |
+| **Unlock camera modes during derailment** | Preserves the current view when derailment occurs and keeps camera controls available afterward. |
+| **Enable Walking (Experimental)** | Opt-in first-person terrain walking and noclip with shared editor movement bindings, jump, speed modifiers, FOV zoom, camera reset and extended F5 status. See the [walking guide](walking.md) for controls, configuration and collision limits. |
 | **Allow connected engines to crawl after derailment** | Adds powered movement after derailment. The panel also selects derailment activity-end prevention, which crawling requires. |
 
 The five [editor options](editors.md) enable resizable viewports and Alt+Enter fullscreen, freely movable Route Editor tools, the Route Editor idle-audio fix, configurable camera key swaps, and unrestricted mouse panning. Main-game borderless mode does not apply to `-toolset`.

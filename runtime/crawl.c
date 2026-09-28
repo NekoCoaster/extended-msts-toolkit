@@ -20,6 +20,8 @@ static U rotation_inputs,control_id;
 static Car cars[256];static U car_count,train_id,frame_count,control_type,active_count;
 static int enabled,blocked,strength=10,have_sim;
 #include "config.h"
+static int walking_input_active;
+static void walking_event(Registers *r);
 static float throttle,direction,last_sim;
 static double friction_scale=1;
 static const char *phase="waiting-for-activity",*last_error="";
@@ -68,7 +70,7 @@ static void update_frame(void){
  if(blocked)return;
  if(!*(volatile U*)G(0x7c2ac0)){clear_activity();return;}
  focused=!paused()&&crawl_control_focus()&&read_memory(G(0x829980),&mode,4)&&!mode;
- if(focused&&read_memory(G(0x7b6440),&ctl,4)&&read_memory(G(0x7b6438),&type,4))input=crawl_keyboard_controls(ctl,type);
+ if(focused&&!walking_input_active&&read_memory(G(0x7b6440),&ctl,4)&&read_memory(G(0x7b6438),&type,4))input=crawl_keyboard_controls(ctl,type);
  request=crawl_derail_pending;crawl_derail_pending=0;
  if(!focused){request=0;crawl_derail_down=1;}else if(!(input&CRAWL_DERAIL))crawl_derail_down=0;
  rotation_inputs=strength?(input&7):0;
@@ -159,7 +161,7 @@ static void hook_enter(U id,Registers *r){
  EnterCriticalSection(&state_lock);
  if(id==FRAME){if(!simulation_thread)simulation_thread=tid;if(tid==simulation_thread){InterlockedIncrement(&status_sequence);update_frame();InterlockedIncrement(&status_sequence);}}
  else if(id==EXIT){InterlockedIncrement(&status_sequence);clear_activity();InterlockedIncrement(&status_sequence);}
- else if(id==MANUAL_KEY)crawl_manual_event(r);
+ else if(id==MANUAL_KEY){walking_event(r);if(!walking_input_active)crawl_manual_event(r);}
  else if(enabled&&!paused())enter_effect(id,r);
  LeaveCriticalSection(&state_lock);
 }
@@ -207,6 +209,14 @@ static int start_native(void){
  }
  if(prevent_end){h=&hooks[count++];memset(h,0,sizeof(*h));h->address=G(0x5862dc);h->length=2;h->raw=1;memcpy(h->original,"\x74\x16",2);memcpy(h->replacement,"\xeb\x28",2);}
  if(unlock_cameras){h=&hooks[count++];memset(h,0,sizeof(*h));h->address=G(0x51c98c);h->length=6;h->raw=1;memcpy(h->original,"\x0f\x84\x55\x03\x00\x00",6);memset(h->replacement,0x90,6);}
+ if(unlock_cameras){
+  /* Camera-only derail notification. Suppress the whole notification, not just
+     its selector call: its tail assumes the derail camera was selected/created.
+     Vehicle/train flags and physical derailment live in the caller 0x62e017. */
+  h=&hooks[count++];memset(h,0,sizeof(*h));h->address=G(0x51d4e1);h->length=9;h->raw=1;
+  memcpy(h->original,"\x55\x8b\xec\x81\xec\xb4\x00\x00\x00",9);
+  memset(h->replacement,0x90,9);h->replacement[0]=0xc3;
+ }
  if(!count){phase="disabled";return 1;}
  if(!prepare_hooks(hooks,count))return 0;
  for(tries=0;tries<200;tries++){if(install_hooks(hooks,count)){phase="ready";return 1;}Sleep(25);}return 0;
