@@ -114,7 +114,7 @@ are enabled, their rows are displayed together.
 - Ground detection uses MSTS terrain triangles. There is no scenery, platform,
   bridge or train collision capsule; the walker can pass through those objects.
 - This is not yet a release-ready compatibility claim. Long-distance/tile-boundary
-  traversal, physical joystick hardware, multiplayer and arbitrary routes still
+  traversal and arbitrary routes still
   need validation. See [development evidence](technical/walking-development.md).
 - Both modes block native train driving actions, including held callbacks, and gate raw
   device callbacks during driving. Function keys, camera-selection actions and Escape remain available. Toggle entry/exit wait

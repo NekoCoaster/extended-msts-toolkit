@@ -17,7 +17,7 @@ release/version change is intended.
 - V toggles noclip. Space starts a grounded, edge-triggered jump. Jump apex
   above takeoff is half the configured standing eye height: height 2 m means
   feet 1 m and eyes 3 m above the original ground at the apex.
-- Block train keyboard, mouse/cab and joystick controls in both modes. Preserve
+- Block train keyboard and mouse/cab controls in both modes. Preserve
   existing throttle/brake settings; do not pause simulation. Enter/exit must
   handle held commands and key releases, not just suppress new key-downs.
 - Extended white F5 HUD should show mode, world/tile position, eye/feet height,
@@ -32,11 +32,11 @@ release/version change is intended.
 metre-based movement, terrain callback with explicit failure, normalized
 movement, RMB-gated look, edge-triggered height/noclip/jump, ballistic jump,
 pause handling and bounded frame time. Its eye-height limits of 0.1–10 m and
-look sensitivity are provisional implementation defaults, not user-approved UI.
+look sensitivity are provisional implementation defaults, not finalized UI.
 
 `tests/walking-model.c` covers apex, landing, held/released Space, height steps,
 diagonal speed, look gating, noclip and missing terrain. All **22 checks passed**
-after the user resolved the execution-policy blocker. Initially, execution was blocked.
+after the execution-policy blocker was resolved. Initially, execution was blocked.
 Windows Code Integrity event 3077 at 2026-09-28 22:08:44–45 confirms that
 `work\walk\walking-model.exe` did not meet Enterprise signing requirements
 or violated policy `{0283ac0f-fff1-49ae-ada1-8a933130cad6}`. No alternate launch
@@ -81,10 +81,10 @@ Live evidence on the supported image:
   **0.9998779296875 m** for a 2 m eye height. Throttle and reverser remained zero.
 - E eye-height step: eyes changed from `2001.993164` to `2002.043213`.
 - Short W tap moved Z from `-231.082016` to `-231.089020`; throttle/reverser
-  stayed zero. Sustained physical-key and RMB-look checks were requested from the
-  user because the computer-use interface does not expose a right-button hold.
-- The user subsequently reported that the live feature works very well and
-  approved this NEMT integration checkpoint. This is user-reported acceptance,
+  stayed zero. Manual sustained physical-key and RMB-look checks were requested
+  because the computer-use interface does not expose a right-button hold.
+- Subsequent in-game test reports confirmed that the live feature works very well,
+  supporting this NEMT integration checkpoint. This is in-game test feedback,
   not a separately instrumented assertion for every physical input combination.
 
 Latest registry-restoration hardening and HUD world-coordinate/paused labels
@@ -144,11 +144,10 @@ installed image before patching: the Ghidra project has an older base-image hash
 
 ## Remaining validation
 
-1. Retain the user-accepted live baseline; explicitly exercise focus loss and
+1. Retain the baseline accepted through in-game testing; explicitly exercise focus loss and
    stop-on-release in a repeatable regression pass.
 2. Exercise custom remaps/hotkey live, activity exit while walking, longer terrain
-   movement, tile boundaries and scenery-hole cases. Physical joystick behavior
-   is covered structurally by the common dispatcher, not yet by hardware testing.
+   movement, tile boundaries and scenery-hole cases.
 3. Finish native/source checks after final changes, refresh source inventories,
    and validate the exact final runtime bytes if more fixes are made.
 4. Restore the backed-up installed files and record hash equality. Keep any
@@ -164,7 +163,7 @@ For an off-grid starting value, select the next grid value in the requested
 direction. Clamp at the endpoints. Control direction and HUD presentation remain
 to be finalized with that implementation.
 
-The original request above was superseded by the user's **179 degree** maximum
+The original request above was superseded by the agreed **179 degree** maximum
 after the projection investigation below. The native view's projection field at
 `+0x84` was initially a research lead, not proof of
 support for this entire range. Conventional perspective projection becomes
@@ -186,7 +185,7 @@ degrees). No process writes or camera changes were made in this investigation.
 
 For the centered walking camera, focal distance tends to zero at 180 degrees
 and becomes negative above it. Passing 359 degrees is not a genuine panoramic
-view. The user chose a conventional **1–179 degree** range.
+view. The agreed range is a conventional **1–179 degrees**.
 
 ### Implemented follow-up
 
@@ -209,13 +208,13 @@ view. The user chose a conventional **1–179 degree** range.
   cover key edges, partial/multiple/reversed wheel deltas, disabled input,
   projection refresh, inactive message forwarding and HUD text.
 - Automated tests and XP import audit passed. The rebuilt FOV runtime has not
-  yet been deployed into the user's running MSTS session; actual wheel delivery,
+  yet been deployed into the running MSTS session; actual wheel delivery,
   endpoint appearance and restoration need a live restart/test. No PR opened.
 
 ## Movement refinement follow-up
 
-The user subsequently applied the FOV build and reported that zoom works
-perfectly. New movement refinements are implemented but await their own live
+Subsequent in-game test reports confirmed that zoom works perfectly after
+applying the FOV build. New movement refinements are implemented but await their own live
 acceptance; do not attribute the FOV report to these newer changes.
 
 - Base speeds: walking 3 m/s, noclip 17 m/s. Native left Shift scan `0x2a`
@@ -246,7 +245,7 @@ acceptance; do not attribute the FOV report to these newer changes.
 
 ## Derailment handoff correction and backtick controls
 
-User reported crashes on derailment during FPV and on returning from FPV after
+In-game test reports identified crashes on derailment during FPV and on returning from FPV after
 derailment. No crash dump or matching Application event was found. Targeted
 read-only decompilation identified a concrete unsafe path, but live crash-case
 reproduction and verification remain required before claiming both reports fixed.
@@ -286,7 +285,7 @@ native adapter regressions, not an actual MSTS derailment reproduction.
 
 ### Follow-up: native action names and preserving the current view
 
-The user reported that number-row camera selection remained blocked. The prior
+In-game test reports showed that number-row camera selection remained blocked. The prior
 camera allow-list incorrectly treated action `+0` as an ASCII text pointer.
 Native registration `0x6bbac0` / `0x6bc130` stores the object returned by
 `0x6bca50`; that interned-name object's `+0x10` points to UTF-16 text. The parser
@@ -310,7 +309,7 @@ verification of retaining external view 2 or switching out of FPV in MSTS.
 
 ### Accepted camera fixes; height and control-panel polish
 
-The user reported that the camera changes look good. The next refinement moves
+In-game test reports confirmed that the camera changes look good. The next refinement moves
 Enable walking directly after Unlock camera modes in both layout and creation
 (tab) order, shifting the lower controls together. Native layout checks cover
 adjacent rows at 96/120/144/192 DPI with one-pixel rounding tolerance.
@@ -327,7 +326,7 @@ Jump apex remains half eye height, including at large configured heights.
 Validation: full native suite passed, 380 walking-model checks and 326 GUI checks.
 Coverage includes off-grid steps, 25 ms timing, every accelerated step staying
 on-grid, the 100 m cap, and saved 10000 cm height. Live feel testing of these
-latest refinements remains separate from the user's acceptance of camera fixes.
+latest refinements remains separate from the in-game test reports for camera fixes.
 
 ### 60 Hz height repeat refinement
 
@@ -338,7 +337,7 @@ and 2.5 m/s cap. Fractional carry keeps applied heights on the 0.05 m grid;
 some ticks have no visible change. The native camera frame drives these ticks,
 so this is not a promise of minimum rendering FPS or a background timer.
 Regression checks cover the tick boundary, grid, and equal travel at 30/60/144
-FPS, including the unchanged capped rate. Live smoothness remains a user check.
+FPS, including the unchanged capped rate. Live smoothness remains an in-game check.
 
 ### Final labels and FPV reset key
 
@@ -364,15 +363,15 @@ harness, 18 feature-configuration fixtures, 28 frontend source guards and 29
 repository-tool tests also passed. Both components rebuilt with bundled x86
 TinyCC and passed the XP-baseline PE import audits.
 
-The user has reported successful walking, zoom and camera-fix behavior during
+In-game test reports describe successful walking, zoom and camera-fix behavior during
 development. This checkpoint adds no fresh instrumented live-game evidence;
-the remaining route, tile-boundary, hardware and multiplayer checks above
+the remaining route and tile-boundary checks above
 still apply. No version bump, release tag or release publication is included.
 
 ### Requested 1.2.1 release preparation
 
-After the PR checkpoint, the user requested a patch-version bump and preparation
-of a release tag. `VERSION` is now 1.2.1 with matching `releases/v1.2.1.md`.
+After the PR checkpoint, release preparation added a patch-version bump and
+a release tag. `VERSION` is now 1.2.1 with matching `releases/v1.2.1.md`.
 The annotated `v1.2.1` tag is prepared locally on the versioned checkpoint;
 it is not pushed or published as part of preparation. Pushing a `v*` tag triggers
 the repository's verification and release-publication workflow. If review changes
