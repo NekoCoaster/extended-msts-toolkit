@@ -92,8 +92,10 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 
 [Explore the options](docs/features.md).
 
-Development branch only: [experimental ground walking](docs/walking.md), with
-shared editor movement bindings and an extended F5 status display. Not yet a release.
+Unreleased: [experimental first-person walking and noclip](docs/walking.md), with
+shared editor movement bindings, sprint/slow modifiers, jumping, adjustable height
+and FOV, camera reset, and an extended F5 status display. Enable Walking is opt-in;
+terrain-only collision and remaining compatibility checks are documented in the guide.
 
 ## Compatibility
 

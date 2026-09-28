@@ -5,7 +5,7 @@ static int counter_tilt,prefer_pcores,limit_vsync;
 static char window_monitor[32];
 static int high_resolution;
 static int editor_windows,editor_free_tools,editor_idle_audio,editor_swap_keys,editor_unlimited_pan;
-static int walking_requested;static U walking_toggle_scan=0x58;static double walking_eye_height=2;
+static int walking_requested;static U walking_toggle_scan=0x29;static double walking_eye_height=2,walking_initial_eye_height=2,walking_repeat_delay=0.5;
 #include "editor_keys.h"
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
 static WCHAR runtime_dir[MAX_PATH];
@@ -44,15 +44,18 @@ static void read_config(void){
  editor_unlimited_pan=read_bool(path,L"Editors",L"UnlimitedMousePan");
  walking_requested=read_bool(path,L"Walking",L"Enabled");
  if(walking_requested){
-  GetPrivateProfileStringW(L"Walking",L"ToggleKey",L"F12",value,32,path);walking_toggle_scan=editor_key_parse(value);
-  if(!editor_key_allowed(walking_toggle_scan)||walking_toggle_scan>=238||walking_toggle_scan==0x2f||walking_toggle_scan==0x39||walking_toggle_scan==0x3f)config_valid=0;
+  GetPrivateProfileStringW(L"Walking",L"ToggleKey",L"BACKQUOTE",value,32,path);walking_toggle_scan=editor_key_parse(value);
+  if(walking_toggle_scan==0x58)walking_toggle_scan=0x29; /* Migrate original F12 default. */
+  if(!editor_key_allowed(walking_toggle_scan)||walking_toggle_scan>=238||walking_toggle_scan==0x09||walking_toggle_scan==0x2f||walking_toggle_scan==0x39||walking_toggle_scan==0x3f||walking_toggle_scan==0x0c||walking_toggle_scan==0x0d)config_valid=0;
   GetPrivateProfileStringW(L"Walking",L"EyeHeightCm",L"200",value,32,path);parsed=wcstol(value,&end,10);
-  if(end==value||*end||parsed<10||parsed>1000)config_valid=0;else walking_eye_height=parsed/100.0;
+  if(end==value||*end||parsed<10||parsed>10000)config_valid=0;else walking_initial_eye_height=walking_eye_height=parsed/100.0;
+  GetPrivateProfileStringW(L"Walking",L"HeightRepeatDelayMs",L"500",value,32,path);parsed=wcstol(value,&end,10);
+  if(end==value||*end||parsed<50||parsed>5000)config_valid=0;else walking_repeat_delay=parsed/1000.0;
  }
  if(editor_swap_keys||walking_requested){int i,j;for(i=0;i<6;i++){
   GetPrivateProfileStringW(L"Editors",editor_key_names[i],editor_key_defaults[i],value,32,path);
   editor_keys[i]=editor_key_parse(value);if(!editor_key_allowed(editor_keys[i]))config_valid=0;
-  if(walking_requested&&(editor_keys[i]>=238||editor_keys[i]==walking_toggle_scan||editor_keys[i]==0x2f||editor_keys[i]==0x39||editor_keys[i]==0x3f))config_valid=0;
+  if(walking_requested&&(editor_keys[i]>=238||editor_keys[i]==walking_toggle_scan||editor_keys[i]==0x09||editor_keys[i]==0x2f||editor_keys[i]==0x39||editor_keys[i]==0x3f||editor_keys[i]==0x0c||editor_keys[i]==0x0d))config_valid=0;
   for(j=0;j<i;j++)if(editor_keys[i]==editor_keys[j])config_valid=0;
  }}
  prevent_end=read_bool(path,L"Derailment",L"PreventActivityEnd");

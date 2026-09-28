@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <stdlib.h>
 static unsigned char *globals,*patches;
-#define G(a) ((a)==0x5862dc?(unsigned int)patches:((a)==0x51c98c?(unsigned int)patches+16:(unsigned int)globals+(a)-0x7b0000))
+#define G(a) ((a)==0x5862dc?(unsigned int)patches:((a)==0x51c98c?(unsigned int)patches+16:((a)==0x51d4e1?(unsigned int)patches+32:(unsigned int)globals+(a)-0x7b0000)))
 #include "../runtime/loader.c"
 int main(int argc,char **argv){
  char full[MAX_PATH],config[512];WCHAR dir[MAX_PATH],ini[MAX_PATH];HANDLE f;DWORD n;int bits,i,ok;B *optional[3];
@@ -16,11 +16,14 @@ int main(int argc,char **argv){
  f=CreateFileW(ini,GENERIC_WRITE,0,NULL,CREATE_ALWAYS,0,NULL);assert(f!=INVALID_HANDLE_VALUE);assert(WriteFile(f,config,strlen(config),&n,NULL));CloseHandle(f);
  globals=VirtualAlloc(NULL,0x80000,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);patches=VirtualAlloc(NULL,4096,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE);assert(globals&&patches);
  memcpy(patches,"\x74\x16",2);memcpy(patches+16,"\x0f\x84\x55\x03\x00\x00",6);
+ memcpy(patches+32,"\x55\x8b\xec\x81\xec\xb4\x00\x00\x00",9);
  for(i=0;i<HOOK_COUNT;i++){B *fake=VirtualAlloc(NULL,4096,MEM_COMMIT|MEM_RESERVE,PAGE_EXECUTE_READWRITE);assert(fake);memcpy(fake,hooks[i].original,hooks[i].length);hooks[i].address=(U)fake;if(i>=PITCH)optional[i-PITCH]=fake;}
  ok=start_native();
  if((bits>=8&&bits<=10)||bits==24||((bits&4)&&!(bits&1))){assert(!ok&&!config_valid);assert(!memcmp(patches,"\x74\x16",2));assert(!memcmp(patches+16,"\x0f\x84\x55\x03\x00\x00",6));}
  else{assert(ok&&config_valid);assert(!memcmp(patches,bits&1?"\xeb\x28":"\x74\x16",2));assert(!memcmp(patches+16,bits&2?"\x90\x90\x90\x90\x90\x90":"\x0f\x84\x55\x03\x00\x00",6));}
  if(ok){assert(counter_tilt==(bits==25?0:!!(bits&16)));for(i=0;i<3;i++)assert((optional[i][0]==0xe9)==!!(bits!=25&&(bits&4)&&(bits&16)));}
+ if(ok&&(bits&2)){assert(!memcmp(patches+32,"\xc3\x90\x90\x90\x90\x90\x90\x90\x90",9));((void(*)(void))(patches+32))();}
+ else assert(!memcmp(patches+32,"\x55\x8b\xec\x81\xec\xb4\x00\x00\x00",9));
  wcscpy(ini,runtime_dir);wcscat(ini,L"status.json");for(i=0;i<10000;i++)write_status();assert(GetFileAttributesW(ini)==INVALID_FILE_ATTRIBUTES);
  printf("PASS feature configuration %d: selected in-memory changes, dependency validation, disabled logging.\n",bits);return 0;
 }

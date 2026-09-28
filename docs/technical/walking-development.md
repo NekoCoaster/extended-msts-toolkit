@@ -154,7 +154,7 @@ installed image before patching: the Ghidra project has an older base-image hash
 4. Restore the backed-up installed files and record hash equality. Keep any
    experimental installation opt-in and distinguish it from release history.
 
-## Next feature: FOV adjustment (not in this checkpoint)
+## FOV follow-up (after walking checkpoint c5305f0)
 
 Requested controls are mouse wheel up/down and `-` / `=` while walking. Start
 from the existing camera FOV, with requested endpoints of 1 and 359 degrees.
@@ -164,9 +164,207 @@ For an off-grid starting value, select the next grid value in the requested
 direction. Clamp at the endpoints. Control direction and HUD presentation remain
 to be finalized with that implementation.
 
-The native view's projection field at `+0x84` is a research lead, not proof of
+The original request above was superseded by the user's **179 degree** maximum
+after the projection investigation below. The native view's projection field at
+`+0x84` was initially a research lead, not proof of
 support for this entire range. Conventional perspective projection becomes
 singular at 180 degrees and cannot represent a 359-degree view normally; inspect
 MSTS's projection behavior before promising the requested upper range. Keep this
 work separate from the accepted walking checkpoint. No PR or release is intended
 at this stage.
+
+### Projection investigation, 2026-09-29
+
+Read-only export `work/walk/fov01/006b91f0.{c,asm}` confirms the native
+projection helper uses `tan((angular correction + FOV) * 0.5)` as the divisor
+for focal distance. Activation at `0x51cf20` passes view `+0x84` on the stack,
+with viewport and center pointers in ECX/EDX; the abbreviated decompiler call
+must not be treated as a one-argument ABI. A read-only sample of the running
+supported MSTS process confirmed `0x755114 = 0.5`, the pixel offset at
+`0x758b80 = 0.10000000149`, and current FOV `1.04719674587` radians (about 60
+degrees). No process writes or camera changes were made in this investigation.
+
+For the centered walking camera, focal distance tends to zero at 180 degrees
+and becomes negative above it. Passing 359 degrees is not a genuine panoramic
+view. The user chose a conventional **1–179 degree** range.
+
+### Implemented follow-up
+
+- Wheel up / `=` narrow FOV; wheel down / `-` widen it. Stops are
+  `1, 5, 10, ... 175, 179`. Float roundoff near exact grid points is normalized.
+- Entry copies the original native FOV without quantizing it; invalid or
+  out-of-range source values fall back to 60 degrees. Only the detached view's
+  `+0x84` field changes. Frame-thread activation refreshes the native projection;
+  exit restores the saved native camera, including its original projection.
+- Verified main-window procedure entry `0x696c00` is detoured with the same
+  five-byte gateway used by the editor module, exclusively in gameplay mode.
+  Wheel messages are consumed only while walking is active, focused and
+  unpaused; other messages chain through the original procedure. Partial wheel
+  deltas accumulate to 120-unit detents and reset on focus loss/pause/exit.
+- Native keyboard edges handle `-` / `=` without repeat; both keys are reserved
+  against walking remap/toggle conflicts. Native train-action isolation remains
+  active. The white F5 HUD displays FOV and controls without adding rows.
+- Model tests now have 104 checks including all ascending/descending stops,
+  endpoints, off-grid starts and float-roundoff cases. Native adapter tests
+  cover key edges, partial/multiple/reversed wheel deltas, disabled input,
+  projection refresh, inactive message forwarding and HUD text.
+- Automated tests and XP import audit passed. The rebuilt FOV runtime has not
+  yet been deployed into the user's running MSTS session; actual wheel delivery,
+  endpoint appearance and restoration need a live restart/test. No PR opened.
+
+## Movement refinement follow-up
+
+The user subsequently applied the FOV build and reported that zoom works
+perfectly. New movement refinements are implemented but await their own live
+acceptance; do not attribute the FOV report to these newer changes.
+
+- Base speeds: walking 3 m/s, noclip 17 m/s. Native left Shift scan `0x2a`
+  multiplies by two; left Alt scan `0x38` multiplies by one half. Together they
+  cancel. Sprint/slow affect horizontal movement and noclip vertical movement,
+  not eye-height changes or jump apex. Windows Alt-menu activation is suppressed
+  only during active, focused, unpaused walking.
+- On noclip exit above terrain, retain actual previous flight X/Z velocity and
+  start gravity from zero vertical speed. With 0.01-second substeps, analytically
+  ease horizontal velocity toward walking input at rate 1.5/s and integrate
+  displacement. Below-terrain exits still snap up. Landing clears air carry;
+  unavailable terrain prevents the mode transition as before.
+- Height-repeat delay is `[Walking] HeightRepeatDelayMs=500`, valid 50–5000.
+  Native runtime validates it; frontend loads/preserves/writes it. Repeat period
+  is 0.1 s, exponential doubling time 1 s, capped at 0.25 m per repeat. Existing
+  eye-height bounds remain. Release, conflicting directions and mode/pause/focus
+  changes reset the timer. The first tap is still 0.05 m.
+- Cursor hiding uses `SetCursor(NULL)` and suppresses native `WM_SETCURSOR`
+  while looking; no global `ShowCursor` counter changes. Restore the saved cursor
+  on release/focus loss/cancel/destroy/reset, but do not overwrite a newer native
+  cursor (for example one selected by a menu). Camera pause handling restores it.
+- Regression coverage includes normal/slow/sprint/combined diagonal speeds,
+  flight-to-fall momentum, gravity/landing, below-ground recovery, height delay,
+  exponential cap/reset/bounds, cursor ownership/restoration and config round-trip.
+  Full suite passed with 130 walking model checks and 306 native GUI checks.
+- Apply the rebuilt NEMT to the installation and restart MSTS before live tests.
+  The ongoing game session has not been modified. No PR or release is created.
+
+## Derailment handoff correction and backtick controls
+
+User reported crashes on derailment during FPV and on returning from FPV after
+derailment. No crash dump or matching Application event was found. Targeted
+read-only decompilation identified a concrete unsafe path, but live crash-case
+reproduction and verification remain required before claiming both reports fixed.
+
+Native activation `0x51cd5f` calls the incoming view's `+0x10` callback before
+updating `0x7c2a88`. In callback `0x5191dd`, the `+0x110` branch reads the outgoing
+active view's `+0x9c` car at `0x51949a`, adds `0x20`, and copies 48 bytes at
+`0x5194ae` without checking null. FPV deliberately zeroes `+0x9c`, so that path
+reads from address `0x20`. This explains a native handoff crash without requiring
+a freed camera as the cause. Raw exports are under ignored
+`work/walk/active-view-readers` and `work/walk/derail-camera3`.
+
+A verified six-byte activation detour now bridges FPV-to-native transitions:
+temporarily supply a live car owned by the current train (incoming camera's car,
+or controlled car at train `+0x6a`), run original activation, then remove the
+temporary attachment. Outgoing callbacks remain zero, avoiding duplicate
+deactivation of the saved native view. FPV resets only when native activation
+actually changes the view. This covers native forced transitions as well as
+explicit FPV exit. Saved return cameras must still be in the bounded native
+camera list (`0x7c2ac8`, node `+8`); otherwise try the current registered cab
+camera. Invalid pointers/ownership reject the handoff rather than dereferencing
+them. A rejected handoff keeps FPV input isolation active.
+
+Default toggle is now BACKQUOTE (`0x29`), migrating the old F12 default in both
+runtime and frontend. Other custom hotkeys remain preserved. Keyboard actions
+bound to F1–F12 and Escape are allowed, plus the named native camera actions
+found in `GLOBAL/common.iom`; no hard-coded numeric-key assumptions are used.
+Other train actions remain masked for the current dispatch even if a camera
+action exits FPV mid-poll. The activation bridge ends FPV for successful view
+selection, without first bouncing through the saved camera.
+
+Tests cover all twelve function-key binding allowances, camera/non-camera action
+classification, native callback-shaped outgoing matrix access, forced derail
+handoff, return to derail view, controlled-car fallback, stale saved view,
+missing ownership, rejected activation and corrupt registry bounds. These are
+native adapter regressions, not an actual MSTS derailment reproduction.
+
+### Follow-up: native action names and preserving the current view
+
+The user reported that number-row camera selection remained blocked. The prior
+camera allow-list incorrectly treated action `+0` as an ASCII text pointer.
+Native registration `0x6bbac0` / `0x6bc130` stores the object returned by
+`0x6bca50`; that interned-name object's `+0x10` points to UTF-16 text. The parser
+now follows that layout with bounded reads and compares wide strings. Tests now
+use the real object layout rather than a direct ASCII pointer. This correction
+supports the native number-row and remapped camera actions without unblocking
+non-camera train commands merely because they are bound to a number key.
+An input-dispatch test allows number-row 2, performs the native-shaped activation
+handoff, checks FPV exit, and verifies mask/device restoration afterward.
+Read-only exports are in `work/walk/action-registry` and `action-identity`.
+
+When UnlockCameras is enabled, `start_native` now installs a verified early return
+at camera-only notification `0x51d4e1`, in the same transaction as the existing
+camera lock removal. This applies with FPV disabled as well as enabled. The
+native derail caller still updates vehicle/train flags and wakes bodies; only
+forced camera takeover/setup is omitted. With the option disabled, neither
+camera patch is installed and the guarded native takeover remains in effect.
+See `patches.md` for exact bytes. Eighteen feature configurations and the real
+native derail-routine fixture test passed. These tests do not constitute live
+verification of retaining external view 2 or switching out of FPV in MSTS.
+
+### Accepted camera fixes; height and control-panel polish
+
+The user reported that the camera changes look good. The next refinement moves
+Enable walking directly after Unlock camera modes in both layout and creation
+(tab) order, shifting the lower controls together. Native layout checks cover
+adjacent rows at 96/120/144/192 DPI with one-pixel rounding tolerance.
+
+Q/E now snaps off-grid eye heights to the next 0.05 m boundary in the requested
+direction. Held repeat uses 25 ms ticks after the existing configurable delay.
+Each tick budgets 0.05 m multiplied by exponential acceleration, capped at
+0.0625 m/tick (2.5 m/s). A fractional accumulator preserves the 0.05 m grid and
+the existing maximum rate, giving 0.05/0.10 m applied changes at the cap instead
+of off-grid values. Release/reset clears the fraction. The max eye height is now
+100 m in physics, native INI validation, and frontend round-trip (10000 cm).
+Jump apex remains half eye height, including at large configured heights.
+
+Validation: full native suite passed, 380 walking-model checks and 326 GUI checks.
+Coverage includes off-grid steps, 25 ms timing, every accelerated step staying
+on-grid, the 100 m cap, and saved 10000 cm height. Live feel testing of these
+latest refinements remains separate from the user's acceptance of camera fixes.
+
+### 60 Hz height repeat refinement
+
+Held Q/E repeat now uses 1/60 second ticks (about 16.67 ms), superseding the
+25 ms period above. The first repeat still applies 0.05 m at the configured
+hold delay. Later ticks budget 2/60 m with the same exponential acceleration
+and 2.5 m/s cap. Fractional carry keeps applied heights on the 0.05 m grid;
+some ticks have no visible change. The native camera frame drives these ticks,
+so this is not a promise of minimum rendering FPS or a background timer.
+Regression checks cover the tick boundary, grid, and equal travel at 30/60/144
+FPS, including the unchanged capped rate. Live smoothness remains a user check.
+
+### Final labels and FPV reset key
+
+Control-panel labels are now exactly "Swap arrow keys with WASDQE controls in
+route editor" and "Enable Walking (Experimental)". Only wording changed; the
+editor key mapping remains untouched. Number-row 8 (`0x09`) is consumed by FPV
+and resets the configured initial eye height plus the FOV captured on FPV entry.
+Keep a separate configured height baseline because ordinary FPV exit retains
+the adjusted session height. Reset preserves position, orientation, velocities
+and mode; it clears height repeat/fraction and wheel remainder, and requests a
+projection refresh. Native 8 behavior is untouched outside FPV. The key is now
+reserved against walking movement/toggle conflicts and appears in the F5 HUD.
+Tests cover exact labels, custom defaults, no held repeat, inactive/paused gates,
+native event consumption and preservation of other keys.
+
+### PR checkpoint validation (2026-09-29)
+
+The complete native regression suite passed: 508 walking-model checks, the
+walking native-adapter harness, 328 GUI/installer checks, 52 frontend-model
+checks, and 104984 viewport cases (998600 assertions), plus the existing
+display, input and window compatibility tests. The actual loader readiness
+harness, 18 feature-configuration fixtures, 28 frontend source guards and 29
+repository-tool tests also passed. Both components rebuilt with bundled x86
+TinyCC and passed the XP-baseline PE import audits.
+
+The user has reported successful walking, zoom and camera-fix behavior during
+development. This checkpoint adds no fresh instrumented live-game evidence;
+the remaining route, tile-boundary, hardware and multiplayer checks above
+still apply. No version bump, release tag or release publication is included.

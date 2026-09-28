@@ -120,6 +120,9 @@ static void cosmetic_gui_checks(void) {
             SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE));layout_controls();
         check_outer_size(outer.right-outer.left,outer.bottom-outer.top);
         CHECK(GetClientRect(g_main,&client));
+        {RECT camera,walking,crawl;CHECK(GetWindowRect(GetDlgItem(g_main,IDC_CAMERA),&camera));
+         CHECK(GetWindowRect(GetDlgItem(g_main,IDC_WALKING),&walking));CHECK(GetWindowRect(GetDlgItem(g_main,IDC_CRAWL),&crawl));
+         CHECK(abs(walking.top-camera.bottom)<=1&&abs(crawl.top-walking.bottom)<=1);}
         CHECK(client.right>=dip(CONTENT_WIDTH+STARTUP_EXTRA_WIDTH));
         CHECK(client.bottom>=dip(CONTENT_HEIGHT+STARTUP_EXTRA_HEIGHT));
         CHECK(!(GetWindowLongA(g_main,GWL_STYLE)&(WS_HSCROLL|WS_VSCROLL)));
@@ -181,17 +184,22 @@ int main(void) {
     settings_defaults(&s);s.prefer_pcores=1;s.crawl=1;s.prevent_end=1;s.counter_tilt=1;s.strength=77;s.hud_left=0;
     strcpy(s.monitor,"\\\\.\\DISPLAY99");
     s.high_resolution=1;
-    s.walking=1;s.walking_height_cm=175;strcpy(s.walking_key,"F11");
+    s.walking=1;s.walking_height_cm=175;s.walking_repeat_ms=750;strcpy(s.walking_key,"F11");
     CHECK(install_settings(&info,&s,0,err,sizeof(err)));
     CHECK(load_selection_settings(&info,&loaded,err,sizeof(err)));
     CHECK(loaded.prefer_pcores && loaded.crawl && loaded.strength==77 && !loaded.hud_left);
     CHECK(!strcmp(loaded.monitor,s.monitor));
     CHECK(loaded.high_resolution);
     CHECK(loaded.walking && loaded.walking_height_cm==175 && !strcmp(loaded.walking_key,"F11"));
+    CHECK(loaded.walking_repeat_ms==750);
+    strcpy(s.walking_key,"F12");CHECK(write_settings(ini,&s));load_settings(ini,&loaded);
+    CHECK(!strcmp(loaded.walking_key,"BACKQUOTE"));
+    s.walking_height_cm=10000;CHECK(write_settings(ini,&s));load_settings(ini,&loaded);CHECK(loaded.walking_height_cm==10000);
     /* A partial old INI must not clear CenterWindowed's true default. */
     CHECK(write_all(ini,"[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n",(DWORD)strlen("[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n")));
     load_settings(ini,&loaded);CHECK(loaded.center_windowed && loaded.window_features);
-    CHECK(!loaded.walking && loaded.walking_height_cm==200 && !strcmp(loaded.walking_key,"F12"));
+    CHECK(!loaded.walking && loaded.walking_height_cm==200 && !strcmp(loaded.walking_key,"BACKQUOTE"));
+    CHECK(loaded.walking_repeat_ms==500);
     CHECK(!strcmp(loaded.derail_key,"F8") && !strcmp(loaded.key_forward,"i"));
     /* Lock only the manifest against replacement. Earlier commits must roll
      * back rather than leaving the user's INI/DLL changed after this failure. */
@@ -206,6 +214,8 @@ int main(void) {
     wc.hbrBackground=(HBRUSH)GetStockObject(WHITE_BRUSH);CHECK(RegisterClassA(&wc));
     g_main=CreateWindowExA(WS_EX_CONTROLPARENT,wc.lpszClassName,"NEMT regression tests",MAIN_WINDOW_STYLE,0,0,780,580,NULL,NULL,g_instance,NULL);
     CHECK(g_main!=NULL);CHECK(create_ui());ShowWindow(g_main,SW_SHOWNORMAL);UpdateWindow(g_main);SetActiveWindow(g_main);g_info=info;g_cpu_supported=0;
+    get_text(IDC_WALKING,text,sizeof(text));CHECK(!strcmp(text,"Enable Walking (Experimental)"));
+    get_text(IDC_EDITORKEYS,text,sizeof(text));CHECK(!strcmp(text,"Swap arrow keys with WASDQE controls in route editor"));
     cosmetic_gui_checks();
     settings_defaults(&s);settings_to_ui(&s);
     CHECK(g_monitor_count>=2);

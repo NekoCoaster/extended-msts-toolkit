@@ -160,8 +160,10 @@ static void load_settings(const char*path,Settings*s){char v[64];settings_defaul
  ini_get(path,"Startup","MaxLogSizeKB","8192",v,sizeof(v));s->max_log_kb=atoi(v);if(s->max_log_kb<4||s->max_log_kb>65536)s->max_log_kb=8192;
  ini_get(path,"Startup","MaxBackupLogs","0",v,sizeof(v));s->max_backup_logs=atoi(v);if(s->max_backup_logs<0||s->max_backup_logs>20)s->max_backup_logs=0;
  ini_get(path,"Derailment","DerailKey","BACKSLASH",s->derail_key,sizeof(s->derail_key));
- ini_get(path,"Walking","ToggleKey","F12",s->walking_key,sizeof(s->walking_key));
- ini_get(path,"Walking","EyeHeightCm","200",v,sizeof(v));s->walking_height_cm=atoi(v);if(s->walking_height_cm<10||s->walking_height_cm>1000)s->walking_height_cm=200;
+ ini_get(path,"Walking","ToggleKey","BACKQUOTE",s->walking_key,sizeof(s->walking_key));
+ if(!lstrcmpiA(s->walking_key,"F12"))lstrcpyA(s->walking_key,"BACKQUOTE");
+ ini_get(path,"Walking","EyeHeightCm","200",v,sizeof(v));s->walking_height_cm=atoi(v);if(s->walking_height_cm<10||s->walking_height_cm>10000)s->walking_height_cm=200;
+ ini_get(path,"Walking","HeightRepeatDelayMs","500",v,sizeof(v));s->walking_repeat_ms=atoi(v);if(s->walking_repeat_ms<50||s->walking_repeat_ms>5000)s->walking_repeat_ms=500;
  ini_get(path,"Editors","RE_CAM_FORWARD","w",s->key_forward,sizeof(s->key_forward));ini_get(path,"Editors","RE_CAM_BACKWARD","s",s->key_backward,sizeof(s->key_backward));ini_get(path,"Editors","RE_CAM_LEFT","a",s->key_left,sizeof(s->key_left));ini_get(path,"Editors","RE_CAM_RIGHT","d",s->key_right,sizeof(s->key_right));ini_get(path,"Editors","RE_CAM_UP","e",s->key_up,sizeof(s->key_up));ini_get(path,"Editors","RE_CAM_DOWN","q",s->key_down,sizeof(s->key_down));
 }
 static const char*bt(int v){return v?"true":"false";}
@@ -172,9 +174,9 @@ static int write_settings(const char*path,const Settings*s){char b[8192];int n=_
  "[Diagnostics]\r\nWriteStatusJson=%s\r\nShowCrawlHUD=%s\r\nCrawlHUDAnchor=%s\r\n\r\n"
  "[Cab]\r\nCorrectNeedleAspect=%s\r\n\r\n[Audio]\r\nUnmuteInBackground=%s\r\n\r\n[Activity]\r\nIgnoreRedSignal=%s\r\n\r\n"
  "[Editors]\r\nResizableViewports=%s\r\nFreeToolWindows=%s\r\nSmoothIdleAudio=%s\r\nUnlimitedMousePan=%s\r\nSwapArrowKeys=%s\r\nRE_CAM_FORWARD=%s\r\nRE_CAM_BACKWARD=%s\r\nRE_CAM_LEFT=%s\r\nRE_CAM_RIGHT=%s\r\nRE_CAM_UP=%s\r\nRE_CAM_DOWN=%s\r\n"
- "\r\n[Walking]\r\nEnabled=%s\r\nToggleKey=%s\r\nEyeHeightCm=%d\r\n",
+ "\r\n[Walking]\r\nEnabled=%s\r\nToggleKey=%s\r\nEyeHeightCm=%d\r\nHeightRepeatDelayMs=%d\r\n",
  bt(s->prefer_pcores),bt(s->verbose_loading),bt(s->startup_log),bt(s->limit_vsync),bt(s->unlock_fps),bt(s->skip_movie),bt(s->skip_movie),s->max_log_kb,s->max_backup_logs,
- bt(s->window_features),bt(s->center_windowed),bt(s->prevent_end),bt(s->unlock_cameras),bt(s->crawl),s->strength,s->derail_key,bt(s->counter_tilt),bt(s->write_status),bt(s->crawl),s->hud_left?"BottomLeft":"BottomRight",bt(s->cab_needles),bt(s->background_audio),bt(s->ignore_red_signal),bt(s->editor_windows),bt(s->editor_tools),bt(s->editor_audio),bt(s->editor_pan),bt(s->editor_keys),s->key_forward,s->key_backward,s->key_left,s->key_right,s->key_up,s->key_down,bt(s->walking),s->walking_key,s->walking_height_cm);
+ bt(s->window_features),bt(s->center_windowed),bt(s->prevent_end),bt(s->unlock_cameras),bt(s->crawl),s->strength,s->derail_key,bt(s->counter_tilt),bt(s->write_status),bt(s->crawl),s->hud_left?"BottomLeft":"BottomRight",bt(s->cab_needles),bt(s->background_audio),bt(s->ignore_red_signal),bt(s->editor_windows),bt(s->editor_tools),bt(s->editor_audio),bt(s->editor_pan),bt(s->editor_keys),s->key_forward,s->key_backward,s->key_left,s->key_right,s->key_up,s->key_down,bt(s->walking),s->walking_key,s->walking_height_cm,s->walking_repeat_ms);
  if(n<0||n>=(int)sizeof(b))return 0;
  if(strchr(s->monitor,'\r')||strchr(s->monitor,'\n'))return 0;
  if(!write_all(path,b,(DWORD)n))return 0;
@@ -238,6 +240,7 @@ static int load_selection_settings(const MstsInfo *info,Settings *s,char *err,si
         s->skip_movie=extra.skip_movie;
         s->high_resolution=extra.high_resolution;
         s->walking=extra.walking;s->walking_height_cm=extra.walking_height_cm;
+        s->walking_repeat_ms=extra.walking_repeat_ms;
         lstrcpynA(s->walking_key,extra.walking_key,sizeof(s->walking_key));
         lstrcpynA(s->monitor,extra.monitor,sizeof(s->monitor));
         /* A missing key retains the manifest fallback, unlike a false key. */
@@ -846,7 +849,7 @@ static int create_ui(void) {
     HWND c;int y=118,i;
     char text[512],runtime[MAX_PATH];WIN32_FILE_ATTRIBUTE_DATA data;
     INITCOMMONCONTROLSEX controls;
-    const int ids[]={IDC_PCORES,IDC_SKIPMOVIE,IDC_WINDOW,IDC_UNLOCKFPS,IDC_VERBOSE,IDC_CAB,IDC_BACKGROUND,IDC_REDSIGNAL,IDC_EDITORWINDOWS,IDC_EDITORTOOLS,IDC_EDITORAUDIO,IDC_EDITORKEYS,IDC_EDITORPAN,IDC_TIMEOUT,IDC_CAMERA,IDC_CRAWL,IDC_COUNTERTILT};
+    const int ids[]={IDC_PCORES,IDC_SKIPMOVIE,IDC_WINDOW,IDC_UNLOCKFPS,IDC_VERBOSE,IDC_CAB,IDC_BACKGROUND,IDC_REDSIGNAL,IDC_EDITORWINDOWS,IDC_EDITORTOOLS,IDC_EDITORAUDIO,IDC_EDITORKEYS,IDC_EDITORPAN,IDC_TIMEOUT,IDC_CAMERA,IDC_WALKING,IDC_CRAWL,IDC_COUNTERTILT};
     const char *labels[]={
         "Prefer P-cores (Only applicable to CPUs with hybrid architecture, e.g. Intel P && E cores)",
         "Skip startup movie (fixes keyboard control issue when loading into simulator)",
@@ -859,10 +862,11 @@ static int create_ui(void) {
         "Resizable editor windows and fullscreen (Alt+Enter)",
         "Move Route Editor tool windows freely",
         "Fix Route Editor lag when no sound sources present",
-        "Swap arrow keys with WASDEQ controls in route editor",
+        "Swap arrow keys with WASDQE controls in route editor",
         "Remove Route Editor mouse-panning limit",
         "Remove derailment activity-end message",
         "Unlock camera modes during derailment",
+        "Enable Walking (Experimental)",
         "Allow connected engines to crawl after derailment",
         "Enable counter-tilt filter while crawling (optional)"};
     controls.dwSize=sizeof(controls);controls.dwICC=ICC_BAR_CLASSES;
@@ -903,7 +907,6 @@ static int create_ui(void) {
     c=ADD("COMBOBOX","",CBS_DROPDOWNLIST|WS_TABSTOP|WS_VSCROLL,424,570,170,120,IDC_HUDLEFT);
     SendMessageA(c,CB_ADDSTRING,0,(LPARAM)"Bottom right");SendMessageA(c,CB_ADDSTRING,0,(LPARAM)"Bottom left");SendMessageA(c,CB_SETCURSEL,1,0);
     ADD("BUTTON","Enable deep logging (Optional; HIGH DISK USAGE! Use only for bug reporting or troubleshooting issues)",BS_AUTOCHECKBOX|BS_MULTILINE|WS_TABSTOP,24,606,712,40,IDC_LOGGING);
-    ADD("BUTTON","Enable walking (experimental; F12 default, configurable in settings.ini)",BS_AUTOCHECKBOX|WS_TABSTOP,24,660,712,24,IDC_WALKING);
     if(join_path(runtime,g_root,"runtime\\DINPUT.dll") && GetFileAttributesExA(runtime,GetFileExInfoStandard,&data))
         wsprintfA(text,"An additional ~%lu KB is required for this patch (DINPUT.dll, settings.ini, installation.json & status.json). Optional startup.log size may vary.",(data.nFileSizeLow+2048+1023)/1024);
     else lstrcpyA(text,"Keep runtime\\DINPUT.dll and runtime\\integrity.json alongside the toolkit. Optional startup.log size may vary.");
@@ -916,16 +919,15 @@ static int create_ui(void) {
     ADD("STATIC","Developed and Tested by NekoCoaster with Astra | MIT License",SS_LEFT|SS_NOPREFIX,24,782,712,20,IDC_CREDIT);
     c=ADD("STATIC","NekoCoaster/extended-msts-toolkit",SS_NOTIFY|WS_TABSTOP,24,806,500,22,IDC_GITHUB);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
 #undef ADD
-    /* The added display rows shift the existing lower controls together. */
+    /* Display rows (54) and the walking checkbox (22) shift lower controls. */
     for(i=0;i<g_control_count;++i) {
         if(!g_controls[i].hwnd)return 0;
         if(g_controls[i].id>=IDC_TITLE || g_controls[i].id==IDC_STRENGTH ||
            g_controls[i].id==IDC_STRENGTHVALUE || g_controls[i].id==IDC_HUDLEFT ||
            g_controls[i].id==IDC_LOGGING || (g_controls[i].id>=IDC_RECOMMENDED && g_controls[i].id<=IDC_CLOSE)){
-            if(g_controls[i].y>=494)g_controls[i].y+=54;
+            if(g_controls[i].y>=494)g_controls[i].y+=76;
         }
     }
-    for(i=0;i<g_control_count;++i)if(g_controls[i].id!=IDC_WALKING&&g_controls[i].y>=660)g_controls[i].y+=28;
     if(g_control_failed || !g_strength || !g_path || !g_status || !g_message || !GetDlgItem(g_main,IDC_HUDLEFT)) return 0;
     g_tooltip=CreateWindowExA(WS_EX_TOPMOST,TOOLTIPS_CLASSA,NULL,WS_POPUP|TTS_ALWAYSTIP,CW_USEDEFAULT,CW_USEDEFAULT,CW_USEDEFAULT,CW_USEDEFAULT,g_main,NULL,g_instance,NULL);
     if(g_tooltip) SendMessageA(g_tooltip,TTM_SETMAXTIPWIDTH,0,dip(400));

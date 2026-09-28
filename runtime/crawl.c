@@ -209,6 +209,14 @@ static int start_native(void){
  }
  if(prevent_end){h=&hooks[count++];memset(h,0,sizeof(*h));h->address=G(0x5862dc);h->length=2;h->raw=1;memcpy(h->original,"\x74\x16",2);memcpy(h->replacement,"\xeb\x28",2);}
  if(unlock_cameras){h=&hooks[count++];memset(h,0,sizeof(*h));h->address=G(0x51c98c);h->length=6;h->raw=1;memcpy(h->original,"\x0f\x84\x55\x03\x00\x00",6);memset(h->replacement,0x90,6);}
+ if(unlock_cameras){
+  /* Camera-only derail notification. Suppress the whole notification, not just
+     its selector call: its tail assumes the derail camera was selected/created.
+     Vehicle/train flags and physical derailment live in the caller 0x62e017. */
+  h=&hooks[count++];memset(h,0,sizeof(*h));h->address=G(0x51d4e1);h->length=9;h->raw=1;
+  memcpy(h->original,"\x55\x8b\xec\x81\xec\xb4\x00\x00\x00",9);
+  memset(h->replacement,0x90,9);h->replacement[0]=0xc3;
+ }
  if(!count){phase="disabled";return 1;}
  if(!prepare_hooks(hooks,count))return 0;
  for(tries=0;tries<200;tries++){if(install_hooks(hooks,count)){phase="ready";return 1;}Sleep(25);}return 0;

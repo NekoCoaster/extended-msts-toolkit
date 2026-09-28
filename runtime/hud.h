@@ -17,9 +17,9 @@ static void walking_hud_lines(char lines[WALK_HUD_LINES][240]){
  snprintf(lines[0],240,"Walk: %s%s%s | Noclip: %s | Train input: %s",walking_status,walking_state.active&&paused()?" [PAUSED]":"",walking_pending?" (release keys/buttons)":"",walking_state.noclip&&walking_state.active?"ON":"OFF",walking_input_active?"BLOCKED":"normal");
  if(walking_state.active)snprintf(lines[1],240,"World X/Z: %.2f / %.2f | Tile: %d / %d (%.2f / %.2f)",tx*2048.0+lx,tz*2048.0+lz,tx,tz,lx,lz);
  else snprintf(lines[1],240,"World position: -- | Eye height: %.2f m",walking_eye_height);
- if(walking_state.active)snprintf(lines[2],240,"Feet Y: %.2f | Eyes Y: %.2f | Eye height: %.2f m | %s",walking_state.y,walking_state.y+walking_state.eye_height,walking_state.eye_height,walking_state.noclip?"Flying":walking_state.grounded?"Grounded":"Airborne");
- else snprintf(lines[2],240,"Ground walking: 1.4 m/s | Noclip: 10 m/s | Terrain collision only");
- snprintf(lines[3],240,"Walk=%s | Move=%s/%s/%s/%s | Height=%s/%s (0.05m) | Look=hold RMB | Fly=V | Jump=Space",keys[6],keys[0],keys[1],keys[2],keys[3],keys[4],keys[5]);
+ if(walking_state.active)snprintf(lines[2],240,"Feet Y: %.2f | Eyes Y: %.2f | Eye height: %.2f m | %s | FOV: %.1f deg",walking_state.y,walking_state.y+walking_state.eye_height,walking_state.eye_height,walking_state.noclip?"Flying":walking_state.grounded?"Grounded":"Airborne",walking_fov);
+ else snprintf(lines[2],240,"Walking: 3 m/s | Noclip: 17 m/s | Terrain collision only");
+ snprintf(lines[3],240,"Walk=%s | Move=%s/%s/%s/%s | Height=%s/%s (hold: repeat) | RMB look | V fly | Space jump | LShift x2 / LAlt x0.5 | Zoom=wheel up/down or =/- | Reset=8",keys[6],keys[0],keys[1],keys[2],keys[3],keys[4],keys[5]);
 }
 static void hud_lines(char lines[HUD_LINE_COUNT][240]){
  const char *status="Standby",*reverser="Neutral";U powered=0,applying=0,i,rotation=0;double force=0,t=0;int boost=strength;
