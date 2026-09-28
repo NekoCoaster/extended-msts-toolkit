@@ -368,3 +368,12 @@ The user has reported successful walking, zoom and camera-fix behavior during
 development. This checkpoint adds no fresh instrumented live-game evidence;
 the remaining route, tile-boundary, hardware and multiplayer checks above
 still apply. No version bump, release tag or release publication is included.
+
+### Requested 1.2.1 release preparation
+
+After the PR checkpoint, the user requested a patch-version bump and preparation
+of a release tag. `VERSION` is now 1.2.1 with matching `releases/v1.2.1.md`.
+The annotated `v1.2.1` tag is prepared locally on the versioned checkpoint;
+it is not pushed or published as part of preparation. Pushing a `v*` tag triggers
+the repository's verification and release-publication workflow. If review changes
+the release commit, confirm the intended final tag target before publication.
