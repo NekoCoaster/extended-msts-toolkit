@@ -7,6 +7,8 @@ static int high_resolution;
 static int editor_windows,editor_free_tools,editor_idle_audio,editor_swap_keys,editor_unlimited_pan;
 static int walking_requested;static U walking_toggle_scan=0x29;static double walking_eye_height=2,walking_initial_eye_height=2,walking_repeat_delay=0.5;
 #include "editor_keys.h"
+#include "walking-settings.h"
+static double walking_tuning[WALK_TUNING_COUNT]={3,17,2,2};
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
 static WCHAR runtime_dir[MAX_PATH];
 static int read_bool(const WCHAR *path,const WCHAR *section,const WCHAR *key){
@@ -43,6 +45,14 @@ static void read_config(void){
  editor_swap_keys=read_bool(path,L"Editors",L"SwapArrowKeys");
  editor_unlimited_pan=read_bool(path,L"Editors",L"UnlimitedMousePan");
  walking_requested=read_bool(path,L"Walking",L"Enabled");
+ {int i,j;WCHAR key[64],wide[64];char number[64];
+  for(i=0;i<WALK_TUNING_COUNT;i++){
+   for(j=0;walk_tuning_names[i][j];j++)key[j]=walk_tuning_names[i][j];key[j]=0;
+   GetPrivateProfileStringW(L"Walking",key,L"",wide,64,path);
+   for(j=0;j<63&&wide[j]&&wide[j]<128;j++)number[j]=(char)wide[j];number[j]=0;
+   walking_tuning[i]=wide[j]?walk_tuning_defaults[i]:walk_tuning_parse(number,i);
+  }
+ }
  if(walking_requested){
   GetPrivateProfileStringW(L"Walking",L"ToggleKey",L"BACKQUOTE",value,32,path);walking_toggle_scan=editor_key_parse(value);
   if(walking_toggle_scan==0x58)walking_toggle_scan=0x29; /* Migrate original F12 default. */

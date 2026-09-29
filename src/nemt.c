@@ -164,6 +164,7 @@ static void load_settings(const char*path,Settings*s){char v[64];settings_defaul
  if(!lstrcmpiA(s->walking_key,"F12"))lstrcpyA(s->walking_key,"BACKQUOTE");
  ini_get(path,"Walking","EyeHeightCm","200",v,sizeof(v));s->walking_height_cm=atoi(v);if(s->walking_height_cm<10||s->walking_height_cm>10000)s->walking_height_cm=200;
  ini_get(path,"Walking","HeightRepeatDelayMs","500",v,sizeof(v));s->walking_repeat_ms=atoi(v);if(s->walking_repeat_ms<50||s->walking_repeat_ms>5000)s->walking_repeat_ms=500;
+ {int i;for(i=0;i<WALK_TUNING_COUNT;i++){ini_get(path,"Walking",walk_tuning_names[i],"",v,sizeof(v));s->walking_tuning[i]=walk_tuning_parse(v,i);}}
  ini_get(path,"Editors","RE_CAM_FORWARD","w",s->key_forward,sizeof(s->key_forward));ini_get(path,"Editors","RE_CAM_BACKWARD","s",s->key_backward,sizeof(s->key_backward));ini_get(path,"Editors","RE_CAM_LEFT","a",s->key_left,sizeof(s->key_left));ini_get(path,"Editors","RE_CAM_RIGHT","d",s->key_right,sizeof(s->key_right));ini_get(path,"Editors","RE_CAM_UP","e",s->key_up,sizeof(s->key_up));ini_get(path,"Editors","RE_CAM_DOWN","q",s->key_down,sizeof(s->key_down));
 }
 static const char*bt(int v){return v?"true":"false";}
@@ -180,6 +181,10 @@ static int write_settings(const char*path,const Settings*s){char b[8192];int n=_
  if(n<0||n>=(int)sizeof(b))return 0;
  if(strchr(s->monitor,'\r')||strchr(s->monitor,'\n'))return 0;
  if(!write_all(path,b,(DWORD)n))return 0;
+ {int i;char number[64];for(i=0;i<WALK_TUNING_COUNT;i++){
+  _snprintf(number,sizeof(number),"%.17g",walk_tuning_safe(s->walking_tuning[i],i));
+  if(!WritePrivateProfileStringA("Walking",walk_tuning_names[i],number,path))return 0;
+ }}
  return WritePrivateProfileStringA("Window","Monitor",s->monitor,path) &&
   WritePrivateProfileStringA("Startup","HighResolutionCompatibility",bt(s->high_resolution),path);}
 
@@ -241,6 +246,7 @@ static int load_selection_settings(const MstsInfo *info,Settings *s,char *err,si
         s->high_resolution=extra.high_resolution;
         s->walking=extra.walking;s->walking_height_cm=extra.walking_height_cm;
         s->walking_repeat_ms=extra.walking_repeat_ms;
+        memcpy(s->walking_tuning,extra.walking_tuning,sizeof(s->walking_tuning));
         lstrcpynA(s->walking_key,extra.walking_key,sizeof(s->walking_key));
         lstrcpynA(s->monitor,extra.monitor,sizeof(s->monitor));
         /* A missing key retains the manifest fallback, unlike a false key. */

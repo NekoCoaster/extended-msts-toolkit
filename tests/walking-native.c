@@ -6,6 +6,11 @@ static U head[3],node[3],device[11],table[238*4],actions[3][6],action_name[5];
 static B input[48],bits[30];
 static int ground_result=1;static float ground_normal=1;
 static int fov_activations,proc_calls;
+static int modifier_flags;
+static SHORT WINAPI fake_key_state(int key){
+ assert(key==VK_LSHIFT||key==VK_LMENU);
+ return (modifier_flags&(key==VK_LSHIFT?1:2))?(SHORT)0x8000:0;
+}
 static HCURSOR fake_cursor=(HCURSOR)1234;
 static HCURSOR WINAPI fake_set_cursor(HCURSOR c){HCURSOR old=fake_cursor;fake_cursor=c;return old;}
 static HCURSOR WINAPI fake_get_cursor(void){return fake_cursor;}
@@ -46,9 +51,56 @@ static void setup(void){
  actions[0][2]=(U)actions[1];actions[1][2]=(U)actions[2];
  table[1*4]=(U)actions[1];table[0x3f*4]=(U)actions[2];
 }
+static void fake_rebase_camera_frame(void){
+ assert(walking_state.x==-1023.75);
+ *(int*)G(0x79d11c)+=1;
+}
+static void test_tile_rebase(void){
+ int mode,axis,sign,i;char lines[WALK_HUD_LINES][240];
+ for(mode=0;mode<2;mode++)for(axis=0;axis<2;axis++)for(sign=-1;sign<=1;sign+=2){
+  double wx,wz;
+  memset(&walking_state,0,sizeof(walking_state));walking_state.active=1;walking_state.noclip=mode;
+  walking_state.x=axis?17:sign*1024.25;walking_state.z=axis?sign*1024.25:17;
+  walking_state.y=123;walking_state.eye_height=2;walking_state.velocity_x=3;walking_state.vertical_speed=-4;
+  walking_origin_x=*(int*)G(0x79d118)=-5993;walking_origin_z=*(int*)G(0x79d11c)=14532;
+  wx=walking_origin_x*2048.0+walking_state.x;wz=walking_origin_z*2048.0+walking_state.z;
+  walking_matrix();
+  /* Mirror the native origin shift, which skips our unregistered view. */
+  *(int*)G(axis?0x79d11c:0x79d118)+=sign;
+  walking_sync_origin();
+  assert(walking_state.x+walking_origin_x*2048.0==wx&&walking_state.z+walking_origin_z*2048.0==wz);
+  assert(walking_state.x>=-1024&&walking_state.x<1024&&walking_state.z>=-1024&&walking_state.z<1024);
+  for(i=0;i<100;i++){walking_sync_origin();walking_matrix();}
+  assert(walking_state.x+walking_origin_x*2048.0==wx&&walking_state.z+walking_origin_z*2048.0==wz);
+  assert(*(float*)((B*)walking_view+0x38)==walking_state.x&&*(float*)((B*)walking_view+0x68)==walking_state.x);
+  assert(*(float*)((B*)walking_view+0x40)==walking_state.z&&*(float*)((B*)walking_view+0x70)==walking_state.z);
+  assert(walking_state.y==123&&walking_state.eye_height==2&&walking_state.velocity_x==3&&walking_state.vertical_speed==-4&&walking_state.noclip==mode);
+  /* HUD can run before the next movement callback; diagonal/multi-tile shift. */
+  *(int*)G(0x79d118)+=3;*(int*)G(0x79d11c)-=2;walking_hud_lines(lines);
+  assert(walking_state.x+walking_origin_x*2048.0==wx&&walking_state.z+walking_origin_z*2048.0==wz);
+ }
+ /* Even paused/unfocused frames synchronize before native work and after it. */
+ walking_origin_x=*(int*)G(0x79d118)=10;walking_origin_z=*(int*)G(0x79d11c)=10;
+ walking_state.x=1024.25;walking_state.z=1024.25;walking_state.active=1;
+ walking_train=*(U*)G(0x7c2ac0)=1234;*(U*)G(0x7c2a88)=(U)walking_view;
+ *(U*)G(0x7be0f4)=1;*(int*)G(0x79d118)=11;
+ walking_camera_original=fake_rebase_camera_frame;walking_camera();
+ assert(walking_state.x==-1023.75&&walking_state.z==-1023.75);
+ assert(walking_origin_x==11&&walking_origin_z==11);
+ *(U*)G(0x7be0f4)=0;
+ walking_reset();
+}
 int main(void){
  char lines[WALK_HUD_LINES][240];B readbits[32];int i;double height;
  walking_set_cursor=fake_set_cursor;walking_get_cursor=fake_get_cursor;
+ {WalkInput in;walking_key_state=fake_key_state;
+  for(modifier_flags=0;modifier_flags<4;modifier_flags++){
+   memset(&in,0,sizeof(in));walking_modifiers(&in);
+   assert(in.sprint==!!(modifier_flags&1)&&in.slow==!!(modifier_flags&2));
+  }
+  modifier_flags=0;walking_modifiers(&in);assert(!in.sprint&&!in.slow);
+ }
+ test_tile_rebase();
  walking_cursor(1);walking_cursor(1);assert(!fake_cursor&&walking_cursor_hidden);
  walking_cursor(0);assert(fake_cursor==(HCURSOR)1234&&!walking_cursor_hidden);
  walking_cursor(1);fake_cursor=(HCURSOR)5678;walking_cursor(0);assert(fake_cursor==(HCURSOR)5678);
@@ -124,6 +176,7 @@ int main(void){
  walking_cursor(1);walking_reset();assert(!walking_cursor_hidden&&fake_cursor==(HCURSOR)5678);
  walking_state.active=walking_input_active=1;walking_state.x=2050;walking_state.z=-1025;walking_state.y=20;walking_state.eye_height=2;
  *(int*)G(0x79d118)=100;*(int*)G(0x79d11c)=-50;
+ walking_origin_x=100;walking_origin_z=-50;
  walking_status="Walking";walking_hud_lines(lines);assert(strstr(lines[0],"BLOCKED"));assert(strstr(lines[1],"101 / -51"));assert(strstr(lines[2],"Eyes Y: 22.00"));
  walking_state.noclip=1;walking_hud_lines(lines);assert(strstr(lines[0],"Noclip: ON"));
  assert(strstr(lines[2],"FOV: 179.0 deg"));assert(strstr(lines[3],"wheel up/down or =/-"));
