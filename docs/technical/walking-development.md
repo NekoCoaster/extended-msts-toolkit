@@ -376,3 +376,46 @@ The annotated `v1.2.1` tag is prepared locally on the versioned checkpoint;
 it is not pushed or published as part of preparation. Pushing a `v*` tag triggers
 the repository's verification and release-publication workflow. If review changes
 the release commit, confirm the intended final tag target before publication.
+
+### Post-release fixes under in-game testing
+
+Tile-origin synchronization now tracks `0x79d118/0x79d11c` and translates walking
+state and both static camera matrices by the inverse 2048 m origin delta. Native
+`0x5172f9` visits only registered cameras, excluding this static FPV view. Without
+the translation, each subsequent frame could trigger the same crossing again.
+Tests cover positive/negative X/Z boundaries, both modes, repeated synchronization,
+diagonal shifts, HUD timing and paused camera callbacks. In-game testing confirmed
+that the boundary fix works.
+
+Left Alt not slowing movement was reported in both modes. Model tests confirm
+the arithmetic, but the native scan bitmap did not yield the expected in-game
+result. Modifier sampling now uses the high bit of `GetAsyncKeyState(VK_LMENU)`
+and `VK_LSHIFT`, only within the existing focused, unpaused input path. Tests
+cover neither/either/both modifiers and release, without relying on native scan
+bits. The exact native modifier-bitmap discrepancy has not been instrumented;
+subsequent in-game test feedback accepted the modifier fix.
+
+Shared tuning validation covers WalkSpeedMps/FlySpeedMps (0.01–1000),
+SprintMultiplier/SlowDivisor (1–100), individual default fallbacks and defensive
+zero-divisor handling in the movement model. Frontend Apply preserves the values,
+runtime entry copies them into the state, and F5 displays them. Custom speeds,
+combined modifiers, vertical flight, malformed settings and INI round trips have
+regression coverage. Subsequent in-game test feedback accepted these refinements.
+
+Noclip now records its normalized, modifier-adjusted vertical velocity alongside
+X/Z velocity. Exiting above terrain retains it for normal ballistic integration
+instead of resetting it to zero. Below-ground recovery and landing still clear
+vertical velocity; horizontal easing is unchanged. Regression tests cover upward,
+downward and stationary flight at 30/60/144 Hz, pitched flight, custom modifiers,
+landing and below-ground recovery. All 599 walking-model checks and the full
+native suite passed; subsequent in-game test feedback accepted the transition
+feel and this checkpoint for commit.
+
+### 1.2.2 release preparation
+
+Version 1.2.2 and matching release notes package the tile-origin, modifier-input,
+configurable-speed and full-velocity transition fixes above. The release tag is
+prepared locally on the validated checkpoint, not pushed. After PR review and
+merge, verify the final merged commit before publishing the tag; a pushed `v*`
+tag starts the release workflow. In-game acceptance and automated regression
+evidence remain distinct from universal route or high-speed compatibility.

@@ -36,7 +36,9 @@ active. When that option is off, the normal native takeover still applies.
 
 Holding Space does not repeat jumps. A 2 m eye height gives a 1 m jump: feet rise
 from ground to 1 m and eyes from 2 m to 3 m. Noclip does not jump. Leaving noclip
-requires valid terrain: above it, gravity pulls the feet down while horizontal
+requires valid terrain: above it, the full flight velocity is retained. Upward
+flight continues rising before gravity turns it into a fall; downward flight
+continues descending under gravity. Horizontal
 flight momentum eases toward walking input (about 0.46 seconds to halve the
 velocity difference); below it, feet snap up to ground. Landing ends the carried
 momentum. Existing terrain-only collision limitations still apply.
@@ -86,10 +88,26 @@ Enabled=true
 ToggleKey=BACKQUOTE
 EyeHeightCm=200
 HeightRepeatDelayMs=500
+WalkSpeedMps=3
+FlySpeedMps=17
+SprintMultiplier=2
+SlowDivisor=2
 ```
 
 `EyeHeightCm` accepts 10–10000. Q/E changes last for the current game session;
 they do not overwrite the saved initial height.
+`WalkSpeedMps` and `FlySpeedMps` accept 0.01–1000 metres per second.
+`SprintMultiplier` and `SlowDivisor` accept 1–100, including decimal values.
+Effective speed is base speed multiplied by `SprintMultiplier` while left Shift
+is held and divided by `SlowDivisor` while left Alt is held. Both modifiers may
+be held together; with the default 2/2 they cancel. Vertical noclip movement uses
+the same calculation. Jump height and Q/E height adjustment are unaffected.
+Missing, invalid or out-of-range values fall back individually to the defaults
+shown above; a zero divisor therefore becomes 2, never a division by zero.
+Edit these values with MSTS closed, then restart. NEMT preserves valid custom
+values when applying settings. The extended F5 display shows the configured
+base speeds and modifier factors. High configured speeds may outpace terrain
+loading; these upper bounds are not a promise of safe traversal at every speed.
 `HeightRepeatDelayMs` accepts 50–5000 milliseconds and is preserved when applying
 settings in NEMT. Missing values default to 500 ms. This sets the initial hold
 delay, not the subsequent fixed 60 Hz repeat interval.

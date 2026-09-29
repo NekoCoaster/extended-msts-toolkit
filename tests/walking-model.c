@@ -25,7 +25,7 @@ int main(void){
  in.up=1;for(i=0;i<100;i++)walk_step(&s,&in,0.01,0,flat,0);CHECK(fabs(s.y-17)<1e-8);CHECK(s.noclip);
  in.toggle_noclip=0;walk_step(&s,&in,0.01,0,flat,0);in.toggle_noclip=1;walk_step(&s,&in,0.01,0,missing,0);CHECK(s.noclip);
  in.toggle_noclip=0;walk_step(&s,&in,0.01,0,flat,0);in.toggle_noclip=1;walk_step(&s,&in,0.01,0,flat,0);CHECK(!s.noclip&&!s.grounded&&s.y>17);
- memset(&in,0,sizeof(in));for(i=0;i<300;i++)walk_step(&s,&in,0.01,0,flat,0);CHECK(s.grounded&&s.y==0);
+ memset(&in,0,sizeof(in));for(i=0;i<600;i++)walk_step(&s,&in,0.01,0,flat,0);CHECK(s.grounded&&s.y==0);
  CHECK(!walk_begin(&s,0,0,2,0,missing,0));
  CHECK(walk_begin(&s,0,0,2,0,slope,0));memset(&in,0,sizeof(in));in.forward=1;
  for(i=0;i<200;i++)walk_step(&s,&in,0.01,0,slope,0);CHECK(s.z<1&&s.z>0.98);CHECK(fabs(s.y-s.z*0.2)<1e-9);
@@ -96,5 +96,54 @@ int main(void){
   }
  }
  CHECK(walk_begin(&s,0,0,100,0,flat,0)&&s.eye_height==100);
+ {int mode,mods,j;const char *bad[]={"","0","-2","nan","inf","1e999","2junk","1001"};
+  for(j=0;j<8;j++)CHECK(walk_tuning_parse(bad[j],SLOW_DIVISOR)==2);
+  CHECK(walk_tuning_parse(" 2.5 ",SLOW_DIVISOR)==2.5);
+  CHECK(walk_tuning_parse("0.01",WALK_SPEED)==0.01);
+  for(mode=0;mode<2;mode++)for(mods=0;mods<4;mods++){
+   double expected=(mode?22.5:4.25)*(mods&1?3:1)/(mods&2?4:1);
+   walk_begin(&s,0,0,2,0,flat,0);s.noclip=mode;
+   s.tuning[WALK_SPEED]=4.25;s.tuning[FLY_SPEED]=22.5;s.tuning[SPRINT_MULTIPLIER]=3;s.tuning[SLOW_DIVISOR]=4;
+   memset(&in,0,sizeof(in));in.sprint=mods&1;in.slow=mods&2;in.forward=1;
+   for(i=0;i<100;i++)walk_step(&s,&in,0.01,0,flat,0);
+   CHECK(fabs(s.z-expected)<1e-8);
+   if(mode){in.forward=0;in.up=1;for(i=0;i<100;i++)walk_step(&s,&in,0.01,0,flat,0);CHECK(fabs(s.y-expected)<1e-8);}
+  }
+  s.tuning[SLOW_DIVISOR]=0;in.slow=1;in.sprint=0;CHECK(walk_speed(&s,&in)==11.25);
+ }
+ {int rates[3]={30,60,144},j,dir;
+  for(j=0;j<3;j++)for(dir=-1;dir<=1;dir++){
+   double step=1.0/rates[j],y,vy;
+   walk_begin(&s,0,0,2,0,flat,0);s.noclip=1;s.y=100;
+   s.tuning[FLY_SPEED]=24;s.tuning[SPRINT_MULTIPLIER]=3;s.tuning[SLOW_DIVISOR]=4;
+   memset(&in,0,sizeof(in));in.up=dir;in.sprint=in.slow=1;
+   walk_step(&s,&in,step,0,flat,0);vy=dir*18;CHECK(s.vertical_speed==vy);
+   y=s.y;memset(&in,0,sizeof(in));in.toggle_noclip=1;
+   walk_step(&s,&in,step,0,flat,0);
+   CHECK(!s.noclip&&!s.grounded);
+   CHECK(fabs(s.y-(y+vy*step-4.905*step*step))<1e-8);
+   CHECK(fabs(s.vertical_speed-(vy-9.81*step))<1e-8);
+   memset(&in,0,sizeof(in));
+   for(i=1;i<rates[j];i++)walk_step(&s,&in,step,0,flat,0);
+   CHECK(fabs(s.y-(y+vy-4.905))<1e-8);
+   CHECK(fabs(s.vertical_speed-(vy-9.81))<1e-8);
+   for(i=0;i<10*rates[j];i++)walk_step(&s,&in,step,0,flat,0);
+   CHECK(s.grounded&&s.y==0&&s.vertical_speed==0&&!s.air_carry);
+  }
+  /* Pitched forward flight carries both components, not only Q/E flight. */
+  walk_begin(&s,0,0,2,0,flat,0);s.noclip=1;s.y=100;s.pitch=0.5;
+  memset(&in,0,sizeof(in));in.forward=1;walk_step(&s,&in,0.01,0,flat,0);
+  CHECK(fabs(s.vertical_speed-sin(0.5)*17)<1e-9);
+  {double vy=s.vertical_speed,vz=s.velocity_z;
+   memset(&in,0,sizeof(in));in.toggle_noclip=1;walk_step(&s,&in,0.01,0,flat,0);
+   CHECK(fabs(s.vertical_speed-(vy-0.0981))<1e-9);CHECK(s.velocity_z>0&&s.velocity_z<vz);
+  }
+  /* Below-ground recovery discards vertical momentum in either direction. */
+  for(dir=-1;dir<=1;dir+=2){
+   s.noclip=1;s.previous_noclip=0;s.y=-10;s.vertical_speed=dir*17;
+   memset(&in,0,sizeof(in));in.toggle_noclip=1;walk_step(&s,&in,0.01,0,flat,0);
+   CHECK(s.grounded&&s.y==0&&s.vertical_speed==0);
+  }
+ }
  printf("Walking model: %d checks passed\n",checks);return 0;
 }

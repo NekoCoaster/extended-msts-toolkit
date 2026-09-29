@@ -3,6 +3,7 @@
 #define NEMT_SETTINGS_MODEL_H
 #include <string.h>
 #include "json_record.h"
+#include "../runtime/walking-settings.h"
 typedef struct {
  int prefer_pcores, skip_movie, window_features, unlock_fps, limit_vsync, verbose_loading;
  int startup_log, cab_needles, background_audio, ignore_red_signal;
@@ -14,9 +15,10 @@ typedef struct {
  char monitor[32];
  int high_resolution;
  int walking,walking_height_cm,walking_repeat_ms;char walking_key[32];
+ double walking_tuning[WALK_TUNING_COUNT];
 } Settings;
 
-static void settings_defaults(Settings*s){memset(s,0,sizeof(*s));s->window_features=1;s->strength=10;s->hud_left=1;s->max_log_kb=8192;s->center_windowed=1;strcpy(s->derail_key,"BACKSLASH");strcpy(s->key_forward,"w");strcpy(s->key_backward,"s");strcpy(s->key_left,"a");strcpy(s->key_right,"d");strcpy(s->key_up,"e");strcpy(s->key_down,"q");s->walking_height_cm=200;s->walking_repeat_ms=500;strcpy(s->walking_key,"BACKQUOTE");}
+static void settings_defaults(Settings*s){memset(s,0,sizeof(*s));memcpy(s->walking_tuning,walk_tuning_defaults,sizeof(s->walking_tuning));s->window_features=1;s->strength=10;s->hud_left=1;s->max_log_kb=8192;s->center_windowed=1;strcpy(s->derail_key,"BACKSLASH");strcpy(s->key_forward,"w");strcpy(s->key_backward,"s");strcpy(s->key_left,"a");strcpy(s->key_right,"d");strcpy(s->key_up,"e");strcpy(s->key_down,"q");s->walking_height_cm=200;s->walking_repeat_ms=500;strcpy(s->walking_key,"BACKQUOTE");}
 /* Match legacy/NEMT.ps1's manifest-driven controls. INI overrides are applied
  * separately, and only for an enabled, recognized installation. */
 static void settings_from_manifest(const JsonRecord *doc,Settings *s) {

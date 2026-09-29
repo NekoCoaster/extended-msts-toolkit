@@ -10,6 +10,7 @@ static void walking_hud_lines(char lines[WALK_HUD_LINES][240]){
  char keys[7][40];int i,tx=0,tz=0;double lx=0,lz=0;
  for(i=0;i<6;i++)crawl_key_name(editor_keys[i],0,keys[i]);crawl_key_name(walking_toggle_scan,0,keys[6]);
  if(walking_state.active){
+  walking_sync_origin();
   tx=(int)floor((walking_state.x+1024)/2048);tz=(int)floor((walking_state.z+1024)/2048);
   lx=walking_state.x-tx*2048;lz=walking_state.z-tz*2048;
   tx+=*(int*)G(0x79d118);tz+=*(int*)G(0x79d11c);
@@ -18,8 +19,9 @@ static void walking_hud_lines(char lines[WALK_HUD_LINES][240]){
  if(walking_state.active)snprintf(lines[1],240,"World X/Z: %.2f / %.2f | Tile: %d / %d (%.2f / %.2f)",tx*2048.0+lx,tz*2048.0+lz,tx,tz,lx,lz);
  else snprintf(lines[1],240,"World position: -- | Eye height: %.2f m",walking_eye_height);
  if(walking_state.active)snprintf(lines[2],240,"Feet Y: %.2f | Eyes Y: %.2f | Eye height: %.2f m | %s | FOV: %.1f deg",walking_state.y,walking_state.y+walking_state.eye_height,walking_state.eye_height,walking_state.noclip?"Flying":walking_state.grounded?"Grounded":"Airborne",walking_fov);
- else snprintf(lines[2],240,"Walking: 3 m/s | Noclip: 17 m/s | Terrain collision only");
- snprintf(lines[3],240,"Walk=%s | Move=%s/%s/%s/%s | Height=%s/%s (hold: repeat) | RMB look | V fly | Space jump | LShift x2 / LAlt x0.5 | Zoom=wheel up/down or =/- | Reset=8",keys[6],keys[0],keys[1],keys[2],keys[3],keys[4],keys[5]);
+ else snprintf(lines[2],240,"Walking: %.3g m/s | Noclip: %.3g m/s | Terrain collision only",walking_tuning[WALK_SPEED],walking_tuning[FLY_SPEED]);
+ {int len=(int)strlen(lines[0]);snprintf(lines[0]+len,240-len," | Base walk/fly: %.3g/%.3g m/s",walking_tuning[WALK_SPEED],walking_tuning[FLY_SPEED]);}
+ snprintf(lines[3],240,"Walk=%s | Move=%s/%s/%s/%s | Height=%s/%s (hold: repeat) | RMB look | V fly | Space jump | LShift x%.3g / LAlt divide %.3g | Zoom=wheel up/down or =/- | Reset=8",keys[6],keys[0],keys[1],keys[2],keys[3],keys[4],keys[5],walking_tuning[SPRINT_MULTIPLIER],walking_tuning[SLOW_DIVISOR]);
 }
 static void hud_lines(char lines[HUD_LINE_COUNT][240]){
  const char *status="Standby",*reverser="Neutral";U powered=0,applying=0,i,rotation=0;double force=0,t=0;int boost=strength;

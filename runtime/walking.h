@@ -7,6 +7,8 @@ static WalkGroundFn walking_query=(WalkGroundFn)0x530635;
 static WalkActivateFn walking_activate=(WalkActivateFn)0x51cd5f;
 static WalkActivateFn walking_activate_original;
 static WalkState walking_state;
+/* State and view positions are relative to this native floating origin. */
+static int walking_origin_x,walking_origin_z;
 static U walking_view[0x1a8/4],walking_previous,walking_train;
 static int walking_ready,walking_pending,walking_toggle_down,walking_pan;
 static const char *walking_status="Not initialized";
@@ -16,6 +18,13 @@ static WNDPROC walking_original_proc;
 static HCURSOR walking_saved_cursor;static int walking_cursor_hidden;
 static HCURSOR (WINAPI *walking_set_cursor)(HCURSOR)=SetCursor;
 static HCURSOR (WINAPI *walking_get_cursor)(void)=GetCursor;
+static SHORT (WINAPI *walking_key_state)(int)=GetAsyncKeyState;
+static void walking_modifiers(WalkInput *in){
+ /* Called only in the active, focused, unpaused camera-input path. Native
+    dispatch's key bitmap is not a reliable physical modifier-key snapshot. */
+ in->sprint=(walking_key_state(VK_LSHIFT)&0x8000)!=0;
+ in->slow=(walking_key_state(VK_LMENU)&0x8000)!=0;
+}
 static void walking_cursor(int hide){
  if(hide){if(!walking_cursor_hidden){walking_saved_cursor=walking_get_cursor();walking_cursor_hidden=1;}walking_set_cursor(NULL);}
  else if(walking_cursor_hidden){
@@ -55,6 +64,21 @@ static LRESULT CALLBACK walking_proc(HWND h,UINT msg,WPARAM w,LPARAM l){
  return CallWindowProcA(walking_original_proc,h,msg,w,l);
 }
 static U walking_event_copy[4];
+static void walking_sync_origin(void){
+ int x=*(int*)G(0x79d118),z=*(int*)G(0x79d11c);double dx,dz;
+ if(!walking_state.active)return;
+ dx=((double)walking_origin_x-x)*2048.0;dz=((double)walking_origin_z-z)*2048.0;
+ if(dx||dz){
+  walking_state.x+=dx;walking_state.z+=dz;
+  /* Native 0x5172f9 only rebases registered views. Our static view is not
+     registered, so both its matrices must follow the same shift exactly once. */
+  *(float*)((B*)walking_view+0x38)=(float)walking_state.x;
+  *(float*)((B*)walking_view+0x40)=(float)walking_state.z;
+  *(float*)((B*)walking_view+0x68)=(float)walking_state.x;
+  *(float*)((B*)walking_view+0x70)=(float)walking_state.z;
+  walking_origin_x=x;walking_origin_z=z;
+ }
+}
 static B walking_event_held[256];static U walking_pulses;
 static int walking_ground(void *context,double x,double z,double *height){
  float sample[8]={0};double normal;
@@ -125,6 +149,7 @@ static U walking_handoff_car(U target){
 static void __fastcall walking_activate_bridge(void *target){
  int leaving=*(U*)G(0x7c2a88)==(U)walking_view&&target!=walking_view;
  U saved=walking_view[0x9c/4],car;
+ walking_sync_origin();
  if(leaving&&target){
   if(!walking_registered_view((U)target)||(car=walking_handoff_car((U)target))==0){walking_status="Camera handoff unavailable";return;}
   /* Native activation invokes target +0x10 BEFORE changing active-view globals.
@@ -164,6 +189,8 @@ static int walking_change(void){
   walking_status="No usable ground here";walking_pending=0;return 0;
  }}
  walking_state.height_repeat_delay=walking_repeat_delay;
+ memcpy(walking_state.tuning,walking_tuning,sizeof(walking_tuning));
+ walking_origin_x=*(int*)G(0x79d118);walking_origin_z=*(int*)G(0x79d11c);
  /* Static view is deliberately NOT registered in MSTS's owning view list. */
  memcpy(walking_view,(void*)view,sizeof(walking_view));memset(walking_view,0,20);
  walking_view[0x9c/4]=walking_view[0x118/4]=0;walking_view[0x11c/4]=9;
@@ -180,9 +207,10 @@ static void walking_camera(void){
  WalkInput in;B bits[32];POINT point,center;RECT rect;HWND window;U i;double dt=*(float*)G(0x828fb4);
  if(walking_state.active&&(*(U*)G(0x7c2ac0)!=walking_train||*(U*)G(0x7c2a88)!=(U)walking_view))walking_reset();
  if(walking_state.active){
+  walking_sync_origin();
   memset(&in,0,sizeof(in));
   if(!paused()&&crawl_control_focus()&&walking_keys(bits)){
-   in.sprint=crawl_key(bits,0x2a);in.slow=crawl_key(bits,0x38);
+   walking_modifiers(&in);
    in.forward=crawl_key(bits,editor_keys[0])-crawl_key(bits,editor_keys[1]);
    in.right=crawl_key(bits,editor_keys[3])-crawl_key(bits,editor_keys[2]);
    in.height_up=crawl_key(bits,editor_keys[4]);in.height_down=crawl_key(bits,editor_keys[5]);in.up=in.height_up-in.height_down;
@@ -211,6 +239,7 @@ static void walking_camera(void){
   if(!paused()&&crawl_control_focus())walking_apply_fov();
  }
  walking_camera_original();
+ walking_sync_origin();
 }
 /* Suppress action dispatch, including the native held-callback queue. Native
    event bookkeeping still runs, so releases do not leave stuck counters. */

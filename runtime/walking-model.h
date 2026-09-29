@@ -4,8 +4,10 @@
 #define NEMT_WALKING_MODEL_H
 #include <math.h>
 #include <string.h>
+#include "walking-settings.h"
 typedef struct {
  double x,y,z,eye_height,yaw,pitch,vertical_speed;
+ double tuning[WALK_TUNING_COUNT];
  double velocity_x,velocity_z,height_hold,height_next,height_repeat_delay,height_fraction;
  int height_direction,air_carry;
  int active,noclip,grounded,previous_jump,previous_up,previous_down,previous_noclip;
@@ -19,7 +21,12 @@ typedef struct {
 typedef int (*WalkGround)(void *context,double x,double z,double *height);
 static double walk_limit(double x,double lo,double hi){return x<lo?lo:x>hi?hi:x;}
 static int walk_finite(double x){return x==x&&x>-1e20&&x<1e20;}
-static double walk_speed(int noclip,const WalkInput *in){return (noclip?17.0:3.0)*(in->sprint?2:1)*(in->slow?0.5:1);}
+static double walk_speed(const WalkState *s,const WalkInput *in){
+ int i=s->noclip?FLY_SPEED:WALK_SPEED;
+ return walk_tuning_safe(s->tuning[i],i)*
+  (in->sprint?walk_tuning_safe(s->tuning[SPRINT_MULTIPLIER],SPRINT_MULTIPLIER):1)/
+  (in->slow?walk_tuning_safe(s->tuning[SLOW_DIVISOR],SLOW_DIVISOR):1);
+}
 static void walk_height_reset(WalkState *s){s->height_hold=s->height_next=s->height_fraction=0;s->height_direction=0;}
 static double walk_height_step(double height,int direction){
  double grid=height*20,nearest=floor(grid+0.5);
@@ -62,6 +69,7 @@ static int walk_begin(WalkState *s,double x,double z,double eye_height,double ya
  if(!ground||!walk_finite(x)||!walk_finite(z)||!walk_finite(eye_height)||!walk_finite(yaw)||
     !ground(context,x,z,&h)||!walk_finite(h))return 0;
  memset(s,0,sizeof(*s));s->x=x;s->z=z;s->y=h;
+ memcpy(s->tuning,walk_tuning_defaults,sizeof(s->tuning));
  s->eye_height=walk_limit(eye_height,0.1,100.0);s->yaw=yaw;s->active=s->grounded=1;
  s->height_repeat_delay=0.5;
  return 1;
@@ -80,8 +88,10 @@ static void walk_step(WalkState *s,const WalkInput *in,double dt,int paused,
   walk_height_reset(s);
   if(!s->noclip){s->noclip=1;s->grounded=0;s->vertical_speed=0;s->air_carry=0;}
   else if(ground&&ground(context,s->x,s->z,&h)&&walk_finite(h)){
-   s->noclip=0;s->grounded=s->y<=h;s->vertical_speed=0;s->air_carry=!s->grounded;
-   if(s->grounded){s->y=h;s->velocity_x=s->velocity_z=0;}
+   s->noclip=0;s->grounded=s->y<=h;s->air_carry=!s->grounded;
+   /* Above terrain, inherit the complete last flight velocity. Gravity then
+      changes vertical speed normally; below terrain still snaps safely up. */
+   if(s->grounded){s->y=h;s->vertical_speed=0;s->velocity_x=s->velocity_z=0;}
   }
  }
  if(in->look&&walk_finite(in->look_x)&&walk_finite(in->look_y)){
@@ -90,7 +100,7 @@ static void walk_step(WalkState *s,const WalkInput *in,double dt,int paused,
  }
  if(!s->noclip)s->eye_height=walk_limit(s->eye_height+walk_height_input(s,in,dt,up,down),0.1,100.0);
  else walk_height_reset(s);
- speed=walk_speed(s->noclip,in);
+ speed=walk_speed(s,in);
  f=walk_finite(in->forward)?walk_limit(in->forward,-1,1):0;
  r=walk_finite(in->right)?walk_limit(in->right,-1,1):0;
  u=s->noclip&&walk_finite(in->up)?walk_limit(in->up,-1,1):0;
@@ -100,8 +110,8 @@ static void walk_step(WalkState *s,const WalkInput *in,double dt,int paused,
   dx=sin(s->yaw)*cos(s->pitch)*f+cos(s->yaw)*r;
   dz=cos(s->yaw)*cos(s->pitch)*f-sin(s->yaw)*r;dy=sin(s->pitch)*f+u;
   length=sqrt(dx*dx+dy*dy+dz*dz);if(length>1){dx/=length;dy/=length;dz/=length;}
-  s->velocity_x=dx*speed;s->velocity_z=dz*speed;
-  s->x+=s->velocity_x*dt;s->z+=s->velocity_z*dt;s->y+=dy*speed*dt;return;
+  s->velocity_x=dx*speed;s->velocity_z=dz*speed;s->vertical_speed=dy*speed;
+  s->x+=s->velocity_x*dt;s->z+=s->velocity_z*dt;s->y+=s->vertical_speed*dt;return;
  }
  if(!ground||!ground(context,s->x,s->z,&h)||!walk_finite(h))return;
  if(jump&&s->grounded){s->vertical_speed=sqrt(9.81*s->eye_height);s->grounded=0;}
