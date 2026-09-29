@@ -1,6 +1,6 @@
 # Activity manager error during mouse initialization
 
-Host investigation, 20 September 2026. This is diagnostic evidence and a proposed integration direction, not a shipped runtime fix.
+Historical host investigation, 20 September 2026. This records diagnostic evidence and the integration proposal at that time. The subsequently shipped fix is documented in the [mouse compatibility guide](../mouse-compatibility.md).
 
 ## Observed failure
 
@@ -35,7 +35,7 @@ In the disposable copy only, a Frida hook scoped to callers inside system DINPUT
 
 The host's signed 32-bit DINPUT.dll was separately inspected: system-mouse creation directly returns `0x80040154` when `SM_MOUSEPRESENT` is zero. This explains the apparently unrelated class-registration error.
 
-This is a candidate for a narrowly scoped remote/headless compatibility feature. It is not yet shipped or fully validated: mouse cab interaction, remote drag/buttons, device reconnection, repeat activity loads, and longer sessions remain to test. A production implementation must not blanket-override mouse metrics for the entire process or force MSTS's failed initializer to return success. Avoid OS-version-specific DINPUT.dll instruction patches; investigate an import-level wrapper with complete restoration and existing runtime safeguards.
+At this investigation checkpoint, this was a candidate for a narrowly scoped remote/headless compatibility feature, not yet shipped or fully validated. Subsequent implementation and test evidence are described in the [current mouse compatibility guide](../mouse-compatibility.md). The original constraints remain important: do not blanket-override mouse metrics for the entire process or force MSTS's failed initializer to return success; preserve native device outcomes and runtime safeguards.
 
 ### Diagnostics and implementation constraints
 

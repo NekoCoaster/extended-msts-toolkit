@@ -1,6 +1,6 @@
 # Technical documentation and testing evidence
 
-[1.1.0 findings, implementation diagrams and validation limits](release-1.1.0.md).
+[Current release: 1.2.2](../../releases/v1.2.2.md). Older findings and validation snapshots are retained below as historical evidence.
 
 This section records how NEMT was built and what was tested. For installation and the shipped controls, start with the [user guide](../README.md).
 
@@ -13,6 +13,7 @@ We develop and instrument the toolkit in a Windows VM, then test graphics and ga
 | [Validation summary](validation.md) | First-edition evidence, known limits and unresolved coverage |
 | [Native frontend validation](native-frontend-validation.md) | Migration build/launch reports, regression checks and coverage limits |
 | [Native architecture](native-runtime.md) | Initialization, runtime ownership and mutation safety |
+| [Walking and noclip](walking.md) | Current 1.2.2 camera ownership, origin rebasing, input, tuning and momentum |
 | [Editors and tools](editors.md) | Toolset isolation, real viewport resizing, panel layout and audio idle stalls |
 | [Crawl physics](physics.md) | Connections, engine parameters, momentum, drag and animation |
 | [Activity-end and camera sites](patches.md) | Identified executable instructions |
@@ -29,6 +30,7 @@ We develop and instrument the toolkit in a Windows VM, then test graphics and ga
 These documents preserve development tools, experimental options, former commands and failed approaches. Their setup instructions apply to the named historical build, not automatically to the current control panel.
 
 - [Project origins and migration](discovery.md), [migration validation](release-validation.md), and [1.0.0 checkpoint validation](release-1.0.0.md).
+- [1.1.0 findings and diagrams](release-1.1.0.md) and [walking development chronology](walking-development.md), including superseded defaults and checkpoint-specific test results.
 - [Original widescreen comparison](../investigations/widescreen-background.md), [settings and needle investigation](../investigations/settings-and-cab-needles.md), and [cab host checks](../investigations/cab-host-test.md).
 - [Timing implementation](../investigations/unclamped-timing.md), [timing host checks](../investigations/timing-host-test.md), and [earlier FPS research](../miscellaneous/fps.md).
 - [Red-signal message and repeat suppression](../investigations/red-signal-repeat.md) and [quality-of-life host checks](../investigations/quality-host-test.md).

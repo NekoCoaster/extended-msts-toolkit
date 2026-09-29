@@ -33,7 +33,7 @@ The selector at `0x51C958` checks the camera object's type at `[0x7C2A88] + 0x11
 
 Cab, exterior, passenger and coupler views were observed after derailment. Trackside selection succeeded but its camera could be inside terrain. Unlocking a mode does not guarantee comfortable placement around a rotated or scattered consist.
 
-On the first-person development branch, this same option additionally suppresses
+Since version 1.2.1, this same option additionally suppresses
 the camera-only derail notification at `0x51D4E1`: the verified nine-byte prologue
 `55 8B EC 81 EC B4 00 00 00` becomes `C3` plus eight NOPs. The notification
 selects camera type 6 and then initializes that camera; skipping only its selector
@@ -42,8 +42,9 @@ Skipping the whole camera notification preserves the current view, including
 FPV, without changing vehicle/train derail flags, wake-up, or physics in its
 caller `0x62E017`. The replacement and original camera-unlock patch share the
 existing verified hook transaction. Neither is installed when the option is off.
-Feature-combination and native derail-routine tests passed; this new preservation
-behavior still requires in-game validation.
+Feature-combination and native derail-routine tests passed. Subsequent in-game
+test reports accepted the camera-preservation behavior; see the
+[development chronology](walking-development.md).
 
 ## File safety
 

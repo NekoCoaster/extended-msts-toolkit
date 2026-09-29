@@ -1,8 +1,8 @@
 # Experimental ground walking
 
-This development build adds an opt-in **Enable Walking (Experimental)** checkbox,
-immediately below **Unlock camera modes during derailment**. It is not a
-released feature. Stop and secure the train before walking: the simulation and
+Available since 1.2.1, with movement and tile-boundary fixes in 1.2.2, the opt-in
+**Enable Walking (Experimental)** checkbox sits immediately below **Unlock camera
+modes during derailment**. Stop and secure the train before walking: the simulation and
 the train's existing throttle/brake settings continue while train input is blocked.
 
 Close MSTS, open the updated NEMT, enable the checkbox, click **Apply**, and restart
@@ -43,7 +43,7 @@ flight momentum eases toward walking input (about 0.46 seconds to halve the
 velocity difference); below it, feet snap up to ground. Landing ends the carried
 momentum. Existing terrain-only collision limitations still apply.
 
-Normal / slow / sprint speeds are **3 / 1.5 / 6 m/s** on foot and
+Default normal / slow / sprint speeds are **3 / 1.5 / 6 m/s** on foot and
 **17 / 8.5 / 34 m/s** in noclip, including vertical flight. Modifiers do not
 change jump height or Q/E eye-height step sizes. Diagonal movement is normalized.
 
@@ -131,9 +131,10 @@ are enabled, their rows are displayed together.
 
 - Ground detection uses MSTS terrain triangles. There is no scenery, platform,
   bridge or train collision capsule; the walker can pass through those objects.
-- This is not yet a release-ready compatibility claim. Long-distance/tile-boundary
-  traversal and arbitrary routes still
-  need validation. See [development evidence](technical/walking-development.md).
+- The feature remains experimental despite being included in the release.
+  Tile-boundary runaway movement is fixed in 1.2.2 and confirmed in in-game tests;
+  broader long-distance and arbitrary-route coverage remains limited. See the
+  [current implementation](technical/walking.md) and [development evidence](technical/walking-development.md).
 - Both modes block native train driving actions, including held callbacks, and gate raw
   device callbacks during driving. Function keys, camera-selection actions and Escape remain available. Toggle entry/exit wait
   for keyboard and mouse release to avoid transferring held train commands.
