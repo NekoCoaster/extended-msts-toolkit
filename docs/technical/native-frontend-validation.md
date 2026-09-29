@@ -1,6 +1,6 @@
 # Native frontend migration: validation and handoff
 
-This is the current migration checkpoint for issue #4. It supplements, rather than rewrites, historical runtime/gameplay evidence.
+This is the historical migration checkpoint for issue #4, preceding the 1.2.x releases. Its release-boundary statements describe that checkpoint, not current publication status. See the [technical index](README.md) for current references.
 
 ## Scope preserved during repository finalization
 

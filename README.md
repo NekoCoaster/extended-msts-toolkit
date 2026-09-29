@@ -26,7 +26,9 @@ This then eventually turned into, "what if we could still use the regular camera
 
 NEMT adds optional gameplay and quality-of-life features to Microsoft Train Simulator. It features some of the basic improvements such as borderless windows, clearer loading messages, widescreen cab-dial corrections, editor improvements, and control of connected locomotives after derailment.
 
-And in this version v1.2.0, the patcher window has now been refactored into a small native 32-bit Win32 program written in C, eliminating the need for modern framework bloats and dependencies, while self-containing everything tht it needs on it's own to compile and patch MSTS.
+The patcher is a small native 32-bit Win32 program written in C, introduced in v1.2.0. It builds offline with the bundled compiler and does not require .NET or PowerShell to run.
+
+**Current release: [1.2.2](releases/v1.2.2.md).** Experimental first-person walking and noclip now include tile-boundary fixes, configurable movement speeds, working Left Alt slowdown, and full flight momentum when returning to walking.
 
 As such, this patcher can now run on your grandma's 2005 Windows XP notebook as well xd.
 
@@ -41,9 +43,9 @@ _NEMT patcher window as captured for version 1.2.0, running on Windows XP, 7 and
 4. Check the features you want and click **Apply**.
 5. Close the panel and launch MSTS normally. Restart MSTS whenever you change its NEMT settings.
 
-NEMT leaves `train.exe` unchanged and saves its settings beside the game.
+NEMT leaves `train.exe` unchanged and saves its settings beside the game. When upgrading, run the updated NEMT and click **Apply** again with MSTS closed; restarting the game alone does not install the new runtime.
 
-## Native compatibility goal release
+## Windows compatibility target
 
 The frontend intentionally targets the old, well-understood Win32 API and is built as an x86 executable with a Windows XP SP3 API baseline (`WINVER/_WIN32_WINNT = 0x0501`). The compatibility target is:
 
@@ -79,6 +81,8 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 | Resizable editor windows and fullscreen            | Resize or maximize Route, Activity and Cab Editor windows; Use Alt+Enter to toggle borderless fullscreen.                                                        |
 | Move Route Editor tool windows freely              | Removes jankly snap alignment of floating tool windows in Route Editor.                                                                                          |
 | Fix Route Editor lag when no sound sources present | Prevents Route Editor from lagging when loading into a route with no nearby sound sources playing.                                                               |
+| Swap arrow keys with WASDQE controls in route editor | Uses configurable camera movement keys and remaps their displaced editor shortcuts. |
+| Remove Route Editor mouse-panning limit | Allows continuous camera panning without hitting an invisible screen-edge limit. |
 | Unlock FPS limit — **Potentially unstable**        | Removes the game-side frame cap and applies corrective timing to frame-rate tied simulator operations.                                                           |
 | Show verbose startup and activity loading details  | Shows loading activity and terrain-generation progress messages during startup and sim-loading.                                                                  |
 | Enable deep logging                                | Records optional diagnostics for troubleshooting and writes them into NEMT/startup.log                                                                           |
@@ -86,20 +90,21 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 | Unmute while in background                         | Keeps game audio playing when in background.                                                                                                                     |
 | Continue after passing a red signal                | Allows the simulator to resume after passing a red signal (chaos ensues).                                                                                        |
 | Remove derailment activity-end message             | Removes "Activity ended -- car derailed" message after 20 seconds, allowing for infinite duration past derailment.                                               |
-| Unlock camera modes during derailment              | Allows the use of standard external cameras even after train has derailed.                                                                                       |
+| Unlock camera modes during derailment              | Preserves the current view during derailment and keeps native camera selection available afterward. |
+| Enable Walking (Experimental) | First-person terrain walking and noclip with configurable speeds, jump, height/FOV controls and extended F5 status. |
 | Allow connected engines to crawl after derailment  | Allows locomotives and connected power cars to continue moving forward/backwards even after derailment                                                           |
 | Enable counter-tilt filter while crawling          | When crawling, adds a counter force to (try to) prevent trains from nose-diving tilting when crawling on terrain. Not guaranteed to work consistently everytime. |
 
 [Explore the options](docs/features.md).
 
-Unreleased: [experimental first-person walking and noclip](docs/walking.md), with
+Included since 1.2.1 and refined in 1.2.2: [experimental first-person walking and noclip](docs/walking.md), with
 shared editor movement bindings, sprint/slow modifiers, jumping, adjustable height
 and FOV, camera reset, and an extended F5 status display. Enable Walking is opt-in;
 terrain-only collision and remaining compatibility checks are documented in the guide.
 
 ## Compatibility
 
-NEMT requires at least **MSTS Bin 1.8.052113** but is compatible with patched versions such as the Widescreen patch & LAA or both.
+NEMT supports the identified **MSTS Bin 1.8.052113** executable family, including its supported Widescreen and LAA variants. Executable contents are verified; this is not blanket support for every modified or later build. See [supported executables](docs/installation.md#supported-executables).
 
 The cab-dial patch option requires train.exe to be patched with the [MSTS widescreen patch](https://digital-rails.com/wordpress/2018/06/23/running-msts-at-high-resolution/).
 

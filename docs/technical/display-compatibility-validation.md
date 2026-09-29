@@ -29,15 +29,15 @@ The real graphics result is device-creation evidence, not an MSTS activity test.
 The original automated run did not test Windows XP/7 or other system DLL versions.
 Unrecognized implementations must stand down with an explanatory startup notice.
 
-## Subsequent user-reported validation
+## Subsequent host and in-game test reports
 
-- The user reported that the form works on Windows XP, 7 and 11, and that
-  standalone operation without the external MIT-0 DLL works on their laptop.
+- Host test reports confirmed that the form works on Windows XP, 7 and 11, and that
+  standalone operation without the external MIT-0 DLL works on the tested laptop.
 - Following b98ffac, in-game clicking, dragging and activity loading work with
   no mice connected.
 - Following 8349087, the window remains on the selected secondary monitor.
-- Following ddddcdb, the user confirmed the conditional windowed default and
-  saved-settings messages work as intended, and approved proceeding with the PR.
+- Following ddddcdb, host test reports confirmed the conditional windowed default
+  and saved-settings messages work as intended; the checkpoint was accepted for PR review.
 - The final wording/alignment update passes 299 native GUI/installer checks,
   the remaining native regression suite, source guards, repository-tool checks
   and the XP-baseline frontend import audit. The frontend build succeeded.

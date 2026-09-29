@@ -1,5 +1,10 @@
 # Walking extension: development checkpoint, 2026-09-29
 
+> Historical development chronology. Version 1.2.2 is now published. Earlier
+> sections preserve the defaults, pending tests and release status at each
+> checkpoint; they are not current setup instructions. Use the [current technical
+> reference](walking.md) or [walking guide](../walking.md) for present behavior.
+
 Status: **experimental implementation; partial live validation, not a release**. Branch
 `dev/first-person`, created from `main` at `5cd5896`, in
 `C:\codex\worktrees\NEMT-walking`. The main checkout and installed game files

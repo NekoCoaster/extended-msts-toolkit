@@ -10,7 +10,7 @@ The current gameplay stage waits for a stable train/head/body backlink, valid co
 
 The [window module](borderless.md) uses a separate early command-line stage and leaves the gameplay readiness gate intact. No early Frida attachment is used.
 
-## One mutation transaction
+## Checked mutation transactions
 
 `runtime/hooks.h` supports checked detours and short raw instruction replacements. Every selected mutation claims an address range in a registry shared across window and gameplay stages. Overlaps and unexpected original bytes are rejected before installation. Peer threads are temporarily suspended; if a thread is inside a target prefix, installation retries. A later byte mismatch rolls back earlier writes. DirectInput forwarding continues if feature setup fails.
 
@@ -30,6 +30,12 @@ flowchart TD
 ```
 
 The activity-end and camera instructions remain configured until process exit. Crawl eligibility is cleared on activity exit and recovered for a later activity. The DLL never saves its in-memory patches back to `train.exe`.
+
+Walking has its own checked installation transaction after the existing gameplay
+hooks, not a single all-feature rollback transaction. It shares the buffered key
+hook when crawling is enabled, or installs its own when crawling is disabled.
+The detached view, guarded native handoff, train-input isolation and 1.2.2
+floating-origin synchronization are described in the [walking reference](walking.md).
 
 ## Installer ownership
 
@@ -51,6 +57,10 @@ The build defines `WINVER` and `_WIN32_WINNT` as `0x0501` (Windows XP), fixes th
 ## Loading and HUD modules
 
 The independent startup module now tracks activity loading and native terrain progress; see [loading details](startup.md). The optional [white F5 HUD](crawl-hud.md) is installed during early initialization but reads crawl state only after the existing lock is ready. It uses the native renderer and adds no worker or file output. These modules use the shared checked mutation transaction, retaining whole-image validation.
+
+Walking adds four extended F5 rows independently of crawling. With both enabled,
+their rows are combined. Walking rows show state, input blocking, synchronized
+world/tile coordinates, height, FOV, configured speeds and control bindings.
 
 A read-only [track dependency preflight](track-dependencies.md) runs before the loading hooks, outside DllMain. It uses bounded text parsing and exits with a specific dialog only for a supported database containing unresolved section references.
 

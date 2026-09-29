@@ -58,8 +58,8 @@ show-after-displacement, resizing and bordered movement. This session exposes
 only one monitor; the separate synthetic display tests cover secondary selection,
 negative coordinates and disconnected fallback. Actual MSTS loading-to-menu,
 menu-to-simulator and return-to-menu transitions were not exercised by that
-automated run. Following checkpoint 8349087, the user confirmed that the game
-window now stays in place on the selected monitor. This is user-reported host
+automated run. Following checkpoint 8349087, in-game test reports confirmed that the game
+window now stays in place on the selected monitor. This is in-game host
 validation, separate from the automated checks.
 
 - `tests/window-math.c`: quoted executable/argument paths, case, comma resolutions, optional `s`, tabs, false positives, duplicate options and negative monitor coordinates.

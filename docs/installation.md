@@ -40,7 +40,7 @@ The identified MSTS Bin **1.8.052113** base, widescreen, LAA and widescreen + LA
 | Existing DLL or ownership conflict | Check which add-on owns `DINPUT.dll`. NEMT will not overwrite an unrelated file. |
 | Cab-dial checkbox is unavailable | Install the supported widescreen patch first. |
 | Prefer P-cores is unavailable | The OS or CPU does not expose the required hybrid-topology APIs/classes; other NEMT functions remain available. |
-| Changes do not appear | Restart MSTS and confirm you configured the installation being launched. |
+| Changes do not appear | Close MSTS, open the updated NEMT and click Apply for the installation being launched, then restart. Restarting alone does not deploy a newer runtime. |
 
 For startup problems, enable **deep logging**, reproduce the problem and inspect `NEMT/startup.log`.
 
