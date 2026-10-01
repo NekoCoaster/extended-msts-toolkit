@@ -27,6 +27,10 @@ active. When that option is off, the normal native takeover still applies.
 | Hold right mouse button | Look around; release it to stop looking |
 | E / Q | Raise / lower eye height by 0.05 m; hold to repeat with acceleration |
 | Space | Jump from the ground; maximum rise is half the current eye height |
+| Shift-Z | Toggle the native compass/FPS display |
+| L | Toggle the experimental camera flashlight (off on entry; works in walking/noclip) |
+| [ / ] | Narrow / widen the full flashlight beam by 5 degrees |
+| , / . | Shorten / extend flashlight range by 5 m |
 | V | Toggle noclip flight at 17 m/s; E/Q become continuous vertical movement |
 | Wheel up / = | Zoom in (decrease FOV) |
 | Wheel down / - | Zoom out (increase FOV) |
@@ -140,3 +144,57 @@ are enabled, their rows are displayed together.
   for keyboard and mouse release to avoid transferring held train commands.
 - Focus loss and pausing stop walking input and mouse capture. The game simulation
   itself follows MSTS's normal pause/background behavior.
+
+## Experimental flashlight prototype
+
+The local flashlight prototype follows the FPV camera with a warm-white, soft-edged
+beam (default 45 m range, 70 degree full angle). L toggles once per press while focused and
+unpaused. Leaving FPV resets it off. The F5 walking HUD shows Light [L] status.
+If L is already assigned to a custom movement or FPV toggle key, the flashlight is
+disabled and the HUD reports a key conflict; existing controls keep their bindings.
+
+Terrain and tracks were visibly illuminated in a midnight Marias Pass live probe.
+Terrain uses vertex lighting, so the pool of light can look coarse on sparse meshes.
+The prototype refreshes nearby terrain caches so moving or switching off the beam
+does not leave lit ground behind. This does not add shadow occlusion.
+
+An earlier instrumented live probe crashed while looking around. Its cause remains
+unresolved; the revised native probe and integrated runtime require further live
+stability validation. This feature is prepared for 1.2.3; publication awaits review.
+
+Set startup values under `[Walking]` in `NEMT/settings.ini`:
+
+```ini
+FlashlightRangeM=45
+FlashlightAngleDeg=70
+FlashlightBrightnessPct=100
+```
+
+Range accepts 5-1000 m; angle accepts 10-150 degrees and describes the full beam
+width, not its half-angle. Missing, malformed or out-of-range values fall back
+individually to 45 m / 70 degrees. NEMT Apply preserves valid custom values.
+Restart MSTS to read INI changes. In FPV, `[` narrows and `]` widens the beam;
+`,` shortens and `.` extends its range. Each press changes 5 degrees or 5 m and
+stops at the bounds. Holding any of the six adjustment keys repeats after
+`HeightRepeatDelayMs` (default 500 ms), then every 100 ms. Release, pause,
+focus loss or leaving FPV cancels repeat; press again to restart. L remains
+once per press. Adjustments work with the light off as well and persist
+for that MSTS session, including FPV re-entry, without rewriting the INI.
+A tuning key already bound to custom movement or the FPV toggle retains that
+binding and does not adjust the flashlight. F5 shows the live range and angle.
+
+Brightness: `;` / `'` decrease/increase FPV flashlight brightness by 5 percentage points. `[Walking] FlashlightBrightnessPct=100` sets startup brightness (0-100; default 100). Live adjustments are session-only; F5 shows the current percentage. Zero emits no light but keeps the flashlight enabled; L releases its selected beam slot. Custom walking bindings take precedence. Brightness scales the warm RGB colour without changing range or angle.
+
+### Locomotive and flashlight together
+
+The flashlight now adds its terrain illumination alongside the locomotive headlight, preserving the locomotive's native selected beam. When there is no native beam, the flashlight uses the original native lighting path. Both terrain paths are supported. Scenery and train materials may still use the single native beam; this is not AI-headlight support. Restart MSTS after installing the updated runtime.
+
+The object-lighting extension covers six native shader paths, including the alternate track shaders. A midnight Marias Pass live probe showed rails, sleepers and ballast responding to L while the locomotive headlight remained active; train and scenery illumination also worked in that view. Texture alpha, fog and native specular output are preserved. Restart MSTS to load the integrated track fix. Other materials, routes and extended stability still need validation; this does not add shadows.
+
+### 1.2.3 review checkpoint
+
+The user confirmed the resulting scene lighting works as expected. The 1000 m
+range ceiling, held-key repeat and Shift-Z allowance have native regression
+coverage; live testing of those final additions remains pending. Large ranges
+refresh more visible terrain patches and may reduce frame rate. Range does not
+extend MSTS terrain loading or draw distance. See [1.2.3 notes](../releases/v1.2.3.md).

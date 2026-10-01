@@ -16,7 +16,8 @@ static void hook_enter(U id,Registers *r);
 static void hook_leave(U id,Registers *r);
 static B *code_memory;
 typedef struct {U address,length;} Claim;
-#define MAX_HOOK_CLAIMS 64
+/* Walking plus object-lighting hooks exceed 64 with the normal feature set. */
+#define MAX_HOOK_CLAIMS 1024
 static Claim claimed[MAX_HOOK_CLAIMS];static U claim_count;
 static void emit8(B **p,U n){*(*p)++=(B)n;}
 static void emit32(B **p,U n){memcpy(*p,&n,4);*p+=4;}

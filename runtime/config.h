@@ -8,6 +8,8 @@ static int editor_windows,editor_free_tools,editor_idle_audio,editor_swap_keys,e
 static int walking_requested;static U walking_toggle_scan=0x29;static double walking_eye_height=2,walking_initial_eye_height=2,walking_repeat_delay=0.5;
 #include "editor_keys.h"
 #include "walking-settings.h"
+#include "flashlight-settings.h"
+static double flashlight_tuning[FLASH_SETTING_COUNT]={45,70,100};
 static double walking_tuning[WALK_TUNING_COUNT]={3,17,2,2};
 static DWORD max_log_bytes=8*1024*1024;static int max_backup_logs;
 static WCHAR runtime_dir[MAX_PATH];
@@ -51,6 +53,14 @@ static void read_config(void){
    GetPrivateProfileStringW(L"Walking",key,L"",wide,64,path);
    for(j=0;j<63&&wide[j]&&wide[j]<128;j++)number[j]=(char)wide[j];number[j]=0;
    walking_tuning[i]=wide[j]?walk_tuning_defaults[i]:walk_tuning_parse(number,i);
+  }
+ }
+ {int i,j;WCHAR key[64],wide[64];char number[64];
+  for(i=0;i<FLASH_SETTING_COUNT;i++){
+   for(j=0;flash_setting_names[i][j];j++)key[j]=flash_setting_names[i][j];key[j]=0;
+   GetPrivateProfileStringW(L"Walking",key,L"",wide,64,path);
+   for(j=0;j<63&&wide[j]&&wide[j]<128;j++)number[j]=(char)wide[j];number[j]=0;
+   flashlight_tuning[i]=wide[j]?flash_defaults[i]:flash_parse(number,i);
   }
  }
  if(walking_requested){

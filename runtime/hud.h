@@ -20,7 +20,7 @@ static void walking_hud_lines(char lines[WALK_HUD_LINES][240]){
  else snprintf(lines[1],240,"World position: -- | Eye height: %.2f m",walking_eye_height);
  if(walking_state.active)snprintf(lines[2],240,"Feet Y: %.2f | Eyes Y: %.2f | Eye height: %.2f m | %s | FOV: %.1f deg",walking_state.y,walking_state.y+walking_state.eye_height,walking_state.eye_height,walking_state.noclip?"Flying":walking_state.grounded?"Grounded":"Airborne",walking_fov);
  else snprintf(lines[2],240,"Walking: %.3g m/s | Noclip: %.3g m/s | Terrain collision only",walking_tuning[WALK_SPEED],walking_tuning[FLY_SPEED]);
- {int len=(int)strlen(lines[0]);snprintf(lines[0]+len,240-len," | Base walk/fly: %.3g/%.3g m/s",walking_tuning[WALK_SPEED],walking_tuning[FLY_SPEED]);}
+ {int len=(int)strlen(lines[0]);snprintf(lines[0]+len,240-len," | Light [L]: %s | Range ,/.: %.3g m | Angle [/]: %.3g deg | Bright ;/': %.3g%% | Base walk/fly: %.3g/%.3g m/s",!walking_flashlight_available?"key conflict":flashlight_failed?"unavailable":walking_flashlight?"ON":"OFF",flashlight_tuning[FLASH_RANGE],flashlight_tuning[FLASH_ANGLE],flashlight_tuning[FLASH_BRIGHTNESS],walking_tuning[WALK_SPEED],walking_tuning[FLY_SPEED]);}
  snprintf(lines[3],240,"Walk=%s | Move=%s/%s/%s/%s | Height=%s/%s (hold: repeat) | RMB look | V fly | Space jump | LShift x%.3g / LAlt divide %.3g | Zoom=wheel up/down or =/- | Reset=8",keys[6],keys[0],keys[1],keys[2],keys[3],keys[4],keys[5],walking_tuning[SPRINT_MULTIPLIER],walking_tuning[SLOW_DIVISOR]);
 }
 static void hud_lines(char lines[HUD_LINE_COUNT][240]){

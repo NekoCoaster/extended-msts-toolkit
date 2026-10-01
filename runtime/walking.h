@@ -1,6 +1,7 @@
 /* MIT. Experimental native walking adapter, supported MSTS Bin images only.
    All native world queries and camera changes run on MSTS's own frame thread. */
 #include "walking-model.h"
+#include "flashlight.h"
 typedef int (__fastcall *WalkGroundFn)(float*,U,float,float);
 typedef void (__fastcall *WalkActivateFn)(void*);
 static WalkGroundFn walking_query=(WalkGroundFn)0x530635;
@@ -11,9 +12,40 @@ static WalkState walking_state;
 static int walking_origin_x,walking_origin_z;
 static U walking_view[0x1a8/4],walking_previous,walking_train;
 static int walking_ready,walking_pending,walking_toggle_down,walking_pan;
+static int walking_flashlight,walking_flashlight_available;
+static int walking_flashlight_key(U scan){
+ U i;
+ if(!walking_flashlight_available)return 0;
+ if(scan!=0x26&&scan!=0x1a&&scan!=0x1b&&scan!=0x33&&scan!=0x34&&scan!=0x27&&scan!=0x28)return 0;
+ if(scan==walking_toggle_scan)return 0;
+ for(i=0;i<6;i++)if(scan==editor_keys[i])return 0;
+ return 1;
+}
+static void walking_light_render(U id,Registers *r){
+ int active=walking_state.active&&*(U*)G(0x7c2a88)==(U)walking_view&&*(U*)G(0x7c2ac0)==walking_train;
+ flashlight_update(*(U*)G(0x829224),active&&walking_flashlight);
+}
+static void walking_light_terrain(U after,Registers *r){
+ U patch=after?r->esi:r->ecx,descriptor=after?r->ebx:r->edx;
+ if(flashlight_near_patch(patch,descriptor))*(U*)patch|=0x100;
+}
+static void walking_light_vertex(U coarse,Registers *r){
+ const float *position=(const float*)(coarse?*(U*)(r->ebp-28):r->edi);
+ U *packed=(U*)(r->ebp-4);
+ *packed=flashlight_terrain_colour(position,*packed);
+}
+static void walking_light_object(U mode,Registers *r){
+ U state=(mode==0||mode==4)?r->esi:r->ecx;const float *vertex,*matrix;U *output;
+ if(!flashlight_frame_active||*(U*)(state+0x1e0)==flashlight_object)return;
+ vertex=*(const float**)(state+0x188);matrix=*(const float**)G(0x82898c);output=*(U**)(state+0x190);
+ output[4]=flashlight_object_colour(vertex,matrix,output[4],mode<2,mode==3);
+}
+static void walking_light_shutdown(U id,Registers *r){
+ walking_flashlight=0;flashlight_renderer_shutdown();
+}
 static const char *walking_status="Not initialized";
 static void (*walking_camera_original)(void),(*walking_input_original)(void);
-static Hook walking_hooks[5];static B *walking_code;
+static Hook walking_hooks[17];static B *walking_code;
 static WNDPROC walking_original_proc;
 static HCURSOR walking_saved_cursor;static int walking_cursor_hidden;
 static HCURSOR (WINAPI *walking_set_cursor)(HCURSOR)=SetCursor;
@@ -102,10 +134,34 @@ static int walking_keys(B bits[32]){
   return read_memory(input+0x24,&addr,4)&&read_memory(addr,bits,(count+7)/8);
  }return 0;
 }
+static const U walking_flash_scans[]={0x1a,0x1b,0x33,0x34,0x27,0x28};
+static double walking_flash_wait[6];static B walking_flash_armed[6];
+static void walking_flash_repeat_reset(void){memset(walking_flash_armed,0,sizeof(walking_flash_armed));}
+static void walking_flash_adjust(U key){
+ int setting=key<2?FLASH_ANGLE:key<4?FLASH_RANGE:FLASH_BRIGHTNESS;
+ flashlight_tuning[setting]=flash_adjust(flashlight_tuning[setting],setting,(key&1)?1:-1);
+}
+static void walking_flash_repeat(const B *bits,double dt){
+ U i;if(!walking_input_active||!bits){walking_flash_repeat_reset();return;}
+ if(!walk_finite(dt)||dt<=0)return;dt=walk_limit(dt,0,0.1);
+ for(i=0;i<6;i++){
+  if(!walking_flashlight_key(walking_flash_scans[i])||!crawl_key(bits,walking_flash_scans[i])){walking_flash_armed[i]=0;continue;}
+  if(!walking_flash_armed[i])continue;
+  walking_flash_wait[i]-=dt;
+  while(walking_flash_wait[i]<=1e-9){walking_flash_adjust(i);walking_flash_wait[i]+=0.1;}
+ }
+}
 static void walking_key_edge(U scan,int down,int allowed){
  U i;int edge;if(scan>=238)return;
  edge=down&&!walking_event_held[scan];walking_event_held[scan]=down!=0;
+ for(i=0;i<6;i++)if(scan==walking_flash_scans[i]&&(!down||!allowed))walking_flash_armed[i]=0;
  if(walking_input_active&&edge&&allowed){
+  if(walking_flashlight_key(scan)){
+   if(scan==0x26)walking_flashlight=!walking_flashlight;
+   for(i=0;i<6;i++)if(scan==walking_flash_scans[i]){
+    walking_flash_adjust(i);walking_flash_wait[i]=walk_limit(walking_repeat_delay,0.05,5);walking_flash_armed[i]=1;
+   }
+  }
   if(scan==0x09){
    walking_state.eye_height=walking_initial_eye_height;walk_height_reset(&walking_state);
    walking_fov=walking_initial_fov;walking_fov_dirty=1;walking_wheel_remainder=0;walking_pulses&=~48u;
@@ -121,11 +177,12 @@ static void walking_event(Registers *r){
  if(!walking_ready||!event||!device||!device[1]||*((B*)device[1]+0x2d)!=1||(event[0]>>16)!=1||event[1]>1)return;
  scan=event[0]&0xffff;if(scan>=238)return;
  walking_key_edge(scan,event[1]!=0,(!stack[10]||walking_input_active)&&!paused()&&crawl_control_focus());
- if(scan!=walking_toggle_scan&&!(walking_input_active&&scan==0x09))return;
+ if(scan!=walking_toggle_scan&&!(walking_input_active&&(scan==0x09||walking_flashlight_key(scan))))return;
  memcpy(walking_event_copy,event,16);walking_event_copy[0]=0x10000;stack[6]=(U)walking_event_copy;
 }
 static void walking_event_gateway(U id,Registers *r){walking_event(r);}
 static void walking_reset(void){
+ walking_flashlight=0;flashlight_stop();walking_flash_repeat_reset();
  walking_cursor(0);walk_height_reset(&walking_state);
  walking_state.active=walking_input_active=walking_pending=walking_pan=0;
  walking_previous=walking_train=0;walking_status="Standby";
@@ -210,7 +267,7 @@ static void walking_camera(void){
   walking_sync_origin();
   memset(&in,0,sizeof(in));
   if(!paused()&&crawl_control_focus()&&walking_keys(bits)){
-   walking_modifiers(&in);
+   walking_modifiers(&in);walking_flash_repeat(bits,dt);
    in.forward=crawl_key(bits,editor_keys[0])-crawl_key(bits,editor_keys[1]);
    in.right=crawl_key(bits,editor_keys[3])-crawl_key(bits,editor_keys[2]);
    in.height_up=crawl_key(bits,editor_keys[4]);in.height_down=crawl_key(bits,editor_keys[5]);in.up=in.height_up-in.height_down;
@@ -230,7 +287,7 @@ static void walking_camera(void){
    }else {walking_pan=0;walking_cursor(0);}
    walk_step(&walking_state,&in,dt,0,walking_ground,NULL);
   }else{
-   walking_wheel_remainder=0;
+   walking_wheel_remainder=0;walking_flash_repeat_reset();
    walking_cursor(0);walk_height_reset(&walking_state);
    walking_pan=0;walking_state.previous_jump=walking_state.previous_up=walking_state.previous_down=walking_state.previous_noclip=1;
   }
@@ -250,7 +307,7 @@ typedef struct {U address,first,last;} WalkDeviceMask;
 static WalkDeviceMask walking_devices[32];static int walking_device_count;
 static U walking_allowed[128];static int walking_allowed_count;
 static int walking_view_action(U action){
- static const WCHAR *names[]={L"Camera_CabView",L"Camera_NoCab",L"Camera_FrontTracking",L"Camera_RearTracking",L"Camera_Trainspotter",L"Camera_Passenger",L"CameraCoupling",L"CameraYardMaster",L"CameraCycle",L"CameraReset",L"CameraTracking"};
+ static const WCHAR *names[]={L"Camera_CabView",L"Camera_NoCab",L"Camera_FrontTracking",L"Camera_RearTracking",L"Camera_Trainspotter",L"Camera_Passenger",L"CameraCoupling",L"CameraYardMaster",L"CameraCycle",L"CameraReset",L"CameraTracking",L"ToggleFrameRate"};
  WCHAR name[64];U identity,address,i;
  /* Action +0 is an interned-name object, NOT a direct string. Native
     0x6bca50 puts the UTF-16 text pointer at identity +0x10. */
@@ -335,20 +392,62 @@ static B *walking_detour(Hook *h,B *p,U address,const B *expected,U length,void 
  return p;
 }
 static int install_walking_hooks(void){
- B *p,*tail,*entry;DWORD old;U count=4;
+ B *p,*tail,*entry;DWORD old;U i,count=16;
  if(!walking_requested)return 1;
+ walking_flashlight_available=walking_toggle_scan!=0x26;
+ for(i=0;i<6;i++)if(editor_keys[i]==0x26)walking_flashlight_available=0;
  if(memcmp((void*)0x530635,"\x55\x8b\xec\x83\xec\x08",6)||memcmp((void*)0x51cd5f,"\x55\x8b\xec",3))return 0;
- walking_code=VirtualAlloc(NULL,1024,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);if(!walking_code)return 0;p=walking_code;
+ walking_code=VirtualAlloc(NULL,2048,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);if(!walking_code)return 0;p=walking_code;
  walking_camera_original=(void*)p;p=walking_detour(&walking_hooks[0],p,0x51cfd5,(B*)"\x55\x8b\xec\x83\xec\x44",6,walking_camera);
  walking_input_original=(void*)p;p=walking_detour(&walking_hooks[1],p,0x6bad60,(B*)"\x83\xec\x44\x53\x55",5,walking_input);
  walking_original_proc=(WNDPROC)p;p=walking_detour(&walking_hooks[2],p,0x696c00,(B*)"\xa1\x54\x99\x82\x00",5,walking_proc);
  walking_activate_original=(WalkActivateFn)p;p=walking_detour(&walking_hooks[3],p,0x51cd5f,(B*)"\x55\x8b\xec\x83\xec\x50",6,walking_activate_bridge);
+ /* Preserve all native registers, flags and x87/SSE state around our work. */
+ tail=p;memcpy(p,"\xa1\x90\x89\x82\x00",5);p+=5;branch(&p,0xe9,(void*)0x6a1925);
+ entry=p;gateway(&p,0,walking_light_render,tail,0);
+ p=walking_detour(&walking_hooks[4],p,0x6a1920,(B*)"\xa1\x90\x89\x82\x00",5,entry);
+ tail=p;memcpy(p,"\x83\xec\x08\x53\x55",5);p+=5;branch(&p,0xe9,(void*)0x6f1565);
+ entry=p;gateway(&p,0,walking_light_terrain,tail,0);
+ p=walking_detour(&walking_hooks[5],p,0x6f1560,(B*)"\x83\xec\x08\x53\x55",5,entry);
+ tail=p;memcpy(p,"\x8b\x55\x00\x8b\x46\x48",6);p+=6;branch(&p,0xe9,(void*)0x6f17da);
+ entry=p;gateway(&p,1,walking_light_terrain,tail,0);
+ p=walking_detour(&walking_hooks[6],p,0x6f17d4,(B*)"\x8b\x55\x00\x8b\x46\x48",6,entry);
+ tail=p;memcpy(p,"\xa1\x9c\x86\x82\x00",5);p+=5;branch(&p,0xe9,(void*)0x69fdd5);
+ entry=p;gateway(&p,0,walking_light_shutdown,tail,0);
+ p=walking_detour(&walking_hooks[7],p,0x69fdd0,(B*)"\xa1\x9c\x86\x82\x00",5,entry);
+ tail=p;memcpy(p,"\x8b\x4d\xfc\x8b\x45\xec",6);p+=6;branch(&p,0xe9,(void*)0x6f1e47);
+ entry=p;gateway(&p,0,walking_light_vertex,tail,0);
+ p=walking_detour(&walking_hooks[8],p,0x6f1e41,(B*)"\x8b\x4d\xfc\x8b\x45\xec",6,entry);
+ tail=p;memcpy(p,"\x8b\x4d\xe4\x8b\x55\xfc",6);p+=6;branch(&p,0xe9,(void*)0x6f2211);
+ entry=p;gateway(&p,1,walking_light_vertex,tail,0);
+ p=walking_detour(&walking_hooks[9],p,0x6f220b,(B*)"\x8b\x4d\xe4\x8b\x55\xfc",6,entry);
+ tail=p;memcpy(p,"\x8b\x8e\x90\x01\x00\x00",6);p+=6;branch(&p,0xe9,(void*)0x69e0fa);
+ entry=p;gateway(&p,0,walking_light_object,tail,0);
+ p=walking_detour(&walking_hooks[10],p,0x69e0f4,(B*)"\x8b\x8e\x90\x01\x00\x00",6,entry);
+ tail=p;memcpy(p,"\x8b\x91\x90\x01\x00\x00",6);p+=6;branch(&p,0xe9,(void*)0x69d801);
+ entry=p;gateway(&p,1,walking_light_object,tail,0);
+ p=walking_detour(&walking_hooks[11],p,0x69d7fb,(B*)"\x8b\x91\x90\x01\x00\x00",6,entry);
+ tail=p;memcpy(p,"\x8b\x91\x88\x01\x00\x00",6);p+=6;branch(&p,0xe9,(void*)0x69e5c7);
+ entry=p;gateway(&p,2,walking_light_object,tail,0);
+ p=walking_detour(&walking_hooks[12],p,0x69e5c1,(B*)"\x8b\x91\x88\x01\x00\x00",6,entry);
+ tail=p;memcpy(p,"\x8b\x91\x88\x01\x00\x00",6);p+=6;branch(&p,0xe9,(void*)0x69e9bb);
+ entry=p;gateway(&p,3,walking_light_object,tail,0);
+ p=walking_detour(&walking_hooks[13],p,0x69e9b5,(B*)"\x8b\x91\x88\x01\x00\x00",6,entry);
+ /* Alternate shaders selected by 0x69eae0 for track materials. Native cone
+    diffuse here is independent of the surface normal; retain native specular. */
+ tail=p;memcpy(p,"\x8b\x86\x88\x01\x00\x00",6);p+=6;branch(&p,0xe9,(void*)0x69f70a);
+ entry=p;gateway(&p,4,walking_light_object,tail,0);
+ p=walking_detour(&walking_hooks[14],p,0x69f704,(B*)"\x8b\x86\x88\x01\x00\x00",6,entry);
+ tail=p;memcpy(p,"\x8b\x91\x88\x01\x00\x00",6);p+=6;branch(&p,0xe9,(void*)0x69ef2b);
+ entry=p;gateway(&p,5,walking_light_object,tail,0);
+ p=walking_detour(&walking_hooks[15],p,0x69ef25,(B*)"\x8b\x91\x88\x01\x00\x00",6,entry);
  if(!crawl_requested){
   tail=p;memcpy(p,"\x8b\x7c\x24\x18\x8b\x07",6);p+=6;branch(&p,0xe9,(void*)0x6bae14);
   entry=p;gateway(&p,0,walking_event_gateway,tail,0);
-  walking_detour(&walking_hooks[count++],p,0x6bae0e,(B*)"\x8b\x7c\x24\x18\x8b\x07",6,entry);
+  p=walking_detour(&walking_hooks[count++],p,0x6bae0e,(B*)"\x8b\x7c\x24\x18\x8b\x07",6,entry);
  }
- if(!VirtualProtect(walking_code,1024,PAGE_EXECUTE_READ,&old))return 0;FlushInstructionCache(GetCurrentProcess(),walking_code,1024);
+ if(p>walking_code+2048)return 0;
+ if(!VirtualProtect(walking_code,2048,PAGE_EXECUTE_READ,&old))return 0;FlushInstructionCache(GetCurrentProcess(),walking_code,2048);
  if(!prepare_hooks(walking_hooks,count)||!install_hooks(walking_hooks,count))return 0;
  walking_activate=walking_activate_bridge;
  walking_reset();walking_ready=1;return 1;
