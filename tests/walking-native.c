@@ -90,6 +90,174 @@ static void test_tile_rebase(void){
  *(U*)G(0x7be0f4)=0;
  walking_reset();
 }
+
+static U light_head[3],light_node[3],other_node[3],light_data[36],other_light[36];
+static U light_camera[16];static int light_creates,light_releases,light_sets,light_verify_ok=1;
+static float light_params[12];
+static int fake_light_verify(void){return light_verify_ok;}
+static void __fastcall fake_light_set(void *p,const float *data){assert(p==light_data);memcpy(light_params,data,sizeof(light_params));memcpy((B*)p+0x1c,data,sizeof(light_params));light_sets++;}
+static void *__fastcall fake_light_create(U type,U flags,const float *data){
+ assert(type==2&&flags==0x21);light_creates++;memset(light_data,0,sizeof(light_data));
+ light_data[0]=G(0x828868);light_data[1]=1;light_data[2]=2;light_data[3]=flags;
+ light_node[0]=light_head[0];light_node[2]=(U)light_data;light_head[0]=(U)light_node;
+ fake_light_set(light_data,data);return light_data;
+}
+static int __fastcall fake_light_release(void *p){assert(p==light_data);light_releases++;light_head[0]=light_node[0];return 0;}
+static void test_flashlight(void){
+ float *m=(float*)((B*)light_camera+12);int before;
+ memset(globals,0,sizeof(globals));memset(light_camera,0,sizeof(light_camera));
+ flashlight_create=fake_light_create;flashlight_set=fake_light_set;flashlight_release=fake_light_release;flashlight_verify=fake_light_verify;
+ light_head[0]=(U)other_node;other_node[0]=(U)light_head;other_node[2]=(U)other_light;other_light[3]=5;
+ *(U*)G(0x8287b4)=1;*(U*)G(0x828694)=(U)light_head;*(U*)G(0x8287b0)=(U)other_light;
+ m[0]=m[4]=m[8]=1;m[9]=100;m[10]=2;m[11]=200;
+ flashlight_update((U)light_camera,0);assert(!light_creates);
+ flashlight_update((U)light_camera,1);assert(light_creates==1&&flashlight_object==(U)light_data);
+ assert(*(U*)G(0x8287b0)==(U)other_light&&flashlight_frame_active);
+ assert(light_params[4]==100&&light_params[5]==2&&fabs(light_params[6]-200.15)<0.001);
+ assert(light_params[8]==0&&light_params[9]==0&&light_params[10]==1&&light_params[7]==45);
+ {float point[3]={light_params[4],light_params[5],light_params[6]+25};U c,stack[16]={0};Registers r={0};
+  c=flashlight_terrain_colour(point,0xff102030);assert((c&0xffffff)>0x102030&&(c>>24)==255);
+  r.edi=(U)point;r.ebp=(U)(stack+8);stack[1]=(U)point;stack[7]=0xff102030;
+  walking_light_vertex(0,&r);assert(stack[7]==c);stack[7]=0xff102030;walking_light_vertex(1,&r);assert(stack[7]==c);
+  assert(flashlight_terrain_colour(point,0xffffffff)==0xffffffff);
+  point[2]-=50;assert(flashlight_terrain_colour(point,0xff102030)==0xff102030);
+  point[2]+=1000;assert(flashlight_terrain_colour(point,0xff102030)==0xff102030);
+  point[2]=light_params[6]+25;*(U*)G(0x8287b0)=flashlight_object;assert(flashlight_terrain_colour(point,0xff102030)==0xff102030);
+  *(U*)G(0x8287b0)=(U)other_light;
+ }
+ {float matrix[15]={1,0,0,0,1,0,0,0,1,0,0,0,0,0,0},v[10]={0,0,25.15f,0,0,-1};U lit;
+  lit=flashlight_object_colour(v,matrix,0x7f102030,1,0);assert((lit>>24)==0x7f&&(lit&0xffffff)>0x102030);
+  {U state[0x208/4]={0},output[8]={0,0,0,0,0x7f102030,0xa5123456,0x3f800000,0x40000000};Registers r={0};U expected,mode;
+   *(U*)G(0x82898c)=(U)matrix;state[0x188/4]=(U)v;state[0x190/4]=(U)output;
+   state[0x1e0/4]=0x1234;v[5]=1; /* Native track cone diffuse ignores Lambert facing. */
+   expected=flashlight_object_colour(v,matrix,output[4],0,0);assert(expected!=output[4]);
+   for(mode=4;mode<=5;mode++){
+    r.esi=mode==4?(U)state:0;r.ecx=mode==5?(U)state:0;output[4]=0x7f102030;
+    walking_light_object(mode,&r);assert(output[4]==expected);
+    assert(output[5]==0xa5123456&&output[6]==0x3f800000&&output[7]==0x40000000);
+    state[0x1e0/4]=flashlight_object;output[4]=0x7f102030;walking_light_object(mode,&r);assert(output[4]==0x7f102030);
+    state[0x1e0/4]=0x1234;flashlight_frame_active=0;walking_light_object(mode,&r);assert(output[4]==0x7f102030);flashlight_frame_active=1;
+   }v[5]=-1;
+  }
+  matrix[12]=100;v[0]=100;assert(flashlight_object_colour(v,matrix,0x7f102030,1,0)==lit);
+  matrix[12]-=2048;v[0]-=2048;assert(flashlight_object_colour(v,matrix,0x7f102030,1,0)==lit);
+  v[5]=1;assert(flashlight_object_colour(v,matrix,0x7f102030,1,0)==0x7f102030);
+  assert(flashlight_object_colour(v,matrix,0x7f102030,0,0)==lit);
+  *(U*)(v+6)=0;assert(flashlight_object_colour(v,matrix,0x7f102030,0,1)==0x7f102030);
+  v[2]=25.15f;assert(flashlight_object_colour(v,matrix,0xffffffff,0,0)==0xffffffff);
+  flashlight_frame_active=0;assert(flashlight_object_colour(v,matrix,0x7f102030,0,0)==0x7f102030);flashlight_frame_active=1;
+  {float rotated[15]={0,0,1,0,1,0,-1,0,0,0,0,0,0,0,0},rv[10]={25.15f,0,0,-1,0,0};assert(flashlight_object_colour(rv,rotated,0x7f102030,1,0)==lit);}
+  v[2]=1000;assert(flashlight_object_colour(v,matrix,0x7f102030,0,0)==0x7f102030);
+  v[2]=-25;assert(flashlight_object_colour(v,matrix,0x7f102030,0,0)==0x7f102030);
+ }
+ /* Updated camera coordinates, including a floating-origin shift, are used
+    directly; one light is reused while the view changes. */
+ m[9]-=2048;m[6]=1;m[8]=0;flashlight_update((U)light_camera,1);
+ assert(light_creates==1&&fabs(light_params[4]-(-1947.85))<0.001&&light_params[8]==1);
+
+ {U tile[32]={0},patch[8]={0},descriptor[8]={0};Registers r={0};
+  descriptor[0]=(U)tile;descriptor[2]=16;
+  *(int*)(tile+4)=-1952;*(int*)(tile+5)=208;*(float*)(tile+7)=1;
+  assert(flashlight_near_patch((U)patch,(U)descriptor));
+  r.ecx=r.esi=(U)patch;r.edx=r.ebx=(U)descriptor;
+  walking_light_terrain(0,&r);assert(patch[0]&0x100);
+  patch[0]&=~0x100; /* native draw clears its rebuilt vertex cache */
+  walking_light_terrain(1,&r);assert(patch[0]&0x100); /* next draw refreshes, even after off */
+  *(int*)(tile+4)=10000;patch[0]=0;walking_light_terrain(0,&r);assert(!(patch[0]&0x100));
+  *(float*)(tile+7)=0;assert(!flashlight_near_patch((U)patch,(U)descriptor));
+ }
+ flashlight_update((U)light_camera,0);assert(light_releases==1&&!flashlight_object);
+ assert(*(U*)G(0x8287b0)==(U)other_light&&*(U*)G(0x8287b4)==1);
+ flashlight_stop();assert(light_releases==1); /* idempotent */
+ flashlight_update((U)light_camera,1);
+ /* Train light disappears while flashlight is active: no stale restoration. */
+ light_node[0]=(U)light_head;*(U*)G(0x8287b0)=0;flashlight_stop();assert(!*(U*)G(0x8287b0));
+ *(U*)G(0x8287b0)=0;flashlight_update((U)light_camera,1);
+ assert(*(U*)G(0x8287b0)==flashlight_object); /* solo beam uses native path */
+ *(U*)G(0x8287b0)=(U)other_light; /* native train enables its beam later */
+ flashlight_update((U)light_camera,1);assert(*(U*)G(0x8287b0)==(U)other_light);
+ flashlight_stop();assert(*(U*)G(0x8287b0)==(U)other_light&&!flashlight_frame_active);
+ *(U*)G(0x8287b0)=0;
+ flashlight_update((U)light_camera,1);before=light_releases;
+ /* Simulate renderer owning/freeing its list before the next NEMT callback. */
+ light_head[0]=(U)light_head;flashlight_stop();assert(light_releases==before&&!flashlight_object);
+ light_verify_ok=0;before=light_creates;flashlight_update((U)light_camera,1);
+ assert(light_creates==before&&flashlight_failed);light_verify_ok=1;
+ flashlight_update((U)light_camera,1);assert(!flashlight_failed);
+ flashlight_update(0,1);assert(!flashlight_object); /* invalid camera cleans up */
+ flashlight_update((U)light_camera,1);before=light_releases;
+ flashlight_renderer_shutdown();assert(!flashlight_object&&!flashlight_frame_active&&!*(U*)G(0x8287b0));
+ assert(light_releases==before); /* native shutdown, not NEMT, owns this release */
+ light_head[0]=(U)light_head;
+ walking_input_active=1;walking_flashlight_available=1;walking_flashlight=0;
+ memset(walking_event_held,0,sizeof(walking_event_held));
+ walking_key_edge(0x26,1,1);assert(walking_flashlight);
+ walking_key_edge(0x26,1,1);assert(walking_flashlight); /* held key */
+ walking_key_edge(0x26,0,1);walking_key_edge(0x26,1,0);assert(walking_flashlight); /* paused/unfocused */
+ walking_key_edge(0x26,0,1);walking_key_edge(0x26,1,1);assert(!walking_flashlight);
+
+ assert(flash_parse("",FLASH_RANGE)==45&&flash_parse("nan",FLASH_ANGLE)==70);
+ assert(flash_parse("0",FLASH_RANGE)==45&&flash_parse("1001",FLASH_RANGE)==45);
+ assert(flash_parse("151",FLASH_ANGLE)==70&&flash_parse("90 deg",FLASH_ANGLE)==70);
+ assert(flash_parse(" 120.5 ",FLASH_RANGE)==120.5);
+ flashlight_tuning[FLASH_RANGE]=45;flashlight_tuning[FLASH_ANGLE]=70;
+ walking_key_edge(0x1a,1,1);assert(flashlight_tuning[FLASH_ANGLE]==65);
+ walking_key_edge(0x1a,1,1);assert(flashlight_tuning[FLASH_ANGLE]==65);
+ walking_key_edge(0x1b,1,1);assert(flashlight_tuning[FLASH_ANGLE]==70);
+ walking_key_edge(0x33,1,1);assert(flashlight_tuning[FLASH_RANGE]==40);
+ walking_key_edge(0x34,1,1);assert(flashlight_tuning[FLASH_RANGE]==45);
+ walking_key_edge(0x34,0,1);walking_key_edge(0x34,1,0);assert(flashlight_tuning[FLASH_RANGE]==45);
+ {U saved=editor_keys[0];editor_keys[0]=0x1b;walking_key_edge(0x1b,0,1);walking_key_edge(0x1b,1,1);assert(flashlight_tuning[FLASH_ANGLE]==70);editor_keys[0]=saved;}
+ assert(flash_adjust(5,FLASH_RANGE,-1)==5&&flash_adjust(1000,FLASH_RANGE,1)==1000);
+ assert(flash_adjust(10,FLASH_ANGLE,-1)==10&&flash_adjust(150,FLASH_ANGLE,1)==150);
+ assert(flash_parse("101",FLASH_BRIGHTNESS)==100&&flash_parse("nan",FLASH_BRIGHTNESS)==100);
+ assert(flash_parse("0",FLASH_BRIGHTNESS)==0&&flash_parse("35",FLASH_BRIGHTNESS)==35);
+ assert(flash_adjust(0,FLASH_BRIGHTNESS,-1)==0&&flash_adjust(100,FLASH_BRIGHTNESS,1)==100);
+ walking_key_edge(0x27,1,1);assert(flashlight_tuning[FLASH_BRIGHTNESS]==95);
+ walking_key_edge(0x27,1,1);assert(flashlight_tuning[FLASH_BRIGHTNESS]==95);
+ walking_key_edge(0x28,1,1);assert(flashlight_tuning[FLASH_BRIGHTNESS]==100);
+ walking_key_edge(0x27,0,1);walking_key_edge(0x27,1,0);assert(flashlight_tuning[FLASH_BRIGHTNESS]==100);
+ {U saved=editor_keys[0];editor_keys[0]=0x27;walking_key_edge(0x27,0,1);walking_key_edge(0x27,1,1);assert(flashlight_tuning[FLASH_BRIGHTNESS]==100);editor_keys[0]=saved;}
+ flashlight_tuning[FLASH_BRIGHTNESS]=35;
+ flashlight_update((U)light_camera,1);assert(fabs(light_params[1]-.35)<.00001&&fabs(light_params[2]-.3325)<.00001&&fabs(light_params[3]-.2975)<.00001);
+ flashlight_tuning[FLASH_BRIGHTNESS]=0;flashlight_update((U)light_camera,1);assert(light_params[1]==0&&light_params[2]==0&&light_params[3]==0);
+ flashlight_tuning[FLASH_BRIGHTNESS]=100;
+ flashlight_tuning[FLASH_RANGE]=1000;flashlight_tuning[FLASH_ANGLE]=90;
+ flashlight_update((U)light_camera,1);assert(light_params[7]==1000&&fabs(light_params[11]-0.785398163)<0.00001);
+ flashlight_stop();flashlight_tuning[FLASH_RANGE]=45;flashlight_tuning[FLASH_ANGLE]=70;
+ walking_flashlight_available=0;walking_key_edge(0x26,0,1);walking_key_edge(0x26,1,1);assert(!walking_flashlight);
+ walking_flashlight=1;walking_reset();assert(!walking_flashlight);
+ puts("PASS flashlight lifecycle, camera/rebase updates, native selection preservation, additive terrain colour, stale-list cleanup, verification failure and L-key edges.");
+}
+static void test_flash_repeat(void){
+ B held[32]={0};U i,j,saved;int setting;double initial,step;
+ walking_input_active=1;walking_flashlight_available=1;walking_repeat_delay=.5;
+ assert(flash_parse("1000",FLASH_RANGE)==1000&&flash_parse("200.5",FLASH_RANGE)==200.5);
+ for(i=0;i<6;i++){
+  U scan=walking_flash_scans[i];setting=i<2?FLASH_ANGLE:i<4?FLASH_RANGE:FLASH_BRIGHTNESS;
+  initial=setting==FLASH_BRIGHTNESS?50:100;step=(i&1)?5:-5;
+  memset(held,0,sizeof(held));memset(walking_event_held,0,sizeof(walking_event_held));walking_flash_repeat_reset();
+  held[scan>>3]=1<<(scan&7);flashlight_tuning[setting]=initial;
+  walking_key_edge(scan,1,1);assert(flashlight_tuning[setting]==initial+step);
+  walking_key_edge(scan,1,1);assert(flashlight_tuning[setting]==initial+step); /* OS repeat stays edge-only. */
+  for(j=0;j<4;j++)walking_flash_repeat(held,.1);assert(flashlight_tuning[setting]==initial+step);
+  walking_flash_repeat(held,.1);assert(flashlight_tuning[setting]==initial+2*step);
+  walking_flash_repeat(held,.1);assert(flashlight_tuning[setting]==initial+3*step);
+  walking_key_edge(scan,0,1);walking_flash_repeat(held,.1);assert(flashlight_tuning[setting]==initial+3*step);
+  walking_key_edge(scan,1,1);walking_flash_repeat(NULL,.1);walking_flash_repeat(held,1);assert(flashlight_tuning[setting]==initial+4*step); /* Focus/pause cancellation. */
+  walking_key_edge(scan,0,1);walking_key_edge(scan,1,0);walking_flash_repeat(held,.1);assert(flashlight_tuning[setting]==initial+4*step);
+ }
+ memset(walking_event_held,0,sizeof(walking_event_held));memset(held,0,sizeof(held));held[0x34>>3]=1<<(0x34&7);
+ walking_repeat_delay=.05;flashlight_tuning[FLASH_RANGE]=990;walking_key_edge(0x34,1,1);
+ walking_flash_repeat(held,.049);assert(flashlight_tuning[FLASH_RANGE]==995);
+ walking_flash_repeat(held,.001);assert(flashlight_tuning[FLASH_RANGE]==1000);
+ for(j=0;j<20;j++)walking_flash_repeat(held,.1);assert(flashlight_tuning[FLASH_RANGE]==1000);
+ walking_key_edge(0x34,0,1);walking_key_edge(0x34,1,1);saved=editor_keys[0];editor_keys[0]=0x34;
+ walking_flash_repeat(held,.1);assert(!walking_flash_armed[3]);editor_keys[0]=saved;
+ walking_key_edge(0x34,0,1);walking_key_edge(0x34,1,1);walking_input_active=0;walking_flash_repeat(held,.1);assert(!walking_flash_armed[3]);
+ walking_repeat_delay=.5;memcpy(flashlight_tuning,flash_defaults,sizeof(flash_defaults));walking_reset();
+ puts("PASS flashlight repeat: six keys, initial delay/cadence, release/focus/pause/conflict cancellation and 1000 m clamp.");
+}
 int main(void){
  char lines[WALK_HUD_LINES][240];B readbits[32];int i;double height;
  walking_set_cursor=fake_set_cursor;walking_get_cursor=fake_get_cursor;
@@ -100,6 +268,7 @@ int main(void){
   }
   modifier_flags=0;walking_modifiers(&in);assert(!in.sprint&&!in.slow);
  }
+ test_flashlight();test_flash_repeat();
  test_tile_rebase();
  walking_cursor(1);walking_cursor(1);assert(!fake_cursor&&walking_cursor_hidden);
  walking_cursor(0);assert(fake_cursor==(HCURSOR)1234&&!walking_cursor_hidden);
@@ -127,6 +296,10 @@ int main(void){
  table[0x17*4]=(U)actions[0];assert(walking_mask());assert(!(*(B*)((U)actions[0]+0x12)&2));walking_unmask(); /* Remapped camera. */
  action_name[4]=(U)L"ThrottleIncrease";assert(!walking_view_action((U)actions[0]));
  assert(walking_mask());assert(*(B*)((U)actions[0]+0x12)&2);walking_unmask(); /* Numeric train remaps remain blocked. */
+ action_name[4]=(U)L"ToggleFrameRate";assert(walking_view_action((U)actions[0]));
+ assert(walking_mask());assert(!(*(B*)((U)actions[0]+0x12)&2));walking_unmask(); /* Shift-Z HUD survives FPV isolation. */
+ action_name[4]=(U)L"ThrottleIncrease";table[0x2c*4]=(U)actions[0];
+ assert(walking_mask());assert(*(B*)((U)actions[0]+0x12)&2);walking_unmask(); /* Z does not whitelist train actions. */
  action_name[4]=0;assert(!walking_view_action((U)actions[0]));
  setup();walking_reset();walking_hud_lines(lines);assert(strstr(lines[0],"Standby"));
  walking_initial_eye_height=1.75;walking_initial_fov=67;walking_input_active=walking_state.active=1;

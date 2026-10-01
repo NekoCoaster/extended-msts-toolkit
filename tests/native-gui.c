@@ -187,6 +187,7 @@ int main(void) {
     s.walking=1;s.walking_height_cm=175;s.walking_repeat_ms=750;strcpy(s.walking_key,"F11");
     s.walking_tuning[WALK_SPEED]=4.25;s.walking_tuning[FLY_SPEED]=22.5;
     s.walking_tuning[SPRINT_MULTIPLIER]=3;s.walking_tuning[SLOW_DIVISOR]=4;
+    s.flashlight_tuning[FLASH_RANGE]=1000;s.flashlight_tuning[FLASH_ANGLE]=85;s.flashlight_tuning[FLASH_BRIGHTNESS]=35;
     CHECK(install_settings(&info,&s,0,err,sizeof(err)));
     CHECK(load_selection_settings(&info,&loaded,err,sizeof(err)));
     CHECK(loaded.prefer_pcores && loaded.crawl && loaded.strength==77 && !loaded.hud_left);
@@ -195,6 +196,10 @@ int main(void) {
     CHECK(loaded.walking && loaded.walking_height_cm==175 && !strcmp(loaded.walking_key,"F11"));
     CHECK(loaded.walking_repeat_ms==750);
     for(i=0;i<WALK_TUNING_COUNT;i++)CHECK(loaded.walking_tuning[i]==s.walking_tuning[i]);
+    for(i=0;i<FLASH_SETTING_COUNT;i++)CHECK(loaded.flashlight_tuning[i]==s.flashlight_tuning[i]);
+    CHECK(WritePrivateProfileStringA("Walking","FlashlightRangeM","1001",ini));load_settings(ini,&loaded);CHECK(loaded.flashlight_tuning[FLASH_RANGE]==45);
+    CHECK(WritePrivateProfileStringA("Walking","FlashlightRangeM","0",ini));load_settings(ini,&loaded);CHECK(loaded.flashlight_tuning[FLASH_RANGE]==45);
+    CHECK(WritePrivateProfileStringA("Walking","FlashlightAngleDeg","200",ini));load_settings(ini,&loaded);CHECK(loaded.flashlight_tuning[FLASH_ANGLE]==70);
     CHECK(WritePrivateProfileStringA("Walking","SlowDivisor","0.0",ini));load_settings(ini,&loaded);
     CHECK(loaded.walking_tuning[SLOW_DIVISOR]==2);
     strcpy(s.walking_key,"F12");CHECK(write_settings(ini,&s));load_settings(ini,&loaded);
@@ -206,6 +211,7 @@ int main(void) {
     CHECK(!loaded.walking && loaded.walking_height_cm==200 && !strcmp(loaded.walking_key,"BACKQUOTE"));
     CHECK(loaded.walking_repeat_ms==500);
     for(i=0;i<WALK_TUNING_COUNT;i++)CHECK(loaded.walking_tuning[i]==walk_tuning_defaults[i]);
+    for(i=0;i<FLASH_SETTING_COUNT;i++)CHECK(loaded.flashlight_tuning[i]==flash_defaults[i]);
     CHECK(!strcmp(loaded.derail_key,"F8") && !strcmp(loaded.key_forward,"i"));
     /* Lock only the manifest against replacement. Earlier commits must roll
      * back rather than leaving the user's INI/DLL changed after this failure. */

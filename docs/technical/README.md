@@ -1,6 +1,6 @@
 # Technical documentation and testing evidence
 
-[Current release: 1.2.2](../../releases/v1.2.2.md). Older findings and validation snapshots are retained below as historical evidence.
+[Prepared 1.2.3](../../releases/v1.2.3.md) · [Published 1.2.2](../../releases/v1.2.2.md). Older findings and validation snapshots are retained below as historical evidence.
 
 This section records how NEMT was built and what was tested. For installation and the shipped controls, start with the [user guide](../README.md).
 
@@ -13,7 +13,7 @@ We develop and instrument the toolkit in a Windows VM, then test graphics and ga
 | [Validation summary](validation.md) | First-edition evidence, known limits and unresolved coverage |
 | [Native frontend validation](native-frontend-validation.md) | Migration build/launch reports, regression checks and coverage limits |
 | [Native architecture](native-runtime.md) | Initialization, runtime ownership and mutation safety |
-| [Walking and noclip](walking.md) | Current 1.2.2 camera ownership, origin rebasing, input, tuning and momentum |
+| [Walking and noclip](walking.md) | Camera ownership, FPV flashlight/shaders, input repeat, origin rebasing and tuning |
 | [Editors and tools](editors.md) | Toolset isolation, real viewport resizing, panel layout and audio idle stalls |
 | [Crawl physics](physics.md) | Connections, engine parameters, momentum, drag and animation |
 | [Activity-end and camera sites](patches.md) | Identified executable instructions |

@@ -123,3 +123,17 @@ The previous PowerShell/WinForms implementation is retained under `legacy/` as a
 Developed and Tested by NekoCoaster with Astra.
 
 Released under the [MIT License](LICENSE). See [third-party notices](THIRD-PARTY.md). Microsoft Train Simulator and route assets are not included.
+
+### FPV flashlight — prepared for 1.2.3
+
+The experimental walking branch includes an L-key, camera-following flashlight,
+with terrain-cache refresh and F5 status. See [walking controls and current
+validation limits](docs/walking.md#experimental-flashlight-prototype). Live probes confirmed terrain,
+train/scenery and track illumination alongside the locomotive beam. The latest
+track integration requires an MSTS restart. Stability validation remains in progress
+after an earlier instrumented-probe crash.
+
+The prepared [1.2.3 update](releases/v1.2.3.md) adds a 5–1000 m range, held-key
+angle/range/brightness adjustment and Shift-Z compass/FPS toggling in FPV.
+The user confirmed scene illumination; final control additions have native
+regression coverage and await fresh-launch testing. Publication awaits PR approval.

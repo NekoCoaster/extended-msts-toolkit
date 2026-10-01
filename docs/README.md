@@ -1,6 +1,6 @@
 # NEMT user guide
 
-[What changed in 1.2.2](../releases/v1.2.2.md) · [Technical documentation](technical/README.md).
+[Prepared 1.2.3 changes](../releases/v1.2.3.md) · [Published 1.2.2](../releases/v1.2.2.md) · [Technical documentation](technical/README.md).
 
 Start with [installation](installation.md), then choose the features that suit your game. Apply options through **NEMT.exe** with MSTS closed, then restart. Advanced bindings and movement tuning are configured in `NEMT/settings.ini`; the relevant guides describe them. Upgrading also requires Apply from the updated NEMT.
 

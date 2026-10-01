@@ -4,6 +4,7 @@
 #include <string.h>
 #include "json_record.h"
 #include "../runtime/walking-settings.h"
+#include "../runtime/flashlight-settings.h"
 typedef struct {
  int prefer_pcores, skip_movie, window_features, unlock_fps, limit_vsync, verbose_loading;
  int startup_log, cab_needles, background_audio, ignore_red_signal;
@@ -16,9 +17,10 @@ typedef struct {
  int high_resolution;
  int walking,walking_height_cm,walking_repeat_ms;char walking_key[32];
  double walking_tuning[WALK_TUNING_COUNT];
+ double flashlight_tuning[FLASH_SETTING_COUNT];
 } Settings;
 
-static void settings_defaults(Settings*s){memset(s,0,sizeof(*s));memcpy(s->walking_tuning,walk_tuning_defaults,sizeof(s->walking_tuning));s->window_features=1;s->strength=10;s->hud_left=1;s->max_log_kb=8192;s->center_windowed=1;strcpy(s->derail_key,"BACKSLASH");strcpy(s->key_forward,"w");strcpy(s->key_backward,"s");strcpy(s->key_left,"a");strcpy(s->key_right,"d");strcpy(s->key_up,"e");strcpy(s->key_down,"q");s->walking_height_cm=200;s->walking_repeat_ms=500;strcpy(s->walking_key,"BACKQUOTE");}
+static void settings_defaults(Settings*s){memset(s,0,sizeof(*s));memcpy(s->walking_tuning,walk_tuning_defaults,sizeof(s->walking_tuning));memcpy(s->flashlight_tuning,flash_defaults,sizeof(s->flashlight_tuning));s->window_features=1;s->strength=10;s->hud_left=1;s->max_log_kb=8192;s->center_windowed=1;strcpy(s->derail_key,"BACKSLASH");strcpy(s->key_forward,"w");strcpy(s->key_backward,"s");strcpy(s->key_left,"a");strcpy(s->key_right,"d");strcpy(s->key_up,"e");strcpy(s->key_down,"q");s->walking_height_cm=200;s->walking_repeat_ms=500;strcpy(s->walking_key,"BACKQUOTE");}
 /* Match legacy/NEMT.ps1's manifest-driven controls. INI overrides are applied
  * separately, and only for an enabled, recognized installation. */
 static void settings_from_manifest(const JsonRecord *doc,Settings *s) {
@@ -43,7 +45,7 @@ static void settings_from_manifest(const JsonRecord *doc,Settings *s) {
 }
 static void settings_recommended(Settings *s,int widescreen,int cpu_supported) {
     if(cpu_supported) s->prefer_pcores=1;
-    s->skip_movie=1; s->window_features=1; s->unlock_fps=1;
+    s->skip_movie=1; memcpy(s->flashlight_tuning,flash_defaults,sizeof(s->flashlight_tuning));s->window_features=1; s->unlock_fps=1;
     s->limit_vsync=1; s->verbose_loading=1; s->startup_log=0;
     s->cab_needles=widescreen!=0; s->background_audio=1; s->ignore_red_signal=1;
     s->editor_windows=1; s->editor_tools=1; s->editor_audio=1;

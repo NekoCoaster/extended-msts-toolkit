@@ -40,6 +40,10 @@ if errorlevel 1 goto failed
 if errorlevel 1 goto failed
 build\window-math-test.exe
 if errorlevel 1 goto failed
+"%TCC%" -o build\transaction-test.exe tests\transaction.c
+if errorlevel 1 goto failed
+build\transaction-test.exe
+if errorlevel 1 goto failed
 "%TCC%" -o build\walking-model-test.exe tests\walking-model.c
 if errorlevel 1 goto failed
 build\walking-model-test.exe
