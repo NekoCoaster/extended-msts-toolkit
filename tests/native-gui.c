@@ -120,9 +120,15 @@ static void cosmetic_gui_checks(void) {
             SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE));layout_controls();
         check_outer_size(outer.right-outer.left,outer.bottom-outer.top);
         CHECK(GetClientRect(g_main,&client));
-        {RECT camera,walking,crawl;CHECK(GetWindowRect(GetDlgItem(g_main,IDC_CAMERA),&camera));
+        {RECT camera,mouse,walking,crawl;CHECK(GetWindowRect(GetDlgItem(g_main,IDC_CAMERA),&camera));
          CHECK(GetWindowRect(GetDlgItem(g_main,IDC_WALKING),&walking));CHECK(GetWindowRect(GetDlgItem(g_main,IDC_CRAWL),&crawl));
-         CHECK(abs(walking.top-camera.bottom)<=1&&abs(crawl.top-walking.bottom)<=1);}
+         CHECK(GetWindowRect(GetDlgItem(g_main,IDC_EXTERNALCAMERA),&mouse));
+         CHECK(abs(mouse.top-camera.bottom)<=1&&abs(walking.top-mouse.bottom)<=1&&abs(crawl.top-walking.bottom)<=1);}
+        {RECT verbose,logging,anchor;
+         CHECK(GetWindowRect(GetDlgItem(g_main,IDC_VERBOSE),&verbose));
+         CHECK(GetWindowRect(GetDlgItem(g_main,IDC_LOGGING),&logging));
+         CHECK(GetWindowRect(GetDlgItem(g_main,IDC_ANCHORLABEL),&anchor));
+         CHECK(abs(logging.top-verbose.bottom)<=1&&verbose.top>=anchor.bottom);}
         CHECK(client.right>=dip(CONTENT_WIDTH+STARTUP_EXTRA_WIDTH));
         CHECK(client.bottom>=dip(CONTENT_HEIGHT+STARTUP_EXTRA_HEIGHT));
         CHECK(!(GetWindowLongA(g_main,GWL_STYLE)&(WS_HSCROLL|WS_VSCROLL)));
@@ -184,7 +190,7 @@ int main(void) {
     settings_defaults(&s);s.prefer_pcores=1;s.crawl=1;s.prevent_end=1;s.counter_tilt=1;s.strength=77;s.hud_left=0;
     strcpy(s.monitor,"\\\\.\\DISPLAY99");
     s.high_resolution=1;
-    s.walking=1;s.walking_height_cm=175;s.walking_repeat_ms=750;strcpy(s.walking_key,"F11");
+    s.external_camera=1;s.walking=1;s.walking_height_cm=175;s.walking_repeat_ms=750;strcpy(s.walking_key,"F11");
     s.walking_tuning[WALK_SPEED]=4.25;s.walking_tuning[FLY_SPEED]=22.5;
     s.walking_tuning[SPRINT_MULTIPLIER]=3;s.walking_tuning[SLOW_DIVISOR]=4;
     s.flashlight_tuning[FLASH_RANGE]=1000;s.flashlight_tuning[FLASH_ANGLE]=85;s.flashlight_tuning[FLASH_BRIGHTNESS]=35;
@@ -193,6 +199,7 @@ int main(void) {
     CHECK(loaded.prefer_pcores && loaded.crawl && loaded.strength==77 && !loaded.hud_left);
     CHECK(!strcmp(loaded.monitor,s.monitor));
     CHECK(loaded.high_resolution);
+    CHECK(loaded.external_camera);
     CHECK(loaded.walking && loaded.walking_height_cm==175 && !strcmp(loaded.walking_key,"F11"));
     CHECK(loaded.walking_repeat_ms==750);
     for(i=0;i<WALK_TUNING_COUNT;i++)CHECK(loaded.walking_tuning[i]==s.walking_tuning[i]);
@@ -208,6 +215,7 @@ int main(void) {
     /* A partial old INI must not clear CenterWindowed's true default. */
     CHECK(write_all(ini,"[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n",(DWORD)strlen("[Startup]\r\nPreferPCores=true\r\n[Derailment]\r\nDerailKey=F8\r\nCounterTilt=true\r\n[Editors]\r\nRE_CAM_FORWARD=i\r\n")));
     load_settings(ini,&loaded);CHECK(loaded.center_windowed && loaded.window_features);
+    CHECK(!loaded.external_camera);
     CHECK(!loaded.walking && loaded.walking_height_cm==200 && !strcmp(loaded.walking_key,"BACKQUOTE"));
     CHECK(loaded.walking_repeat_ms==500);
     for(i=0;i<WALK_TUNING_COUNT;i++)CHECK(loaded.walking_tuning[i]==walk_tuning_defaults[i]);
@@ -226,11 +234,15 @@ int main(void) {
     wc.hbrBackground=(HBRUSH)GetStockObject(WHITE_BRUSH);CHECK(RegisterClassA(&wc));
     g_main=CreateWindowExA(WS_EX_CONTROLPARENT,wc.lpszClassName,"NEMT regression tests",MAIN_WINDOW_STYLE,0,0,780,580,NULL,NULL,g_instance,NULL);
     CHECK(g_main!=NULL);CHECK(create_ui());ShowWindow(g_main,SW_SHOWNORMAL);UpdateWindow(g_main);SetActiveWindow(g_main);g_info=info;g_cpu_supported=0;
+    get_text(IDC_EXTERNALCAMERA,text,sizeof(text));CHECK(!strcmp(text,"Enable TSW styled external camera mouse controls"));
+    get_text(IDC_VERBOSE,text,sizeof(text));CHECK(!strcmp(text,"Show verbose details in loading screen text"));
     get_text(IDC_WALKING,text,sizeof(text));CHECK(!strcmp(text,"Enable Walking (Experimental)"));
     get_text(IDC_EDITORKEYS,text,sizeof(text));CHECK(!strcmp(text,"Swap arrow keys with WASDQE controls in route editor"));
     cosmetic_gui_checks();
     settings_defaults(&s);settings_to_ui(&s);
     CHECK(g_monitor_count>=2);
+    CHECK(!check_get(IDC_EXTERNALCAMERA));
+    SendDlgItemMessageA(g_main,IDC_EXTERNALCAMERA,BM_CLICK,0,0);ui_to_settings(&loaded);CHECK(loaded.external_camera);
     CHECK(!check_get(IDC_HIGHRES));
     SendDlgItemMessageA(g_main,IDC_HIGHRES,BM_CLICK,0,0);ui_to_settings(&loaded);CHECK(loaded.high_resolution);
     CHECK(nemt_large_display(2560,1440) && nemt_large_display(1080,2560));
@@ -272,8 +284,9 @@ int main(void) {
     GetWindowRect(GetDlgItem(g_main,IDC_UNLOCKFPS),&a);GetWindowRect(GetDlgItem(g_main,IDC_VSYNC),&b);CHECK(a.right<=b.left);
     GetWindowRect(GetDlgItem(g_main,IDC_MONITOR),&a);CHECK(a.left==b.left);
     get_text(IDC_VSYNC,text,sizeof(text));CHECK(!strcmp(text,"Cap FPS to Monitor Refresh Rate"));
+    check_set(IDC_VERBOSE,1); /* Recommended clears previously enabled diagnostics. */
     SendDlgItemMessageA(g_main,IDC_RECOMMENDED,BM_CLICK,0,0);
-    CHECK(check_get(IDC_VERBOSE) && check_get(IDC_VSYNC) && check_get(IDC_COUNTERTILT) && !check_get(IDC_LOGGING));
+    CHECK(!check_get(IDC_VERBOSE) && check_get(IDC_VSYNC) && check_get(IDC_COUNTERTILT) && !check_get(IDC_LOGGING));
     CHECK(check_get(IDC_CRAWL) && check_get(IDC_TIMEOUT));
     SendDlgItemMessageA(g_main,IDC_UNLOCKFPS,BM_CLICK,0,0);CHECK(!IsWindowEnabled(GetDlgItem(g_main,IDC_VSYNC)) && check_get(IDC_VSYNC));
     SendDlgItemMessageA(g_main,IDC_UNLOCKFPS,BM_CLICK,0,0);CHECK(IsWindowEnabled(GetDlgItem(g_main,IDC_VSYNC)) && check_get(IDC_VSYNC));

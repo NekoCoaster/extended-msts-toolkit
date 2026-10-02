@@ -2,7 +2,7 @@
 
 Open **NEMT.exe**, select `train.exe`, choose the options and Apply with MSTS closed:
 
-- **Show verbose startup and activity loading details** replaces the native loading-screen text with the latest observed file or directory scan. Long paths show their trailing portion to fit the existing text area.
+- **Show verbose details in loading screen text** replaces the native loading-screen text with the latest observed file or directory scan. Long paths show their trailing portion to fit the existing text area.
 - **Enable deep logging** records file-open and directory-search attempts and their results in `NEMT/startup.log`. It is off by default and works independently of the display option.
 - **Unlock FPS limit (-noclamp + corrected internal timing) (Unstable!)** adds MSTS's existing `-noclamp` option and enables experimental high-resolution timing in `1.1.0-alpha.2`. Shortcuts need no edits. Existing resolution/window arguments are preserved, and an existing `-noclamp` token is not duplicated. Disabling the option also disables timing correction, but does not remove a parameter explicitly supplied on the command line. See the [timing comparison guide](../investigations/timing-host-test.md).
 

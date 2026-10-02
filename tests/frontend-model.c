@@ -42,7 +42,7 @@ int main(void) {
     settings_defaults(&s);s.startup_log=1;s.strength=31;s.hud_left=0;
     settings_recommended(&s,1,1);
     CHECK(s.prefer_pcores && s.skip_movie && s.window_features && s.unlock_fps);
-    CHECK(s.limit_vsync && s.verbose_loading && s.cab_needles && s.background_audio);
+    CHECK(s.limit_vsync && !s.verbose_loading && s.cab_needles && s.background_audio);
     CHECK(s.ignore_red_signal && s.editor_windows && s.editor_tools && s.editor_audio);
     CHECK(s.editor_keys && s.editor_pan && s.prevent_end && s.unlock_cameras && s.crawl && s.counter_tilt);
     CHECK(!s.startup_log && s.strength==31 && !s.hud_left);

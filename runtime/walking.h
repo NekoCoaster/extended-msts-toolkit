@@ -83,6 +83,7 @@ static int walking_wheel(int delta,int allowed){
  return 1;
 }
 static LRESULT CALLBACK walking_proc(HWND h,UINT msg,WPARAM w,LPARAM l){
+ if(external_message(h,msg,w,l))return msg==WM_SETCURSOR?TRUE:0;
  if(msg==WM_RBUTTONUP||msg==WM_KILLFOCUS||msg==WM_CANCELMODE||msg==WM_DESTROY||(msg==WM_ACTIVATEAPP&&!w)){
   walking_pan=0;walking_cursor(0);
  }
@@ -262,6 +263,7 @@ static int walking_change(void){
 }
 static void walking_camera(void){
  WalkInput in;B bits[32];POINT point,center;RECT rect;HWND window;U i;double dt=*(float*)G(0x828fb4);
+ external_maintain();
  if(walking_state.active&&(*(U*)G(0x7c2ac0)!=walking_train||*(U*)G(0x7c2a88)!=(U)walking_view))walking_reset();
  if(walking_state.active){
   walking_sync_origin();

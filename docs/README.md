@@ -1,6 +1,6 @@
 # NEMT user guide
 
-[Prepared 1.2.3 changes](../releases/v1.2.3.md) · [Published 1.2.2](../releases/v1.2.2.md) · [Technical documentation](technical/README.md).
+[Prepared 1.2.4 changes](../releases/v1.2.4.md) · [Published 1.2.3](../releases/v1.2.3.md) · [Technical documentation](technical/README.md).
 
 Start with [installation](installation.md), then choose the features that suit your game. Apply options through **NEMT.exe** with MSTS closed, then restart. Advanced bindings and movement tuning are configured in `NEMT/settings.ini`; the relevant guides describe them. Upgrading also requires Apply from the updated NEMT.
 
@@ -12,6 +12,7 @@ Start with [installation](installation.md), then choose the features that suit y
 | [Editors and tools](editors.md) | Resizing, fullscreen, floating tools, Activity Editor panels and idle-audio slowdown |
 | [dgVoodoo settings](dgvoodoo.md) | Coordinate window settings with your graphics wrapper |
 | [Crawling and its HUD](crawl-hud.md) | Throttle, reverser, strength, connected engines and F5 |
+| [External camera mouse controls](external-camera.md) | Right-drag orbit and right-button wheel distance zoom in cameras 2/3 |
 | [First-person walking and noclip](walking.md) | Controls, configurable speeds/modifiers, height, FOV, momentum, reset and terrain-only limits |
 | [Mouse compatibility](mouse-compatibility.md) | DirectInput compatibility when no physical mouse is present |
 | [CPU preference](cpu-preference.md) | Optional P-core preference and OS support |

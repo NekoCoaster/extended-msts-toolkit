@@ -15,6 +15,7 @@ typedef struct {
  int max_log_kb, max_backup_logs, center_windowed, write_status;
  char monitor[32];
  int high_resolution;
+ int external_camera;
  int walking,walking_height_cm,walking_repeat_ms;char walking_key[32];
  double walking_tuning[WALK_TUNING_COUNT];
  double flashlight_tuning[FLASH_SETTING_COUNT];
@@ -46,7 +47,7 @@ static void settings_from_manifest(const JsonRecord *doc,Settings *s) {
 static void settings_recommended(Settings *s,int widescreen,int cpu_supported) {
     if(cpu_supported) s->prefer_pcores=1;
     s->skip_movie=1; memcpy(s->flashlight_tuning,flash_defaults,sizeof(s->flashlight_tuning));s->window_features=1; s->unlock_fps=1;
-    s->limit_vsync=1; s->verbose_loading=1; s->startup_log=0;
+    s->limit_vsync=1; s->verbose_loading=0; s->startup_log=0;
     s->cab_needles=widescreen!=0; s->background_audio=1; s->ignore_red_signal=1;
     s->editor_windows=1; s->editor_tools=1; s->editor_audio=1;
     s->editor_keys=1; s->editor_pan=1; s->prevent_end=1;

@@ -35,7 +35,7 @@ enum {
  IDC_BACKGROUND, IDC_REDSIGNAL, IDC_EDITORWINDOWS, IDC_EDITORTOOLS, IDC_EDITORAUDIO,
  IDC_EDITORKEYS, IDC_EDITORPAN, IDC_TIMEOUT, IDC_CAMERA, IDC_CRAWL, IDC_COUNTERTILT,
  IDC_STRENGTH, IDC_STRENGTHVALUE, IDC_HUDLEFT, IDC_LOGGING, IDC_MONITOR, IDC_HIGHRES, IDC_HIGHGUIDE, IDC_HIGHPROJECT,
- IDC_WALKING,
+ IDC_WALKING,IDC_EXTERNALCAMERA,
  IDC_TITLE=400, IDC_MESSAGE, IDC_CRAWLHINT, IDC_STRENGTHLABEL, IDC_ZERO, IDC_HUNDRED,
  IDC_ANCHORLABEL, IDC_SPACE, IDC_CREDIT, IDC_GITHUB, IDC_WIDENOTE, IDC_WIDEDOWNLOAD, IDC_WIDEGUIDE
 };
@@ -152,7 +152,7 @@ static void load_settings(const char*path,Settings*s){char v[64];settings_defaul
  GB("Window","Enabled",window_features);GB("Window","CenterWindowed",center_windowed);GB("Cab","CorrectNeedleAspect",cab_needles);GB("Audio","UnmuteInBackground",background_audio);GB("Activity","IgnoreRedSignal",ignore_red_signal);
  GB("Editors","ResizableViewports",editor_windows);GB("Editors","FreeToolWindows",editor_tools);GB("Editors","SmoothIdleAudio",editor_audio);GB("Editors","SwapArrowKeys",editor_keys);GB("Editors","UnlimitedMousePan",editor_pan);
  GB("Derailment","PreventActivityEnd",prevent_end);GB("Derailment","UnlockCameras",unlock_cameras);GB("Derailment","EnableCrawl",crawl);GB("Derailment","CounterTilt",counter_tilt);GB("Diagnostics","WriteStatusJson",write_status);
- GB("Walking","Enabled",walking);
+ GB("Walking","Enabled",walking);GB("Camera","ExternalMouseControl",external_camera);
 #undef GB
  ini_get(path,"Window","Monitor","",s->monitor,sizeof(s->monitor));
  ini_get(path,"Derailment","CrawlStrength","10",v,sizeof(v));s->strength=atoi(v);if(s->strength<0||s->strength>100)s->strength=10;
@@ -176,9 +176,10 @@ static int write_settings(const char*path,const Settings*s){char b[8192];int n=_
  "[Diagnostics]\r\nWriteStatusJson=%s\r\nShowCrawlHUD=%s\r\nCrawlHUDAnchor=%s\r\n\r\n"
  "[Cab]\r\nCorrectNeedleAspect=%s\r\n\r\n[Audio]\r\nUnmuteInBackground=%s\r\n\r\n[Activity]\r\nIgnoreRedSignal=%s\r\n\r\n"
  "[Editors]\r\nResizableViewports=%s\r\nFreeToolWindows=%s\r\nSmoothIdleAudio=%s\r\nUnlimitedMousePan=%s\r\nSwapArrowKeys=%s\r\nRE_CAM_FORWARD=%s\r\nRE_CAM_BACKWARD=%s\r\nRE_CAM_LEFT=%s\r\nRE_CAM_RIGHT=%s\r\nRE_CAM_UP=%s\r\nRE_CAM_DOWN=%s\r\n"
+ "\r\n[Camera]\r\nExternalMouseControl=%s\r\n"
  "\r\n[Walking]\r\nEnabled=%s\r\nToggleKey=%s\r\nEyeHeightCm=%d\r\nHeightRepeatDelayMs=%d\r\n",
  bt(s->prefer_pcores),bt(s->verbose_loading),bt(s->startup_log),bt(s->limit_vsync),bt(s->unlock_fps),bt(s->skip_movie),bt(s->skip_movie),s->max_log_kb,s->max_backup_logs,
- bt(s->window_features),bt(s->center_windowed),bt(s->prevent_end),bt(s->unlock_cameras),bt(s->crawl),s->strength,s->derail_key,bt(s->counter_tilt),bt(s->write_status),bt(s->crawl),s->hud_left?"BottomLeft":"BottomRight",bt(s->cab_needles),bt(s->background_audio),bt(s->ignore_red_signal),bt(s->editor_windows),bt(s->editor_tools),bt(s->editor_audio),bt(s->editor_pan),bt(s->editor_keys),s->key_forward,s->key_backward,s->key_left,s->key_right,s->key_up,s->key_down,bt(s->walking),s->walking_key,s->walking_height_cm,s->walking_repeat_ms);
+ bt(s->window_features),bt(s->center_windowed),bt(s->prevent_end),bt(s->unlock_cameras),bt(s->crawl),s->strength,s->derail_key,bt(s->counter_tilt),bt(s->write_status),bt(s->crawl),s->hud_left?"BottomLeft":"BottomRight",bt(s->cab_needles),bt(s->background_audio),bt(s->ignore_red_signal),bt(s->editor_windows),bt(s->editor_tools),bt(s->editor_audio),bt(s->editor_pan),bt(s->editor_keys),s->key_forward,s->key_backward,s->key_left,s->key_right,s->key_up,s->key_down,bt(s->external_camera),bt(s->walking),s->walking_key,s->walking_height_cm,s->walking_repeat_ms);
  if(n<0||n>=(int)sizeof(b))return 0;
  if(strchr(s->monitor,'\r')||strchr(s->monitor,'\n'))return 0;
  if(!write_all(path,b,(DWORD)n))return 0;
@@ -249,7 +250,7 @@ static int load_selection_settings(const MstsInfo *info,Settings *s,char *err,si
         s->prefer_pcores=extra.prefer_pcores;
         s->skip_movie=extra.skip_movie;
         s->high_resolution=extra.high_resolution;
-        s->walking=extra.walking;s->walking_height_cm=extra.walking_height_cm;
+        s->external_camera=extra.external_camera;s->walking=extra.walking;s->walking_height_cm=extra.walking_height_cm;
         s->walking_repeat_ms=extra.walking_repeat_ms;
         memcpy(s->walking_tuning,extra.walking_tuning,sizeof(s->walking_tuning));
         memcpy(s->flashlight_tuning,extra.flashlight_tuning,sizeof(s->flashlight_tuning));
@@ -462,7 +463,7 @@ static HFONT g_font,g_bold,g_title_font,g_link_font;
 static HWND g_tooltip,g_last_focus;
 static const char *g_instructions="Select train.exe and choose features, then Apply. Settings take effect after restarting MSTS.";
 #define CONTENT_WIDTH 760
-#define CONTENT_HEIGHT 922
+#define CONTENT_HEIGHT 944
 #define STARTUP_EXTRA_WIDTH 24
 #define STARTUP_EXTRA_HEIGHT 24
 #define MAIN_WINDOW_STYLE (WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN)
@@ -543,7 +544,7 @@ static void refresh_crawl(void) {
 }
 static int panel_graphics_file(void);
 static void set_valid_controls(int on) {
-    const int ids[]={IDC_RECOMMENDED,IDC_APPLY,IDC_UNINSTALL,IDC_SKIPMOVIE,IDC_WINDOW,IDC_UNLOCKFPS,IDC_VERBOSE,IDC_LOGGING,IDC_BACKGROUND,IDC_REDSIGNAL,IDC_EDITORWINDOWS,IDC_EDITORTOOLS,IDC_EDITORAUDIO,IDC_EDITORKEYS,IDC_EDITORPAN,IDC_TIMEOUT,IDC_CAMERA,IDC_CRAWL,IDC_WALKING};
+    const int ids[]={IDC_RECOMMENDED,IDC_APPLY,IDC_UNINSTALL,IDC_SKIPMOVIE,IDC_WINDOW,IDC_UNLOCKFPS,IDC_VERBOSE,IDC_LOGGING,IDC_BACKGROUND,IDC_REDSIGNAL,IDC_EDITORWINDOWS,IDC_EDITORTOOLS,IDC_EDITORAUDIO,IDC_EDITORKEYS,IDC_EDITORPAN,IDC_TIMEOUT,IDC_CAMERA,IDC_CRAWL,IDC_WALKING,IDC_EXTERNALCAMERA};
     int i;on=on && !g_busy;
     for(i=0;i<(int)(sizeof(ids)/sizeof(ids[0]));++i) enable(ids[i],on);
     enable(IDC_PCORES,on && g_cpu_supported);enable(IDC_CAB,on && g_info.widescreen);
@@ -626,7 +627,7 @@ static void settings_to_ui(const Settings *s) {
     check_set(IDC_EDITORPAN,s->editor_pan);check_set(IDC_TIMEOUT,s->prevent_end);
     check_set(IDC_CAMERA,s->unlock_cameras);check_set(IDC_CRAWL,s->crawl);
     check_set(IDC_COUNTERTILT,s->counter_tilt);
-    check_set(IDC_WALKING,s->walking);
+    check_set(IDC_WALKING,s->walking);check_set(IDC_EXTERNALCAMERA,s->external_camera);
     SendMessageA(g_strength,TBM_SETPOS,TRUE,s->strength);
     SendDlgItemMessageA(g_main,IDC_HUDLEFT,CB_SETCURSEL,s->hud_left?1:0,0);
     g_loading=0;set_valid_controls(g_info.valid);refresh_display_guidance(0);
@@ -649,7 +650,7 @@ static void ui_to_settings(Settings *s) {
     s->editor_audio=check_get(IDC_EDITORAUDIO);s->editor_keys=check_get(IDC_EDITORKEYS);
     s->editor_pan=check_get(IDC_EDITORPAN);s->prevent_end=check_get(IDC_TIMEOUT);
     s->unlock_cameras=check_get(IDC_CAMERA);s->crawl=check_get(IDC_CRAWL);
-    s->walking=check_get(IDC_WALKING);
+    s->walking=check_get(IDC_WALKING);s->external_camera=check_get(IDC_EXTERNALCAMERA);
     if(s->crawl) s->prevent_end=1;
     /* Like PS1, keep the optional preference even when crawl is off. */
     s->counter_tilt=check_get(IDC_COUNTERTILT);s->strength=strength_value();
@@ -691,7 +692,7 @@ static void recommended(void) {
     settings_to_ui(&s);
 }
 static int any_feature_enabled(const Settings *s) {
-    return s->walking||s->high_resolution||s->prefer_pcores||s->skip_movie||s->window_features||s->unlock_fps||s->verbose_loading||s->startup_log||s->cab_needles||s->background_audio||s->ignore_red_signal||s->editor_windows||s->editor_tools||s->editor_audio||s->editor_keys||s->editor_pan||s->prevent_end||s->unlock_cameras||s->crawl;
+    return s->external_camera||s->walking||s->high_resolution||s->prefer_pcores||s->skip_movie||s->window_features||s->unlock_fps||s->verbose_loading||s->startup_log||s->cab_needles||s->background_audio||s->ignore_red_signal||s->editor_windows||s->editor_tools||s->editor_audio||s->editor_keys||s->editor_pan||s->prevent_end||s->unlock_cameras||s->crawl;
 }
 static const char *saved_settings_message(int remove,int borderless){
     return remove?"Toolkit removed. Widescreen and LAA were preserved.":
@@ -861,13 +862,12 @@ static int create_ui(void) {
     HWND c;int y=118,i;
     char text[512],runtime[MAX_PATH];WIN32_FILE_ATTRIBUTE_DATA data;
     INITCOMMONCONTROLSEX controls;
-    const int ids[]={IDC_PCORES,IDC_SKIPMOVIE,IDC_WINDOW,IDC_UNLOCKFPS,IDC_VERBOSE,IDC_CAB,IDC_BACKGROUND,IDC_REDSIGNAL,IDC_EDITORWINDOWS,IDC_EDITORTOOLS,IDC_EDITORAUDIO,IDC_EDITORKEYS,IDC_EDITORPAN,IDC_TIMEOUT,IDC_CAMERA,IDC_WALKING,IDC_CRAWL,IDC_COUNTERTILT};
+    const int ids[]={IDC_PCORES,IDC_SKIPMOVIE,IDC_WINDOW,IDC_UNLOCKFPS,IDC_CAB,IDC_BACKGROUND,IDC_REDSIGNAL,IDC_EDITORWINDOWS,IDC_EDITORTOOLS,IDC_EDITORAUDIO,IDC_EDITORKEYS,IDC_EDITORPAN,IDC_TIMEOUT,IDC_CAMERA,IDC_EXTERNALCAMERA,IDC_WALKING,IDC_CRAWL,IDC_COUNTERTILT};
     const char *labels[]={
         "Prefer P-cores (Only applicable to CPUs with hybrid architecture, e.g. Intel P && E cores)",
         "Skip startup movie (fixes keyboard control issue when loading into simulator)",
         "Enable borderless windowed mode on display:",
         "Unlock FPS limit (Potentially unstable)",
-        "Show verbose startup and activity loading details",
         "Fix cabview dials for widescreen displays",
         "Unmute while in background",
         "Continue after passing a red signal (Resume after failure message)",
@@ -878,6 +878,7 @@ static int create_ui(void) {
         "Remove Route Editor mouse-panning limit",
         "Remove derailment activity-end message",
         "Unlock camera modes during derailment",
+        "Enable TSW styled external camera mouse controls",
         "Enable Walking (Experimental)",
         "Allow connected engines to crawl after derailment",
         "Enable counter-tilt filter while crawling (optional)"};
@@ -918,6 +919,7 @@ static int create_ui(void) {
     ADD("STATIC","Extended F5 HUD location for crawling statistics",SS_LEFT|SS_NOPREFIX,24,574,390,24,IDC_ANCHORLABEL);
     c=ADD("COMBOBOX","",CBS_DROPDOWNLIST|WS_TABSTOP|WS_VSCROLL,424,570,170,120,IDC_HUDLEFT);
     SendMessageA(c,CB_ADDSTRING,0,(LPARAM)"Bottom right");SendMessageA(c,CB_ADDSTRING,0,(LPARAM)"Bottom left");SendMessageA(c,CB_SETCURSEL,1,0);
+    ADD("BUTTON","Show verbose details in loading screen text",BS_AUTOCHECKBOX|WS_TABSTOP,24,584,712,22,IDC_VERBOSE);
     ADD("BUTTON","Enable deep logging (Optional; HIGH DISK USAGE! Use only for bug reporting or troubleshooting issues)",BS_AUTOCHECKBOX|BS_MULTILINE|WS_TABSTOP,24,606,712,40,IDC_LOGGING);
     if(join_path(runtime,g_root,"runtime\\DINPUT.dll") && GetFileAttributesExA(runtime,GetFileExInfoStandard,&data))
         wsprintfA(text,"An additional ~%lu KB is required for this patch (DINPUT.dll, settings.ini, installation.json & status.json). Optional startup.log size may vary.",(data.nFileSizeLow+2048+1023)/1024);
@@ -931,13 +933,14 @@ static int create_ui(void) {
     ADD("STATIC","Developed and Tested by NekoCoaster with Astra | MIT License",SS_LEFT|SS_NOPREFIX,24,782,712,20,IDC_CREDIT);
     c=ADD("STATIC","NekoCoaster/extended-msts-toolkit",SS_NOTIFY|WS_TABSTOP,24,806,500,22,IDC_GITHUB);SendMessageA(c,WM_SETFONT,(WPARAM)g_link_font,TRUE);
 #undef ADD
-    /* Display rows (54) and the walking checkbox (22) shift lower controls. */
+    /* Move verbose text beside logging: upper options/crawl controls lose one
+       row, while diagnostics and following controls retain their positions. */
     for(i=0;i<g_control_count;++i) {
         if(!g_controls[i].hwnd)return 0;
         if(g_controls[i].id>=IDC_TITLE || g_controls[i].id==IDC_STRENGTH ||
            g_controls[i].id==IDC_STRENGTHVALUE || g_controls[i].id==IDC_HUDLEFT ||
-           g_controls[i].id==IDC_LOGGING || (g_controls[i].id>=IDC_RECOMMENDED && g_controls[i].id<=IDC_CLOSE)){
-            if(g_controls[i].y>=494)g_controls[i].y+=76;
+           g_controls[i].id==IDC_LOGGING || g_controls[i].id==IDC_VERBOSE || (g_controls[i].id>=IDC_RECOMMENDED && g_controls[i].id<=IDC_CLOSE)){
+            if(g_controls[i].y>=494)g_controls[i].y+=(g_controls[i].id==IDC_VERBOSE||g_controls[i].y>=606)?98:76;
         }
     }
     if(g_control_failed || !g_strength || !g_path || !g_status || !g_message || !GetDlgItem(g_main,IDC_HUDLEFT)) return 0;
