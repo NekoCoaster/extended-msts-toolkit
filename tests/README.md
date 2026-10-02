@@ -17,3 +17,5 @@ Other C/Python tests here cover particular runtime components or historical exec
 The `.ps1` tests belong to the former PowerShell frontend and its historical regression environment. They are retained as migration references, not part of the current native CI suite and not a PowerShell requirement for end users. Their old source-layout assumptions must not be confused with testing today's native frontend.
 
 See [Build and publishing](../docs/technical/maintenance.md) and [migration validation](../docs/technical/native-frontend-validation.md) for commands and evidence limits.
+
+`tests/external-camera.c` is included in the native entry point. It checks tracking-camera mouse input conversion, mode/focus/pause gating, wheel accumulation, native-input restoration and cancellation using synthetic state. Live mouse delivery and restart deployment require an in-game test.

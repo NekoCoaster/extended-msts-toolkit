@@ -60,7 +60,9 @@ finish:
 #include "signal.h"
 #include "audio.h"
 #include "movie.h"
+#include "external-camera.h"
 #include "walking.h"
+#include "external-camera-hooks.h"
 #include "hud.h"
 #include "tracks.h"
 #include "high-resolution.h"
@@ -73,7 +75,7 @@ static DWORD WINAPI delayed_start(void *unused) {
     if(wcslen(root)+45>=MAX_PATH||!supported_image())return 0;
     read_config();
     if(!config_valid)return 0;
-    if(!prevent_end&&!unlock_cameras&&!crawl_requested&&!cab_needles&&!walking_requested)return 0;
+    if(!prevent_end&&!unlock_cameras&&!crawl_requested&&!cab_needles&&!walking_requested&&!external_requested)return 0;
     /* Require five seconds of a valid driving scene with advancing simulation time.
        A paused load waits for resume; startup/menu configuration is never instrumented. */
     for(;;){
@@ -90,6 +92,7 @@ static DWORD WINAPI delayed_start(void *unused) {
     if(!install_cab_hooks()){fail("Cab needle hook installation failed");write_status();return 0;}
     if(!start_native()){fail("Native hook installation failed");write_status();return 0;}
     if(!install_walking_hooks()){fail("Walking hook installation failed");write_status();return 0;}
+    if(!install_external_hooks()){fail("External camera hook installation failed");write_status();return 0;}
     /* No diagnostic worker or periodic file access when logging is disabled. */
     if(write_status_json)for(;;){Sleep(1000);write_status();}
     return 0;

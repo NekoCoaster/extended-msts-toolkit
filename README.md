@@ -28,7 +28,7 @@ NEMT adds optional gameplay and quality-of-life features to Microsoft Train Simu
 
 The patcher is a small native 32-bit Win32 program written in C, introduced in v1.2.0. It builds offline with the bundled compiler and does not require .NET or PowerShell to run.
 
-**Current release: [1.2.2](releases/v1.2.2.md).** Experimental first-person walking and noclip now include tile-boundary fixes, configurable movement speeds, working Left Alt slowdown, and full flight momentum when returning to walking.
+**Prepared release: [1.2.4](releases/v1.2.4.md).** Adds TSW styled external-camera mouse controls while preserving Shift+9 free-look. [1.2.3](releases/v1.2.3.md) is the preceding release.
 
 As such, this patcher can now run on your grandma's 2005 Windows XP notebook as well xd.
 
@@ -82,9 +82,10 @@ Keep `build\NEMT.exe.manifest` beside the generated executable for native contro
 | Move Route Editor tool windows freely              | Removes jankly snap alignment of floating tool windows in Route Editor.                                                                                          |
 | Fix Route Editor lag when no sound sources present | Prevents Route Editor from lagging when loading into a route with no nearby sound sources playing.                                                               |
 | Swap arrow keys with WASDQE controls in route editor | Uses configurable camera movement keys and remaps their displaced editor shortcuts. |
+| Enable TSW styled external camera mouse controls | Hold right-click to orbit; keep it held and use the wheel to move closer/farther. [Controls](docs/external-camera.md). |
 | Remove Route Editor mouse-panning limit | Allows continuous camera panning without hitting an invisible screen-edge limit. |
 | Unlock FPS limit — **Potentially unstable**        | Removes the game-side frame cap and applies corrective timing to frame-rate tied simulator operations.                                                           |
-| Show verbose startup and activity loading details  | Shows loading activity and terrain-generation progress messages during startup and sim-loading.                                                                  |
+| Show verbose details in loading screen text  | Shows loading activity and terrain-generation progress messages during startup and sim-loading.                                                                  |
 | Enable deep logging                                | Records optional diagnostics for troubleshooting and writes them into NEMT/startup.log                                                                           |
 | Fix cabview dials for widescreen displays          | Corrects dial-needle proportions with a when running MSTS in patched widescreen mode.                                                                            |
 | Unmute while in background                         | Keeps game audio playing when in background.                                                                                                                     |

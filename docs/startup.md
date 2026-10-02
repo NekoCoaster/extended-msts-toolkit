@@ -1,6 +1,6 @@
 # Loading details and diagnostic logs
 
-**Show verbose startup and activity loading details** replaces the loading-screen text with the latest observed loading activity. Long paths are shortened to fit the existing single line.
+**Show verbose details in loading screen text** replaces the loading-screen text with the latest observed loading activity. Long paths are shortened to fit the existing single line.
 
 Terrain generation shows completed/total jobs, percentage and an estimated time remaining, for example:
 
@@ -47,3 +47,5 @@ The main game adds a NEMT activation/help message below the original welcome lin
 Deep logging also records Direct3D7 device-creation results. The native graphics safeguard rejects failed or missing devices before texture enumeration; it cannot manufacture missing graphics support. OS APPLICATION VIEW is the version exposed to MSTS; OS REGISTRY is separate installed-version metadata. See [the graphics findings](technical/device-initialization.md) and [optional P-core preference](cpu-preference.md).
 
 See [display guidance and refresh-rate limiting](technical/display-options.md) for Limit FPS to vsync. Use Recommended explicitly turns deep logging off; enable it separately for troubleshooting.
+
+The verbose text option appears directly above **Enable deep logging** in the control panel. **Use Recommended** turns both diagnostics options off; either can still be enabled manually.

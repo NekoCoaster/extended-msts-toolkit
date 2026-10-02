@@ -52,6 +52,10 @@ if errorlevel 1 goto failed
 if errorlevel 1 goto failed
 build\walking-native-test.exe
 if errorlevel 1 goto failed
+"%TCC%" -o build\external-camera-test.exe tests\external-camera.c -luser32
+if errorlevel 1 goto failed
+build\external-camera-test.exe
+if errorlevel 1 goto failed
 echo All native regression tests passed.
 if /i not "%~1"=="--ci" pause
 exit /b 0
