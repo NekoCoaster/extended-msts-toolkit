@@ -1321,6 +1321,15 @@ for row in rows:
     if changed:
         row['limitations']+=' Current PID12888 has no NEMT loaded per user;16-byte ranges at494bc1 and5d5381 match disk/live in the current-context capture. This does not revalidate historical behavior or every live instruction.'
         row['evidence']+=['captures/current-hook-context-20261010-01/ranges.json']
+derived_review=json.loads((ROOT/'derived-metadata-review.json').read_text(encoding='utf-8'))
+assert set(derived_review)<={r['id'] for r in rows if r['value_type'].startswith('derived')}
+for row in rows:
+    if row['id'] in derived_review:
+        review=derived_review[row['id']]
+        row['extraction']=review['extraction']
+        row['evidence_status']=review['evidence_status']
+        row['limitations']+=' '+review['limitations']
+        row['evidence']=list(dict.fromkeys(row['evidence']+review['evidence']))
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

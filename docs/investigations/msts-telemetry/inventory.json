@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-10T02:41:36.877867+00:00",
+  "generated_utc": "2026-10-10T02:47:03.737003+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -1306,16 +1306,18 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "kg",
-      "extraction": "1 / inverse_mass, rejecting zero/nonfinite values",
+      "extraction": "1/body.inverse_mass only for finite strictly positive inverse mass and validated car/body ownership",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "read_live.py",
+        "CONSIST-AGGREGATE-FINDINGS.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "Implemented in read_live.py; bounded consist aggregate observation retained",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Zero,negative,nonfinite or unavailable inverse mass yields unavailable mass,not zero or infinite mass. Body mass provenance differs from definition mass. Do not infer dynamic fuel/load effects from one reciprocal value."
     },
     {
       "id": "car.longitudinal_speed",
@@ -1323,18 +1325,21 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "m/s",
-      "extraction": "dot(body.velocity, body.forward)",
+      "extraction": "Dot finite stored body velocity with the validated body forward basis;retain the original basis and its normalization check",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
         "captures/ai-running-01/samples.jsonl",
         "MOTION-DIFFERENCE-FINDINGS.md",
-        "motion-difference-summary.json"
+        "motion-difference-summary.json",
+        "read_live.py",
+        "VEHICLE-MOTION-EVALUATION.md",
+        "INTEGRATOR-TIME-FINDINGS.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies",
+      "evidence_status": "Implemented stored-vector projection in read_live.py;moving player/AI comparisons retained,not universal trajectory speed validation",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;captures lack definition400/414 for endpoint finite differences. Causes remain unresolved;no correction factor justified."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;captures lack definition400/414 for endpoint finite differences. Causes remain unresolved;no correction factor justified. Projection is signed along the supplied body axis,not automatically cab reverser or route direction. Nonunit or malformed bases invalidate a speed interpretation;do not silently normalize a corrupt record. Stored velocity can disagree with track-following position derivatives."
     },
     {
       "id": "train.car_count",
@@ -1342,16 +1347,17 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "count",
-      "extraction": "count validated reciprocal graph",
+      "extraction": "Count one complete bounded connected-car chain with reciprocal links and train ownership verified; unavailable on partial traversal,error,cycle or inconsistent roots",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "COUPLING-LIFECYCLE-FINDINGS.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "Player coupling/separation fixture validates connected chain1->6->1 while physical-list count remains40",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Connected membership differs from physical-object count and persistent AI-service count. Stable count/root alone is not a coherent snapshot; five incomplete reads occurred in coupling evidence. Null owner may represent valid loose stock."
     },
     {
       "id": "train.total_mass",
@@ -1359,16 +1365,18 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "kg",
-      "extraction": "sum validated car masses",
+      "extraction": "Sum finite positive reciprocal body masses over one complete validated connected-car traversal; unavailable if any member/ownership/link is invalid",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "CONSIST-AGGREGATE-FINDINGS.md",
+        "probe_consist_totals.py"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "23-car player physics-body sum2551687.039209917 observed beside stored definition aggregate2551687.0",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not the native definition-mass aggregate train+9a. Inverse-mass and summation rounding differ; dynamic load/fuel inclusion and physical AI equivalence are unvalidated. Partial traversal must not be reported as a full total."
     },
     {
       "id": "car.speed_magnitude",
@@ -1376,18 +1384,20 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "m/s",
-      "extraction": "norm(body.velocity)",
+      "extraction": "Euclidean norm of finite stored body.velocity components in their validated common frame",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
         "captures/ai-running-01/samples.jsonl",
         "MOTION-DIFFERENCE-FINDINGS.md",
-        "motion-difference-summary.json"
+        "motion-difference-summary.json",
+        "VEHICLE-MOTION-EVALUATION.md",
+        "INTEGRATOR-TIME-FINDINGS.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies",
+      "evidence_status": "Mathematical stored-vector magnitude;moving comparisons expose producer-phase and clock differences",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;captures lack definition400/414 for endpoint finite differences. Causes remain unresolved;no correction factor justified."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;captures lack definition400/414 for endpoint finite differences. Causes remain unresolved;no correction factor justified. Unsigned 3D magnitude is not along-track speed,train+92 signed speed or proof of actual displacement rate. Intermediate body reset values and differing clocks can disagree with moving track state."
     },
     {
       "id": "car.acceleration",
@@ -1395,16 +1405,19 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "m/s^2",
-      "extraction": "velocity difference / advancing simulation time; reject pause, tile and identity discontinuities",
+      "extraction": "Difference of finite stored body-velocity vectors divided by a separately justified positive producer-time interval,with stable body/car identity and coordinate frame",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "INTEGRATOR-TIME-FINDINGS.md",
+        "TRAIN-ACCELERATION-FINDINGS.md",
+        "EXTRACTION-HANDOFF.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "Derived hypothesis; distinct player/AI clock comparisons invalidate assuming one universal gameplay-time denominator",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reject resets,nonpositive/nonfinite deltas,identity or origin/frame discontinuities and inconsistent endpoint reads. Player physics and AI gameplay clocks gave different agreement in a historical captured configuration;that is not universal clock selection or validation in current no-NEMT instance. No automatic fallback to wall time. Not train+96 stored filtered acceleration or proof of physical longitudinal acceleration."
     },
     {
       "id": "car.heading_pitch_roll",
@@ -1412,16 +1425,18 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "radians/degrees",
-      "extraction": "derive basis with explicit coordinate conventions and singularity handling",
+      "extraction": "Proposed Euler decomposition of validated orthonormal body basis with explicitly chosen handedness,axis order,angle units and singularity/wrap policy",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "VEHICLE-MOTION-EVALUATION.md",
+        "EXTRACTION-HANDOFF.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "Orientation-angle hypothesis;no universal Euler convention or HUD agreement established",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Raw basis vectors remain authoritative evidence. Do not report a numeric Euler tuple without a documented convention. Degenerate/nonfinite bases are unavailable;gimbal lock and angle wrapping are representational,not native discontinuities. World,body and track orientation are distinct."
     },
     {
       "id": "train.relative_motion",
@@ -1429,16 +1444,18 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "m; m/s",
-      "extraction": "positions and velocities after proving common coordinate origin",
+      "extraction": "Proposed pairwise position difference in a proven common origin/frame;distance=norm(delta),closing speed=-dot(relative velocity,unit(delta)) for nonzero distance with a defined A-to-B ordering",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+        "INTEGRATOR-TIME-FINDINGS.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "Derived relative-motion hypothesis;origin rebase and stored-vector discrepancies constrain interpretation",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Specify reference points and identities for both trains. Zero separation has undefined radial direction;do not divide by zero. Do not combine abstract AI service positions and physical body positions without a validated frame/time mapping. Stored-vector closing speed is not automatically separation derivative."
     },
     {
       "id": "train.lifecycle_events",
@@ -1446,16 +1463,19 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "events",
-      "extraction": "diff validated registry/ownership snapshots; guard pointer reuse",
+      "extraction": "Compare complete validated registry and ownership snapshots within one session,retaining sample brackets and explicit unavailable states;rebuild identity associations across reload",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "COUPLING-LIFECYCLE-FINDINGS.md",
+        "AI-STATION-RESET-FINDINGS.md",
+        "SAVE-RELOAD-RUNTIME-FINDINGS.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "Representative player coupling/separation,AI physical removal and player reload identity behavior observed",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. A failed or partial traversal is unavailable,not despawn. Physical removal is distinct from persistent service deletion or activity completion. Polling may miss intermediate changes;addresses/IDs can be reused. Observed sample brackets are not exact native event timestamps."
     },
     {
       "id": "car.wheel_rotation_estimate",
@@ -1463,16 +1483,17 @@
       "applicability": "player and registered AI",
       "value_type": "derived",
       "units": "rad/s",
-      "extraction": "longitudinal speed / wheel radius; not proof of actual wheel slip or visual phase",
+      "extraction": "Ideal no-slip angular speed=validated longitudinal speed divided by finite strictly positive wheel radius in matching metre units",
       "evidence": [
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "WHEEL-ADHESION-FINDINGS.md"
       ],
-      "evidence_status": "derived candidate; not all computations implemented",
+      "evidence_status": "Kinematic hypothesis only;native stored wheel rate and animation callbacks are separately traced",
       "update_or_lifecycle": "sample cadence; finite differences need stable simulation delta",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requires the radius corresponding to the actual wheel set,not any engine radius field. Slip,gearing,eligibility/sign conventions and animation branches can differ. This estimates angular speed,not phase or actual rail adhesion;zero/missing radius is unavailable."
     },
     {
       "id": "cab.ALERTER_DISPLAY",
@@ -27709,11 +27730,13 @@
         "COLLISION-STATE-FINDINGS.md",
         "collision-state-summary.json",
         "captures/collision-paused-01/samples.jsonl",
-        "captures/collision-track-paused-01/tracks.json"
+        "captures/collision-track-paused-01/tracks.json",
+        "TRACK-TOPOLOGY-FINDINGS.md",
+        "INFRASTRUCTURE-FINDINGS.md"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. That earlier capture ended at red without a successful crossing; later node/signal observations are separate evidence. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. That earlier capture ended at red without a successful crossing; later node/signal observations are separate evidence. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable."
     },
     {
       "id": "track.straight_grade_candidate",
@@ -27746,11 +27769,13 @@
         "COLLISION-STATE-FINDINGS.md",
         "collision-state-summary.json",
         "captures/collision-paused-01/samples.jsonl",
-        "captures/collision-track-paused-01/tracks.json"
+        "captures/collision-track-paused-01/tracks.json",
+        "TRACK-TOPOLOGY-FINDINGS.md",
+        "INFRASTRUCTURE-FINDINGS.md"
       ],
       "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. That earlier capture ended at red without a successful crossing; later node/signal observations are separate evidence. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Geometry definitions are loaded configuration joined to runtime location, not independent physics measurements. Skew and flag transitions untested; width is not established rail gauge. Curvature is nominal magnitude; travel-relative sign and curved grade remain unresolved. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. That earlier capture ended at red without a successful crossing; later node/signal observations are separate evidence. Full coordinate conventions and repeated AI reappearance remain unvalidated. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable."
     },
     {
       "id": "track.origin_tile",
@@ -28307,11 +28332,14 @@
         "COLLISION-STATE-FINDINGS.md",
         "collision-state-summary.json",
         "captures/collision-paused-01/samples.jsonl",
-        "captures/collision-track-paused-01/tracks.json"
+        "captures/collision-track-paused-01/tracks.json",
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "TRACK-TOPOLOGY-FINDINGS.md",
+        "INFRASTRUCTURE-FINDINGS.md"
       ],
-      "evidence_status": "native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;one live origin rebase across23player+22AIcars reduces2048m local jump to maximum9.561979m corrected sampled displacement",
+      "evidence_status": "Native conversion traced;two runs of the same originX+1boundary retain45matched player/AIcar-body identities and stable origin rereads;other boundaries/geographic conversion remain unvalidated",
       "update_or_lifecycle": "track traversal; origin can shift globally; sample origin before and after",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. That earlier capture ended at red without a successful crossing; later node/signal observations are separate evidence. Full coordinate conventions and repeated AI reappearance remain unvalidated. This supersedes earlier no-origin-crossing observations for oneX-tile shift only;not exact integration or atomicity proof. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Track reference and physics body centre differ. No latitude/longitude conversion proven. Read signed tiles, bounded section indexes and stable origin; derivative fields require continuity checks. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. That earlier capture ended at red without a successful crossing; later node/signal observations are separate evidence. Full coordinate conventions and repeated AI reappearance remain unvalidated. This supersedes earlier no-origin-crossing observations for oneX-tile shift only;not exact integration or atomicity proof. Post-collision paused observation:23player and19AIvehicles flaggedderailed;18AIalsoflaggedresting. Tracksectionpointerchecks pass all45vehicles despite body/track separation up to69.092474m. Nonzero angular values observed on23player/1AIvehicle;units/frame/integration remain unproven. Impact interval unsampled. Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable."
     },
     {
       "id": "topology.reachable_graph",
@@ -28433,11 +28461,14 @@
         "pass32-byte-verification.json",
         "captures/topology-route-map-paused-01/topology.json",
         "topology-summary.json",
-        "TRACK-TOPOLOGY-FINDINGS.md"
+        "TRACK-TOPOLOGY-FINDINGS.md",
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "INFRASTRUCTURE-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md"
       ],
-      "evidence_status": "native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested",
+      "evidence_status": "Native direction-dependent pin selection traced;earlier726-node traversal superseded by full732-node registry and route-ID validation;selected branch remains distinct from authority/occupancy",
       "update_or_lifecycle": "route load/unload; junction selection may change independently of train sampling",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Pointer graph is not stable route identity. Layout differs by kind. Disconnected runtime components not enumerated. Selected branch is not reservation, occupancy, authorization or proof of blade animation. Ambiguous route IDs must remain unavailable."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Pointer graph is not stable route identity. Layout differs by kind. Disconnected runtime components not enumerated. Selected branch is not reservation, occupancy, authorization or proof of blade animation. Ambiguous route IDs must remain unavailable. Full732-node registry resolves earlier disconnected-component and eight ambiguous-ID limitations for this route build. Selected connection is a direction-dependent traversal result,not reservation,occupancy,permission or visible switch blade state;do not interpret it as a universal straight/diverging enum."
     },
     {
       "id": "topology.route_node_id_candidate",
@@ -28452,11 +28483,14 @@
         "captures/topology-route-map-paused-01/topology.json",
         "topology-summary.json",
         "TRACK-TOPOLOGY-FINDINGS.md",
-        "infrastructure-summary.json"
+        "infrastructure-summary.json",
+        "TRACK-GEOMETRY-FINDINGS.md",
+        "INFRASTRUCTURE-FINDINGS.md",
+        "MOVING-PLAYER-ORIGIN-FINDINGS.md"
       ],
       "evidence_status": "all 732 registry-derived route IDs validated in current route; earlier geometry ambiguity resolved",
       "update_or_lifecycle": "route load/unload; junction selection may change independently of train sampling",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is index-derived identity for the tested route, not a native embedded ID field; validate after route edits/reload."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is index-derived identity for the tested route, not a native embedded ID field; validate after route edits/reload. Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable."
     },
     {
       "id": "infrastructure.route_databases",
@@ -30612,7 +30646,7 @@
       ],
       "evidence_status": "Finite reconstruction supports event13 radius crossing and stop-event32 distance41.41465m",
       "update_or_lifecycle": "derived on each sample from event definition,current origin and first-car position",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Derived geometry,not a native stored distance or proof of evaluator invocation. Floating-point boundaries,origin handover and nonfinite values require care;no full x87 emulation."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Derived geometry,not a native stored distance or proof of evaluator invocation. Floating-point boundaries,origin handover and nonfinite values require care;no full x87 emulation. Horizontal geometric reconstruction is independent of activation,latch and evaluator scheduling. Use first player car event-position source,not camera or body centre;retain origin and first-car identity checks."
     },
     {
       "id": "activity.event.location_condition",
@@ -30648,7 +30682,7 @@
       ],
       "evidence_status": "Event13 moving radius crossing and event32 stop-required predicate/latch transitions corroborated",
       "update_or_lifecycle": "derived on each sample;native evaluator cadence is independent",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Condition excludes activation,latch,reversal and evaluation-stop gates. A true condition is not proof of firing;already-latched non-reversible events can have false current conditions. No full x87 or nonfinite emulation."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Condition excludes activation,latch,reversal and evaluation-stop gates. A true condition is not proof of firing;already-latched non-reversible events can have false current conditions. No full x87 or nonfinite emulation. A true reconstructed predicate is not proof of event firing:activation,latch,reversible state and evaluator scheduling remain separate. Ordinary finite reconstruction is not bit-exact x87 boundary/nonfinite emulation."
     },
     {
       "id": "session.internal_calendar",
@@ -31078,7 +31112,7 @@
       "applicability": "activity session",
       "value_type": "derived float64",
       "units": "seconds",
-      "extraction": "simulation.time - session.start_seconds; midnight wrapping and saved-game semantics require tests",
+      "extraction": "Literal wrapped day clock minus activity start;retain as an arithmetic candidate known to fail as general elapsed time across midnight",
       "evidence": [
         "captures/session-header-running-01/session.json",
         "pass27/0058f066.asm",
@@ -31090,9 +31124,9 @@
         "captures/explore-midnight-20261010-01/samples.jsonl",
         "captures/explore-midnight-20261010-01/completion.json"
       ],
-      "evidence_status": "Derived day-clock minus activity start; observed to become negative at normal-speed Explore midnight while native elapsed continued",
+      "evidence_status": "Observed -82799.921875 after Explore midnight versus native elapsed3600.074951171875",
       "update_or_lifecycle": "Derived from wrapped day clock and session start; discontinuous at midnight and session reset",
-      "limitations": "Not a midnight-safe elapsed duration: observed -82799.921875 after rollover, versus native elapsed3600.074951171875. Retained as a documented derived candidate, not a validated general session timer. Multiple days and save restoration remain unvalidated. External reads are sequential, not atomic."
+      "limitations": "Not a midnight-safe elapsed duration: observed -82799.921875 after rollover, versus native elapsed3600.074951171875. Retained as a documented derived candidate, not a validated general session timer. Multiple days and save restoration remain unvalidated. External reads are sequential, not atomic. Do not repair by adding86400 without establishing day count,reset and save semantics. Native elapsed is separate storage;this failed arithmetic candidate remains documented without a keep/drop decision."
     },
     {
       "id": "evaluation.speed_episode_count",
@@ -32235,7 +32269,7 @@
       ],
       "evidence_status": "native display consumers traced; Acela pantograph-down transition and separate restored snapshot",
       "update_or_lifecycle": "raw route source is configuration; derived condition follows flags/animation and can lag control",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not measured traction power or independent overhead contact. Derived helper result is not a direct cab value; precision and non-atomic traversal limits apply."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not measured traction power or independent overhead contact. Derived helper result is not a direct cab value; precision and non-atomic traversal limits apply. This reconstructs a conditional cab-display rule. A skipped helper is unavailable for this predicate,not false;route supply,pantograph command,derived display and actual traction current remain distinct."
     },
     {
       "id": "electric.traction_calculation_gate",
@@ -33397,7 +33431,7 @@
       ],
       "evidence_status": "native geometry path traced;8paused connections reconstructed at approximately0.14942..0.15048m; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers",
       "update_or_lifecycle": "derived from body/definition state at sampling time;moving cadence and solver phase unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Python double-precision reconstruction is not bit-exact native float/x87 arithmetic. Body buffers may swap. End0/1 are solver identities,not universal vehicle front/rear. Distance is not signed slack,force or spring extension. Definition414 asset meaning remains unvalidated; moving physical AI sampled with non-atomic reads. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Python double-precision reconstruction is not bit-exact native float/x87 arithmetic. Body buffers may swap. End0/1 are solver identities,not universal vehicle front/rear. Distance is not signed slack,force or spring extension. Definition414 asset meaning remains unvalidated; moving physical AI sampled with non-atomic reads. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof. Solver end0/end1 are not universally locomotive front/rear labels. Definition and body transforms must belong to the same validated pair;changing body buffers invalidates cross-sample comparisons."
     },
     {
       "id": "car.connection_endpoint_distance",
@@ -33428,7 +33462,7 @@
       ],
       "evidence_status": "native geometry path traced;8paused connections reconstructed at approximately0.14942..0.15048m; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers",
       "update_or_lifecycle": "derived from body/definition state at sampling time;moving cadence and solver phase unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Python double-precision reconstruction is not bit-exact native float/x87 arithmetic. Body buffers may swap. End0/1 are solver identities,not universal vehicle front/rear. Distance is not signed slack,force or spring extension. Definition414 asset meaning remains unvalidated; moving physical AI sampled with non-atomic reads. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Python double-precision reconstruction is not bit-exact native float/x87 arithmetic. Body buffers may swap. End0/1 are solver identities,not universal vehicle front/rear. Distance is not signed slack,force or spring extension. Definition414 asset meaning remains unvalidated; moving physical AI sampled with non-atomic reads. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof. Nonnegative solver-point distance is not signed slack or spring compression. Do not subtract an assumed rest length or infer force without the validated spring branch and definition inputs."
     },
     {
       "id": "car.connection_endpoint_velocity",
@@ -33465,7 +33499,7 @@
       ],
       "evidence_status": "native vector helpers traced;8paused pairs yield near-zero residual rates,all angular velocity zero;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers; combined moving player/AI comparison supports distinct motion time bases",
       "update_or_lifecycle": "derived from instantaneous body-state read;cadence/solver phase and moving behavior unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Double-precision external reconstruction,not bit-exact float/x87. No validated nonzero angular transition; sampled gap changes may contain asynchronous placement artifacts. Positive scalar denotes opening geometrically;it is not signed force,slack or proof of visible motion. Native epsilon read live only in this pass. Body buffer swaps and asynchronous reads limit dynamic correlation. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis now improves typical player agreement but retains significant same-clock outliers. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Double-precision external reconstruction,not bit-exact float/x87. No validated nonzero angular transition; sampled gap changes may contain asynchronous placement artifacts. Positive scalar denotes opening geometrically;it is not signed force,slack or proof of visible motion. Native epsilon read live only in this pass. Body buffer swaps and asynchronous reads limit dynamic correlation. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis now improves typical player agreement but retains significant same-clock outliers. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof. Stored-state rigid-body formula is not universally the measured endpoint trajectory derivative. Keep cross-product ordering,coordinate frame and producer-phase limitations explicit."
     },
     {
       "id": "car.connection_separation_rate",
@@ -33502,7 +33536,7 @@
       ],
       "evidence_status": "native vector helpers traced;8paused pairs yield near-zero residual rates,all angular velocity zero;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers; combined moving player/AI comparison supports distinct motion time bases",
       "update_or_lifecycle": "derived from instantaneous body-state read;cadence/solver phase and moving behavior unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Double-precision external reconstruction,not bit-exact float/x87. No validated nonzero angular transition; sampled gap changes may contain asynchronous placement artifacts. Positive scalar denotes opening geometrically;it is not signed force,slack or proof of visible motion. Native epsilon read live only in this pass. Body buffer swaps and asynchronous reads limit dynamic correlation. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis now improves typical player agreement but retains significant same-clock outliers. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Double-precision external reconstruction,not bit-exact float/x87. No validated nonzero angular transition; sampled gap changes may contain asynchronous placement artifacts. Positive scalar denotes opening geometrically;it is not signed force,slack or proof of visible motion. Native epsilon read live only in this pass. Body buffer swaps and asynchronous reads limit dynamic correlation. Stored body velocity/angular velocity are not universally demonstrated derivatives of track-following position/orientation. Same-clock samples retain discrepancies. Endpoint-velocity formula reconstructs native stored-state calculation,not necessarily actual trajectory velocity;older captures lacked definition400/414; combined captures now include these inputs. Causes remain unresolved;no correction factor justified. AI005a7337/00636475 can rebuild track placement via00628d09,clear angular momentum and calculate body94 from body64*body58;therefore turning track geometry need not yield nonzero stored angular velocity. Substituting archived wall time does not resolve the player position/velocity discrepancy. No universal player-path explanation or timing correction inferred. New combined player moving capture includes definition/track/timing inputs:body and track movement exceed stored velocity with unchanged origin tile. Moving player/AI endpoint differences now analysed; stored-state projected velocity does not universally match gap derivatives, including same-clock subsets. AI worst rate outlier includes a zero body velocity despite nonzero car/train speed and continued movement; consistent with intermediate reset phase, not execution proof. No force/slack truth or correction factor inferred. In integrator-moving-grain-01,player body-speed discrepancy median falls5.179556 to0.002479m/s using physics elapsed,while AI discrepancy rises0.664115 to8.205889m/s. This supports different player/AI time bases in this configuration;not a universal correction or atomic-read guarantee. Residual outliers remain;connection derivative reanalysis now improves typical player agreement but retains significant same-clock outliers. Matched1692player connection comparisons:median error0.004428m/s under gameplay time versus0.000740 under physics time. AI near-zero relative-gap statistics do not determine its clock;absolute AI movement remains inconsistent with physics elapsed. Apparent gap jumps are not physical slack proof. Algebraic opening sign follows defined endpoint ordering;not proof of observed gap change. Native near-zero-direction epsilon and finite-input guards must be retained;historical clock comparisons are not a universal timing correction."
     },
     {
       "id": "physics_integrator.time",
@@ -33940,7 +33974,7 @@
       ],
       "evidence_status": "native comparison/removal paths traced;paused distance inputs and disk/live threshold match",
       "update_or_lifecycle": "view/service updates;origin and lifecycle validity required",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Finite-value reconstruction,not instruction-exact rounding. Null/uninitialized endpoints and disabled service gates can satisfy numeric predicates without spawning. Either endpoint strictly inside allows creation path;both strictly outside allow removal path;success/other gates unproven. No threshold-crossing or other-view/origin-shift runtime validation. Current initialized AI remains outside;later inactive service has zero endpoints."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Finite-value reconstruction,not instruction-exact rounding. Null/uninitialized endpoints and disabled service gates can satisfy numeric predicates without spawning. Either endpoint strictly inside allows creation path;both strictly outside allow removal path;success/other gates unproven. No threshold-crossing or other-view/origin-shift runtime validation. Current initialized AI remains outside;later inactive service has zero endpoints. Geometric threshold satisfaction is only part of the creation/removal decision. Null or uninitialized endpoints and inactive service gates are not valid spawning predictions;strict inequalities and both endpoint conditions matter."
     },
     {
       "id": "environment.selection.season_selector",
@@ -35110,7 +35144,7 @@
       ],
       "evidence_status": "native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved",
       "update_or_lifecycle": "audio processing may continue while gameplay paused;backend replacement and receiver lifetime can invalidate identity",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential snapshot;stable rereads and zero observed lock words do not prove atomicity or lifetime. No native/API calls. One stream exceeds256-node research bound;its full queue count is unavailable. Firing history, audio duration, final output volume/frequency and actual audibility are not measured. Cached curve values may remain stale when branches skip them. Mask storage covers64bits;larger trigger counts require separate layout validation. No AI receiver association in this paused session."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential snapshot;stable rereads and zero observed lock words do not prove atomicity or lifetime. No native/API calls. One stream exceeds256-node research bound;its full queue count is unavailable. Firing history, audio duration, final output volume/frequency and actual audibility are not measured. Cached curve values may remain stale when branches skip them. Mask storage covers64bits;larger trigger counts require separate layout validation. No AI receiver association in this paused session. A research traversal cap is not the native queue capacity. A truncated queue is unavailable as a full count;record count is not playing voices,audio duration or audibility."
     },
     {
       "id": "audio.stream.cached_volume_curve",
@@ -35434,7 +35468,7 @@
       ],
       "evidence_status": "verified native construction rule;4wrappers3children each with stable full-record rereads",
       "update_or_lifecycle": "pending request enqueue/processing;no lifetime or removal transition tested",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Return to wrapper is expected;other cycles are invalid to this probe. Counts are structural,not playing voices. Sample references can be shared. Top-level traffic chain remains incomplete. No actual playback, sound segment meaning, AI owner or global reference-accounting proof."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Return to wrapper is expected;other cycles are invalid to this probe. Counts are structural,not playing voices. Sample references can be shared. Top-level traffic chain remains incomplete. No actual playback, sound segment meaning, AI owner or global reference-accounting proof. Returning to the type2 wrapper is valid termination;arbitrary child cycles are errors. Child count is not distinct sample count because references may share sample objects."
     },
     {
       "id": "input.mode",

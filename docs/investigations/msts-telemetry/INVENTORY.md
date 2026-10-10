@@ -50,16 +50,16 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | monitor.desired_velocity | Desired velocity associated with element, not necessarily posted limit | readable in live captures; semantics partly inherited/static |
 | monitor.object | Referenced route/signal object identity | readable in live captures; semantics partly inherited/static |
 | signal.flags_raw | Referenced signal flags; full aspect mapping unresolved | readable in live captures; semantics partly inherited/static |
-| car.mass | Vehicle mass | derived candidate; not all computations implemented |
-| car.longitudinal_speed | Speed projected along body axis | derived candidate; not all computations implemented;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
-| train.car_count | Number of connected vehicles | derived candidate; not all computations implemented |
-| train.total_mass | Connected consist mass | derived candidate; not all computations implemented |
-| car.speed_magnitude | Total 3D speed | derived candidate; not all computations implemented;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies |
-| car.acceleration | Sampled acceleration | derived candidate; not all computations implemented |
-| car.heading_pitch_roll | Orientation angles | derived candidate; not all computations implemented |
-| train.relative_motion | Relative train separation and closing speed | derived candidate; not all computations implemented |
-| train.lifecycle_events | Spawn/despawn, coupling/splitting and player selection changes | derived candidate; not all computations implemented |
-| car.wheel_rotation_estimate | Rolling wheel speed estimate | derived candidate; not all computations implemented |
+| car.mass | Vehicle mass | Implemented in read_live.py; bounded consist aggregate observation retained |
+| car.longitudinal_speed | Speed projected along body axis | Implemented stored-vector projection in read_live.py;moving player/AI comparisons retained,not universal trajectory speed validation |
+| train.car_count | Number of connected vehicles | Player coupling/separation fixture validates connected chain1->6->1 while physical-list count remains40 |
+| train.total_mass | Connected consist mass | 23-car player physics-body sum2551687.039209917 observed beside stored definition aggregate2551687.0 |
+| car.speed_magnitude | Total 3D speed | Mathematical stored-vector magnitude;moving comparisons expose producer-phase and clock differences |
+| car.acceleration | Sampled acceleration | Derived hypothesis; distinct player/AI clock comparisons invalidate assuming one universal gameplay-time denominator |
+| car.heading_pitch_roll | Orientation angles | Orientation-angle hypothesis;no universal Euler convention or HUD agreement established |
+| train.relative_motion | Relative train separation and closing speed | Derived relative-motion hypothesis;origin rebase and stored-vector discrepancies constrain interpretation |
+| train.lifecycle_events | Spawn/despawn, coupling/splitting and player selection changes | Representative player coupling/separation,AI physical removal and player reload identity behavior observed |
+| car.wheel_rotation_estimate | Rolling wheel speed estimate | Kinematic hypothesis only;native stored wheel rate and animation callbacks are separately traced |
 | cab.ALERTER_DISPLAY | alerter display native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.AMMETER | ammeter native cab input/display channel | native diesel current producer traced; after-acknowledgement N1 cab225amps matches stored225.0000152588;not rail-force validation |
 | cab.ASPECT_DISPLAY | aspect display native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
@@ -700,14 +700,14 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | track.section_definition_index | Track geometry definition reference | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;39loose vehicle track records have valid node/section joins and bounded distances |
 | track.node_length | Total track-node length | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;39loose vehicle track records have valid node/section joins and bounded distances |
 | track.node_section_count | Number of sections in node | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;39loose vehicle track records have valid node/section joins and bounded distances |
-| track.route_position_candidate | Origin-independent route coordinate reconstruction | native traversal/conversion traced; paused player and AI records readable; moving boundary validation pending;one live origin rebase across23player+22AIcars reduces2048m local jump to maximum9.561979m corrected sampled displacement |
+| track.route_position_candidate | Origin-independent route coordinate reconstruction | Native conversion traced;two runs of the same originX+1boundary retain45matched player/AIcar-body identities and stable origin rereads;other boundaries/geographic conversion remain unvalidated |
 | topology.reachable_graph | Track graph reachable from loaded service positions | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
 | topology.node_kind | Native track node kind | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
 | topology.links | Connected node pointers and traversal direction bytes | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
 | topology.input_pin_count | Endpoint input-side pin count | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
 | topology.output_pin_count | Endpoint output-side pin count | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
 | topology.selected_branch | Junction branch selector consumed by native track traversal | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
-| topology.selected_connection | Junction connection selected when entering from input side | native traversal traced; 726-node graph read; 718 derived route IDs uniquely matched; switch transitions untested |
+| topology.selected_connection | Junction connection selected when entering from input side | Native direction-dependent pin selection traced;earlier726-node traversal superseded by full732-node registry and route-ID validation;selected branch remains distinct from authority/occupancy |
 | topology.route_node_id_candidate | TDB node ID derived by geometry and connectivity matching | all 732 registry-derived route IDs validated in current route; earlier geometry ambiguity resolved |
 | infrastructure.route_databases | Loaded track database registry | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
 | infrastructure.all_nodes | All registered track nodes including disconnected components | native traversal/release traced; complete 732-node route match; paused presence and associations readable |
@@ -818,7 +818,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | session.start_hms | Loaded activity starting clock | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.duration_hm | Configured activity duration | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.start_seconds | Activity start clock in seconds | loaded values match ACT; elapsed is derived and midnight semantics untested |
-| session.elapsed_candidate | Elapsed simulation time since activity start | Derived day-clock minus activity start; observed to become negative at normal-speed Explore midnight while native elapsed continued |
+| session.elapsed_candidate | Elapsed simulation time since activity start | Observed -82799.921875 after Explore midnight versus native elapsed3600.074951171875 |
 | evaluation.speed_episode_count | Completed speed-violation episode count | Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details |
 | evaluation.speed_episode_duration | Total duration of closed speed-violation episodes | Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details |
 | evaluation.speed_episode_active | Current speed-violation episode state and retained details | Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details |

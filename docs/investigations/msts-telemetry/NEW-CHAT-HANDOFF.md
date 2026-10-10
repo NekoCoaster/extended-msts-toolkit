@@ -149,3 +149,19 @@ Animation405694first16bytes match disk/live,2timestamp candidates corrected. Sup
 ## 2026-10-10: category/cab evidence review (local)
 
 inventory-category-review-20261010.json records511static config tokens,68base channels/204engine outcomes,26derived candidates. Shared diesel cab pressure claim corrected for sixchannels:AMMETERactual225UI/current evidence;LOAD_METERnoindependentUIclaim. build_inventory/audit pass1059/944paths/151sourcehashes. Pending local reviews since3a38d17 include movingacceleration,hookcontext,39context wording entries and these6cabstatuses. No captures running;next publish checkpoint and continue remaining semantic coverage rather than count growth.
+
+## 2026-10-10: derived review underway (local afteredb0361)
+
+Latest publishededb0361clean before follow-up. New derived-metadata-review.json overrides5earlyderivedrows with finite-input/complete-chain/identity/clock prerequisites and existing evidence. car.acceleration extraction no longer prescribes generic simulationtime;player/AI historical clocks differ,not currentrunvalidated. 21derivedrows remain for scoped review. Build/audit1059unique,947evidencepaths,151sourcehashes passes. No captures running. Goal active/incomplete. Next review remaining derived basis/relative-motion/wheel estimates and existing more specific derived groups;do not infer completion from schema audit.
+
+## 2026-10-10: derived review11of26 (local)
+
+Sixmore derived overrides added:longitudinal speed,speed magnitude,Euler angles,relative motion,wheel estimate,elapsed arithmetic. Requirements distinguish mathematical hypotheses from actual producer/trajectory/display values;midnightfailedelapsed no longer has stale untested extraction wording. Inventory audit1059/947paths/151hashes passes. Remaining15derived candidates are already more specifically documented but need scope review (track/topology,event/electric,connections,physicalization,audio counts). No captures running. Last publishededb0361;new derived review changes unpublished.
+
+## 2026-10-10: derived review16of26(local)
+
+Track/topology five reviewed. Two stale statuses corrected:origin boundary repeated twice;full732-node registry supersedes726component/8ambiguousIDs. Nominalcurvature/straightgrade/routeID limits retained. Remaining10derived entries:eventdistance/condition,electriccondition,4connectionvalues,physicalizationdistance,2audiocounts. Last publishededb0361;derived review metadata pending publication. No captures running;goal incomplete.
+
+## 2026-10-10: derived review26of26complete(local)
+
+derived-metadata-review.json now covers all26exact derived IDs;derived-review-20261010-summary.json records scope and unresolved limits. No all-runtime-validation or goal-complete claim. Last10existing formulas kept,clarified event/display/solver/distance/audio decision boundaries. Audit1059/947paths/151hashespasses. Pending publication sinceedb0361includes all derived review changes. No captures running. Next publish then continue direct-field semantic coverage or genuinely new discovery gaps in DISCOVERY-COVERAGE;do not keep re-reviewing unchanged derived entries.
