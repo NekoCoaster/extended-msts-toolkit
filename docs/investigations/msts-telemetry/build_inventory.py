@@ -165,7 +165,14 @@ for name,(method,unit) in diesel_sources.items():
     row=byid['cab.'+name]
     row['diesel_live_source']=dict(method=method,units=unit,lead='[player_train+0x6a]',applicability='player diesel lead; AI population unverified')
     row['evidence'].append('captures/detail-clear-paused/details.jsonl')
-    row['evidence_status']='native diesel producer traced; paused pressures matched cab display; dynamic transitions recorded separately'
+    if name in {'MAIN_RES','EQ_RES','BRAKE_PIPE','BRAKE_CYL'}:
+        row['evidence_status']='native diesel pressure producer traced; paused pressures matched cab display; broader dynamics require the relevant pressure/control capture'
+    elif name=='AMMETER':
+        row['evidence_status']='native diesel current producer traced; after-acknowledgement N1 cab225amps matches stored225.0000152588;not rail-force validation'
+        row['evidence']+=['DIESEL-EFFORT-GATE-FINDINGS.md','PLAYER-SIGNAL-PASSAGE-FINDINGS.md']
+        row['limitations']+=' Stored current can precede downstream reverser/brake force cutoffs. Current is not delivered rail force;dynamic-braking display branch and other-engine UI agreement require separate evidence.'
+    else:
+        row['evidence_status']='native diesel branch shares AMMETER producer;no independent LOAD_METER display agreement established by the cited pressure snapshot'
 signal_specs=[
 ('signal.next_iterator','Player next-signal track iterator','4 uint32','node/direction/index bounds','0x809ac4..0x809ad0'),
 ('signal.next_distance','Distance to player next signal','float32','metres','[0x809ad4]'),
@@ -890,7 +897,7 @@ for row in rows:
 for row in rows:
     if row['id'] in {'train.registry','train.first_car','train.last_car','train.lead_car','train.service_pointer','car.train_owner','car.links','car.definition','engine.definition'}:
         row['evidence'].extend(['SAVE-LOAD-IDENTITY-FINDINGS.md','pass211-byte-verification.json','pass212-byte-verification.json','pass213-byte-verification.json','pass214-byte-verification.json','pass215-byte-verification.json','pass216-byte-verification.json'])
-        row['limitations']+=' Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate or actual round-trip observation. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live.'
+        row['limitations']+=' Load-side code clears/reconstructs copied pointers; some normally pointer-bearing fields temporarily hold saved IDs until later fixup. Rebuild associations after load; no externally validated load-complete gate. The static loader analysis alone does not establish a round trip; later runtime evidence is scoped separately below. Main loading caller has a documented live patch at494bc1; focused reconstruction routines match disk/live.'
 for row in rows:
     if row['id'] in {'train.registry','train.identity','train.first_car','train.last_car','train.lead_car','train.service_pointer','car.identity','car.train_owner','car.links','car.definition','engine.definition','body.position','body.right','body.up','body.forward'}:
         row['evidence'].extend(['SAVE-RELOAD-RUNTIME-FINDINGS.md','generated-save-structure.json','save-reload-comparison.json','captures/reload-transition-01/metadata.json','captures/after-reload-services-01/services.jsonl'])
@@ -900,7 +907,7 @@ moving_evidence.extend(['paired-n2-approach-01-paired-summary.json','paired-n2-a
 for row in rows:
     if row['id'].startswith('track.') or row['id'] in {'body.position','train.registry','monitor.distance','service.physicalized_raw','service.train_pointer'}:
         row['evidence'].extend(moving_evidence)
-        row['limitations']+=' Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated.'
+        row['limitations']+=' Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. That earlier capture ended at red without a successful crossing; later node/signal observations are separate evidence. Full coordinate conventions and repeated AI reappearance remain unvalidated.'
     if row['id']=='track.route_position_candidate':
         row['extraction']='X=localX+2048*originTileX; Z=localZ+2048*originTileZ; Y retained; usefloat64 and stable origin/body identities.'
         row['evidence_status']+=';one live origin rebase across23player+22AIcars reduces2048m local jump to maximum9.561979m corrected sampled displacement'
@@ -1283,7 +1290,10 @@ for row in rows:
     if row['id']=='train.stored_acceleration':
         row['evidence']+=['read_train_acceleration.py','train-acceleration-baseline-20261010-summary.json','captures/train-acceleration-baseline-20261010-01/samples.jsonl']
         row['evidence_status']+=';199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed'
-        row['limitations']+=' Baseline train speed0 with near-zero stored acceleration;one aggregate and one history reread changed despite equal sampled clocks. No moving response validation.'
+        row['limitations']+=' Stationary baseline speed0 with near-zero acceleration;one aggregate and one history reread changed despite equal sampled clocks. Later introductory automatic-driving capture validates moving values,not manual-control response,exact filter timing or AI freshness.'
+        row['evidence_status']=row['evidence_status'].replace('runtime response not yet sampled','stationary and moving runtime samples retained')
+        row['evidence_status']+=';199moving samples,11cars,speed18.664..24.942m/s,stored acceleration-0.6722..0.4653,zero flagged read inconsistencies'
+        row['evidence']+=['itr-moving-acceleration-20261010-summary.json','captures/itr-moving-acceleration-20261010-01/samples.jsonl','analyse_train_acceleration.py']
 for row in rows:
     if row['id'] in {'service.wait_braking','service.wait_active','service.wait_elapsed','service.wait_duration'}:
         row['evidence'] += ['AI-PLATFORM-COUNTDOWN-FINDINGS.md','tokyo-itr-path-wait-20261010-02-summary.json',
@@ -1293,6 +1303,24 @@ for row in rows:
                             'path-movement-context-20261010-byte-verification.json']
         row['evidence_status'] += ';AI189zero-duration path-node boundary stop/resumption observed,elapsed0->1,duration0;neither braking nor dwell gate sampled nonzero'
         row['limitations'] += ' Positive-duration dwell and direct gate activation remain unvalidated. A local iterator tests eventtype5;the retained service iterator need not expose it. Zero-duration gates may set/clear within one update. Elapsed1 remains after wait and path-end reset,so nonzero elapsed alone is not active waiting. Shared path nodes are not service identities.'
+hook_context_replacements={
+    'Main loading caller has a documented live patch at494bc1;': 'Historical loading capture has a documented live patch at494bc1;',
+    'Live callback entry is redirected; NEMT source': 'Historical wheel callback entry was redirected; NEMT source',
+    'Wheel targetentry is hooked inliveprocess;': 'Historical wheel targetentry was hooked in the captured process;',
+    'Native wheelentry5d5381 is hooked;': 'Historical native wheelentry5d5381 was hooked;'
+}
+for row in rows:
+    if row['id'] in {'car.shape_animation_time','car.shape_animation_processed_time'}:
+        row['limitations']=row['limitations'].replace('Live entry405694 is redirected; original native body alone does not prove full live behavior.', 'Historical capture had a redirected405694 entry. Current PID12888 first16bytes match disk/live;this bounded check does not revalidate full animation behavior or historical hook execution.')
+        row['evidence']+=['captures/animation-hook-context-20261010-01/range.json']
+for row in rows:
+    changed=False
+    for old,new in hook_context_replacements.items():
+        if old in row['limitations']:
+            row['limitations']=row['limitations'].replace(old,new);changed=True
+    if changed:
+        row['limitations']+=' Current PID12888 has no NEMT loaded per user;16-byte ranges at494bc1 and5d5381 match disk/live in the current-context capture. This does not revalidate historical behavior or every live instruction.'
+        row['evidence']+=['captures/current-hook-context-20261010-01/ranges.json']
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

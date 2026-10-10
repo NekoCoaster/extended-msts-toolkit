@@ -61,13 +61,13 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | train.lifecycle_events | Spawn/despawn, coupling/splitting and player selection changes | derived candidate; not all computations implemented |
 | car.wheel_rotation_estimate | Rolling wheel speed estimate | derived candidate; not all computations implemented |
 | cab.ALERTER_DISPLAY | alerter display native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
-| cab.AMMETER | ammeter native cab input/display channel | native diesel producer traced; paused pressures matched cab display; dynamic transitions recorded separately |
+| cab.AMMETER | ammeter native cab input/display channel | native diesel current producer traced; after-acknowledgement N1 cab225amps matches stored225.0000152588;not rail-force validation |
 | cab.ASPECT_DISPLAY | aspect display native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.BELL | bell native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.BLOWER | blower native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.BOILER_WATER | boiler water native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
-| cab.BRAKE_CYL | brake cyl native cab input/display channel | native diesel producer traced; paused pressures matched cab display; dynamic transitions recorded separately |
-| cab.BRAKE_PIPE | brake pipe native cab input/display channel | native diesel producer traced; paused pressures matched cab display; dynamic transitions recorded separately |
+| cab.BRAKE_CYL | brake cyl native cab input/display channel | native diesel pressure producer traced; paused pressures matched cab display; broader dynamics require the relevant pressure/control capture |
+| cab.BRAKE_PIPE | brake pipe native cab input/display channel | native diesel pressure producer traced; paused pressures matched cab display; broader dynamics require the relevant pressure/control capture |
 | cab.CLOCK | clock native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.CPH_DISPLAY | cph display native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.CP_HANDLE | cp handle native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
@@ -81,7 +81,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | cab.EMERGENCY_BRAKE | emergency brake native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.ENGINE_BRAKE | engine brake native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.ENGINE_BRAKING_BUTTON | engine braking button native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
-| cab.EQ_RES | eq res native cab input/display channel | native diesel producer traced; paused pressures matched cab display; dynamic transitions recorded separately |
+| cab.EQ_RES | eq res native cab input/display channel | native diesel pressure producer traced; paused pressures matched cab display; broader dynamics require the relevant pressure/control capture |
 | cab.FIREBOX | firebox native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.FIREHOLE | firehole native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.FRICTION_BRAKING | friction braking native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
@@ -89,8 +89,8 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | cab.GEARS | gears native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.HORN | horn native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.LINE_VOLTAGE | line voltage native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
-| cab.LOAD_METER | load meter native cab input/display channel | native diesel producer traced; paused pressures matched cab display; dynamic transitions recorded separately |
-| cab.MAIN_RES | main res native cab input/display channel | native diesel producer traced; paused pressures matched cab display; dynamic transitions recorded separately |
+| cab.LOAD_METER | load meter native cab input/display channel | native diesel branch shares AMMETER producer;no independent LOAD_METER display agreement established by the cited pressure snapshot |
+| cab.MAIN_RES | main res native cab input/display channel | native diesel pressure producer traced; paused pressures matched cab display; broader dynamics require the relevant pressure/control capture |
 | cab.OVERSPEED | overspeed native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.PANTOGRAPH | pantograph native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
 | cab.PANTO_DISPLAY | panto display native cab input/display channel | native name and static dispatcher mapping; runtime support depends on channel and engine |
@@ -1064,4 +1064,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | evaluation.final_action_count | Finalized action-type6..9 summary count | Native exported ranges match disk/live;0matches empty list;positive counts unvalidated |
 | evaluation.unlatched_action_count | Final action summaries whose source trigger latch is zero | Native exported ranges match disk/live;0observed with no eligible actions;not universal incomplete-objective count |
 | evaluation.distance_unit_flag | Final report distance display unit selector | Native exported ranges match disk/live;0before finalization,1after Tokyo exit;not a route coordinate conversion |
-| train.stored_acceleration | Stored mean car acceleration, additionally history-filtered and rate-limited for player | Static producer and native unit label traced;current inspected code/constants match disk/live;runtime response not yet sampled;199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed |
+| train.stored_acceleration | Stored mean car acceleration, additionally history-filtered and rate-limited for player | Static producer and native unit label traced;current inspected code/constants match disk/live;stationary and moving runtime samples retained;199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed;199moving samples,11cars,speed18.664..24.942m/s,stored acceleration-0.6722..0.4653,zero flagged read inconsistencies |

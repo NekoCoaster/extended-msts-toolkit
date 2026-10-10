@@ -69919,6 +69919,48 @@
       "bytes": 81,
       "sha256": "e0dc81ab8b7e789e375cc74d946bc2d8ac61009fefb449a43a43a75b33b6bae8",
       "included": false
+    },
+    {
+      "path": "captures/animation-hook-context-20261010-01/range.json",
+      "bytes": 300,
+      "sha256": "8c8accc2d7fb4a10b8bf57f3fa6d20c613889ddeedfab895fa2605b905d5ac40",
+      "included": false
+    },
+    {
+      "path": "captures/current-hook-context-20261010-01/ranges.json",
+      "bytes": 541,
+      "sha256": "9180dd2df3802f2589cd4067ec2618d81e2fd83087f5d9e3fcc382bbdb008bc4",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-acceleration-20261010-01/completion.json",
+      "bytes": 77,
+      "sha256": "d5e3131e8dbcba1b8202925c1983ccced0eb7205e861ede718a3533e1a138e8f",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-acceleration-20261010-01/metadata.json",
+      "bytes": 505,
+      "sha256": "07a1612674aaa61ac04130c3dc0ae8daca928fa7259063348d2518cdaa8bdc0a",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-acceleration-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-acceleration-20261010-01/read_train_acceleration.py",
+      "bytes": 3883,
+      "sha256": "cca0fdb071862bb4213e72266958eaeb690d315759c6c3a04c02e8350fc5f679",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-acceleration-20261010-01/samples.jsonl",
+      "bytes": 435682,
+      "sha256": "be712314b403be879ad63ca972ea69e09df328257d6dc1e9ddad58d33a350060",
+      "included": false
     }
   ]
 }

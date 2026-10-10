@@ -14,6 +14,15 @@ def analyse(rows):
                 and r['aggregate_stable'] and r['history_stable']
                 and r['history_index_valid'] and r['cars']
                 and all(c['stable'] and c['owner'] == r['train'] for c in r['cars'])]
+    differences=[]
+    for before, after in zip(rows, rows[1:]):
+        if ('error' in before or 'error' in after or not before.get('available')
+                or not after.get('available') or before['train']!=after['train']
+                or before['paused'] or after['paused']):
+            continue
+        dt=after['time']-before['time']
+        if dt>0:
+            differences.append((after['speed']-before['speed'])/dt-after['acceleration'])
     return dict(samples=len(rows), errors=sum('error' in r for r in rows),
                 available=len(good), speed_range=bounds('speed'),
                 acceleration_range=bounds('acceleration'),
@@ -29,12 +38,16 @@ def analyse(rows):
                 invalid_index=sum(not r['history_index_valid'] for r in good),
                 clock_crossings=sum(r['time'] != r['time_after'] for r in good),
                 coherent_read_rows=len(coherent),
+                finite_difference_pairs=len(differences),
+                max_abs_finite_difference_minus_stored=max(map(abs,differences),default=None),
+                max_abs_stored_minus_unfiltered=max((abs(r['acceleration']-r['unfiltered_mean']) for r in coherent),default=None),
                 max_sampled_mean_difference=max((abs(r['sampled_car_mean']-r['unfiltered_mean']) for r in coherent), default=None),
                 time=[good[0]['time'],good[-1]['time']] if good else None,
                 paused_values=sorted({r['paused'] for r in good}),
                 limits='Sequential read consistency flags do not establish atomicity or exclude ABA reuse. '
-                       'Sampled car mean may differ from earlier producer input. No moving response, reset, '
-                       'AI freshness or exact cadence claim follows from stationary samples.')
+                       'Sampled car mean may differ from earlier producer input. Finite differences span observed clock intervals, '
+                       'not exact producer invocations; differences are descriptive,not a physical error estimate. '
+                       'No reset,AI freshness or exact cadence claim follows from this summary.')
 
 
 if __name__ == '__main__':

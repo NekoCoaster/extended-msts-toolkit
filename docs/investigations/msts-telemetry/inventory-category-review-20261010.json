@@ -1,0 +1,51 @@
+{
+  "config_count": 511,
+  "config_statuses": {
+    "static configuration extracted; not a live changing value": 480,
+    "static configuration extracted; not a live changing value; native token/destination mapped and Acela loaded values read": 31
+  },
+  "config_types": {
+    "SIMIS direct node tokens": 511
+  },
+  "config_unit_labels": {
+    "as written in source; infer no units": 511
+  },
+  "cab_count": 68,
+  "cab_dispatch_statuses": {
+    "static branch identified; runtime availability unverified": 113,
+    "default branch; no display update established": 78,
+    "not routed by this base dispatcher": 12,
+    "invalid or out-of-dispatcher table destination; not a supported branch": 1
+  },
+  "cab_without_dispatch": [],
+  "derived_count": 26,
+  "derived_ids": [
+    "car.mass",
+    "car.longitudinal_speed",
+    "train.car_count",
+    "train.total_mass",
+    "car.speed_magnitude",
+    "car.acceleration",
+    "car.heading_pitch_roll",
+    "train.relative_motion",
+    "train.lifecycle_events",
+    "car.wheel_rotation_estimate",
+    "track.curvature_magnitude",
+    "track.straight_grade_candidate",
+    "track.route_position_candidate",
+    "topology.selected_connection",
+    "topology.route_node_id_candidate",
+    "activity.event.horizontal_distance",
+    "activity.event.location_condition",
+    "session.elapsed_candidate",
+    "electric.voltage_consist_condition",
+    "car.connection_endpoints",
+    "car.connection_endpoint_distance",
+    "car.connection_endpoint_velocity",
+    "car.connection_separation_rate",
+    "service.physicalization_endpoint_distances",
+    "audio.stream.queue_count",
+    "audio.pending.nested_child_count"
+  ],
+  "limits": "Category/schema review only. Native branch status is not dynamic display validation;configuration paths are not independent runtime quantities;derived formulas need their stated validity checks. No completeness claim."
+}

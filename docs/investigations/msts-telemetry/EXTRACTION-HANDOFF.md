@@ -100,3 +100,19 @@ Both player processed shape times now have three distinct values between0 and ap
 The retained first diagnostic capture gates-01 read definition kind as a dword instead of the native byte and is superseded for that field. Assembly63830f establishes byte width; corrected gates-02 reads1 on all four engines. Original raw evidence and exact erroneous probe copy are preserved. No new inventory candidates;1026total. Eligibility transitions, other ordinary-wheel animation paths and visible physical angle remain open.
 
 Last verified simulator state: external camera, Escape pause menu, paused1 at73894.7265625. No failure alert. The train is very close in simulation time to earlier failed approaches; apply verified braking controls immediately on any next resume, or restart the fixture before a longer run. Research goal remains active and incomplete.
+
+## 2026-10-10: process-specific hook context
+
+Current PID12888 user-confirmed noNEMT context differs from the historical hook captures. `captures/current-hook-context-20261010-01/ranges.json` reads16bytes each at loading-callsite494bc1 and wheelentry5d5381;both match supported executable disk bytes. This is32bytes of targeted evidence,not complete function verification or a blanket unmodified-process claim. Fourteen inventory entries now explicitly scope their prior loading/wheel-hook wording to historical captures and retain those original findings. Historical motion behavior is not retroactively attributed to this current process. Other hook sites,including405694,were not checked in this pass.
+
+## 2026-10-10: animation and superseded-limit metadata review
+
+Current16bytes at405694 match disk/live;`captures/animation-hook-context-20261010-01/range.json` preserves exact bytes and process/build context. The two animation timestamp candidates now distinguish historical redirection from this bounded current check. Loader metadata no longer states globally that no round trip was observed:the static loader pass alone does not prove one,while SAVE-RELOAD-RUNTIME records the actual bounded23vehicle fixture. Earlier moving-capture failure to cross a signal is now scoped to that run,without claiming its geometry represents the later successful transition.
+
+`context-metadata-review-20261010.json` records39changed candidates and1020unchanged relative to the immediately preceding local inventory. Only limitations/evidence changed;IDs,meanings,types,units,extraction and all prior evidence links preserved. This is a scoped context consistency review,not the full inventory semantic audit. Latest inventory audit1059unique,944evidence paths,151source hashes passes.
+
+## 2026-10-10: category and cab-evidence wording review
+
+`inventory-category-review-20261010.json` confirms511configuration rows are explicitly SIMIS source tokens with source-written units;480remain source-only and31also cite separately mapped/read Acela values. These are not511independent live values. All68base cab channels have three engine dispatch outcomes:113static branches,78defaults with no update established,12not-routed and1invalid destination. Static branch identification is not UI/runtime support.26derived rows remain separately typed. This structural/category review does not establish semantic completeness.
+
+Six diesel cab entries no longer share the inaccurate blanket pressure wording. Four pressure channels retain their bounded paused-display evidence;AMMETER cites actual N1cab225amps versus stored225.0000152588 after emergency acknowledgement,qualified against downstream force cutoffs;LOAD_METER retains shared-producer evidence without invented independent display agreement. Source declarations,unsupported branches and historical evidence remain intact.

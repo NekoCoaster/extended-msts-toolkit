@@ -133,3 +133,19 @@ New read_path_wait_series.py and analyse_path_wait_series.py;capture tokyo-itr-p
 ## 2026-10-10: AI wait boundary evidence now captured (local)
 
 Corrected tokyo-itr-path-wait-20261010-02 terminal4290samples/0errors/88.535s. AI18966->67->69->68->1;exact waitposition200.6443329 reached at43668.19921875 withspeed0 and1ec0->1,duration0;no sampled1e4/1e8activation. Thenresumption,path-endresetprogress0 withstalespeed/endpoint. Native005a7e9cverified25instructions74bytes chooses inline endpoint+4c/+b4. Local iterator in005af21f explains absent storedtype5. Findings updated;no repeat capture needed for this zero-duration case. Positive-duration fixture absent in installed scan;retain limitation. No captures running,ITR automatic ride continues. Pending publication includes clock-helper/calendar fixes plus all ITR/path-wait artifacts;publishedHEAD3fcd29a. Need includeclock-* andpath-movement-context-*raw export dirs in manifest sync. Next broad coverage work should use DISCOVERY-COVERAGE rather than more equivalent zero-duration waits.
+
+## 2026-10-10: moving acceleration checkpoint (local)
+
+Published HEAD3a38d17 before this follow-up. Completed itr-moving-acceleration-20261010-01:199samples/0errors,11cars,speed18.664..24.942,stored acceleration-0.6722..0.4653;no flagged read inconsistencies. Carmean matches unfiltered global within1.62558e-7;stored vs unfiltered differs up to0.375539. Probe/analyzer/summary/TRAIN-ACCELERATION findings and inventory metadata updated;no capture active. ITR remains automatic. This validates moving values,not manual control causality,AI freshness or exact filter timing. Next use broader coverage/semantic audit to select a new evidence question;do not repeat equivalent captures.
+
+## 2026-10-10: semantic context review (local)
+
+Prior moving-acceleration follow-up remains local. Additional scope review corrects14inventory entries with historical loading/wheel-hook claims:current16bytes at494bc1 and5d5381match disk/live,retained under captures/current-hook-context-20261010-01. build_inventory now contextualizes old wording,not deletes historical evidence. Fullfunction behavior not revalidated. Other hooksite405694 still needs process-specific review. Current noNEMT user clarification applies to PID12888;avoid conflating older snapshots. Inventory audit passes. No running captures;last published3a38d17. Broad per-candidate semantic review remains incomplete;next inspect remaining redirected-entry metadata or a new coverage gap.
+
+## 2026-10-10: context consistency review checkpoint (local)
+
+Animation405694first16bytes match disk/live,2timestamp candidates corrected. Superseded loader/no-crossing prose now explicitly historical/static;39candidates changed onlylimitations/evidence,1020unchanged;context-metadata-review-20261010.json provesIDs/semantics/extraction/evidence preserved. Inventory audit944paths/151source hashes passes. Latest published3a38d17;pending local moving acceleration and historical-hook reviews remain to publish. No captures running. Fullsemantic/completionaudit remains incomplete;avoid implying every runtime validation gap requires unbounded reversal of the executable.
+
+## 2026-10-10: category/cab evidence review (local)
+
+inventory-category-review-20261010.json records511static config tokens,68base channels/204engine outcomes,26derived candidates. Shared diesel cab pressure claim corrected for sixchannels:AMMETERactual225UI/current evidence;LOAD_METERnoindependentUIclaim. build_inventory/audit pass1059/944paths/151sourcehashes. Pending local reviews since3a38d17 include movingacceleration,hookcontext,39context wording entries and these6cabstatuses. No captures running;next publish checkpoint and continue remaining semantic coverage rather than count growth.
