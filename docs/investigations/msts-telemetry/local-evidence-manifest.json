@@ -68305,6 +68305,168 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "included": false
+    },
+    {
+      "path": "captures/final-report-after-exit-20261010-01/read_final_report.py",
+      "bytes": 2536,
+      "sha256": "bddf911a7ac3286bbd5e34ef3f45af21e6066c4b75ec028d22649e193879f463",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-after-exit-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-after-exit-20261010-01/report.json",
+      "bytes": 2918,
+      "sha256": "daed205f321283bce0509a1a5c9fb6c83a66b41704df67874cebee61065ee0a4",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-before-exit-20261010-01/read_final_report.py",
+      "bytes": 2536,
+      "sha256": "bddf911a7ac3286bbd5e34ef3f45af21e6066c4b75ec028d22649e193879f463",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-before-exit-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-before-exit-20261010-01/report.json",
+      "bytes": 1148,
+      "sha256": "238118aa5be9664eef1e2808222b354a71c7f19b2dcfd6dbd600a6d5790627dc",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01-byte-verification.json",
+      "bytes": 881,
+      "sha256": "7deb87436ade125cc388d32386318b2e4837c91c053f1a9da411f3e5c8dec9bd",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/005897f1.asm",
+      "bytes": 6663,
+      "sha256": "59e1dcecf12b3bcd99690fd7a0237cec85d2d6a2c932ae0ceaa30b80537909ac",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/005897f1.bytes.tsv",
+      "bytes": 3389,
+      "sha256": "d34625d92504be5dade8b9e4434e466d61e96fc45cb8931c2a3ab08fd6f1d372",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/005897f1.c",
+      "bytes": 3005,
+      "sha256": "720c84e3817f16e49a524dd43d4cc6efa3967634eecd39a5e4bcfdfd4d3045f4",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/00589a96.asm",
+      "bytes": 8664,
+      "sha256": "38873da50e90f5836cf382af9147ebe11b0de940b35415f033c04b73f6d5f5bb",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/00589a96.bytes.tsv",
+      "bytes": 4458,
+      "sha256": "2846358c5c7f1ce76b0b8c26f57ee3ce55f0af150e1e655b21e98fd69a705ec3",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/00589a96.c",
+      "bytes": 3034,
+      "sha256": "41abf5dd9cc7b3d80d5814d607d6acbdcf5a3b8960590ff135ada240e9487d19",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/0059a0c0.asm",
+      "bytes": 4807,
+      "sha256": "0c64cefe2920197145b132fd049260d7ebb1d1cc262626958e94b4b7eefbf466",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/0059a0c0.bytes.tsv",
+      "bytes": 2323,
+      "sha256": "aa7a5607c9f1e8fdea59690ceb34d8587d59897e1ef8535ce6c489614f9aa82c",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/0059a0c0.c",
+      "bytes": 1770,
+      "sha256": "b96234a959b4139d7750281b83f1749a4a458fa826eb39cb79e46347291dc297",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/provenance.json",
+      "bytes": 1018,
+      "sha256": "150150ccdf2f412a3facfb18362fcaf9cdf4587ea7bd3dc3b4f8740fb41d7dca",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-native-20261010-01/verify_code_bytes.py",
+      "bytes": 2038,
+      "sha256": "17796a9fb4b949f21710ec7beed3618bb020e600764908b50f62d848f501febd",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-pre-exit-stations-20261010-01/metadata.json",
+      "bytes": 890,
+      "sha256": "f66705aaa1df81de6e3d18e1ff3e73df20bb876a2aacadad560439f6e93d383f",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-pre-exit-stations-20261010-01/read_activity.py",
+      "bytes": 2006,
+      "sha256": "a27e98fff1c8237edbddda7eddc988e6f576b3be417f5d298f50f9a0ec4b7024",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-pre-exit-stations-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-pre-exit-stations-20261010-01/read_outcome_series.py",
+      "bytes": 2473,
+      "sha256": "2d2f2976dbb2b6276e019661c9bded6b5cffb94b4aa90cfce7964fe63c99f708",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-pre-exit-stations-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-pre-exit-stations-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+      "bytes": 20217,
+      "sha256": "bd52734b1bc4a336b6cc48d9a986c38cccdb2f5ac4e41be39382d8c9e6e26599",
+      "included": false
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-10T01:14:48.667435+00:00",
+  "generated_utc": "2026-10-10T01:20:47.034613+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 439,
+    "runtime_direct": 453,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1044
+    "total": 1058
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -36781,6 +36781,314 @@
       "evidence_status": "14stored thresholds read;468matches time45 fixture and captured elapsed-clock transition",
       "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Threshold read after transition,not atomically with it. Strict comparison is threshold<elapsed;exact equality boundary and reset behavior untested."
+    },
+    {
+      "id": "evaluation.report_success",
+      "meaning": "Final report copy of activity success",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "boolean-like",
+      "extraction": "0x809790+4;005897f1 copies activity+34c",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0on manual exit;positive report copy unvalidated",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.report_presence_flags",
+      "meaning": "Raw report presence flags",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "bitmask,partially decoded",
+      "extraction": "0x809790+8",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;1read before/after exit;full flag vocabulary unresolved",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.report_termination_code",
+      "meaning": "Final report selected termination code",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "raw selected reason code",
+      "extraction": "0x809790+c;005897f1 ordered activity+378 bit tests",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0on manual exit;nonzero reason/payload mapping unvalidated;not whole source bitmask",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.report_duration",
+      "meaning": "Finalized day-clock difference from activity start",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "float32",
+      "units": "seconds",
+      "extraction": "0x809790+10;80acd4 minus activity+7c",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;10.8515625matches UI11seconds in early-exit example;midnight/save semantics open",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.late_arrival_count",
+      "meaning": "Final count of arrived station records beyond arrival tolerance",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "0x809790+48;bit2 and scheduled+tolerance<recorded arrival",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0observed;positive late count not tested by this reader",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.missed_stop_count",
+      "meaning": "Final count of station records marked missed or without arrival bit",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "0x809790+4c;flags bit4 OR missing bit2",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;4matches copied flags and UI;includes future unvisited stations on early exit",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.last_arrival_deviation",
+      "meaning": "Last qualifying finalized arrival deviation after tolerance adjustment",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "float32",
+      "units": "signed seconds",
+      "extraction": "0x809790+50;overwritten for each bit2 record by00589a96",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0observed;native overwrite is not a sum;nonzero/edge inputs unvalidated",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.last_departure_deviation",
+      "meaning": "Last qualifying finalized departure deviation after tolerance adjustment",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "float32",
+      "units": "signed seconds",
+      "extraction": "0x809790+54;overwritten inside bit2/bit8 branch by00589a96",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0observed;may retain prior eligible value when later records lack departure;not a sum",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.final_station_records",
+      "meaning": "Copied finalized station evaluation records",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "list of26-byte records",
+      "units": "times seconds;raw marker location;flags and string pointer",
+      "extraction": "sentinel[0x809790+58];node next0/record8;record name pointer0,location4,scheduled arrival8,recorded arrivalc,scheduled departure10,recorded departure14,uint16 flags18",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;empty during gameplay;5final records exactly match source times/flags;string pointers not decoded",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.final_station_count",
+      "meaning": "Finalized station-summary record count",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "0x809790+60;increment per copied source record",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0->5matches final list length;not continuously updated gameplay total",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.final_action_records",
+      "meaning": "Finalized action-type6..9 summary records",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "list of24-byte records",
+      "units": "raw type,text pointers,latch",
+      "extraction": "sentinel[0x809790+5c];node next0/record8;record type0,type label4,event72 text8,event76 textc,event14 text10,latch14",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;native layout traced;empty list only;positive action extraction and string ownership unvalidated",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.final_action_count",
+      "meaning": "Finalized action-type6..9 summary count",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "0x809790+64;0059a0c0 increments per accepted action type",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0matches empty list;positive counts unvalidated",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.unlatched_action_count",
+      "meaning": "Final action summaries whose source trigger latch is zero",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "records",
+      "extraction": "0x809790+68;0059a0c0 counts copied latch0 for types6..9",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0observed with no eligible actions;not universal incomplete-objective count",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "evaluation.distance_unit_flag",
+      "meaning": "Final report distance display unit selector",
+      "applicability": "player activity finalized evaluation report;not independent AI telemetry",
+      "value_type": "uint32",
+      "units": "0mile/1km in installed display",
+      "extraction": "0x809790+6c;005897f1 maps route flag4 to1/else0",
+      "evidence": [
+        "FINAL-REPORT-FINDINGS.md",
+        "read_final_report.py",
+        "analyse_final_report.py",
+        "final-report-20261010-summary.json",
+        "final-report-ui-20261010.json",
+        "captures/final-report-before-exit-20261010-01/report.json",
+        "captures/final-report-pre-exit-stations-20261010-01/samples.jsonl",
+        "captures/final-report-after-exit-20261010-01/report.json",
+        "captures/final-report-native-20261010-01-byte-verification.json"
+      ],
+      "evidence_status": "Native exported ranges match disk/live;0before finalization,1after Tokyo exit;not a route coordinate conversion",
+      "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
     }
   ]
 }

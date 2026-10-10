@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 439, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1044}
+{'runtime_direct': 453, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1058}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1050,3 +1050,17 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.collision_callback_state | Collision flags and callback binding (native CollideFlags/CollideFunction) | disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads;native parser labels,flags consumers,initializer and load callback reconstruction traced and byte-verified |
 | physics.collision_work_buffer | Transient collision processing buffer | allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation |
 | activity.event.time_threshold | Time-event elapsed-clock threshold | 14stored thresholds read;468matches time45 fixture and captured elapsed-clock transition |
+| evaluation.report_success | Final report copy of activity success | Native exported ranges match disk/live;0on manual exit;positive report copy unvalidated |
+| evaluation.report_presence_flags | Raw report presence flags | Native exported ranges match disk/live;1read before/after exit;full flag vocabulary unresolved |
+| evaluation.report_termination_code | Final report selected termination code | Native exported ranges match disk/live;0on manual exit;nonzero reason/payload mapping unvalidated;not whole source bitmask |
+| evaluation.report_duration | Finalized day-clock difference from activity start | Native exported ranges match disk/live;10.8515625matches UI11seconds in early-exit example;midnight/save semantics open |
+| evaluation.late_arrival_count | Final count of arrived station records beyond arrival tolerance | Native exported ranges match disk/live;0observed;positive late count not tested by this reader |
+| evaluation.missed_stop_count | Final count of station records marked missed or without arrival bit | Native exported ranges match disk/live;4matches copied flags and UI;includes future unvisited stations on early exit |
+| evaluation.last_arrival_deviation | Last qualifying finalized arrival deviation after tolerance adjustment | Native exported ranges match disk/live;0observed;native overwrite is not a sum;nonzero/edge inputs unvalidated |
+| evaluation.last_departure_deviation | Last qualifying finalized departure deviation after tolerance adjustment | Native exported ranges match disk/live;0observed;may retain prior eligible value when later records lack departure;not a sum |
+| evaluation.final_station_records | Copied finalized station evaluation records | Native exported ranges match disk/live;empty during gameplay;5final records exactly match source times/flags;string pointers not decoded |
+| evaluation.final_station_count | Finalized station-summary record count | Native exported ranges match disk/live;0->5matches final list length;not continuously updated gameplay total |
+| evaluation.final_action_records | Finalized action-type6..9 summary records | Native exported ranges match disk/live;native layout traced;empty list only;positive action extraction and string ownership unvalidated |
+| evaluation.final_action_count | Finalized action-type6..9 summary count | Native exported ranges match disk/live;0matches empty list;positive counts unvalidated |
+| evaluation.unlatched_action_count | Final action summaries whose source trigger latch is zero | Native exported ranges match disk/live;0observed with no eligible actions;not universal incomplete-objective count |
+| evaluation.distance_unit_flag | Final report distance display unit selector | Native exported ranges match disk/live;0before finalization,1after Tokyo exit;not a route coordinate conversion |

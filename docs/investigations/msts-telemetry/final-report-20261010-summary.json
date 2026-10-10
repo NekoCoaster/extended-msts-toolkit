@@ -1,0 +1,164 @@
+{
+  "before": {
+    "utc": "2026-10-10T01:17:19.941633+00:00",
+    "day_seconds": 64801.2265625,
+    "paused": 1,
+    "player": 56329944,
+    "activity_stop": 0,
+    "activity_success": 0,
+    "report_success": 0,
+    "presence_flags": 1,
+    "termination_code": 0,
+    "duration": 0.0,
+    "late_arrival_count": 0,
+    "missed_stop_count": 0,
+    "last_arrival_deviation": 0.0,
+    "last_departure_deviation": 0.0,
+    "station_count": 0,
+    "action_count": 0,
+    "unlatched_action_count": 0,
+    "distance_unit_flag": 0,
+    "stations": {
+      "root": 59592796,
+      "root_stable": true,
+      "records": []
+    },
+    "actions": {
+      "root": 59592684,
+      "root_stable": true,
+      "records": []
+    },
+    "day_seconds_after": 64801.2265625
+  },
+  "after": {
+    "utc": "2026-10-10T01:18:20.220116+00:00",
+    "day_seconds": 64810.8515625,
+    "paused": 0,
+    "player": 0,
+    "activity_stop": 0,
+    "activity_success": 0,
+    "report_success": 0,
+    "presence_flags": 1,
+    "termination_code": 0,
+    "duration": 10.8515625,
+    "late_arrival_count": 0,
+    "missed_stop_count": 4,
+    "last_arrival_deviation": 0.0,
+    "last_departure_deviation": 0.0,
+    "station_count": 5,
+    "action_count": 0,
+    "unlatched_action_count": 0,
+    "distance_unit_flag": 1,
+    "stations": {
+      "root": 59592796,
+      "root_stable": true,
+      "records": [
+        {
+          "address": 110319612,
+          "name_pointer": 117906056,
+          "location_raw": 1.8349111080169678,
+          "scheduled_arrival": 64805.0,
+          "recorded_arrival": 64805.0,
+          "scheduled_departure": 64880.0,
+          "recorded_departure": 0.0,
+          "flags": 34,
+          "node_stable": true
+        },
+        {
+          "address": 110319644,
+          "name_pointer": 110318620,
+          "location_raw": 2.878648042678833,
+          "scheduled_arrival": 64962.0,
+          "recorded_arrival": 0.0,
+          "scheduled_departure": 64997.0,
+          "recorded_departure": 0.0,
+          "flags": 0,
+          "node_stable": true
+        },
+        {
+          "address": 110318172,
+          "name_pointer": 110319772,
+          "location_raw": 5.403110027313232,
+          "scheduled_arrival": 65153.0,
+          "recorded_arrival": 0.0,
+          "scheduled_departure": 65189.0,
+          "recorded_departure": 0.0,
+          "flags": 0,
+          "node_stable": true
+        },
+        {
+          "address": 110317340,
+          "name_pointer": 79663476,
+          "location_raw": 6.52095890045166,
+          "scheduled_arrival": 65263.0,
+          "recorded_arrival": 0.0,
+          "scheduled_departure": 65323.0,
+          "recorded_departure": 0.0,
+          "flags": 0,
+          "node_stable": true
+        },
+        {
+          "address": 110318748,
+          "name_pointer": 118047356,
+          "location_raw": 8.24515438079834,
+          "scheduled_arrival": 65414.0,
+          "recorded_arrival": 0.0,
+          "scheduled_departure": 65447.0,
+          "recorded_departure": 0.0,
+          "flags": 0,
+          "node_stable": true
+        }
+      ]
+    },
+    "actions": {
+      "root": 59592684,
+      "root_stable": true,
+      "records": []
+    },
+    "day_seconds_after": 64810.8515625
+  },
+  "station_comparison": [
+    {
+      "index": 0,
+      "platform": 9,
+      "live_address": 55485724,
+      "report_address": 110319612,
+      "fields_equal": true,
+      "missed_by_native_flags": false
+    },
+    {
+      "index": 1,
+      "platform": 29,
+      "live_address": 55485764,
+      "report_address": 110319644,
+      "fields_equal": true,
+      "missed_by_native_flags": true
+    },
+    {
+      "index": 2,
+      "platform": 70,
+      "live_address": 55485924,
+      "report_address": 110318172,
+      "fields_equal": true,
+      "missed_by_native_flags": true
+    },
+    {
+      "index": 3,
+      "platform": 464,
+      "live_address": 55486004,
+      "report_address": 110317340,
+      "fields_equal": true,
+      "missed_by_native_flags": true
+    },
+    {
+      "index": 4,
+      "platform": 481,
+      "live_address": 55486084,
+      "report_address": 110318748,
+      "fields_equal": true,
+      "missed_by_native_flags": true
+    }
+  ],
+  "checks": "Five copied time/flag records equal pre-exit source;count5,missed4 and empty action count/list agree.",
+  "limits": "Post-finalization snapshot;no instruction execution trace,positive action record,nonzero deviation or successful-report result tested. UI11seconds compared to10.8515625;not generic rounding proof."
+}

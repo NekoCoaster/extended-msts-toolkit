@@ -56,3 +56,8 @@ Correction and resolution: DEFAULT-PARAMETER-FINDINGS.md establishes80aa1c as a 
 ## UI restart follow-up, 2026-10-10
 
 SESSION-RESET-FINDINGS.md now links the Tokyo debrief UI to3speed records totaling47.125seconds and a code64 interrupted-loading record,time65526.7734375/location5.3583502769470215. These survive gameplay teardown and are empty after normal UI restart. Earlier empty-only descriptions are historical;this does not establish continuous code64 emission/reset timing or new freight/passenger condition semantics.
+
+
+## Final station-report follow-up, 2026-10-10
+
+FINAL-REPORT-FINDINGS.md resolves the copied26byte station record layout and final counters,with five source/report time-and-flag matches and missed4 on normal early exit. Arrival/departure deviation fields are overwritten by the last eligible record,not sums. Final action layout/types6..9 traced but empty-only live. Fourteen report candidates distinguish this storage/finalization lifecycle from live activity state;see explicit limits and paired evidence.

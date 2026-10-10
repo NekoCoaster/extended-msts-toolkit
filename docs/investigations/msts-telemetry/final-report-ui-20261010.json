@@ -1,0 +1,12 @@
+{
+  "documented_utc": "2026-10-10T01:19:28.784967+00:00",
+  "pid": 12888,
+  "method": "Computer-use skill @oai/sky UI observation;no screenshot saved",
+  "action": "Exit Activity from paused fresh tutorial,no save",
+  "summary": "You failed to complete this Activity due to exiting the Activity after 11 seconds of driving.",
+  "missed_stations": 4,
+  "late_stations": 0,
+  "minor_errors": 0,
+  "final_screen": "Evaluation Details;no gameplay active",
+  "limits": "Normal early exit is not event outcome7 validation. Mouse-wheel/page-track attempts did not reveal lower station rows;only visible summary/count labels corroborated."
+}
