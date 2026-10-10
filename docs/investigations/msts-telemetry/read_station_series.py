@@ -5,7 +5,7 @@ from read_services import ServiceReader
 from read_live import K
 
 def sample(r):
-    row=dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),sim_time=r.f(0x80acd4),paused=r.u(0x7be0f4))
+    row=dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),sim_time=r.f(0x80acd4),paused=r.u(0x7be0f4),frame_dt=r.f(0x828fb4))
     activity=0x809810
     row['activity']=dict(boarding_active=r.u(activity+0x370),remaining=r.f(activity+0x374),stop=r.u(activity+0x348),success=r.u(activity+0x34c))
     player=r.u(0x7c2ac0)

@@ -1178,6 +1178,25 @@ for row in rows:
         for obsolete in ('Departure10 zero in both samples. ', 'Only cue-state transition observed. ', 'No nonzero boarding timer or recorded departure transition. ', ' Intended departure capture did not move the train; no actual departure or next-stop selection was validated.', 'Maryland populated records sampled while stationary;no live selection advance or departure. '):
             row['limitations']=row['limitations'].replace(obsolete,'')
         row['limitations']+=' Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Boarding countdown remains zero and AI stop lists empty. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures.'
+boarding_evidence=['STATION-BOARDING-FINDINGS.md','analyse_station_boarding.py','station-boarding-20261010-summary.json','captures/tokyo-boarding-baseline-20261010-01/samples.jsonl','captures/tokyo-boarding-baseline-20261010-01/fixture.json','captures/tokyo-boarding-20261010-01/samples.jsonl','captures/tokyo-station-final-services-20261010-01/services.jsonl']
+boarding_fixture_path=GAME/'ROUTES/JAPAN1/ACTIVITIES/tokyohakonetutorial.act'
+boarding_fixture_bytes=boarding_fixture_path.read_bytes()
+sources[str(boarding_fixture_path)]={'sha256':hashlib.sha256(boarding_fixture_bytes).hexdigest(),'bytes':len(boarding_fixture_bytes)}
+for row in rows:
+    if row['id'] in {'station.recorded_arrival','station.recorded_departure','station.state_flags','station.boarding_active','station.boarding_remaining','service.ordered_operational_records','service.efficiency_candidate'}:
+        row['evidence'].extend(boarding_evidence)
+        row['evidence_status']+=';Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim'
+        for obsolete in ('Only cue-state transition observed. ', 'No nonzero boarding timer or recorded departure transition. ', ' Intended departure capture did not move the train; no actual departure or next-stop selection was validated.', 'Boarding countdown remains zero and AI stop lists empty. '):
+            row['limitations']=row['limitations'].replace(obsolete,'')
+        row['limitations']+=' Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic.'
+    if row['id']=='station.boarding_active':
+        row['evidence_status']='Native player set/clear traced;Tokyo active0->1->0 observed across accepted loading and expiry;90consecutive paused active pairs stable'
+    elif row['id']=='station.boarding_remaining':
+        row['evidence_status']='Native frame-delta decrement/clamp traced;Tokyo first positive49.75,falling steps0.125..0.25,paused42.25stable,expiry0;UI starts50'
+        row['limitations']+=' Sample interval can span multiple updates;first positive sample need not equal initialization. Duration calculation factors remain unvalidated.'
+    elif row['id']=='service.ordered_operational_records':
+        row['applicability']='player and loaded AI services;Tokyo player and both AI lists populated;Maryland/grain AI lists were empty'
+        row['limitations']=common+' Player arrival-on-loading,countdown,expiry,departure and next-stop selection validated in Tokyo. Both AI lists contain platform459 with zero schedule/event times and flags;selection advances to null and one service later reselects its record. Native successor null/end behavior remains ambiguous;do not equate null with completion. Exact AI transition cause,timed AI stops,final-stop outcomes,loading-duration factors and full reset remain unresolved. Existing distance reconstruction and schedule merge evidence is build-specific;record+24 is not automatically effective208.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

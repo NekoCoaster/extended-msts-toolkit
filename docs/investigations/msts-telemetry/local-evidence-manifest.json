@@ -67417,6 +67417,96 @@
       "bytes": 4031,
       "sha256": "8847c0128d41b7413a48f8b63f431e537c516f632b85a5ec24ab3a1899f28e2e",
       "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-20261010-01/metadata.json",
+      "bytes": 700,
+      "sha256": "49c0c3ad65ea6a105b972d08276574dbbf87d7b9e0f620dbb11423bf4a331343",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-20261010-01/read_station_series.py",
+      "bytes": 3712,
+      "sha256": "cce1ea5d2578025fedad1f77ca34c901dca61cf6b75872f4b7260ac8b168a328",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-20261010-01/samples.jsonl",
+      "bytes": 10058143,
+      "sha256": "713ee8a64bf73455f0a9579030d9daf87cb469507466f7a1e71d835d55eee2be",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-baseline-20261010-01/fixture.json",
+      "bytes": 249,
+      "sha256": "54ded565f5061828405e5f189ef381323f4f7985ef2782f3f053fe0b1b6b75cf",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-baseline-20261010-01/metadata.json",
+      "bytes": 698,
+      "sha256": "b62505e7580d9b1333a90287fa6592691cef66274714a346f6ae29cb0c0cd5c8",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-baseline-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-baseline-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-baseline-20261010-01/read_station_series.py",
+      "bytes": 3712,
+      "sha256": "cce1ea5d2578025fedad1f77ca34c901dca61cf6b75872f4b7260ac8b168a328",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-boarding-baseline-20261010-01/samples.jsonl",
+      "bytes": 3361,
+      "sha256": "e3ca0e65339f04c4082449d89eed0e5d5fcf178be33f484a9bce7f9d60583430",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-station-final-services-20261010-01/metadata.json",
+      "bytes": 454,
+      "sha256": "860e4b944c73ce18ed01bc9c097d6578a1de583dff3225295cf464e6a0d14c06",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-station-final-services-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-station-final-services-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-station-final-services-20261010-01/services.jsonl",
+      "bytes": 3621,
+      "sha256": "6837fd3b71c1ba5fdd268f1c160e10ea288d2032f8f22a7ad81eb910491d623d",
+      "included": false
     }
   ]
 }

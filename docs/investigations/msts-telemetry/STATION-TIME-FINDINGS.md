@@ -1,6 +1,6 @@
 # Station record times and regenerated distances
 
-2026-10-10 follow-up: [STATION-DEPARTURE-FINDINGS.md](STATION-DEPARTURE-FINDINGS.md) now validates a moving player departure and Baltimore-to-Edgewood selection advance. Historical no-departure statements below describe the earlier captures. Boarding countdown and populated AI stops remain unvalidated.
+2026-10-10 follow-ups: [STATION-DEPARTURE-FINDINGS.md](STATION-DEPARTURE-FINDINGS.md) validates Baltimore-to-Edgewood departure/selection. [STATION-BOARDING-FINDINGS.md](STATION-BOARDING-FINDINGS.md) additionally validates Tokyo player loading activation, countdown, paused stability, expiry and departure, plus populated AI records/selection transitions. Historical no-departure/zero-boarding statements below describe earlier captures. Timed AI station stops remain unvalidated.
 
 Player station processor00586f58 uses activity+80 as its service and service+34 as selected record. It writes global day clock80acd4 into record08 on the accepted arrival/boarding branch (005875a2), sets record1e bit2 and enables activity370 with a duration at374. It writes clock80acd4 into record10 on departure-related branches, including005874da, and sets record1e bit8. These are recorded arrival/departure candidates, not universally physical sensor timestamps.
 

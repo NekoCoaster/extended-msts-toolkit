@@ -574,5 +574,9 @@
   "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\yard_one.act": {
     "sha256": "fc252534188e07dccb7053df00ab70c43c8afe9a774e04b08f94afdda796dd06",
     "bytes": 19130
+  },
+  "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\tokyohakonetutorial.act": {
+    "sha256": "353461954973c3b264dff7f3b3ffd8af4b6401d04d5fa095210e5ca0ff341a44",
+    "bytes": 56212
   }
 }
