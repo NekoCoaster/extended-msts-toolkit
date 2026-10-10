@@ -1,0 +1,406 @@
+{
+  "capture": "tokyo-ai-end-context-20261010-01",
+  "samples": 1764,
+  "errors": 0,
+  "clock_crossings": 11,
+  "context_errors": 0,
+  "unstable_services": 0,
+  "time_range": [
+    65132.6484375,
+    65242.0234375
+  ],
+  "final_paused": 1,
+  "services": {
+    "8": {
+      "changes": [
+        {
+          "previous_observation": null,
+          "observation": {
+            "start": 65132.6484375,
+            "end": 65132.6484375,
+            "paused": 1,
+            "address": 55282476,
+            "selected": 56245120,
+            "previous": 56245120,
+            "progress": 0.0,
+            "context": {
+              "service_id": 8,
+              "train": 0,
+              "physicalized_raw": 0,
+              "flags_raw": 18,
+              "speed": 5.78689432144165,
+              "target_speed": 0.0,
+              "acceleration": -0.7485975027084351,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 0,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 0,
+                "0x148": 0,
+                "0x154": 5564
+              },
+              "update_candidate_floats": {
+                "0x24": 64800.0,
+                "0x14c": 1.0,
+                "0x150": 65040.0
+              }
+            }
+          }
+        }
+      ],
+      "inactive_samples": 1764,
+      "inactive_speeds": [
+        5.78689432144165
+      ],
+      "inactive_progress": [
+        0.0
+      ],
+      "inactive_last_updates": [
+        65040.0
+      ],
+      "final": {
+        "start": 65242.0234375,
+        "end": 65242.0234375,
+        "paused": 1,
+        "address": 55282476,
+        "selected": 56245120,
+        "previous": 56245120,
+        "progress": 0.0,
+        "context": {
+          "service_id": 8,
+          "train": 0,
+          "physicalized_raw": 0,
+          "flags_raw": 18,
+          "speed": 5.78689432144165,
+          "target_speed": 0.0,
+          "acceleration": -0.7485975027084351,
+          "stop_state_words": {
+            "0x1dc": 1,
+            "0x1e0": 0,
+            "0x1e4": 0,
+            "0x1e8": 0,
+            "0x214": 0
+          },
+          "update_candidate_words": {
+            "0x144": 0,
+            "0x148": 0,
+            "0x154": 5564
+          },
+          "update_candidate_floats": {
+            "0x24": 64800.0,
+            "0x14c": 1.0,
+            "0x150": 65040.0
+          }
+        }
+      }
+    },
+    "9": {
+      "changes": [
+        {
+          "previous_observation": null,
+          "observation": {
+            "start": 65132.6484375,
+            "end": 65132.6484375,
+            "paused": 1,
+            "address": 55277172,
+            "selected": 0,
+            "previous": 56245280,
+            "progress": 2424.27685546875,
+            "context": {
+              "service_id": 9,
+              "train": 67976328,
+              "physicalized_raw": 1,
+              "flags_raw": 2,
+              "speed": 29.07341957092285,
+              "target_speed": 30.549999237060547,
+              "acceleration": 0.7485975027084351,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 0,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 1,
+                "0x148": 1,
+                "0x154": 5744
+              },
+              "update_candidate_floats": {
+                "0x24": 64983.0,
+                "0x14c": 1.0,
+                "0x150": 65132.0
+              }
+            }
+          }
+        },
+        {
+          "previous_observation": {
+            "start": 65167.5234375,
+            "end": 65167.5234375,
+            "paused": 0,
+            "address": 55277172,
+            "selected": 0,
+            "previous": 56245280,
+            "progress": 3286.342041015625,
+            "context": {
+              "service_id": 9,
+              "train": 67976328,
+              "physicalized_raw": 1,
+              "flags_raw": 2,
+              "speed": 29.822017669677734,
+              "target_speed": 22.228853225708008,
+              "acceleration": -0.7180385589599609,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 0,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 1,
+                "0x148": 1,
+                "0x154": 5744
+              },
+              "update_candidate_floats": {
+                "0x24": 64983.0,
+                "0x14c": 1.0,
+                "0x150": 65166.0
+              }
+            }
+          },
+          "observation": {
+            "start": 65167.6484375,
+            "end": 65167.6484375,
+            "paused": 0,
+            "address": 55277172,
+            "selected": 0,
+            "previous": 56245280,
+            "progress": 3315.804931640625,
+            "context": {
+              "service_id": 9,
+              "train": 0,
+              "physicalized_raw": 0,
+              "flags_raw": 2,
+              "speed": 29.103979110717773,
+              "target_speed": 22.228853225708008,
+              "acceleration": -0.7180385589599609,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 0,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 1,
+                "0x148": 1,
+                "0x154": 5744
+              },
+              "update_candidate_floats": {
+                "0x24": 64983.0,
+                "0x14c": 1.0,
+                "0x150": 65167.0
+              }
+            }
+          }
+        },
+        {
+          "previous_observation": {
+            "start": 65223.5234375,
+            "end": 65223.5234375,
+            "paused": 0,
+            "address": 55277172,
+            "selected": 0,
+            "previous": 56245280,
+            "progress": 4132.2587890625,
+            "context": {
+              "service_id": 9,
+              "train": 0,
+              "physicalized_raw": 0,
+              "flags_raw": 18,
+              "speed": 6.452382564544678,
+              "target_speed": 0.0,
+              "acceleration": -0.6654883027076721,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 0,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 1,
+                "0x148": 1,
+                "0x154": 5744
+              },
+              "update_candidate_floats": {
+                "0x24": 64983.0,
+                "0x14c": 1.0,
+                "0x150": 65222.0
+              }
+            }
+          },
+          "observation": {
+            "start": 65223.6484375,
+            "end": 65223.6484375,
+            "paused": 0,
+            "address": 55277172,
+            "selected": 0,
+            "previous": 56245280,
+            "progress": 4138.37841796875,
+            "context": {
+              "service_id": 9,
+              "train": 0,
+              "physicalized_raw": 0,
+              "flags_raw": 18,
+              "speed": 5.78689432144165,
+              "target_speed": 0.0,
+              "acceleration": -0.7485975027084351,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 1,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 1,
+                "0x148": 1,
+                "0x154": 5744
+              },
+              "update_candidate_floats": {
+                "0x24": 64983.0,
+                "0x14c": 1.0,
+                "0x150": 65223.0
+              }
+            }
+          }
+        },
+        {
+          "previous_observation": {
+            "start": 65224.6484375,
+            "end": 65224.6484375,
+            "paused": 0,
+            "address": 55277172,
+            "selected": 0,
+            "previous": 56245280,
+            "progress": 4138.37841796875,
+            "context": {
+              "service_id": 9,
+              "train": 0,
+              "physicalized_raw": 0,
+              "flags_raw": 18,
+              "speed": 5.78689432144165,
+              "target_speed": 0.0,
+              "acceleration": -0.7485975027084351,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 1,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 1,
+                "0x148": 1,
+                "0x154": 5744
+              },
+              "update_candidate_floats": {
+                "0x24": 64983.0,
+                "0x14c": 1.0,
+                "0x150": 65223.0
+              }
+            }
+          },
+          "observation": {
+            "start": 65224.7734375,
+            "end": 65224.7734375,
+            "paused": 0,
+            "address": 55277172,
+            "selected": 56245280,
+            "previous": 56245280,
+            "progress": 0.0,
+            "context": {
+              "service_id": 9,
+              "train": 0,
+              "physicalized_raw": 0,
+              "flags_raw": 18,
+              "speed": 5.78689432144165,
+              "target_speed": 0.0,
+              "acceleration": -0.7485975027084351,
+              "stop_state_words": {
+                "0x1dc": 1,
+                "0x1e0": 0,
+                "0x1e4": 0,
+                "0x1e8": 0,
+                "0x214": 0
+              },
+              "update_candidate_words": {
+                "0x144": 0,
+                "0x148": 0,
+                "0x154": 5744
+              },
+              "update_candidate_floats": {
+                "0x24": 64983.0,
+                "0x14c": 1.0,
+                "0x150": 65223.0
+              }
+            }
+          }
+        }
+      ],
+      "inactive_samples": 456,
+      "inactive_speeds": [
+        5.78689432144165
+      ],
+      "inactive_progress": [
+        0.0
+      ],
+      "inactive_last_updates": [
+        65223.0
+      ],
+      "final": {
+        "start": 65242.0234375,
+        "end": 65242.0234375,
+        "paused": 1,
+        "address": 55277172,
+        "selected": 56245280,
+        "previous": 56245280,
+        "progress": 0.0,
+        "context": {
+          "service_id": 9,
+          "train": 0,
+          "physicalized_raw": 0,
+          "flags_raw": 18,
+          "speed": 5.78689432144165,
+          "target_speed": 0.0,
+          "acceleration": -0.7485975027084351,
+          "stop_state_words": {
+            "0x1dc": 1,
+            "0x1e0": 0,
+            "0x1e4": 0,
+            "0x1e8": 0,
+            "0x214": 0
+          },
+          "update_candidate_words": {
+            "0x144": 0,
+            "0x148": 0,
+            "0x154": 5744
+          },
+          "update_candidate_floats": {
+            "0x24": 64983.0,
+            "0x14c": 1.0,
+            "0x150": 65223.0
+          }
+        }
+      }
+    }
+  },
+  "limitations": "Sequential reads of registry context and station fields, not atomic native events. Context errors and pointer checks are limited checks. A retained positive speed with an inactive gate is not proof of current movement. Native byte comparison covers exported ranges only."
+}

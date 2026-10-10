@@ -1,3 +1,5 @@
+Latest 2026-10-10: AI-STATION-RESET-FINDINGS.md captures AI9 physical removal, path-end flag, then update-gate disable/progress reset/station reselection. Retained positive speed is stale after deactivation. 1764samples,0errors;909native instructions match disk/live. PID12888 now paused at65242.0234375,player speed0,throttle0,emergency brake. Earlier simulator states below are historical. Research remains incomplete.
+
 # Station record times and regenerated distances
 
 2026-10-10 follow-ups: [STATION-DEPARTURE-FINDINGS.md](STATION-DEPARTURE-FINDINGS.md) validates Baltimore-to-Edgewood departure/selection. [STATION-BOARDING-FINDINGS.md](STATION-BOARDING-FINDINGS.md) additionally validates Tokyo player loading activation, countdown, paused stability, expiry and departure, plus populated AI records/selection transitions. Historical no-departure/zero-boarding statements below describe earlier captures. Timed AI station stops remain unvalidated.

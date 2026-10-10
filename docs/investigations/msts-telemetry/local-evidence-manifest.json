@@ -67507,6 +67507,144 @@
       "bytes": 3621,
       "sha256": "6837fd3b71c1ba5fdd268f1c160e10ea288d2032f8f22a7ad81eb910491d623d",
       "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01-byte-verification.json",
+      "bytes": 1051,
+      "sha256": "34be62c15d747fcf529f2d5b243b631d4309c1c9f90e9adb84a94ac4e322b67b",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/0040355d.asm",
+      "bytes": 26,
+      "sha256": "70801d952b80293062033897671ab1b9f956c9879a3c2555cefcfc08857d4e3e",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/0040355d.bytes.tsv",
+      "bytes": 21,
+      "sha256": "f00aaa2d39fc5f1c0e11be8f82cbbb910a31bff5010448000e91d33a533c0729",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/0040355d.c",
+      "bytes": 1022,
+      "sha256": "51b83d9f050607772a76fddc01c7e4f10389e1528cd35ac144b2fa5b64c98e7f",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a41c2.asm",
+      "bytes": 27999,
+      "sha256": "5652d44d4375f0993068abe38a4e3fce980e051f50b65b30fdb033740c083434",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a41c2.bytes.tsv",
+      "bytes": 15320,
+      "sha256": "e72ed487fc3d9a5111012db4db885689bea9290c25c9266eb707f881ea6c9e30",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a41c2.c",
+      "bytes": 10772,
+      "sha256": "93efb712ac98085a681928760d0eb30774a20cd4cb0bf933b60bd74907ead9f1",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a51ad.asm",
+      "bytes": 1961,
+      "sha256": "af7bdd041c82228661408a66873bda29d5e316dd24ccdc4232fe6f43c8f0fd86",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a51ad.bytes.tsv",
+      "bytes": 994,
+      "sha256": "ff09f94a6d62c90bf99ee140e56d097c8ea5247a9d5f9f3f82e06421da5adb3c",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a51ad.c",
+      "bytes": 968,
+      "sha256": "4bdd23022d7ec113616df93563171f34590ffd97737a57909df0a8ebf3b98820",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a662e.asm",
+      "bytes": 3419,
+      "sha256": "c752f2c8b929190e4939f350d4728abab6b19e5487f7e65efaf5c620b66857bf",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a662e.bytes.tsv",
+      "bytes": 1826,
+      "sha256": "121d4caa3b71147022704cca40b09b9c273fb58ceeaa8f8d8644fa7d8e901945",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/005a662e.c",
+      "bytes": 1488,
+      "sha256": "2a1508079682aead9137fbdee9e33f848dac52ce59c251bc37cfd4d1a391b431",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/initial-three-function-verification.json",
+      "bytes": 880,
+      "sha256": "de210b957bf2324127f5951f088d7a85d1c65c9c4e09b77b3218d21b836b5692",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/provenance.json",
+      "bytes": 2539,
+      "sha256": "31bc538cef2ac9cfe4d87da429a2b53a5d4499cfb08bb8857a6c9ed7d70866bb",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/ai-selection-native-20261010-01/verify_code_bytes.py",
+      "bytes": 2038,
+      "sha256": "17796a9fb4b949f21710ec7beed3618bb020e600764908b50f62d848f501febd",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-ai-end-context-20261010-01/metadata.json",
+      "bytes": 700,
+      "sha256": "e07d24ea5c72da817aefbcd2f9401a3fa2a274dd436325fe4a6cb7233f7b379d",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-ai-end-context-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-ai-end-context-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-ai-end-context-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
+      "bytes": 8181013,
+      "sha256": "c8df73767c5b79aadc5a81d269b554e901836b21af7636ebd23cbdc515ae9295",
+      "included": false
     }
   ]
 }

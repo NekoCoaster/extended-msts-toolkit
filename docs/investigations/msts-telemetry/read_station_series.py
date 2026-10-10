@@ -14,6 +14,7 @@ def sample(r):
     for entry in r.registry()['entries']:
         s=entry['address'];sentinel=r.u(s+0x30);node=r.u(sentinel);seen=set()
         x=dict(address=s,is_player=entry['is_player'],selected=r.u(s+0x34),previous=r.u(s+0x38),efficiency=r.f(s+0x208),progress=r.f(s+0x1d0),records=[])
+        x['service_context']={k:entry[k] for k in ('service_id','train','physicalized_raw','flags_raw','speed','target_speed','acceleration','stop_state_words','update_candidate_words','update_candidate_floats','error') if k in entry}
         while node!=sentinel:
             if not node or node in seen or len(seen)>=256:raise ValueError('Invalid/bounded station list')
             seen.add(node);record=r.u(node+8);raw=r.read(record,0x28)

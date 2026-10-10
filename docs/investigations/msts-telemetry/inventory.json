@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-10T00:23:48.575680+00:00",
+  "generated_utc": "2026-10-10T00:31:41.217839+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -26675,11 +26675,16 @@
         "analyse_player_track_caps.py",
         "player-track-caps-moving-01-summary.json",
         "captures/player-track-caps-moving-01/samples.jsonl",
-        "captures/post-signal-track-paused-01/tracks.json"
+        "captures/post-signal-track-paused-01/tracks.json",
+        "AI-STATION-RESET-FINDINGS.md",
+        "analyse_ai_station_reset.py",
+        "ai-station-reset-20261010-summary.json",
+        "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
+        "captures/ai-selection-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured;AI activation gate0to1 accompanies posted/effective cap initialization;player cap unchanged",
+      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured;AI activation gate0to1 accompanies posted/effective cap initialization;player cap unchanged;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser. AIservice3has193gate0samples with effective cache0 while finite-input formula returns fallback26.8224m/s;activation initializes posted/effective13.4112m/s. Other inactiveAIretains an agreeing cap. Gate and lifecycle context required;no player speedpost transition or exact producer invocation established."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser. AIservice3has193gate0samples with effective cache0 while finite-input formula returns fallback26.8224m/s;activation initializes posted/effective13.4112m/s. Other inactiveAIretains an agreeing cap. Gate and lifecycle context required;no player speedpost transition or exact producer invocation established. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced."
     },
     {
       "id": "service.integration_interval",
@@ -26735,11 +26740,16 @@
         "SERVICE-UPDATE-FINDINGS.md",
         "AI-SYSTEM-UPDATE-FINDINGS.md",
         "ai-acceleration-summary.json",
-        "pass139-byte-verification.json"
+        "pass139-byte-verification.json",
+        "AI-STATION-RESET-FINDINGS.md",
+        "analyse_ai_station_reset.py",
+        "ai-station-reset-20261010-summary.json",
+        "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
+        "captures/ai-selection-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly",
+      "evidence_status": "native scheduler semantics traced and bytes verified; paused active/inactive AI corroborated; exact gate transition not captured;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Last-update time uses a different observed base for player; midnight behavior untested. Inactive alone does not distinguish not-yet-started from finished. Motion sign is not cab reverser. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced."
     },
     {
       "id": "service.travel_sign_selector",
@@ -26962,11 +26972,16 @@
         "captures/red-signal-evaluation-01/evaluation.json",
         "paired-n2-approach-01-paired-summary.json",
         "paired-n2-approach-01-moving-tracks.json",
-        "paired-n2-approach-01-origin-shifts.json"
+        "paired-n2-approach-01-origin-shifts.json",
+        "AI-STATION-RESET-FINDINGS.md",
+        "analyse_ai_station_reset.py",
+        "ai-station-reset-20261010-summary.json",
+        "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
+        "captures/ai-selection-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven",
+      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Follow-up paired moving run observes63player section changes across two series,AI physical appearance and one originX+1rebase across45matchedcar/body identities. No player node crossing or successful signal passage;activity ended at red. Full coordinate conventions and repeated AI reappearance remain unvalidated. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced."
     },
     {
       "id": "service.flags_raw",
@@ -27015,11 +27030,16 @@
         "AI-LIFECYCLE-FINDINGS.md",
         "AI-SYSTEM-UPDATE-FINDINGS.md",
         "ai-acceleration-summary.json",
-        "pass139-byte-verification.json"
+        "pass139-byte-verification.json",
+        "AI-STATION-RESET-FINDINGS.md",
+        "analyse_ai_station_reset.py",
+        "ai-station-reset-20261010-summary.json",
+        "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
+        "captures/ai-selection-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly",
+      "evidence_status": "native source traced; physical disappearance and later scheduled offscreen activation observed; inactive AI retains stale speed; gate-off trigger and earlier position outlier remain unproven;47 consecutive positive-sign one-second AI service integration predictions match float32 stored speed exactly;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. First AI retained positive speed after its update gate disabled and track position froze. Positive speed alone does not establish movement; physical absence does not establish service deletion. See SERVICE-UPDATE-FINDINGS.md. Service acceleration is target-capped kinematic input, not measured per-car acceleration; target may be reached in less than the integration interval. One sequential duplicate service read disagreed; no atomicity claim. Specific cause of observed sharp negative driver input remains unresolved. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced."
     },
     {
       "id": "service.target_speed",
@@ -27231,11 +27251,16 @@
         "pass10/005a8ecb.c",
         "pass11/005a41c2.c",
         "pass11/005a5c9a.c",
-        "pass12/005a33af.c"
+        "pass12/005a33af.c",
+        "AI-STATION-RESET-FINDINGS.md",
+        "analyse_ai_station_reset.py",
+        "ai-station-reset-20261010-summary.json",
+        "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
+        "captures/ai-selection-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated",
+      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced."
     },
     {
       "id": "service.wait_braking",
@@ -32625,11 +32650,16 @@
         "captures/tokyo-boarding-baseline-20261010-01/samples.jsonl",
         "captures/tokyo-boarding-baseline-20261010-01/fixture.json",
         "captures/tokyo-boarding-20261010-01/samples.jsonl",
-        "captures/tokyo-station-final-services-20261010-01/services.jsonl"
+        "captures/tokyo-station-final-services-20261010-01/services.jsonl",
+        "AI-STATION-RESET-FINDINGS.md",
+        "analyse_ai_station_reset.py",
+        "ai-station-reset-20261010-summary.json",
+        "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
+        "captures/ai-selection-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim",
+      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured",
       "update_or_lifecycle": "service loading/path reconstruction/activity schedule merge;progress selection and explicit advance;full reset and AI-stop lifecycle unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Player arrival-on-loading,countdown,expiry,departure and next-stop selection validated in Tokyo. Both AI lists contain platform459 with zero schedule/event times and flags;selection advances to null and one service later reselects its record. Native successor null/end behavior remains ambiguous;do not equate null with completion. Exact AI transition cause,timed AI stops,final-stop outcomes,loading-duration factors and full reset remain unresolved. Existing distance reconstruction and schedule merge evidence is build-specific;record+24 is not automatically effective208."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Player arrival-on-loading,countdown,expiry,departure and next-stop selection validated in Tokyo. Both AI lists contain platform459 with zero schedule/event times and flags;selection advances to null and one service later reselects its record. Native successor null/end behavior remains ambiguous;do not equate null with completion. AI9 reselection is corroborated as a scheduler path-end reset;timed AI stops,player final-stop outcomes,loading-duration factors and full reset remain unresolved. Existing distance reconstruction and schedule merge evidence is build-specific;record+24 is not automatically effective208. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced."
     },
     {
       "id": "station.recorded_arrival",
