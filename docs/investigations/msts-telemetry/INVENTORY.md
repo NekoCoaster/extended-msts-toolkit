@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 438, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1043}
+{'runtime_direct': 439, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1044}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -786,7 +786,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | activity.event.id | Activity-defined event ID | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
 | activity.event.category | Native event category | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
 | activity.event.type | Native event type | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
-| activity.event.state_10 | Event trigger latch | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.state_10 | Event trigger latch | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0;Tokyo time event45 latch changes as independent elapsed accumulator crosses468;no outcomes in that event |
 | activity.event.state_20 | Activation-level reset baseline | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
 | activity.event.activation_level | Mutable current activation level | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
 | activity.event.location_tile | Location trigger tile pair | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
@@ -794,13 +794,13 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | activity.event.location_radius | Location trigger radius | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
 | activity.event.trigger_on_stop | Location event requires stopping | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
 | activity.event.outcome_count | Number of event outcomes | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
-| activity.event.outcomes | Outcome records: type, argument and payload reference | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
-| activity.event.reversible_candidate | Reversible event latch behavior | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
+| activity.event.outcomes | Outcome records: type, argument and payload reference | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0 |
+| activity.event.reversible_candidate | Reversible event latch behavior | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0 |
 | activity.event_evaluation_stop | Activity flag that suppresses further event evaluation | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
 | activity.event_outcome_success | Success value set by event outcome handler | loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested |
-| activity.time_event_clock | Elapsed clock accumulator used by time-event conditions | native producer/reset traced; current live timing adapters match NEMT source pattern; one paused sample |
-| activity.event.horizontal_distance | Horizontal distance from first player car to location trigger | native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition |
-| activity.event.location_condition | Reconstructed location-event spatial and optional stop predicate | native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition |
+| activity.time_event_clock | Elapsed clock accumulator used by time-event conditions | native producer/reset traced; current live timing adapters match NEMT source pattern; one paused sample;Tokyo time event45 latch changes as independent elapsed accumulator crosses468;no outcomes in that event |
+| activity.event.horizontal_distance | Horizontal distance from first player car to location trigger | native consumers traced; finite paused reconstruction consistent with clear latches far outside radii;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0 |
+| activity.event.location_condition | Reconstructed location-event spatial and optional stop predicate | native consumers traced; finite paused reconstruction consistent with clear latches far outside radii;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0 |
 | session.internal_calendar | Internal clock day/month/year | native clock update/setter traced and paused values read; current clock additions patched |
 | session.clock_components | Internal clock second/minute/hour | native clock update/setter traced and paused values read; current clock additions patched |
 | car.brake_cylinder_pressure | Per-car brake cylinder pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5;preferred diesel fixture UI emergency stop captured across23player/22AI cars |
@@ -1049,3 +1049,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | session.aws_update_suppressed | AWS update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | car.collision_callback_state | Collision flags and callback binding (native CollideFlags/CollideFunction) | disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads;native parser labels,flags consumers,initializer and load callback reconstruction traced and byte-verified |
 | physics.collision_work_buffer | Transient collision processing buffer | allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation |
+| activity.event.time_threshold | Time-event elapsed-clock threshold | 14loaded thresholds read;event45 threshold468 matches ACT and live latch crossing |

@@ -392,3 +392,7 @@ Inventory1043unique,859evidence paths,145source hashes pass. Initial generator a
 ## AI path-end reset checkpoint, 2026-10-10
 
 Read-only capture:1764samples,0errors,11clock crossings,0flagged station/list instability. Four exported native ranges:909instructions/4081bytes match disk/live. Inventory audit:1043unique candidates,864evidence paths,145source hashes pass. Raw sync verified11251existing hashes and added23files;391JSON and191Python parsed. Historical PID-only verification differences restored after comparing all other fields. Native source and binaries unchanged since the preceding checkpoint whose full native/frontend/repository/import checks passed; those results are reused, not rerun here. No production changes or release actions.
+
+## Event transitions, 2026-10-10
+
+Captured5184samples/0errors,67clock crossings,0flagged origin/player/sentinel instability and0split latch reads. Event13 location entry/latch/message and exit with retained latch;event45 elapsed threshold468 crossing captured. Fourteen stored time thresholds read separately. Five native exported ranges:300instructions/1020bytes match disk/live. Inventory1044unique candidates,873evidence paths,145source hashes pass. Raw sync preserved previous hashes;see manifest for additions. Source/probe/report changes only;full native/frontend/repository/import results from preceding unchanged native baseline reused,not rerun. No assets/saves or production code changed.

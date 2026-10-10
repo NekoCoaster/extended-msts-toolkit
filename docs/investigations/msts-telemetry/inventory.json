@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-10T00:31:41.217839+00:00",
+  "generated_utc": "2026-10-10T00:38:34.344497+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 438,
+    "runtime_direct": 439,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1043
+    "total": 1044
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -30006,11 +30006,21 @@
         "captures/activity-evaluator-paused-02/activity.json",
         "pass64-byte-verification.json",
         "pass65-byte-verification.json",
-        "pass66-byte-verification.json"
+        "pass66-byte-verification.json",
+        "EVENT-TRANSITION-FINDINGS.md",
+        "read_event_series.py",
+        "analyse_event_transition.py",
+        "event-transition-20261010-summary.json",
+        "captures/tokyo-event-transition-20261010-01/samples.jsonl",
+        "captures/tokyo-event-transition-20261010-01/ui-observation.json",
+        "captures/event-transition-native-20261010-01-byte-verification.json",
+        "EVENT-TRANSITION-FINDINGS.md",
+        "event-transition-20261010-summary.json",
+        "captures/tokyo-time-thresholds-20261010-01/time-events.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0;Tokyo time event45 latch changes as independent elapsed accumulator crosses468;no outcomes in that event",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
     },
     {
       "id": "activity.event.state_20",
@@ -30198,11 +30208,18 @@
         "captures/activity-evaluator-paused-02/activity.json",
         "pass64-byte-verification.json",
         "pass65-byte-verification.json",
-        "pass66-byte-verification.json"
+        "pass66-byte-verification.json",
+        "EVENT-TRANSITION-FINDINGS.md",
+        "read_event_series.py",
+        "analyse_event_transition.py",
+        "event-transition-20261010-summary.json",
+        "captures/tokyo-event-transition-20261010-01/samples.jsonl",
+        "captures/tokyo-event-transition-20261010-01/ui-observation.json",
+        "captures/event-transition-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
     },
     {
       "id": "activity.event.reversible_candidate",
@@ -30222,11 +30239,18 @@
         "captures/activity-evaluator-paused-02/activity.json",
         "pass64-byte-verification.json",
         "pass65-byte-verification.json",
-        "pass66-byte-verification.json"
+        "pass66-byte-verification.json",
+        "EVENT-TRANSITION-FINDINGS.md",
+        "read_event_series.py",
+        "analyse_event_transition.py",
+        "event-transition-20261010-summary.json",
+        "captures/tokyo-event-transition-20261010-01/samples.jsonl",
+        "captures/tokyo-event-transition-20261010-01/ui-observation.json",
+        "captures/event-transition-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
     },
     {
       "id": "activity.event_evaluation_stop",
@@ -30294,9 +30318,12 @@
         "captures/clock-paused-01/clock.json",
         "captures/clock-paused-01/live-clock-patches.json",
         "pass70-byte-verification.json",
-        "pass71-byte-verification.json"
+        "pass71-byte-verification.json",
+        "EVENT-TRANSITION-FINDINGS.md",
+        "event-transition-20261010-summary.json",
+        "captures/tokyo-time-thresholds-20261010-01/time-events.json"
       ],
-      "evidence_status": "native producer/reset traced; current live timing adapters match NEMT source pattern; one paused sample",
+      "evidence_status": "native producer/reset traced; current live timing adapters match NEMT source pattern; one paused sample;Tokyo time event45 latch changes as independent elapsed accumulator crosses468;no outcomes in that event",
       "update_or_lifecycle": "time-event evaluation or derived on sampling; producer cadence and reset for clock unresolved",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Origin/near-boundary/nonfinite behavior unvalidated; no full x87 emulation. Native clock additions are patched in this installation; no stock timing drift validation. Distinct accumulator must not be replaced by day-time minus start-time."
     },
@@ -30313,11 +30340,18 @@
         "pass66/0059b146.asm",
         "pass67/0059e3ca.asm",
         "pass67-byte-verification.json",
-        "pass68-byte-verification.json"
+        "pass68-byte-verification.json",
+        "EVENT-TRANSITION-FINDINGS.md",
+        "read_event_series.py",
+        "analyse_event_transition.py",
+        "event-transition-20261010-summary.json",
+        "captures/tokyo-event-transition-20261010-01/samples.jsonl",
+        "captures/tokyo-event-transition-20261010-01/ui-observation.json",
+        "captures/event-transition-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition",
+      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0",
       "update_or_lifecycle": "time-event evaluation or derived on sampling; producer cadence and reset for clock unresolved",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Origin/near-boundary/nonfinite behavior unvalidated; no full x87 emulation."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Near-radius crossing now sampled;origin transitions/nonfinite behavior and full x87 emulation unvalidated. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
     },
     {
       "id": "activity.event.location_condition",
@@ -30332,11 +30366,18 @@
         "pass66/0059b146.asm",
         "pass67/0059e3ca.asm",
         "pass67-byte-verification.json",
-        "pass68-byte-verification.json"
+        "pass68-byte-verification.json",
+        "EVENT-TRANSITION-FINDINGS.md",
+        "read_event_series.py",
+        "analyse_event_transition.py",
+        "event-transition-20261010-summary.json",
+        "captures/tokyo-event-transition-20261010-01/samples.jsonl",
+        "captures/tokyo-event-transition-20261010-01/ui-observation.json",
+        "captures/event-transition-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii; no firing transition",
+      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0",
       "update_or_lifecycle": "time-event evaluation or derived on sampling; producer cadence and reset for clock unresolved",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Origin/near-boundary/nonfinite behavior unvalidated; no full x87 emulation."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Near-radius crossing now sampled;origin transitions/nonfinite behavior and full x87 emulation unvalidated. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
     },
     {
       "id": "session.internal_calendar",
@@ -36373,6 +36414,24 @@
       "evidence_status": "allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation",
       "update_or_lifecycle": "builder resets count and reconstructs records;later processing mutates them;capacity can grow,teardown nulls buffer without explicit count reset",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Scratch buffer is not collision history or guaranteed current contacts. Count is also construction index during rebuild. Null buffer means unavailable even if stale count remains. Probe caps128records and does not dereference pointers. Body/callback pairs can swap without object pointers swapping;phase-dependent attribution. Sequential rereads not atomic;empty fixture provides no contact semantics or AI simulation proof. Post-builder005f952e only changes record flags and makes no callbacks;record flags differ from vehicle CollideFlags. Exact stub4038c3 is JMP despite stored CALL reference. Misaligned pass283 is rejected as instruction evidence. Callback invocation remains unresolved."
+    },
+    {
+      "id": "activity.event.time_threshold",
+      "meaning": "Time-event elapsed-clock threshold",
+      "applicability": "loaded activity time events with category0/type0",
+      "value_type": "float32",
+      "units": "elapsed activity seconds",
+      "extraction": "[event+0x6e];0059b24c tests threshold < [0x80acd0]",
+      "evidence": [
+        "EVENT-TRANSITION-FINDINGS.md",
+        "read_time_events.py",
+        "captures/tokyo-time-thresholds-20261010-01/time-events.json",
+        "captures/event-transition-native-20261010-01-byte-verification.json",
+        "event-transition-20261010-summary.json"
+      ],
+      "evidence_status": "14loaded thresholds read;event45 threshold468 matches ACT and live latch crossing",
+      "update_or_lifecycle": "loaded event definition;runtime mutation/reset not tested",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Post-transition threshold snapshot;not atomic with latch crossing. No equality-edge or stock timing validation. Parse event subtype before reading extension."
     }
   ]
 }
