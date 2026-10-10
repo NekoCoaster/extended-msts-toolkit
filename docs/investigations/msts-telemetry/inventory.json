@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-10T03:25:02.303030+00:00",
+  "generated_utc": "2026-10-10T03:33:32.322338+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 457,
+    "runtime_direct": 458,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1062
+    "total": 1063
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -33102,11 +33102,17 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "captures/ai-schedule-writers-native-20261010-01-byte-verification.json",
+        "captures/station-flag-init-native-20261010-01-byte-verification.json",
+        "captures/station-ai-flag-writer-native-20261010-01-byte-verification.json",
+        "captures/automatic-driver-dispatch-20261010-01-byte-verification.json",
+        "captures/automatic-driver-stations-paused-20261010-01/samples.jsonl",
+        "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json"
       ],
-      "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records;winter AI platform countdown begins as selection advances,with hold at previous platform and unchanged station time/flag fields",
+      "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records;winter AI platform countdown begins as selection advances,with hold at previous platform and unchanged station time/flag fields;AI traffic loader schedule merge traced;automatic player-driver station flag writer distinguished from traffic update;terminal ITR baseline retained",
       "update_or_lifecycle": "service load/schedule merge,station processing,AI path-end reset and teardown/reinitialization",
-      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;AI timetable adherence/recorded-time writers,rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific. Winter AI platform holds use210/214;selected already identifies the next stop. AI hold does not imply player-style station flag/time writes."
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;AI timetable adherence/recorded-time writers,rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific. Winter AI platform holds use210/214;selected already identifies the next stop. AI hold does not imply player-style station flag/time writes. Loader uses1e as a temporary merge marker. Merge20bit2 may be cleared by efficiency-copy mask40 after schedule copying;not universal timetable validity. Automatic player-driver005a3941 sets previous station1e bit2 on countdown initiation without directly stamping8/10;traffic updater005a41c2 differs. Current ITR flag2/zero-recorded-time snapshot is at completion alert,not a captured transition or ordinary pause. Positive speed,selected record and driver gate can survive there. Parser return is not the status tested before traffic service insertion;not all schedule matches guaranteed."
     },
     {
       "id": "station.recorded_arrival",
@@ -33155,11 +33161,17 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "captures/ai-schedule-writers-native-20261010-01-byte-verification.json",
+        "captures/station-flag-init-native-20261010-01-byte-verification.json",
+        "captures/station-ai-flag-writer-native-20261010-01-byte-verification.json",
+        "captures/automatic-driver-dispatch-20261010-01-byte-verification.json",
+        "captures/automatic-driver-stations-paused-20261010-01/samples.jsonl",
+        "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json"
       ],
-      "evidence_status": "Accepted loading writes arrival in representative Tokyo stops,including final65979.2734375;alternate native synthesis branches retained;restarted initial record has synthetic64805 while clock64801.2265625;all five winter AI services retain0 through observed platform countdown/stop/resumption",
+      "evidence_status": "Accepted loading writes arrival in representative Tokyo stops,including final65979.2734375;alternate native synthesis branches retained;restarted initial record has synthetic64805 while clock64801.2265625;all five winter AI services retain0 through observed platform countdown/stop/resumption;AI traffic loader schedule merge traced;automatic player-driver station flag writer distinguished from traffic update;terminal ITR baseline retained",
       "update_or_lifecycle": "written by accepted loading or native synthesis branches;retained in record",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not necessarily physical stop time. Zero/unset and synthesis must be interpreted with flags/state;AI event timing and midnight remain open."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not necessarily physical stop time. Zero/unset and synthesis must be interpreted with flags/state;AI event timing and midnight remain open. Loader uses1e as a temporary merge marker. Merge20bit2 may be cleared by efficiency-copy mask40 after schedule copying;not universal timetable validity. Automatic player-driver005a3941 sets previous station1e bit2 on countdown initiation without directly stamping8/10;traffic updater005a41c2 differs. Current ITR flag2/zero-recorded-time snapshot is at completion alert,not a captured transition or ordinary pause. Positive speed,selected record and driver gate can survive there. Parser return is not the status tested before traffic service insertion;not all schedule matches guaranteed."
     },
     {
       "id": "station.recorded_departure",
@@ -33206,11 +33218,17 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "captures/ai-schedule-writers-native-20261010-01-byte-verification.json",
+        "captures/station-flag-init-native-20261010-01-byte-verification.json",
+        "captures/station-ai-flag-writer-native-20261010-01-byte-verification.json",
+        "captures/automatic-driver-dispatch-20261010-01-byte-verification.json",
+        "captures/automatic-driver-stations-paused-20261010-01/samples.jsonl",
+        "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json"
       ],
-      "evidence_status": "Normal and unfinished-loading departure writes observed;final-stop success retains recorded departure0 with final record still selected;all five winter AI services retain0 through observed platform countdown/stop/resumption",
+      "evidence_status": "Normal and unfinished-loading departure writes observed;final-stop success retains recorded departure0 with final record still selected;all five winter AI services retain0 through observed platform countdown/stop/resumption;AI traffic loader schedule merge traced;automatic player-driver station flag writer distinguished from traffic update;terminal ITR baseline retained",
       "update_or_lifecycle": "written by departure branches;selection can advance in a later sampled frame",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not exact platform-crossing time or proof loading finished. Zero alone is not a universal missing-value rule;AI timing and midnight remain open."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not exact platform-crossing time or proof loading finished. Zero alone is not a universal missing-value rule;AI timing and midnight remain open. Loader uses1e as a temporary merge marker. Merge20bit2 may be cleared by efficiency-copy mask40 after schedule copying;not universal timetable validity. Automatic player-driver005a3941 sets previous station1e bit2 on countdown initiation without directly stamping8/10;traffic updater005a41c2 differs. Current ITR flag2/zero-recorded-time snapshot is at completion alert,not a captured transition or ordinary pause. Positive speed,selected record and driver gate can survive there. Parser return is not the status tested before traffic service insertion;not all schedule matches guaranteed."
     },
     {
       "id": "station.scheduled_arrival",
@@ -33235,11 +33253,17 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "captures/ai-schedule-writers-native-20261010-01-byte-verification.json",
+        "captures/station-flag-init-native-20261010-01-byte-verification.json",
+        "captures/station-ai-flag-writer-native-20261010-01-byte-verification.json",
+        "captures/automatic-driver-dispatch-20261010-01-byte-verification.json",
+        "captures/automatic-driver-stations-paused-20261010-01/samples.jsonl",
+        "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json"
       ],
-      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds",
+      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds;AI traffic loader schedule merge traced;automatic player-driver station flag writer distinguished from traffic update;terminal ITR baseline retained",
       "update_or_lifecycle": "schedule load/merge;later editing,offset and reset paths unvalidated",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open. Loader uses1e as a temporary merge marker. Merge20bit2 may be cleared by efficiency-copy mask40 after schedule copying;not universal timetable validity. Automatic player-driver005a3941 sets previous station1e bit2 on countdown initiation without directly stamping8/10;traffic updater005a41c2 differs. Current ITR flag2/zero-recorded-time snapshot is at completion alert,not a captured transition or ordinary pause. Positive speed,selected record and driver gate can survive there. Parser return is not the status tested before traffic service insertion;not all schedule matches guaranteed."
     },
     {
       "id": "station.scheduled_departure",
@@ -33269,11 +33293,17 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "captures/ai-schedule-writers-native-20261010-01-byte-verification.json",
+        "captures/station-flag-init-native-20261010-01-byte-verification.json",
+        "captures/station-ai-flag-writer-native-20261010-01-byte-verification.json",
+        "captures/automatic-driver-dispatch-20261010-01-byte-verification.json",
+        "captures/automatic-driver-stations-paused-20261010-01/samples.jsonl",
+        "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json"
       ],
-      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds",
+      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds;AI traffic loader schedule merge traced;automatic player-driver station flag writer distinguished from traffic update;terminal ITR baseline retained",
       "update_or_lifecycle": "schedule load/merge;later editing,offset and reset paths unvalidated",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open. Loader uses1e as a temporary merge marker. Merge20bit2 may be cleared by efficiency-copy mask40 after schedule copying;not universal timetable validity. Automatic player-driver005a3941 sets previous station1e bit2 on countdown initiation without directly stamping8/10;traffic updater005a41c2 differs. Current ITR flag2/zero-recorded-time snapshot is at completion alert,not a captured transition or ordinary pause. Positive speed,selected record and driver gate can survive there. Parser return is not the status tested before traffic service insertion;not all schedule matches guaranteed."
     },
     {
       "id": "station.state_flags",
@@ -33318,11 +33348,17 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "captures/ai-schedule-writers-native-20261010-01-byte-verification.json",
+        "captures/station-flag-init-native-20261010-01-byte-verification.json",
+        "captures/station-ai-flag-writer-native-20261010-01-byte-verification.json",
+        "captures/automatic-driver-dispatch-20261010-01-byte-verification.json",
+        "captures/automatic-driver-stations-paused-20261010-01/samples.jsonl",
+        "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json"
       ],
-      "evidence_status": "Arrival2,normal expiry/cue0x62,normal departure0x6a,interruption0x1a;final0x62 precedes AllStops success while still selected and without departure;winter AI IDs1/2 flags1 and70/71/72 flags0 remain unchanged through platform holds",
+      "evidence_status": "Arrival2,normal expiry/cue0x62,normal departure0x6a,interruption0x1a;final0x62 precedes AllStops success while still selected and without departure;winter AI IDs1/2 flags1 and70/71/72 flags0 remain unchanged through platform holds;AI traffic loader schedule merge traced;automatic player-driver station flag writer distinguished from traffic update;terminal ITR baseline retained",
       "update_or_lifecycle": "station processing writes bits and successor selection may clear cue bit;read with same record identity",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Partial branch meanings:0x10 moving while loading,0x40 dispatch attempt rather than audible cue or movement authority. Full bit combinations and AI semantics unvalidated. Selection/fields are sampled sequentially. AllStops tests the last selected record bit0x20 rather than every earlier record;not a perfect-run indicator."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Partial branch meanings:0x10 moving while loading,0x40 dispatch attempt rather than audible cue or movement authority. Full bit combinations and AI semantics unvalidated. Selection/fields are sampled sequentially. AllStops tests the last selected record bit0x20 rather than every earlier record;not a perfect-run indicator. Loader uses1e as a temporary merge marker. Merge20bit2 may be cleared by efficiency-copy mask40 after schedule copying;not universal timetable validity. Automatic player-driver005a3941 sets previous station1e bit2 on countdown initiation without directly stamping8/10;traffic updater005a41c2 differs. Current ITR flag2/zero-recorded-time snapshot is at completion alert,not a captured transition or ordinary pause. Positive speed,selected record and driver gate can survive there. Parser return is not the status tested before traffic service insertion;not all schedule matches guaranteed."
     },
     {
       "id": "station.boarding_active",
@@ -37402,6 +37438,24 @@
       "evidence_status": "Static electric source/control routes traced;current bounded record snapshot zero-filled with gate0,not enabled transition validation",
       "update_or_lifecycle": "Event-driven remap and gated setters traced;load/init/reset/save persistence and AI applicability unvalidated",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Preserve raw values and availability metadata together. Zero gate/kind in current fixture does not demonstrate pantographs lowered or selector active at0. Secondary value is paired with primary264;selector accepted updates map paired commands before gated toggles. Physical front/rear identity,roof animation,contact and current not proven. Do not use diesel offsets as equivalent electric fields. No installed extension CVF fixture;dispatch kind5 is not validated support."
+    },
+    {
+      "id": "session.automatic_driver_enabled",
+      "meaning": "Automatic player-driver mode gate",
+      "applicability": "player automatic-control path;not a traffic-service activity flag",
+      "value_type": "uint32",
+      "units": "raw gate (zero disables)",
+      "extraction": "uint32[0x809e1c];0059f510 additionally requires loaded path[train.service+130]",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "captures/automatic-driver-dispatch-20261010-01/context.json",
+        "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json",
+        "captures/automatic-driver-gate-native-20261010-01-byte-verification.json",
+        "captures/automatic-driver-gate-references-20261010-01/references.tsv"
+      ],
+      "evidence_status": "Set1/clear0/toggle and gated control dispatch traced;1 observed at ITR completion alert",
+      "update_or_lifecycle": "005a0463 enables;005a0472 disables;005a0481 complements zero test then invokes005a0393;input handler eligibility additionally gated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Mode selection is not proof of running simulation,active control execution or train movement. Completion modal retains1. No controlled toggle transition,full setup/teardown lifecycle or all callers validated;no native functions invoked."
     }
   ]
 }

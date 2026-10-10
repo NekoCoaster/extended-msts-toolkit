@@ -459,3 +459,8 @@ Engine-layout-qualified remap,selector updates and paired control assignments tr
 ## Monitor reload checkpoint, 2026-10-10
 
 Eight emitted monitor payloads match pre-save sources exactly; lead latch/timer changes after reload match diesel initialization. Static coordinator order places initialization after saved-object restoration and fixups; no historical execution trace claimed. Current pass214 verifies1847instructions/7936bytes without mismatch/error. Exactly four candidate records revised,1058unchanged,all original evidence preserved. Inventory1062;986evidence paths/151source hashes pass. Sync verified11893prior raw hashes and added20files;454JSON/220Python parse. Historical PID-only drift excluded after equality checks;pass214 current evidence retained. Unchanged-native regression baseline reused,not rerun;production code untouched. Broad research goal incomplete.
+
+
+## Station flags and automatic driving, 2026-10-10
+
+Traffic schedule caller,merge order and temporary flags traced;automatic player-driver branch distinguished from traffic update. Current byte checks:815/2865,938/3318,584/2177,124/451,314/1099 instructions/bytes respectively,all clean. UI shows completed ITR modal;no resume or new station transition claimed. Six existing records qualified,1056unchanged,one mode gate added;all old evidence preserved. Inventory1063;995evidence paths/151source hashes pass. Sync verified11913old raw hashes,added102files;454JSON/220Python parse. Unchanged-native regression baseline reused,not rerun. No production source changes. Goal incomplete.

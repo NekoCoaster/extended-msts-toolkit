@@ -71479,6 +71479,618 @@
       "bytes": 81,
       "sha256": "246b722eed720db71171ed7a4feecdd4e56686846078318a1550703d2e13ab19",
       "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01-byte-verification.json",
+      "bytes": 1237,
+      "sha256": "60292a417409c8b77e2e9d5ec7b29911aeb2747401cc619a9a3a6b97e175b60d",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a102e.asm",
+      "bytes": 4550,
+      "sha256": "988cbe08f489352b7088280e2672fd7a11ac3eebde38942bc69d7b6a634ffc28",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a102e.bytes.tsv",
+      "bytes": 2216,
+      "sha256": "2d79172c3a3307d7664e91931122a7fe97df259ce0907aab6ae8ffc93c0d7b7b",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a102e.c",
+      "bytes": 1570,
+      "sha256": "ee08b51bb14f1eccd674a40bc27a56be8c5a23e7c3bb3f46f51e3e832af895a0",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a1656.asm",
+      "bytes": 11418,
+      "sha256": "1aa80b40a451270540e3ecbec16debea8e38459383a6b3c8ab2a952ab8a66e37",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a1656.bytes.tsv",
+      "bytes": 6248,
+      "sha256": "6e283f69e4b4778566a128b7d3b5319594fa2b14948ff99448ea235f4a3c8e27",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a1656.c",
+      "bytes": 3438,
+      "sha256": "02416fe31191e8c8e522b85ca323032be2399a5b66dd232657c7e040e436dec4",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a572e.asm",
+      "bytes": 2390,
+      "sha256": "1813cf3d63b498f03ba6968cd544a8c64320ea3806d6cdbab5ec1aeb298e62f1",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a572e.bytes.tsv",
+      "bytes": 1228,
+      "sha256": "b8e5700889d86ca174553bc707916ba8d29c00a8703e620b67796ec55b2968d9",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a572e.c",
+      "bytes": 773,
+      "sha256": "b3fa304102e36b7ce9a8359eca694433e5f2a912bff4efbd3027536283f55eee",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a6b1d.asm",
+      "bytes": 1328,
+      "sha256": "861268a242e274dd8ae614ff8556f44be7788836fbd8298d93563928cb97ef60",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a6b1d.bytes.tsv",
+      "bytes": 703,
+      "sha256": "c13ce4583af8a1c57991db7927b3cbd9e4350f2f2afbee57a8543c576fdf3792",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005a6b1d.c",
+      "bytes": 699,
+      "sha256": "3cfeb6e7229540bd38c4f143e9665dc192ab9bf5adad0fa5c11cd66dd17c6b8a",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005ad843.asm",
+      "bytes": 7465,
+      "sha256": "1de84742cf93e5b1d10a27ed3dcc28ea53a993cdf7d29ada35a43d7f72512373",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005ad843.bytes.tsv",
+      "bytes": 4300,
+      "sha256": "c883267a621f3a97448f6ae754836cc22a2ce64f05eb5bdcc48978af8278c65d",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/005ad843.c",
+      "bytes": 2795,
+      "sha256": "72a39e386525039f170519b18b8c5c5c1a8acb5b59f0d9d46bfbc1e7258fa0bf",
+      "included": false
+    },
+    {
+      "path": "captures/ai-schedule-writers-native-20261010-01/provenance.json",
+      "bytes": 2003,
+      "sha256": "4ceb2b1e5ea7f93826e9d198bcd47719b3b746a670775679196e9eebfce6d53b",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01-byte-verification.json",
+      "bytes": 881,
+      "sha256": "cc19dfc236e03a3b7ae93abc828631d7a5c7412b9ba0ed95aedc90891e0dc3cb",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/00401b5e.asm",
+      "bytes": 26,
+      "sha256": "872c4584a8e54b63a7cd884570d2bd52b72eb77c8a65f3b2d43cc842ad84dfae",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/00401b5e.bytes.tsv",
+      "bytes": 21,
+      "sha256": "015330ff47b093d8ee0e6947a76f66832cabe0523ac8564ac103a28ef0e80e5f",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/00401b5e.c",
+      "bytes": 6775,
+      "sha256": "b3af27cc0391e64c6e689fd27f850975b34ce5f992f630d7f7773b0766d7cb5b",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/0059f510.asm",
+      "bytes": 1744,
+      "sha256": "e4b891b85ccd2fda40f3a9801e22fb2d383820e04050dc2de703c151bf7f4437",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/0059f510.bytes.tsv",
+      "bytes": 946,
+      "sha256": "f90594ba5fc72f4563222a8f64f6585a2413da9caed99ce40dfa32f46ee7808e",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/0059f510.c",
+      "bytes": 600,
+      "sha256": "6ed791f0678a4c0a073651f98aa217cb392f857679b88c3090fc6b59506a6093",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/00607bd0.asm",
+      "bytes": 2324,
+      "sha256": "95ed8f8f9de5446814741fa61ec2789b0de119d8c2b6bbcc949abf32086da59d",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/00607bd0.bytes.tsv",
+      "bytes": 1299,
+      "sha256": "3c3f1378d38d19b3f408c42866eff20758a1de4dd72e1c9537eafa3188197917",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/00607bd0.c",
+      "bytes": 828,
+      "sha256": "1a6c12bb220ef7516770b1096e7132eaf1d41246e6712ebbd48f971bbf39b809",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/context.json",
+      "bytes": 321,
+      "sha256": "1754eed82d27ccde678ccc9dbd3557b4c51acab2f06639bd10848e6f4197c1c5",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/provenance.json",
+      "bytes": 1197,
+      "sha256": "595620768e80528bb69d25e27346b37c8a5be247431b48758dcbbad68f08174a",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-dispatch-20261010-01/ui-completion-observation.json",
+      "bytes": 366,
+      "sha256": "641da868f321dbc8d37c9d324be45ad0dd5a98cb8307da4828f7a31433445597",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01-byte-verification.json",
+      "bytes": 2610,
+      "sha256": "f33eed3e287ef0c5f528422ebda33f12e4541fb12942b3959556d7db59ef213a",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00402c0c.asm",
+      "bytes": 26,
+      "sha256": "2b5b673c93c86bf6ed2099237c4a8d2be3ad76458bc2d748d1b817f2f23dda97",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00402c0c.bytes.tsv",
+      "bytes": 21,
+      "sha256": "3c730e4752ba6201604021de14a372e15e9c60a9f98b27c5a4d9120084bc5a87",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00402c0c.c",
+      "bytes": 75,
+      "sha256": "49b6a9dfc1a0bdb71095e02127630da049028412a9e7082502161a5a40466311",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00403bac.asm",
+      "bytes": 26,
+      "sha256": "b871f56a81743d080ad6a9d8b29da5df7868c008fe0361091d37cf626d57d4c9",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00403bac.bytes.tsv",
+      "bytes": 21,
+      "sha256": "71ca733fcac8cdbcdd3c4a0685c65310dc2c7ce992e7066ed2290f75b701107a",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00403bac.c",
+      "bytes": 75,
+      "sha256": "0d867c2f2b33269c5742e8d1d965d61e506c2745a68779a980a440631bbd6fa9",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00403ef4.asm",
+      "bytes": 26,
+      "sha256": "8ba332e4eb1efc539fd7b79b4854e38a82b48002c9169cd8b62b460fd816989a",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00403ef4.bytes.tsv",
+      "bytes": 21,
+      "sha256": "24669383f64081994f8cdafc2c019ca9f3e2189551fe09d472f06371723f60a2",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00403ef4.c",
+      "bytes": 124,
+      "sha256": "b50d2b8dc5fc8f59acbaf7a70903fe02b7d1d10af0381634b4eb81a659c207bd",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0040b141.asm",
+      "bytes": 1396,
+      "sha256": "558b113b5e834c72a4cceac7a06d19f39fca3a43519e8779e7ca0041df059249",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0040b141.bytes.tsv",
+      "bytes": 884,
+      "sha256": "a659adb3cd8f3a37f92de404394a01772116032761bfac06b23d085a29ca9ccb",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0040b141.c",
+      "bytes": 642,
+      "sha256": "2250d4481acd8261085b439622a29083112a59321c42941c1df729228e4dcec8",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0044094a.asm",
+      "bytes": 612,
+      "sha256": "613a4829f8dc28af4a2d8ace1b8a8cb419d8349e789b7946f7e3fc32923c16b0",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0044094a.bytes.tsv",
+      "bytes": 397,
+      "sha256": "44d427107f4bb2b4f3b4ec061876cfc2aef3182e91b03fe52f99c3c38c749968",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0044094a.c",
+      "bytes": 220,
+      "sha256": "46892315d133dc7b36889640b31535ec8e9f0374ff9d8571c3b4a7ee297cd576",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00457429.asm",
+      "bytes": 488,
+      "sha256": "5ec4c17e09ec08c1e096dc97da89887b4fe354f2665f5e25a8700ac20f700e71",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00457429.bytes.tsv",
+      "bytes": 314,
+      "sha256": "89223c7462d756fa607587baf0f0faff3af1a5b55146c311ee5aeecb4d83a9bd",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00457429.c",
+      "bytes": 212,
+      "sha256": "f97319258920a891bd777ce9f290ea1fae6facecb6b18195ba053c8a0b6a0a6c",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/004605a9.asm",
+      "bytes": 794,
+      "sha256": "e11784fe96d721501d0914d5ac1dd1beed690c4d418f41b2c67f00b1d06ceb1f",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/004605a9.bytes.tsv",
+      "bytes": 498,
+      "sha256": "00265f9df5439472b437cd552d174c27535d75612fb04ce3aca32b43e6ee60c3",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/004605a9.c",
+      "bytes": 304,
+      "sha256": "273dc3bcfa622976e3f68ee85c6f6a87e1770414665d6adf759215a6185172e4",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00478ead.asm",
+      "bytes": 3664,
+      "sha256": "65c7444a6f08d41712ae4c43f5027b05b844091b89450beb7af9df2f502f56f0",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00478ead.bytes.tsv",
+      "bytes": 2006,
+      "sha256": "6a288745e0754a319a09a7351a61c6ea52b941d8089f9169e3e5e88e28de5d87",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/00478ead.c",
+      "bytes": 1524,
+      "sha256": "724498daa549795cde6d2d3f6ec88fefc91840f063f3a3dadf9d430f0741c346",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/004a51b5.asm",
+      "bytes": 369,
+      "sha256": "d0a95ef251af0611b5d572e136aaa756afa336000ff9ea8414de9d8f2e2fd08c",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/004a51b5.bytes.tsv",
+      "bytes": 221,
+      "sha256": "a2816f68fac66a6e7ba15bf6be30919affa67feebda21bb499db9ca2d7475366",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/004a51b5.c",
+      "bytes": 192,
+      "sha256": "7344ce30e9a7e73d5a25084d91c88357f5d9cd8445cd0d1152bf4a9da10c56d5",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0059f510.asm",
+      "bytes": 1744,
+      "sha256": "e4b891b85ccd2fda40f3a9801e22fb2d383820e04050dc2de703c151bf7f4437",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0059f510.bytes.tsv",
+      "bytes": 946,
+      "sha256": "f90594ba5fc72f4563222a8f64f6585a2413da9caed99ce40dfa32f46ee7808e",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/0059f510.c",
+      "bytes": 600,
+      "sha256": "6ed791f0678a4c0a073651f98aa217cb392f857679b88c3090fc6b59506a6093",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0463.asm",
+      "bytes": 119,
+      "sha256": "165122134889f8d76d2c0ce3d134f7e9f37b31a5cb202da9b4db9a5b95bf53f0",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0463.bytes.tsv",
+      "bytes": 85,
+      "sha256": "913ad365ea92e899026c7a1c44cfd4b9725936fd705ba47bce68fcdf9b6afc31",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0463.c",
+      "bytes": 69,
+      "sha256": "636b498b1dbc1f0d0db82ec703679c6a9adbcaa3879730da1c096d55609dfd8c",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0472.asm",
+      "bytes": 119,
+      "sha256": "fa1449d1fd924867bd6c69f1a66449eccdbce224496a12b11c3d2e5791612902",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0472.bytes.tsv",
+      "bytes": 85,
+      "sha256": "6e6d1536fb8787c14f13e63fa36fa60ce7e3317e97cb50cf06bf1e4b40d09af4",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0472.c",
+      "bytes": 69,
+      "sha256": "3e6ae598e3a8fa4605260918a3d99c91ce5f1ac9f43bfec8f57bcaa77fbf446c",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0481.asm",
+      "bytes": 220,
+      "sha256": "8b94775f413ef57a4731d7addacb53273858a394f7133ec23f8d60dfbf2bf70b",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0481.bytes.tsv",
+      "bytes": 153,
+      "sha256": "59ae1731cc738700f0988e085934da3c010eeae7453b86232ed432f6fecb1bae",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/005a0481.c",
+      "bytes": 118,
+      "sha256": "91d3ff2fc9b45d03a8a2afa2683d3b86ffdb264838bbb977cdcd3fc4f425f940",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/console.log",
+      "bytes": 6134,
+      "sha256": "e3d5c43cd7b3889715394e61c528f497f91d3789642c33a0114a7ba60db84fdb",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/functions.tsv",
+      "bytes": 395,
+      "sha256": "e5490534e01211ce3958c59c2c2eb38fafc446dec83176147c85073dc200fdcb",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/ghidra.log",
+      "bytes": 6150,
+      "sha256": "8763e816c1b31740169dcff2e9a2039be75cd6b1ddfbaf1d953f244b634ac1c6",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/references.tsv",
+      "bytes": 497,
+      "sha256": "5b050f872f80ce8aec8b608a194e2c5294d61ef5409863ded6c62422b57ac391",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-native-20261010-01/script.log",
+      "bytes": 82,
+      "sha256": "6da2bc79e5484140eeca70adfbef8ffa2d9088ee78d4053355e788c7ffa62d4f",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-references-20261010-01/console.log",
+      "bytes": 6051,
+      "sha256": "5e155e9bdf9bbf2d1cd8109f246662c1f3a2533d0fec7b350429874803efdb29",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-references-20261010-01/ghidra.log",
+      "bytes": 6047,
+      "sha256": "ed90ba923e7142b8eff30b5186e69c7b4d28886821207e5b49df2d2f76fe6557",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-references-20261010-01/references.tsv",
+      "bytes": 261,
+      "sha256": "90115d0716a51da4bfaca1e4fac9b9aaa2da86b638240f977b146cd5335d2e9e",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-gate-references-20261010-01/script.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-stations-paused-20261010-01/metadata.json",
+      "bytes": 698,
+      "sha256": "c284b0efef19da90c3fc7cd759c067639cc52084f71448471bfad068ee749fa7",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-stations-paused-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-stations-paused-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-stations-paused-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-driver-stations-paused-20261010-01/samples.jsonl",
+      "bytes": 215464,
+      "sha256": "c123a4672eae8f727d889e4ea2ac44edd8ce39230421878a9532174906524357",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-checkpoint-context-20261010-01/context.json",
+      "bytes": 275,
+      "sha256": "1828047e79c8a270c607bf033252f74833c92add389cff57a9f16e640e11afb7",
+      "included": false
+    },
+    {
+      "path": "captures/station-ai-flag-writer-native-20261010-01-byte-verification.json",
+      "bytes": 542,
+      "sha256": "c04ab9c7ebbd5d6a197e3dbcaa6dbbfe49689d3b257816f96d904eca6f9b2d04",
+      "included": false
+    },
+    {
+      "path": "captures/station-ai-flag-writer-native-20261010-01/005a3941.asm",
+      "bytes": 21163,
+      "sha256": "c1022c1faecfbbab7653038ad6de87b33e3c305c5d82b652695e088ad34d4411",
+      "included": false
+    },
+    {
+      "path": "captures/station-ai-flag-writer-native-20261010-01/005a3941.bytes.tsv",
+      "bytes": 10778,
+      "sha256": "599ccfb359e8584caebcf6e205cc1b6c0d2c964df1680f17e0867af01a408686",
+      "included": false
+    },
+    {
+      "path": "captures/station-ai-flag-writer-native-20261010-01/005a3941.c",
+      "bytes": 6641,
+      "sha256": "ef8568612c32655deebe243ee23bcc86f11ec351efbeaee794be0037c7b688fc",
+      "included": false
+    },
+    {
+      "path": "captures/station-ai-flag-writer-native-20261010-01/provenance.json",
+      "bytes": 403,
+      "sha256": "925b73ed0e25cfea4008d5431c7bc77b79d7fd75c40508f0dab72018dcbf4a8e",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01-byte-verification.json",
+      "bytes": 887,
+      "sha256": "d41d637bb0af1f2d612b46b70798ff8eb3514d69148b194109571eecb3bd857f",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a102e.asm",
+      "bytes": 4550,
+      "sha256": "988cbe08f489352b7088280e2672fd7a11ac3eebde38942bc69d7b6a634ffc28",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a102e.bytes.tsv",
+      "bytes": 2216,
+      "sha256": "2d79172c3a3307d7664e91931122a7fe97df259ce0907aab6ae8ffc93c0d7b7b",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a102e.c",
+      "bytes": 1570,
+      "sha256": "ee08b51bb14f1eccd674a40bc27a56be8c5a23e7c3bb3f46f51e3e832af895a0",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a1b1a.asm",
+      "bytes": 21578,
+      "sha256": "d1ac4d26429656bd51bf1f11c68715c1d56efa07a911eaae8093837ad1284c92",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a1b1a.bytes.tsv",
+      "bytes": 12194,
+      "sha256": "13792e1c93c10129050304f57a4c9855ad60750b720765425fde9f035cffac89",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a1b1a.c",
+      "bytes": 7755,
+      "sha256": "27799848df99806244830c514c96d0e3ff2424526c91eddf520b7bf2d246b53b",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a2744.asm",
+      "bytes": 4687,
+      "sha256": "262953da2bdb8dbd0b68a24b8b853555586ddc2626007607c964f7f61ab0e38f",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a2744.bytes.tsv",
+      "bytes": 2544,
+      "sha256": "24881c92549f7b5a1c419535322d71ce9ec313e2f630c888a804cd0106315d8a",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/005a2744.c",
+      "bytes": 1528,
+      "sha256": "21f1dfc960eb0030813e7f5dcde47ebb66dd44de2f0c50a0505f1af56f0edae0",
+      "included": false
+    },
+    {
+      "path": "captures/station-flag-init-native-20261010-01/provenance.json",
+      "bytes": 1203,
+      "sha256": "4d5864090c2c0bbbcb8b24df8c7c20c4445090cabaf9ba3e12d5087a1baf6ab7",
+      "included": false
     }
   ]
 }
