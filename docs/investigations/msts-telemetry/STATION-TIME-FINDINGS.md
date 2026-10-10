@@ -1,5 +1,7 @@
 # Station record times and regenerated distances
 
+2026-10-10 follow-up: [STATION-DEPARTURE-FINDINGS.md](STATION-DEPARTURE-FINDINGS.md) now validates a moving player departure and Baltimore-to-Edgewood selection advance. Historical no-departure statements below describe the earlier captures. Boarding countdown and populated AI stops remain unvalidated.
+
 Player station processor00586f58 uses activity+80 as its service and service+34 as selected record. It writes global day clock80acd4 into record08 on the accepted arrival/boarding branch (005875a2), sets record1e bit2 and enables activity370 with a duration at374. It writes clock80acd4 into record10 on departure-related branches, including005874da, and sets record1e bit8. These are recorded arrival/departure candidates, not universally physical sensor timestamps.
 
 Record08 can also be copied from record04: one branch handles a passed platform with zero platform3c, and another uses global793f14. The latter clears793f14 afterward and sets record1e bits2/20. Therefore the first Maryland record08=28801, equal to declared arrival, does not prove arrival was observed at that exact gameplay time. The snapshot first-record flags1e=0x22 are consistent with this behavior but do not independently prove which writer executed. Record10 was0 for both stops; no departure transition has yet been captured.

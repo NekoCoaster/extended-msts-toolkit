@@ -2,6 +2,8 @@
 
 # Extraction and evidence handoff
 
+2026-10-10 update: current inventory is1,043 candidates; current coverage is DISCOVERY-COVERAGE.md. The counts and fixture descriptions in historical sections below are checkpoint-specific. STATION-DEPARTURE-FINDINGS.md validates representative player departure/next-stop advancement; COUPLING-LIFECYCLE-FINDINGS.md validates player coupling/separation. Remaining boarding, AI, clock and semantic-audit gaps are not closed by these results.
+
 This is a working handoff for the independent research phase associated with issue 7. Discovery remains incomplete. It specifies how to use the existing evidence and probes; it does not authorize or implement production NEMT integration, prescribe export frequency, or select telemetry to retain.
 
 ## Catalogue and evidence

@@ -1,5 +1,7 @@
 # Resume MSTS telemetry discovery in a new chat
 
+Resumed 2026-10-10: the September checkpoint below is historical. Current continuation is in STATION-DEPARTURE-FINDINGS.md and DISCOVERY-COVERAGE.md. Player Baltimore departure and Edgewood selection now validated; PID12888 paused at28862.025390625. Research remains active and incomplete. Inventory rebuild adds four configuration-only paths from already installed TGV2N files (1,043 total); prior127source hashes unchanged. See resume-source-drift-20261010.json. No production NEMT changes.
+
 Prepared2026-09-28 after completing player/loose-stock coupling and separation. The major goal is INCOMPLETE. User requested wrap-up and a new-chat handoff; the old task goal is to be paused after publication. No capture remains running. No production NEMT changes were made.
 
 ## Starter prompt

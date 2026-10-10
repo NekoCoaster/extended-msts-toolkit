@@ -1169,6 +1169,15 @@ for row in rows:
         row['evidence_status']+=';player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40'
         row['limitations']=row['limitations'].replace('coupling/detachment transitions remain unvalidated.','coupling/detachment transitions are now validated for this player fixture.')
         row['limitations']+=' Object addresses/IDs persist in this session,body addresses alternate. Five incomplete reads despite stable roots/count;845full-read clock crossings,8car and142body reread instabilities. No AI coupling or remote-stock generalization.'
+# Resumed passenger fixture: real low-speed departure and selected-stop advance.
+departure_ids={'station.recorded_departure','station.state_flags','service.ordered_operational_records','service.efficiency_candidate'}
+for row in rows:
+    if row['id'] in departure_ids:
+        row['evidence'].extend(['STATION-DEPARTURE-FINDINGS.md','analyse_station_departure.py','station-departure-20261010-summary.json','captures/maryland-resume-departure-20261010-01/samples.jsonl'])
+        row['evidence_status']+=';2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75'
+        for obsolete in ('Departure10 zero in both samples. ', 'Only cue-state transition observed. ', 'No nonzero boarding timer or recorded departure transition. ', ' Intended departure capture did not move the train; no actual departure or next-stop selection was validated.', 'Maryland populated records sampled while stationary;no live selection advance or departure. '):
+            row['limitations']=row['limitations'].replace(obsolete,'')
+        row['limitations']+=' Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Boarding countdown remains zero and AI stop lists empty. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

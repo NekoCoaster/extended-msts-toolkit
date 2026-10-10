@@ -67369,6 +67369,54 @@
       "bytes": 473637,
       "sha256": "26a6ed6475cbe17067be773a98764771b75cc289c6611667b84b9da0c151e7dc",
       "included": false
+    },
+    {
+      "path": "captures/maryland-resume-departure-20261010-01/metadata.json",
+      "bytes": 700,
+      "sha256": "2c9a8cf4802422466e9899a2d2ee712ddd13fe7a07e42f054cde0382cf5fd985",
+      "included": false
+    },
+    {
+      "path": "captures/maryland-resume-departure-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/maryland-resume-departure-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/maryland-resume-departure-20261010-01/read_station_series.py",
+      "bytes": 3689,
+      "sha256": "a1f7c74900113971ab6c16d3396d4760c9339f81745334c67aef2866eb94b930",
+      "included": false
+    },
+    {
+      "path": "captures/maryland-resume-departure-20261010-01/samples.jsonl",
+      "bytes": 3771186,
+      "sha256": "39600edbaecde0d09e6b5cc6c35746c3ab7f862596715f5740f49e2cca320c42",
+      "included": false
+    },
+    {
+      "path": "captures/resume-20261010-baseline-01/metadata.json",
+      "bytes": 453,
+      "sha256": "9d50ccf96638d0053d8f540d4edf581e3845c44e0008f1387a35892c48921fe7",
+      "included": false
+    },
+    {
+      "path": "captures/resume-20261010-baseline-01/reader.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/resume-20261010-baseline-01/samples.jsonl",
+      "bytes": 4031,
+      "sha256": "8847c0128d41b7413a48f8b63f431e537c516f632b85a5ec24ab3a1899f28e2e",
+      "included": false
     }
   ]
 }

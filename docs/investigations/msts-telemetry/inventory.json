@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T17:31:48.543115+00:00",
+  "generated_utc": "2026-10-10T00:05:18.641013+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -7,11 +7,11 @@
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
-    "config_paths": 507,
-    "config_leaf_paths": 474,
+    "config_paths": 511,
+    "config_leaf_paths": 478,
     "config_mixed_paths": 37,
-    "files_scanned": 126,
-    "total": 1039
+    "files_scanned": 143,
+    "total": 1043
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -1444,6 +1444,12 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf",
           "control": "MultiStateDisplay",
           "units": null,
@@ -1599,6 +1605,18 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "CabSignalDisplay",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "CabSignalDisplay",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf",
           "control": "CabSignalDisplay",
@@ -1906,12 +1924,24 @@
       "applicability": "player where cab/engine supports it; AI unknown",
       "value_type": "native channel dependent",
       "units": [
+        "BAR",
         "KGS_PER_SQUARE_CM",
         "KILOPASCALS",
         "PSI"
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Dial",
+          "units": [
+            "BAR"
+          ],
+          "range": [
+            "0",
+            "6"
+          ]
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "Dial",
@@ -2088,6 +2118,7 @@
       "applicability": "player where cab/engine supports it; AI unknown",
       "value_type": "native channel dependent",
       "units": [
+        "BAR",
         "INCHES_OF_MERCURY",
         "KGS_PER_SQUARE_CM",
         "KILOPASCALS",
@@ -2095,6 +2126,17 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; electric raw source: lead+0x238 (float)",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Dial",
+          "units": [
+            "BAR"
+          ],
+          "range": [
+            "0",
+            "6"
+          ]
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf",
           "control": "Dial",
@@ -2275,6 +2317,12 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "DigitalClock",
+          "units": null,
+          "range": null
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf",
           "control": "DigitalClock",
           "units": null,
@@ -2334,6 +2382,12 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; electric raw source: controller+0x50 (float)",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\CABVIEW\\dash9.cvf",
           "control": "MultiStateDisplay",
@@ -2399,6 +2453,24 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; electric raw source: controller+0x50 (float)",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "CombinedControl",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "CombinedControl",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "CombinedControl",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "CombinedControl",
@@ -2698,6 +2770,18 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; electric raw source: controller+0xb8 (uint32)",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TriState",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TriState",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "TriState",
@@ -3076,6 +3160,24 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; steam-specific source: controller+0xc4; raw controller value; electric raw source: controller+0xf0 (float)",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Lever",
+          "units": null,
+          "range": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Lever",
+          "units": null,
+          "range": [
+            "0",
+            "1"
+          ]
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf",
           "control": "Lever",
           "units": null,
@@ -3259,11 +3361,23 @@
       "applicability": "player where cab/engine supports it; AI unknown",
       "value_type": "native channel dependent",
       "units": [
+        "BAR",
         "KILOPASCALS",
         "PSI"
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Dial",
+          "units": [
+            "BAR"
+          ],
+          "range": [
+            "0",
+            "6"
+          ]
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf",
           "control": "Dial",
@@ -3543,6 +3657,12 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf",
           "control": "MultiStateDisplay",
           "units": null,
@@ -3603,6 +3723,18 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TriState",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TriState",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "TriState",
@@ -3770,6 +3902,12 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TwoState",
+          "units": null,
+          "range": null
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\CABVIEW\\2000.cvf",
           "control": "TwoState",
           "units": null,
@@ -3861,6 +3999,17 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; derived native display value uses loaded route voltage, gate-enable setting and bounded consist condition; see read_electric_voltage.py",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "VOLTS"
+          ],
+          "range": [
+            "0",
+            "35000"
+          ]
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "Gauge",
           "units": [
@@ -3945,6 +4094,17 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "AMPS"
+          ],
+          "range": [
+            "-900",
+            "2100"
+          ]
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf",
           "control": "Dial",
@@ -4041,11 +4201,23 @@
       "applicability": "player where cab/engine supports it; AI unknown",
       "value_type": "native channel dependent",
       "units": [
+        "BAR",
         "KILOPASCALS",
         "PSI"
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; electric raw source: lead+0x412 (float)",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Dial",
+          "units": [
+            "BAR"
+          ],
+          "range": [
+            "0",
+            "10"
+          ]
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "Dial",
@@ -4215,6 +4387,18 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "MultiStateDisplay",
           "units": null,
@@ -4287,6 +4471,24 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; electric raw source: controller+0x264 (uint32)",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TwoState",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TwoState",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "TwoState",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "TwoState",
@@ -4371,6 +4573,12 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf",
           "control": "MultiStateDisplay",
           "units": null,
@@ -4431,6 +4639,18 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "MultiStateDisplay",
@@ -4852,6 +5072,12 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf",
           "control": "MultiStateDisplay",
           "units": null,
@@ -4980,10 +5206,22 @@
       "applicability": "player where cab/engine supports it; AI unknown",
       "value_type": "native channel dependent",
       "units": [
+        "KM_PER_HOUR",
         "MILES_PER_HOUR"
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Dial",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "0",
+            "300"
+          ]
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf",
           "control": "Digital",
@@ -5056,6 +5294,94 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "0",
+            "160"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "36",
+            "196"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "136",
+            "296"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "236",
+            "396"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "0",
+            "999999"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "0",
+            "999999"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "0",
+            "999999"
+          ]
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Gauge",
+          "units": [
+            "KM_PER_HOUR"
+          ],
+          "range": [
+            "0",
+            "999999"
+          ]
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
           "control": "Dial",
@@ -6026,6 +6352,15 @@
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt; steam-specific source: controller+0xfc; raw controller value; electric raw source: controller+0x128 (float)",
       "evidence": [
         {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "Lever",
+          "units": null,
+          "range": [
+            "0",
+            "1"
+          ]
+        },
+        {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\CABVIEW\\2000.cvf",
           "control": "Lever",
           "units": null,
@@ -6413,6 +6748,12 @@
       ],
       "extraction": "Native cab dispatchers mapped per engine; inspect native_dispatch for exact branch and source excerpt",
       "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+          "control": "MultiStateDisplay",
+          "units": null,
+          "range": null
+        },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf",
           "control": "MultiStateDisplay",
@@ -8505,6 +8846,14 @@
             "15"
           ],
           "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Engine / BrakeCutsPowerAtBrakeCylinderPressure",
+          "example": [
+            "15"
+          ],
+          "syntax": "leaf atoms"
         }
       ],
       "evidence_status": "static configuration extracted; not a live changing value",
@@ -9518,6 +9867,14 @@
         },
         {
           "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\acelahhl.eng",
+          "path": "Engine / DoesBrakeCutPower",
+          "example": [
+            "1"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
           "path": "Engine / DoesBrakeCutPower",
           "example": [
             "1"
@@ -15886,6 +16243,14 @@
             "1"
           ],
           "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Engine / OverspeedMonitor / MonitoringDeviceTriggerOnTrackOverspeed",
+          "example": [
+            "1"
+          ],
+          "syntax": "leaf atoms"
         }
       ],
       "evidence_status": "static configuration extracted; not a live changing value",
@@ -15913,6 +16278,14 @@
           "path": "Engine / OverspeedMonitor / MonitoringDeviceTriggerOnTrackOverspeedMargin",
           "example": [
             "2"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Engine / OverspeedMonitor / MonitoringDeviceTriggerOnTrackOverspeedMargin",
+          "example": [
+            "12"
           ],
           "syntax": "leaf atoms"
         }
@@ -16349,6 +16722,46 @@
           "path": "Engine / ShovelCoalMass",
           "example": [
             "1lb"
+          ],
+          "syntax": "leaf atoms"
+        }
+      ],
+      "evidence_status": "static configuration extracted; not a live changing value",
+      "update_or_lifecycle": "asset load or reload",
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+    },
+    {
+      "id": "config..eng:Engine.Skip",
+      "meaning": "Engine.Skip configured value",
+      "applicability": "asset/service/activity dependent; bind by actual runtime identity",
+      "value_type": "SIMIS direct node tokens",
+      "units": "as written in source; infer no units",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Engine / Skip",
+          "example": [
+            "defaut:",
+            "1"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Engine / Skip",
+          "example": [
+            "defaut:",
+            "3"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Engine / Skip",
+          "example": [
+            "defaut:",
+            "15"
           ],
           "syntax": "leaf atoms"
         }
@@ -18117,6 +18530,14 @@
           ],
           "syntax": "leaf atoms"
         },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / BrakeDistributorApplicationRate",
+          "example": [
+            "5"
+          ],
+          "syntax": "leaf atoms"
+        },
         "brake-parameter-map.json",
         "VEHICLE-SYSTEM-FINDINGS.md"
       ],
@@ -18145,6 +18566,14 @@
           "path": "Wagon / BrakeDistributorEmergencyResPressure",
           "example": [
             "110"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / BrakeDistributorEmergencyResPressure",
+          "example": [
+            "120"
           ],
           "syntax": "leaf atoms"
         },
@@ -18179,6 +18608,14 @@
           ],
           "syntax": "leaf atoms"
         },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / BrakeDistributorFullServicePressure",
+          "example": [
+            "24"
+          ],
+          "syntax": "leaf atoms"
+        },
         "brake-parameter-map.json",
         "VEHICLE-SYSTEM-FINDINGS.md"
       ],
@@ -18207,6 +18644,14 @@
           "path": "Wagon / BrakeDistributorMaxAuxilaryResPressure",
           "example": [
             "110"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / BrakeDistributorMaxAuxilaryResPressure",
+          "example": [
+            "120"
           ],
           "syntax": "leaf atoms"
         },
@@ -18241,6 +18686,14 @@
           ],
           "syntax": "leaf atoms"
         },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / BrakeDistributorNormalFullReleasePressure",
+          "example": [
+            "74"
+          ],
+          "syntax": "leaf atoms"
+        },
         "brake-parameter-map.json",
         "VEHICLE-SYSTEM-FINDINGS.md"
       ],
@@ -18272,6 +18725,14 @@
           ],
           "syntax": "leaf atoms"
         },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / BrakeDistributorReleaseRate",
+          "example": [
+            "5"
+          ],
+          "syntax": "leaf atoms"
+        },
         "brake-parameter-map.json",
         "VEHICLE-SYSTEM-FINDINGS.md"
       ],
@@ -18300,6 +18761,14 @@
           "path": "Wagon / BrakeDistributorTrainPipeControlRatio",
           "example": [
             "2.03"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / BrakeDistributorTrainPipeControlRatio",
+          "example": [
+            "2.27"
           ],
           "syntax": "leaf atoms"
         },
@@ -18753,6 +19222,14 @@
           "path": "Wagon / Coupling / CouplingUniqueType",
           "example": [
             "\"Series7000\""
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Coupling / CouplingUniqueType",
+          "example": [
+            "\"tgvrigid\""
           ],
           "syntax": "leaf atoms"
         }
@@ -19709,6 +20186,80 @@
       "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
     },
     {
+      "id": "config..eng:Wagon.Lights.Light.Conditions.Service",
+      "meaning": "Wagon.Lights.Light.Conditions.Service configured value",
+      "applicability": "asset/service/activity dependent; bind by actual runtime identity",
+      "value_type": "SIMIS direct node tokens",
+      "units": "as written in source; infer no units",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Lights / Light / Conditions / Service",
+          "example": [
+            "2"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Lights / Light / Conditions / Service",
+          "example": [
+            "2"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Lights / Light / Conditions / Service",
+          "example": [
+            "2"
+          ],
+          "syntax": "leaf atoms"
+        }
+      ],
+      "evidence_status": "static configuration extracted; not a live changing value",
+      "update_or_lifecycle": "asset load or reload",
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+    },
+    {
+      "id": "config..eng:Wagon.Lights.Light.Conditions.TimeOfDay",
+      "meaning": "Wagon.Lights.Light.Conditions.TimeOfDay configured value",
+      "applicability": "asset/service/activity dependent; bind by actual runtime identity",
+      "value_type": "SIMIS direct node tokens",
+      "units": "as written in source; infer no units",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Lights / Light / Conditions / TimeOfDay",
+          "example": [
+            "0"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Lights / Light / Conditions / TimeOfDay",
+          "example": [
+            "0"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Lights / Light / Conditions / TimeOfDay",
+          "example": [
+            "0"
+          ],
+          "syntax": "leaf atoms"
+        }
+      ],
+      "evidence_status": "static configuration extracted; not a live changing value",
+      "update_or_lifecycle": "asset load or reload",
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+    },
+    {
       "id": "config..eng:Wagon.Lights.Light.Conditions.Unit",
       "meaning": "Wagon.Lights.Light.Conditions.Unit configured value",
       "applicability": "asset/service/activity dependent; bind by actual runtime identity",
@@ -20631,6 +21182,37 @@
             "3.08m",
             "4.57m",
             "11.75m"
+          ],
+          "syntax": "leaf atoms"
+        }
+      ],
+      "evidence_status": "static configuration extracted; not a live changing value",
+      "update_or_lifecycle": "asset load or reload",
+      "limitations": "Dynamic counterpart, defaulting and parser semantics require separate tracing. Not every config token has a changing telemetry counterpart."
+    },
+    {
+      "id": "config..eng:Wagon.Skip",
+      "meaning": "Wagon.Skip configured value",
+      "applicability": "asset/service/activity dependent; bind by actual runtime identity",
+      "value_type": "SIMIS direct node tokens",
+      "units": "as written in source; infer no units",
+      "extraction": "Read installed SIMIS asset; attach configuration metadata to runtime entity",
+      "evidence": [
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng",
+          "path": "Wagon / Skip",
+          "example": [
+            "defaut:",
+            "TGV2NMoteng.sms"
+          ],
+          "syntax": "leaf atoms"
+        },
+        {
+          "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot2.eng",
+          "path": "Wagon / Skip",
+          "example": [
+            "defaut:",
+            "TGV2NMoteng.sms"
           ],
           "syntax": "leaf atoms"
         }
@@ -26513,11 +27095,15 @@
         "pass149-byte-verification.json",
         "maryland-record-comparison.json",
         "captures/maryland-records-paused-01/records.json",
-        "captures/maryland-efficiency-paused-01/efficiency.json"
+        "captures/maryland-efficiency-paused-01/efficiency.json",
+        "STATION-DEPARTURE-FINDINGS.md",
+        "analyse_station_departure.py",
+        "station-departure-20261010-summary.json",
+        "captures/maryland-resume-departure-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected",
+      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75",
       "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Selected-record override bypasses baseline clamps;no universal0..1 guarantee. First Maryland record is selected with effective0.75. Second-record0.289063 is populated but has not been observed as effective208. Baseline service parser is traced; complete activity efficiency merge and reset behavior remain unresolved. Per-field update cadence and changing override transitions remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Selected-record override bypasses baseline clamps;no universal0..1 guarantee. First Maryland record is selected with effective0.75. Second-record0.289063 is populated but has not been observed as effective208. Baseline service parser is traced; complete activity efficiency merge and reset behavior remain unresolved. Per-field update cadence and changing override transitions remain unvalidated. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Boarding countdown remains zero and AI stop lists empty. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures."
     },
     {
       "id": "service.effective_speed_limit",
@@ -32021,11 +32607,15 @@
         "captures/maryland-station-departure-01/samples.jsonl",
         "pass153-byte-verification.json",
         "pass155-byte-verification.json",
-        "station-successor-model.json"
+        "station-successor-model.json",
+        "STATION-DEPARTURE-FINDINGS.md",
+        "analyse_station_departure.py",
+        "station-departure-20261010-summary.json",
+        "captures/maryland-resume-departure-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition",
+      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75",
       "update_or_lifecycle": "service loading/path reconstruction/activity schedule merge;progress selection and explicit advance;full reset and AI-stop lifecycle unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Maryland populated records sampled while stationary;no live selection advance or departure. Scheduled4/c loader/merge and recorded8/10 player writers traced;arrival8 can be synthesized. Live distance14 differs slightly from file declarations and has a native geometry-rebuild path. Geometry helper may leave outputs unwritten on failed lookups. Successor returns null for empty,end or missing identity;null input selects first record. Thus null alone does not prove route completion. Complete timetable,AI populated stops,boarding countdown and second-record effective efficiency remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Scheduled4/c loader/merge and recorded8/10 player writers traced;arrival8 can be synthesized. Live distance14 differs slightly from file declarations and has a native geometry-rebuild path. Geometry helper may leave outputs unwritten on failed lookups. Successor returns null for empty,end or missing identity;null input selects first record. Thus null alone does not prove route completion. Complete timetable,AI populated stops,boarding countdown and second-record effective efficiency remain unvalidated. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Boarding countdown remains zero and AI stop lists empty. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures."
     },
     {
       "id": "station.recorded_arrival",
@@ -32067,11 +32657,15 @@
         "pass152-byte-verification.json",
         "pass154-byte-verification.json",
         "captures/maryland-station-wait-01/samples.jsonl",
-        "captures/maryland-station-departure-01/samples.jsonl"
+        "captures/maryland-station-departure-01/samples.jsonl",
+        "STATION-DEPARTURE-FINDINGS.md",
+        "analyse_station_departure.py",
+        "station-departure-20261010-summary.json",
+        "captures/maryland-resume-departure-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged",
+      "evidence_status": "native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75",
       "update_or_lifecycle": "station-state event writes; retained record values, not continuous clocks",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. Departure10 zero in both samples. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved. Intended departure capture did not move the train; no actual departure or next-stop selection was validated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Boarding countdown remains zero and AI stop lists empty. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures."
     },
     {
       "id": "station.scheduled_arrival",
@@ -32128,11 +32722,15 @@
         "pass152-byte-verification.json",
         "pass154-byte-verification.json",
         "captures/maryland-station-wait-01/samples.jsonl",
-        "captures/maryland-station-departure-01/samples.jsonl"
+        "captures/maryland-station-departure-01/samples.jsonl",
+        "STATION-DEPARTURE-FINDINGS.md",
+        "analyse_station_departure.py",
+        "station-departure-20261010-summary.json",
+        "captures/maryland-resume-departure-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "live first-stop0x22->0x62 while stationary; departure remained unset",
+      "evidence_status": "live first-stop0x22->0x62 while stationary; departure remained unset;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75",
       "update_or_lifecycle": "frame-driven processing and station events; pause halts observed progression",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Only cue-state transition observed. No nonzero boarding timer or recorded departure transition. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Boarding countdown remains zero and AI stop lists empty. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures."
     },
     {
       "id": "station.boarding_active",
