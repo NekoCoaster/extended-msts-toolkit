@@ -1260,6 +1260,13 @@ for row in rows:
         row.update(metadata)
         row['evidence']=evidence
 # Scoped lifecycle evidence for session/service/evaluation candidates.
+for fixture_source in json.loads((ROOT/'captures/winter-ai-fixture-20261010-01/provenance.json').read_text()):
+    fixture_path=Path(fixture_source['source'])
+    fixture_bytes=fixture_path.read_bytes()
+    fixture_hash=hashlib.sha256(fixture_bytes).hexdigest()
+    if fixture_hash!=fixture_source['sha256']:
+        raise ValueError('Winter AI fixture changed since capture: '+str(fixture_path))
+    sources[str(fixture_path)]={'sha256':fixture_hash,'bytes':len(fixture_bytes)}
 reset_metadata=json.loads((ROOT/'session-reset-metadata.json').read_text())
 if not set(reset_metadata)<={row['id'] for row in rows} or set(reset_metadata)&set(reviewed_metadata):
     raise ValueError('Unexpected or overlapping session-reset review scope')

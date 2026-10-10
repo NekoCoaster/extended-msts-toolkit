@@ -68467,6 +68467,180 @@
       "bytes": 20217,
       "sha256": "bd52734b1bc4a336b6cc48d9a986c38cccdb2f5ac4e41be39382d8c9e6e26599",
       "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+      "bytes": 715,
+      "sha256": "ce6d74b2b3a0bea60fccd5c16841fec79ebd1f94aecaeac674257cbdd7e750d5",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/005a41c2.asm",
+      "bytes": 27999,
+      "sha256": "5652d44d4375f0993068abe38a4e3fce980e051f50b65b30fdb033740c083434",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/005a41c2.bytes.tsv",
+      "bytes": 15320,
+      "sha256": "e72ed487fc3d9a5111012db4db885689bea9290c25c9266eb707f881ea6c9e30",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/005a41c2.c",
+      "bytes": 10772,
+      "sha256": "93efb712ac98085a681928760d0eb30774a20cd4cb0bf933b60bd74907ead9f1",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/005a8a9c.asm",
+      "bytes": 1790,
+      "sha256": "451f1488ab37af7b81ce4bd600a5a82d948abefad9d934834f7b4ea0dfa32a21",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/005a8a9c.bytes.tsv",
+      "bytes": 987,
+      "sha256": "cb645839afb9439349579f4854bb11e8771ebb477f26ce1d0d7961ca6e91252a",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/005a8a9c.c",
+      "bytes": 768,
+      "sha256": "de08bc5d2a4a57f83470b19cb38329d018c8e403b7470e6b02950355191d6e97",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/provenance.json",
+      "bytes": 707,
+      "sha256": "41ead57810d417ca087be9e168dacd3c9fe92e32c7497d23213e457fa3fcabf2",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/ai-platform-countdown-native-20261010-01/verify_code_bytes.py",
+      "bytes": 2038,
+      "sha256": "17796a9fb4b949f21710ec7beed3618bb020e600764908b50f62d848f501febd",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-baseline-20261010-01/metadata.json",
+      "bytes": 454,
+      "sha256": "860e4b944c73ce18ed01bc9c097d6578a1de583dff3225295cf464e6a0d14c06",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-baseline-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-baseline-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "bytes": 5525,
+      "sha256": "93732836bb101f20871612c9d2239c1fcd69e64b2e8d65d280183ff05af53c2f",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-fixture-20261010-01/ACTIVITIES-shinhakmachida.act",
+      "bytes": 27496,
+      "sha256": "1dc90c83c2e8922f142f0655152164b0f4e03aa80ea937a1e626d4847ffff192",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-fixture-20261010-01/PATHS-ShinHakWinter (Traffic).pat",
+      "bytes": 4272,
+      "sha256": "7f7b969b3ff80e83ca0e2d046e861d58fdcae090bfe253dc5cf25128fa6ed8aa",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-fixture-20261010-01/PATHS-ShinHakWinter (Traffic01).pat",
+      "bytes": 8442,
+      "sha256": "693bc7ada4502cfe5cb34efac06f9fb78d24c4252a687bf8f108efa0c45fb1c6",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-fixture-20261010-01/SERVICES-ShinHakWinter (Traffic).srv",
+      "bytes": 3168,
+      "sha256": "87e4167507bb869d17c232d95a791358303bc38df20cb6617e0da6b26e7f2992",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-fixture-20261010-01/SERVICES-ShinHakWinter (Traffic01).srv",
+      "bytes": 6072,
+      "sha256": "11f75539635104a05a987a5bd13e0268687ce1fcd1260bf4985177031e6e25e7",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-fixture-20261010-01/TRAFFIC-shinhakwinter.trf",
+      "bytes": 25510,
+      "sha256": "684f0ff2cf51d0f4ea3949020808707c096bef165a85fa281b9e1a1ca358f7d6",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "bytes": 1333,
+      "sha256": "1b7b983960dabbd23ef0b81876809657fc231d67cb287389cb6c83a52d97ae78",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-stops-20261010-01/metadata.json",
+      "bytes": 802,
+      "sha256": "c2b542becf3976562de96255de533b1359166a0b1ff0045f9ace6a97550e1e99",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-stops-20261010-01/read_ai_station_series.py",
+      "bytes": 2607,
+      "sha256": "d331fa416ec21afe40548000add74643e6a388cbbce93b5b75a3713c14a5b8ed",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-stops-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-stops-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-stops-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "bytes": 46842667,
+      "sha256": "367280bf6f51ea88cc0ab7d5ef948d2b632f273f6a376e11d76d636c2f55f47d",
+      "included": false
+    },
+    {
+      "path": "captures/winter-ai-stops-20261010-01/stop.request",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
     }
   ]
 }

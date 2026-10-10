@@ -41,3 +41,8 @@ Stop/wait candidates: +0x1e0 path-end stop; +0x1e4 braking-to-wait; +0x1e8 dwell
 Passes 10–12 preserve native code. Pass11 compares 7,408 instructions / 28,997 bytes: all disk bytes match. One live call differs at 0x494bc1 in broad caller 0x494850 (expected e891c7f6ff; actual e82e573a02). Patch origin is unknown. Driver/registry functions in that pass have no live differences. Do not describe the running executable as globally unpatched. See `pass11-byte-verification.json`.
 
 Next: moving-service and scheduled/distance-driven lifecycle captures; service timing/state initialization; track-position records +0x4c/+0xb4; independent AI brake/traction depth; profile ownership. These remain open. No game input occurred during this checkpoint; pause and on-rail state are confirmed by the read-only captures.
+
+
+## Winter AI platform follow-up, 2026-10-10
+
+AI-PLATFORM-COUNTDOWN-FINDINGS.md supersedes the earlier entirely-unvalidated210/214platform-stop status. Positive countdown,braking,stationary progress,expiry and resumption now observed;selection advances at onset while station time/flags remain unchanged. Distinct path-wait1e8 and AI timetable/recorded-time semantics remain open.

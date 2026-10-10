@@ -578,5 +578,29 @@
   "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\tokyohakonetutorial.act": {
     "sha256": "353461954973c3b264dff7f3b3ffd8af4b6401d04d5fa095210e5ca0ff341a44",
     "bytes": 56212
+  },
+  "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\shinhakmachida.act": {
+    "sha256": "1dc90c83c2e8922f142f0655152164b0f4e03aa80ea937a1e626d4847ffff192",
+    "bytes": 27496
+  },
+  "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\shinhakwinter.trf": {
+    "sha256": "684f0ff2cf51d0f4ea3949020808707c096bef165a85fa281b9e1a1ca358f7d6",
+    "bytes": 25510
+  },
+  "C:\\MSTS\\ROUTES\\JAPAN1\\SERVICES\\ShinHakWinter (Traffic).srv": {
+    "sha256": "87e4167507bb869d17c232d95a791358303bc38df20cb6617e0da6b26e7f2992",
+    "bytes": 3168
+  },
+  "C:\\MSTS\\ROUTES\\JAPAN1\\SERVICES\\ShinHakWinter (Traffic01).srv": {
+    "sha256": "11f75539635104a05a987a5bd13e0268687ce1fcd1260bf4985177031e6e25e7",
+    "bytes": 6072
+  },
+  "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\ShinHakWinter (Traffic).pat": {
+    "sha256": "7f7b969b3ff80e83ca0e2d046e861d58fdcae090bfe253dc5cf25128fa6ed8aa",
+    "bytes": 4272
+  },
+  "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\ShinHakWinter (Traffic01).pat": {
+    "sha256": "693bc7ada4502cfe5cb34efac06f9fb78d24c4252a687bf8f108efa0c45fb1c6",
+    "bytes": 8442
   }
 }

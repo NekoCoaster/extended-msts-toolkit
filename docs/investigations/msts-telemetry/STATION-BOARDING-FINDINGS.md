@@ -45,3 +45,8 @@ The separate final `tokyo-station-final-services-20261010-01` snapshot identifie
 Pause verified at65132.6484375,player speed6.2985272408m/s,throttle20%,Forward,brakes released. Readings remain build/session-specific and asynchronous. The bounded pointer rereads do not guarantee atomicity, complete nested-registry validation or exclusion of address reuse. Raw records are retained for review. No save was overwritten and no installed route/train asset was edited.
 
 Representative player arrival-on-loading, nonzero countdown, paused stability, expiry, departure and next-stop selection are now observed. Timed AI station stops, AI braking/boarding, final-stop outcomes, loading-duration factors, early departure during loading and broader lifecycle/reset cases remain open. These results do not complete the overall telemetry survey.
+
+
+## Winter AI platform follow-up, 2026-10-10
+
+AI-PLATFORM-COUNTDOWN-FINDINGS.md supersedes the earlier entirely-unvalidated210/214platform-stop status. Positive countdown,braking,stationary progress,expiry and resumption now observed;selection advances at onset while station time/flags remain unchanged. Distinct path-wait1e8 and AI timetable/recorded-time semantics remain open.

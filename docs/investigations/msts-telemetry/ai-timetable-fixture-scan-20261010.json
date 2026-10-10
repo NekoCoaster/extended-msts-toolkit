@@ -1,0 +1,779 @@
+{
+  "files": [
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\after the storm (traffic).trf",
+      "sha256": "f0bba9d1b4c882153a3c87c38e5859164c3a67eb490581d2c0987ec736c0da31",
+      "arrival_tokens": 108,
+      "pairs": 108,
+      "equal": 108,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\carlisle-settle winter (traffic).trf",
+      "sha256": "c3135da84a12a48a5837507364f3182f1c7b9c4f504a0ef77c8d7b4a491ada06",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\itr (traffic).trf",
+      "sha256": "d61e654f9aa7c72e6cac79e907bdf7c97690337cfc536a795947c7ca9debd36d",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\local service (traffic).trf",
+      "sha256": "d728c80c5efec9efa3a5e87b851c36cced260452da1245e2e7dc835f02ee7fee",
+      "arrival_tokens": 176,
+      "pairs": 176,
+      "equal": 176,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\low water (traffic).trf",
+      "sha256": "c86a61a72e9050f9c7dd1a63b544b0136f97c6428586edf848f23c740eb47074",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\medical emergency (traffic).trf",
+      "sha256": "d1f2c4353dc7f0299de80ba852c363a6886a06bd176158a9e62fb19541e90cc4",
+      "arrival_tokens": 20,
+      "pairs": 20,
+      "equal": 20,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\royal scot rescue (traffic).trf",
+      "sha256": "800b9fa011873d482b1c3109117a1b64e92e3d59c7ccd5bb19fb83932acbd34f",
+      "arrival_tokens": 3,
+      "pairs": 3,
+      "equal": 3,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\settle-carlisle summer (traffic).trf",
+      "sha256": "ee1c3c78546a2035136bf61c078a3fde1f777fac7d7c18f28314becc72349aec",
+      "arrival_tokens": 226,
+      "pairs": 226,
+      "equal": 226,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\short passenger run (traffic).trf",
+      "sha256": "19d96f2943bda478fe8275e86b73acaad9471871c9ea666d9e2fa5033f392f1e",
+      "arrival_tokens": 8,
+      "pairs": 8,
+      "equal": 8,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\TRAFFIC\\tut5trafficpattern.trf",
+      "sha256": "ba1ad825ffeb141e020cfdece2e8d6f042ecba1ae581a4f9c26948b634f7c67c",
+      "arrival_tokens": 3,
+      "pairs": 3,
+      "equal": 3,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\aioeinsa.trf",
+      "sha256": "4ee034a9cd98b713dd06677dde6ed2950fba198dd7c04d7c28e967c250962f31",
+      "arrival_tokens": 950,
+      "pairs": 950,
+      "equal": 950,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\aioeinsa0.trf",
+      "sha256": "6099a9b131ab7b75b22e69fc007eb48849a6a73bcd66fb1140c76511a541ff5b",
+      "arrival_tokens": 475,
+      "pairs": 475,
+      "equal": 475,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\bride and groom (traffic).trf",
+      "sha256": "e4e2b40e782ac002cac301a83ae4a6039ee5af73a186a8c815683e45c58e2fb7",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\innsbruck - st. anton summer (traffic).trf",
+      "sha256": "a5e8fa5fdd7726aaf300fbf9a1272b62cccfba469b36f430e88f47666f0e9b12",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\itr (traffic).trf",
+      "sha256": "f0572b8335b8ec1d8c922bc41a9426fb03e9e648f3a3119965528e13011b0a17",
+      "arrival_tokens": 44,
+      "pairs": 44,
+      "equal": 44,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\murder on the orient express (traffic).trf",
+      "sha256": "8a5a6044025f8150199b1560b955b43a6f302ef4f6b231aa00654f964e100842",
+      "arrival_tokens": 30,
+      "pairs": 30,
+      "equal": 30,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\royalty on board (traffic).trf",
+      "sha256": "e195cd4a67c3e241ad8853ec6bf870c62dfbdb84c9ea9d057e80e7648391b7bb",
+      "arrival_tokens": 2,
+      "pairs": 2,
+      "equal": 2,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\short passenger run (traffic).trf",
+      "sha256": "0fb42e57452c4a394d70d6dff319741c0f2cba3dd676c1cde54f4ac39312b328",
+      "arrival_tokens": 12,
+      "pairs": 12,
+      "equal": 12,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\TRAFFIC\\st. anton - innsbruck winter (traffic).trf",
+      "sha256": "c0df6c9633b13ccaf24a5875c4c3d173412b3fa444bf68a8a35cc1808011aaab",
+      "arrival_tokens": 24,
+      "pairs": 24,
+      "equal": 24,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\hak-shinwinter (traffic).trf",
+      "sha256": "8c97ae48cac71d9a33435430cf160f85a2a5cd9d21fa53d84dbd7e0552a40721",
+      "arrival_tokens": 38,
+      "pairs": 38,
+      "equal": 38,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\heavy delay day (traffic).trf",
+      "sha256": "80b6b873e55417aaff48b676ecfcabd2874e6af4940eae5b545c2b0793b4c539",
+      "arrival_tokens": 45,
+      "pairs": 45,
+      "equal": 45,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+      "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+      "arrival_tokens": 575,
+      "pairs": 575,
+      "equal": 575,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\public holiday (traffic).trf",
+      "sha256": "e35e01f1174f9c682fc2cf0ec0c22271cf2a95707420e532cd1b9f516f571870",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\shin-hakone summer (traffic).trf",
+      "sha256": "dc22439d957865a8211d226b1edecfc499a18c95d5c8c1f6d6e639f7fff0cdaf",
+      "arrival_tokens": 266,
+      "pairs": 266,
+      "equal": 266,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\shinhakwinter.trf",
+      "sha256": "684f0ff2cf51d0f4ea3949020808707c096bef165a85fa281b9e1a1ca358f7d6",
+      "arrival_tokens": 102,
+      "pairs": 102,
+      "equal": 102,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\short passenger run (traffic).trf",
+      "sha256": "30f1c572530ddae7c488eb794aaf741c7d475c3eb2e87ba3bc2ae54479d77571",
+      "arrival_tokens": 13,
+      "pairs": 13,
+      "equal": 13,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\storm damage (traffic).trf",
+      "sha256": "7954b6d765b25388e4c8f48311cd88e805e3c8d080917cede7873e8e628d1d79",
+      "arrival_tokens": 18,
+      "pairs": 18,
+      "equal": 18,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\tut3traffic.trf",
+      "sha256": "c508a7981745df8df0db1dd7a2a2950a2d3089d748b76316cf7b54b09073d630",
+      "arrival_tokens": 4,
+      "pairs": 4,
+      "equal": 4,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\eastbound river  (traffic).trf",
+      "sha256": "f021dbedb6289ecff57e0d50e0ad046010d62d447045a00f92dab904329e6651",
+      "arrival_tokens": 6,
+      "pairs": 6,
+      "equal": 6,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\isaburo (traffic).trf",
+      "sha256": "d58bfe233a0f6cb4fffa386cf3b82a42ea3c4fbc8ba1082a635a84cb79ad206d",
+      "arrival_tokens": 9,
+      "pairs": 9,
+      "equal": 9,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 1
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\isaburo rescue (traffic).trf",
+      "sha256": "1771957b354376f1ae3395bef3695747aaf9d7ccd3dc54678541e4c6763386e2",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\itr (traffic).trf",
+      "sha256": "9e47596faa6a778c988f1bae2fce6ff0f67049742f2772194249fe7a22000e85",
+      "arrival_tokens": 1,
+      "pairs": 1,
+      "equal": 1,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\low fuel (traffic).trf",
+      "sha256": "ebe7bc239780177fb94054cdcdef69565b1d37ed0542ddfa9785c02dd53fef5f",
+      "arrival_tokens": 1,
+      "pairs": 1,
+      "equal": 1,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\shinpei (traffic).trf",
+      "sha256": "cdf13427003882139e7b27e5d1a6997f8928178c042b2e2c3e160aea995d6afe",
+      "arrival_tokens": 1,
+      "pairs": 1,
+      "equal": 1,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\sunrise train (traffic).trf",
+      "sha256": "cd24d62d7ef53c577e84b1df35d8a382fc63ff27afe5f90f597e52b0a3db26e9",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\westbound river (traffic).trf",
+      "sha256": "467654790df64631fa9cf52a3c1debc2ddd158d0c463561982f448089fa4ba8c",
+      "arrival_tokens": 1,
+      "pairs": 1,
+      "equal": 1,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Marseille-Nimes direct (Reseau).trf",
+      "sha256": "064f23a80990169e35b4018fbbf7bfae8d60f27cb5856994e80dd3c2e0efaf5e",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Marseille-Nimes direct.trf",
+      "sha256": "2e6fd3adc4e1d13637fefd0850ef31c701319d324fd0979c5ba4828612fbd813",
+      "arrival_tokens": 4,
+      "pairs": 4,
+      "equal": 4,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Marseille-Nimes special.trf",
+      "sha256": "448848b2c8422a661eeca1bc2c22170e87c1d0765190a988483dc502a21091ee",
+      "arrival_tokens": 4,
+      "pairs": 4,
+      "equal": 4,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Marseille-Valence direct (Reseau).trf",
+      "sha256": "d47f88aff6ed91155340f5f30b7945c1a0a4a2a62c4d85bd62cf129b8217a6fd",
+      "arrival_tokens": 9,
+      "pairs": 9,
+      "equal": 9,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Marseille-Valence direct.trf",
+      "sha256": "8d528f86f3e9ef469e83489b0462dd4512b9ea439ca5eb260e3bf887b87b7e8a",
+      "arrival_tokens": 9,
+      "pairs": 9,
+      "equal": 9,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Marseille-Valence special.trf",
+      "sha256": "26e0423346132b186aab6636f84bb0cbdf22a98c0318b12c45ed5bea653203a9",
+      "arrival_tokens": 9,
+      "pairs": 9,
+      "equal": 9,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Nimes-Marseille direct (Reseau).trf",
+      "sha256": "5714e5d6084215507e5cf035fcc7342a8563815cfbf5190245519c040f901ee9",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Nimes-Marseille direct.trf",
+      "sha256": "3b0728d98e35ee46d9a24ced7b2b58279380525ed703c1d0d983af05cfb71035",
+      "arrival_tokens": 4,
+      "pairs": 4,
+      "equal": 4,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Nimes-Valence (Reseau).trf",
+      "sha256": "f22434dea0ee152b579ce39f2cdba8dd0cc85090c330b545890eba2090961496",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Nimes-Valence.trf",
+      "sha256": "ceab4c93366979000daa46a7198aaa93ea0bceb091e47caa59e8dd51c3bf23e7",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Valence-Marseille direct (Reseau).trf",
+      "sha256": "cdaede5d4e21d4c56e3391cbce80818f9f982a203f170410136f32c048d5d54d",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Valence-Marseille direct.trf",
+      "sha256": "c3e65c8617c76739a58944c2ab0d6c2614aad0a1cde404a98a3cc54da5b6315f",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Valence-Marseille special.trf",
+      "sha256": "889541d6d6c908c413e993176735af88b7a4fee34b8721982dc425145f8c2496",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Valence-Nimes (Reseau).trf",
+      "sha256": "e52d04dd5af1cebdacc4c6299832a6990ada6c5401bcb210052bb08ccedc0555",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\TRAFFIC\\Valence-Nimes.trf",
+      "sha256": "6913b0da13807663d1d557aaa453cf3d508f42ae58c8bccd129ebeb8f0ff3b21",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\after the storm (traffic).trf",
+      "sha256": "f103c96ac4efd9984fd00b3fe7b6a41c417e96c2f5a2a8a2d1a22462d844b190",
+      "arrival_tokens": 2,
+      "pairs": 2,
+      "equal": 2,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\blizzard (traffic).trf",
+      "sha256": "482842e0d17c7f9f1417cb30f70aa1130681991ca8482e5ed1b8761341e99a17",
+      "arrival_tokens": 5,
+      "pairs": 5,
+      "equal": 5,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\bridge strike (traffic).trf",
+      "sha256": "426fb9ca78bbac67424c89c63bec128aeeb2286efe9bce1cb8c15288de34831d",
+      "arrival_tokens": 4,
+      "pairs": 4,
+      "equal": 4,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 1
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\itr (traffic).trf",
+      "sha256": "5ca02201528dd0d40c5b30273bb7242d1731cf517ec3b1f251a969e8ffe508ca",
+      "arrival_tokens": 8,
+      "pairs": 8,
+      "equal": 8,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\local service (traffic).trf",
+      "sha256": "fdc9f57ba9ef33b5ba5da8c3f3cea3db6571ebf4e4a07405a6d253facc58f5d0",
+      "arrival_tokens": 8,
+      "pairs": 8,
+      "equal": 8,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\marylandtrafficpattern.trf",
+      "sha256": "bcf93fced205e72d2b7d94ba797b6ae2fdd35338e0fe7acc6ef5319df7887776",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\riding the yellows (traffic).trf",
+      "sha256": "24fbb3438fde27ea3bd46182dee5bfe0a5e021b32fc1e9b15fb8c44358fc028a",
+      "arrival_tokens": 14,
+      "pairs": 14,
+      "equal": 14,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\short passenger run (traffic).trf",
+      "sha256": "159c30db68633710a76b05e1977b2da7e54087cfa7e54ba54cd61f8e3ab4038f",
+      "arrival_tokens": 6,
+      "pairs": 6,
+      "equal": 6,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 6
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\summer express (traffic).trf",
+      "sha256": "346f8de4d9f14a4261ab38997649c5a42fbb6c26226e46e516ba07ecf462225c",
+      "arrival_tokens": 35,
+      "pairs": 35,
+      "equal": 35,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\superbowl train (traffic).trf",
+      "sha256": "18e3c115b11d0b3f56b5eab72d435e62d1f767682777d793c666e2575318807d",
+      "arrival_tokens": 33,
+      "pairs": 33,
+      "equal": 33,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\TRAFFIC\\train rescue (traffic).trf",
+      "sha256": "401f34a068d55badf67783ca6f6e57b1c10fd2db03fec81128acc7ef0f7a0b4b",
+      "arrival_tokens": 9,
+      "pairs": 9,
+      "equal": 9,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\auto train with set-out (traffic).trf",
+      "sha256": "f9d60a000810e77c3ebc45666cd64cc8219d98c513f6f9472dc2de653f1b2110",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\cutbank local activity ai traffic.trf",
+      "sha256": "4321c60644b237e06e0a587d975b78f65fb7d8ddaafefb77d0c83445bd8045a2",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\dawn oil train (traffic).trf",
+      "sha256": "c313d62dace83463c4823d63d2daf2ac5a3a92e2e7de5c9d367b0d6f53afa6c6",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\evegrain (traffic).trf",
+      "sha256": "bedbce2ce5199b38cde5fa06cfa243c679a5b3206e2a40e2ccd97af55b0eef77",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\hotbox traffic.trf",
+      "sha256": "7f946c8d7931fe90d0ade7058e042f71a357c6030c547b44d54bd998a6cb5302",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\itr (traffic).trf",
+      "sha256": "c6c32c35da7fb56cefb9fc9d4bb7fe16d834c2377d8c3c61acd2357ebe721d3a",
+      "arrival_tokens": 18,
+      "pairs": 18,
+      "equal": 18,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\kalispell to whitefish local run (traffic).trf",
+      "sha256": "9467b3a51dcebd5c8bac7454a9cdc2f51b316f63b5282f4260f9961b15317073",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\key night train (traffic).trf",
+      "sha256": "e46b42a34a359f44b6010416828aa4d8009f4ecc4695c478765c5d847b197786",
+      "arrival_tokens": 2,
+      "pairs": 2,
+      "equal": 2,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\local_one_traffic.trf",
+      "sha256": "ec45a78af6d3e8ac83f0f7ee60351313804c2f8a70f0a1bed97bc0127d391545",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\long haul east (traffic).trf",
+      "sha256": "adc2800b472a1650966b917ca5c95e10501ba90cdccc17d5547986d79f5adb62",
+      "arrival_tokens": 8,
+      "pairs": 8,
+      "equal": 8,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\long haul west (traffic).trf",
+      "sha256": "a0ae645ca48c5cfd3b2bfe29a43dcda70bc5f2d16fe0c1df2d06fcee6d3f0923",
+      "arrival_tokens": 15,
+      "pairs": 15,
+      "equal": 15,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\morning intermodal (traffic).trf",
+      "sha256": "e925e200af1fe1443848acb260d62ebc4feaff505c05e7819c7275f0b1f8673b",
+      "arrival_tokens": 2,
+      "pairs": 2,
+      "equal": 2,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\noon mixed goods (traffic).trf",
+      "sha256": "89959c91becef5a38f6b6093493e10ffc5b170342aede7cf9bec897d8584cfe2",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\yard_one_traffic1.trf",
+      "sha256": "dfe1b92daedda4520c06f24ab7384bbfd771f4a1192ede12fda4aaf3b0532510",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\TRAFFIC\\yard_two_traffic.trf",
+      "sha256": "24ec2a82adf97d29e3a9f2e4081d85a729d43fb08ce3785774fd7d6d7a156dc4",
+      "arrival_tokens": 0,
+      "pairs": 0,
+      "equal": 0,
+      "positive": 0,
+      "negative": 0,
+      "negative_arrival": 0
+    }
+  ],
+  "file_count": 77,
+  "pairs": 3369,
+  "arrival_tokens": 3369,
+  "positive_pairs": [],
+  "limitations": "Lexical scan of installed route TRAFFIC/*.trf,not full SIMIS parser or runtime-use proof. Adjacent numeric fields only;report token/pair counts expose unmatched cases. Preliminary unsigned-number scan missed8negative equal-time pairs;this signed numeric scan supersedes it."
+}

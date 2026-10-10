@@ -1,0 +1,26 @@
+{
+  "documented_utc": "2026-10-10T01:31:51.750846+00:00",
+  "pid": 12888,
+  "fixture": "Tokyo-Hakone > Shinjuku to Machida in the Winter",
+  "method": "Native UI via computer-use skill @oai/sky;memory probes independently identify AI services",
+  "actions": [
+    "Load winter activity",
+    "Close briefing",
+    "Show F5",
+    "Attempt BackSpace;F5 train brake remained0",
+    "Pause after AI countdown and resumption"
+  ],
+  "player": {
+    "speed_kmh": 0,
+    "throttle_percent": 0,
+    "reverser": "Neutral",
+    "train_brake_display": "0%"
+  },
+  "final": {
+    "screen": "Paused menu",
+    "time": 61414.5234375,
+    "paused": 1,
+    "player_speed": 0.0
+  },
+  "limits": "No visual identification of distant AI trains or confirmation of brake application. AI stopping evidence comes from service state/progress/countdown,not screenshots."
+}

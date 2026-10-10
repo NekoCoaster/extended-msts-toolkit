@@ -70,9 +70,9 @@
     ]
   },
   "service.ordered_operational_records": {
-    "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records",
+    "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records;winter AI platform countdown begins as selection advances,with hold at previous platform and unchanged station time/flag fields",
     "update_or_lifecycle": "service load/schedule merge,station processing,AI path-end reset and teardown/reinitialization",
-    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;timed AI stops/rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific.",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;AI timetable adherence/recorded-time writers,rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific. Winter AI platform holds use210/214;selected already identifies the next stop. AI hold does not imply player-style station flag/time writes.",
     "evidence": [
       "SESSION-RESET-FINDINGS.md",
       "session-reset-20261010-summary.json",
@@ -80,7 +80,14 @@
       "captures/tokyo-result-reset-20261010-01/samples.jsonl",
       "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
       "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
     ]
   },
   "evaluation.speed_episode_count": {
@@ -165,6 +172,34 @@
       "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
       "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
       "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "service.stop_timer_remaining": {
+    "evidence_status": "Winter Tokyo AI positive platform countdown,decrements,pause stability,active zero and expiry observed;all falling pairs1second in this fixture",
+    "update_or_lifecycle": "initialized at selected-stop distance transition,then update-interval decrement while214active;negative result clears value/gate",
+    "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Starts before speed reaches0 and selection already advances to next record. Zero may coexist with active gate. First positive sample is not exact initial duration;passenger/consist inputs and general cadence remain unvalidated. Distinct from player boarding and path-wait elapsed1ec/duration1f0.",
+    "evidence": [
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "service.stop_timer_active": {
+    "evidence_status": "Winter Tokyo AI0->1->0 platform holds captured with braking,stationary progress and movement resumption;physical and abstract service contexts observed",
+    "update_or_lifecycle": "set on stop selection transition;while active nonnegative remaining forces target0;negative remaining clears gate",
+    "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Gate1 does not mean already stationary or doors open. Read countdown,speed,target,progress,selected/previous and update context together. Not activity completion or AI timetable adherence;path-wait1e8 remains unvalidated.",
+    "evidence": [
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
     ]
   }
 }

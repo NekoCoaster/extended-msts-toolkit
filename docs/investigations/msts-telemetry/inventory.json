@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-10T01:20:47.034613+00:00",
+  "generated_utc": "2026-10-10T01:33:43.897896+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -27234,11 +27234,18 @@
         "pass10/005a8ecb.c",
         "pass11/005a41c2.c",
         "pass11/005a5c9a.c",
-        "pass12/005a33af.c"
+        "pass12/005a33af.c",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated",
-      "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files."
+      "evidence_status": "Winter Tokyo AI positive platform countdown,decrements,pause stability,active zero and expiry observed;all falling pairs1second in this fixture",
+      "update_or_lifecycle": "initialized at selected-stop distance transition,then update-interval decrement while214active;negative result clears value/gate",
+      "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Starts before speed reaches0 and selection already advances to next record. Zero may coexist with active gate. First positive sample is not exact initial duration;passenger/consist inputs and general cadence remain unvalidated. Distinct from player boarding and path-wait elapsed1ec/duration1f0."
     },
     {
       "id": "service.stop_timer_active",
@@ -27253,11 +27260,18 @@
         "pass10/005a8ecb.c",
         "pass11/005a41c2.c",
         "pass11/005a5c9a.c",
-        "pass12/005a33af.c"
+        "pass12/005a33af.c",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native code traced and paused values readable; lifecycle and changing driver transitions not yet validated",
-      "update_or_lifecycle": "service lifetime; physics instantiation is separate; per-field producer cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Null train pointer does not mean missing service. Physical-instance flag is AI-specific: observed player has flag zero despite valid train. Stop-state semantic labels remain candidates. Service strings corroborated against installed SRV files."
+      "evidence_status": "Winter Tokyo AI0->1->0 platform holds captured with braking,stationary progress and movement resumption;physical and abstract service contexts observed",
+      "update_or_lifecycle": "set on stop selection transition;while active nonnegative remaining forces target0;negative remaining clears gate",
+      "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Gate1 does not mean already stationary or doors open. Read countdown,speed,target,progress,selected/previous and update context together. Not activity completion or AI timetable adherence;path-wait1e8 remains unvalidated."
     },
     {
       "id": "service.path_end_stop",
@@ -32969,16 +32983,23 @@
         "captures/tokyo-result-reset-20261010-01/samples.jsonl",
         "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
         "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records",
+      "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records;winter AI platform countdown begins as selection advances,with hold at previous platform and unchanged station time/flag fields",
       "update_or_lifecycle": "service load/schedule merge,station processing,AI path-end reset and teardown/reinitialization",
-      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;timed AI stops/rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific."
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;AI timetable adherence/recorded-time writers,rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific. Winter AI platform holds use210/214;selected already identifies the next stop. AI hold does not imply player-style station flag/time writes."
     },
     {
       "id": "station.recorded_arrival",
       "meaning": "Recorded station arrival time; may be synthesized from schedule",
-      "applicability": "player and loaded AI station records;player writes validated;Tokyo AI records read but timed AI-stop writers unvalidated",
+      "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
       "value_type": "float32",
       "units": "day-clock seconds; zero/unset interpretation state-dependent",
       "extraction": "record+0x8 in service30 station-stop list;player00586f58 writes clock80acd4",
@@ -33015,16 +33036,23 @@
         "session-reset-20261010-summary.json",
         "session-reset-ui-20261010.json",
         "captures/tokyo-result-reset-20261010-01/samples.jsonl",
-        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Accepted loading writes arrival in representative Tokyo stops,including final65979.2734375;alternate native synthesis branches retained;restarted initial record has synthetic64805 while clock64801.2265625",
+      "evidence_status": "Accepted loading writes arrival in representative Tokyo stops,including final65979.2734375;alternate native synthesis branches retained;restarted initial record has synthetic64805 while clock64801.2265625;all five winter AI services retain0 through observed platform countdown/stop/resumption",
       "update_or_lifecycle": "written by accepted loading or native synthesis branches;retained in record",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not necessarily physical stop time. Zero/unset and synthesis must be interpreted with flags/state;AI event timing and midnight remain open."
     },
     {
       "id": "station.recorded_departure",
       "meaning": "Recorded station departure-related event time",
-      "applicability": "player and loaded AI station records;player writes validated;Tokyo AI records read but timed AI-stop writers unvalidated",
+      "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
       "value_type": "float32",
       "units": "day-clock seconds; zero/unset interpretation state-dependent",
       "extraction": "record+0x10 in service30 station-stop list;player00586f58 writes clock80acd4",
@@ -33059,16 +33087,23 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Normal and unfinished-loading departure writes observed;final-stop success retains recorded departure0 with final record still selected",
+      "evidence_status": "Normal and unfinished-loading departure writes observed;final-stop success retains recorded departure0 with final record still selected;all five winter AI services retain0 through observed platform countdown/stop/resumption",
       "update_or_lifecycle": "written by departure branches;selection can advance in a later sampled frame",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not exact platform-crossing time or proof loading finished. Zero alone is not a universal missing-value rule;AI timing and midnight remain open."
     },
     {
       "id": "station.scheduled_arrival",
       "meaning": "Scheduled station arrival time",
-      "applicability": "player and loaded AI station records;player writes validated;Tokyo AI records read but timed AI-stop writers unvalidated",
+      "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
       "value_type": "float32",
       "units": "day-clock seconds",
       "extraction": "record+0x4;005a1656 parses 4040d ArrivalTime;005a102e merges by platform/skip or distance fallback",
@@ -33081,16 +33116,23 @@
         "ACTIVITY-STATION-METADATA-REVIEW.md",
         "STATION-DEPARTURE-FINDINGS.md",
         "STATION-BOARDING-FINDINGS.md",
-        "EARLY-DEPARTURE-FINDINGS.md"
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0",
+      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds",
       "update_or_lifecycle": "schedule load/merge;later editing,offset and reset paths unvalidated",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open."
     },
     {
       "id": "station.scheduled_departure",
       "meaning": "Scheduled station departure time",
-      "applicability": "player and loaded AI station records;player writes validated;Tokyo AI records read but timed AI-stop writers unvalidated",
+      "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
       "value_type": "float32",
       "units": "day-clock seconds",
       "extraction": "record+0xc;005a1656 parses 4040f DepartTime;005a102e merges by platform/skip or distance fallback",
@@ -33108,16 +33150,23 @@
         "ACTIVITY-STATION-METADATA-REVIEW.md",
         "STATION-DEPARTURE-FINDINGS.md",
         "STATION-BOARDING-FINDINGS.md",
-        "EARLY-DEPARTURE-FINDINGS.md"
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0",
+      "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds",
       "update_or_lifecycle": "schedule load/merge;later editing,offset and reset paths unvalidated",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open."
     },
     {
       "id": "station.state_flags",
       "meaning": "Station record branch-local arrival, loading, departure and cue state",
-      "applicability": "player and loaded AI station records;player writes validated;Tokyo AI records read but timed AI-stop writers unvalidated",
+      "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
       "value_type": "uint16 bitmask",
       "units": "uint16 bitmask;partial player branch meanings,not a universal activity result",
       "extraction": "record+1e;player00586f58 and selection advance005a5254",
@@ -33150,9 +33199,16 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+        "ai-platform-countdown-20261010-summary.json",
+        "ai-platform-countdown-ui-20261010.json",
+        "captures/winter-ai-stops-20261010-01/samples.jsonl",
+        "captures/winter-ai-baseline-20261010-01/services.jsonl",
+        "captures/winter-ai-fixture-20261010-01/provenance.json",
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Arrival2,normal expiry/cue0x62,normal departure0x6a,interruption0x1a;final0x62 precedes AllStops success while still selected and without departure",
+      "evidence_status": "Arrival2,normal expiry/cue0x62,normal departure0x6a,interruption0x1a;final0x62 precedes AllStops success while still selected and without departure;winter AI IDs1/2 flags1 and70/71/72 flags0 remain unchanged through platform holds",
       "update_or_lifecycle": "station processing writes bits and successor selection may clear cue bit;read with same record identity",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Partial branch meanings:0x10 moving while loading,0x40 dispatch attempt rather than audible cue or movement authority. Full bit combinations and AI semantics unvalidated. Selection/fields are sampled sequentially. AllStops tests the last selected record bit0x20 rather than every earlier record;not a perfect-run indicator."
     },

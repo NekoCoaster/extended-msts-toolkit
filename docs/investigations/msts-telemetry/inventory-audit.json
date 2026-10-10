@@ -1,13 +1,13 @@
 {
-  "inventory_sha256": "ff9a27df21bd884e3ccb3c9a96984d4f4d314588977bcfa567bd874d61714f04",
+  "inventory_sha256": "3197209b9c3b11b6db36c91f0084e35f78c8d13b912fb6241e780e171663b7a5",
   "candidate_count": 1058,
   "unique_ids": 1058,
   "duplicate_ids": [],
   "empty_required_fields": [],
-  "evidence_paths_checked": 908,
+  "evidence_paths_checked": 915,
   "missing_evidence": {},
   "unrecognized_evidence": [],
-  "source_files_checked": 145,
+  "source_files_checked": 151,
   "source_hash_mismatches": [],
   "limitations": "Local path/structure/hash audit only. Does not verify meanings, offsets, units, update cadence, coverage or runtime behavior. Published clone intentionally omits raw evidence; run in canonical workspace."
 }
