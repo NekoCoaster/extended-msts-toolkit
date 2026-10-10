@@ -1,0 +1,57 @@
+{
+  "samples": 199,
+  "errors": 0,
+  "available": 199,
+  "speed_range": [
+    0.0,
+    0.0
+  ],
+  "acceleration_range": [
+    -1.6797960356029762e-08,
+    1.7186424727810845e-08
+  ],
+  "unfiltered_mean_range": [
+    -5.4688623407628256e-08,
+    4.687397137104199e-08
+  ],
+  "car_counts": [
+    8
+  ],
+  "indexes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "root_changes": 0,
+  "unstable_aggregate": 1,
+  "unstable_history": 1,
+  "unstable_cars": 0,
+  "owner_mismatches": 0,
+  "incomplete": 0,
+  "invalid_index": 0,
+  "clock_crossings": 0,
+  "coherent_read_rows": 198,
+  "max_sampled_mean_difference": 3.552713678800501e-15,
+  "time": [
+    83418.453125,
+    83438.453125
+  ],
+  "paused_values": [
+    0
+  ],
+  "limits": "Sequential read consistency flags do not establish atomicity or exclude ABA reuse. Sampled car mean may differ from earlier producer input. No moving response, reset, AI freshness or exact cadence claim follows from stationary samples.",
+  "source": "captures/train-acceleration-baseline-20261010-01/samples.jsonl",
+  "sha256": "5ae2bce74542e8f6b3f4f3b26acbd470501b3421d40fc84f3b45947702358aeb",
+  "completion": {
+    "samples": 199,
+    "errors": 0,
+    "wall_elapsed": 20.069305300014094
+  }
+}

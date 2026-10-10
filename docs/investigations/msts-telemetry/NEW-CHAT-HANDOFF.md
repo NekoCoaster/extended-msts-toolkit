@@ -1,3 +1,33 @@
+User offered normal in-game time acceleration for midnight test;asked them to approach23:58 thenrestore normal speed and report. No user confirmation of action/restoration yet. Leave UIcontrols to user;capture13105 remainsread-only. Newread_loaded_path_nodes.py baseline reads48Exploreplayernodes withstable rereads;AIcandidate notloaded.
+
+Pathvalidator review2026-10-10:fourdirectfixupcallees inspected,no directduration+8orwaitbit2writes;561instructions1762bytesmatchdisk/live. Nodeclassification,invalidflags and junctionpinwrites identified. Actual loadedcandidate remainsrequired;helper/global no-writerproof notclaimed. See AI-PLATFORM-COUNTDOWN-FINDINGS. Midnightcapture13105 stillrunning.
+
+Waitfixture linkage2026-10-10:Tokyo itr_e1_s1_w1_t1.act anditr(traffic).trf eachreference7instances eachoftwo services using candidatewaitpath;Shinpei is playerpath;IsaburoRescue onlyTRF reference found. Route-scoped hashes inpath-wait-fixture-links-20261010.json. Nextlivecandidate Tokyo introductoryactivity aftermidnightcapture;verify UIavailability,loadednodes,zero-duration behavior. No livewait claim.
+
+Waitfixture scan2026-10-10:211PATfiles,0errors/unmatchedtokens;4bit2nodes across itr(traffic01),isaburo rescue(traffic),shinpei;all packed00000002(durationcandidate0). path-wait-fixture-scan-20261010.json.005be457/005bd799 directcode no durationwrite,177instructions492bytesmatch;downstreamvalidators stillopen. Nextlink candidatePATtoSRV/TRF/ACT and inspectloadednode. Midnightcapture13105 remainsactive.
+
+PATparser follow-up2026-10-10: keywordTrPathNode token4041d;005bde77 allocateszeroed24byte nodes and writes firstscalar asdword node+6(overlapsflags/duration),nexttwo scalars successorindexes.730instructions/2245bytesmatchdisk/live. Nextinspect005be457 and005bd799 for laterdurationwrites beforefixture scan. See AI-PLATFORM-COUNTDOWN-FINDINGS. Midnightcapture13105 stillrunning.
+
+Path-wait iterator follow-up2026-10-10:005bbe66 state1 selects type5 from loadedpathnode+6bit2 and matchingtracknode;event payload retained atiterator+24,cursor advancesvia node+14. Bit1/type2and path-endchecks takeprecedence.629instructions/1927bytesmatchdisk/live. Nextresolve PATparser conversion beforefixture selection. See AI-PLATFORM-COUNTDOWN-FINDINGS. Midnightcapture13105remains active.
+
+Path-wait writer follow-up2026-10-10:005af21f type5iterator branches set1e4 and copy uintpayload+8tofloat1f0;460instructions/2041bytesmatchdisk/live. See AI-PLATFORM-COUNTDOWN-FINDINGS. Nexttrace005bbda9 type5creation/PATparser before fixture selection. No path-wait live claim. Midnightcapture13105 stillrunning.
+
+Train acceleration baseline2026-10-10:199samples/0errors,8cars,speed0,all10history indices;one aggregate and one history reread changed despite equal clocks. See TRAIN-ACCELERATION-FINDINGS.md. Moving response/reset stillopen. Baseline capture finished;midnightcapture13105 stillrunning,do notsync.
+
+Train acceleration discovery2026-10-10: TRAIN-ACCELERATION-FINDINGS.md traces train+96 mean car+1c0,player ten-sample history and rate limiting;debug label m/s2. Added train.stored_acceleration static candidate,inventory1059. Fresh287instructions/1222bytes and sixconstants matchdisk/live. Moving response/reset and AI freshness remain open. Midnightcapture13105 still running;do not sync yet.
+
+## Current installation context — user clarification, 2026-10-10
+
+The user confirms that this instance has MSTSBin loaded, has no NEMT loaded, and has no community night-cab addons installed. Night-cab addon support is distinct from the extended instrument-channel parser studied in EXTENDED-CAB-FINDINGS.md. The installed CVF scan tests instrument Type declarations; it is not a night-texture asset audit. The midnight experiment tests simulation clock rollover and calendar carry, not night-cab rendering. No addon installation or game-asset modification is part of this research.
+
+Extended-cab fixture scan2026-10-10: all12installed CVFs readable,0extension Type matches,0skipped. Existing installation supplies no declared fixture for live extension testing; preserve assets. See extended-cab-fixture-scan-20261010.json and EXTENDED-CAB-FINDINGS.md. Midnight capture13105 remains active,do not sync until terminal.
+
+Extended-cab parser follow-up2026-10-10:00406750 maps12names to0x100..0x10b through return-address replacement, confirmed by126instructions/398bytes disk/live match plus12strings/table match. See EXTENDED-CAB-FINDINGS.md and read_extended_cab_names.py. Installed usage/live displays remain open. Midnight capture13105 still running; no sync while active.
+
+Extended-cab context follow-up2026-10-10: inspected electric/diesel callers resolve helper[EBP-8] to player controller=[[train+72]+8]. Branch102 reads controller+410;107/108/109 read+450. Meanings/parser reachability remain open. Fresh66instruction/251byte comparison matches disk/live; EXTENDED-CAB-FINDINGS.md updated. No inventory additions. Midnight capture still running; no publication sync yet.
+
+Current process correction2026-10-10: user confirms NEMT is not loaded in PID12888. Historical timing patches belong to PID7160; fresh clock update/setter/caller checks total337 instructions/1308 bytes with0disk/live mismatches. See CLOCK-FINDINGS.md. Five current metadata entries corrected and inventory rebuilt1058. Explore Route Tokyo-Hakone Sagami Ono toward Odawara,Series2000,Summer/Clear started23:00; read-only capture explore-midnight-20261010-01 running (session13105,max4000wall seconds), latest observed23:00:22,pause0. Do not sync/manifest this running capture. Goal remains active/incomplete.
+
 Latest AI platform checkpoint2026-10-10: AI-PLATFORM-COUNTDOWN-FINDINGS.md validates210/214countdown onset while braking,zero-speed hold,expiry and resumption,with next-stop selection and unchanged AI station time/flag fields.1132samples/0errors. Inventory1058. PID12888 winter Tokyo activity paused61414.5234375,player0m/s,throttle0,Neutral,F5brake0%. No capture running. Goal active/incomplete;older simulator states below are historical.
 
 Latest finalized-report checkpoint2026-10-10: FINAL-REPORT-FINDINGS.md adds14report candidates,inventory1058. Normal early exit produces5copied station records and4missed stops matching UI;source times/flags preserved. Three native ranges554instructions/2038bytes match disk/live. PID12888 now on Evaluation Details,no gameplay/player,day64810.8515625,pause0. No capture running. Goal active/incomplete;older simulator states below are historical.
@@ -79,3 +109,11 @@ Readers validate this executable; retain exact copied probe sources and metadata
 Canonical checks: python analyse_coupling_transition.py; python build_inventory.py; python audit_inventory.py. The last is structure/evidence-path/source-hash validation, not semantic proof. Raw evidence stays local and is hash-manifested in the PR, not committed wholesale. Do not edit previously manifested raw files.
 
 Publish only after captures finish: python C:/dev/Codex/work/sync-telemetry-checkpoint.py verifies old raw hashes,copies root reports/probes,and updates local-evidence-manifest.json. Then in publication worktree run python tools/source-checksums.py --write and python tools/prepare-commit.py --check; inspect diff and run git diff --cached --check before commit/push. Follow repo AGENTS.md. Native execution was previously blocked by DeviceGuard4551; do not bypass or misreport that limitation. No native code changed in this checkpoint. See CHECKPOINT-VALIDATION.md for actual check results. Keep the PR draft until broader research and review are complete.
+
+## 2026-10-10: normal-speed midnight crossing captured
+
+User restored normal speed and paused at 23:59:41; the agent resumed through the normal Return to Activity UI. Capture `captures/explore-midnight-20261010-01` completed automatically 15 simulation seconds after rollover: 22,951 samples, zero read errors, 15 unstable clock-block rereads across the full capture. See `midnight-clock-20261010-summary.json`.
+
+The stable crossing pair at UTC 02:17:46.776907 / 02:17:46.877419 has day_seconds 86399.953125 -> 0.078125 and elapsed 3599.949951171875 -> 3600.074951171875. Both samples are unpaused with step 0.125, the same nonnull player and activity start. HMS wraps 23:59:59 -> 00:00:00; internal calendar remains day 3, month 6, year 2000 throughout. Thus calendar increment must not be claimed for this Explore Route rollover. Day-minus-start becomes negative and is not a midnight-safe elapsed value. The other discontinuity is initial session loading, not a second rollover. Earlier accelerated samples must be separated from the normal-speed crossing; step alone should not be labelled a proven wall-clock multiplier.
+
+User supplied normal UI time controls: CTRL+T increases through 1x, 2x, 4x, 8x; CTRL+SHIFT+T decreases. No NEMT loaded in this instance; MSTSBin present; no community night-cab assets installed. Do not investigate missing night-cab textures as a telemetry prerequisite.

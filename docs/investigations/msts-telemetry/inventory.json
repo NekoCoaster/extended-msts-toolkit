@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-10T01:33:43.897896+00:00",
+  "generated_utc": "2026-10-10T02:21:08.077096+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 453,
+    "runtime_direct": 454,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1058
+    "total": 1059
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -33,11 +33,18 @@
         "captures/tokyo-result-reset-20261010-01/samples.jsonl",
         "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
         "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+        "CLOCK-FINDINGS.md",
+        "captures/midnight-clock-native-20261010-01-byte-verification.json",
+        "captures/midnight-caller-native-20261010-01-byte-verification.json",
+        "midnight-clock-20261010-summary.json",
+        "analyse_clock_series.py",
+        "captures/explore-midnight-20261010-01/samples.jsonl",
+        "captures/explore-midnight-20261010-01/completion.json"
       ],
-      "evidence_status": "Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief",
+      "evidence_status": "Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief; normal-speed Explore rollover86399.953125->0.078125 with elapsed advancing0.125s",
       "update_or_lifecycle": "simulation advance,initialization/restart;observed debrief holds old clock",
-      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Read with lifecycle context;nonzero clock or pause0 does not imply active simulation. Midnight and saved-game clock restoration remain open;installed NEMT timing patches prevent stock-precision claims."
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Read with lifecycle context;nonzero clock or pause0 does not imply active simulation. One Explore Route midnight wrap validated; saved-game clock restoration remains open;Historical PID7160 had NEMT timing patches; current PID12888 has no NEMT loaded per user confirmation, and three checked clock/caller ranges match disk bytes. Precision behavior still requires measurement."
     },
     {
       "id": "simulation.step",
@@ -30488,11 +30495,14 @@
         "session-reset-20261010-summary.json",
         "session-reset-ui-20261010.json",
         "captures/tokyo-result-reset-20261010-01/samples.jsonl",
-        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "CLOCK-FINDINGS.md",
+        "captures/midnight-clock-native-20261010-01-byte-verification.json",
+        "captures/midnight-caller-native-20261010-01-byte-verification.json"
       ],
       "evidence_status": "Outcome6 native write1 corroborated by0->1 alongside stop1 and Activity complete UI;earlier interrupted station loading remains0x1a;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0",
       "update_or_lifecycle": "outcome processing and activity lifecycle;observed success sets1,dismissal/teardown clears0,and UI restart retains0",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read together with evaluation-stop;zero alone is not failure. Success and Activity complete UI observed;failure and saved-game restoration remain unvalidated. Success does not certify every station loading or timetable performance. Existing NEMT activity-end modifications may affect behavior. Result0 outside gameplay is not failure;these fields are not the retained debrief report."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read together with evaluation-stop;zero alone is not failure. Success and Activity complete UI observed;failure and saved-game restoration remain unvalidated. Success does not certify every station loading or timetable performance. User confirms NEMT is not loaded in current PID12888; do not attribute this run to historical NEMT activity-end modifications. Result0 outside gameplay is not failure;these fields are not the retained debrief report."
     },
     {
       "id": "activity.time_event_clock",
@@ -30500,7 +30510,7 @@
       "applicability": "shared elapsed activity clock used by time predicates",
       "value_type": "float32",
       "units": "seconds since clock setter reset; independent float accumulator",
-      "extraction": "[0x80acd0]; native00645af0 adds dt;00645d12 resets to0; current additions patched by NEMT UnlockFPS",
+      "extraction": "[0x80acd0]; native00645af0 adds dt;00645d12 resets to0; historical PID7160 additions patched by NEMT UnlockFPS; current PID12888 inspected producer/setter/caller ranges match disk bytes",
       "evidence": [
         "ACTIVITY-EVALUATOR-FINDINGS.md",
         "captures/event-conditions-paused-01/conditions.json",
@@ -30524,11 +30534,15 @@
         "session-reset-20261010-summary.json",
         "session-reset-ui-20261010.json",
         "captures/tokyo-result-reset-20261010-01/samples.jsonl",
-        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/midnight-clock-native-20261010-01-byte-verification.json",
+        "captures/midnight-caller-native-20261010-01-byte-verification.json",
+        "midnight-clock-20261010-summary.json",
+        "captures/explore-midnight-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800",
-      "update_or_lifecycle": "native00645af0 advances accumulator by dt;00645d12 resets it;pause stops observed simulation advance;live additions have NEMT timing patches",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Independent from day-clock minus start-time. Normal UI restart reset observed;midnight,saved-game restoration,calendar provenance and unmodified MSTS precision remain unvalidated. Not a location-derived value."
+      "evidence_status": "Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800; native elapsed continues3599.949951171875->3600.074951171875 across normal-speed Explore midnight",
+      "update_or_lifecycle": "native00645af0 advances accumulator by dt;00645d12 resets it;pause stops observed simulation advance;historical PID7160 additions had NEMT timing patches; current PID12888 clock update/setter/caller ranges match disk bytes and user confirms no NEMT loaded",
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Independent from day-clock minus start-time. Normal UI restart reset observed;One Explore midnight continuity is validated; other modes,saved-game restoration,calendar provenance and long-run precision remain unvalidated. Not a location-derived value."
     },
     {
       "id": "activity.event.horizontal_distance",
@@ -30616,11 +30630,17 @@
         "captures/tokyo-result-reset-20261010-01/samples.jsonl",
         "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
         "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+        "captures/midnight-clock-native-20261010-01-byte-verification.json",
+        "captures/midnight-caller-native-20261010-01-byte-verification.json",
+        "midnight-clock-20261010-summary.json",
+        "analyse_clock_series.py",
+        "captures/explore-midnight-20261010-01/samples.jsonl",
+        "captures/explore-midnight-20261010-01/completion.json"
       ],
-      "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart",
-      "update_or_lifecycle": "clock initialization/update;date unchanged in this restart experiment",
-      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. Midnight/leap/calendar validity and initialization provenance unresolved. Existing timing patches bound precision claims."
+      "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart; remained3/6/2000 across captured Explore midnight while HMS wrapped",
+      "update_or_lifecycle": "clock initialization/update;date unchanged in this restart experiment; date also unchanged across observed Explore midnight",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. One Explore midnight produced no date increment despite a statically visible carry path; cause and other session modes remain unresolved. Leap/calendar validity and initialization provenance unresolved. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured."
     },
     {
       "id": "session.clock_components",
@@ -30641,11 +30661,17 @@
         "captures/tokyo-result-reset-20261010-01/samples.jsonl",
         "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
         "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+        "captures/midnight-clock-native-20261010-01-byte-verification.json",
+        "captures/midnight-caller-native-20261010-01-byte-verification.json",
+        "midnight-clock-20261010-summary.json",
+        "analyse_clock_series.py",
+        "captures/explore-midnight-20261010-01/samples.jsonl",
+        "captures/explore-midnight-20261010-01/completion.json"
       ],
-      "evidence_status": "18:20:12->18:00:00->18:00:01 observed across normal UI restart",
+      "evidence_status": "18:20:12->18:00:00->18:00:01 observed across normal UI restart; normal-speed Explore23:59:59->00:00:00 observed with same player/start and advancing native elapsed",
       "update_or_lifecycle": "clock update and initialization/restart",
-      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. Midnight/date carry and saved-game restoration remain open. Existing timing patches bound precision claims."
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. One Explore HMS midnight wrap validated; internal date did not advance. Other modes, date-carry cause and saved-game restoration remain open. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured."
     },
     {
       "id": "car.brake_cylinder_pressure",
@@ -31010,11 +31036,16 @@
         "captures/session-header-running-01/session.json",
         "pass27/0058f066.asm",
         "pass27/0058bf90.asm",
-        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act"
+        "C:/MSTS/ROUTES/USA2/ACTIVITIES/evegrain.act",
+        "CLOCK-FINDINGS.md",
+        "midnight-clock-20261010-summary.json",
+        "analyse_clock_series.py",
+        "captures/explore-midnight-20261010-01/samples.jsonl",
+        "captures/explore-midnight-20261010-01/completion.json"
       ],
-      "evidence_status": "loaded values match ACT; elapsed is derived and midnight semantics untested",
-      "update_or_lifecycle": "header load/reset; elapsed follows advancing simulation clock",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Header parser receives activity+4, so raw parser-relative offsets must include that base adjustment. Do not infer calendar date from narrative briefing. Enum name mapping remains incomplete."
+      "evidence_status": "Derived day-clock minus activity start; observed to become negative at normal-speed Explore midnight while native elapsed continued",
+      "update_or_lifecycle": "Derived from wrapped day clock and session start; discontinuous at midnight and session reset",
+      "limitations": "Not a midnight-safe elapsed duration: observed -82799.921875 after rollover, versus native elapsed3600.074951171875. Retained as a documented derived candidate, not a validated general session timer. Multiple days and save restoration remain unvalidated. External reads are sequential, not atomic."
     },
     {
       "id": "evaluation.speed_episode_count",
@@ -37145,6 +37176,29 @@
       "evidence_status": "Native exported ranges match disk/live;0before finalization,1after Tokyo exit;not a route coordinate conversion",
       "update_or_lifecycle": "report collection/finalization and activity reinitialization;interpret UI/session phase",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Sequential reads with bounded traversal and pointer rereads,not atomic. Fields overlap source activity/station semantics but differ in storage/lifecycle. Normal early exit does not validate outcome7 failure. Finalization-only zero/empty values during gameplay are not completed results. Preserve raw strings/codes;no positive action,nonzero deviation or universal termination behavior claim."
+    },
+    {
+      "id": "train.stored_acceleration",
+      "meaning": "Stored mean car acceleration, additionally history-filtered and rate-limited for player",
+      "applicability": "physical player and nonplayer trains with populated car chain",
+      "value_type": "float32",
+      "units": "m/s squared;native debug label and car producer",
+      "extraction": "train+0x96;00608800 aggregates car+0x1c0;player ten-entry ring80a974 and threshold-limited approach",
+      "evidence": [
+        "TRAIN-ACCELERATION-FINDINGS.md",
+        "VEHICLE-MOTION-EVALUATION.md",
+        "captures/train-acceleration-native-20261010-01-byte-verification.json",
+        "captures/train-acceleration-native-20261010-01/constants.json",
+        "train-acceleration-helpers-20261010-byte-verification.json",
+        "pass57/00608800.asm",
+        "pass82/0060997a.c",
+        "read_train_acceleration.py",
+        "train-acceleration-baseline-20261010-summary.json",
+        "captures/train-acceleration-baseline-20261010-01/samples.jsonl"
+      ],
+      "evidence_status": "Static producer and native unit label traced;current inspected code/constants match disk/live;runtime response not yet sampled;199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed",
+      "update_or_lifecycle": "aggregate update00608800;player ring advances by invocation rather than fixed seconds;initialization/reset/caller cadence unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not finite-difference speed acceleration or longitudinal projection. Player filtering changes response;nonplayer source cars may retain stale/zero acceleration under AI skip paths. Extended projected-speed consumer is a display extrapolation,not predicted physical future speed. Baseline train speed0 with near-zero stored acceleration;one aggregate and one history reread changed despite equal sampled clocks. No moving response validation."
     }
   ]
 }

@@ -1,12 +1,12 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 453, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1058}
+{'runtime_direct': 454, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1059}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
 | Candidate | Meaning | Evidence status |
 |---|---|---|
-| simulation.time | Simulation time value; observed near activity seconds since midnight | Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief |
+| simulation.time | Simulation time value; observed near activity seconds since midnight | Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief; normal-speed Explore rollover86399.953125->0.078125 with elapsed advancing0.125s |
 | simulation.step | Simulation frame delta | readable in live captures; semantics partly inherited/static |
 | simulation.paused | Pause state | Gameplay/menus observed;result dismissal1->0 precedes teardown;debrief/loading pause0 without active player;restarted briefing1 |
 | train.registry | Currently registered train identities; future unspawned services excluded | readable in live captures; semantics partly inherited/static;player coupling and F9 separation validate chain1to6to1 and five loose owners0toPlayerTo0;stored physical count40 |
@@ -798,11 +798,11 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | activity.event.reversible_candidate | Reversible event latch behavior | Native nonzero branch permits reevaluation/clearing;Tokyo event13 has0 and retains latch after exit |
 | activity.event_evaluation_stop | Activity flag that suppresses further event evaluation | Native guard/outcome writers traced;0->1 with event0 ActivitySuccess,retained while Activity complete alert is open;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0 |
 | activity.event_outcome_success | Success value set by event outcome handler | Outcome6 native write1 corroborated by0->1 alongside stop1 and Activity complete UI;earlier interrupted station loading remains0x1a;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0 |
-| activity.time_event_clock | Elapsed clock accumulator used by time-event conditions | Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800 |
+| activity.time_event_clock | Elapsed clock accumulator used by time-event conditions | Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800; native elapsed continues3599.949951171875->3600.074951171875 across normal-speed Explore midnight |
 | activity.event.horizontal_distance | Horizontal distance from first player car to location trigger | Finite reconstruction supports event13 radius crossing and stop-event32 distance41.41465m |
 | activity.event.location_condition | Reconstructed location-event spatial and optional stop predicate | Event13 moving radius crossing and event32 stop-required predicate/latch transitions corroborated |
-| session.internal_calendar | Internal clock day/month/year | Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart |
-| session.clock_components | Internal clock second/minute/hour | 18:20:12->18:00:00->18:00:01 observed across normal UI restart |
+| session.internal_calendar | Internal clock day/month/year | Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart; remained3/6/2000 across captured Explore midnight while HMS wrapped |
+| session.clock_components | Internal clock second/minute/hour | 18:20:12->18:00:00->18:00:01 observed across normal UI restart; normal-speed Explore23:59:59->00:00:00 observed with same player/start and advancing native elapsed |
 | car.brake_cylinder_pressure | Per-car brake cylinder pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5;preferred diesel fixture UI emergency stop captured across23player/22AI cars |
 | car.brake_pipe_pressure | Per-car brake-pipe pressure | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5;preferred diesel fixture UI emergency stop captured across23player/22AI cars |
 | car.brake_force_candidate | Per-car requested brake-force quantity before adhesion limiting | static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5 |
@@ -818,7 +818,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | session.start_hms | Loaded activity starting clock | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.duration_hm | Configured activity duration | loaded values match ACT; elapsed is derived and midnight semantics untested |
 | session.start_seconds | Activity start clock in seconds | loaded values match ACT; elapsed is derived and midnight semantics untested |
-| session.elapsed_candidate | Elapsed simulation time since activity start | loaded values match ACT; elapsed is derived and midnight semantics untested |
+| session.elapsed_candidate | Elapsed simulation time since activity start | Derived day-clock minus activity start; observed to become negative at normal-speed Explore midnight while native elapsed continued |
 | evaluation.speed_episode_count | Completed speed-violation episode count | Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details |
 | evaluation.speed_episode_duration | Total duration of closed speed-violation episodes | Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details |
 | evaluation.speed_episode_active | Current speed-violation episode state and retained details | Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details |
@@ -1064,3 +1064,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | evaluation.final_action_count | Finalized action-type6..9 summary count | Native exported ranges match disk/live;0matches empty list;positive counts unvalidated |
 | evaluation.unlatched_action_count | Final action summaries whose source trigger latch is zero | Native exported ranges match disk/live;0observed with no eligible actions;not universal incomplete-objective count |
 | evaluation.distance_unit_flag | Final report distance display unit selector | Native exported ranges match disk/live;0before finalization,1after Tokyo exit;not a route coordinate conversion |
+| train.stored_acceleration | Stored mean car acceleration, additionally history-filtered and rate-limited for player | Static producer and native unit label traced;current inspected code/constants match disk/live;runtime response not yet sampled;199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed |

@@ -253,7 +253,7 @@
     "applicability": "shared loaded activity result context;not independent per-event/player/AI result",
     "update_or_lifecycle": "outcome processing and activity lifecycle;observed success sets1,dismissal/teardown clears0,and UI restart retains0",
     "evidence_status": "Outcome6 native write1 corroborated by0->1 alongside stop1 and Activity complete UI;earlier interrupted station loading remains0x1a;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0",
-    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read together with evaluation-stop;zero alone is not failure. Success and Activity complete UI observed;failure and saved-game restoration remain unvalidated. Success does not certify every station loading or timetable performance. Existing NEMT activity-end modifications may affect behavior. Result0 outside gameplay is not failure;these fields are not the retained debrief report.",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read together with evaluation-stop;zero alone is not failure. Success and Activity complete UI observed;failure and saved-game restoration remain unvalidated. Success does not certify every station loading or timetable performance. User confirms NEMT is not loaded in current PID12888; do not attribute this run to historical NEMT activity-end modifications. Result0 outside gameplay is not failure;these fields are not the retained debrief report.",
     "evidence": [
       "ACTIVITY-STATION-METADATA-REVIEW.md",
       "captures/tokyo-events-baseline-20261010-01/activity.json",
@@ -268,14 +268,17 @@
       "session-reset-20261010-summary.json",
       "session-reset-ui-20261010.json",
       "captures/tokyo-result-reset-20261010-01/samples.jsonl",
-      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json"
     ]
   },
   "activity.time_event_clock": {
     "applicability": "shared elapsed activity clock used by time predicates",
-    "update_or_lifecycle": "native00645af0 advances accumulator by dt;00645d12 resets it;pause stops observed simulation advance;live additions have NEMT timing patches",
-    "evidence_status": "Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800",
-    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Independent from day-clock minus start-time. Normal UI restart reset observed;midnight,saved-game restoration,calendar provenance and unmodified MSTS precision remain unvalidated. Not a location-derived value.",
+    "update_or_lifecycle": "native00645af0 advances accumulator by dt;00645d12 resets it;pause stops observed simulation advance;historical PID7160 additions had NEMT timing patches; current PID12888 clock update/setter/caller ranges match disk bytes and user confirms no NEMT loaded",
+    "evidence_status": "Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800; native elapsed continues3599.949951171875->3600.074951171875 across normal-speed Explore midnight",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Independent from day-clock minus start-time. Normal UI restart reset observed;One Explore midnight continuity is validated; other modes,saved-game restoration,calendar provenance and long-run precision remain unvalidated. Not a location-derived value.",
     "evidence": [
       "ACTIVITY-STATION-METADATA-REVIEW.md",
       "captures/tokyo-events-baseline-20261010-01/activity.json",
@@ -288,8 +291,13 @@
       "session-reset-20261010-summary.json",
       "session-reset-ui-20261010.json",
       "captures/tokyo-result-reset-20261010-01/samples.jsonl",
-      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
-    ]
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "captures/explore-midnight-20261010-01/samples.jsonl"
+    ],
+    "extraction": "[0x80acd0]; native00645af0 adds dt;00645d12 resets to0; historical PID7160 additions patched by NEMT UnlockFPS; current PID12888 inspected producer/setter/caller ranges match disk bytes"
   },
   "activity.event.horizontal_distance": {
     "applicability": "player location events, category2/type1; geometry uses first player car, not AI or camera",

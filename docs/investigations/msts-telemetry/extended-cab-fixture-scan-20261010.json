@@ -1,0 +1,70 @@
+{
+  "files_scanned": 12,
+  "files": [
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\380\\CABVIEW\\380.cvf",
+      "bytes": 14226,
+      "sha256": "fc37cbf347e25dad401cfd50f7ccb1278fa704d6c65168837bf6c70ba89ed3fc"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\ACELA\\CABVIEW\\acela.cvf",
+      "bytes": 13438,
+      "sha256": "883726a90305e57a67eda2516cd7fcb52ee4d1d04b725d31856a5515bff54c60"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\CLASS50\\CABVIEW\\class50.cvf",
+      "bytes": 7496,
+      "sha256": "5d3936d40b79d6153e08b5bbb34f550aedee9acefc881cb269b8403bfba146b0"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\DASH9\\CABVIEW\\dash9.cvf",
+      "bytes": 18404,
+      "sha256": "9b4a7bb96056f2085a1fb199242b7c48bfc074fd7444b71e055767891c2174c5"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\GP38\\CABVIEW\\gp38.cvf",
+      "bytes": 12738,
+      "sha256": "f07f617d792dd076a2e22cb31603284bc040d9330c8da1f20e6c5d85850aeafb"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\HHP\\CABVIEW\\hhl.cvf",
+      "bytes": 14056,
+      "sha256": "d1ee221f844e5ef34ec565a7c2a56b6d0b4faf0033374fe44d0b79efc50b463a"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\KIHA31\\CABVIEW\\kiha31.cvf",
+      "bytes": 7498,
+      "sha256": "b35f933e8fa9abb8bc03dfa475b3f2b4a0a86cee6d76e0095fbadf7d0866f41b"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SCOTSMAN\\CABVIEW\\scotsman.cvf",
+      "bytes": 13406,
+      "sha256": "6d16f65bf62508e77bef0564a9892971d3bd5d8021cb9f16bf66666244ad3392"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SD402\\CABVIEW\\sd402.cvf",
+      "bytes": 14114,
+      "sha256": "b4d9bacdc6d343d6fd1811b63e59267d34af14d0b00ce7a03f7590574f6e1876"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES2000\\CABVIEW\\2000.cvf",
+      "bytes": 6676,
+      "sha256": "5ff4658531ebe908940e1d0f9370e3797adc58b8d56fd8621e1a5a45d618e860"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\SERIES7000\\CABVIEW\\s7000.cvf",
+      "bytes": 7378,
+      "sha256": "f8775fedc3815bf55b9a323fe894e6d35f6ab8ecc4bfc8538ecf0bd86d472d0b"
+    },
+    {
+      "file": "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf",
+      "bytes": 25864,
+      "sha256": "cf0734af71daed78e1f24f0cd7f33032b2c8ace9b693ca4e25f51d8abccb9cdf"
+    }
+  ],
+  "matches": [],
+  "skipped": [],
+  "names_source": "captures/extended-cab-names-20261010-01/names.json",
+  "names_sha256": "c361125e971bd8035fb7d17c36f33634df3f3c096cb24ba80e2583148c83c5e2",
+  "limits": "Text Type declarations only; not a complete grammar parser. Comments may match. No claim about other installations, inactive files, runtime loading or display support."
+}

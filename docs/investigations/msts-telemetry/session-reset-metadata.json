@@ -1,8 +1,8 @@
 {
   "simulation.time": {
-    "evidence_status": "Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief",
+    "evidence_status": "Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief; normal-speed Explore rollover86399.953125->0.078125 with elapsed advancing0.125s",
     "update_or_lifecycle": "simulation advance,initialization/restart;observed debrief holds old clock",
-    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Read with lifecycle context;nonzero clock or pause0 does not imply active simulation. Midnight and saved-game clock restoration remain open;installed NEMT timing patches prevent stock-precision claims.",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Read with lifecycle context;nonzero clock or pause0 does not imply active simulation. One Explore Route midnight wrap validated; saved-game clock restoration remains open;Historical PID7160 had NEMT timing patches; current PID12888 has no NEMT loaded per user confirmation, and three checked clock/caller ranges match disk bytes. Precision behavior still requires measurement.",
     "evidence": [
       "SESSION-RESET-FINDINGS.md",
       "session-reset-20261010-summary.json",
@@ -10,7 +10,14 @@
       "captures/tokyo-result-reset-20261010-01/samples.jsonl",
       "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
       "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json"
     ]
   },
   "simulation.paused": {
@@ -42,9 +49,9 @@
     ]
   },
   "session.internal_calendar": {
-    "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart",
-    "update_or_lifecycle": "clock initialization/update;date unchanged in this restart experiment",
-    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. Midnight/leap/calendar validity and initialization provenance unresolved. Existing timing patches bound precision claims.",
+    "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart; remained3/6/2000 across captured Explore midnight while HMS wrapped",
+    "update_or_lifecycle": "clock initialization/update;date unchanged in this restart experiment; date also unchanged across observed Explore midnight",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. One Explore midnight produced no date increment despite a statically visible carry path; cause and other session modes remain unresolved. Leap/calendar validity and initialization provenance unresolved. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
     "evidence": [
       "SESSION-RESET-FINDINGS.md",
       "session-reset-20261010-summary.json",
@@ -52,13 +59,20 @@
       "captures/tokyo-result-reset-20261010-01/samples.jsonl",
       "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
       "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json"
     ]
   },
   "session.clock_components": {
-    "evidence_status": "18:20:12->18:00:00->18:00:01 observed across normal UI restart",
+    "evidence_status": "18:20:12->18:00:00->18:00:01 observed across normal UI restart; normal-speed Explore23:59:59->00:00:00 observed with same player/start and advancing native elapsed",
     "update_or_lifecycle": "clock update and initialization/restart",
-    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. Midnight/date carry and saved-game restoration remain open. Existing timing patches bound precision claims.",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. One Explore HMS midnight wrap validated; internal date did not advance. Other modes, date-carry cause and saved-game restoration remain open. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
     "evidence": [
       "SESSION-RESET-FINDINGS.md",
       "session-reset-20261010-summary.json",
@@ -66,7 +80,14 @@
       "captures/tokyo-result-reset-20261010-01/samples.jsonl",
       "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
       "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
-      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json"
     ]
   },
   "service.ordered_operational_records": {
@@ -200,6 +221,18 @@
       "captures/winter-ai-baseline-20261010-01/services.jsonl",
       "captures/winter-ai-fixture-20261010-01/provenance.json",
       "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "session.elapsed_candidate": {
+    "evidence_status": "Derived day-clock minus activity start; observed to become negative at normal-speed Explore midnight while native elapsed continued",
+    "update_or_lifecycle": "Derived from wrapped day clock and session start; discontinuous at midnight and session reset",
+    "limitations": "Not a midnight-safe elapsed duration: observed -82799.921875 after rollover, versus native elapsed3600.074951171875. Retained as a documented derived candidate, not a validated general session timer. Multiple days and save restoration remain unvalidated. External reads are sequential, not atomic.",
+    "evidence": [
+      "CLOCK-FINDINGS.md",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json"
     ]
   }
 }

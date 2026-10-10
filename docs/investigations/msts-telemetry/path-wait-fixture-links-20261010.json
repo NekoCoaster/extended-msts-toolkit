@@ -1,0 +1,233 @@
+{
+  "links": [
+    {
+      "path": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic 01).pat",
+        "sha256": "c5ac6b3d0b40c229b682a4334c01d4cd6ad891c93d8426bb877e553f88bbb42a"
+      },
+      "service": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN1\\SERVICES\\itr (traffic 01).srv",
+        "sha256": "5decc969d1fa36d96663122fcdce1673d05034f3c72968025e10e66ba490c302"
+      },
+      "references": [
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic 01)"
+        }
+      ]
+    },
+    {
+      "path": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic 01).pat",
+        "sha256": "c5ac6b3d0b40c229b682a4334c01d4cd6ad891c93d8426bb877e553f88bbb42a"
+      },
+      "service": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN1\\SERVICES\\itr (traffic).srv",
+        "sha256": "1f979a1be90e2e028f155a4d9e8b5d282ec3a4c3a01409b3fcb0b28affa7743b"
+      },
+      "references": [
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\TRAFFIC\\itr (traffic).trf",
+          "sha256": "654a50784064dcc89fd331de72e4f20323788a117b9a4359eacbcda6d53044cd",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        },
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\itr_e1_s1_w1_t1.act",
+          "sha256": "50c7609e990e3048bf026f28e35823ec2704591de8aa8edd70b0d63d13f44e83",
+          "role": "Service_Definition",
+          "reference": "ITR (Traffic)"
+        }
+      ]
+    },
+    {
+      "path": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\isaburo rescue (traffic).pat",
+        "sha256": "6c722c21fb3321e005162fc47303e9f79cfdb6c88f094878988c5e4615060b2b"
+      },
+      "service": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN2\\SERVICES\\isaburo rescue (traffic).srv",
+        "sha256": "1753426f4218a6c7adc04e7221afa08264b5f25a9e0fe90408803bf5ec8ffcac"
+      },
+      "references": [
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN2\\TRAFFIC\\isaburo rescue (traffic).trf",
+          "sha256": "1771957b354376f1ae3395bef3695747aaf9d7ccd3dc54678541e4c6763386e2",
+          "role": "Service_Definition",
+          "reference": "Isaburo Rescue (Traffic)"
+        }
+      ]
+    },
+    {
+      "path": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\shinpei.pat",
+        "sha256": "9612dc21a98ae7b18b16cd988cec9f26e16811c77c400f06f4de20a8a567be78"
+      },
+      "service": {
+        "file": "C:\\MSTS\\ROUTES\\JAPAN2\\SERVICES\\shinpei.srv",
+        "sha256": "9e6ea9451ae3aa92842f5cd4df85c3ed8feb2660bf8b0c1e6a846ebf220737aa"
+      },
+      "references": [
+        {
+          "file": "C:\\MSTS\\ROUTES\\JAPAN2\\ACTIVITIES\\shinpei.act",
+          "sha256": "839aec8d41097e54889fc0f432ce68bc62ca63d79d22f1dd7434ddad876b67d9",
+          "role": "Player_Service_Definition",
+          "reference": "Shinpei"
+        }
+      ]
+    }
+  ],
+  "limits": "Route-scoped lexical direct references only;not full grammar,availability,selected activity,compiled ASV or runtime reachability proof. Repeated scheduled references retained. No assets modified."
+}

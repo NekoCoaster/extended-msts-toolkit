@@ -44,3 +44,43 @@ The distinct braking-to-wait branch+1e4 waits for speed0,sets+1e8 and clears ela
 The observed AI hold is supported by service speed,progress,target,countdown and selection together;distant AI vehicles were not visually identified. Physical wheel/brake/door state,AI timetable adherence,other loading-duration inputs,path-wait/reversal/rephysicalization and midnight remain open. Existing catalogue meanings remain separately qualified.
 
 Final UI is the pause menu at61414.5234375,player speed0,throttle0,Neutral;F5 displayed train brake0%. A BackSpace attempt did not establish a changed brake state and is not claimed as a successful intervention. No capture remains running. Earlier finalized-report UI table became visible on fresh observation before fixture change,showing five station rows consistent with the stored report;no report file was edited retroactively. Overall discovery remains active and incomplete.
+
+## Distinct path-wait writer follow-up, 2026-10-10
+
+A bounded displacement-write scan finds two positive braking-to-wait writers in005af21f,at005af7dd and005af88d. Both are in the operational iterator type5 branch,with direction-dependent progress comparisons. On entry they set service+1e4 to1 and convert the uint32 at the associated iterator payload+8 to float service+1f0. They also advance accumulated progress and copy the iterator state before returning. This identifies the duration source inside the operational path traversal;it does not yet identify a PAT-file flag or an installed active wait fixture.
+
+Fresh PID12888 comparison of005af21f covers460instructions/2041bytes with no disk/live mismatches or read errors. captures/path-wait-native-20261010-01 preserves the function and source hashes;the sibling verification report records the comparison. path-wait-writers-20261010/wait-offset-writes.tsv records50displacement matches,which include unrelated object types and are navigation evidence,not50service writers. The initial scanner-wrapper call failed parameter binding before launch because it inherited an unused Addresses parameter;the new wrapper removes that parameter. No duplicate native analysis was started over a running export.
+
+Next dependency: trace iterator005bbda9 type5 creation and payload+8 back to the loaded path parser before selecting a fixture. Platform+210/+214 evidence does not close this separate path-wait gap.
+
+Iterator005bbda9 delegates to005bbe66 unless the parent flags include0x10. In the delegated iterator state1 branch, a loaded path-node uint16 at+6 with bit0x2, together with node+10 matching the current track-node pointer, selects iterator type5. It copies the node+1c position to iterator+18/+1c, retains the event node at iterator+24 and advances the path-node cursor via node+14. The preceding bit0x1 branch has precedence and creates type2;the path-end type check also precedes these flags. This is loaded-node interpretation,not a direct assertion about the first PAT-file integer. Wrapper handling of node bit0x4 may perform additional iterator steps.
+
+The wrapper and iterator are verified in captures/path-wait-iterator-native-20261010-01:629instructions/1927bytes,zero disk/live mismatches and zero read errors. Source copies and hashes are retained. The path-file parser link remains open;no installed fixture has yet been selected from inferred raw flags.
+
+## PAT node parser link, 2026-10-10
+
+The actual file keyword is TrPathNode (not PatPathNode). Installed UTF16 label75cb70 pairs with token4041d at796b70. Token-byte navigation finds writer005bcdbb and loader005bde77. The loader's TrPathNodes branch allocates and zeroes count*0x24bytes. In the TrPathNode branch it reads the first scalar through stream slot10,then two successor indexes through slot8. At005be249 it stores the first scalar as a dword at loaded node+6. This overlaps the uint16 flags at+6 and the lower half of duration storage+8;the upper half of that storage begins zero from allocation. Thus first-scalar bit2 reaches the inspected wait flag,while its upper16bits supply the initial duration low16bits. Later conversion005be457 and path fixup005bd799 still require review before treating this as the complete final loaded mapping.
+
+path-node-parser-20261010 retains both functions;730instructions/2245bytes match current PID12888 and disk with zero read errors. Assembly is needed because the loader decompilation omits the detailed node branch. Exact flag/token observations are navigation and parser evidence;no live wait transition is asserted.
+
+## Provisional installed wait-node fixtures
+
+005be457 reads the fourth node token as a reference-list index and writes node+0. 005bd799 copies resolved track/position values to node+10/+1c and may mark the first node flag8/path flag10 invalid;it invokes further validators. These two inspected functions match disk/live across177instructions/492bytes. Their direct code does not rewrite duration+8,but the downstream validators are not yet fully traced.
+
+scan_path_wait_fixtures.py scanned211 installed PAT files with zero decoding errors and zero unmatched TrPathNode tokens. Four nodes have first-word bit2: JAPAN1 itr (traffic 01).pat node69;JAPAN2 isaburo rescue (traffic).pat node6;JAPAN2 shinpei.pat nodes17 and28. All have packed00000002,so the initial duration candidate is0;none also has preceding reversal bit1. The scan preserves file hashes and successor/PDP indexes in path-wait-fixture-scan-20261010.json. These are provisional loaded-node candidates,not proof of reachable waits or nonzero dwell. A zero-duration branch may clear within one update,requiring sampling expectations different from the platform countdown. Activity/service linkage and final loaded node values remain the next evidence needed.
+
+## Route-scoped service/activity linkage
+
+link_path_wait_fixtures.py ties candidate path names to PathID in services,then exact service references in same-route TRF/ACT text. Tokyo itr(traffic01).pat is used by both itr(traffic01).srv and itr(traffic).srv;each has seven references in itr(traffic).trf and seven in itr_e1_s1_w1_t1.act. Shinpei's path is used by the player service in shinpei.act. Isaburo Rescue's service is referenced only in its traffic file in this scan,with no direct matching ACT service declaration. That absence does not exclude compiled ASV or other indirect use. Cross-route names are not joined:the identically named JAPAN2 ITR service is not a match to JAPAN1's path.
+
+path-wait-fixture-links-20261010.json preserves all matching source hashes and repeated references. This supplies an existing Tokyo activity candidate for a later AI path-wait test,but actual loaded-node values,reachability and zero-duration event visibility remain unvalidated. The active midnight run was not changed.
+
+## Direct validator review
+
+The four direct fixup callees are now exported in path-wait-validation-20261010.005bd3aa refreshes associated path-point track resolution and invalid flags;005bdc4d clears/recomputes loaded node flag8 and terminal-track information;005bd8f0 assigns node type at+4 from successor topology;005bd9ed validates adjacency and assigns junction pin bytes at+d,with invalidity at node flag8/path flag10. None of their inspected direct instructions writes loaded node duration+8 or changes wait flag2. This narrows the remaining concern to called helpers,other load paths and actual fixture state;it is not a whole-program no-writer proof. A loaded-node read remains required before a runtime wait claim.
+
+Fresh PID12888 comparison of those four validators:561instructions/1762bytes,zero disk/live mismatches and zero read errors. See path-wait-validation-20261010-byte-verification.json.
+
+## Loaded-path probe availability baseline
+
+read_loaded_path_nodes.py follows observed service+1d4 to the iterator's path pointer, bounds the path-node count at4096 and retains raw36-byte records plus header/root/content rereads. The current Explore Route player path exposes48nodes with all implemented rereads equal;see captures/explore-loaded-path-20261010-01/path.json. This is reader availability evidence,not the candidate Tokyo AI wait fixture or proof of a wait transition.
