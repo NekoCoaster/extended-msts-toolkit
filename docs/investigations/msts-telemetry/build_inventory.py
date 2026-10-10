@@ -1227,6 +1227,19 @@ for row in rows:
         row['evidence'].extend(['EARLY-DEPARTURE-FINDINGS.md','analyse_early_departure.py','early-departure-20261010-summary.json','captures/tokyo-early-departure-20261010-01/samples.jsonl','captures/tokyo-early-departure-20261010-01/ui-observation.json','captures/early-departure-native-20261010-01-byte-verification.json'])
         row['evidence_status']+=';Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection'
         row['limitations']+=' Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed.'
+# Reviewed field-specific summaries supersede historical additive status text.
+reviewed_metadata=json.loads((ROOT/'activity-station-reviewed-metadata.json').read_text())
+review_scope={row['id'] for row in rows if row['id'].startswith(('activity.','station.'))}
+if set(reviewed_metadata)!=review_scope:
+    raise ValueError('Activity/station review scope must match the current candidate set')
+for row in rows:
+    if row['id'] in reviewed_metadata:
+        metadata=reviewed_metadata[row['id']]
+        if set(metadata)-{'applicability','update_or_lifecycle','evidence_status','limitations','units','extraction','evidence'}:
+            raise ValueError('Unexpected reviewed metadata field')
+        evidence=list(dict.fromkeys(row['evidence']+metadata['evidence']))
+        row.update(metadata)
+        row['evidence']=evidence
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
