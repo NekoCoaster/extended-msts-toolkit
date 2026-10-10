@@ -1,3 +1,5 @@
+Latest outcome checkpoint2026-10-10: ACTIVITY-OUTCOME-FINDINGS.md validates final loading expiry followed by AllStops event0 latch and ActivitySuccess.6044samples/0errors;earlier interrupted-loading record remains0x1a,so success is not perfect-stop performance. PID12888 paused66012.6484375,speed0,throttle0,emergency brake,actual Activity complete alert open. No capture running. Goal remains active/incomplete. Older simulator states below are historical.
+
 Latest metadata checkpoint2026-10-10: ACTIVITY-STATION-METADATA-REVIEW.md reconciles27activity/station entries;other1017candidate records unchanged,all original evidence retained. Current inventory1044. No new gameplay;PID12888 rechecked paused65562.3984375,speed0. Broader goal active/incomplete.
 
 Latest2026-10-10: STOP-ACTIVATION-FINDINGS.md validates stop-required event32 and activation decrements without latch/reset changes. EARLY-DEPARTURE-FINDINGS.md validates interruption of active loading,flags0x1a and next-stop advance. PID12888 paused65562.3984375,speed0,throttle0,emergency brake. Earlier simulator states below are historical. Goal active/incomplete.

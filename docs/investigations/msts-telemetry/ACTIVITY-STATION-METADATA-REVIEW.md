@@ -49,3 +49,8 @@ Principal evidence:ACTIVITY-EVALUATOR,CLOCK,EVENT-TRANSITION,STOP-ACTIVATION,STA
 The generated structural audit checks evidence existence and installed source hashes. The scoped before/after comparison records whether other1017candidate records changed and whether any original evidence paths were lost. Neither check proves semantic completeness. This review still leaves all explicit limits above and every unaudited candidate family open;no candidate ranking,selection or production integration was performed.
 
 The before/after check compares published inventory to published inventory:the existing sync script strips `decompiler_excerpt` from cab metadata. An initial canonical-versus-published check detected those expected67cab excerpt differences;the like-for-like comparison confirms only27reviewed candidates changed and all other1017records are identical. See activity-station-review-20261010.json.
+
+
+## Subsequent outcome evidence, 2026-10-10
+
+ACTIVITY-OUTCOME-FINDINGS.md supersedes the above historical unvalidated-success and unvalidated-type2 descriptions. The declarative metadata now incorporates one final-selected AllStops/ActivitySuccess transition and final loading/departure semantics. The review above and its before/after report describe checkpoint3667952;they are not rewritten as if that later experiment had already happened. Failure/reset and broader semantic review remain open.

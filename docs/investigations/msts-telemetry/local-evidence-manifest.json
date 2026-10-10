@@ -68065,6 +68065,138 @@
       "bytes": 739,
       "sha256": "f3e5f3adda568a8f6ace0d2df8ff3fa1a548881782d01a8d17145ab54ece42fc",
       "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01-byte-verification.json",
+      "bytes": 875,
+      "sha256": "8bf47550f6c3a62c8b50a9ad3069921c32107191beae8f3ff8e5889d8a558566",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/0059ae8e.asm",
+      "bytes": 4466,
+      "sha256": "4e8e711b712a5da909750c359804233af5e750d550160a9905b8783484e8b420",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/0059ae8e.bytes.tsv",
+      "bytes": 2277,
+      "sha256": "d08ebffc9c073c1d00f38e5981c484eb932ee15cf39b64c119096c82651bc4ec",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/0059ae8e.c",
+      "bytes": 1396,
+      "sha256": "58ba2debccbb21ff67a59ad5a4e0f65f9709c442a0a3dc2c69f4d15aeb0528c2",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/0059b27b.asm",
+      "bytes": 1547,
+      "sha256": "ccb9741e942019677fa38a5c6a2e9a33048bde1e99dab4b60666431f1f70cbcd",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/0059b27b.bytes.tsv",
+      "bytes": 783,
+      "sha256": "d5f378c8052562b0d934853162c64d51f3c44233921cfd813d85bfe0c98accb8",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/0059b27b.c",
+      "bytes": 543,
+      "sha256": "498d0103f4ae618c08ceffd6cce95491becdc445a139ad8a72f160d1f2f6f3de",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/00690280.asm",
+      "bytes": 765,
+      "sha256": "7017c3d63636cb41f62d906d7e98d66f99728ed2318ce64576ef38e1f495d095",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/00690280.bytes.tsv",
+      "bytes": 429,
+      "sha256": "dd311b7bc87c806b0948cfaadfc45bdfe1f2a0a114e09a31830c9f414adcc683",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/00690280.c",
+      "bytes": 556,
+      "sha256": "e5d11b5eae9119900e85011485d074ddd12911d36c81c34bdbbe1bcfde51effb",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/provenance.json",
+      "bytes": 1412,
+      "sha256": "c96fbf535c897f2c1c789c520bc053cf24b0929df42fad39305bd18241b15d78",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/all-stops-native-20261010-01/verify_code_bytes.py",
+      "bytes": 2038,
+      "sha256": "17796a9fb4b949f21710ec7beed3618bb020e600764908b50f62d848f501febd",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/metadata.json",
+      "bytes": 892,
+      "sha256": "282c1416b9cbb4c2fee76e00f27096c961d8a4f74cf0db6c2d4a1758806c4715",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/read_activity.py",
+      "bytes": 2006,
+      "sha256": "a27e98fff1c8237edbddda7eddc988e6f576b3be417f5d298f50f9a0ec4b7024",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/read_outcome_series.py",
+      "bytes": 2473,
+      "sha256": "2d2f2976dbb2b6276e019661c9bded6b5cffb94b4aa90cfce7964fe63c99f708",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "bytes": 123298594,
+      "sha256": "69bf8acdff5d0742c8ef7c6a2ae43318f2a88eefaa6360cdec057c5fb1e657d4",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-activity-outcome-20261010-01/stop.request",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
     }
   ]
 }
