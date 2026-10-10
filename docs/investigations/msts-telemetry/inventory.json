@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-10T03:04:37.527031+00:00",
+  "generated_utc": "2026-10-10T03:14:39.652814+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 455,
+    "runtime_direct": 457,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1060
+    "total": 1062
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -37330,6 +37330,42 @@
       "evidence_status": "Native reset/aggregation producer verified;100samples1100body rows11player cars,zero errors/unstable checks,all four accumulators zero",
       "update_or_lifecycle": "00629f5d resets each field before traversing current work records;later response reads selected sums;body lifetime changes invalidate addresses",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not cumulative collision counts or confirmed contact events. Counts include each nonnull record-side reference,not distinct objects;byte/word sums can wrap. All-zero fixture does not validate nonzero transitions,full record semantics or AI freshness. Connected-train traversal does not enumerate every physics body. Equal rereads and ownership checks are not atomic snapshots."
+    },
+    {
+      "id": "electric.secondary_pantograph_control",
+      "meaning": "Secondary electric pantograph command record",
+      "applicability": "player electric controller type3;extension availability must be checked",
+      "value_type": "structured control record",
+      "units": "raw control kind,availability gate,command integer",
+      "extraction": "controller=[[player train+72]+8];record=controller+400;kind+0,gate+4,mode+8,value+10",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "extended-cab-route-map.json",
+        "extended-cab-pantograph-state-20261010-byte-verification.json",
+        "extended-cab-selector-output-20261010-byte-verification.json",
+        "captures/extended-cab-control-availability-20261010-01/records.json"
+      ],
+      "evidence_status": "Static electric source/control routes traced;current bounded record snapshot zero-filled with gate0,not enabled transition validation",
+      "update_or_lifecycle": "Event-driven remap and gated setters traced;load/init/reset/save persistence and AI applicability unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Preserve raw values and availability metadata together. Zero gate/kind in current fixture does not demonstrate pantographs lowered or selector active at0. Secondary value is paired with primary264;selector accepted updates map paired commands before gated toggles. Physical front/rear identity,roof animation,contact and current not proven. Do not use diesel offsets as equivalent electric fields. No installed extension CVF fixture;dispatch kind5 is not validated support."
+    },
+    {
+      "id": "electric.pantograph_selector",
+      "meaning": "Electric multi-position pantograph selector record",
+      "applicability": "player electric controller type3;extension availability must be checked",
+      "value_type": "structured control record",
+      "units": "raw control kind,availability gate,selector integer",
+      "extraction": "controller=[[player train+72]+8];record=controller+440;kind+0,gate+4,mode+8,value+10",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "extended-cab-route-map.json",
+        "extended-cab-pantograph-state-20261010-byte-verification.json",
+        "extended-cab-selector-output-20261010-byte-verification.json",
+        "captures/extended-cab-control-availability-20261010-01/records.json"
+      ],
+      "evidence_status": "Static electric source/control routes traced;current bounded record snapshot zero-filled with gate0,not enabled transition validation",
+      "update_or_lifecycle": "Event-driven remap and gated setters traced;load/init/reset/save persistence and AI applicability unvalidated",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Preserve raw values and availability metadata together. Zero gate/kind in current fixture does not demonstrate pantographs lowered or selector active at0. Secondary value is paired with primary264;selector accepted updates map paired commands before gated toggles. Physical front/rear identity,roof animation,contact and current not proven. Do not use diesel offsets as equivalent electric fields. No installed extension CVF fixture;dispatch kind5 is not validated support."
     }
   ]
 }

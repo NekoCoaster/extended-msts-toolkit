@@ -70777,6 +70777,588 @@
       "bytes": 81,
       "sha256": "22465b98b4a279cec7be676292ea34d049ec608b2d91a84847ae2a71c054543c",
       "included": false
+    },
+    {
+      "path": "captures/extended-cab-control-availability-20261010-01/records.json",
+      "bytes": 1155,
+      "sha256": "332501a230b6aa2ded86001b4b3ae55b3de4b618a35c293bd91acdebcbd4cacc",
+      "included": false
+    },
+    {
+      "path": "captures/extended-cab-object-context-20261010-01/context.json",
+      "bytes": 584,
+      "sha256": "fc7f82a3f86a07f13a4a562addec80902ee0b250c2de2dde2d04d591886b21a2",
+      "included": false
+    },
+    {
+      "path": "captures/extended-cab-pantograph-tables-20261010-01/tables.json",
+      "bytes": 617,
+      "sha256": "57a940517e3311330cb7a148f46bf0026594ed615d6accbbda64f271248779ed",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/0048bc8e.asm",
+      "bytes": 11144,
+      "sha256": "f55cfdd90b56089a4979eca857a7e07644c544c56ff3fe6caaaa4355584bf0d5",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/0048bc8e.bytes.tsv",
+      "bytes": 6012,
+      "sha256": "1d4927fe29626e18f67abe737610aef4bbe8eacd64e72d01454f55d5adcde169",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/0048bc8e.c",
+      "bytes": 4300,
+      "sha256": "d16ac317f65685322b24329a0bdf63e426a09ba0f7473a459d0fab35b11af9b6",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/console.log",
+      "bytes": 6104,
+      "sha256": "bbee5da80cc975c5687bd5df94a0d495f6756ddba1e2633d5917f722531b18c5",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/functions.tsv",
+      "bytes": 29,
+      "sha256": "19833f77e0e5c6c57037c0b8ca8d5f6a5e2d77575ece3e01b9ba3bdb3a527664",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/ghidra.log",
+      "bytes": 6120,
+      "sha256": "96eb7ccb33dd942c8d07e9b115fde73890e6c5b0ea292d5ba797bf6d248f511e",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-command-consumer-20261010/script.log",
+      "bytes": 81,
+      "sha256": "c1e8615d50ac62e5eb970b026001cff074fa228bbadbf454f25e08434f8a3e51",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00406e7a.asm",
+      "bytes": 471,
+      "sha256": "fab20a5bf19fc158d57205b4c267e036c6a4c013d65e29a6b384c2b9c07e3089",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00406e7a.bytes.tsv",
+      "bytes": 261,
+      "sha256": "7d3ac5555933cb182159f800d045eb63f58111e27a7e1f0d4f99d295529c18da",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00406e7a.c",
+      "bytes": 160,
+      "sha256": "7455048a412e22b270eef8e4a44f9ea6d84e4d3b79fe5c7f3b8b841bb31814bc",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/004840b9.asm",
+      "bytes": 1210,
+      "sha256": "e2264e7d6af67b03a2ff81fefec5281faad23bb1f4c8ade593982a78ea12ddd4",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/004840b9.bytes.tsv",
+      "bytes": 570,
+      "sha256": "ee9588f7f471247cb7a834b4c527cfc6457f8d3bc140047fe7cd7db1598d6af7",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/004840b9.c",
+      "bytes": 589,
+      "sha256": "96fad3b46ade49c5896a3e8cdb469457755f47ecf30792faa1bf382a4a265fb7",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/0048411b.asm",
+      "bytes": 1324,
+      "sha256": "06bd9bc481046750cf629a5940ba74efea89d933c2ac90e54b4aa79f44199db3",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/0048411b.bytes.tsv",
+      "bytes": 651,
+      "sha256": "9ae5af8676d046795da73aa1ca9fa71a48ff043d10ab95c27afd6563330c3368",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/0048411b.c",
+      "bytes": 717,
+      "sha256": "6d52bbd288d3b8388c49ca97b4033c00c1cb6a0ff0289ecb2c3bf731bb8a6ab1",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00484822.asm",
+      "bytes": 1530,
+      "sha256": "bd26114a1123881a86d4e87dcac6f7395810c11fb68a5f09fc8f852267fe6dfe",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00484822.bytes.tsv",
+      "bytes": 754,
+      "sha256": "bbecf0802e329592de85ace292cdc0fc1b6e00c8cc054fb9b8d742cf85553a17",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00484822.c",
+      "bytes": 753,
+      "sha256": "e6edb5df937cb6b5be69f8a402fc22b846dc6071e2a61fa1e1d2c6cee2fbf953",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00489aa1.asm",
+      "bytes": 2216,
+      "sha256": "735910f4a784ca8974480f6edce0e24f6ca3bf8a071daa258d851cc4fb117f88",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00489aa1.bytes.tsv",
+      "bytes": 1114,
+      "sha256": "d67f0a1d4d967461c9341cd94734ce8acacf99b8a9ff662ad3da280797ea64f8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/00489aa1.c",
+      "bytes": 799,
+      "sha256": "11d23ec492a06fb8cf19e4ace78292bda957badffbe2b341cdfd5e27dba203de",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/console.log",
+      "bytes": 6150,
+      "sha256": "a1eb4119c0ccc451a41c1608cf7fb6907394e93a5d64e68e036c04cfdb4514f7",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/functions.tsv",
+      "bytes": 145,
+      "sha256": "2a598fac1bacf582e9633d3d5db1961bf4c22a9e4f6b17b4b2587ad4297ad62d",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/ghidra.log",
+      "bytes": 6166,
+      "sha256": "1edb9b972d6442c77e429d989b4088a802d0e2516315ae0bfd8f57e061e42df5",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-operations-20261010/script.log",
+      "bytes": 81,
+      "sha256": "8476427b1b6dbe84e6f863d61b90076754bcd6c6bad2564d59065e4dc1eb921f",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/00487dfe.asm",
+      "bytes": 47402,
+      "sha256": "a021c46c7d3d6ad2b341cc8ae9d3d57fef00a788ca3bee4b7885c8ef2ce75300",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/00487dfe.bytes.tsv",
+      "bytes": 32194,
+      "sha256": "8f295afd2960197d65c9a2cfabd68633fd2fc7ba62a1eaf96d7b5c4f91610e75",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/00487dfe.c",
+      "bytes": 16671,
+      "sha256": "ebf03029effab2b7b9f73e5f0d4e9fb51a98c158e3d747a39caae1945568ba7e",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/console.log",
+      "bytes": 6100,
+      "sha256": "7fdbfbee9372591e0b0cdcd865a080fa5b415bbc630a76892f609fbf15ba2967",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/functions.tsv",
+      "bytes": 29,
+      "sha256": "23d03a360c31adf539ada895f8fbcbcfba62d7aaf2ddb9ac4f42bffc657e0e46",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/ghidra.log",
+      "bytes": 6116,
+      "sha256": "93e2673d513fb9a6d5604df067edf1e172035bbb212db221bdff7f3878d54882",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-control-writer-20261010/script.log",
+      "bytes": 81,
+      "sha256": "f3f7396a157f20b5aae3e59001e478d73d1f63e583bd3c1c4983e50583720b6e",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/00489a25.asm",
+      "bytes": 1328,
+      "sha256": "0a7aac869b65274622d65560b0e871b8a04cba9f329036bcf86fc1b4c0f5e5dc",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/00489a25.bytes.tsv",
+      "bytes": 732,
+      "sha256": "15adbc4e90fb6b99ef5cc0022f8e880bb7526ec32611a1a28fa970294a81d79e",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/00489a25.c",
+      "bytes": 375,
+      "sha256": "0003d3d522304b81cea51f74e70aaf692cd78458340ab689544730249d755d8f",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/console.log",
+      "bytes": 6106,
+      "sha256": "5d87db2d55cc4ee10d1a24b47d9eb30bbd8ff7cfa00e9375686cf3a1fd4fd79d",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/functions.tsv",
+      "bytes": 29,
+      "sha256": "32695d4cda16c9d64c6f2527010e18fdf94929472d8721d738d7fc23332f1b30",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/ghidra.log",
+      "bytes": 6122,
+      "sha256": "f8bb6dd1175d40073d56e22890c67bfbfe4edf2ab8085ae2db11559371d8ee8c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-controller-helper-20261010/script.log",
+      "bytes": 81,
+      "sha256": "62e3b413c1d711f984e09c8c22ac4082799ab95ac0cc2041f4ff87640a4a3c76",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/00406cd4.asm",
+      "bytes": 726,
+      "sha256": "dbe1f7c598b14113752dc1283c894180f731f124b0aa9ef25f214a92d3967182",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/00406cd4.bytes.tsv",
+      "bytes": 447,
+      "sha256": "f4b71b34e06584a89695513c3a718e65fc17f99c5eaf395102c01bbf7fe4a357",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/00406cd4.c",
+      "bytes": 289,
+      "sha256": "0b32b1543dc05e805e39e51fd654beaeb2055676c33f40bf64d130420b467fc7",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/0040d482.asm",
+      "bytes": 1015,
+      "sha256": "c85eb5cfeda5ff28f78cb88ac9c045f51c08d3460cc5dd489cb8c37c1df0a492",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/0040d482.bytes.tsv",
+      "bytes": 566,
+      "sha256": "cced2d0bec88b8156bdb127636a5f9949a38cf63046e7bf84b59f38f3ac9c469",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/0040d482.c",
+      "bytes": 581,
+      "sha256": "097b61ffc671772d45e766209839b0f8dab807894115e554cb4d0318ccb0b951",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/0040d4f0.asm",
+      "bytes": 1015,
+      "sha256": "147f494b676da42a7bf6db1878a45917057885f4eefbad7aaa4b8f0ff30e43d0",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/0040d4f0.bytes.tsv",
+      "bytes": 578,
+      "sha256": "0122a93720ce5a9101f1e40a26d4654108757e2445484b1d3c69ff87180bfc43",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/0040d4f0.c",
+      "bytes": 581,
+      "sha256": "ec9ec03f262e44c4e6c967554e5aacb0471e1c250c6b7289961f7a03ff947564",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/console.log",
+      "bytes": 6302,
+      "sha256": "e5d86c7512d878204ce81bd1240b878035ed016c7ad80d12f5a1645224e8177b",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/functions.tsv",
+      "bytes": 87,
+      "sha256": "79970c71232e01046d06cd895a59edda9af3adf12a138f14f4462748019d4577",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/ghidra.log",
+      "bytes": 6358,
+      "sha256": "e42dfc1abd7ffa7bca7ac9b62bd3fec7d68adff976cc1cfd2c2499568d77f3b2",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-remap-20261010/script.log",
+      "bytes": 81,
+      "sha256": "985b79c4f41ff566b197fe0fa9468277857a6ccd5ad6e9dad4ffcd29f41768ef",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0040bd46.asm",
+      "bytes": 2267,
+      "sha256": "e4595bb4b153fc4ce97914389a2d30d46664c417cd1f1deca32083e4fcf0d934",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0040bd46.bytes.tsv",
+      "bytes": 1267,
+      "sha256": "f36584ea80cb927b49859b3434fb13a674e44903ada46c74ad56b6b26fb007e6",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0040bd46.c",
+      "bytes": 854,
+      "sha256": "fbd58f62e48c754769b6e689b9b058cfa23fa3a17298f28253a1c6b33bd317d0",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0040d384.asm",
+      "bytes": 2493,
+      "sha256": "1d5f0b74b4889d68d41a43c3203e658f2a0907ff5e78fdf805895c2773ee901e",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0040d384.bytes.tsv",
+      "bytes": 1397,
+      "sha256": "700cd256c30e821ca0451ae68a72a6b7165791b30f677a530199327b95e568d7",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0040d384.c",
+      "bytes": 1007,
+      "sha256": "04fea24834b38cb9dad6daf3b1d0d42a6cddd01bc4c1d72b6a89165dd55d9c24",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0048c2ac.asm",
+      "bytes": 1928,
+      "sha256": "26febd1d9a4da97e3269c534ef220fc68c9b28bba18b5b377db75178bd572d8a",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0048c2ac.bytes.tsv",
+      "bytes": 966,
+      "sha256": "a20655362f01ed0984bff9d714386ad2154ddbf5515e5535fb19e292157850d4",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/0048c2ac.c",
+      "bytes": 654,
+      "sha256": "d583d5fe64cc451cdfeb9c2a8d783c1c90a0fb5aac77450e4f3e6fef12cbffb3",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/console.log",
+      "bytes": 6126,
+      "sha256": "83ab175530e8c3215c579d8d38b089dc019190ee72adf4b4b5c9f5e0e751c951",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/functions.tsv",
+      "bytes": 87,
+      "sha256": "7ae547dec9164be04264803c19fb8a31eb6d46d8a3e930472decf1361635c067",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/ghidra.log",
+      "bytes": 6142,
+      "sha256": "3a362530741bff06d4857fb10ba333c65211c15e26c801db2f6fcdc14e76261c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-pantograph-state-20261010/script.log",
+      "bytes": 81,
+      "sha256": "5ff5563d23cf34ec0ba4e800b3acd909684099bc7233de05eb85ec2461c8a708",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/0040bd14.asm",
+      "bytes": 508,
+      "sha256": "030b0048a31f525ab514ae84d810af368dc70e66e21b1278791acb68324914a4",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/0040bd14.bytes.tsv",
+      "bytes": 276,
+      "sha256": "54b0685c5d947841fc0df7e0330a14b4d9c1748717bc0a253c5af0d12b058dff",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/0040bd14.c",
+      "bytes": 255,
+      "sha256": "561ad3f4b77b84ba5b407ee5f6f4af218c70de98ec51f869367e6cf0fd013643",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/0048bc59.asm",
+      "bytes": 558,
+      "sha256": "6e4eec99fe8094f1a2107ddd8288d6124157a72c5003dcc62cfb8d3fce401a9f",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/0048bc59.bytes.tsv",
+      "bytes": 304,
+      "sha256": "6b03149a7405706600b465a7256ade1a5f5bdc75603f722c5db41cad054edda5",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/0048bc59.c",
+      "bytes": 204,
+      "sha256": "75a024e97c5e34901473ad1890f87b2e6be25c161f15044aed584dff5ee85f04",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/console.log",
+      "bytes": 6113,
+      "sha256": "216820d8ce9cf84579cf9999a649d8242a3dd3a65e7218a26171c7d28370375f",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/functions.tsv",
+      "bytes": 58,
+      "sha256": "cd9eb93cb86f4e1942d3312cb0e70473a44dcbbc976ea1c94631d82fd4abd0b0",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/ghidra.log",
+      "bytes": 6129,
+      "sha256": "27b36e984b52ea2176b37173b3a63d74847280ebc531d1390e3b041f4c486588",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "extended-cab-selector-output-20261010/script.log",
+      "bytes": 81,
+      "sha256": "a24ff5eaa2023b2ed1dcd900bc3a4db95bc043837385f06dc362c6c66bf3c4ae",
+      "included": false
+    },
+    {
+      "path": "extended-cab-writers-20261010/console.log",
+      "bytes": 6004,
+      "sha256": "e2990f9379d025195b64ec1f6988848d6ec033d7217f48f596038795c963a117",
+      "included": false
+    },
+    {
+      "path": "extended-cab-writers-20261010/ghidra.log",
+      "bytes": 6000,
+      "sha256": "acaa73f82125d5ebf9de324e093a360de41fad193807db9595995f9940860e3f",
+      "included": false
+    },
+    {
+      "path": "extended-cab-writers-20261010/pantograph-offset-writes.tsv",
+      "bytes": 81,
+      "sha256": "f8ab23eee54402d677784ffc703c0806b15fb1e8446d3ca96a695c5a60a0d78c",
+      "included": false
+    },
+    {
+      "path": "extended-cab-writers-20261010/script.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
     }
   ]
 }

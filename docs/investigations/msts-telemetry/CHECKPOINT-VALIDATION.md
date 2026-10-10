@@ -449,3 +449,8 @@ All26derived candidates reviewed for formula/input/identity/frame/clock prerequi
 ## Collision processing checkpoint, 2026-10-10
 
 Populated work records and shared dispatch owner observed;class4000b,callback contracts,classifier,dispatch order and immediate null-body guards verified against current executable. Both-null records do not demonstrate response. Body accumulator capture100samples/1100rows/11player cars has0errors/unstable checks;allzero,AI/nonzero behavior unvalidated. Inventory1060:one added structured candidate and one revised buffer entry;1058other entries unchanged,old evidence preserved. Audit973paths/151source hashes passes. Sync verifies11660old raw hashes,adds136files;442JSON/218Python parse. Historical PID-only report drift excluded after equality checks. Unchanged-native regression baseline reused;no production code change. Goal remains incomplete.
+
+
+## Extended pantograph control checkpoint, 2026-10-10
+
+Engine-layout-qualified remap,selector updates and paired control assignments traced;ordinary toggle gates retained. Current electric fixture has primary254kind1/gate1/value1 and zero-filled secondary400/selector440records,so no enabled extension behavior claim. Two qualified source candidates added,all1060previous candidate records unchanged. No physical pantograph identity,animation,contact or current inferred. Static byte comparisons pass;invalid kind5dispatch target preserved as unsupported evidence. Inventory1062;978evidence paths/151source hashes pass. Sync verified11796old hashes,added97raw files;450JSON/218Python parse. Historical PID-only drift excluded after equality checks. Unchanged-native regression baseline reused. Goal remains incomplete.
