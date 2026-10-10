@@ -94,3 +94,5 @@ Diesel brake release now validated with selector/pressure changes. Train rolled 
 Emergency monitor acknowledgement and subsequent positive diesel current now observed;see DIESEL-EFFORT-GATE-FINDINGS.md. Earlier rollback cause remains qualified,forward passage still open.
 
 Train acceleration follow-up2026-10-10: TRAIN-ACCELERATION-FINDINGS adds one distinct stored train aggregate at+96,with native m/s2 label,mean car input and player ten-entry history/rate limiting. Runtime moving response and reset remain open. This resolves the projected display source unit without validating future-speed prediction. Inventory1059;structural audit923evidence paths/151source hashes passes.
+
+Collision follow-up2026-10-10: populated buffers and shared simulation owner now observed. Native class4000b,one-body callback contract,and builder/preparation/consumer order are traced and current-byte-verified;see COLLISION-CALLBACK-FINDINGS.md. Both-null captured records do not establish callback response. Body-body consumer reachability and new bounded-width body accumulator extraction remain open. Earlier empty-buffer/unknown-owner notes above are historical.

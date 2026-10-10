@@ -1,0 +1,25 @@
+{
+  "source": "captures\\collision-object-types-20261010-01\\objects.json",
+  "source_sha256": "edcff6266f6286807fdc5b96869ab2e174d2044a2b854675f439d874eae0b918",
+  "correction": "The raw snapshot field named vtable is mislabeled. Object +0 is the native class-table index described by dispatcher 004a041e, not a direct virtual-table pointer. Do not dereference 6.",
+  "objects": [
+    {
+      "address": 66462284,
+      "class_table_index": 6,
+      "self_table_index": 8167,
+      "raw_08": 124,
+      "raw_0c": 1,
+      "object_id": 2823,
+      "body": 0,
+      "callback": "0x403cd3",
+      "collision_flags": "0x384",
+      "header_stable": true
+    }
+  ],
+  "evidence": [
+    "PHYSICAL-REGISTRY-FINDINGS.md",
+    "read_physical_registry.py",
+    "SAVE-OBJECT-SURFACE-FINDINGS.md"
+  ],
+  "limitations": "Offline interpretation only. Class 6 has not yet been resolved in this capture. Raw +8/+c meanings remain unknown. Equal rereads are not an atomic lifetime guarantee. No scenery or terrain classification is established."
+}

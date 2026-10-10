@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-10T02:47:03.737003+00:00",
+  "generated_utc": "2026-10-10T03:04:37.527031+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 454,
+    "runtime_direct": 455,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1059
+    "total": 1060
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -36913,7 +36913,7 @@
       "applicability": "global physical collision machinery;player/AI record attribution requires validated object links",
       "value_type": "structured header and bounded raw records",
       "units": "pointer,count,capacity;record field units incomplete",
-      "extraction": "globals80a76c pointer,80a770 count/construction index,80a774 capacity;stride0x62;record object pointers+4/+8,body pointers+c/+10,callbacks+14/+18;raw remaining bytes;record dword0 bit0x1 set/cleared by005f952e according to caller+44==1",
+      "extraction": "Globals80a76c buffer,80a770 count/construction index,80a774 capacity;stride0x62. Record:flags+0,object pointers+4/+8,body pointers+c/+10,callbacks+14/+18,point+20,direction+2c,projected relative point-velocity scalar+3c. Other fields remain partially decoded;read_collision_buffer.py retains raw bytes.",
       "evidence": [
         "COLLISION-CALLBACK-FINDINGS.md",
         "read_collision_buffer.py",
@@ -36928,11 +36928,32 @@
         "pass281-byte-verification.json",
         "pass281/005f952e.asm",
         "map_collision_generation_stub.py",
-        "collision-generation-stub-map.json"
+        "collision-generation-stub-map.json",
+        "captures/itr-moving-collision-buffer-20261010-01/buffer.json",
+        "captures/itr-moving-collision-buffer-20261010-01/dispatch.json",
+        "captures/itr-moving-collision-buffer-20261010-01/vehicle-joins.json",
+        "collision-object-header-review-20261010.json",
+        "captures/collision-object-types-20261010-01/objects.json",
+        "captures/collision-class-six-20261010-01/class.json",
+        "collision-class-20261010-byte-verification.json",
+        "collision-class-methods-20261010-byte-verification.json",
+        "captures/collision-consumer-native-20261010-01/provenance.json",
+        "captures/collision-consumer-native-20261010-01/0062a2be.asm",
+        "captures/collision-consumer-native-20261010-01-byte-verification.json",
+        "collision-two-body-20261010-byte-verification.json",
+        "collision-response-dispatch-20261010-byte-verification.json",
+        "collision-dispatch-order-20261010-byte-verification.json",
+        "captures/collision-dispatch-order-20261010-01/dispatch.json",
+        "collision-classifier-20261010-byte-verification.json",
+        "collision-classifier-20261010/005f653d.asm",
+        "captures/collision-classifier-context-20261010-01/context.json",
+        "collision-alternate-response-20261010-byte-verification.json",
+        "collision-alternate-response-20261010/005f661a.asm",
+        "collision-alternate-response-20261010/005f6998.asm"
       ],
-      "evidence_status": "allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation",
-      "update_or_lifecycle": "builder resets count and reconstructs records;later processing mutates them;capacity can grow,teardown nulls buffer without explicit count reset",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Scratch buffer is not collision history or guaranteed current contacts. Count is also construction index during rebuild. Null buffer means unavailable even if stale count remains. Probe caps128records and does not dereference pointers. Body/callback pairs can swap without object pointers swapping;phase-dependent attribution. Sequential rereads not atomic;empty fixture provides no contact semantics or AI simulation proof. Post-builder005f952e only changes record flags and makes no callbacks;record flags differ from vehicle CollideFlags. Exact stub4038c3 is JMP despite stored CALL reference. Misaligned pass283 is rejected as instruction evidence. Callback invocation remains unresolved."
+      "evidence_status": "Allocation/rebuild/teardown and current native dispatch, classifier, callback arguments and null-body guards traced. Populated ITR snapshots contain25 and3 records with equal sequential rereads;all sampled body pointers null. Shared simulation owns dispatch table773280. Later object-header/type follow-up resolves class index6 to native kind4000b. No runtime callback execution or physical contact validity demonstrated.",
+      "update_or_lifecycle": "005f95a5 clears simulation buffer/count then calls builder00629dbc,optional response005f8fc9 when simulation44!=0,aggregate preparation00629f5d,then one-body consumer0062a2be. Builder resets global count;records mutate through processing and capacity can grow. Teardown nulls buffer/capacity without explicit count reset.",
+      "limitations": "Exact MSTSBin build2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. External reads are asynchronous;equal rereads do not prove atomicity or lifetime. Scratch data is not collision history or guaranteed current contacts. Null buffer overrides stale count;count may be a construction index. Reader caps128records and does not dereference record pointers;separate follow-ups use bounded reads. Body/callback pairs may swap without object pointers,so side attribution is phase-dependent. Record flags differ from object CollideFlags. Populated samples do not join a later11-car registry and have null bodies;none demonstrate player/AI contacts,scenery or terrain identity. Raw objects.json vtable label is wrong:object+0 is a class-table index. All three inspected005f8fc9 response variants require at least one body;0062a2be requires exactly one. Static reachability is not execution evidence. Classifier writes dot(direction,pointVelocity(body+c)-pointVelocity(body+10));normalization,orientation and point validity remain unproven. Threshold0.05 is a separate observation,not universal impact speed;nonfinite inputs need guards. Callback output aliases body+c8 inverse mass or its temporary substitute on the inspected paths. Full response arithmetic,remaining scalar units,live transitions and complete subsystem coverage remain open. Stub4038c3 is JMP despite historical reference typing;misaligned pass283 is rejected."
     },
     {
       "id": "activity.event.time_threshold",
@@ -37290,6 +37311,25 @@
       "evidence_status": "Static producer and native unit label traced;current inspected code/constants match disk/live;stationary and moving runtime samples retained;199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed;199moving samples,11cars,speed18.664..24.942m/s,stored acceleration-0.6722..0.4653,zero flagged read inconsistencies",
       "update_or_lifecycle": "aggregate update00608800;player ring advances by invocation rather than fixed seconds;initialization/reset/caller cadence unvalidated",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not finite-difference speed acceleration or longitudinal projection. Player filtering changes response;nonplayer source cars may retain stale/zero acceleration under AI skip paths. Extended projected-speed consumer is a display extrapolation,not predicted physical future speed. Stationary baseline speed0 with near-zero acceleration;one aggregate and one history reread changed despite equal sampled clocks. Later introductory automatic-driving capture validates moving values,not manual-control response,exact filter timing or AI freshness."
+    },
+    {
+      "id": "car.collision_pass_accumulators",
+      "meaning": "Body collision preparation accumulators",
+      "applicability": "physical player and AI bodies;current live fixture covers player only",
+      "value_type": "structure:2 uint8 and2 uint16",
+      "units": "raw pass counts/sums with modular overflow",
+      "extraction": "body=[car+0x5c];body+f3 uint8 increments per nonnull record-side reference;+f4 uint8 sums record+44;+f5 uint16 sums record+40;+f7 uint16 sums record+42",
+      "evidence": [
+        "COLLISION-CALLBACK-FINDINGS.md",
+        "collision-pair-consumer-20261010/00629f5d.asm",
+        "collision-pair-consumer-20261010-byte-verification.json",
+        "read_collision_body_accumulators.py",
+        "collision-body-accumulators-20261010-summary.json",
+        "captures/collision-body-accumulators-20261010-01/samples.jsonl"
+      ],
+      "evidence_status": "Native reset/aggregation producer verified;100samples1100body rows11player cars,zero errors/unstable checks,all four accumulators zero",
+      "update_or_lifecycle": "00629f5d resets each field before traversing current work records;later response reads selected sums;body lifetime changes invalidate addresses",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not cumulative collision counts or confirmed contact events. Counts include each nonnull record-side reference,not distinct objects;byte/word sums can wrap. All-zero fixture does not validate nonzero transitions,full record semantics or AI freshness. Connected-train traversal does not enumerate every physics body. Equal rereads and ownership checks are not atomic snapshots."
     }
   ]
 }

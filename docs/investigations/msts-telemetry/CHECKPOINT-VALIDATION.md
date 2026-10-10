@@ -444,3 +444,8 @@ Moving introductory player capture199samples/0errors,11cars,speed18.664..24.942,
 ## Derived candidate prerequisite review, 2026-10-10
 
 All26derived candidates reviewed for formula/input/identity/frame/clock prerequisites and evidence scope. Comparison againstedb0361confirms exactly26derived records changed,1033unchanged,all original evidence retained,IDs/meanings/types/units/applicability preserved. Proposed calculations remain hypotheses where evidence is incomplete;review is not universal runtime validation. Inventory1059unique,947evidence paths,151source hashes pass. Sync verifies11660raw hashes with0new,429JSON/217Python parse. Historical PID-only drift excluded after equality check. Previous unchanged-native regression baseline reused,not rerun. Goal incomplete;direct-field semantic review and broader discovery gaps remain.
+
+
+## Collision processing checkpoint, 2026-10-10
+
+Populated work records and shared dispatch owner observed;class4000b,callback contracts,classifier,dispatch order and immediate null-body guards verified against current executable. Both-null records do not demonstrate response. Body accumulator capture100samples/1100rows/11player cars has0errors/unstable checks;allzero,AI/nonzero behavior unvalidated. Inventory1060:one added structured candidate and one revised buffer entry;1058other entries unchanged,old evidence preserved. Audit973paths/151source hashes passes. Sync verifies11660old raw hashes,adds136files;442JSON/218Python parse. Historical PID-only report drift excluded after equality checks. Unchanged-native regression baseline reused;no production code change. Goal remains incomplete.

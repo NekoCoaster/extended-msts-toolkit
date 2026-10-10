@@ -1,0 +1,34 @@
+{
+  "samples": 100,
+  "errors": 0,
+  "body_rows": 1100,
+  "unique_cars": 11,
+  "unstable": 0,
+  "nonplayer_rows": 0,
+  "range": {
+    "record_count_f3": [
+      0,
+      0
+    ],
+    "sum_record44_f4": [
+      0,
+      0
+    ],
+    "sum_record40_f5": [
+      0,
+      0
+    ],
+    "sum_record42_f7": [
+      0,
+      0
+    ]
+  },
+  "flags": [
+    16
+  ],
+  "day": [
+    45524.44921875,
+    45534.44921875
+  ],
+  "limits": "No positive contact claim;stable rereads do not prove atomicity. Runtime capture only covers enumerated connected vehicles."
+}

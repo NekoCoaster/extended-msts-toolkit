@@ -1321,6 +1321,41 @@ for row in rows:
     if changed:
         row['limitations']+=' Current PID12888 has no NEMT loaded per user;16-byte ranges at494bc1 and5d5381 match disk/live in the current-context capture. This does not revalidate historical behavior or every live instruction.'
         row['evidence']+=['captures/current-hook-context-20261010-01/ranges.json']
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row['evidence']+=['captures/itr-moving-collision-buffer-20261010-01/buffer.json','captures/itr-moving-collision-buffer-20261010-01/dispatch.json','captures/itr-moving-collision-buffer-20261010-01/vehicle-joins.json']
+        row['evidence_status']+=';unpaused ITR snapshot25records/capacity4000,stable header/record rereads;shared simulation vtable773280slot18->4038c3->629dbc verified;object buffer/count match globals'
+        row['limitations']+=' Populated ITR records have50null body slots and no object matches in a later11-car registry snapshot. These are not established vehicle contacts;unmatched objects remain unnamed. Temporal separation limits registry joins. A nonempty buffer does not imply a train collision.'
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row['evidence']+=['collision-object-header-review-20261010.json','captures/collision-object-types-20261010-01/objects.json','captures/collision-class-six-20261010-01/class.json','collision-class-20261010-byte-verification.json','collision-class-methods-20261010-byte-verification.json']
+        row['evidence_status']+=';later three-record snapshot shares class-index6 object;method0x14 resolves005e234d returning native kind0x4000b,registration and methods byte-verified'
+        row['limitations']+=' Raw object snapshot vtable label is incorrect:object+0 is a class-table index. Follow-up type metadata is not atomic with prior record capture. Class semantic name and record contact validity remain unproven;do not classify as scenery or terrain.'
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row['evidence']+=['captures/collision-consumer-native-20261010-01/provenance.json','captures/collision-consumer-native-20261010-01/0062a2be.asm','captures/collision-consumer-native-20261010-01-byte-verification.json']
+        row['evidence_status']+=';consumer0062a2be invokes record callbacks only for exactly one nonnull body;604instructions/2658bytes current disk/live exact'
+        row['limitations']+=' One concrete callback consumer is now verified statically, superseding the blanket untraced-invocation statement above. Both-null sampled records fail its predicate. Actual invocation timing/execution and body-body path remain unvalidated. Callback output aliases body+c8 inverse mass on this path only.'
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row['evidence']+=['collision-two-body-20261010-byte-verification.json','collision-response-dispatch-20261010-byte-verification.json','collision-dispatch-order-20261010-byte-verification.json','captures/collision-dispatch-order-20261010-01/dispatch.json']
+        row['evidence_status']+=';static two-body-capable callback path005f8fc9->005f696f->005f6d1e verified,subject to classifier and record-flag gates'
+        row['limitations']+=' Earlier body-body-path gap is narrowed to classifier/alternate branches and runtime execution. Both-null records also return before callbacks in005f6d1e. Static reachability does not prove a sampled contact was processed.'
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row['evidence']+=['collision-classifier-20261010-byte-verification.json','collision-classifier-20261010/005f653d.asm','captures/collision-classifier-context-20261010-01/context.json']
+        row['evidence_status']+=';record+3c producer is dot(record+2c,pointVelocity(body+c)-pointVelocity(body+10));classifier359bytes current disk/live exact'
+        row['limitations']+=' Classifier arithmetic is now traced;direction normalization/contact validity and alternate consumers remain open. Threshold0.05 was separately observed,not validated as a universal impact speed. Unordered comparisons return2;external derived calculations need nonfinite guards.'
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row['evidence']+=['collision-alternate-response-20261010-byte-verification.json','collision-alternate-response-20261010/005f661a.asm','collision-alternate-response-20261010/005f6998.asm']
+        row['evidence_status']+=';alternate005f661a/005f6998 also reject both-null bodies before callbacks,1755bytes disk/live exact'
+        row['limitations']+=' Immediate alternate null-body guards are now verified;full response arithmetic remains unresolved. All inspected005f8fc9 variants require at least one body for callbacks. This does not prove sampled pointers persisted at invocation.'
+add('car.collision_pass_accumulators','Body collision preparation accumulators','physical player and AI bodies;current live fixture covers player only','structure:2 uint8 and2 uint16','raw pass counts/sums with modular overflow','body=[car+0x5c];body+f3 uint8 increments per nonnull record-side reference;+f4 uint8 sums record+44;+f5 uint16 sums record+40;+f7 uint16 sums record+42', ['COLLISION-CALLBACK-FINDINGS.md','collision-pair-consumer-20261010/00629f5d.asm','collision-pair-consumer-20261010-byte-verification.json','read_collision_body_accumulators.py','collision-body-accumulators-20261010-summary.json','captures/collision-body-accumulators-20261010-01/samples.jsonl'], 'Native reset/aggregation producer verified;100samples1100body rows11player cars,zero errors/unstable checks,all four accumulators zero', '00629f5d resets each field before traversing current work records;later response reads selected sums;body lifetime changes invalidate addresses', common+' Not cumulative collision counts or confirmed contact events. Counts include each nonnull record-side reference,not distinct objects;byte/word sums can wrap. All-zero fixture does not validate nonzero transitions,full record semantics or AI freshness. Connected-train traversal does not enumerate every physics body. Equal rereads and ownership checks are not atomic snapshots.')
+collision_review=json.loads((ROOT/'collision-metadata-review-20261010.json').read_text(encoding='utf-8'))
+for row in rows:
+    if row['id']=='physics.collision_work_buffer':
+        row.update(collision_review)
 derived_review=json.loads((ROOT/'derived-metadata-review.json').read_text(encoding='utf-8'))
 assert set(derived_review)<={r['id'] for r in rows if r['value_type'].startswith('derived')}
 for row in rows:

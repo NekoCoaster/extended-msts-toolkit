@@ -1,0 +1,11 @@
+{
+  "changed_fields": [
+    "extraction",
+    "evidence_status",
+    "update_or_lifecycle",
+    "limitations"
+  ],
+  "evidence_paths_preserved": 35,
+  "candidate_count": 1059,
+  "scope": "Single collision entry metadata consolidation;no raw capture changes or new runtime claims."
+}

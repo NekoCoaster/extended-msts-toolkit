@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 454, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1059}
+{'runtime_direct': 455, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1060}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1048,7 +1048,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | session.vigilance_update_suppressed | Vigilance update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | session.aws_update_suppressed | AWS update suppression gate | native alerter handler and suppression branches traced;running/paused gate sampled1;UI-enabled player vigilance penalty sequence and retained evaluation record observed |
 | car.collision_callback_state | Collision flags and callback binding (native CollideFlags/CollideFunction) | disk/live callback table and stubs agree;selected native targets verified;45vehicle paused capture has callback402bc6,state5 and stable local rereads;native parser labels,flags consumers,initializer and load callback reconstruction traced and byte-verified |
-| physics.collision_work_buffer | Transient collision processing buffer | allocation,rebuild,mutation and teardown traced;paused positive header with count0/capacity4000;no populated runtime record validation |
+| physics.collision_work_buffer | Transient collision processing buffer | Allocation/rebuild/teardown and current native dispatch, classifier, callback arguments and null-body guards traced. Populated ITR snapshots contain25 and3 records with equal sequential rereads;all sampled body pointers null. Shared simulation owns dispatch table773280. Later object-header/type follow-up resolves class index6 to native kind4000b. No runtime callback execution or physical contact validity demonstrated. |
 | activity.event.time_threshold | Time-event elapsed-clock threshold | 14stored thresholds read;468matches time45 fixture and captured elapsed-clock transition |
 | evaluation.report_success | Final report copy of activity success | Native exported ranges match disk/live;0on manual exit;positive report copy unvalidated |
 | evaluation.report_presence_flags | Raw report presence flags | Native exported ranges match disk/live;1read before/after exit;full flag vocabulary unresolved |
@@ -1065,3 +1065,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | evaluation.unlatched_action_count | Final action summaries whose source trigger latch is zero | Native exported ranges match disk/live;0observed with no eligible actions;not universal incomplete-objective count |
 | evaluation.distance_unit_flag | Final report distance display unit selector | Native exported ranges match disk/live;0before finalization,1after Tokyo exit;not a route coordinate conversion |
 | train.stored_acceleration | Stored mean car acceleration, additionally history-filtered and rate-limited for player | Static producer and native unit label traced;current inspected code/constants match disk/live;stationary and moving runtime samples retained;199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed;199moving samples,11cars,speed18.664..24.942m/s,stored acceleration-0.6722..0.4653,zero flagged read inconsistencies |
+| car.collision_pass_accumulators | Body collision preparation accumulators | Native reset/aggregation producer verified;100samples1100body rows11player cars,zero errors/unstable checks,all four accumulators zero |

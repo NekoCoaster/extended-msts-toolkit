@@ -69961,6 +69961,822 @@
       "bytes": 435682,
       "sha256": "be712314b403be879ad63ca972ea69e09df328257d6dc1e9ddad58d33a350060",
       "included": false
+    },
+    {
+      "path": "captures/collision-body-accumulators-20261010-01/metadata.json",
+      "bytes": 322,
+      "sha256": "ef834d24b31a4540fdc4113a3def920bccc34a42dd9533615eb48c2b18130e25",
+      "included": false
+    },
+    {
+      "path": "captures/collision-body-accumulators-20261010-01/read_collision_body_accumulators.py",
+      "bytes": 2088,
+      "sha256": "cb5c519e2864f381e6eb6080a56d3d15474c758129f32af08391813c8ee48c8e",
+      "included": false
+    },
+    {
+      "path": "captures/collision-body-accumulators-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/collision-body-accumulators-20261010-01/samples.jsonl",
+      "bytes": 218900,
+      "sha256": "7dd3da469a9e9c9e98baa21a8ce8412b4492a8e022a0afead071e424e970f9a5",
+      "included": false
+    },
+    {
+      "path": "captures/collision-class-six-20261010-01/class.json",
+      "bytes": 539,
+      "sha256": "7ecbe9200edc73eb4747711856ec45b7f30dbb83d64c63f3a990014ed39220fd",
+      "included": false
+    },
+    {
+      "path": "captures/collision-classifier-context-20261010-01/context.json",
+      "bytes": 444,
+      "sha256": "2dadcf9f982e68ba0d891daade8a9f6affb0521cad63c0203bbcb2d45f336d31",
+      "included": false
+    },
+    {
+      "path": "captures/collision-consumer-native-20261010-01-byte-verification.json",
+      "bytes": 538,
+      "sha256": "e4af127221a28732008b90e05e2e764278df8a3128d548a35e19178aca3bb335",
+      "included": false
+    },
+    {
+      "path": "captures/collision-consumer-native-20261010-01/0062a2be.asm",
+      "bytes": 22488,
+      "sha256": "9365e396b3178235ccf36fe719403bc775c720d9826960d9400c91a2682e10f2",
+      "included": false
+    },
+    {
+      "path": "captures/collision-consumer-native-20261010-01/0062a2be.bytes.tsv",
+      "bytes": 11960,
+      "sha256": "ed7a61a15e8fa2c69260630d54f1f38afb6049846f3ddb8e34176fd877cb23a3",
+      "included": false
+    },
+    {
+      "path": "captures/collision-consumer-native-20261010-01/0062a2be.c",
+      "bytes": 11544,
+      "sha256": "38f3e5f6e464f9823eb0d22cca6d6734aa624a5010a633508a499206d2d047e7",
+      "included": false
+    },
+    {
+      "path": "captures/collision-consumer-native-20261010-01/provenance.json",
+      "bytes": 821,
+      "sha256": "f93015712da071252ac83f337084ad4451e84e5b486bbd882251ee9cb082cba9",
+      "included": false
+    },
+    {
+      "path": "captures/collision-dispatch-order-20261010-01/dispatch.json",
+      "bytes": 1085,
+      "sha256": "4ffdc16e2e80a8eaecdb68167a72bbfe5d6e92b8392930f89f6b354c7896a5fd",
+      "included": false
+    },
+    {
+      "path": "captures/collision-object-types-20261010-01/objects.json",
+      "bytes": 1440,
+      "sha256": "edcff6266f6286807fdc5b96869ab2e174d2044a2b854675f439d874eae0b918",
+      "included": false
+    },
+    {
+      "path": "captures/collision-object-types-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-collision-buffer-20261010-01/buffer.json",
+      "bytes": 14301,
+      "sha256": "321b57ad11ceae687f7a72214e142126f865ea65d7932e9f70d38124c3e01f58",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-collision-buffer-20261010-01/dispatch.json",
+      "bytes": 381,
+      "sha256": "46d6427d54e526b46787af11bdcda23561b7d59d1c9f39ae8b2aaa81f6c552e0",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-collision-buffer-20261010-01/read_collision_buffer.py",
+      "bytes": 1848,
+      "sha256": "3b632ae47acb32fc046f1c4b0ffd230c1b9e4dbcb0dd584aae25f5d9cffe794e",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-collision-buffer-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/itr-moving-collision-buffer-20261010-01/vehicle-joins.json",
+      "bytes": 24797,
+      "sha256": "57f44b5c37529607fe3a3444085212e79a74e890bbe72423fe7ec64adebda064",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/005f661a.asm",
+      "bytes": 7520,
+      "sha256": "41fd73bc0c8a640bc88c54ebfa4593d4430deb031593bca6d37693be136903a3",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/005f661a.bytes.tsv",
+      "bytes": 4005,
+      "sha256": "8aeda88279aea5852c00ca9e7a88215a7a17ba76b801d62709a9e230e25351b0",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/005f661a.c",
+      "bytes": 3546,
+      "sha256": "6630ba65267043d1b51d278506ed0563c76eb9fc74a718a544bdc27e60e24956",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/005f6998.asm",
+      "bytes": 7764,
+      "sha256": "febda11421be5ba087420426b38c734d9d5393de6de7684219c67eb71002bb3a",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/005f6998.bytes.tsv",
+      "bytes": 4147,
+      "sha256": "ebffa0c40f36476bda566217d3cda0af0d84a0fec953126658abd46687e9f4d7",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/005f6998.c",
+      "bytes": 3503,
+      "sha256": "9e12fc9dd6f9d88e6c85b95246995c3203a77e38aebdda4afdc3a731c9d49eb3",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/console.log",
+      "bytes": 6113,
+      "sha256": "ea783c60139f93a861c6a4e5f5c5621db7cbd2b4e7623d867acfd0d5f2c4440e",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/functions.tsv",
+      "bytes": 58,
+      "sha256": "94b6ae665c43702c434c450f948264caaea9fd3c67a5a257cd9e3f3a4b3aa740",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/ghidra.log",
+      "bytes": 6129,
+      "sha256": "26c7ea0730329a879e6613b60cc7d6b94014d91ec3c5abd2356e2ffbd6401f15",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "collision-alternate-response-20261010/script.log",
+      "bytes": 81,
+      "sha256": "8191037a7d66d64a66215ff7d833e3a8d40faf905a3823560ab9dd33f78f40d4",
+      "included": false
+    },
+    {
+      "path": "collision-callbacks-20261010/console.log",
+      "bytes": 6095,
+      "sha256": "338123664f1b984a078b68f91e16b4a98bdd3108361de4e48719b425a87e8397",
+      "included": false
+    },
+    {
+      "path": "collision-callbacks-20261010/functions.tsv",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
+    },
+    {
+      "path": "collision-callbacks-20261010/ghidra.log",
+      "bytes": 6111,
+      "sha256": "6d9722c16f32ef14accc3293fecfce07c11025495f78fcc7501e4990ebc209d0",
+      "included": false
+    },
+    {
+      "path": "collision-callbacks-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-callbacks-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "collision-callbacks-20261010/script.log",
+      "bytes": 81,
+      "sha256": "c39b1b274dd3af1182c626009bd319a4dc15da79a378ca2e265589ff45fdb41b",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/005e1ccd.asm",
+      "bytes": 4261,
+      "sha256": "ebb34e62798185bc964d6974297ae4a29809a94d1bfd8924d317c4754b763770",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/005e1ccd.bytes.tsv",
+      "bytes": 2915,
+      "sha256": "f877d675f474e2ed99fb87114cfadd212f4db3d45033c779a77191641b2dbe64",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/005e1ccd.c",
+      "bytes": 1060,
+      "sha256": "75f8cf0fff5915244ba369f751520b4e2f10ea628ce3297b7b176289bedb4cdf",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/005e234d.asm",
+      "bytes": 189,
+      "sha256": "af5aef168b2646c7734ac18f2a318014100b2d059ba52a9c8c36173cb124066a",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/005e234d.bytes.tsv",
+      "bytes": 120,
+      "sha256": "62719fe92c87849c4783eea4503a296338da5edd48ee5758ec8e2f1bc24b96c7",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/005e234d.c",
+      "bytes": 62,
+      "sha256": "eeab4f390d1fcd75b067f0924d847e84cb6ddb9fb88fe1cfc61281b2e7815421",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/console.log",
+      "bytes": 6061,
+      "sha256": "9dd9ec20fa7be52ff9baeba935eb1d6304e3280681e8ac7afb3b1e9574654f96",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/functions.tsv",
+      "bytes": 58,
+      "sha256": "ef1bb00705fa710f995b05f0f53347c822675e7cb070596e8bb32be6bd457618",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/ghidra.log",
+      "bytes": 6077,
+      "sha256": "9ea4577ea7edf030f73e7a79646cc0155dceb1cb22c891f713c83ba6e8237341",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/references.tsv",
+      "bytes": 60,
+      "sha256": "996deea282132b2d61c9e36c8ff9e831d88093a690ea19a7ec243371e1d983da",
+      "included": false
+    },
+    {
+      "path": "collision-class-20261010/script.log",
+      "bytes": 81,
+      "sha256": "4d3b46d20a3de81a7ce79c2eddb787bae2a1741a308f034705d92b43f7bd9266",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/005e1ef3.asm",
+      "bytes": 2480,
+      "sha256": "c154902ef0b3777f2db587d1f360145f745c03852a98e2df86cb688990c4ce88",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/005e1ef3.bytes.tsv",
+      "bytes": 1304,
+      "sha256": "254010cc99383be4777f58c79556832f9789fd504a12517f22daecb6f6bbfe02",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/005e1ef3.c",
+      "bytes": 733,
+      "sha256": "25113194a4675ca6dac90693acb3a5be299d91ca9d8c3953d1051c6a13b5ced0",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/005e235d.asm",
+      "bytes": 1238,
+      "sha256": "b27a8b1a2232ea389f2fc0b820749529116620c15da171cb0f4b18f354dddf27",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/005e235d.bytes.tsv",
+      "bytes": 639,
+      "sha256": "aafc5c547c2ff3752ae7e87be3879b1fbd355994aa168dc9aaa809eefec0d7f0",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/005e235d.c",
+      "bytes": 399,
+      "sha256": "97bb46437e8b542e90ed08898e42d0aff73cf58673e25c302ff27dee6b64736e",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/console.log",
+      "bytes": 6103,
+      "sha256": "13781c7c3ed2c7f6a41a9051d56e6c2aaebfeff4afd13a6b3fa9015059a2a237",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/functions.tsv",
+      "bytes": 58,
+      "sha256": "81d4e6f0a864bfa6be979a2f2b8a879e8ed421ce22a07569cdd7dcfcda27f9ac",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/ghidra.log",
+      "bytes": 6119,
+      "sha256": "f5f86f6eb0c2537691baabf4b699fb003d586ff83502be0b5d9aad074a9321d7",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "collision-class-methods-20261010/script.log",
+      "bytes": 81,
+      "sha256": "efd86c874ee106017a9a92009a4ec5b825d6b4eff64fbe11234d9a8d60a4ebc0",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f653d.asm",
+      "bytes": 2520,
+      "sha256": "f45cf1033a7261b71dc4142077dce044295a90458968e1fde3aa655ad7297978",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f653d.bytes.tsv",
+      "bytes": 1278,
+      "sha256": "61bcc36e42fc66006d5be8bbae22174f823ac809e56a052b334afa14ee0714c8",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f653d.c",
+      "bytes": 1273,
+      "sha256": "a21dd0e3cce22264eb049f1860789170b480162966a9e36ec93ce9607ea849c2",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f9b0e.asm",
+      "bytes": 1127,
+      "sha256": "1fb7a3556bf2134b6fb490376880015f5f66015966987f5a20c1387063dff087",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f9b0e.bytes.tsv",
+      "bytes": 509,
+      "sha256": "60ebf7313c7efddc666a827d2a102a6d7bd49d2c83885757513db8c8101b1630",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f9b0e.c",
+      "bytes": 367,
+      "sha256": "2e8d8210d362bec30a9ac23be3163360f285b3aeefa5e4d1a071cec2df8de3a7",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f9ce9.asm",
+      "bytes": 706,
+      "sha256": "bdc994f8280b375dfa6a11261aeedd38169f2eb069e4556d1ee02eba6bbdd1eb",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f9ce9.bytes.tsv",
+      "bytes": 350,
+      "sha256": "1027d067de56e1454456cbf0ad9fe5a28c379e22c924590a38c0015a443083d0",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/005f9ce9.c",
+      "bytes": 223,
+      "sha256": "b49b72c32084173c53cfd92ff9a5d55b47f20b8909b5d24aad863a14112ee3ff",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/console.log",
+      "bytes": 6108,
+      "sha256": "750c984d9ab8e17f17002bee7f92933884283dd238f3f2efbff2ea8da9b23ef6",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/functions.tsv",
+      "bytes": 87,
+      "sha256": "a6402e46a43ed0114f519c89b967d84572f6a7b5d168f23c6c9fd3ec0cdf53fe",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/ghidra.log",
+      "bytes": 6124,
+      "sha256": "f40f1003f061f89c1cb5b29ae31ac55fa344b67b3e8172f5fbeb770681179a57",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "collision-classifier-20261010/script.log",
+      "bytes": 81,
+      "sha256": "9de1a824609e86a59daa63acbe6fa77485d8b5a4aeb651f8da9495b2d94e45be",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/005f95a5.asm",
+      "bytes": 7460,
+      "sha256": "413ee21340826e767c3ef6a6d5eae9ce721f268fadfa0783402ee03d62d7cc0f",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/005f95a5.bytes.tsv",
+      "bytes": 3634,
+      "sha256": "137e42287f801f7012fcee64e49c26b1b6608664af334d8cf3819ca299ade874",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/005f95a5.c",
+      "bytes": 2846,
+      "sha256": "3493d5341ee555e4d6b060a1942c534f0714957d8ccb302efbb4b293b5b3d4f4",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/console.log",
+      "bytes": 6094,
+      "sha256": "85d29b1b36d590f971a4b25614dccd7a7f8894998e2e138dc6263b5441d8583d",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/functions.tsv",
+      "bytes": 29,
+      "sha256": "a8bdd14065b8c9eb274f9a85220637a7fa11697df2028f0bc522cab566190e47",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/ghidra.log",
+      "bytes": 6110,
+      "sha256": "697a9751ad4e24509de4cda31b6f6905dee3e86ec416800cf8b6d640eb37e96d",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "collision-dispatch-order-20261010/script.log",
+      "bytes": 81,
+      "sha256": "0028cdb3ae16a94a16539bbdcbcbe6ec40ba874ec5d39a7961cb233b606f229e",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/00629f5d.asm",
+      "bytes": 8219,
+      "sha256": "c34bf7b32f60d6a1e052f382e80e35b0d9cce7f55dd0f0fcfd38c343e05dc994",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/00629f5d.bytes.tsv",
+      "bytes": 4293,
+      "sha256": "6bcef21e43d10e4e488e3c816e391a2a9ebea8167e4f6ac07af429a952c70b25",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/00629f5d.c",
+      "bytes": 3171,
+      "sha256": "54a3470269c5af51796939adb7a794c53ca00b92e3b8194dc9561b8a7bf07322",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/console.log",
+      "bytes": 6092,
+      "sha256": "543f277ff484386666f7bc21b7e6e48f239f16da2ef5deb386b813422383ee3e",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/functions.tsv",
+      "bytes": 29,
+      "sha256": "4e9517f2f3d15fd0e6faf22095a8c9e709864a6029447a352261d1a6e9328c0a",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/ghidra.log",
+      "bytes": 6108,
+      "sha256": "100c765a81dafdb6a4f2140c4ea00ef4f44c13c51b32251c12c676ba85a5d94b",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "collision-pair-consumer-20261010/script.log",
+      "bytes": 81,
+      "sha256": "444e2878911c83710002e564e3722534da6a002356e003def64ab788487f311d",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004023bf.asm",
+      "bytes": 26,
+      "sha256": "9315bf08cc070b4fe7dcfba20987bb19127878304993b484b298172339d9f23d",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004023bf.bytes.tsv",
+      "bytes": 21,
+      "sha256": "f8f31b995fc84b86ecd6f867d7663778ef7a2def5c37aaaf2d47293741efb54c",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004023bf.c",
+      "bytes": 3045,
+      "sha256": "2408cf4054e759b984fef40e4f7ae914d6720dc090071c054a6d1525d7a146a7",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004027bb.asm",
+      "bytes": 26,
+      "sha256": "1c31cb0159126921aae9ec206cf189e45fa34176d79a53d56d7e4456883eacc4",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004027bb.bytes.tsv",
+      "bytes": 21,
+      "sha256": "89c3a6ad8698d54b401204ac8edfe6a08f7f20ffcc2fe3eaec8c5875f68cf0b5",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004027bb.c",
+      "bytes": 178,
+      "sha256": "d201019dbdec0155b742fcfd48b897d030ee25f24a2a3034be398d1ce8c1dede",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004b8c97.asm",
+      "bytes": 920,
+      "sha256": "3680c745ba05ea3a53c307677859ed803bbe964745e4dca12f7901be39dadead",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004b8c97.bytes.tsv",
+      "bytes": 497,
+      "sha256": "06a1d38419dc7bf8586de567f2bff5a8aa433c9490f31a11b8d234ede39a80fb",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/004b8c97.c",
+      "bytes": 337,
+      "sha256": "a425ced80d5e0b3ca5a2a23138d71707122f6cf5969a2881127f448bad66ff9b",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f696f.asm",
+      "bytes": 475,
+      "sha256": "bfc0dbd3a5d592bcb7ed37cbbef5e92ea1f59d7d7ad6b6b88f20333efee2e167",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f696f.bytes.tsv",
+      "bytes": 269,
+      "sha256": "c37fe7ec7baddfc0c1c39e7e574f70e820d0b8151750096fbf6edf7aabda91a0",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f696f.c",
+      "bytes": 172,
+      "sha256": "ccb8f70ce7c29c72d02512f6f86676a9a50079974c16ec8c7419a97794d12571",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f8fc9.asm",
+      "bytes": 5978,
+      "sha256": "28d1f4e7f07da31eb73f1e3ea62659987212c43bd1da99e8879ddd7e6d87a7a4",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f8fc9.bytes.tsv",
+      "bytes": 2969,
+      "sha256": "95698f810313fa96dc2c647d34907b93df6b394ed2d637c9b7d799a3d26bf64a",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f8fc9.c",
+      "bytes": 2943,
+      "sha256": "fd798ea2eaef50a0e895ecae235e709793fedbc49a1481b2b34e2fc071217ace",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f91ff.asm",
+      "bytes": 1529,
+      "sha256": "ca75d879318aea6dcef2fcf26326ffd19158624d68d423826eeafa4d84d34a80",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f91ff.bytes.tsv",
+      "bytes": 763,
+      "sha256": "693f5ee5f4720f32c9ea85c04e031e21e3cefb48049ab44d93c0a033d4f1c9c7",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f91ff.c",
+      "bytes": 549,
+      "sha256": "e0cea5ce0180dd32f6a621f2639ecb4b2fe5e414526581d4beff81d541bc9f39",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f95a5.asm",
+      "bytes": 7460,
+      "sha256": "413ee21340826e767c3ef6a6d5eae9ce721f268fadfa0783402ee03d62d7cc0f",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f95a5.bytes.tsv",
+      "bytes": 3634,
+      "sha256": "137e42287f801f7012fcee64e49c26b1b6608664af334d8cf3819ca299ade874",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/005f95a5.c",
+      "bytes": 2846,
+      "sha256": "3493d5341ee555e4d6b060a1942c534f0714957d8ccb302efbb4b293b5b3d4f4",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/console.log",
+      "bytes": 6096,
+      "sha256": "e684c86cb3093c40c7ca35b5492df2fb2552dd38f53bac252df478663fe1a4f2",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/functions.tsv",
+      "bytes": 215,
+      "sha256": "4f275bdd33f376c495822b40d0730a7fec31e67473c5dc5067eb6a9f2e5dc88a",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/ghidra.log",
+      "bytes": 6112,
+      "sha256": "47322eb4811791f631ce10097c2105c9f2a59fddd1ca4757c4b07457857395dd",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/references.tsv",
+      "bytes": 309,
+      "sha256": "7fe12c0795cfd6523ef1065ddb577f6069b3918811af81b3e172159f9f72619b",
+      "included": false
+    },
+    {
+      "path": "collision-response-dispatch-20261010/script.log",
+      "bytes": 81,
+      "sha256": "4b4f1c040e4337d595e042a4d98d8e8b14789290177ab761a774794a73c12b1a",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/00402c43.asm",
+      "bytes": 26,
+      "sha256": "f111f6718dcb800a8c674cc8c7e563ff39b867914db9b0c52f38d09f108d1cbe",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/00402c43.bytes.tsv",
+      "bytes": 21,
+      "sha256": "9b22be1f318bccc1ffec7f7ed086dafc671043bae7afaedb17c07208e5de759d",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/00402c43.c",
+      "bytes": 11352,
+      "sha256": "c11a63eeeea2bb8d277853bacf62efdb1b0095daeafb6605c2fc0c954b890c7e",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/005f696f.asm",
+      "bytes": 475,
+      "sha256": "bfc0dbd3a5d592bcb7ed37cbbef5e92ea1f59d7d7ad6b6b88f20333efee2e167",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/005f696f.bytes.tsv",
+      "bytes": 269,
+      "sha256": "c37fe7ec7baddfc0c1c39e7e574f70e820d0b8151750096fbf6edf7aabda91a0",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/005f696f.c",
+      "bytes": 172,
+      "sha256": "ccb8f70ce7c29c72d02512f6f86676a9a50079974c16ec8c7419a97794d12571",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/005f6d1e.asm",
+      "bytes": 22701,
+      "sha256": "e6d5fcae67078f7c22bc8eac9a0a5d1ca3e797c71815aca522ffebe75051bdfa",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/005f6d1e.bytes.tsv",
+      "bytes": 11869,
+      "sha256": "cd8acaa2588282fea2e26e22386287b6a908ebe670862a21e6e724e246b4eedd",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/005f6d1e.c",
+      "bytes": 10909,
+      "sha256": "3a7d539395ac1e0648d733d45a3593774e024d38eda5c669cdae4a75cacf6f5b",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/console.log",
+      "bytes": 6067,
+      "sha256": "5cc55a9a44b1157f51b5e504d22f3f8a06f7f86a50836899de9814e41df8a860",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/functions.tsv",
+      "bytes": 93,
+      "sha256": "5d01479ce8fc7396f4822bdf494d5200026cb0e0c3d5cb47b9fa88b10ba1326a",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/ghidra.log",
+      "bytes": 6083,
+      "sha256": "81eaf65c7e9d7fa535d32703137dd63dd41e7692f55e19d26400359ef4649390",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/references.tsv",
+      "bytes": 121,
+      "sha256": "2176fe77dd8b114bfef73e62d5aeca6dd7d85683a00f2e521985cc7794c57156",
+      "included": false
+    },
+    {
+      "path": "collision-two-body-20261010/script.log",
+      "bytes": 81,
+      "sha256": "22465b98b4a279cec7be676292ea34d049ec608b2d91a84847ae2a71c054543c",
+      "included": false
     }
   ]
 }
