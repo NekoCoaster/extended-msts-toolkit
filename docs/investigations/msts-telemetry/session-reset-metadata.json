@@ -1,7 +1,7 @@
 {
   "simulation.time": {
-    "evidence_status": "Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief; normal-speed Explore rollover86399.953125->0.078125 with elapsed advancing0.125s",
-    "update_or_lifecycle": "simulation advance,initialization/restart;observed debrief holds old clock",
+    "evidence_status": "Distinct day-clock storage traced;UI restart66012.6484375->64800 observed;old value persists into debrief; normal-speed Explore rollover86399.953125->0.078125 with elapsed advancing0.125s; helper00645540 rebuilds day clock from nonzero clock[-4] plus elapsed and subtracts86400 once, then recomputes HMS",
+    "update_or_lifecycle": "native clock update plus helper00645540;nonzero[80acb4] selects start-plus-elapsed day clock;initialization/restart and debrief lifecycle remain relevant",
     "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Read with lifecycle context;nonzero clock or pause0 does not imply active simulation. One Explore Route midnight wrap validated; saved-game clock restoration remains open;Historical PID7160 had NEMT timing patches; current PID12888 has no NEMT loaded per user confirmation, and three checked clock/caller ranges match disk bytes. Precision behavior still requires measurement.",
     "evidence": [
       "SESSION-RESET-FINDINGS.md",
@@ -17,7 +17,11 @@
       "midnight-clock-20261010-summary.json",
       "analyse_clock_series.py",
       "captures/explore-midnight-20261010-01/samples.jsonl",
-      "captures/explore-midnight-20261010-01/completion.json"
+      "captures/explore-midnight-20261010-01/completion.json",
+      "clock-helper-20261010-byte-verification.json",
+      "clock-helper-20261010/00645540.asm",
+      "captures/clock-dispatch-20261010-01/constants.json",
+      "captures/clock-dispatch-20261010-01/dispatch.json"
     ]
   },
   "simulation.paused": {
@@ -49,9 +53,9 @@
     ]
   },
   "session.internal_calendar": {
-    "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart; remained3/6/2000 across captured Explore midnight while HMS wrapped",
+    "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart; remained3/6/2000 across captured Explore midnight while HMS wrapped; helper return-address replacement bypasses calendar carry;69helper instructions/207bytes match disk/live",
     "update_or_lifecycle": "clock initialization/update;date unchanged in this restart experiment; date also unchanged across observed Explore midnight",
-    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. One Explore midnight produced no date increment despite a statically visible carry path; cause and other session modes remain unresolved. Leap/calendar validity and initialization provenance unresolved. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. Helper00645540 overwrites its return address with00645c8f, bypassing legacy calendar carry in the inspected update path; this explains the unchanged date at Explore midnight. Other callers and session modes are not all validated. Leap/calendar validity and initialization provenance unresolved. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
     "evidence": [
       "SESSION-RESET-FINDINGS.md",
       "session-reset-20261010-summary.json",
@@ -66,13 +70,17 @@
       "midnight-clock-20261010-summary.json",
       "analyse_clock_series.py",
       "captures/explore-midnight-20261010-01/samples.jsonl",
-      "captures/explore-midnight-20261010-01/completion.json"
+      "captures/explore-midnight-20261010-01/completion.json",
+      "clock-helper-20261010-byte-verification.json",
+      "clock-helper-20261010/00645540.asm",
+      "captures/clock-dispatch-20261010-01/constants.json",
+      "captures/clock-dispatch-20261010-01/dispatch.json"
     ]
   },
   "session.clock_components": {
     "evidence_status": "18:20:12->18:00:00->18:00:01 observed across normal UI restart; normal-speed Explore23:59:59->00:00:00 observed with same player/start and advancing native elapsed",
     "update_or_lifecycle": "clock update and initialization/restart",
-    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. One Explore HMS midnight wrap validated; internal date did not advance. Other modes, date-carry cause and saved-game restoration remain open. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. One Explore HMS midnight wrap validated; internal date did not advance. Helper recomputes low16bits of HMS from wrapped day clock and skips legacy carry; high16bits must not be assumed rewritten. Other modes and saved-game restoration remain open. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
     "evidence": [
       "SESSION-RESET-FINDINGS.md",
       "session-reset-20261010-summary.json",
@@ -87,7 +95,11 @@
       "midnight-clock-20261010-summary.json",
       "analyse_clock_series.py",
       "captures/explore-midnight-20261010-01/samples.jsonl",
-      "captures/explore-midnight-20261010-01/completion.json"
+      "captures/explore-midnight-20261010-01/completion.json",
+      "clock-helper-20261010-byte-verification.json",
+      "clock-helper-20261010/00645540.asm",
+      "captures/clock-dispatch-20261010-01/constants.json",
+      "captures/clock-dispatch-20261010-01/dispatch.json"
     ]
   },
   "service.ordered_operational_records": {

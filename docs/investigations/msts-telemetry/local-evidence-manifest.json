@@ -69619,6 +69619,306 @@
       "bytes": 81,
       "sha256": "560d4c3616675830556a2c9b16cdcbfae11d4d4e2c7700100a31c4bed9b167ee",
       "included": false
+    },
+    {
+      "path": "captures/clock-dispatch-20261010-01/constants.json",
+      "bytes": 602,
+      "sha256": "5aa1c9f390496aedd79f4206074452d5715de1cb61232f64e0635dc63aea64d3",
+      "included": false
+    },
+    {
+      "path": "captures/clock-dispatch-20261010-01/dispatch.json",
+      "bytes": 894,
+      "sha256": "377db7e02856cf75e8eb943d10491c23d06d905753abfad8955599909b5759b7",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-01/analysis-notes.json",
+      "bytes": 337,
+      "sha256": "a0a78a117a60db603e59105228a1251a3288e031275e6e7e7178dca24b9cb2d8",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-01/completion.json",
+      "bytes": 66,
+      "sha256": "1de02fc4184d6295199309831dc4586406d6e89f7b76f74e7c437802fbbd1ea9",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-01/metadata.json",
+      "bytes": 576,
+      "sha256": "42cd85ed1dc6e0a71e35b163dff0328845b4be1b17cd51521e9750848e85a583",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-01/read_path_wait_series.py",
+      "bytes": 3577,
+      "sha256": "8b7c6af6ae2b2b96075d95a44bc6cea3e02ad42ed4c4040bba7b1b34307f9685",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-01/samples.jsonl",
+      "bytes": 4495313,
+      "sha256": "2a3052bd75a15df3a6ae7fe94cbcf0ae084476cc059a12144f086fdd283db9e7",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-02/completion.json",
+      "bytes": 65,
+      "sha256": "e5a49088b302b19462ee3fb9a78b20882611205811c988922a14032abca690b5",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-02/metadata.json",
+      "bytes": 576,
+      "sha256": "8ce5f912276184495ac9d8f28a22dc096ca71b3bcab272a37b4618f585985dfd",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-02/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-02/read_path_wait_series.py",
+      "bytes": 4084,
+      "sha256": "3d879f7e67da223b07f6355fb7623d27986d1f6a6bd9a6d265f20bf4a7643c80",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-02/samples.jsonl",
+      "bytes": 3060548,
+      "sha256": "66fa9d932c67a2b6446072a0748bbdd49efa17c5f8bd389907353a4aa0664694",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-path-wait-20261010-02/stop.request",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-paths-20261010-01/paths.json",
+      "bytes": 731900,
+      "sha256": "a55b0c15e05d9fe6fe839958450bf7a9e9e84bb246ccb1c51b85b24412a964f5",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-paths-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-paths-20261010-01/read_loaded_path_nodes.py",
+      "bytes": 3332,
+      "sha256": "cccbd6a26ec81e32e2111926a3df8ed8e09a82f7c6ab4675945d6b9ea9ee5420",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-paths-20261010-01/read_service_paths.py",
+      "bytes": 2602,
+      "sha256": "cadf331512babd91e177fd6867ec98aa051ccf4b2ad0ca627bddccfb74617e29",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-paths-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-wait-baseline-20261010-01/metadata.json",
+      "bytes": 801,
+      "sha256": "1a68bfbf814781aec1a9abfb481f426da547cdd948787765ba7ae4bf5461eab9",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-wait-baseline-20261010-01/read_ai_station_series.py",
+      "bytes": 2607,
+      "sha256": "d331fa416ec21afe40548000add74643e6a388cbbce93b5b75a3713c14a5b8ed",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-wait-baseline-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-wait-baseline-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-wait-baseline-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-itr-wait-baseline-20261010-01/samples.jsonl",
+      "bytes": 105151209,
+      "sha256": "cf56aa20b8305d291f9fe0b4a1ca697fd8adb941cd3bffd3257786bd04505c7c",
+      "included": false
+    },
+    {
+      "path": "clock-calendar-references-20261010/console.log",
+      "bytes": 6080,
+      "sha256": "e017cb495a60d17965d428b3117530d6cb2bbb2e269429937a55fdd2c68aa9c4",
+      "included": false
+    },
+    {
+      "path": "clock-calendar-references-20261010/ghidra.log",
+      "bytes": 6076,
+      "sha256": "ebf2f03fe7f4f24299e0597498db5bb6be100bdc6b0016d2191922f4fc622926",
+      "included": false
+    },
+    {
+      "path": "clock-calendar-references-20261010/references.tsv",
+      "bytes": 1427,
+      "sha256": "b5e7c0f93b2254af8f2285fef3eb5d6b910c2d6c5fd6aaa93e3e57fd4d261a1c",
+      "included": false
+    },
+    {
+      "path": "clock-calendar-references-20261010/script.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/00645540.asm",
+      "bytes": 1353,
+      "sha256": "35029bd4aa38df48e4d763c137ce54c0b0f5567508150e8ee83d4ef837b15373",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/00645540.bytes.tsv",
+      "bytes": 710,
+      "sha256": "0cf444e67644672b491d5494e7d51413fa9a7e3a11929dcaba98ddc359db571d",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/00645540.c",
+      "bytes": 1069,
+      "sha256": "d99ade67371aa036faae1dcdd53467982ebee4c535f30b7265505b4828a1b24b",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/00645fab.asm",
+      "bytes": 815,
+      "sha256": "f6248fc42e469180fb548f052308a6a26220974f35a89586aead20ec25651b5e",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/00645fab.bytes.tsv",
+      "bytes": 463,
+      "sha256": "51db599c1f9a5c3db75987af5f5acb606027978d8f19d7c236d5ee45293e1096",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/00645fab.c",
+      "bytes": 372,
+      "sha256": "4e33cc9f57a92bff18a3074e80c79b51876b9b763730bb45655b32cc783ea804",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/console.log",
+      "bytes": 6079,
+      "sha256": "e351f161b9e2143dbd87b79af79eac36b20c6ab581e879e6bb90b898024f405e",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/functions.tsv",
+      "bytes": 58,
+      "sha256": "efaeac8fe0a7354f36739494c456c304484acfadd59dc285d6ca3dc021f9fb2f",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/ghidra.log",
+      "bytes": 6095,
+      "sha256": "c101a30d1168626e57a90e77809313a091533ac5bd57e4c204aa1ba63ffee947",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "clock-helper-20261010/script.log",
+      "bytes": 81,
+      "sha256": "973bdd9f487ffa1dcd8f60f64c9e9386c22969826ad93d261352f0f596c8c5b7",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/005a7e9c.asm",
+      "bytes": 755,
+      "sha256": "7000f19d49ed1c1e700bff0b05e1d98ddce92b20bfa2d195176a2ec2af968b68",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/005a7e9c.bytes.tsv",
+      "bytes": 423,
+      "sha256": "527f4ee9da8705919dca4c7d84c82dd77c20742b7136d65ae4e8e56188e61514",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/005a7e9c.c",
+      "bytes": 243,
+      "sha256": "e96347355d8e97975299bb31a5d0a384f91d36fd99baf8e9afdbb865710f911e",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/console.log",
+      "bytes": 6088,
+      "sha256": "18f77ddd49046d726eb0deef1af5d33d1ee15d50c7634dcb8384683723a6469c",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/functions.tsv",
+      "bytes": 29,
+      "sha256": "b527f08681cc35229560a33c388abcc3be1fabf397855c3e76e4ca7b20ad27df",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/ghidra.log",
+      "bytes": 6104,
+      "sha256": "6027c4229ec51fd28eb08b3d5de07b8fd1bdb8a70fd3dffc4876e2aa27ae4d54",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "path-movement-context-20261010/script.log",
+      "bytes": 81,
+      "sha256": "e0dc81ab8b7e789e375cc74d946bc2d8ac61009fefb449a43a43a75b33b6bae8",
+      "included": false
     }
   ]
 }

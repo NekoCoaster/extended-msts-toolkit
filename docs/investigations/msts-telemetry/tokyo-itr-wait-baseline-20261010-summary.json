@@ -1,0 +1,16 @@
+{
+  "samples": 483,
+  "errors": 0,
+  "sha256": "cf56aa20b8305d291f9fe0b4a1ca697fd8adb941cd3bffd3257786bd04505c7c",
+  "first_time": 43217.44921875,
+  "last_time": 43277.44921875,
+  "path_wait_braking": 0,
+  "path_wait_dwell": 0,
+  "platform_gate": 1755,
+  "player_speed_range": [
+    0.0,
+    11.460050582885742
+  ],
+  "unstable_service_samples": 0,
+  "limits": "60wall-second baseline;zero sampled wait flags does not prove absence of zero-duration transitions. Intro ride uses automatic driving;not ordinary player controls."
+}

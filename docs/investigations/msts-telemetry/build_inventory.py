@@ -1284,6 +1284,15 @@ for row in rows:
         row['evidence']+=['read_train_acceleration.py','train-acceleration-baseline-20261010-summary.json','captures/train-acceleration-baseline-20261010-01/samples.jsonl']
         row['evidence_status']+=';199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed'
         row['limitations']+=' Baseline train speed0 with near-zero stored acceleration;one aggregate and one history reread changed despite equal sampled clocks. No moving response validation.'
+for row in rows:
+    if row['id'] in {'service.wait_braking','service.wait_active','service.wait_elapsed','service.wait_duration'}:
+        row['evidence'] += ['AI-PLATFORM-COUNTDOWN-FINDINGS.md','tokyo-itr-path-wait-20261010-02-summary.json',
+                            'captures/tokyo-itr-path-wait-20261010-02/samples.jsonl',
+                            'captures/tokyo-itr-paths-20261010-01/paths.json',
+                            'captures/path-wait-native-20261010-01-byte-verification.json',
+                            'path-movement-context-20261010-byte-verification.json']
+        row['evidence_status'] += ';AI189zero-duration path-node boundary stop/resumption observed,elapsed0->1,duration0;neither braking nor dwell gate sampled nonzero'
+        row['limitations'] += ' Positive-duration dwell and direct gate activation remain unvalidated. A local iterator tests eventtype5;the retained service iterator need not expose it. Zero-duration gates may set/clear within one update. Elapsed1 remains after wait and path-end reset,so nonzero elapsed alone is not active waiting. Shared path nodes are not service identities.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

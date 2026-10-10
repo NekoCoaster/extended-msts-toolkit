@@ -1,0 +1,255 @@
+{
+  "samples": 4290,
+  "errors": 0,
+  "unstable_roots": 0,
+  "unstable_cursor": 0,
+  "wait_braking": 0,
+  "wait_dwell": 0,
+  "transitions": [
+    {
+      "before": {
+        "utc": "2026-10-10T02:32:27.550703+00:00",
+        "time": 43637.07421875,
+        "wall_elapsed": 6.664647700032219,
+        "cursor_index": 66,
+        "event_index": null,
+        "iterator_type": 1,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 0.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 11.110800743103027,
+        "target": 11.110800743103027,
+        "roots_stable": true,
+        "cursor_stable": true
+      },
+      "after": {
+        "utc": "2026-10-10T02:32:27.571288+00:00",
+        "time": 43637.19921875,
+        "wall_elapsed": 6.685272499918938,
+        "cursor_index": 67,
+        "event_index": null,
+        "iterator_type": 1,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 0.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 11.110800743103027,
+        "target": 11.110800743103027,
+        "roots_stable": true,
+        "cursor_stable": true
+      }
+    },
+    {
+      "before": {
+        "utc": "2026-10-10T02:32:33.561490+00:00",
+        "time": 43643.07421875,
+        "wall_elapsed": 12.675474599935114,
+        "cursor_index": 67,
+        "event_index": null,
+        "iterator_type": 1,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 0.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 11.110800743103027,
+        "target": 11.110800743103027,
+        "roots_stable": true,
+        "cursor_stable": true
+      },
+      "after": {
+        "utc": "2026-10-10T02:32:33.582102+00:00",
+        "time": 43643.19921875,
+        "wall_elapsed": 12.69609640003182,
+        "cursor_index": 69,
+        "event_index": null,
+        "iterator_type": 1,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 0.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 11.110800743103027,
+        "target": 11.110800743103027,
+        "roots_stable": true,
+        "cursor_stable": true
+      }
+    },
+    {
+      "before": {
+        "utc": "2026-10-10T02:32:58.548110+00:00",
+        "time": 43668.07421875,
+        "wall_elapsed": 37.662170900031924,
+        "cursor_index": 69,
+        "event_index": null,
+        "iterator_type": 1,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 0.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 0.3453092575073242,
+        "target": 0.0,
+        "roots_stable": true,
+        "cursor_stable": true
+      },
+      "after": {
+        "utc": "2026-10-10T02:32:58.569189+00:00",
+        "time": 43668.19921875,
+        "wall_elapsed": 37.68316360004246,
+        "cursor_index": 68,
+        "event_index": null,
+        "iterator_type": 1,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 1.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 0.0,
+        "target": 0.0,
+        "roots_stable": true,
+        "cursor_stable": true
+      }
+    },
+    {
+      "before": {
+        "utc": "2026-10-10T02:33:05.565415+00:00",
+        "time": 43675.07421875,
+        "wall_elapsed": 44.679397700121626,
+        "cursor_index": 68,
+        "event_index": null,
+        "iterator_type": 1,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 1.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 4.799999713897705,
+        "target": 0.0,
+        "roots_stable": true,
+        "cursor_stable": true
+      },
+      "after": {
+        "utc": "2026-10-10T02:33:05.586121+00:00",
+        "time": 43675.19921875,
+        "wall_elapsed": 44.700116799911484,
+        "cursor_index": 1,
+        "event_index": null,
+        "iterator_type": 3,
+        "flags": {
+          "0x1dc": 1,
+          "0x1e4": 0,
+          "0x1e8": 0,
+          "0x214": 0
+        },
+        "timers": {
+          "0x1ec": 1.0,
+          "0x1f0": 0.0,
+          "0x210": 0.0
+        },
+        "speed": 4.799999713897705,
+        "target": 0.0,
+        "roots_stable": true,
+        "cursor_stable": true
+      }
+    }
+  ],
+  "first": {
+    "utc": "2026-10-10T02:32:20.886502+00:00",
+    "time": 43630.44921875,
+    "wall_elapsed": 0.00042719999328255653,
+    "cursor_index": 66,
+    "event_index": null,
+    "iterator_type": 1,
+    "flags": {
+      "0x1dc": 1,
+      "0x1e4": 0,
+      "0x1e8": 0,
+      "0x214": 0
+    },
+    "timers": {
+      "0x1ec": 0.0,
+      "0x1f0": 0.0,
+      "0x210": 0.0
+    },
+    "speed": 11.110800743103027,
+    "target": 11.110800743103027,
+    "roots_stable": true,
+    "cursor_stable": true
+  },
+  "last": {
+    "utc": "2026-10-10T02:33:49.420841+00:00",
+    "time": 43718.94921875,
+    "wall_elapsed": 88.53490890003741,
+    "cursor_index": 1,
+    "event_index": null,
+    "iterator_type": 3,
+    "flags": {
+      "0x1dc": 1,
+      "0x1e4": 0,
+      "0x1e8": 0,
+      "0x214": 0
+    },
+    "timers": {
+      "0x1ec": 1.0,
+      "0x1f0": 0.0,
+      "0x210": 0.0
+    },
+    "speed": 4.799999713897705,
+    "target": 0.0,
+    "roots_stable": true,
+    "cursor_stable": true
+  },
+  "limits": "Sequential external observations; missed brief transitions remain possible. Progress deliberately excluded; first capture read a pointer as float. State adjacency breaks on errors.",
+  "completion": {
+    "samples": 4290,
+    "errors": 0,
+    "wall_elapsed": 88.53522700001486
+  },
+  "samples_sha256": "66fa9d932c67a2b6446072a0748bbdd49efa17c5f8bd389907353a4aa0664694"
+}
