@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-10T01:08:24.361371+00:00",
+  "generated_utc": "2026-10-10T01:14:48.667435+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -26,11 +26,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
-      "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "evidence_status": "Independent day clock traced;UI restart66012.6484375->64800 observed;old value persists into debrief",
+      "update_or_lifecycle": "simulation advance,initialization/restart;observed debrief holds old clock",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Read with lifecycle context;nonzero clock or pause0 does not imply active simulation. Midnight and saved-game clock restoration remain open;installed NEMT timing patches prevent stock-precision claims."
     },
     {
       "id": "simulation.step",
@@ -60,11 +67,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
-      "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "evidence_status": "Gameplay/menus observed;result dismissal1->0 precedes teardown;debrief/loading pause0 without active player;restarted briefing1",
+      "update_or_lifecycle": "UI/modal and gameplay transitions;flag is not a complete session readiness state",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Zero does not establish running gameplay or advancing clocks. Startup briefing and result alert both have1 in these observations;other modal/load paths remain open."
     },
     {
       "id": "train.registry",
@@ -1090,11 +1104,18 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "readable in live captures; semantics partly inherited/static",
-      "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Diesel live validation and steam regulator/cutoff transitions are recorded; electric offsets remain inherited candidates."
+      "evidence_status": "Existing1steam/2diesel/3electric mapping;teardown3->0 and restart0->3 observed with controller clearing/rebuild",
+      "update_or_lifecycle": "player controller selection/construction and teardown",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Type0 during unload/loading is not a usable controller. New player pointer precedes controller/type in this capture;read pointer and type consistently and bound any dereference. AI is not controlled by this global."
     },
     {
       "id": "player.throttle",
@@ -29919,10 +29940,15 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
       ],
       "evidence_status": "Tokyo baseline50events:14time,34location,2action;representative time/location and event0 AllStops success transitions observed",
-      "update_or_lifecycle": "enumerate on activity load/state inspection; reread root and bound traversal",
+      "update_or_lifecycle": "enumerate on activity load/state inspection;reread root and bound traversal;root clears at observed teardown and changes on restart",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. List and node bounds are defensive reader limits. Stable root alone does not prove complete or consistent enumeration; action predicates are not validated by their presence."
     },
     {
@@ -30057,11 +30083,16 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "Time/location latches0->1 and non-reversible location persistence;AllStops event0 latches after final loading expiry and alongside success result",
+      "evidence_status": "Time/location latches0->1 and non-reversible location persistence;AllStops event0 latches after final loading expiry and alongside success result;UI restart reconstructs event0/32/42/44 with latch0",
       "update_or_lifecycle": "set during enabled predicate evaluation; retained until applicable reset/reversal/load path; exact evaluation cadence unmeasured",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not an objective-completion count. Current geometry can be true before latch changes. Reversible clearing and load/reset transitions remain unvalidated."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not an objective-completion count. Current geometry can be true before latch changes. UI restart reinitialization observed;event outcome4,reversible clearing and saved-game restoration remain unvalidated."
     },
     {
       "id": "activity.event.state_20",
@@ -30127,11 +30158,16 @@
         "captures/tokyo-events-baseline-20261010-01/activity.json",
         "EVENT-TRANSITION-FINDINGS.md",
         "ACTIVITY-OUTCOME-FINDINGS.md",
-        "activity-outcome-20261010-summary.json"
+        "activity-outcome-20261010-summary.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "Source32 decrements targets42/44 from1 to0 while their latches and baseline are unchanged",
+      "evidence_status": "Source32 decrements targets42/44 from1 to0 while their latches and baseline are unchanged;UI restart restores42/44 activation1 with latch0 and baseline1",
       "update_or_lifecycle": "changed by outcome processing; positive gates initial evaluation; exact writer cadence unmeasured",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Signed value; zero/negative disable initial gate but do not automatically clear a set latch. Increment,negative level,reset and reverse transitions remain unvalidated."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Signed value; zero/negative disable initial gate but do not automatically clear a set latch. Increment,negative level,reset and reverse transitions remain unvalidated. Restart reinitialization is distinct from outcome4 activation reset and does not validate that outcome."
     },
     {
       "id": "activity.event.location_tile",
@@ -30395,11 +30431,16 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "Native guard/outcome writers traced;0->1 with event0 ActivitySuccess,retained while Activity complete alert is open",
-      "update_or_lifecycle": "outcome processing and activity initialization;positive success transition observed;reset/dismissal unvalidated",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. One nonzero success transition validated;failure,reset,dismissal and other termination paths remain unvalidated. Event-evaluation stop is not the general pause flag or proof of UI closure."
+      "evidence_status": "Native guard/outcome writers traced;0->1 with event0 ActivitySuccess,retained while Activity complete alert is open;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0",
+      "update_or_lifecycle": "outcome processing and activity lifecycle;observed success sets1,dismissal/teardown clears0,and UI restart retains0",
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. One nonzero success transition validated;failure,saved-game restoration and other termination paths remain unvalidated. Event-evaluation stop is not the general pause flag or proof of UI closure. Result0 outside gameplay is not failure;these fields are not the retained debrief report."
     },
     {
       "id": "activity.event_outcome_success",
@@ -30428,11 +30469,16 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "Outcome6 native write1 corroborated by0->1 alongside stop1 and Activity complete UI;earlier interrupted station loading remains0x1a",
-      "update_or_lifecycle": "outcome processing and activity initialization;positive success transition observed;failure/reset/dismissal unvalidated",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read together with evaluation-stop;zero alone is not failure. Success and Activity complete UI observed;failure/reset/dismissal remain unvalidated. Success does not certify every station loading or timetable performance. Existing NEMT activity-end modifications may affect behavior."
+      "evidence_status": "Outcome6 native write1 corroborated by0->1 alongside stop1 and Activity complete UI;earlier interrupted station loading remains0x1a;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0",
+      "update_or_lifecycle": "outcome processing and activity lifecycle;observed success sets1,dismissal/teardown clears0,and UI restart retains0",
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read together with evaluation-stop;zero alone is not failure. Success and Activity complete UI observed;failure and saved-game restoration remain unvalidated. Success does not certify every station loading or timetable performance. Existing NEMT activity-end modifications may affect behavior. Result0 outside gameplay is not failure;these fields are not the retained debrief report."
     },
     {
       "id": "activity.time_event_clock",
@@ -30459,11 +30505,16 @@
         "ACTIVITY-STATION-METADATA-REVIEW.md",
         "captures/tokyo-events-baseline-20261010-01/activity.json",
         "STOP-ACTIVATION-FINDINGS.md",
-        "event-activation-20261010-summary.json"
+        "event-activation-20261010-summary.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618",
+      "evidence_status": "Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800",
       "update_or_lifecycle": "native00645af0 advances accumulator by dt;00645d12 resets it;pause stops observed simulation advance;live additions have NEMT timing patches",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Independent from day-clock minus start-time. Runtime reset/midnight,calendar and unmodified MSTS precision remain unvalidated. Not a location-derived value."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Independent from day-clock minus start-time. Normal UI restart reset observed;midnight,saved-game restoration,calendar provenance and unmodified MSTS precision remain unvalidated. Not a location-derived value."
     },
     {
       "id": "activity.event.horizontal_distance",
@@ -30544,11 +30595,18 @@
         "captures/clock-paused-01/clock.json",
         "pass70/00645af0.asm",
         "pass70/00645d12.asm",
-        "pass71-byte-verification.json"
+        "pass71-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native clock update/setter traced and paused values read; current clock additions patched",
-      "update_or_lifecycle": "clock update and initialization; midnight/reload transitions untested",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Internal calendar is not established as narrative activity date. Leap/calendar validity and source initialization remain unresolved. Live timing differs from original disk instructions."
+      "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart",
+      "update_or_lifecycle": "clock initialization/update;date unchanged in this restart experiment",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. Midnight/leap/calendar validity and initialization provenance unresolved. Existing timing patches bound precision claims."
     },
     {
       "id": "session.clock_components",
@@ -30562,11 +30620,18 @@
         "captures/clock-paused-01/clock.json",
         "pass70/00645af0.asm",
         "pass70/00645d12.asm",
-        "pass71-byte-verification.json"
+        "pass71-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native clock update/setter traced and paused values read; current clock additions patched",
-      "update_or_lifecycle": "clock update and initialization; midnight/reload transitions untested",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Internal calendar is not established as narrative activity date. Leap/calendar validity and source initialization remain unresolved. Live timing differs from original disk instructions."
+      "evidence_status": "18:20:12->18:00:00->18:00:01 observed across normal UI restart",
+      "update_or_lifecycle": "clock update and initialization/restart",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. Midnight/date carry and saved-game restoration remain open. Existing timing patches bound precision claims."
     },
     {
       "id": "car.brake_cylinder_pressure",
@@ -30956,11 +31021,18 @@
         "pass78-byte-verification.json",
         "COLLISION-STATE-FINDINGS.md",
         "captures/post-red-collision-evaluation-01/evaluation.json",
-        "captures/collision-exit-evaluation-01/evaluation.json"
+        "captures/collision-exit-evaluation-01/evaluation.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
-      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
+      "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+      "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence."
     },
     {
       "id": "evaluation.speed_episode_duration",
@@ -30981,11 +31053,18 @@
         "pass78-byte-verification.json",
         "COLLISION-STATE-FINDINGS.md",
         "captures/post-red-collision-evaluation-01/evaluation.json",
-        "captures/collision-exit-evaluation-01/evaluation.json"
+        "captures/collision-exit-evaluation-01/evaluation.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
-      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
+      "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+      "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence."
     },
     {
       "id": "evaluation.speed_episode_active",
@@ -31006,11 +31085,18 @@
         "pass78-byte-verification.json",
         "COLLISION-STATE-FINDINGS.md",
         "captures/post-red-collision-evaluation-01/evaluation.json",
-        "captures/collision-exit-evaluation-01/evaluation.json"
+        "captures/collision-exit-evaluation-01/evaluation.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
-      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
+      "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+      "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence."
     },
     {
       "id": "evaluation.speed_episode_records",
@@ -31031,11 +31117,18 @@
         "pass78-byte-verification.json",
         "COLLISION-STATE-FINDINGS.md",
         "captures/post-red-collision-evaluation-01/evaluation.json",
-        "captures/collision-exit-evaluation-01/evaluation.json"
+        "captures/collision-exit-evaluation-01/evaluation.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native collector and storage traced; empty paused state read, no nonzero episode validation",
-      "update_or_lifecycle": "per activity evaluation, capped at40 closed episodes; report also has teardown-only fields",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Collector gate can leave stale active details once capped. Closed duration excludes ongoing episode. Adjusted peak is not maximum raw train speed. Restriction precedence, tolerance, location units and subtype names need further tracing; no actual violation transition validated. Adjusted speed is max(abs(activity+0x1b8)-0.8940799832344055,0), approximately a2mph tolerance. Location comes from kind8/subtype0 distance-marker search; route units and interpolation behavior remain unvalidated. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record."
+      "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+      "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence."
     },
     {
       "id": "evaluation.operational_error_count",
@@ -31059,11 +31152,18 @@
         "analyse_monitor_enabled.py",
         "monitor-enabled-events.json",
         "captures/alerter-penalty-evaluation-01/evaluation.json",
-        "captures/monitor-options-restored-01/gates.json"
+        "captures/monitor-options-restored-01/gates.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native append path traced; two retained records match stored count, emission not observed;UI-enabled player vigilance penalty sequence and retained evaluation record observed",
-      "update_or_lifecycle": "appended on traced rising controller conditions; initialization/reset and global bounds unresolved",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Raw codes4 and8 observed, not independently named UI errors. Retained timestamps do not establish capture-time causality. Location is marker-derived with unresolved route units. No AI equivalent established. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record. UI-enabled follow-up validates player vigilance quarter-step countdown,alarm/action rising edges and penalty brake response;UI evaluation and code2 record agree. Gates0 during1397sample run;original Alerter option restored with gates1 after reload. Timers continue negative after latching. This does not validate every monitor,AI,acknowledgement,audio or process-restart option persistence."
+      "evidence_status": "Installed code labels traced;prior vigilance code2 corroborated;Tokyo debrief code64/time65526.7734375/location5.3583502769470215 matches interrupted loading and UI;restart count0/list empty",
+      "update_or_lifecycle": "append on traced conditions;report retained through gameplay teardown and reset by restarted activity",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. No continuous code64 emission/reset trace in this experiment;retained timestamp matches earlier departure capture. Preserve raw codes and installed-resource provenance;4 and32 differ. km5.36/18:12:07 UI match is one example,not full marker conversion validation. Other writers/global bounds and AI applicability remain open."
     },
     {
       "id": "evaluation.operational_error_records",
@@ -31090,11 +31190,18 @@
         "analyse_monitor_enabled.py",
         "monitor-enabled-events.json",
         "captures/alerter-penalty-evaluation-01/evaluation.json",
-        "captures/monitor-options-restored-01/gates.json"
+        "captures/monitor-options-restored-01/gates.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "two retained records match count; native display dispatch maps codes4/8 to installed English resource labels; emission not observed;UI-enabled player vigilance penalty sequence and retained evaluation record observed",
-      "update_or_lifecycle": "appended on traced rising controller conditions; initialization/reset and global bounds unresolved",
-      "limitations": "Exact-image/installed-resource mapping only; preserve raw code. Codes4 and32 are distinct. No causal input or live emission proof. Marker interpolation and route conversion remain unvalidated. No AI equivalent established. Later exit test observes one active speed episode becoming one completed22.4140625s record,UI22s;operational-error/condition lists remainempty. This only validates the specific speed-episode lifecycle,not every evaluation writer or a generic collision record. UI-enabled follow-up validates player vigilance quarter-step countdown,alarm/action rising edges and penalty brake response;UI evaluation and code2 record agree. Gates0 during1397sample run;original Alerter option restored with gates1 after reload. Timers continue negative after latching. This does not validate every monitor,AI,acknowledgement,audio or process-restart option persistence."
+      "evidence_status": "Installed code labels traced;prior vigilance code2 corroborated;Tokyo debrief code64/time65526.7734375/location5.3583502769470215 matches interrupted loading and UI;restart count0/list empty",
+      "update_or_lifecycle": "append on traced conditions;report retained through gameplay teardown and reset by restarted activity",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. No continuous code64 emission/reset trace in this experiment;retained timestamp matches earlier departure capture. Preserve raw codes and installed-resource provenance;4 and32 differ. km5.36/18:12:07 UI match is one example,not full marker conversion validation. Other writers/global bounds and AI applicability remain open."
     },
     {
       "id": "evaluation.freight_durability_count",
@@ -32855,11 +32962,18 @@
         "early-departure-20261010-summary.json",
         "captures/tokyo-early-departure-20261010-01/samples.jsonl",
         "captures/tokyo-early-departure-20261010-01/ui-observation.json",
-        "captures/early-departure-native-20261010-01-byte-verification.json"
+        "captures/early-departure-native-20261010-01-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+        "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+        "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
       ],
-      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured;Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection",
-      "update_or_lifecycle": "service loading/path reconstruction/activity schedule merge;progress selection and explicit advance;full reset and AI-stop lifecycle unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Player arrival-on-loading,countdown,expiry,departure and next-stop selection validated in Tokyo. Both AI lists contain platform459 with zero schedule/event times and flags;selection advances to null and one service later reselects its record. Native successor null/end behavior remains ambiguous;do not equate null with completion. AI9 reselection is corroborated as a scheduler path-end reset;timed AI stops,player final-stop outcomes,loading-duration factors and full reset remain unresolved. Existing distance reconstruction and schedule merge evidence is build-specific;record+24 is not automatically effective208. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced. Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed."
+      "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records",
+      "update_or_lifecycle": "service load/schedule merge,station processing,AI path-end reset and teardown/reinitialization",
+      "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;timed AI stops/rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific."
     },
     {
       "id": "station.recorded_arrival",
@@ -32896,9 +33010,14 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "SESSION-RESET-FINDINGS.md",
+        "session-reset-20261010-summary.json",
+        "session-reset-ui-20261010.json",
+        "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+        "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
       ],
-      "evidence_status": "Accepted loading writes arrival in representative Tokyo stops,including final65979.2734375;alternate native synthesis branches retained",
+      "evidence_status": "Accepted loading writes arrival in representative Tokyo stops,including final65979.2734375;alternate native synthesis branches retained;restarted initial record has synthetic64805 while clock64801.2265625",
       "update_or_lifecycle": "written by accepted loading or native synthesis branches;retained in record",
       "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not necessarily physical stop time. Zero/unset and synthesis must be interpreted with flags/state;AI event timing and midnight remain open."
     },

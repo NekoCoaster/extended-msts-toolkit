@@ -1240,6 +1240,18 @@ for row in rows:
         evidence=list(dict.fromkeys(row['evidence']+metadata['evidence']))
         row.update(metadata)
         row['evidence']=evidence
+# Scoped lifecycle evidence for session/service/evaluation candidates.
+reset_metadata=json.loads((ROOT/'session-reset-metadata.json').read_text())
+if not set(reset_metadata)<={row['id'] for row in rows} or set(reset_metadata)&set(reviewed_metadata):
+    raise ValueError('Unexpected or overlapping session-reset review scope')
+for row in rows:
+    if row['id'] in reset_metadata:
+        metadata=reset_metadata[row['id']]
+        if set(metadata)-{'evidence_status','update_or_lifecycle','limitations','evidence'}:
+            raise ValueError('Unexpected session-reset metadata field')
+        evidence=list(dict.fromkeys(row['evidence']+metadata['evidence']))
+        row.update(metadata)
+        row['evidence']=evidence
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

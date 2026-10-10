@@ -51,3 +51,8 @@ Resource helper004b1ef4 calls LoadStringA and performs bounded string copying; p
 Follow-up: VEHICLE-MOTION-EVALUATION.md resolves car+1c0 as stored acceleration and car+28e as loaded Durability. The earlier unresolved-input wording records the original checkpoint; reference threshold initialization and moving/nonzero evaluation tests remain open.
 
 Correction and resolution: DEFAULT-PARAMETER-FINDINGS.md establishes80aa1c as a shared simulation object and+94 as the loaded Default wagon definition, not a reference car. Its ExtraParameters indices23/24 supply the shared acceleration ceiling/scale. Earlier raw capture labels remain preserved; current probe labels are corrected.
+
+
+## UI restart follow-up, 2026-10-10
+
+SESSION-RESET-FINDINGS.md now links the Tokyo debrief UI to3speed records totaling47.125seconds and a code64 interrupted-loading record,time65526.7734375/location5.3583502769470215. These survive gameplay teardown and are empty after normal UI restart. Earlier empty-only descriptions are historical;this does not establish continuous code64 emission/reset timing or new freight/passenger condition semantics.

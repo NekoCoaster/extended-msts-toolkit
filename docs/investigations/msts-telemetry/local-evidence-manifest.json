@@ -68197,6 +68197,114 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "included": false
+    },
+    {
+      "path": "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "bytes": 1852,
+      "sha256": "e4a1404e44e35bb7d9052a238cf1c95395596a9f58a3f06110a317b28dbc7034",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-final-evaluation-20261010-01/read_evaluation.py",
+      "bytes": 2239,
+      "sha256": "190f66440f30d39ad19ac81c54428afe8f6f3ae6116b1341b5a8e20255992713",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-final-evaluation-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "bytes": 858,
+      "sha256": "094004c3882e38b74fe35cfdc35f75ecef7c5e0890827da004e49188a881ac1a",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-evaluation-20261010-01/read_evaluation.py",
+      "bytes": 2239,
+      "sha256": "190f66440f30d39ad19ac81c54428afe8f6f3ae6116b1341b5a8e20255992713",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-evaluation-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-outcome-20261010-01/metadata.json",
+      "bytes": 890,
+      "sha256": "f66705aaa1df81de6e3d18e1ff3e73df20bb876a2aacadad560439f6e93d383f",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-outcome-20261010-01/read_activity.py",
+      "bytes": 2006,
+      "sha256": "a27e98fff1c8237edbddda7eddc988e6f576b3be417f5d298f50f9a0ec4b7024",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-outcome-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-outcome-20261010-01/read_outcome_series.py",
+      "bytes": 2473,
+      "sha256": "2d2f2976dbb2b6276e019661c9bded6b5cffb94b4aa90cfce7964fe63c99f708",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-outcome-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-outcome-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "bytes": 20234,
+      "sha256": "9d6dcfec3125835fd4f833c1cfa1ee7e2b16c29bf6b86da758ada09865f79473",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-result-reset-20261010-01/metadata.json",
+      "bytes": 607,
+      "sha256": "9ace5a7deed80e51fbb618fdf6fc99ce74615e25ac100b949d452939ecd7213f",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-result-reset-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-result-reset-20261010-01/read_session_reset.py",
+      "bytes": 2749,
+      "sha256": "8cf5439445488356652ba026ede0733bc4fe67ab46040c4dd1609ad2b9a8fd3c",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "bytes": 876452,
+      "sha256": "db0d37fdaf3e6a0961a7cb6165536edfd14e0b494dd7122e95e803a264d98538",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-result-reset-20261010-01/stop.request",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
     }
   ]
 }

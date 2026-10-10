@@ -13,3 +13,8 @@ That source uses separate double remainder accumulators for the two stored float
 pass70:9 functions/469 instructions/1705 bytes, zero disk mismatches, five live mismatching instruction spans. pass71:10/3389/14612, zero disk mismatches, two live mismatches at0048fdd6 and previously observed00494bc1. Do not describe these passes as fully matching live code. The clock update's unaffected instruction ranges and setter match; patch-sensitive additions require the above distinction. The time-event consumer still directly compares its threshold to0080acd0, so retaining that value is preferable to silently substituting a derived elapsed time.
 
 This pass resolves the clock producer and reset relationship statically and adds raw internal calendar and clock-component candidates. Future tests remain: loaded-DLL identity, pause/resume accumulation measurements for both clocks, midnight/calendar transitions, save/reload resets and stock-versus-modified timing comparisons. These findings are local after2978ac2.
+
+
+## UI restart follow-up, 2026-10-10
+
+SESSION-RESET-FINDINGS.md now validates one normal UI restart resetting elapsed1212.6500244140625to0 and day66012.6484375to64800. Calendar3/6/2000 persists. This supersedes the earlier entirely-unvalidated runtime reset wording for that path only;midnight,saved-game restoration and stock timing remain open.
