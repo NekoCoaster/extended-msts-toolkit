@@ -454,3 +454,8 @@ Populated work records and shared dispatch owner observed;class4000b,callback co
 ## Extended pantograph control checkpoint, 2026-10-10
 
 Engine-layout-qualified remap,selector updates and paired control assignments traced;ordinary toggle gates retained. Current electric fixture has primary254kind1/gate1/value1 and zero-filled secondary400/selector440records,so no enabled extension behavior claim. Two qualified source candidates added,all1060previous candidate records unchanged. No physical pantograph identity,animation,contact or current inferred. Static byte comparisons pass;invalid kind5dispatch target preserved as unsupported evidence. Inventory1062;978evidence paths/151source hashes pass. Sync verified11796old hashes,added97raw files;450JSON/218Python parse. Historical PID-only drift excluded after equality checks. Unchanged-native regression baseline reused. Goal remains incomplete.
+
+
+## Monitor reload checkpoint, 2026-10-10
+
+Eight emitted monitor payloads match pre-save sources exactly; lead latch/timer changes after reload match diesel initialization. Static coordinator order places initialization after saved-object restoration and fixups; no historical execution trace claimed. Current pass214 verifies1847instructions/7936bytes without mismatch/error. Exactly four candidate records revised,1058unchanged,all original evidence preserved. Inventory1062;986evidence paths/151source hashes pass. Sync verified11893prior raw hashes and added20files;454JSON/220Python parse. Historical PID-only drift excluded after equality checks;pass214 current evidence retained. Unchanged-native regression baseline reused,not rerun;production code untouched. Broad research goal incomplete.

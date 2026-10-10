@@ -71359,6 +71359,126 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01-byte-verification.json",
+      "bytes": 889,
+      "sha256": "d1860fffc48668621c963a73e078e204b17bc7c0d291d513c1231cf5956ae4cb",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/005f212d.asm",
+      "bytes": 9911,
+      "sha256": "59c35213419ec43f23cb081988f2e28387294bf9cc400e8dc7deb8443f612f93",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/005f212d.bytes.tsv",
+      "bytes": 5595,
+      "sha256": "c5c77221c69c7ff8503d79bb159e5d3f2f5d0e04c415cfce40c7c70c93e63ab9",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/005f212d.c",
+      "bytes": 3301,
+      "sha256": "96a821b2e4384a1265e8ce68417cde7eca680b14f15b9b3a742f464a4297d111",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/0060f8b0.asm",
+      "bytes": 2533,
+      "sha256": "e294041e91a160a983bba77c4400100ddac5b5ce1675c1864a891ac1550e4f64",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/0060f8b0.bytes.tsv",
+      "bytes": 1251,
+      "sha256": "d67ad32a19716e0824781e99c52b49a1223560f10ddf47d3892d6b79d4cc6178",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/0060f8b0.c",
+      "bytes": 1061,
+      "sha256": "667bd5436e074f4922fabc3c60ea365d86cee1f946880dd3163f76cbc24c03ba",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/0060f99b.asm",
+      "bytes": 1606,
+      "sha256": "83daec1d834834e17418f1051c05bbaed95dc40191195fc5b667d6a9c20432f4",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/0060f99b.bytes.tsv",
+      "bytes": 804,
+      "sha256": "0eb5cc531c87d32f8540b6b398c597590b25f9cb41ff35fdc02a52b8c4558c75",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/0060f99b.c",
+      "bytes": 473,
+      "sha256": "ba9c52264a58c3d4efde3e548d7d8a7cc1827d94f57b1544c400380e6d812334",
+      "included": false
+    },
+    {
+      "path": "captures/monitor-reset-pattern-native-20261010-01/provenance.json",
+      "bytes": 1214,
+      "sha256": "aad2cce9b1a8df0555e0b649dcd7f2bfcb0eee5ce64e3fba43d0553000c9e359",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/005f04bb.asm",
+      "bytes": 1160,
+      "sha256": "0c87135d1760921c4a0ba77f74878e56696a848ecf0603163631eedafcf98a01",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/005f04bb.bytes.tsv",
+      "bytes": 719,
+      "sha256": "23611145670fe56e38a49706b19984a0f5e1f6af7b4f5b6afdf4b49c5916c749",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/005f04bb.c",
+      "bytes": 483,
+      "sha256": "c02927e67eb886d13b90692f86cc5af5731927f35696d66cd1e83ddeea2a1056",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/console.log",
+      "bytes": 6082,
+      "sha256": "6c93ec71692931c3d95661659b8ec8021201cb63b3e78f931b26dd62f4db380d",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/functions.tsv",
+      "bytes": 29,
+      "sha256": "89cd8c4fd9d23c5b2a721311927e8fad70c73a4d49a81f23872a373bdd7aade4",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/ghidra.log",
+      "bytes": 6098,
+      "sha256": "55f4fea2fe0e27a4aade7e2ac6062c0d2e6a01e676d00e04fccb8e7c06ee359a",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "monitor-load-fixup-20261010/script.log",
+      "bytes": 81,
+      "sha256": "246b722eed720db71171ed7a4feecdd4e56686846078318a1550703d2e13ab19",
+      "included": false
     }
   ]
 }
