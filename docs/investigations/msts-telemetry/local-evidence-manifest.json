@@ -67855,6 +67855,216 @@
       "bytes": 8201,
       "sha256": "3692e18611a83930988da45eeae88fc0e4d9bb48134187edfc394bcab426733b",
       "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01-byte-verification.json",
+      "bytes": 707,
+      "sha256": "da54f31ea9b887f225eb8b17b49f726d2c8c2521838aad297fe49595496754c6",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/00586f58.asm",
+      "bytes": 21465,
+      "sha256": "1f8bdc29ad96a29974362aad47a8deab1d3b6bbf80516ae06e4bf808b05999ee",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/00586f58.bytes.tsv",
+      "bytes": 11153,
+      "sha256": "8d13d89fcf820c824e0174fc3c5f68190c393aae3e1274a02c124e553474351b",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/00586f58.c",
+      "bytes": 9882,
+      "sha256": "a6ca280b00ac23226bd3d5cdf8628845bb0e97e485242155c443da8ac2f2f20f",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/00587c02.asm",
+      "bytes": 230,
+      "sha256": "d10bfc2663f58648a7ab48caa96d178278ab87aec332d1afd3a0fdca26e63da7",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/00587c02.bytes.tsv",
+      "bytes": 130,
+      "sha256": "6741116b19020d6555f47ca83f9204ee06e5901bf4fcb380ee88f730e849d0c7",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/00587c02.c",
+      "bytes": 82,
+      "sha256": "fe4abfac8922d7a2b9f415e4e2b22f499e9728f37b11b01907e583a36c01cce3",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/initial-processor-verification.json",
+      "bytes": 535,
+      "sha256": "10464b960dc01a0431e56bc98f366713ba2d670f72bb3914586bbfbc8618dd68",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/initial-wrong-double-interpretation.json",
+      "bytes": 250,
+      "sha256": "0bfd26d202b8a13e11b79a14e658b46bec6ce325f491ca71d108158d19996c12",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/provenance.json",
+      "bytes": 957,
+      "sha256": "dbc3915b48607c6741cadff2cde33b63ff81da1d4da2e97c4f93d91ee3a0dd37",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/speed-threshold.json",
+      "bytes": 314,
+      "sha256": "9275062964741186b72823e47a80f9a912c51bdb643200251c70c47d2c04a2be",
+      "included": false
+    },
+    {
+      "path": "captures/early-departure-native-20261010-01/verify_code_bytes.py",
+      "bytes": 2038,
+      "sha256": "17796a9fb4b949f21710ec7beed3618bb020e600764908b50f62d848f501febd",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01-byte-verification.json",
+      "bytes": 536,
+      "sha256": "61d336927b5c8da3cb373a5d761eba152c768d49927145fdea46f6583efaabaf",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01/0059c430.asm",
+      "bytes": 976,
+      "sha256": "134592bd85ce0115e76cbaee2c9ecafce44c50dc44c426787492f051fc671b09",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01/0059c430.bytes.tsv",
+      "bytes": 461,
+      "sha256": "b0f93b42d365350c6a2901cf94026db55b5734c36313c0f98cdf5719ddeed0f8",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01/0059c430.c",
+      "bytes": 334,
+      "sha256": "655c14f08ca437448cfff23325c7f5ecc4040fc06b7addc1bdfb0b7ee32b52c2",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01/provenance.json",
+      "bytes": 597,
+      "sha256": "880ec852e4403e00635d0c705ec0ce8c53173cb836aaddb34e95cbbceed8baa9",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/event-target-lookup-native-20261010-01/verify_code_bytes.py",
+      "bytes": 2038,
+      "sha256": "17796a9fb4b949f21710ec7beed3618bb020e600764908b50f62d848f501febd",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-early-departure-20261010-01/metadata.json",
+      "bytes": 700,
+      "sha256": "e07d24ea5c72da817aefbcd2f9401a3fa2a274dd436325fe4a6cb7233f7b379d",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-early-departure-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-early-departure-20261010-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-early-departure-20261010-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-early-departure-20261010-01/samples.jsonl",
+      "bytes": 8182113,
+      "sha256": "28981aa11d3be55c01b26e206e2a553e529a75e442e1628757dfacff9f1397ad",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-early-departure-20261010-01/ui-observation.json",
+      "bytes": 664,
+      "sha256": "7df8a8b6cf4fef0ab447fd7d213f7fdc3fc6f60ed3a3d5d4d81ca4d40c990dd0",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-stop-activation-20261010-01/metadata.json",
+      "bytes": 800,
+      "sha256": "df35a2e9131b3fe0548ac29f47b4fbaab3c5276d3cfad05e2c79a5314b464531",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-stop-activation-20261010-01/probe_event_conditions.py",
+      "bytes": 2826,
+      "sha256": "593b34fe77ea4062f10c4a3366562aa3b928515bc1a9ffa5262489095c3ea975",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-stop-activation-20261010-01/read_activity.py",
+      "bytes": 2006,
+      "sha256": "a27e98fff1c8237edbddda7eddc988e6f576b3be417f5d298f50f9a0ec4b7024",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-stop-activation-20261010-01/read_event_series.py",
+      "bytes": 2360,
+      "sha256": "c1bc3546744f6d83988761ec100b93eb8ecb6510369a72b5f01076db2beec23e",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-stop-activation-20261010-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-stop-activation-20261010-01/samples.jsonl",
+      "bytes": 151393377,
+      "sha256": "20e74530af39a74e9a02856422e506e615aacd2a841a917090255808b4e798d6",
+      "included": false
+    },
+    {
+      "path": "captures/tokyo-stop-activation-20261010-01/ui-observation.json",
+      "bytes": 739,
+      "sha256": "f3e5f3adda568a8f6ace0d2df8ff3fa1a548881782d01a8d17145ab54ece42fc",
+      "included": false
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-10T00:38:34.344497+00:00",
+  "generated_utc": "2026-10-10T00:48:17.711475+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -30016,11 +30016,17 @@
         "captures/event-transition-native-20261010-01-byte-verification.json",
         "EVENT-TRANSITION-FINDINGS.md",
         "event-transition-20261010-summary.json",
-        "captures/tokyo-time-thresholds-20261010-01/time-events.json"
+        "captures/tokyo-time-thresholds-20261010-01/time-events.json",
+        "STOP-ACTIVATION-FINDINGS.md",
+        "analyse_event_activation.py",
+        "event-activation-20261010-summary.json",
+        "captures/tokyo-stop-activation-20261010-01/samples.jsonl",
+        "captures/tokyo-stop-activation-20261010-01/ui-observation.json",
+        "captures/event-target-lookup-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0;Tokyo time event45 latch changes as independent elapsed accumulator crosses468;no outcomes in that event",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0;Tokyo time event45 latch changes as independent elapsed accumulator crosses468;no outcomes in that event;Tokyo stop-required event32 fires;targets42/44 activation1->0 with reset baseline1 and unchanged latches1/0",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;activation decrement1to0 now established;no reversal/success/failure transition. Stop fixture corroborates separate activation/latch/reset fields;no increment,negative activation,baseline reset or reversible clearing test. Inside-but-unlatched samples do not prove exact evaluator cadence."
     },
     {
       "id": "activity.event.state_20",
@@ -30040,11 +30046,17 @@
         "captures/activity-evaluator-paused-02/activity.json",
         "pass64-byte-verification.json",
         "pass65-byte-verification.json",
-        "pass66-byte-verification.json"
+        "pass66-byte-verification.json",
+        "STOP-ACTIVATION-FINDINGS.md",
+        "analyse_event_activation.py",
+        "event-activation-20261010-summary.json",
+        "captures/tokyo-stop-activation-20261010-01/samples.jsonl",
+        "captures/tokyo-stop-activation-20261010-01/ui-observation.json",
+        "captures/event-target-lookup-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo stop-required event32 fires;targets42/44 activation1->0 with reset baseline1 and unchanged latches1/0",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. Stop fixture corroborates separate activation/latch/reset fields;no increment,negative activation,baseline reset or reversible clearing test. Inside-but-unlatched samples do not prove exact evaluator cadence."
     },
     {
       "id": "activity.event.activation_level",
@@ -30064,11 +30076,17 @@
         "captures/activity-evaluator-paused-02/activity.json",
         "pass64-byte-verification.json",
         "pass65-byte-verification.json",
-        "pass66-byte-verification.json"
+        "pass66-byte-verification.json",
+        "STOP-ACTIVATION-FINDINGS.md",
+        "analyse_event_activation.py",
+        "event-activation-20261010-summary.json",
+        "captures/tokyo-stop-activation-20261010-01/samples.jsonl",
+        "captures/tokyo-stop-activation-20261010-01/ui-observation.json",
+        "captures/event-target-lookup-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo stop-required event32 fires;targets42/44 activation1->0 with reset baseline1 and unchanged latches1/0",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. Stop fixture corroborates separate activation/latch/reset fields;no increment,negative activation,baseline reset or reversible clearing test. Inside-but-unlatched samples do not prove exact evaluator cadence."
     },
     {
       "id": "activity.event.location_tile",
@@ -30160,11 +30178,17 @@
         "captures/activity-evaluator-paused-02/activity.json",
         "pass64-byte-verification.json",
         "pass65-byte-verification.json",
-        "pass66-byte-verification.json"
+        "pass66-byte-verification.json",
+        "STOP-ACTIVATION-FINDINGS.md",
+        "analyse_event_activation.py",
+        "event-activation-20261010-summary.json",
+        "captures/tokyo-stop-activation-20261010-01/samples.jsonl",
+        "captures/tokyo-stop-activation-20261010-01/ui-observation.json",
+        "captures/event-target-lookup-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified; actual firing transitions untested",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo stop-required event32 fires;targets42/44 activation1->0 with reset baseline1 and unchanged latches1/0",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Event state labels remain tentative. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. Stop fixture corroborates separate activation/latch/reset fields;no increment,negative activation,baseline reset or reversible clearing test. Inside-but-unlatched samples do not prove exact evaluator cadence."
     },
     {
       "id": "activity.event.outcome_count",
@@ -30215,11 +30239,17 @@
         "event-transition-20261010-summary.json",
         "captures/tokyo-event-transition-20261010-01/samples.jsonl",
         "captures/tokyo-event-transition-20261010-01/ui-observation.json",
-        "captures/event-transition-native-20261010-01-byte-verification.json"
+        "captures/event-transition-native-20261010-01-byte-verification.json",
+        "STOP-ACTIVATION-FINDINGS.md",
+        "analyse_event_activation.py",
+        "event-activation-20261010-summary.json",
+        "captures/tokyo-stop-activation-20261010-01/samples.jsonl",
+        "captures/tokyo-stop-activation-20261010-01/ui-observation.json",
+        "captures/event-target-lookup-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0",
+      "evidence_status": "loaded definitions matched ACT; native trigger gate/latch/outcome handling traced and byte-verified;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0;Tokyo stop-required event32 fires;targets42/44 activation1->0 with reset baseline1 and unchanged latches1/0",
       "update_or_lifecycle": "event evaluation and outcome processing for mutable states; loaded metadata for definitions; runtime firing cadence unmeasured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Parse category before reading subtype extension. Presence of success outcome does not mean activity succeeded. Existing activity-end patches can affect observed failure behavior. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;activation decrement1to0 now established;no reversal/success/failure transition. Stop fixture corroborates separate activation/latch/reset fields;no increment,negative activation,baseline reset or reversible clearing test. Inside-but-unlatched samples do not prove exact evaluator cadence."
     },
     {
       "id": "activity.event.reversible_candidate",
@@ -30373,11 +30403,17 @@
         "event-transition-20261010-summary.json",
         "captures/tokyo-event-transition-20261010-01/samples.jsonl",
         "captures/tokyo-event-transition-20261010-01/ui-observation.json",
-        "captures/event-transition-native-20261010-01-byte-verification.json"
+        "captures/event-transition-native-20261010-01-byte-verification.json",
+        "STOP-ACTIVATION-FINDINGS.md",
+        "analyse_event_activation.py",
+        "event-activation-20261010-summary.json",
+        "captures/tokyo-stop-activation-20261010-01/samples.jsonl",
+        "captures/tokyo-stop-activation-20261010-01/ui-observation.json",
+        "captures/event-target-lookup-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0",
+      "evidence_status": "native consumers traced; finite paused reconstruction consistent with clear latches far outside radii;Tokyo event13 crosses10m radius,latch0->1 and matching message observed;leaving radius retains latch1 with reversible0;Tokyo stop-required event32 fires;targets42/44 activation1->0 with reset baseline1 and unchanged latches1/0",
       "update_or_lifecycle": "time-event evaluation or derived on sampling; producer cadence and reset for clock unresolved",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Near-radius crossing now sampled;origin transitions/nonfinite behavior and full x87 emulation unvalidated. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;no activation/reversal/success/failure transition established."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Reconstructed condition is not a native invocation or proof of firing. Activation gate, latch, reversal and activity-stop flag also matter. Near-radius crossing now sampled;origin transitions/nonfinite behavior and full x87 emulation unvalidated. 2026-10-10 event13 supersedes historical no-firing status for this representative location message. One inside-but-unlatched sample is not a guaranteed evaluator latency. Sequential reads and finite-input reconstruction;activation decrement1to0 now established;no reversal/success/failure transition. Stop fixture corroborates separate activation/latch/reset fields;no increment,negative activation,baseline reset or reversible clearing test. Inside-but-unlatched samples do not prove exact evaluator cadence."
     },
     {
       "id": "session.internal_calendar",
@@ -32696,11 +32732,17 @@
         "analyse_ai_station_reset.py",
         "ai-station-reset-20261010-summary.json",
         "captures/tokyo-ai-end-context-20261010-01/samples.jsonl",
-        "captures/ai-selection-native-20261010-01-byte-verification.json"
+        "captures/ai-selection-native-20261010-01-byte-verification.json",
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "analyse_early_departure.py",
+        "early-departure-20261010-summary.json",
+        "captures/tokyo-early-departure-20261010-01/samples.jsonl",
+        "captures/tokyo-early-departure-20261010-01/ui-observation.json",
+        "captures/early-departure-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured",
+      "evidence_status": "native enumeration/selector traced; empty lists read with stable sentinels;service loader binds Efficiency token40411 to baseline204;station-stop loader binds record0 PlatformStartID,14 DistanceDownPath,1c uint16 SkipCount;Maryland player has two populated records matching platform/skip/efficiency declarations;first record selected;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;native identity-based successor and null/end behavior traced;offline boundary model uses captured record identities,not a live transition;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim;Tokyo AI9 physical removal, path-end flag and subsequent gate-off/progress-zero/station-reselection captured;Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection",
       "update_or_lifecycle": "service loading/path reconstruction/activity schedule merge;progress selection and explicit advance;full reset and AI-stop lifecycle unvalidated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Player arrival-on-loading,countdown,expiry,departure and next-stop selection validated in Tokyo. Both AI lists contain platform459 with zero schedule/event times and flags;selection advances to null and one service later reselects its record. Native successor null/end behavior remains ambiguous;do not equate null with completion. AI9 reselection is corroborated as a scheduler path-end reset;timed AI stops,player final-stop outcomes,loading-duration factors and full reset remain unresolved. Existing distance reconstruction and schedule merge evidence is build-specific;record+24 is not automatically effective208. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Player arrival-on-loading,countdown,expiry,departure and next-stop selection validated in Tokyo. Both AI lists contain platform459 with zero schedule/event times and flags;selection advances to null and one service later reselects its record. Native successor null/end behavior remains ambiguous;do not equate null with completion. AI9 reselection is corroborated as a scheduler path-end reset;timed AI stops,player final-stop outcomes,loading-duration factors and full reset remain unresolved. Existing distance reconstruction and schedule merge evidence is build-specific;record+24 is not automatically effective208. Inactive AI9 retains speed5.78689432144165 and last-update65223 across456samples despite progress0;selected station does not establish restart or boarding. Sequential reads are not atomic;native branch corroborated,not instruction-traced. Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed."
     },
     {
       "id": "station.recorded_arrival",
@@ -32726,11 +32768,17 @@
         "captures/tokyo-boarding-baseline-20261010-01/samples.jsonl",
         "captures/tokyo-boarding-baseline-20261010-01/fixture.json",
         "captures/tokyo-boarding-20261010-01/samples.jsonl",
-        "captures/tokyo-station-final-services-20261010-01/services.jsonl"
+        "captures/tokyo-station-final-services-20261010-01/services.jsonl",
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "analyse_early_departure.py",
+        "early-departure-20261010-summary.json",
+        "captures/tokyo-early-departure-20261010-01/samples.jsonl",
+        "captures/tokyo-early-departure-20261010-01/ui-observation.json",
+        "captures/early-departure-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim",
+      "evidence_status": "native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim;Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection",
       "update_or_lifecycle": "station-state event writes; retained record values, not continuous clocks",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. Departure10 zero in both samples. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. Departure10 zero in both samples. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic. Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed."
     },
     {
       "id": "station.recorded_departure",
@@ -32760,11 +32808,17 @@
         "captures/tokyo-boarding-baseline-20261010-01/samples.jsonl",
         "captures/tokyo-boarding-baseline-20261010-01/fixture.json",
         "captures/tokyo-boarding-20261010-01/samples.jsonl",
-        "captures/tokyo-station-final-services-20261010-01/services.jsonl"
+        "captures/tokyo-station-final-services-20261010-01/services.jsonl",
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "analyse_early_departure.py",
+        "early-departure-20261010-summary.json",
+        "captures/tokyo-early-departure-20261010-01/samples.jsonl",
+        "captures/tokyo-early-departure-20261010-01/ui-observation.json",
+        "captures/early-departure-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim",
+      "evidence_status": "native player writes traced;two paused records sampled, no departure transition;stationary Maryland run crosses scheduled departure:flags0x22->0x62, recorded departure remains0 and selected first record unchanged;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim;Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection",
       "update_or_lifecycle": "station-state event writes; retained record values, not continuous clocks",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Arrival08 can copy scheduled04 under special branches; numeric equality does not prove observed arrival. No universal actual-time or AI semantics. Interpret with flags1e and activity state; complete flags/zero rules unresolved. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic. Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed."
     },
     {
       "id": "station.scheduled_arrival",
@@ -32832,11 +32886,17 @@
         "captures/tokyo-boarding-baseline-20261010-01/samples.jsonl",
         "captures/tokyo-boarding-baseline-20261010-01/fixture.json",
         "captures/tokyo-boarding-20261010-01/samples.jsonl",
-        "captures/tokyo-station-final-services-20261010-01/services.jsonl"
+        "captures/tokyo-station-final-services-20261010-01/services.jsonl",
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "analyse_early_departure.py",
+        "early-departure-20261010-summary.json",
+        "captures/tokyo-early-departure-20261010-01/samples.jsonl",
+        "captures/tokyo-early-departure-20261010-01/ui-observation.json",
+        "captures/early-departure-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "live first-stop0x22->0x62 while stationary; departure remained unset;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim",
+      "evidence_status": "live first-stop0x22->0x62 while stationary; departure remained unset;2026-10-10 Maryland moving departure:record10=28855.400390625,flags0x62->0x6a,selected Baltimore->Edgewood and previous=Baltimore;effective208 remains0.75;Tokyo player ENTER writes arrival and activates countdown;paused42.25 stable;expiry then departure/next-stop observed;AI populated records and selected-null-reselection observed without timed-stop claim;Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection",
       "update_or_lifecycle": "frame-driven processing and station events; pause halts observed progression",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live. Representative player departure/selection now observed at low speed; not an exact physical platform-crossing timestamp. Selected Edgewood record24=0.289063 while effective208 remains0.75; selection alone does not prove application of that override. Historical no-departure evidence applies only to its original captures. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic. Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed."
     },
     {
       "id": "station.boarding_active",
@@ -32858,11 +32918,17 @@
         "captures/tokyo-boarding-baseline-20261010-01/samples.jsonl",
         "captures/tokyo-boarding-baseline-20261010-01/fixture.json",
         "captures/tokyo-boarding-20261010-01/samples.jsonl",
-        "captures/tokyo-station-final-services-20261010-01/services.jsonl"
+        "captures/tokyo-station-final-services-20261010-01/services.jsonl",
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "analyse_early_departure.py",
+        "early-departure-20261010-summary.json",
+        "captures/tokyo-early-departure-20261010-01/samples.jsonl",
+        "captures/tokyo-early-departure-20261010-01/ui-observation.json",
+        "captures/early-departure-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Native player set/clear traced;Tokyo active0->1->0 observed across accepted loading and expiry;90consecutive paused active pairs stable",
+      "evidence_status": "Native player set/clear traced;Tokyo active0->1->0 observed across accepted loading and expiry;90consecutive paused active pairs stable;Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection",
       "update_or_lifecycle": "frame-driven processing and station events; pause halts observed progression",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic. Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed."
     },
     {
       "id": "station.boarding_remaining",
@@ -32884,11 +32950,17 @@
         "captures/tokyo-boarding-baseline-20261010-01/samples.jsonl",
         "captures/tokyo-boarding-baseline-20261010-01/fixture.json",
         "captures/tokyo-boarding-20261010-01/samples.jsonl",
-        "captures/tokyo-station-final-services-20261010-01/services.jsonl"
+        "captures/tokyo-station-final-services-20261010-01/services.jsonl",
+        "EARLY-DEPARTURE-FINDINGS.md",
+        "analyse_early_departure.py",
+        "early-departure-20261010-summary.json",
+        "captures/tokyo-early-departure-20261010-01/samples.jsonl",
+        "captures/tokyo-early-departure-20261010-01/ui-observation.json",
+        "captures/early-departure-native-20261010-01-byte-verification.json"
       ],
-      "evidence_status": "Native frame-delta decrement/clamp traced;Tokyo first positive49.75,falling steps0.125..0.25,paused42.25stable,expiry0;UI starts50",
+      "evidence_status": "Native frame-delta decrement/clamp traced;Tokyo first positive49.75,falling steps0.125..0.25,paused42.25stable,expiry0;UI starts50;Setagaya departure with71.875seconds loading remaining clears active/countdown,flags2->0x1a,records departure and then advances selection",
       "update_or_lifecycle": "frame-driven processing and station events; pause halts observed progression",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic. Sample interval can span multiple updates;first positive sample need not equal initialization. Duration calculation factors remain unvalidated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Flag0x40 is a dispatch-attempt latch, not proof of sound, permission to pass a signal or actual departure. Selected-record advancement clears this bit. Native exported caller00586293 has live patches; station processor00586f58, dispatcher0058ea72 and advance005a5254 match disk/live. Tokyo2026-10-10 supersedes earlier zero-only boarding and empty-AI-list observations for this fixture. AI schedule/recorded times and flags remain0;no AI boarding timing claim. Player arrival is written on accepted ENTER,not necessarily physical stop time. Twenty clock-crossing reads and zero flagged pointer differences do not make acquisition atomic. Sample interval can span multiple updates;first positive sample need not equal initialization. Duration calculation factors remain unvalidated. Zero boarding remaining is not completion by itself:unfinished-loading departure cancels it. Bit0x10 is corroborated in the moving-while-loading player branch;no global failure/score or AI implication. Sequential initialization and selection substeps observed."
     },
     {
       "id": "car.connection_endpoints",

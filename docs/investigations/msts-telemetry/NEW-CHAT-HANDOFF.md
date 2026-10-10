@@ -1,3 +1,5 @@
+Latest2026-10-10: STOP-ACTIVATION-FINDINGS.md validates stop-required event32 and activation decrements without latch/reset changes. EARLY-DEPARTURE-FINDINGS.md validates interruption of active loading,flags0x1a and next-stop advance. PID12888 paused65562.3984375,speed0,throttle0,emergency brake. Earlier simulator states below are historical. Goal active/incomplete.
+
 Latest event checkpoint2026-10-10: EVENT-TRANSITION-FINDINGS.md validates location event13 radius entry,latch and matching message;exit retains non-reversible latch. PID12888 paused65311.3984375,speed0,throttle0,emergency brake. Earlier current-state notes below are historical. Goal remains active and incomplete.
 
 Latest 2026-10-10: AI-STATION-RESET-FINDINGS.md captures AI9 physical removal, path-end flag, then update-gate disable/progress reset/station reselection. Retained positive speed is stale after deactivation. 1764samples,0errors;909native instructions match disk/live. PID12888 now paused at65242.0234375,player speed0,throttle0,emergency brake. Earlier simulator states below are historical. Research remains incomplete.
