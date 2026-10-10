@@ -464,3 +464,8 @@ Eight emitted monitor payloads match pre-save sources exactly; lead latch/timer 
 ## Station flags and automatic driving, 2026-10-10
 
 Traffic schedule caller,merge order and temporary flags traced;automatic player-driver branch distinguished from traffic update. Current byte checks:815/2865,938/3318,584/2177,124/451,314/1099 instructions/bytes respectively,all clean. UI shows completed ITR modal;no resume or new station transition claimed. Six existing records qualified,1056unchanged,one mode gate added;all old evidence preserved. Inventory1063;995evidence paths/151source hashes pass. Sync verified11913old raw hashes,added102files;454JSON/220Python parse. Unchanged-native regression baseline reused,not rerun. No production source changes. Goal incomplete.
+
+
+## Offline research organization, 2026-10-10
+
+Research remains paused. Short current handoff, coverage matrix and navigation replace accumulated entry-point diaries; original README/handoff/coverage preserved byte-for-byte with archive hashes. Generated map covers2285addresses/3233exports/79findings,retains4assembly-variant groups,and records direct calls plus one-hop thunk callers. All export hashes,reference line bounds,archive hashes and navigation links checked;two builds byte-identical. Known005a3941 query returns caller0059f510 through00401b5e. Index is navigation,not whole-program analysis or execution proof. Inventory byte-identical to9cc85ba. Sync verifies12015raw hashes,adds0raw files;456JSON/221Python parse. No simulator input or production changes during organization. Unchanged-native baseline reused.
