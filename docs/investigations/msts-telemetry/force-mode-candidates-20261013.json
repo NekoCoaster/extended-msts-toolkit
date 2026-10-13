@@ -1,0 +1,57 @@
+[
+  {
+    "applicability": "Physical player and AI trains/cars; current two-train snapshot",
+    "units": "bitmask or enum",
+    "evidence": [
+      "AI-SYSTEM-UPDATE-FINDINGS.md",
+      "captures/force-mode-state-20261013-01/inputs.json",
+      "captures/force-mode-callers-20261013-01-byte-verification.json",
+      "captures/force-mode-writers-20261013-01-byte-verification.json",
+      "COLLISION-CALLBACK-FINDINGS.md",
+      "captures/body-mode-override-native-20261013-01-byte-verification.json"
+    ],
+    "evidence_status": "Native writer and three callers traced/current-byte verified; paused player mode3 and AI mode1 correspondence observed",
+    "update_or_lifecycle": "Written by0060ceee over the current train car chain; physicalization uses1 and inspected transition/reconstruction paths use3; live transitions not captured",
+    "limitations": "Supported image only; external snapshots non-atomic; reread owner/body/identity. No exhaustive mode enum or ownership equivalence. Body+4 bit2 can permit force entry despite car mode bit; one producer is005f6d1e collision response, but exhaustive writers and live transition remain unresolved. No native execution/cadence proof.",
+    "id": "train.physical_simulation_mode",
+    "meaning": "Stored physical train mode byte",
+    "value_type": "uint8",
+    "extraction": "train+0x5a; setter0060ceee stores low argument byte; callers observed1/3"
+  },
+  {
+    "applicability": "Physical player and AI trains/cars; current two-train snapshot",
+    "units": "bitmask or enum",
+    "evidence": [
+      "AI-SYSTEM-UPDATE-FINDINGS.md",
+      "captures/force-mode-state-20261013-01/inputs.json",
+      "captures/force-mode-callers-20261013-01-byte-verification.json",
+      "captures/force-mode-writers-20261013-01-byte-verification.json",
+      "COLLISION-CALLBACK-FINDINGS.md",
+      "captures/body-mode-override-native-20261013-01-byte-verification.json"
+    ],
+    "evidence_status": "Native writer and three callers traced/current-byte verified; paused player mode3 and AI mode1 correspondence observed",
+    "update_or_lifecycle": "Written by0060ceee over the current train car chain; physicalization uses1 and inspected transition/reconstruction paths use3; live transitions not captured",
+    "limitations": "Supported image only; external snapshots non-atomic; reread owner/body/identity. No exhaustive mode enum or ownership equivalence. Body+4 bit2 can permit force entry despite car mode bit; one producer is005f6d1e collision response, but exhaustive writers and live transition remain unresolved. No native execution/cadence proof.",
+    "id": "car.simplified_physics_mode_bit",
+    "meaning": "Stored car mask0x2 used by force and post-integration gates",
+    "value_type": "uint32 bit",
+    "extraction": "(car+0x84 uint32 & 2)!=0; setter0060ceee uses full integer argument==1"
+  },
+  {
+    "id": "body.simulation_flags_raw",
+    "meaning": "Body simulation flag word, including response-set mask2 used by force and train-mode gates",
+    "applicability": "Physical vehicle bodies; player and AI current reads",
+    "value_type": "uint32",
+    "units": "bitmask",
+    "extraction": "car+0x5c -> body; validate body+0xf0==1 and body+0x11d backlink; read body+0x4; distinct from body+0xf2 flags",
+    "evidence": [
+      "AI-SYSTEM-UPDATE-FINDINGS.md",
+      "COLLISION-CALLBACK-FINDINGS.md",
+      "captures/body-mode-override-native-20261013-01-byte-verification.json",
+      "captures/force-mode-state-20261013-01/inputs.json"
+    ],
+    "evidence_status": "Current-byte verified response sets mask2 and qualified placement clears word; paused8player/11AI body words are zero",
+    "update_or_lifecycle": "Mutable response/placement state associated with the current body pointer; reread body identity and flags, and account for body swapping",
+    "limitations": "Supported image only; asynchronous reads and zero samples do not establish collision absence. No complete flag schema, lifetime count, damage semantics or live mode-transition validation. Placement clearing is gated on both definition flags80/40; other writers are not exhaustively traced."
+  }
+]

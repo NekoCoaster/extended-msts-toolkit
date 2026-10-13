@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 460, 'runtime_derived': 28, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1067}
+{'runtime_direct': 463, 'runtime_derived': 28, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1070}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -739,8 +739,8 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | track_item.station_name | Station name for platform | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.platform_flags | Platform subtype flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.platform_paired_item | Other platform endpoint item ID | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
-| track_item.platform_minimum_wait | Stored minimum platform waiting time | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
-| track_item.platform_waiting_passengers | Stored waiting passenger count | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances;automatic player loading-duration branch reconstructed;later-input model matches opening timer after quarter step;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58 |
+| track_item.platform_minimum_wait | Stored minimum platform waiting time | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances; loader004e0450 token dispatch and destination verified; absent input defaults to float32 180 at item+0x38 |
+| track_item.platform_waiting_passengers | Stored waiting passenger count | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances;automatic player loading-duration branch reconstructed;later-input model matches opening timer after quarter step;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58; loader004e0450 token dispatch and destination verified; absent input defaults to uint32 20 at item+0x3c |
 | track_item.siding_name | Siding display name | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.siding_flags | Siding subtype flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.siding_paired_item | Other siding endpoint item ID | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
@@ -1073,3 +1073,6 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | station.boarding_vehicle_fraction | Stored fraction of eligible physical vehicles contributing to manual boarding | Current native instructions verified;negative automatic-driving fixture reads0;positive stored ratio not validated;manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer |
 | station.eligible_vehicle_count | Reconstructed number of physical vehicles eligible for manual boarding | Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles;manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer |
 | station.contributing_vehicle_count | Reconstructed eligible physical vehicles within selected platform endpoint interval | Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles;manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer |
+| train.physical_simulation_mode | Stored physical train mode byte | Native writer and three callers traced/current-byte verified; paused player mode3 and AI mode1 correspondence observed |
+| car.simplified_physics_mode_bit | Stored car mask0x2 used by force and post-integration gates | Native writer and three callers traced/current-byte verified; paused player mode3 and AI mode1 correspondence observed |
+| body.simulation_flags_raw | Body simulation flag word, including response-set mask2 used by force and train-mode gates | Current-byte verified response sets mask2 and qualified placement clears word; paused8player/11AI body words are zero |

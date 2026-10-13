@@ -4,15 +4,15 @@ Updated 13 October 2026. Research is incomplete. This organization checkpoint ad
 
 ## Current checkpoint
 
-Last published research checkpoint: `73c0be1`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
+Last published research checkpoint: `9b708e0`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
 
 Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`.
 
 Published through `73c0be1`: automatic/manual loading-duration analysis, the guarded manual reader, force-configuration lifetime corrections, moving body-accumulator observations, and force-entry/clear predicates. These establish bounded observations and conditions, not independent AI force simulation or native execution of the inspected gates. See [station timing](STATION-TIME-FINDINGS.md) and [wheel/adhesion](WHEEL-ADHESION-FINDINGS.md).
 
-Pending checkpoint: seven existing inventory records now acknowledge retained player/AI or ownerless observations while preserving semantic, cadence and lifecycle limitations. See `population-metadata-review-20261013.json` and [vehicle systems](VEHICLE-SYSTEM-FINDINGS.md). The other 1,060 records are unchanged by that review.
+Published metadata cleanup: seven existing inventory records now acknowledge retained player/AI or ownerless observations while preserving semantic, cadence and lifecycle limitations. See `population-metadata-review-20261013.json` and [vehicle systems](VEHICLE-SYSTEM-FINDINGS.md). The other 1,060 records are unchanged by that review.
 
-Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,029 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
+Current local inventory: **1,070 candidates** (463 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,035 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
 
 ## Start here
 
@@ -20,6 +20,10 @@ Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 5
 2. Query `python research_index.py 005a3941 --limit 8` or a topic such as `STATION`. Read the referenced finding before exporting again.
 3. Check Git state and existing evidence. Validate process/build only when new live work requires it.
 4. State a discriminating question; batch related analysis and publish coherent checkpoints.
+
+Local follow-up: platform loader defaults are now traced and current-byte verified: absent minimum-wait input stores float32 180; absent passenger input stores uint32 20. See TRACK-ITEM-FINDINGS.md. These are configuration defaults, not proof of runtime scheduling use. A fresh read confirms the same paused initial-station state, with no onset timer.
+
+Local force follow-up: setter0060ceee and callers establish train mode1 sets car mask2; mode3 clears it. Current paused snapshot covers8player/11AI cars with matching mode/flag correspondence. Three candidates added. Collision response sets body mask2 and gated placement clears the body word; live transitions and exhaustive writers remain open. See AI-SYSTEM-UPDATE-FINDINGS.md.
 
 ## Latest evidence and next decision
 

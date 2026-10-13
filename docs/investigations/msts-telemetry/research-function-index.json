@@ -3,8 +3,8 @@
   "scope": "Retained named assembly exports, not whole-executable coverage",
   "limitations": "Calls are literal direct CALL targets; single-instruction JMP thunks have a separate one-hop caller index. Edges are the union of retained variants, not one asserted build. No indirect edges or execution proof. Variants are retained; navigation choice is not a freshness or correctness claim. Documentation references are lexical leads, not semantic assertions. Raw exports are local-only in the published clone.",
   "counts": {
-    "functions": 2287,
-    "exports": 3241,
+    "functions": 2290,
+    "exports": 3253,
     "findings": 79,
     "variant_functions": 4
   },
@@ -710,6 +710,43 @@
         {
           "function": "005f5630",
           "site": "005f568e"
+        }
+      ],
+      "callers_via_single_jump": []
+    },
+    "004011b8": {
+      "exports": [
+        {
+          "path": "captures/force-mode-callers-20261013-01/004011b8.asm",
+          "sha256": "6492c2e50870b10a34aa635a1363a0ff1c539c8f118f8e7359ad449cd6c3854b",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 40
+        }
+      ],
+      "calls": [],
+      "thunk_targets": [
+        "0060ceee"
+      ],
+      "assembly_variants": 1,
+      "navigation_export": "captures/force-mode-callers-20261013-01/004011b8.asm",
+      "callers": [
+        {
+          "function": "005a58af",
+          "site": "005a5a6e"
+        },
+        {
+          "function": "0062924c",
+          "site": "006299f3"
+        },
+        {
+          "function": "006353fc",
+          "site": "006356b2"
         }
       ],
       "callers_via_single_jump": []
@@ -1812,16 +1849,16 @@
           "site": "005a6722"
         },
         {
+          "function": "006353fc",
+          "site": "00635cd6"
+        },
+        {
           "function": "005a847d",
           "site": "005a8853"
         },
         {
           "function": "005a5eb1",
           "site": "005a5ecc"
-        },
-        {
-          "function": "006353fc",
-          "site": "00635cd6"
         },
         {
           "function": "005a3008",
@@ -3224,6 +3261,10 @@
       "navigation_export": "pass24/00401807.asm",
       "callers": [
         {
+          "function": "00628d09",
+          "site": "00628f61"
+        },
+        {
           "function": "006283c0",
           "site": "006286e4"
         },
@@ -3234,10 +3275,6 @@
         {
           "function": "006283c0",
           "site": "00628cfe"
-        },
-        {
-          "function": "00628d09",
-          "site": "00628f61"
         }
       ],
       "callers_via_single_jump": []
@@ -3880,6 +3917,18 @@
           "site": "0062a2f1"
         },
         {
+          "function": "0062924c",
+          "site": "006292e6"
+        },
+        {
+          "function": "0062924c",
+          "site": "006294a0"
+        },
+        {
+          "function": "0062924c",
+          "site": "0062998e"
+        },
+        {
           "function": "005f95a5",
           "site": "005f9616"
         },
@@ -3906,18 +3955,6 @@
         {
           "function": "00406fb5",
           "site": "00407013"
-        },
-        {
-          "function": "0062924c",
-          "site": "006292e6"
-        },
-        {
-          "function": "0062924c",
-          "site": "006294a0"
-        },
-        {
-          "function": "0062924c",
-          "site": "0062998e"
         },
         {
           "function": "00629d4a",
@@ -4651,6 +4688,10 @@
           "site": "005a1978"
         },
         {
+          "function": "00628d09",
+          "site": "00628fab"
+        },
+        {
           "function": "00589a96",
           "site": "00589ba6"
         },
@@ -4669,6 +4710,22 @@
         {
           "function": "0059a0c0",
           "site": "0059a179"
+        },
+        {
+          "function": "005a58af",
+          "site": "005a5b0f"
+        },
+        {
+          "function": "004e0450",
+          "site": "004e0462"
+        },
+        {
+          "function": "004e0730",
+          "site": "004e07f1"
+        },
+        {
+          "function": "004e0730",
+          "site": "004e086a"
         },
         {
           "function": "005a1b1a",
@@ -7475,10 +7532,6 @@
           "site": "0058aa08"
         },
         {
-          "function": "005a58af",
-          "site": "005a5b0f"
-        },
-        {
           "function": "005157b0",
           "site": "005157c2"
         },
@@ -7617,10 +7670,6 @@
         {
           "function": "005a11b7",
           "site": "005a14d8"
-        },
-        {
-          "function": "00628d09",
-          "site": "00628fab"
         },
         {
           "function": "0059d965",
@@ -9251,14 +9300,6 @@
           "site": "0066e318"
         },
         {
-          "function": "004e0730",
-          "site": "004e07f1"
-        },
-        {
-          "function": "004e0730",
-          "site": "004e086a"
-        },
-        {
           "function": "004e3d5d",
           "site": "004e3e1b"
         },
@@ -10485,10 +10526,6 @@
         {
           "function": "004d1e9b",
           "site": "004d2139"
-        },
-        {
-          "function": "004e0450",
-          "site": "004e0462"
         },
         {
           "function": "004e3c10",
@@ -12623,12 +12660,12 @@
       "navigation_export": "pass10/004033b9.asm",
       "callers": [
         {
-          "function": "0058a8f7",
-          "site": "0058a9d6"
-        },
-        {
           "function": "005a58af",
           "site": "005a5a3e"
+        },
+        {
+          "function": "0058a8f7",
+          "site": "0058a9d6"
         }
       ],
       "callers_via_single_jump": []
@@ -12761,6 +12798,14 @@
       "navigation_export": "pass157/00403495.asm",
       "callers": [
         {
+          "function": "006353fc",
+          "site": "00635744"
+        },
+        {
+          "function": "006353fc",
+          "site": "006357b7"
+        },
+        {
           "function": "006283c0",
           "site": "00628cd5"
         },
@@ -12787,14 +12832,6 @@
         {
           "function": "0062d5c6",
           "site": "0062d6d0"
-        },
-        {
-          "function": "006353fc",
-          "site": "00635744"
-        },
-        {
-          "function": "006353fc",
-          "site": "006357b7"
         }
       ],
       "callers_via_single_jump": []
@@ -13272,20 +13309,20 @@
       "navigation_export": "pass156/00403b3e.asm",
       "callers": [
         {
-          "function": "0062d335",
-          "site": "0062d35a"
-        },
-        {
-          "function": "0062d335",
-          "site": "0062d3b6"
-        },
-        {
           "function": "006353fc",
           "site": "006356f6"
         },
         {
           "function": "006353fc",
           "site": "00635769"
+        },
+        {
+          "function": "0062d335",
+          "site": "0062d35a"
+        },
+        {
+          "function": "0062d335",
+          "site": "0062d3b6"
         }
       ],
       "callers_via_single_jump": []
@@ -64464,6 +64501,11 @@
           "thunk": "00402590"
         },
         {
+          "function": "00628d09",
+          "site": "00628fab",
+          "thunk": "00402590"
+        },
+        {
           "function": "00589a96",
           "site": "00589ba6",
           "thunk": "00402590"
@@ -64486,6 +64528,26 @@
         {
           "function": "0059a0c0",
           "site": "0059a179",
+          "thunk": "00402590"
+        },
+        {
+          "function": "005a58af",
+          "site": "005a5b0f",
+          "thunk": "00402590"
+        },
+        {
+          "function": "004e0450",
+          "site": "004e0462",
+          "thunk": "00402590"
+        },
+        {
+          "function": "004e0730",
+          "site": "004e07f1",
+          "thunk": "00402590"
+        },
+        {
+          "function": "004e0730",
+          "site": "004e086a",
           "thunk": "00402590"
         },
         {
@@ -67994,11 +68056,6 @@
           "thunk": "00402590"
         },
         {
-          "function": "005a58af",
-          "site": "005a5b0f",
-          "thunk": "00402590"
-        },
-        {
           "function": "005157b0",
           "site": "005157c2",
           "thunk": "00402590"
@@ -68171,11 +68228,6 @@
         {
           "function": "005a11b7",
           "site": "005a14d8",
-          "thunk": "00402590"
-        },
-        {
-          "function": "00628d09",
-          "site": "00628fab",
           "thunk": "00402590"
         },
         {
@@ -70214,16 +70266,6 @@
           "thunk": "00402590"
         },
         {
-          "function": "004e0730",
-          "site": "004e07f1",
-          "thunk": "00402590"
-        },
-        {
-          "function": "004e0730",
-          "site": "004e086a",
-          "thunk": "00402590"
-        },
-        {
           "function": "004e3d5d",
           "site": "004e3e1b",
           "thunk": "00402590"
@@ -71756,11 +71798,6 @@
         {
           "function": "004d1e9b",
           "site": "004d2139",
-          "thunk": "00402590"
-        },
-        {
-          "function": "004e0450",
-          "site": "004e0462",
           "thunk": "00402590"
         },
         {
@@ -79480,13 +79517,24 @@
     "004e0450": {
       "exports": [
         {
+          "path": "captures/platform-loader-native-20261013-01/004e0450.asm",
+          "sha256": "2436afca654fbce971f96a17da12328c57ed99adb5f773967e2531f92ac2fdef",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass79/004e0450.asm",
           "sha256": "2436afca654fbce971f96a17da12328c57ed99adb5f773967e2531f92ac2fdef",
           "decompiled": true,
           "instruction_bytes": true
         }
       ],
-      "references": [],
+      "references": [
+        {
+          "path": "TRACK-ITEM-FINDINGS.md",
+          "line": 46
+        }
+      ],
       "calls": [
         {
           "site": "004e0462",
@@ -79523,12 +79571,18 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass79/004e0450.asm",
+      "navigation_export": "captures/platform-loader-native-20261013-01/004e0450.asm",
       "callers": [],
       "callers_via_single_jump": []
     },
     "004e0730": {
       "exports": [
+        {
+          "path": "captures/platform-loader-native-20261013-01/004e0730.asm",
+          "sha256": "c585be2f22420c2078c45e4bdedd417682ea062ed2c09fe78ab287d9a77b1614",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
         {
           "path": "pass37/004e0730.asm",
           "sha256": "c585be2f22420c2078c45e4bdedd417682ea062ed2c09fe78ab287d9a77b1614",
@@ -79542,7 +79596,12 @@
           "instruction_bytes": true
         }
       ],
-      "references": [],
+      "references": [
+        {
+          "path": "TRACK-ITEM-FINDINGS.md",
+          "line": 50
+        }
+      ],
       "calls": [
         {
           "site": "004e07f1",
@@ -79555,7 +79614,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass37/004e0730.asm",
+      "navigation_export": "captures/platform-loader-native-20261013-01/004e0730.asm",
       "callers": [],
       "callers_via_single_jump": [
         {
@@ -102709,6 +102768,10 @@
         {
           "path": "STATION-TIME-FINDINGS.md",
           "line": 143
+        },
+        {
+          "path": "TRACK-ITEM-FINDINGS.md",
+          "line": 59
         }
       ],
       "calls": [
@@ -110120,6 +110183,10 @@
         {
           "path": "STATION-TIME-FINDINGS.md",
           "line": 111
+        },
+        {
+          "path": "TRACK-ITEM-FINDINGS.md",
+          "line": 59
         }
       ],
       "calls": [
@@ -110908,6 +110975,12 @@
     "005a58af": {
       "exports": [
         {
+          "path": "captures/force-mode-callers-20261013-01/005a58af.asm",
+          "sha256": "d1172765f747de64ef8e2956e12dfaf96e5fe60fa247fa66395fa0d19212dee3",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass10/005a58af.asm",
           "sha256": "d1172765f747de64ef8e2956e12dfaf96e5fe60fa247fa66395fa0d19212dee3",
           "decompiled": true,
@@ -110940,6 +111013,10 @@
         {
           "path": "AI-LIFECYCLE-FINDINGS.md",
           "line": 39
+        },
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 40
         }
       ],
       "calls": [
@@ -110986,7 +111063,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass10/005a58af.asm",
+      "navigation_export": "captures/force-mode-callers-20261013-01/005a58af.asm",
       "callers": [
         {
           "function": "005a41c2",
@@ -112273,13 +112350,13 @@
       "callers": [],
       "callers_via_single_jump": [
         {
-          "function": "0058a8f7",
-          "site": "0058a9d6",
+          "function": "005a58af",
+          "site": "005a5a3e",
           "thunk": "004033b9"
         },
         {
-          "function": "005a58af",
-          "site": "005a5a3e",
+          "function": "0058a8f7",
+          "site": "0058a9d6",
           "thunk": "004033b9"
         }
       ]
@@ -112488,6 +112565,11 @@
           "thunk": "00401311"
         },
         {
+          "function": "006353fc",
+          "site": "00635cd6",
+          "thunk": "00401311"
+        },
+        {
           "function": "005a847d",
           "site": "005a8853",
           "thunk": "00401311"
@@ -112495,11 +112577,6 @@
         {
           "function": "005a5eb1",
           "site": "005a5ecc",
-          "thunk": "00401311"
-        },
-        {
-          "function": "006353fc",
-          "site": "00635cd6",
           "thunk": "00401311"
         },
         {
@@ -113540,6 +113617,16 @@
       "callers": [],
       "callers_via_single_jump": [
         {
+          "function": "006353fc",
+          "site": "00635744",
+          "thunk": "00403495"
+        },
+        {
+          "function": "006353fc",
+          "site": "006357b7",
+          "thunk": "00403495"
+        },
+        {
           "function": "006283c0",
           "site": "00628cd5",
           "thunk": "00403495"
@@ -113572,16 +113659,6 @@
         {
           "function": "0062d5c6",
           "site": "0062d6d0",
-          "thunk": "00403495"
-        },
-        {
-          "function": "006353fc",
-          "site": "00635744",
-          "thunk": "00403495"
-        },
-        {
-          "function": "006353fc",
-          "site": "006357b7",
           "thunk": "00403495"
         }
       ]
@@ -126726,6 +126803,11 @@
       "callers": [],
       "callers_via_single_jump": [
         {
+          "function": "00628d09",
+          "site": "00628f61",
+          "thunk": "00401807"
+        },
+        {
           "function": "006283c0",
           "site": "006286e4",
           "thunk": "00401807"
@@ -126738,11 +126820,6 @@
         {
           "function": "006283c0",
           "site": "00628cfe",
-          "thunk": "00401807"
-        },
-        {
-          "function": "00628d09",
-          "site": "00628f61",
           "thunk": "00401807"
         }
       ]
@@ -126866,6 +126943,12 @@
     "005f696f": {
       "exports": [
         {
+          "path": "captures/body-mode-override-native-20261013-01/005f696f.asm",
+          "sha256": "bfc0dbd3a5d592bcb7ed37cbbef5e92ea1f59d7d7ad6b6b88f20333efee2e167",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "collision-response-dispatch-20261010/005f696f.asm",
           "sha256": "bfc0dbd3a5d592bcb7ed37cbbef5e92ea1f59d7d7ad6b6b88f20333efee2e167",
           "decompiled": true,
@@ -126879,6 +126962,10 @@
         }
       ],
       "references": [
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 49
+        },
         {
           "path": "COLLISION-CALLBACK-FINDINGS.md",
           "line": 96
@@ -126904,7 +126991,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "collision-response-dispatch-20261010/005f696f.asm",
+      "navigation_export": "captures/body-mode-override-native-20261013-01/005f696f.asm",
       "callers": [],
       "callers_via_single_jump": [
         {
@@ -126994,6 +127081,12 @@
     "005f6d1e": {
       "exports": [
         {
+          "path": "captures/body-mode-override-native-20261013-01/005f6d1e.asm",
+          "sha256": "e6d5fcae67078f7c22bc8eac9a0a5d1ca3e797c71815aca522ffebe75051bdfa",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "collision-two-body-20261010/005f6d1e.asm",
           "sha256": "e6d5fcae67078f7c22bc8eac9a0a5d1ca3e797c71815aca522ffebe75051bdfa",
           "decompiled": true,
@@ -127007,6 +127100,10 @@
         }
       ],
       "references": [
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 49
+        },
         {
           "path": "COLLISION-CALLBACK-FINDINGS.md",
           "line": 92
@@ -127152,7 +127249,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "collision-two-body-20261010/005f6d1e.asm",
+      "navigation_export": "captures/body-mode-override-native-20261013-01/005f6d1e.asm",
       "callers": [],
       "callers_via_single_jump": [
         {
@@ -128013,16 +128110,16 @@
       "navigation_export": "collision-classifier-20261010/005f9b0e.asm",
       "callers": [
         {
-          "function": "005f653d",
-          "site": "005f65b8"
-        },
-        {
           "function": "005f6d1e",
           "site": "005f6eee"
         },
         {
           "function": "005f6d1e",
           "site": "005f6f47"
+        },
+        {
+          "function": "005f653d",
+          "site": "005f65b8"
         },
         {
           "function": "005f892d",
@@ -128064,16 +128161,16 @@
       "navigation_export": "collision-classifier-20261010/005f9ce9.asm",
       "callers": [
         {
-          "function": "005f653d",
-          "site": "005f65d7"
-        },
-        {
           "function": "005f6d1e",
           "site": "005f70eb"
         },
         {
           "function": "005f6d1e",
           "site": "005f7117"
+        },
+        {
+          "function": "005f653d",
+          "site": "005f65d7"
         },
         {
           "function": "005f892d",
@@ -128143,6 +128240,21 @@
           "thunk": "00401ef1"
         },
         {
+          "function": "0062924c",
+          "site": "006292e6",
+          "thunk": "00401ef1"
+        },
+        {
+          "function": "0062924c",
+          "site": "006294a0",
+          "thunk": "00401ef1"
+        },
+        {
+          "function": "0062924c",
+          "site": "0062998e",
+          "thunk": "00401ef1"
+        },
+        {
           "function": "005f95a5",
           "site": "005f9616",
           "thunk": "00401ef1"
@@ -128175,21 +128287,6 @@
         {
           "function": "00406fb5",
           "site": "00407013",
-          "thunk": "00401ef1"
-        },
-        {
-          "function": "0062924c",
-          "site": "006292e6",
-          "thunk": "00401ef1"
-        },
-        {
-          "function": "0062924c",
-          "site": "006294a0",
-          "thunk": "00401ef1"
-        },
-        {
-          "function": "0062924c",
-          "site": "0062998e",
           "thunk": "00401ef1"
         },
         {
@@ -131258,6 +131355,54 @@
       "navigation_export": "pass01b/0060cd5c.asm",
       "callers": [],
       "callers_via_single_jump": []
+    },
+    "0060ceee": {
+      "exports": [
+        {
+          "path": "captures/force-mode-callers-20261013-01/0060ceee.asm",
+          "sha256": "ddcde259c73601320b940385a6dd476b52d30cf4d6b7c0e8df358db04b470534",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
+          "path": "captures/force-mode-writers-20261013-01/0060ceee.asm",
+          "sha256": "ddcde259c73601320b940385a6dd476b52d30cf4d6b7c0e8df358db04b470534",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 38
+        },
+        {
+          "path": "WHEEL-ADHESION-FINDINGS.md",
+          "line": 206
+        }
+      ],
+      "calls": [],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/force-mode-callers-20261013-01/0060ceee.asm",
+      "callers": [],
+      "callers_via_single_jump": [
+        {
+          "function": "005a58af",
+          "site": "005a5a6e",
+          "thunk": "004011b8"
+        },
+        {
+          "function": "0062924c",
+          "site": "006299f3",
+          "thunk": "004011b8"
+        },
+        {
+          "function": "006353fc",
+          "site": "006356b2",
+          "thunk": "004011b8"
+        }
+      ]
     },
     "0060cf5d": {
       "exports": [
@@ -135045,6 +135190,12 @@
     "00628d09": {
       "exports": [
         {
+          "path": "captures/body-mode-override-native-20261013-01/00628d09.asm",
+          "sha256": "1784bdff61c78cd0bee49454f49c4d124733a72ac9d28609f283f161d85b508f",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass162/00628d09.asm",
           "sha256": "1784bdff61c78cd0bee49454f49c4d124733a72ac9d28609f283f161d85b508f",
           "decompiled": true,
@@ -135064,6 +135215,10 @@
         }
       ],
       "references": [
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 51
+        },
         {
           "path": "CONSIST-AGGREGATE-FINDINGS.md",
           "line": 23
@@ -135105,7 +135260,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass162/00628d09.asm",
+      "navigation_export": "captures/body-mode-override-native-20261013-01/00628d09.asm",
       "callers": [],
       "callers_via_single_jump": [
         {
@@ -135213,6 +135368,12 @@
     "0062924c": {
       "exports": [
         {
+          "path": "captures/force-mode-callers-20261013-01/0062924c.asm",
+          "sha256": "66bd30d987cc61c7fe9263899137d497fbd55fe48e0e08e65bf8853e38649700",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass01b/0062924c.asm",
           "sha256": "66bd30d987cc61c7fe9263899137d497fbd55fe48e0e08e65bf8853e38649700",
           "decompiled": true,
@@ -135271,6 +135432,14 @@
         {
           "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
           "line": 7
+        },
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 40
+        },
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 51
         },
         {
           "path": "INFRASTRUCTURE-OWNERS-FINDINGS.md",
@@ -135437,7 +135606,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass138/0062924c.asm",
+      "navigation_export": "captures/force-mode-callers-20261013-01/0062924c.asm",
       "callers": [],
       "callers_via_single_jump": []
     },
@@ -137279,16 +137448,16 @@
       "navigation_export": "pass160b/0062e634.asm",
       "callers": [
         {
-          "function": "006283c0",
-          "site": "00628839"
-        },
-        {
           "function": "0062924c",
           "site": "00629581"
         },
         {
           "function": "0062924c",
           "site": "00629706"
+        },
+        {
+          "function": "006283c0",
+          "site": "00628839"
         },
         {
           "function": "0062bc4c",
@@ -137495,20 +137664,20 @@
           "site": "0062b6eb"
         },
         {
-          "function": "006283c0",
-          "site": "00628885"
-        },
-        {
-          "function": "006283c0",
-          "site": "00628bbb"
-        },
-        {
           "function": "0062924c",
           "site": "00629ad8"
         },
         {
           "function": "0062924c",
           "site": "00629b15"
+        },
+        {
+          "function": "006283c0",
+          "site": "00628885"
+        },
+        {
+          "function": "006283c0",
+          "site": "00628bbb"
         },
         {
           "function": "0062bc4c",
@@ -137652,6 +137821,14 @@
       "navigation_export": "pass246/0062e8b3.asm",
       "callers": [
         {
+          "function": "0062924c",
+          "site": "006295e1"
+        },
+        {
+          "function": "0062924c",
+          "site": "00629731"
+        },
+        {
           "function": "00629f5d",
           "site": "0062a1ca"
         },
@@ -137666,14 +137843,6 @@
         {
           "function": "00629f5d",
           "site": "0062a277"
-        },
-        {
-          "function": "0062924c",
-          "site": "006295e1"
-        },
-        {
-          "function": "0062924c",
-          "site": "00629731"
         },
         {
           "function": "0062bc4c",
@@ -138170,6 +138339,69 @@
       "callers": [],
       "callers_via_single_jump": []
     },
+    "00633893": {
+      "exports": [
+        {
+          "path": "captures/force-mode-writers-20261013-01/00633893.asm",
+          "sha256": "5e65c9f9301d4a246ec388f452fda946b8a01def7420d9de5023be505a9819fe",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 42
+        }
+      ],
+      "calls": [
+        {
+          "site": "006339de",
+          "target": "00403580"
+        },
+        {
+          "site": "00633a1f",
+          "target": "006352a1"
+        },
+        {
+          "site": "00633ab6",
+          "target": "00636842"
+        },
+        {
+          "site": "00633acb",
+          "target": "00636740"
+        },
+        {
+          "site": "00633add",
+          "target": "00636633"
+        },
+        {
+          "site": "00633b51",
+          "target": "00402437"
+        },
+        {
+          "site": "00633b97",
+          "target": "0040183e"
+        },
+        {
+          "site": "00633bcc",
+          "target": "0040183e"
+        },
+        {
+          "site": "00633c71",
+          "target": "0068f310"
+        },
+        {
+          "site": "00633cbe",
+          "target": "0071bfa0"
+        }
+      ],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/force-mode-writers-20261013-01/00633893.asm",
+      "callers": [],
+      "callers_via_single_jump": []
+    },
     "0063465b": {
       "exports": [
         {
@@ -138332,16 +138564,6 @@
       "callers": [],
       "callers_via_single_jump": [
         {
-          "function": "0062d335",
-          "site": "0062d35a",
-          "thunk": "00403b3e"
-        },
-        {
-          "function": "0062d335",
-          "site": "0062d3b6",
-          "thunk": "00403b3e"
-        },
-        {
           "function": "006353fc",
           "site": "006356f6",
           "thunk": "00403b3e"
@@ -138349,6 +138571,16 @@
         {
           "function": "006353fc",
           "site": "00635769",
+          "thunk": "00403b3e"
+        },
+        {
+          "function": "0062d335",
+          "site": "0062d35a",
+          "thunk": "00403b3e"
+        },
+        {
+          "function": "0062d335",
+          "site": "0062d3b6",
           "thunk": "00403b3e"
         }
       ]
@@ -138548,6 +138780,12 @@
     "006353fc": {
       "exports": [
         {
+          "path": "captures/force-mode-callers-20261013-01/006353fc.asm",
+          "sha256": "afb0c65877b0ecb6e0f489c38cc940e64c05d99b899d69f162a2f42e6dc34e27",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass156/006353fc.asm",
           "sha256": "afb0c65877b0ecb6e0f489c38cc940e64c05d99b899d69f162a2f42e6dc34e27",
           "decompiled": true,
@@ -138566,7 +138804,12 @@
           "instruction_bytes": true
         }
       ],
-      "references": [],
+      "references": [
+        {
+          "path": "AI-SYSTEM-UPDATE-FINDINGS.md",
+          "line": 40
+        }
+      ],
       "calls": [
         {
           "site": "0063544f",
@@ -138711,7 +138954,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass156/006353fc.asm",
+      "navigation_export": "captures/force-mode-callers-20261013-01/006353fc.asm",
       "callers": [
         {
           "function": "00635329",

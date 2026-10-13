@@ -72661,6 +72661,462 @@
       "bytes": 564,
       "sha256": "0c3a91f5dc2e92018bb1128da5e54c3ffcc6c70aee02716b1c0fc0c92dd28408",
       "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01-byte-verification.json",
+      "bytes": 886,
+      "sha256": "f26a06edec28597d052f0dda86941fe44f7c0e0021b229e0d13976c6f15c383b",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/005f696f.asm",
+      "bytes": 475,
+      "sha256": "bfc0dbd3a5d592bcb7ed37cbbef5e92ea1f59d7d7ad6b6b88f20333efee2e167",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/005f696f.bytes.tsv",
+      "bytes": 269,
+      "sha256": "c37fe7ec7baddfc0c1c39e7e574f70e820d0b8151750096fbf6edf7aabda91a0",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/005f696f.c",
+      "bytes": 172,
+      "sha256": "ccb8f70ce7c29c72d02512f6f86676a9a50079974c16ec8c7419a97794d12571",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/005f6d1e.asm",
+      "bytes": 22701,
+      "sha256": "e6d5fcae67078f7c22bc8eac9a0a5d1ca3e797c71815aca522ffebe75051bdfa",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/005f6d1e.bytes.tsv",
+      "bytes": 11869,
+      "sha256": "cd8acaa2588282fea2e26e22386287b6a908ebe670862a21e6e724e246b4eedd",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/005f6d1e.c",
+      "bytes": 10909,
+      "sha256": "3a7d539395ac1e0648d733d45a3593774e024d38eda5c669cdae4a75cacf6f5b",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/00628d09.asm",
+      "bytes": 6729,
+      "sha256": "1784bdff61c78cd0bee49454f49c4d124733a72ac9d28609f283f161d85b508f",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/00628d09.bytes.tsv",
+      "bytes": 3612,
+      "sha256": "57a0f121abb1f476d3a190f753d8fb5c255c287c9fdfd2af5b1d3d513e82e6ee",
+      "included": false
+    },
+    {
+      "path": "captures/body-mode-override-native-20261013-01/00628d09.c",
+      "bytes": 3343,
+      "sha256": "6f1bb693c4687eef35e439fe5bffda02604e2a097a784f42edaea674bff32a1e",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01-byte-verification.json",
+      "bytes": 1227,
+      "sha256": "0ff515a232ea2c84d51f9f36125a83ccc37f2acb2981db85160fed40961ad396",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/004011b8.asm",
+      "bytes": 26,
+      "sha256": "6492c2e50870b10a34aa635a1363a0ff1c539c8f118f8e7359ad449cd6c3854b",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/004011b8.bytes.tsv",
+      "bytes": 21,
+      "sha256": "1bf53a226c91bc20959dc8ceaed2fec6333fff55cbc9177ed7310449bec1d0b3",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/004011b8.c",
+      "bytes": 530,
+      "sha256": "60091e58c4acd41a67b5ef631bd2b138459d2d4c5a6eb550876eb5736b7bdb45",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/005a58af.asm",
+      "bytes": 5238,
+      "sha256": "d1172765f747de64ef8e2956e12dfaf96e5fe60fa247fa66395fa0d19212dee3",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/005a58af.bytes.tsv",
+      "bytes": 2983,
+      "sha256": "95664d37513dd9451ae3b9823ab5b68ba37886ebb3387e7066eca4554a435934",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/005a58af.c",
+      "bytes": 2134,
+      "sha256": "95fea5c30532e427d22b4737cf8fd658f76f8a06e6d9c41246a1e42bccd965e5",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/0060ceee.asm",
+      "bytes": 1205,
+      "sha256": "ddcde259c73601320b940385a6dd476b52d30cf4d6b7c0e8df358db04b470534",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/0060ceee.bytes.tsv",
+      "bytes": 607,
+      "sha256": "faf64821314d48d80d270948190a9c7b53265b1173f65b93b7d732524b13182c",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/0060ceee.c",
+      "bytes": 512,
+      "sha256": "3168cc327abacf5fe32f00b8a650abc2d7085b836cc82bea52de826d530cd68a",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/0062924c.asm",
+      "bytes": 25554,
+      "sha256": "66bd30d987cc61c7fe9263899137d497fbd55fe48e0e08e65bf8853e38649700",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/0062924c.bytes.tsv",
+      "bytes": 13713,
+      "sha256": "4d1217f7eb2c2ef0a329502fcc006dd7a18f484abbb1fce70d6d5f90803f1452",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/0062924c.c",
+      "bytes": 12398,
+      "sha256": "f08214d36990f993cdd86cf9ab7e3c8f151c81894c623ef83abedd648b8c2567",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/006353fc.asm",
+      "bytes": 23354,
+      "sha256": "afb0c65877b0ecb6e0f489c38cc940e64c05d99b899d69f162a2f42e6dc34e27",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/006353fc.bytes.tsv",
+      "bytes": 12489,
+      "sha256": "45f24511683caef92169294b34fb150b79466baab734f91be2c59e06906f8793",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/006353fc.c",
+      "bytes": 10275,
+      "sha256": "80e481c195fcaef0a4f1578d5ffcdd033203263097f7aa4d3240118ea9d79d03",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/console.log",
+      "bytes": 6091,
+      "sha256": "06162c876c2c576b3bf9c12055e7214d4109a4be8319354fffea39da7db8a2ce",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/functions.tsv",
+      "bytes": 151,
+      "sha256": "ab4c61ad4230a252e65325b1dcd31383cb5610f235157622bab34619afbc5cc0",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/ghidra.log",
+      "bytes": 6107,
+      "sha256": "049ca019a815d90829688609dfcac0d7b04c04420f065eccd6c3691c12e3aa50",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/references.tsv",
+      "bytes": 215,
+      "sha256": "676b37bd4d672b3784ebf4425ee5ebf1639eec0e6c1fd2729bba0f65c3e510fb",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-callers-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "eb2f3f7166e4085da66e89eab629f421626a3a1ad18f6c21f86489f03731bb62",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-offset-scan-20261013-01/PlatformOffsetScan.java.txt",
+      "bytes": 1505,
+      "sha256": "dc5497a94d81bbbfce632b4c5304e7ccf92c22fb2e5d9f6f74cca800a7d68b91",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-offset-scan-20261013-01/console.log",
+      "bytes": 5990,
+      "sha256": "ec03f2dadb2169533f859245dad1bbb14552410af3faaef95e2b905841bad274",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-offset-scan-20261013-01/scalar-references.tsv",
+      "bytes": 28850,
+      "sha256": "870dc1c090438e61c40aea674159404cb79628b3522a33549718366e07898f42",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-state-20261013-01/inputs.json",
+      "bytes": 11671,
+      "sha256": "363ff45a71477b968f98baef625b63e86377d0dc5c1e48625d4d552a32e93148",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-state-20261013-01/read_force_clear_inputs.py",
+      "bytes": 3181,
+      "sha256": "f6d087b6d70bb2a028374fcb31c846d930014bd91d4553ccb9b3e08487e26b82",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-state-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-state-20261013-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-state-20261013-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01-byte-verification.json",
+      "bytes": 705,
+      "sha256": "c18ac1643d4c0c30410e5d57563d4d9f99dc34cf012942c77050bdcfabd26966",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/0060ceee.asm",
+      "bytes": 1205,
+      "sha256": "ddcde259c73601320b940385a6dd476b52d30cf4d6b7c0e8df358db04b470534",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/0060ceee.bytes.tsv",
+      "bytes": 607,
+      "sha256": "faf64821314d48d80d270948190a9c7b53265b1173f65b93b7d732524b13182c",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/0060ceee.c",
+      "bytes": 512,
+      "sha256": "3168cc327abacf5fe32f00b8a650abc2d7085b836cc82bea52de826d530cd68a",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/00633893.asm",
+      "bytes": 9381,
+      "sha256": "5e65c9f9301d4a246ec388f452fda946b8a01def7420d9de5023be505a9819fe",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/00633893.bytes.tsv",
+      "bytes": 5088,
+      "sha256": "3e82f180f6b6b508de1ccf8701e876d55d172083fa0b925af32354f5f73a8950",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/00633893.c",
+      "bytes": 4722,
+      "sha256": "bbc5f614adf75d7d787e1600b2bfb07b91c01863648f9df134ea10048a09bdfd",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/console.log",
+      "bytes": 6115,
+      "sha256": "11949c853401a562cd77797c6fb10930ce8ba0d1d98f8427643ab19e53ea07d0",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/functions.tsv",
+      "bytes": 58,
+      "sha256": "96cc37ac50982dce4af46e075f011ede50071ca6e584f1b35496f85be2a29212",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/ghidra.log",
+      "bytes": 6131,
+      "sha256": "0426ec07e28fe7f13225baf0a4684099391c470d95537af4c39397f7f2c9d74f",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/force-mode-writers-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "1c154ca3d774ba03e5e8b5064158c616ea9afc13a22cb22eaada187f45871ff0",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-state-20261013-02/metadata.json",
+      "bytes": 632,
+      "sha256": "95adf13be99fe02bc084f758dd86b72860a0200fb8b67ff625420a8d8e6c15ff",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-state-20261013-02/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-state-20261013-02/read_manual_loading_inputs.py",
+      "bytes": 5924,
+      "sha256": "d907d8e0e8376a6ce02b5498f9ad96f45a4b2e423c9c3f1fde03bbd5e292aeae",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-state-20261013-02/samples.jsonl",
+      "bytes": 11043,
+      "sha256": "1082f8fc3c605c025609b1edbd4e93bb1eb9e7159c807f84796f67fe1768e8fa",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01-byte-verification.json",
+      "bytes": 709,
+      "sha256": "d34cedaf7e750f78977975715ab211841572fcc369a3f79275ebd354fc62c792",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/004e0450.asm",
+      "bytes": 5740,
+      "sha256": "2436afca654fbce971f96a17da12328c57ed99adb5f773967e2531f92ac2fdef",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/004e0450.bytes.tsv",
+      "bytes": 3046,
+      "sha256": "5d3f0b74cde1068745b4c66daeb25a9823e3e1a93ebdbd4067c7e076be298899",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/004e0450.c",
+      "bytes": 2036,
+      "sha256": "afe0e4eb543069d6568f4a2afdfdaf7a849f51c5c2f5882d409298c31f711c51",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/004e0730.asm",
+      "bytes": 7050,
+      "sha256": "c585be2f22420c2078c45e4bdedd417682ea062ed2c09fe78ab287d9a77b1614",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/004e0730.bytes.tsv",
+      "bytes": 3726,
+      "sha256": "e7ab137d091ef40f7fcecd8f53a788756c760fde64bb018bafaafb3ab3e3ed86",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/004e0730.c",
+      "bytes": 1537,
+      "sha256": "cd64f4127070336f78e6d60b8ddc72ccab3ea4d861c4ff349c73f53ee093c185",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/check_dispatch.py",
+      "bytes": 1000,
+      "sha256": "e83c8056fc284f939dcef4be269742d67df234190f57e8ec32ead8afa864eab4",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/dispatch.json",
+      "bytes": 736,
+      "sha256": "8ac211219e0ac2ca534f781d4171624f4361922dca3cce05a48e3906144299de",
+      "included": false
+    },
+    {
+      "path": "captures/platform-loader-native-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/platform-minimum-token-20261013-01/TelemetryScalarReferences.java.txt",
+      "bytes": 1510,
+      "sha256": "a0f5b37a8c0cf697bd28f1395daf93a2bffe74df6160ad44d39995f286e9822c",
+      "included": false
+    },
+    {
+      "path": "captures/platform-minimum-token-20261013-01/console.log",
+      "bytes": 6478,
+      "sha256": "c90e647f50211bdcc9bffbc17a71f91f144f570c7da5dad514f1c0bce83920c9",
+      "included": false
+    },
+    {
+      "path": "captures/platform-minimum-token-20261013-01/scalar-references.tsv",
+      "bytes": 65,
+      "sha256": "01a142b32a06bfd5e4576de2dd891257cc7ab6fd1476eb7bf2aab1fb6331acaf",
+      "included": false
+    },
+    {
+      "path": "captures/platform-offset-scan-20261013-01/TelemetryScalarReferences.java.txt",
+      "bytes": 1510,
+      "sha256": "a0f5b37a8c0cf697bd28f1395daf93a2bffe74df6160ad44d39995f286e9822c",
+      "included": false
+    },
+    {
+      "path": "captures/platform-offset-scan-20261013-01/console.log",
+      "bytes": 7716,
+      "sha256": "e196009796a1c5576e63ef03d56831a5d3fe2a5151d7adace412d7a939746c0a",
+      "included": false
+    },
+    {
+      "path": "captures/platform-offset-scan-20261013-02/PlatformOffsetScan.java.txt",
+      "bytes": 1505,
+      "sha256": "dc5497a94d81bbbfce632b4c5304e7ccf92c22fb2e5d9f6f74cca800a7d68b91",
+      "included": false
+    },
+    {
+      "path": "captures/platform-offset-scan-20261013-02/console.log",
+      "bytes": 5988,
+      "sha256": "480a801b32cee0461f192f6750485c0958fade585fd1a4e592f8af151f1fbdd4",
+      "included": false
+    },
+    {
+      "path": "captures/platform-offset-scan-20261013-02/scalar-references.tsv",
+      "bytes": 77932,
+      "sha256": "6e9d056a48157e91eb96f7b2e4b061cfeb92af5fb021524f1655576293d06f9f",
+      "included": false
     }
   ]
 }

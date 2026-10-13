@@ -31,3 +31,23 @@ For positive travel sign,005a41c2 uses v=abs(service138), a=service140 and targe
 The most negative captured state is index295 at simulation73888.5703125, scheduler time73888, speed15.5313653946m/s, target14.9592428207m/s and acceleration-9.5366811752m/s^2. Its implied target-reach time is0.05999178995s. The next one-second scheduler state matches the target exactly; applying that acceleration for a full second would be wrong. This explains the integration effect of the large value, not which specific profile restriction generated it. Reverse travel, target distance reconstruction and arbitrary nonfinite states remain untested.
 
 Pass139 reexports005a41c2 and direct caller context:1185 instructions/5084 bytes match disk/live with no errors. ai-acceleration-summary.json contains all observed scheduler states and comparison residuals. This is a service-kinematics validation, not proof of physical force, passenger comfort acceleration or all AI branches.
+
+
+## Physical train mode and car force-gate writer, 13 October 2026
+
+0060ceee writes the low argument byte to train+5a, walks train+62 then car+a8, and sets car+84 mask0x2 only when the full integer argument equals1; all other arguments clear that mask. Thus a byte value1 alone is not universal proof that the full argument was1. Inspected ordinary callers use1 or3. The routine does not modify body+4 mask0x2.
+
+005a58af physicalization passes1 via thunk004011b8 to service+158 at005a5a6e, before setting service+134=1. In0062924c, body kind1 with car+84 bit2, body+4 bit2 and nonnull car+1f8 calls the setter with3 on [car+1f8]+158, then tests the car flag again before continuing post-integration writes. This supplies a static route out of the simplified mode; the meaning/producer of body+4 bit2 and actual runtime transition remain open. 006353fc also passes3 when train+5a equals1 before its subsequent train-list reconstruction. Do not equate all non1 modes with player ownership or call the whole car+84 word an AI flag.
+
+Whole recognized-instruction scalar84 scan retained in force-mode-offset-scan-20261013-01 found613lexical matches. The scoped write filter exposed previously unexported0060ceee. force-mode-writers-20261013-01 verifies two functions295instructions/1225bytes, including00633893 whose inspected car+84 write sets mask4, not mask2. force-mode-callers-20261013-01 verifies five functions1605instructions/6079bytes. All checked bytes match current disk and PID39096 with zero mismatches/errors. Static references do not prove exhaustive callers or execution.
+
+Read-only force-mode-state-20261013-01 captures19cars at paused64965.1015625 with the same before/after clock, zero errors and zero per-car guard failures. Player train400000 has8cars, owner mode3, car flags128, body flags0; AI train400001 has11cars, owner mode1, car flags2, body flags0. All have a nonnull service pointer. This corroborates the mode/flag correspondence for two current trains, not a live transition, universal mode enum, independent AI force simulation or solver cadence. Root/identity rereads cannot make sequential snapshots atomic.
+
+
+## Body override writer and reset connection, 13 October 2026
+
+The prior collision response analysis already resolves one body+4 mask2 producer:005f6d1e reads bodies from record+c/+10 and ORs2 into each nonnull body flag word before invoking the side callback. Dispatcher005f696f selects this response when record mask1 is clear, subject to the separately documented classifier and simulation gates. It can mark one existing body as well as two; the flag alone is not a two-train collision, damage, derailment or currently active contact indicator. This is one known writer, not an exhaustive writer inventory.
+
+Placement00628d09 clears the entire body+4 word at00628d5c after checking both definition+8c masks80 and40, then may set mask1 for an activity condition. Consequently the field is neither immutable nor a lifetime collision counter. Combining this with0062924c and0060ceee gives a static route: response sets body mask2; a qualifying kind1 car still carrying car mask2 and a service pointer can cause its service train to switch to mode3 and clear linked-car mask2. Cross-routine runtime order, body swapping, and actual execution are not established by this connection.
+
+Fresh copies in captures/body-mode-override-native-20261013-01 verify response, dispatcher and placement:826instructions/3332bytes match disk and PID39096 with zero mismatches/errors. Current paused19car snapshot from force-mode-state-20261013-01 has body flags0 throughout;it is negative current-state evidence,not a mode-transition test. No collision was induced.

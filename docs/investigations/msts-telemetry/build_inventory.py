@@ -1454,6 +1454,14 @@ for row in rows:
         row['evidence_status']=review['evidence_status']
         row['evidence']=list(dict.fromkeys(row['evidence']+review['evidence']+['population-metadata-review-20261013.json']))
         row['limitations']=row['limitations'].replace('Pressure/coupler transitions need dedicated tests; no coupling changes performed.','This brake/force evidence does not establish coupler-transition behavior;consult separate coupling lifecycle findings.')
+# Platform loader token destinations and absent-field defaults, current-byte verified.
+for row in rows:
+    if row['id'] in {'track_item.platform_minimum_wait','track_item.platform_waiting_passengers'}:
+        default = 'float32 180 at item+0x38' if row['id']=='track_item.platform_minimum_wait' else 'uint32 20 at item+0x3c'
+        row['evidence_status'] += '; loader004e0450 token dispatch and destination verified; absent input defaults to '+default
+        row['evidence'] += ['captures/platform-loader-native-20261013-01-byte-verification.json','captures/platform-loader-native-20261013-01/dispatch.json']
+        row['limitations'] += ' Loader defaults apply to absent fields after successful parsing; explicit-zero replacement, range clamping and current-session execution of defaults are not established. Minimum-wait gameplay use remains unresolved.'
+rows += json.loads((ROOT/'force-mode-candidates-20261013.json').read_text())
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
