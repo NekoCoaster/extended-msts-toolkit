@@ -1,17 +1,17 @@
 {
-  "generated_utc": "2026-10-13T05:58:53.780744+00:00",
+  "generated_utc": "2026-10-13T06:08:35.799005+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 459,
-    "runtime_derived": 26,
+    "runtime_direct": 460,
+    "runtime_derived": 28,
     "cab_channels": 68,
     "installed_cab_channels": 59,
     "config_paths": 511,
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1064
+    "total": 1067
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -29279,11 +29279,12 @@
         "STATION-TIME-FINDINGS.md",
         "captures/manual-loading-native-20261013-01-byte-verification.json",
         "captures/manual-loading-native-20261013-01/constants-and-state.json",
-        "captures/manual-loading-native-20261013-01/read_constants.py"
+        "captures/manual-loading-native-20261013-01/read_constants.py",
+        "captures/manual-endpoint-native-20261013-01-byte-verification.json"
       ],
       "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances;automatic player loading-duration branch reconstructed;later-input model matches opening timer after quarter step;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58",
       "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested. Automatic005a3941 counts eligible fitting definitions;camera-nonnull duration10*route_count/N,fallback20ifNzero. Camera-null branch prefers selected endpoint activity override,then paired override,then route count. Does not directly read platform minimum-wait38. Later snapshot/model is not simultaneous-onset proof;manual player374path and all traffic modes not generalized. Manual activity374 start duration uses10*route waiting count/contributing physical vehicles;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested. Automatic005a3941 counts eligible fitting definitions;camera-nonnull duration10*route_count/N,fallback20ifNzero. Camera-null branch prefers selected endpoint activity override,then paired override,then route count. Does not directly read platform minimum-wait38. Later snapshot/model is not simultaneous-onset proof;manual player374path and all traffic modes not generalized. Manual activity374 start duration uses10*paired endpoint route waiting count/contributing physical vehicles;0058782c output arguments and caller stack locals establish paired endpoint selection;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
     },
     {
       "id": "track_item.siding_name",
@@ -33428,11 +33429,12 @@
         "STATION-TIME-FINDINGS.md",
         "captures/manual-loading-native-20261013-01-byte-verification.json",
         "captures/manual-loading-native-20261013-01/constants-and-state.json",
-        "captures/manual-loading-native-20261013-01/read_constants.py"
+        "captures/manual-loading-native-20261013-01/read_constants.py",
+        "captures/manual-endpoint-native-20261013-01-byte-verification.json"
       ],
       "evidence_status": "Tokyo0->1->0 for normal expiry and interruption;final expiry observed before AllStops result;paused active samples stable;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58",
       "update_or_lifecycle": "set on accepted loading;cleared on expiry or moving-while-loading branch;pause retained active state",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero means inactive,not successful loading. Pair with remaining,record flags and record identity;no AI applicability established. Manual activity374 start duration uses10*route waiting count/contributing physical vehicles;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero means inactive,not successful loading. Pair with remaining,record flags and record identity;no AI applicability established. Manual activity374 start duration uses10*paired endpoint route waiting count/contributing physical vehicles;0058782c output arguments and caller stack locals establish paired endpoint selection;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
     },
     {
       "id": "station.boarding_remaining",
@@ -33471,11 +33473,12 @@
         "STATION-TIME-FINDINGS.md",
         "captures/manual-loading-native-20261013-01-byte-verification.json",
         "captures/manual-loading-native-20261013-01/constants-and-state.json",
-        "captures/manual-loading-native-20261013-01/read_constants.py"
+        "captures/manual-loading-native-20261013-01/read_constants.py",
+        "captures/manual-endpoint-native-20261013-01-byte-verification.json"
       ],
       "evidence_status": "Positive/decreasing/paused/expired/cancelled values;final first-positive33.20833206176758 reaches0 before event0 success;first read is not necessarily initial duration;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58",
       "update_or_lifecycle": "subtract frame delta while active;clamp on expiry or clear on cancellation;pause retains observed value",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero alone cannot distinguish completion,cancellation or inactivity. First positive read need not equal initialization;duration formula factors and AI applicability unvalidated. Manual activity374 start duration uses10*route waiting count/contributing physical vehicles;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero alone cannot distinguish completion,cancellation or inactivity. First positive read need not equal initialization;duration formula factors and AI applicability unvalidated. Manual activity374 start duration uses10*paired endpoint route waiting count/contributing physical vehicles;0058782c output arguments and caller stack locals establish paired endpoint selection;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
     },
     {
       "id": "car.connection_endpoints",
@@ -37515,6 +37518,66 @@
       "evidence_status": "Lookup and caller precedence traced;current introductory list empty with stable root",
       "update_or_lifecycle": "Activity lifetime;parser,mutation,save/reset untraced",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Empty fixture only;no positive override or countdown impact observed.8bytes is verified prefix,not allocation size. Duplicates first-match;impose bounded traversal externally. Nonnull camera path bypasses override. Do not label as real-time passenger occupancy."
+    },
+    {
+      "id": "station.boarding_vehicle_fraction",
+      "meaning": "Stored fraction of eligible physical vehicles contributing to manual boarding",
+      "applicability": "player activity;automatic-driver and traffic-AI semantics not implied",
+      "value_type": "float32",
+      "units": "dimensionless vehicle count ratio;not passenger capacity or door coverage",
+      "extraction": "activity0x809810+364;00587067 clears after helper success;00587453..0058745c divides contributing count by eligible count",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "read_manual_loading_inputs.py",
+        "test_manual_loading_inputs.py",
+        "captures/manual-loading-native-20261013-01-byte-verification.json",
+        "captures/manual-endpoint-native-20261013-01-byte-verification.json",
+        "captures/manual-loading-preflight-20261013-01/samples.jsonl",
+        "captures/manual-loading-preflight-20261013-01/metadata.json"
+      ],
+      "evidence_status": "Current native instructions verified;negative automatic-driving fixture reads0;positive stored ratio not validated",
+      "update_or_lifecycle": "Conditional player station processor update;early return before reset can retain earlier value;zero-total division has no explicit guard at this site",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Require finite value and producer eligibility context. Zero does not establish platform absence or a fresh computation. No simultaneous positive manual ratio/count comparison;reset/save/load and nonfinite live behavior untested."
+    },
+    {
+      "id": "station.eligible_vehicle_count",
+      "meaning": "Reconstructed number of physical vehicles eligible for manual boarding",
+      "applicability": "player physical consist;conditional manual processor input reconstruction",
+      "value_type": "derived uint32 or unavailable",
+      "units": "vehicles",
+      "extraction": "Traverse service+158 -> train+62,next+a8;count definition+88 byte==3 or definition+c08 float>0",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "read_manual_loading_inputs.py",
+        "test_manual_loading_inputs.py",
+        "captures/manual-loading-native-20261013-01-byte-verification.json",
+        "captures/manual-endpoint-native-20261013-01-byte-verification.json",
+        "captures/manual-loading-preflight-20261013-01/samples.jsonl",
+        "captures/manual-loading-preflight-20261013-01/metadata.json"
+      ],
+      "evidence_status": "Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles",
+      "update_or_lifecycle": "Recompute per sample;invalidate on incomplete traversal,read error,nonfinite inputs,failed pointer guards or clock crossing",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a stored native counter or proof the processor executes. Earlier native geometry gates omitted;no door overlap or passenger occupancy claim. Stable rereads cannot prove atomicity. Positive manual onset validation pending. Do not transfer automatic length-budget semantics."
+    },
+    {
+      "id": "station.contributing_vehicle_count",
+      "meaning": "Reconstructed eligible physical vehicles within selected platform endpoint interval",
+      "applicability": "player physical consist;conditional manual processor input reconstruction",
+      "value_type": "derived uint32 or unavailable",
+      "units": "vehicles",
+      "extraction": "Eligible vehicles additionally require vehicle+128 item array(+20 pointer,+24 count) to contain either endpoint pointer and vehicle+138 strictly between endpoint+c distances",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "read_manual_loading_inputs.py",
+        "test_manual_loading_inputs.py",
+        "captures/manual-loading-native-20261013-01-byte-verification.json",
+        "captures/manual-endpoint-native-20261013-01-byte-verification.json",
+        "captures/manual-loading-preflight-20261013-01/samples.jsonl",
+        "captures/manual-loading-preflight-20261013-01/metadata.json"
+      ],
+      "evidence_status": "Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles",
+      "update_or_lifecycle": "Recompute per sample;invalidate on incomplete traversal,read error,nonfinite inputs,failed pointer guards or clock crossing",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a stored native counter or proof the processor executes. Earlier native geometry gates omitted;no door overlap or passenger occupancy claim. Stable rereads cannot prove atomicity. Positive manual onset validation pending. Do not transfer automatic length-budget semantics."
     }
   ]
 }

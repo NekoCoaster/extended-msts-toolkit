@@ -72367,6 +72367,66 @@
       "bytes": 752,
       "sha256": "5758589800fb51b77aea9d83fe00dd9314c8dace5f4d525d98f3ae9ec66f61ae",
       "included": false
+    },
+    {
+      "path": "captures/manual-endpoint-native-20261013-01-byte-verification.json",
+      "bytes": 534,
+      "sha256": "e8a0c7fb3e13eabb7ebbcf08ba566dd65d257668290aff18ae6e42659847b50e",
+      "included": false
+    },
+    {
+      "path": "captures/manual-endpoint-native-20261013-01/0058782c.asm",
+      "bytes": 7933,
+      "sha256": "12907f1966fbd2929f8f176f2f25043a131bca63a6fd3ffa12fa0c8f64239c8d",
+      "included": false
+    },
+    {
+      "path": "captures/manual-endpoint-native-20261013-01/0058782c.bytes.tsv",
+      "bytes": 3733,
+      "sha256": "ce95defa60e89009366c70dfd507c9006076f2bca93b8a7470a1eea01d286c25",
+      "included": false
+    },
+    {
+      "path": "captures/manual-endpoint-native-20261013-01/0058782c.c",
+      "bytes": 2848,
+      "sha256": "904224df3710f6fdce38bba73b9bd0f87b7fe73f39c46e379d4c87e147a443e1",
+      "included": false
+    },
+    {
+      "path": "captures/manual-endpoint-native-20261013-01/reused-source-provenance.json",
+      "bytes": 403,
+      "sha256": "dd3f7b7432389b6544a3fab77fa8b6e371d47e154ec1f1017c56174f641cd911",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-preflight-20261013-01/metadata.json",
+      "bytes": 576,
+      "sha256": "3731fe028258df8d9f533979a82aff1c4de3b08aebd2f45892fe17bf7e809fa1",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-preflight-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-preflight-20261013-01/read_manual_loading_inputs.py",
+      "bytes": 5330,
+      "sha256": "0dcc2083b0743cc4560ed8a490f8d71467c3e19d7aaa0c1be1a30c213625df47",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-preflight-20261013-01/samples.jsonl",
+      "bytes": 111740,
+      "sha256": "1989be3629a6a3e5c3a4f0a78ef142f7eee889fa79d0fcf11198cd44190e9419",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-preflight-20261013-01/summary.json",
+      "bytes": 357,
+      "sha256": "62149143afa0254e6713507b30c19011232f655a807224858976d09f3c8e682f",
+      "included": false
     }
   ]
 }

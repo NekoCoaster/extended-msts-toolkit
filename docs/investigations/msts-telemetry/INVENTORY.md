@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 459, 'runtime_derived': 26, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1064}
+{'runtime_direct': 460, 'runtime_derived': 28, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1067}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1070,3 +1070,6 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | electric.pantograph_selector | Electric multi-position pantograph selector record | Static electric source/control routes traced;current bounded record snapshot zero-filled with gate0,not enabled transition validation |
 | session.automatic_driver_enabled | Automatic player-driver mode gate | Set1/clear0/toggle and gated control dispatch traced;1 observed at ITR completion alert;automatic-player opening hold captures platform66flags0to2,countdown onset/release and unchanged zero recorded times |
 | activity.platform_loading_count_overrides | Activity platform-ID loading-count override list | Lookup and caller precedence traced;current introductory list empty with stable root |
+| station.boarding_vehicle_fraction | Stored fraction of eligible physical vehicles contributing to manual boarding | Current native instructions verified;negative automatic-driving fixture reads0;positive stored ratio not validated |
+| station.eligible_vehicle_count | Reconstructed number of physical vehicles eligible for manual boarding | Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles |
+| station.contributing_vehicle_count | Reconstructed eligible physical vehicles within selected platform endpoint interval | Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles |

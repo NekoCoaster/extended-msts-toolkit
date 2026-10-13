@@ -4,7 +4,7 @@
   "limitations": "Calls are literal direct CALL targets; single-instruction JMP thunks have a separate one-hop caller index. Edges are the union of retained variants, not one asserted build. No indirect edges or execution proof. Variants are retained; navigation choice is not a freshness or correctness claim. Documentation references are lexical leads, not semantic assertions. Raw exports are local-only in the published clone.",
   "counts": {
     "functions": 2287,
-    "exports": 3237,
+    "exports": 3238,
     "findings": 79,
     "variant_functions": 4
   },
@@ -102669,6 +102669,12 @@
     "0058782c": {
       "exports": [
         {
+          "path": "captures/manual-endpoint-native-20261013-01/0058782c.asm",
+          "sha256": "12907f1966fbd2929f8f176f2f25043a131bca63a6fd3ffa12fa0c8f64239c8d",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass155/0058782c.asm",
           "sha256": "12907f1966fbd2929f8f176f2f25043a131bca63a6fd3ffa12fa0c8f64239c8d",
           "decompiled": true,
@@ -102687,7 +102693,12 @@
           "instruction_bytes": true
         }
       ],
-      "references": [],
+      "references": [
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 143
+        }
+      ],
       "calls": [
         {
           "site": "00587868",
@@ -102720,7 +102731,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass155/0058782c.asm",
+      "navigation_export": "captures/manual-endpoint-native-20261013-01/0058782c.asm",
       "callers": [
         {
           "function": "00586f58",
@@ -102831,6 +102842,10 @@
           "site": "005875e8"
         },
         {
+          "function": "0058782c",
+          "site": "005878ec"
+        },
+        {
           "function": "0058cd74",
           "site": "0058ce50"
         },
@@ -102841,10 +102856,6 @@
         {
           "function": "0058cd74",
           "site": "0058d0bb"
-        },
-        {
-          "function": "0058782c",
-          "site": "005878ec"
         },
         {
           "function": "00586666",
@@ -157932,16 +157943,16 @@
           "site": "00587236"
         },
         {
-          "function": "005a5254",
-          "site": "005a5273"
-        },
-        {
           "function": "0058782c",
           "site": "00587868"
         },
         {
           "function": "0058782c",
           "site": "0058788b"
+        },
+        {
+          "function": "005a5254",
+          "site": "005a5273"
         }
       ],
       "callers_via_single_jump": []
