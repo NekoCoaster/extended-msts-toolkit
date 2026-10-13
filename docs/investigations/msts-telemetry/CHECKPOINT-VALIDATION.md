@@ -469,3 +469,8 @@ Traffic schedule caller,merge order and temporary flags traced;automatic player-
 ## Offline research organization, 2026-10-10
 
 Research remains paused. Short current handoff, coverage matrix and navigation replace accumulated entry-point diaries; original README/handoff/coverage preserved byte-for-byte with archive hashes. Generated map covers2285addresses/3233exports/79findings,retains4assembly-variant groups,and records direct calls plus one-hop thunk callers. All export hashes,reference line bounds,archive hashes and navigation links checked;two builds byte-identical. Known005a3941 query returns caller0059f510 through00401b5e. Index is navigation,not whole-program analysis or execution proof. Inventory byte-identical to9cc85ba. Sync verifies12015raw hashes,adds0raw files;456JSON/221Python parse. No simulator input or production changes during organization. Unchanged-native baseline reused.
+
+
+## Automatic opening hold, 13 October 2026
+
+872samples,0read errors,345unavailable/527player,39clock crossings. Onset and release bracketed;platform66flag0to2 with recorded times0. Archived service_stable check invalid due to loop-variable shadowing,explicitly excluded. Corrected stable/changed mock checks and one live sample pass. Current dispatch124instructions451bytes match;historical report restored to exact manifest hash after fresh verification stored separately. Four records updated,1059unchanged,all old evidence preserved. Inventory1063;999paths/151source hashes pass. Sync12015old raw hashes verified,13new;458JSON/223Python parse. Unchanged-native baseline reused,not rerun. Research active/incomplete;no capture running.

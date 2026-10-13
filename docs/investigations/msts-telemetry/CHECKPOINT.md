@@ -1,6 +1,6 @@
 # MSTS telemetry discovery
 
-Independent research, **paused and incomplete**. Start with [the current handoff](NEW-CHAT-HANDOFF.md) and [research navigation](RESEARCH-NAVIGATION.md), then choose the relevant [coverage row](DISCOVERY-COVERAGE.md).
+Independent research, **active and incomplete**. Start with [the current handoff](NEW-CHAT-HANDOFF.md) and [research navigation](RESEARCH-NAVIGATION.md), then choose the relevant [coverage row](DISCOVERY-COVERAGE.md).
 
 The catalogue contains 1,063 candidates; this is breadth, not a completion percentage. `inventory.json` retains per-candidate meanings, applicability, units, extraction, lifecycle, evidence and limitations. [INVENTORY.md](INVENTORY.md) is generated from it.
 

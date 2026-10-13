@@ -1,6 +1,6 @@
 # Discovery coverage and open questions
 
-Status: **paused, incomplete**. Latest experimental checkpoint: `9cc85ba` (10 October 2026). Inventory: 1,063 candidates; counts are not independent validated quantities or a completion percentage. This page retains the prior requirement matrix without its accumulated simulator-state diary.
+Status: **active, incomplete**. Latest experimental checkpoint: `9cc85ba` (10 October 2026). Inventory: 1,063 candidates; counts are not independent validated quantities or a completion percentage. This page retains the prior requirement matrix without its accumulated simulator-state diary.
 
 Read only the row relevant to the next question; find full filenames and native entry points through `python research_index.py <topic>`. Latest current-state authority is [NEW-CHAT-HANDOFF.md](NEW-CHAT-HANDOFF.md). Original wording and chronology remain in [the coverage archive](DISCOVERY-COVERAGE-ARCHIVE-20261010.md).
 

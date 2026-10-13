@@ -72091,6 +72091,84 @@
       "bytes": 1203,
       "sha256": "4d5864090c2c0bbbcb8b24df8c7c20c4445090cabaf9ba3e12d5087a1baf6ab7",
       "included": false
+    },
+    {
+      "path": "captures/automatic-opening-20261013-01/dispatch-byte-verification.json",
+      "bytes": 881,
+      "sha256": "8505c5e5a11ae20ef0a645558150c5da95350859d44d7bf21e3355e5e9ba82f3",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-opening-20261013-01/metadata.json",
+      "bytes": 809,
+      "sha256": "e4ccb5b9783e64a63b46cd91905dd80958cce6bc29bce4da06906ddb4cfa75b4",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-opening-20261013-01/read_automatic_station_series.py",
+      "bytes": 3111,
+      "sha256": "e17ab94c5b15560525f9ba28877d2b324316ac1e8604a3e7af1342a7ebfa32ac",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-opening-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-opening-20261013-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-opening-20261013-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-opening-20261013-01/samples.jsonl",
+      "bytes": 114861917,
+      "sha256": "882a9405abe2f880b1891bf48d6f8fb714ed099f346f57480c83de418797c67f",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-pointer-check-20261013-01/metadata.json",
+      "bytes": 807,
+      "sha256": "bb39f4ffc277bd1d718e5fa8ed2aebed5f839355dabe57c770c3972994535295",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-pointer-check-20261013-01/read_automatic_station_series.py",
+      "bytes": 3139,
+      "sha256": "3cff4ef6f842530e84fbd35b255ff98aa7a36cf2bee12b6bb64042a7c013f07a",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-pointer-check-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-pointer-check-20261013-01/read_services.py",
+      "bytes": 4554,
+      "sha256": "95cc57bbc29236df38f994c863534875f1acb510998a5239657bc22ce03d8815",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-pointer-check-20261013-01/read_station_series.py",
+      "bytes": 3947,
+      "sha256": "998e5fb9ed6795ba7ef9dcdea84ec5ea3e96e9c7d20c324f5e9611e595047cca",
+      "included": false
+    },
+    {
+      "path": "captures/automatic-pointer-check-20261013-01/samples.jsonl",
+      "bytes": 217824,
+      "sha256": "6cc368a4b53982414c2acde6b19398e119b1cbf138aef249707ebfff759e0a9e",
+      "included": false
     }
   ]
 }
