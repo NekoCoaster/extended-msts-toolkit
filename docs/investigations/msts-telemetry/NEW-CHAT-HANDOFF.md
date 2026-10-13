@@ -1,33 +1,36 @@
 # MSTS telemetry research handoff
 
-Updated 13 October 2026. Research goal is **active and incomplete**, resumed after the organization checkpoint2fcae46. Use the bounded function-index workflow; historical pause instructions below are superseded by this resumption.
+Updated 13 October 2026. Research is incomplete. This organization checkpoint adds no live experiment; recheck simulator state before any future observation.
 
 ## Current checkpoint
 
-Last experimental checkpoint: `9cc85ba`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9). Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`. Production NEMT is separate.
+Parent research checkpoint: `10298c6`; this loading-duration checkpoint continues branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
 
-Inventory: 1,063 candidates (458 direct, 26 derived, 68 cab, 511 configuration). Counts overlap in meaning and do not establish completion. Latest experimental audit: 995 evidence paths and 151 source hashes passed.
+Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`. This checkpoint includes loading-duration, override and manual-geometry findings.
 
-On13October the current process was10036 at route selection. Normal UI loaded Tokyo-Hakone Introductory Train Ride for an opening-station capture;see STATION-TIME-FINDINGS final section for the resulting checkpoint. Rediscover process,UI and addresses on continuation.
-
-Installation context: supported image SHA256 `2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843`; user confirms MSTSBin, no NEMT loaded and no community night-cab addons. Historical patched process observations are not current executable behavior.
+Current local inventory: **1,064 candidates** (459 direct, 26 derived, 68 cab, 511 configuration). Structural audit passes: 1,007 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
 
 ## Start here
 
-1. Read [research navigation](RESEARCH-NAVIGATION.md), then the relevant row of [coverage](DISCOVERY-COVERAGE.md).
-2. Query `python research_index.py 005a3941` or a finding topic such as `STATION`. Read the referenced finding section before exporting again.
-3. Check current Git state and existing evidence. Revalidate executable/process state only when needed for new live work.
-4. State a discriminating question. Batch related writer/caller analysis; run gameplay only where static evidence leaves an operational ambiguity.
-5. Update the relevant finding and this short handoff at a meaningful checkpoint. Keep raw captures immutable. Put chronology in findings, not repeated current-state paragraphs here.
+1. Use [research navigation](RESEARCH-NAVIGATION.md), then the relevant [coverage row](DISCOVERY-COVERAGE.md).
+2. Query `python research_index.py 005a3941 --limit 8` or a topic such as `STATION`. Read the referenced finding before exporting again.
+3. Check Git state and existing evidence. Validate process/build only when new live work requires it.
+4. State a discriminating question; batch related analysis and publish coherent checkpoints.
 
-## Recent conclusions and next unresolved question
+## Latest evidence and next decision
 
-[Station timing](STATION-TIME-FINDINGS.md) distinguishes traffic schedule merge, temporary list markers, recorded times and automatic player driving. `005a3941` marks the previous station on its automatic-driver countdown path; `005a41c2` differs. Completion-modal state retained speed, selection and enabled driver gate. The fresh opening capture on13October recorded platform66flags0to2 with positive countdown and selection advance,while recorded times stayed0. The archived probe has an invalid service_stable check due to variable shadowing;fixed in current source,raw preserved. See latest STATION-TIME-FINDINGS section.
+[Station timing](STATION-TIME-FINDINGS.md) contains the latest opening capture, loading-duration reconstruction and activity override analysis. The opening capture recorded a positive automatic-player countdown and station selection advance while recorded times stayed zero. Its archived service-stability check is invalid; corrected source and a separate pointer check preserve that limitation.
 
-Opening capture automatic-opening-20261013-01 finished872samples/0errors. Simulator remained in the running introductory ride after two Escape attempts (second after explicit activation);do not assume exit succeeded. No capture remains running. Next consolidate guarded transition evidence and validate corrected service-pointer check;avoid repeating ineffective Escape input without a new method. This is one open question, not the entire objective. Broader gaps and completion requirements remain in the coverage review.
+The local duration model counts seven eligible cars and reproduces the first timer value using later inputs and an assumed quarter-second update. This corroborates the formula without proving simultaneous onset inputs. Override lookup prefers the selected endpoint, then its pair, then the route count; the current empty override list provides no positive runtime validation. Manual boarding has a separate path.
 
-## Boundaries and evidence
+Manual duration is now traced to physical-vehicle endpoint membership and strict position bounds, distinct from automatic length-budget counting. Current bytes and constants match; contemporaneous onset counting remains unvalidated. Next station question: capture the manual contributing count at timer onset, trace minimum-wait use, or obtain an appropriate positive override fixture. Broader gaps remain in the coverage matrix; this is not the whole research objective.
 
-Preserve game assets/saves. External reads only (QUERY_LIMITED_INFORMATION | VM_READ); no injection, process writes, debugger/native calls or production integration. Research is resumed;normal UI experiments remain authorized. Do not rank candidates or make keep/drop decisions. See [extraction handoff](EXTRACTION-HANDOFF.md) for build assumptions and read validity. Raw exports/captures remain canonical-local; published manifest retains their hashes.
+Latest read-only state check (13 October, 05:58 UTC) found PID10036, pause0, automatic gate1 and an advancing clock. No UI action or continuous sampler was started. Earlier Escape attempts were ineffective; do not repeat them without a new method.
 
-The [verbatim prior handoff](NEW-CHAT-HANDOFF-ARCHIVE-20261010.md) is historical lookup only. Its many former current-state claims must not override this page.
+## Boundaries and history
+
+Supported image SHA256: `2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843`. User installation context: MSTSBin, no NEMT loaded, no community night-cab addons. Rediscover process IDs and pointers; historical patches are not current behavior.
+
+Preserve game assets/saves. External reads only; no injection, process writes, debugger/native calls, production integration or candidate ranking. See [extraction handoff](EXTRACTION-HANDOFF.md) for validity requirements.
+
+The [prior handoff archive](NEW-CHAT-HANDOFF-ARCHIVE-20261010.md) is historical lookup only. Keep chronology in findings and raw evidence immutable.

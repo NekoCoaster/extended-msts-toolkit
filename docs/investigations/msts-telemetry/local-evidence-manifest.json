@@ -72169,6 +72169,204 @@
       "bytes": 217824,
       "sha256": "6cc368a4b53982414c2acde6b19398e119b1cbf138aef249707ebfff759e0a9e",
       "included": false
+    },
+    {
+      "path": "captures/loading-duration-inputs-20261013-01/inputs.json",
+      "bytes": 3349,
+      "sha256": "0f4873ffa12950fa0e78654971c33e756c4482ada665566ed52bd79bac7c0978",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01-byte-verification.json",
+      "bytes": 709,
+      "sha256": "ccce89d47aec02368500fba22a6d2ffc58f16e25ed9e490aba4e510cb810f957",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/005a3941.asm",
+      "bytes": 21163,
+      "sha256": "c1022c1faecfbbab7653038ad6de87b33e3c305c5d82b652695e088ad34d4411",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/005a3941.bytes.tsv",
+      "bytes": 10778,
+      "sha256": "599ccfb359e8584caebcf6e205cc1b6c0d2c964df1680f17e0867af01a408686",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/005a3941.c",
+      "bytes": 6641,
+      "sha256": "ef8568612c32655deebe243ee23bcc86f11ec351efbeaee794be0037c7b688fc",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/006212fd.asm",
+      "bytes": 895,
+      "sha256": "d3a161532733325812de9a829d9258dd5370b2abe048bcd291be5048f27a357a",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/006212fd.bytes.tsv",
+      "bytes": 492,
+      "sha256": "01c05873efdf837e1868f467a80ac2012b75e48df6b30f6bf61a74050a094126",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/006212fd.c",
+      "bytes": 303,
+      "sha256": "4fb94f9341be9b7cd2ae739bedca2bb9e0fdc9ad7692482eefc5c48647a04644",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/console.log",
+      "bytes": 6340,
+      "sha256": "6e00afed0b6688358e5a9014e793a4732d88b4bd54f7a7e70ed10e6fd043159a",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/functions.tsv",
+      "bytes": 29,
+      "sha256": "b03ab7d78458279c55f41a81de729add9a5ca100a24b88dd5357e246cfd667be",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/ghidra.log",
+      "bytes": 6396,
+      "sha256": "797daae970de2ed1517224a33c0626219bcc467c49f1138a586639bef02c5502",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/reused-source-provenance.json",
+      "bytes": 403,
+      "sha256": "d24ec80f2a4ba03e01c1e602ca2bd4dab743de31b22cf65e560bb7c99a5b8279",
+      "included": false
+    },
+    {
+      "path": "captures/loading-duration-native-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "6aa735e8b60694f8b98fb34a6447d8dfad38afa6b091a4971fa9e5b9c7ce614b",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-inputs-20261013-01/records.json",
+      "bytes": 233,
+      "sha256": "a87713fb9bb0b3e75e85dbba3e831c0e5753d4db929324ce8873db58d3cf71a6",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01-byte-verification.json",
+      "bytes": 533,
+      "sha256": "7febe85925ff170555869d4e2910d5a7bb8fa52d92001045e6b08e86036e007a",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/0058e539.asm",
+      "bytes": 1056,
+      "sha256": "809d30f37f5002940d8c5220e9dfa5069f3e19a0553d6106329f7948a875c871",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/0058e539.bytes.tsv",
+      "bytes": 505,
+      "sha256": "9f4b4582ff137fa1ea00b872204296fb5e192e7d2079ca628e3fb03ca545b758",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/0058e539.c",
+      "bytes": 388,
+      "sha256": "024e8870a0a6a3b830fd2f9dc37e8921091bb376a26f365040bc61830b3163c7",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/console.log",
+      "bytes": 6116,
+      "sha256": "2b1aaec1810d81a6b108de6e2c707ad627298717a74139823ffa2645dcd93c6d",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/functions.tsv",
+      "bytes": 29,
+      "sha256": "96f67b26af36284eb739ce0cc30e5b8a0e690d47b80005b8dddd4ac88c2032df",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/ghidra.log",
+      "bytes": 6132,
+      "sha256": "e2cef7b3aa94c4dfaa03355b23bc02480cc2efdc3bde1e1f35f439c813de0fc4",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/loading-override-native-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "926ff3f8ec713222d94a89543f28991c31973f5a9af10c28c23b84318a988c4e",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-native-20261013-01-byte-verification.json",
+      "bytes": 534,
+      "sha256": "45ddb21e5fd2a2eba7c6096950813f17fd04120adf1e4bf12e035499f62e0b74",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-native-20261013-01/00586f58.asm",
+      "bytes": 21465,
+      "sha256": "1f8bdc29ad96a29974362aad47a8deab1d3b6bbf80516ae06e4bf808b05999ee",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-native-20261013-01/00586f58.bytes.tsv",
+      "bytes": 11153,
+      "sha256": "8d13d89fcf820c824e0174fc3c5f68190c393aae3e1274a02c124e553474351b",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-native-20261013-01/00586f58.c",
+      "bytes": 9882,
+      "sha256": "a6ca280b00ac23226bd3d5cdf8628845bb0e97e485242155c443da8ac2f2f20f",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-native-20261013-01/constants-and-state.json",
+      "bytes": 1561,
+      "sha256": "35ff6b5d4b991fd86d21d324828ef3ef0e376ecc20c4e2e2379294f89aeb29ee",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-native-20261013-01/read_constants.py",
+      "bytes": 1283,
+      "sha256": "ffb69ced0237a42579a326b9bc05d729b541d78fd6f4988361570c8b2778773a",
+      "included": false
+    },
+    {
+      "path": "captures/manual-loading-native-20261013-01/reused-source-provenance.json",
+      "bytes": 752,
+      "sha256": "5758589800fb51b77aea9d83fe00dd9314c8dace5f4d525d98f3ae9ec66f61ae",
+      "included": false
     }
   ]
 }

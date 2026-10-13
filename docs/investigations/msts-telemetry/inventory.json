@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-13T05:47:25.263590+00:00",
+  "generated_utc": "2026-10-13T05:58:53.780744+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
-    "runtime_direct": 458,
+    "runtime_direct": 459,
     "runtime_derived": 26,
     "cab_channels": 68,
     "installed_cab_channels": 59,
@@ -11,7 +11,7 @@
     "config_leaf_paths": 478,
     "config_mixed_paths": 37,
     "files_scanned": 143,
-    "total": 1063
+    "total": 1064
   },
   "executable_assumption": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload.",
   "data_points": [
@@ -27284,11 +27284,16 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "STATION-TIME-FINDINGS.md",
+        "analyse_loading_duration.py",
+        "loading-duration-model-20261013.json",
+        "captures/loading-duration-native-20261013-01-byte-verification.json",
+        "captures/loading-override-native-20261013-01-byte-verification.json"
       ],
-      "evidence_status": "Winter Tokyo AI positive platform countdown,decrements,pause stability,active zero and expiry observed;all falling pairs1second in this fixture",
+      "evidence_status": "Winter Tokyo AI positive platform countdown,decrements,pause stability,active zero and expiry observed;all falling pairs1second in this fixture;automatic player loading-duration branch reconstructed;later-input model matches opening timer after quarter step",
       "update_or_lifecycle": "initialized at selected-stop distance transition,then update-interval decrement while214active;negative result clears value/gate",
-      "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Starts before speed reaches0 and selection already advances to next record. Zero may coexist with active gate. First positive sample is not exact initial duration;passenger/consist inputs and general cadence remain unvalidated. Distinct from player boarding and path-wait elapsed1ec/duration1f0."
+      "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Starts before speed reaches0 and selection already advances to next record. Zero may coexist with active gate. First positive sample is not exact initial duration;passenger/consist inputs and general cadence remain unvalidated. Distinct from player boarding and path-wait elapsed1ec/duration1f0. Automatic005a3941 counts eligible fitting definitions;camera-nonnull duration10*route_count/N,fallback20ifNzero. Camera-null branch prefers selected endpoint activity override,then paired override,then route count. Does not directly read platform minimum-wait38. Later snapshot/model is not simultaneous-onset proof;manual player374path and all traffic modes not generalized."
     },
     {
       "id": "service.stop_timer_active",
@@ -27310,11 +27315,16 @@
         "captures/winter-ai-stops-20261010-01/samples.jsonl",
         "captures/winter-ai-baseline-20261010-01/services.jsonl",
         "captures/winter-ai-fixture-20261010-01/provenance.json",
-        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+        "captures/ai-platform-countdown-native-20261010-01-byte-verification.json",
+        "STATION-TIME-FINDINGS.md",
+        "analyse_loading_duration.py",
+        "loading-duration-model-20261013.json",
+        "captures/loading-duration-native-20261013-01-byte-verification.json",
+        "captures/loading-override-native-20261013-01-byte-verification.json"
       ],
-      "evidence_status": "Winter Tokyo AI0->1->0 platform holds captured with braking,stationary progress and movement resumption;physical and abstract service contexts observed",
+      "evidence_status": "Winter Tokyo AI0->1->0 platform holds captured with braking,stationary progress and movement resumption;physical and abstract service contexts observed;automatic player loading-duration branch reconstructed;later-input model matches opening timer after quarter step",
       "update_or_lifecycle": "set on stop selection transition;while active nonnegative remaining forces target0;negative remaining clears gate",
-      "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Gate1 does not mean already stationary or doors open. Read countdown,speed,target,progress,selected/previous and update context together. Not activity completion or AI timetable adherence;path-wait1e8 remains unvalidated."
+      "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Gate1 does not mean already stationary or doors open. Read countdown,speed,target,progress,selected/previous and update context together. Not activity completion or AI timetable adherence;path-wait1e8 remains unvalidated. Automatic005a3941 counts eligible fitting definitions;camera-nonnull duration10*route_count/N,fallback20ifNzero. Camera-null branch prefers selected endpoint activity override,then paired override,then route count. Does not directly read platform minimum-wait38. Later snapshot/model is not simultaneous-onset proof;manual player374path and all traffic modes not generalized."
     },
     {
       "id": "service.path_end_stop",
@@ -29260,11 +29270,20 @@
         "track-item-summary.json",
         "pass36-byte-verification.json",
         "pass37-byte-verification.json",
-        "TRACK-ITEM-FINDINGS.md"
+        "TRACK-ITEM-FINDINGS.md",
+        "STATION-TIME-FINDINGS.md",
+        "analyse_loading_duration.py",
+        "loading-duration-model-20261013.json",
+        "captures/loading-duration-native-20261013-01-byte-verification.json",
+        "captures/loading-override-native-20261013-01-byte-verification.json",
+        "STATION-TIME-FINDINGS.md",
+        "captures/manual-loading-native-20261013-01-byte-verification.json",
+        "captures/manual-loading-native-20261013-01/constants-and-state.json",
+        "captures/manual-loading-native-20261013-01/read_constants.py"
       ],
-      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances",
+      "evidence_status": "native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances;automatic player loading-duration branch reconstructed;later-input model matches opening timer after quarter step;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58",
       "update_or_lifecycle": "loaded configuration; runtime updates and reload lifecycle not validated",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. This is stored item data, not automatically active gameplay state. EmptyItem lacks assumed common payload. Interpret speedpost subtype before units; paired item is not a service ID. Passenger updates and effective restrictions untested. Automatic005a3941 counts eligible fitting definitions;camera-nonnull duration10*route_count/N,fallback20ifNzero. Camera-null branch prefers selected endpoint activity override,then paired override,then route count. Does not directly read platform minimum-wait38. Later snapshot/model is not simultaneous-onset proof;manual player374path and all traffic modes not generalized. Manual activity374 start duration uses10*route waiting count/contributing physical vehicles;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
     },
     {
       "id": "track_item.siding_name",
@@ -33405,11 +33424,15 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "STATION-TIME-FINDINGS.md",
+        "captures/manual-loading-native-20261013-01-byte-verification.json",
+        "captures/manual-loading-native-20261013-01/constants-and-state.json",
+        "captures/manual-loading-native-20261013-01/read_constants.py"
       ],
-      "evidence_status": "Tokyo0->1->0 for normal expiry and interruption;final expiry observed before AllStops result;paused active samples stable",
+      "evidence_status": "Tokyo0->1->0 for normal expiry and interruption;final expiry observed before AllStops result;paused active samples stable;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58",
       "update_or_lifecycle": "set on accepted loading;cleared on expiry or moving-while-loading branch;pause retained active state",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero means inactive,not successful loading. Pair with remaining,record flags and record identity;no AI applicability established."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero means inactive,not successful loading. Pair with remaining,record flags and record identity;no AI applicability established. Manual activity374 start duration uses10*route waiting count/contributing physical vehicles;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
     },
     {
       "id": "station.boarding_remaining",
@@ -33444,11 +33467,15 @@
         "activity-outcome-20261010-summary.json",
         "activity-outcome-ui-20261010.json",
         "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
-        "captures/all-stops-native-20261010-01-byte-verification.json"
+        "captures/all-stops-native-20261010-01-byte-verification.json",
+        "STATION-TIME-FINDINGS.md",
+        "captures/manual-loading-native-20261013-01-byte-verification.json",
+        "captures/manual-loading-native-20261013-01/constants-and-state.json",
+        "captures/manual-loading-native-20261013-01/read_constants.py"
       ],
-      "evidence_status": "Positive/decreasing/paused/expired/cancelled values;final first-positive33.20833206176758 reaches0 before event0 success;first read is not necessarily initial duration",
+      "evidence_status": "Positive/decreasing/paused/expired/cancelled values;final first-positive33.20833206176758 reaches0 before event0 success;first read is not necessarily initial duration;manual duration numerator and physical-vehicle membership/position counting traced in current-byte-verified00586f58",
       "update_or_lifecycle": "subtract frame delta while active;clamp on expiry or clear on cancellation;pause retains observed value",
-      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero alone cannot distinguish completion,cancellation or inactivity. First positive read need not equal initialization;duration formula factors and AI applicability unvalidated."
+      "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero alone cannot distinguish completion,cancellation or inactivity. First positive read need not equal initialization;duration formula factors and AI applicability unvalidated. Manual activity374 start duration uses10*route waiting count/contributing physical vehicles;automatic service210 uses a different definition-length budget. Manual contributing count requires eligible definition,endpoint item membership and strict position bounds. No contemporaneous manual onset count validation;no direct minimum-wait38 or activity-override lookup on the inspected manual branch. Start speed<0.1 and active interruption>=float0.05 are separate gates for ordinary finite values."
     },
     {
       "id": "car.connection_endpoints",
@@ -37472,6 +37499,22 @@
       "evidence_status": "Set1/clear0/toggle and gated control dispatch traced;1 observed at ITR completion alert;automatic-player opening hold captures platform66flags0to2,countdown onset/release and unchanged zero recorded times",
       "update_or_lifecycle": "005a0463 enables;005a0472 disables;005a0481 complements zero test then invokes005a0393;input handler eligibility additionally gated",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Mode selection is not proof of running simulation,active control execution or train movement. Completion modal retains1. No controlled toggle transition,full setup/teardown lifecycle or all callers validated;no native functions invoked. Opening initialization fixture,not arrival after travel.872samples/0read errors include345unavailable and527player samples,39clock crossings. Archived service_stable check invalid due to variable shadowing;excluded,not repaired retroactively. Corrected probe passes stable/changed mock cases and one live snapshot. No universal traffic-AI implication."
+    },
+    {
+      "id": "activity.platform_loading_count_overrides",
+      "meaning": "Activity platform-ID loading-count override list",
+      "applicability": "activity context;consumed by inspected automatic-driver branch only when camera global is null",
+      "value_type": "list of verified 8-byte prefixes",
+      "units": "platform ID and unsigned loading count",
+      "extraction": "sentinel=[0x809810+344];nodes next0,record8;record uint32id+0,count+4;first matching ID selected",
+      "evidence": [
+        "STATION-TIME-FINDINGS.md",
+        "captures/loading-override-native-20261013-01-byte-verification.json",
+        "captures/loading-override-inputs-20261013-01/records.json"
+      ],
+      "evidence_status": "Lookup and caller precedence traced;current introductory list empty with stable root",
+      "update_or_lifecycle": "Activity lifetime;parser,mutation,save/reset untraced",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Empty fixture only;no positive override or countdown impact observed.8bytes is verified prefix,not allocation size. Duplicates first-match;impose bounded traversal externally. Nonnull camera path bypasses override. Do not label as real-time passenger occupancy."
     }
   ]
 }

@@ -3,8 +3,8 @@
   "scope": "Retained named assembly exports, not whole-executable coverage",
   "limitations": "Calls are literal direct CALL targets; single-instruction JMP thunks have a separate one-hop caller index. Edges are the union of retained variants, not one asserted build. No indirect edges or execution proof. Variants are retained; navigation choice is not a freshness or correctness claim. Documentation references are lexical leads, not semantic assertions. Raw exports are local-only in the published clone.",
   "counts": {
-    "functions": 2285,
-    "exports": 3233,
+    "functions": 2287,
+    "exports": 3237,
     "findings": 79,
     "variant_functions": 4
   },
@@ -3980,16 +3980,16 @@
           "site": "005a49ef"
         },
         {
+          "function": "005a3941",
+          "site": "005a3d74"
+        },
+        {
           "function": "005af21f",
           "site": "005af98b"
         },
         {
           "function": "005af21f",
           "site": "005af9f1"
-        },
-        {
-          "function": "005a3941",
-          "site": "005a3d74"
         },
         {
           "function": "005afb19",
@@ -102523,6 +102523,12 @@
           "instruction_bytes": true
         },
         {
+          "path": "captures/manual-loading-native-20261013-01/00586f58.asm",
+          "sha256": "1f8bdc29ad96a29974362aad47a8deab1d3b6bbf80516ae06e4bf808b05999ee",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass152/00586f58.asm",
           "sha256": "1f8bdc29ad96a29974362aad47a8deab1d3b6bbf80516ae06e4bf808b05999ee",
           "decompiled": true,
@@ -102565,6 +102571,14 @@
         {
           "path": "STATION-TIME-FINDINGS.md",
           "line": 7
+        },
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 113
+        },
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 118
         }
       ],
       "calls": [
@@ -104220,6 +104234,32 @@
       "thunk_targets": [],
       "assembly_variants": 1,
       "navigation_export": "pass35/0058e500.asm",
+      "callers": [],
+      "callers_via_single_jump": []
+    },
+    "0058e539": {
+      "exports": [
+        {
+          "path": "captures/loading-override-native-20261013-01/0058e539.asm",
+          "sha256": "809d30f37f5002940d8c5220e9dfa5069f3e19a0553d6106329f7948a875c871",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 111
+        },
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 120
+        }
+      ],
+      "calls": [],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/loading-override-native-20261013-01/0058e539.asm",
       "callers": [],
       "callers_via_single_jump": []
     },
@@ -109977,6 +110017,12 @@
     "005a3941": {
       "exports": [
         {
+          "path": "captures/loading-duration-native-20261013-01/005a3941.asm",
+          "sha256": "c1022c1faecfbbab7653038ad6de87b33e3c305c5d82b652695e088ad34d4411",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "captures/station-ai-flag-writer-native-20261010-01/005a3941.asm",
           "sha256": "c1022c1faecfbbab7653038ad6de87b33e3c305c5d82b652695e088ad34d4411",
           "decompiled": true,
@@ -110039,6 +110085,18 @@
         {
           "path": "STATION-TIME-FINDINGS.md",
           "line": 76
+        },
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 102
+        },
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 106
+        },
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 111
         }
       ],
       "calls": [
@@ -110089,7 +110147,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "captures/station-ai-flag-writer-native-20261010-01/005a3941.asm",
+      "navigation_export": "captures/loading-duration-native-20261013-01/005a3941.asm",
       "callers": [],
       "callers_via_single_jump": [
         {
@@ -110756,6 +110814,11 @@
           "thunk": "00401f32"
         },
         {
+          "function": "005a3941",
+          "site": "005a3d74",
+          "thunk": "00401f32"
+        },
+        {
           "function": "005af21f",
           "site": "005af98b",
           "thunk": "00401f32"
@@ -110763,11 +110826,6 @@
         {
           "function": "005af21f",
           "site": "005af9f1",
-          "thunk": "00401f32"
-        },
-        {
-          "function": "005a3941",
-          "site": "005a3d74",
           "thunk": "00401f32"
         },
         {
@@ -134087,6 +134145,41 @@
       "thunk_targets": [],
       "assembly_variants": 1,
       "navigation_export": "pass181/0061949d.asm",
+      "callers": [],
+      "callers_via_single_jump": []
+    },
+    "006212fd": {
+      "exports": [
+        {
+          "path": "captures/loading-duration-native-20261013-01/006212fd.asm",
+          "sha256": "d3a161532733325812de9a829d9258dd5370b2abe048bcd291be5048f27a357a",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 104
+        },
+        {
+          "path": "STATION-TIME-FINDINGS.md",
+          "line": 106
+        }
+      ],
+      "calls": [
+        {
+          "site": "00621331",
+          "target": "00401bf4"
+        },
+        {
+          "site": "00621340",
+          "target": "00403bed"
+        }
+      ],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/loading-duration-native-20261013-01/006212fd.asm",
       "callers": [],
       "callers_via_single_jump": []
     },

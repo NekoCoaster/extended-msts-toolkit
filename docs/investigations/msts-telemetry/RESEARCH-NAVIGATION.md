@@ -1,6 +1,6 @@
 # Research navigation
 
-Use this page to acquire only the evidence needed for the next decision. Research resumed on13October2026;this index remains an offline navigation aid.
+Use this page to acquire only the evidence needed for the next decision. This index is an offline navigation aid; using it does not require resuming live research.
 
 ## Source order
 
