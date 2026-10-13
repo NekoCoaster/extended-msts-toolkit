@@ -1435,6 +1435,16 @@ for row in rows:
         row['evidence']+=['read_body_accumulator_series.py','analyse_body_accumulator_series.py','captures/body-accumulators-series-20261013-01/samples.jsonl','body-accumulators-series-20261013-summary.json']
         row['evidence_status']+=';181sample unpaused series retains zero torque on guard-qualified player,AI and ownerless bodies;15clock-crossing samples excluded'
         row['limitations']+=' Zero sampled torque accumulator is not proof of zero physical torque or absent rotational dynamics. Each of37cars used two sampled body pointers;body identities must not be counted as separate cars. Native torque producer/clear cadence remains unresolved.'
+for row in rows:
+    if row['id'] in {'body.force_accumulator_candidate','body.torque_accumulator_candidate'}:
+        row['evidence']+=['read_force_clear_inputs.py','captures/force-clear-inputs-20261013-01/inputs.json','captures/force-clear-native-20261013-01-byte-verification.json','WHEEL-ADHESION-FINDINGS.md']
+        row['evidence_status']+=';current0062ad6a entry and clear predicates traced:8AI fail entry,18ownerless satisfy clear,11player pass without clear;917instructions match current disk/live'
+        row['limitations']+=' Predicate snapshot is not native invocation or attribution of earlier zeros. This routine gates on car84bit2/body4bit2 and clears six vectors under bodyf2bit8 with car84bit8 or owner-null conditions;other writers and exact cadence remain unresolved.'
+for row in rows:
+    if row['id'] in {'station.boarding_vehicle_fraction','station.eligible_vehicle_count','station.contributing_vehicle_count'}:
+        row['evidence']+=['captures/manual-boarding-baseline-20261013-01/samples.jsonl','captures/manual-boarding-onset-20261013-01/samples.jsonl','captures/manual-boarding-onset-20261013-01/ui-and-gate-observation.json','manual-boarding-initial-20261013-summary.json','captures/manual-boarding-code-20261013-01-byte-verification.json']
+        row['evidence_status']+=';manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer'
+        row['limitations']+=' Positive fraction correspondence does not validate onset duration:initial station flag20alreadyset. Following-station loading remains needed.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

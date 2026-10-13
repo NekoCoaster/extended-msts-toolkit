@@ -4,11 +4,11 @@ Updated 13 October 2026. Research is incomplete. This organization checkpoint ad
 
 ## Current checkpoint
 
-Last published research checkpoint: `44f5328`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
+Last published research checkpoint: `af4143b`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
 
-Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`. Published findings cover loading-duration, override and manual geometry. The manual reader and negative preflight are published. Local force-configuration metadata review corrects definition lifetimes for engine.max_force and car.max_brake_force; broader physics semantics remain open. Local force evidence now includes a37vehicle snapshot and181sample moving series:player force varies while moving AI force remains zero;15clock-crossing samples excluded. Read WHEEL-ADHESION-FINDINGS for limitations. No sampler remains running.
+Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`. Published findings cover loading-duration, override and manual geometry. The manual reader and negative preflight are published. Local force-configuration metadata review corrects definition lifetimes for engine.max_force and car.max_brake_force; broader physics semantics remain open. Local force evidence now includes a37vehicle snapshot and181sample moving series:player force varies while moving AI force remains zero;15clock-crossing samples excluded. Read WHEEL-ADHESION-FINDINGS for limitations. New local force-clear predicates show8AI fail the inspected routine entry gate and18ownerless satisfy its explicit clear condition;this is eligibility,not execution proof. No sampler remains running.
 
-Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,020 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
+Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,028 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
 
 ## Start here
 
@@ -25,7 +25,7 @@ The local duration model counts seven eligible cars and reproduces the first tim
 
 Manual duration is now traced to physical-vehicle endpoint membership and strict position bounds, distinct from automatic length-budget counting. Current bytes and constants match; contemporaneous onset counting remains unvalidated. Helper argument tracing now confirms the paired endpoint supplies the manual waiting count; the reader is corrected and seven synthetic tests pass. Next station question: capture the manual contributing count at timer onset, trace minimum-wait use, or obtain an appropriate positive override fixture. Broader gaps remain in the coverage matrix; this is not the whole research objective.
 
-Latest read-only state check (13 October, 06:02 UTC) found PID10036, pause0, automatic gate1 and an advancing clock. No UI action or continuous sampler was started. Earlier Escape attempts were ineffective; do not repeat them without a new method.
+Current UI: Passenger Activity Tutorial paused on a late-arrival message;still at initial platform9 by selected record. PID39096. W inputs did not change neutral;mouse selected Reverse(-1),throttle0,speed0. User asked to set Forward and stop at Yoyogi Hachiman before loading. No sampler running. Reader now includes station flags/arrival/frame delta;8tests pass. Do not interpret tutorial message as an actual arrival.
 
 ## Boundaries and history
 

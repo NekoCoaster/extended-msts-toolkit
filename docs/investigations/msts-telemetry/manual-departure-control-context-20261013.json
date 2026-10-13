@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-13T06:36:12.282028+00:00",
+  "pid": 39096,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "paused": 1,
+  "day": 64965.1015625,
+  "controller": 59536208,
+  "reverser": -1.0,
+  "throttle": 0.0,
+  "train": 57038468,
+  "service_speed": 0.0,
+  "selected": 52461920,
+  "platform": 9,
+  "flags": 98,
+  "limitation": "Sequential context read;UI paused on tutorial late-arrival message does not establish actual location or motion. No active sampler."
+}

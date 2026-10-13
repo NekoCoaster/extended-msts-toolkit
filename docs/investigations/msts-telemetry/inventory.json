@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-13T06:18:10.303585+00:00",
+  "generated_utc": "2026-10-13T06:29:22.306554+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -31004,11 +31004,15 @@
         "analyse_body_accumulator_series.py",
         "captures/body-accumulators-series-20261013-01/samples.jsonl",
         "captures/body-accumulators-series-20261013-01/metadata.json",
-        "body-accumulators-series-20261013-summary.json"
+        "body-accumulators-series-20261013-summary.json",
+        "read_force_clear_inputs.py",
+        "captures/force-clear-inputs-20261013-01/inputs.json",
+        "captures/force-clear-native-20261013-01-byte-verification.json",
+        "WHEEL-ADHESION-FINDINGS.md"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads;one unpaused37vehicle snapshot:11player nonzero force,8moving AI and18ownerless zero force;all guarded rereads agree;181sample unpaused series:15clock-crossing samples excluded;22player body identities vary in force,16AI vary in velocity but retain zero force,36ownerless remain zero;body swaps split car identities",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads;one unpaused37vehicle snapshot:11player nonzero force,8moving AI and18ownerless zero force;all guarded rereads agree;181sample unpaused series:15clock-crossing samples excluded;22player body identities vary in force,16AI vary in velocity but retain zero force,36ownerless remain zero;body swaps split car identities;current0062ad6a entry and clear predicates traced:8AI fail entry,18ownerless satisfy clear,11player pass without clear;917instructions match current disk/live",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Unpaused population check is one sequential snapshot,not producer cadence or proof of absent AI dynamics. No sampled clock crossing does not guarantee atomicity. Twenty-second sampled variation is now observed for player accumulators;exact native force-update cadence,decomposition and AI force-model applicability remain unproved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Unpaused population check is one sequential snapshot,not producer cadence or proof of absent AI dynamics. No sampled clock crossing does not guarantee atomicity. Twenty-second sampled variation is now observed for player accumulators;exact native force-update cadence,decomposition and AI force-model applicability remain unproved. Predicate snapshot is not native invocation or attribution of earlier zeros. This routine gates on car84bit2/body4bit2 and clears six vectors under bodyf2bit8 with car84bit8 or owner-null conditions;other writers and exact cadence remain unresolved."
     },
     {
       "id": "body.torque_accumulator_candidate",
@@ -31033,11 +31037,15 @@
         "read_body_accumulator_series.py",
         "analyse_body_accumulator_series.py",
         "captures/body-accumulators-series-20261013-01/samples.jsonl",
-        "body-accumulators-series-20261013-summary.json"
+        "body-accumulators-series-20261013-summary.json",
+        "read_force_clear_inputs.py",
+        "captures/force-clear-inputs-20261013-01/inputs.json",
+        "captures/force-clear-native-20261013-01-byte-verification.json",
+        "WHEEL-ADHESION-FINDINGS.md"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads;181sample unpaused series retains zero torque on guard-qualified player,AI and ownerless bodies;15clock-crossing samples excluded",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads;181sample unpaused series retains zero torque on guard-qualified player,AI and ownerless bodies;15clock-crossing samples excluded;current0062ad6a entry and clear predicates traced:8AI fail entry,18ownerless satisfy clear,11player pass without clear;917instructions match current disk/live",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Zero sampled torque accumulator is not proof of zero physical torque or absent rotational dynamics. Each of37cars used two sampled body pointers;body identities must not be counted as separate cars. Native torque producer/clear cadence remains unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Zero sampled torque accumulator is not proof of zero physical torque or absent rotational dynamics. Each of37cars used two sampled body pointers;body identities must not be counted as separate cars. Native torque producer/clear cadence remains unresolved. Predicate snapshot is not native invocation or attribution of earlier zeros. This routine gates on car84bit2/body4bit2 and clears six vectors under bodyf2bit8 with car84bit8 or owner-null conditions;other writers and exact cadence remain unresolved."
     },
     {
       "id": "body.inverse_inertia_world",
@@ -37549,11 +37557,16 @@
         "captures/manual-loading-native-20261013-01-byte-verification.json",
         "captures/manual-endpoint-native-20261013-01-byte-verification.json",
         "captures/manual-loading-preflight-20261013-01/samples.jsonl",
-        "captures/manual-loading-preflight-20261013-01/metadata.json"
+        "captures/manual-loading-preflight-20261013-01/metadata.json",
+        "captures/manual-boarding-baseline-20261013-01/samples.jsonl",
+        "captures/manual-boarding-onset-20261013-01/samples.jsonl",
+        "captures/manual-boarding-onset-20261013-01/ui-and-gate-observation.json",
+        "manual-boarding-initial-20261013-summary.json",
+        "captures/manual-boarding-code-20261013-01-byte-verification.json"
       ],
-      "evidence_status": "Current native instructions verified;negative automatic-driving fixture reads0;positive stored ratio not validated",
+      "evidence_status": "Current native instructions verified;negative automatic-driving fixture reads0;positive stored ratio not validated;manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer",
       "update_or_lifecycle": "Conditional player station processor update;early return before reset can retain earlier value;zero-total division has no explicit guard at this site",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Require finite value and producer eligibility context. Zero does not establish platform absence or a fresh computation. No simultaneous positive manual ratio/count comparison;reset/save/load and nonfinite live behavior untested."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Require finite value and producer eligibility context. Zero does not establish platform absence or a fresh computation. No simultaneous positive manual ratio/count comparison;reset/save/load and nonfinite live behavior untested. Positive fraction correspondence does not validate onset duration:initial station flag20alreadyset. Following-station loading remains needed."
     },
     {
       "id": "station.eligible_vehicle_count",
@@ -37569,11 +37582,16 @@
         "captures/manual-loading-native-20261013-01-byte-verification.json",
         "captures/manual-endpoint-native-20261013-01-byte-verification.json",
         "captures/manual-loading-preflight-20261013-01/samples.jsonl",
-        "captures/manual-loading-preflight-20261013-01/metadata.json"
+        "captures/manual-loading-preflight-20261013-01/metadata.json",
+        "captures/manual-boarding-baseline-20261013-01/samples.jsonl",
+        "captures/manual-boarding-onset-20261013-01/samples.jsonl",
+        "captures/manual-boarding-onset-20261013-01/ui-and-gate-observation.json",
+        "manual-boarding-initial-20261013-summary.json",
+        "captures/manual-boarding-code-20261013-01-byte-verification.json"
       ],
-      "evidence_status": "Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles",
+      "evidence_status": "Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles;manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer",
       "update_or_lifecycle": "Recompute per sample;invalidate on incomplete traversal,read error,nonfinite inputs,failed pointer guards or clock crossing",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a stored native counter or proof the processor executes. Earlier native geometry gates omitted;no door overlap or passenger occupancy claim. Stable rereads cannot prove atomicity. Positive manual onset validation pending. Do not transfer automatic length-budget semantics."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a stored native counter or proof the processor executes. Earlier native geometry gates omitted;no door overlap or passenger occupancy claim. Stable rereads cannot prove atomicity. Positive manual onset validation pending. Do not transfer automatic length-budget semantics. Positive fraction correspondence does not validate onset duration:initial station flag20alreadyset. Following-station loading remains needed."
     },
     {
       "id": "station.contributing_vehicle_count",
@@ -37589,11 +37607,16 @@
         "captures/manual-loading-native-20261013-01-byte-verification.json",
         "captures/manual-endpoint-native-20261013-01-byte-verification.json",
         "captures/manual-loading-preflight-20261013-01/samples.jsonl",
-        "captures/manual-loading-preflight-20261013-01/metadata.json"
+        "captures/manual-loading-preflight-20261013-01/metadata.json",
+        "captures/manual-boarding-baseline-20261013-01/samples.jsonl",
+        "captures/manual-boarding-onset-20261013-01/samples.jsonl",
+        "captures/manual-boarding-onset-20261013-01/ui-and-gate-observation.json",
+        "manual-boarding-initial-20261013-summary.json",
+        "captures/manual-boarding-code-20261013-01-byte-verification.json"
       ],
-      "evidence_status": "Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles",
+      "evidence_status": "Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles;manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer",
       "update_or_lifecycle": "Recompute per sample;invalidate on incomplete traversal,read error,nonfinite inputs,failed pointer guards or clock crossing",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a stored native counter or proof the processor executes. Earlier native geometry gates omitted;no door overlap or passenger occupancy claim. Stable rereads cannot prove atomicity. Positive manual onset validation pending. Do not transfer automatic length-budget semantics."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Not a stored native counter or proof the processor executes. Earlier native geometry gates omitted;no door overlap or passenger occupancy claim. Stable rereads cannot prove atomicity. Positive manual onset validation pending. Do not transfer automatic length-budget semantics. Positive fraction correspondence does not validate onset duration:initial station flag20alreadyset. Following-station loading remains needed."
     }
   ]
 }

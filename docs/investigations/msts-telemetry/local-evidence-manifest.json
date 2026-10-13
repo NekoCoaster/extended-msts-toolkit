@@ -72493,6 +72493,174 @@
       "bytes": 2773581,
       "sha256": "70952612d5760edaf6ddc34490d84dd08da528897e059b41ab320de443ad5cdf",
       "included": false
+    },
+    {
+      "path": "captures/force-clear-inputs-20261013-01/inputs.json",
+      "bytes": 18616,
+      "sha256": "f8dc3e33eb61408e0aa54d4a340a3c86e4dd4b6d705ceaf1ea1cfc05c98bd49b",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-inputs-20261013-01/read_force_clear_inputs.py",
+      "bytes": 2928,
+      "sha256": "b00956ab1f38f67ac15cf4c17c73d2b4443de92bcb85d5e6ed9b4315f7c2ef8e",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-inputs-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-inputs-20261013-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-inputs-20261013-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-native-20261013-01-byte-verification.json",
+      "bytes": 531,
+      "sha256": "5c816c579f301500c3d1e81e79029c133087b56040176d1d95d06eed07384215",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-native-20261013-01/0062ad6a.asm",
+      "bytes": 32707,
+      "sha256": "082fe078500ad57f9d4e4742c1be919dd65b3b594d1266b0112040f405a51550",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-native-20261013-01/0062ad6a.bytes.tsv",
+      "bytes": 17707,
+      "sha256": "1cd78663753b8e674bf6d50db9960671c5f82d5bedc872d155316dc5e21dd6a6",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-native-20261013-01/0062ad6a.c",
+      "bytes": 17459,
+      "sha256": "19f2d96b2cdb9a41ce6e16b6ff89e1520cb532d3cdd965cf7dfd730a33a34f43",
+      "included": false
+    },
+    {
+      "path": "captures/force-clear-native-20261013-01/reused-source-provenance.json",
+      "bytes": 406,
+      "sha256": "2ba57ffb0f0118c60a76749d235c36899709d329102f6b1848645c1e02056266",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-baseline-20261013-01/metadata.json",
+      "bytes": 632,
+      "sha256": "1ba518d86465a05f802fbaaf6bce95fda7f77e2ebe282607c6ef4393c3a9845c",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-baseline-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-baseline-20261013-01/read_manual_loading_inputs.py",
+      "bytes": 5787,
+      "sha256": "1396a751c7d971d2016f23b642d1642a5e7b4c0df01b0fc1c79f8d470f85067f",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-baseline-20261013-01/samples.jsonl",
+      "bytes": 10974,
+      "sha256": "ad6e91049169434df6b69e854697db3648ea3d91ea66be5390826409ad15c04b",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01-byte-verification.json",
+      "bytes": 708,
+      "sha256": "04f0071f1e5036eedbcf2a1708a673c8832288691b1c1dd15370ce5e249d9f07",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01/00586f58.asm",
+      "bytes": 21465,
+      "sha256": "1f8bdc29ad96a29974362aad47a8deab1d3b6bbf80516ae06e4bf808b05999ee",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01/00586f58.bytes.tsv",
+      "bytes": 11153,
+      "sha256": "8d13d89fcf820c824e0174fc3c5f68190c393aae3e1274a02c124e553474351b",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01/00586f58.c",
+      "bytes": 9882,
+      "sha256": "a6ca280b00ac23226bd3d5cdf8628845bb0e97e485242155c443da8ac2f2f20f",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01/0058782c.asm",
+      "bytes": 7933,
+      "sha256": "12907f1966fbd2929f8f176f2f25043a131bca63a6fd3ffa12fa0c8f64239c8d",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01/0058782c.bytes.tsv",
+      "bytes": 3733,
+      "sha256": "ce95defa60e89009366c70dfd507c9006076f2bca93b8a7470a1eea01d286c25",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01/0058782c.c",
+      "bytes": 2848,
+      "sha256": "904224df3710f6fdce38bba73b9bd0f87b7fe73f39c46e379d4c87e147a443e1",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-code-20261013-01/reused-source-provenance.json",
+      "bytes": 1016,
+      "sha256": "c78c81d4eb73145a65736f0655c13aef9d9ec1f3987fe0174d72b71736cf4c6b",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-onset-20261013-01/metadata.json",
+      "bytes": 632,
+      "sha256": "1ba518d86465a05f802fbaaf6bce95fda7f77e2ebe282607c6ef4393c3a9845c",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-onset-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-onset-20261013-01/read_manual_loading_inputs.py",
+      "bytes": 5787,
+      "sha256": "1396a751c7d971d2016f23b642d1642a5e7b4c0df01b0fc1c79f8d470f85067f",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-onset-20261013-01/samples.jsonl",
+      "bytes": 13168814,
+      "sha256": "d267e67a8d53105edb0688b3c90998febfb59ef7fe8f80f1c24cdc789a1ca322",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-onset-20261013-01/stop.request",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "included": false
+    },
+    {
+      "path": "captures/manual-boarding-onset-20261013-01/ui-and-gate-observation.json",
+      "bytes": 564,
+      "sha256": "0c3a91f5dc2e92018bb1128da5e54c3ffcc6c70aee02716b1c0fc0c92dd28408",
+      "included": false
     }
   ]
 }

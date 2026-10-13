@@ -4,7 +4,7 @@
   "limitations": "Calls are literal direct CALL targets; single-instruction JMP thunks have a separate one-hop caller index. Edges are the union of retained variants, not one asserted build. No indirect edges or execution proof. Variants are retained; navigation choice is not a freshness or correctness claim. Documentation references are lexical leads, not semantic assertions. Raw exports are local-only in the published clone.",
   "counts": {
     "functions": 2287,
-    "exports": 3238,
+    "exports": 3241,
     "findings": 79,
     "variant_functions": 4
   },
@@ -12709,10 +12709,6 @@
       "navigation_export": "pass24/0040341d.asm",
       "callers": [
         {
-          "function": "0046f04b",
-          "site": "0046f2a6"
-        },
-        {
           "function": "0062ad6a",
           "site": "0062af64"
         },
@@ -12727,6 +12723,10 @@
         {
           "function": "0062ad6a",
           "site": "0062ba7d"
+        },
+        {
+          "function": "0046f04b",
+          "site": "0046f2a6"
         },
         {
           "function": "0063633e",
@@ -102523,6 +102523,12 @@
           "instruction_bytes": true
         },
         {
+          "path": "captures/manual-boarding-code-20261013-01/00586f58.asm",
+          "sha256": "1f8bdc29ad96a29974362aad47a8deab1d3b6bbf80516ae06e4bf808b05999ee",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "captures/manual-loading-native-20261013-01/00586f58.asm",
           "sha256": "1f8bdc29ad96a29974362aad47a8deab1d3b6bbf80516ae06e4bf808b05999ee",
           "decompiled": true,
@@ -102669,6 +102675,12 @@
     "0058782c": {
       "exports": [
         {
+          "path": "captures/manual-boarding-code-20261013-01/0058782c.asm",
+          "sha256": "12907f1966fbd2929f8f176f2f25043a131bca63a6fd3ffa12fa0c8f64239c8d",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "captures/manual-endpoint-native-20261013-01/0058782c.asm",
           "sha256": "12907f1966fbd2929f8f176f2f25043a131bca63a6fd3ffa12fa0c8f64239c8d",
           "decompiled": true,
@@ -102731,7 +102743,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "captures/manual-endpoint-native-20261013-01/0058782c.asm",
+      "navigation_export": "captures/manual-boarding-code-20261013-01/0058782c.asm",
       "callers": [
         {
           "function": "00586f58",
@@ -135275,6 +135287,10 @@
         {
           "path": "STEAM-PRODUCER-FINDINGS.md",
           "line": 47
+        },
+        {
+          "path": "WHEEL-ADHESION-FINDINGS.md",
+          "line": 201
         }
       ],
       "calls": [
@@ -135764,6 +135780,12 @@
     "0062ad6a": {
       "exports": [
         {
+          "path": "captures/force-clear-native-20261013-01/0062ad6a.asm",
+          "sha256": "082fe078500ad57f9d4e4742c1be919dd65b3b594d1266b0112040f405a51550",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass01b/0062ad6a.asm",
           "sha256": "082fe078500ad57f9d4e4742c1be919dd65b3b594d1266b0112040f405a51550",
           "decompiled": true,
@@ -136038,7 +136060,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass160b/0062ad6a.asm",
+      "navigation_export": "captures/force-clear-native-20261013-01/0062ad6a.asm",
       "callers": [],
       "callers_via_single_jump": []
     },
@@ -137040,7 +137062,12 @@
           "instruction_bytes": false
         }
       ],
-      "references": [],
+      "references": [
+        {
+          "path": "WHEEL-ADHESION-FINDINGS.md",
+          "line": 203
+        }
+      ],
       "calls": [
         {
           "site": "0062e0a7",
@@ -137323,10 +137350,6 @@
           "site": "0062aa1c"
         },
         {
-          "function": "006283c0",
-          "site": "00628bdc"
-        },
-        {
           "function": "0062ad6a",
           "site": "0062b185"
         },
@@ -137361,6 +137384,10 @@
         {
           "function": "0062ad6a",
           "site": "0062bbe2"
+        },
+        {
+          "function": "006283c0",
+          "site": "00628bdc"
         },
         {
           "function": "0062bc4c",
@@ -137464,6 +137491,10 @@
           "site": "0062a9fb"
         },
         {
+          "function": "0062ad6a",
+          "site": "0062b6eb"
+        },
+        {
           "function": "006283c0",
           "site": "00628885"
         },
@@ -137478,10 +137509,6 @@
         {
           "function": "0062924c",
           "site": "00629b15"
-        },
-        {
-          "function": "0062ad6a",
-          "site": "0062b6eb"
         },
         {
           "function": "0062bc4c",
@@ -138789,11 +138816,6 @@
       "callers": [],
       "callers_via_single_jump": [
         {
-          "function": "0046f04b",
-          "site": "0046f2a6",
-          "thunk": "0040341d"
-        },
-        {
           "function": "0062ad6a",
           "site": "0062af64",
           "thunk": "0040341d"
@@ -138811,6 +138833,11 @@
         {
           "function": "0062ad6a",
           "site": "0062ba7d",
+          "thunk": "0040341d"
+        },
+        {
+          "function": "0046f04b",
+          "site": "0046f2a6",
           "thunk": "0040341d"
         },
         {

@@ -1,0 +1,262 @@
+{
+  "scope": "Indexed005a/0062/0063 exports,lexical+84 writes;not object-type proof or exhaustive writers",
+  "hits": [
+    {
+      "path": "pass13/006283c0.asm",
+      "line": 51,
+      "context": [
+        "00628473  MOV EAX,dword ptr [EBP + -0x70]",
+        "00628476  MOV ECX,dword ptr [EAX + 0x84]",
+        "0062847c  OR ECX,0x100000",
+        "00628482  MOV EDX,dword ptr [EBP + -0x70]",
+        "00628485  MOV dword ptr [EDX + 0x84],ECX",
+        "0062848b  JMP 0x006284a5",
+        "0062848d  MOV EAX,dword ptr [EBP + -0x70]"
+      ]
+    },
+    {
+      "path": "pass13/006283c0.asm",
+      "line": 57,
+      "context": [
+        "0062848d  MOV EAX,dword ptr [EBP + -0x70]",
+        "00628490  MOV ECX,dword ptr [EAX + 0x84]",
+        "00628496  AND ECX,0xffefffff",
+        "0062849c  MOV EDX,dword ptr [EBP + -0x70]",
+        "0062849f  MOV dword ptr [EDX + 0x84],ECX",
+        "006284a5  JMP 0x00628ca0",
+        "006284aa  MOV EAX,dword ptr [EBP + 0xfffffec4]"
+      ]
+    },
+    {
+      "path": "pass13/006283c0.asm",
+      "line": 393,
+      "context": [
+        "00628a2b  MOV EAX,dword ptr [EBP + -0x70]",
+        "00628a2e  MOV ECX,dword ptr [EAX + 0x84]",
+        "00628a34  AND ECX,0xffefffff",
+        "00628a3a  MOV EDX,dword ptr [EBP + -0x70]",
+        "00628a3d  MOV dword ptr [EDX + 0x84],ECX",
+        "00628a43  MOV ECX,0x1a",
+        "00628a48  LEA ESI,[EBP + 0xffffff14]"
+      ]
+    },
+    {
+      "path": "pass13/006283c0.asm",
+      "line": 422,
+      "context": [
+        "00628a98  MOV EDX,dword ptr [EBP + -0x70]",
+        "00628a9b  MOV EAX,dword ptr [EDX + 0x84]",
+        "00628aa1  OR EAX,0x100000",
+        "00628aa6  MOV ECX,dword ptr [EBP + -0x70]",
+        "00628aa9  MOV dword ptr [ECX + 0x84],EAX",
+        "00628aaf  MOV ECX,0x1a",
+        "00628ab4  LEA ESI,[EBP + 0xffffff14]"
+      ]
+    },
+    {
+      "path": "pass13/006283c0.asm",
+      "line": 451,
+      "context": [
+        "00628b03  MOV ECX,dword ptr [EBP + -0x70]",
+        "00628b06  MOV EDX,dword ptr [ECX + 0x84]",
+        "00628b0c  OR EDX,0x100000",
+        "00628b12  MOV EAX,dword ptr [EBP + -0x70]",
+        "00628b15  MOV dword ptr [EAX + 0x84],EDX",
+        "00628b1b  MOV ECX,dword ptr [EBP + 0xfffffec4]",
+        "00628b21  MOV EDX,dword ptr [ECX + 0x4]"
+      ]
+    },
+    {
+      "path": "pass280/00629dbc.asm",
+      "line": 107,
+      "context": [
+        "00629f14  MOV EAX,dword ptr [EBP + -0xc]",
+        "00629f17  CMP dword ptr [EAX + 0x84],0x0",
+        "00629f1e  JZ 0x00629f55",
+        "00629f20  MOV ECX,dword ptr [EBP + -0xc]",
+        "00629f23  MOV dword ptr [ECX + 0x84],0x0",
+        "00629f2d  PUSH 0x19",
+        "00629f2f  MOV EDX,0x24"
+      ]
+    },
+    {
+      "path": "pass160b/0062c679.asm",
+      "line": 206,
+      "context": [
+        "0062c977  MOV ECX,dword ptr [EBP + 0x8]",
+        "0062c97a  MOV EDX,dword ptr [ECX + 0x84]",
+        "0062c980  AND EDX,0xfffffffe",
+        "0062c983  MOV EAX,dword ptr [EBP + 0x8]",
+        "0062c986  MOV dword ptr [EAX + 0x84],EDX",
+        "0062c98c  LEA ECX,[EBP + -0x34]",
+        "0062c98f  MOV EDX,dword ptr [EBP + -0x38]"
+      ]
+    },
+    {
+      "path": "pass160b/0062c679.asm",
+      "line": 254,
+      "context": [
+        "0062ca3a  MOV EAX,dword ptr [EBP + 0x8]",
+        "0062ca3d  MOV ECX,dword ptr [EAX + 0x84]",
+        "0062ca43  OR ECX,0x1",
+        "0062ca46  MOV EDX,dword ptr [EBP + 0x8]",
+        "0062ca49  MOV dword ptr [EDX + 0x84],ECX",
+        "0062ca4f  LEA ESI,[EBP + -0x34]",
+        "0062ca52  MOV EAX,dword ptr [EBP + -0x28]"
+      ]
+    },
+    {
+      "path": "pass160b/0062c679.asm",
+      "line": 408,
+      "context": [
+        "0062cc9c  MOV EAX,dword ptr [EBP + 0x8]",
+        "0062cc9f  MOV ECX,dword ptr [EAX + 0x84]",
+        "0062cca5  AND ECX,0xfffffffe",
+        "0062cca8  MOV EDX,dword ptr [EBP + 0x8]",
+        "0062ccab  MOV dword ptr [EDX + 0x84],ECX",
+        "0062ccb1  LEA ECX,[EBP + -0x34]",
+        "0062ccb4  MOV EAX,dword ptr [EBP + -0x4c]"
+      ]
+    },
+    {
+      "path": "pass160b/0062c679.asm",
+      "line": 472,
+      "context": [
+        "0062cd98  MOV ECX,dword ptr [EBP + -0x24]",
+        "0062cd9b  MOV EDX,dword ptr [ECX + 0x84]",
+        "0062cda1  OR EDX,0x1",
+        "0062cda4  MOV EAX,dword ptr [EBP + -0x24]",
+        "0062cda7  MOV dword ptr [EAX + 0x84],EDX",
+        "0062cdad  LEA ESI,[EBP + -0x34]",
+        "0062cdb0  MOV ECX,dword ptr [EBP + -0x28]"
+      ]
+    },
+    {
+      "path": "pass160b/0062c679.asm",
+      "line": 523,
+      "context": [
+        "0062ce5f  MOV EAX,dword ptr [EBP + -0x24]",
+        "0062ce62  MOV ECX,dword ptr [EAX + 0x84]",
+        "0062ce68  OR ECX,0x1",
+        "0062ce6b  MOV EDX,dword ptr [EBP + -0x24]",
+        "0062ce6e  MOV dword ptr [EDX + 0x84],ECX",
+        "0062ce74  LEA ESI,[EBP + -0x20]",
+        "0062ce77  MOV EAX,dword ptr [EBP + -0x28]"
+      ]
+    },
+    {
+      "path": "pass01b/0062e017.asm",
+      "line": 16,
+      "context": [
+        "0062e03b  MOV EDX,dword ptr [EBP + -0x10]",
+        "0062e03e  MOV EAX,dword ptr [EDX + 0x84]",
+        "0062e044  OR EAX,0x8",
+        "0062e047  MOV ECX,dword ptr [EBP + -0x10]",
+        "0062e04a  MOV dword ptr [ECX + 0x84],EAX",
+        "0062e050  MOV EDX,dword ptr [EBP + -0x10]",
+        "0062e053  CMP dword ptr [EDX + 0x98],0x0"
+      ]
+    },
+    {
+      "path": "pass156/006353fc.asm",
+      "line": 322,
+      "context": [
+        "0063589a  MOV ECX,dword ptr [EBP + -0x5c]",
+        "0063589d  MOV EDX,dword ptr [ECX + 0x84]",
+        "006358a3  XOR EDX,0x4",
+        "006358a6  MOV EAX,dword ptr [EBP + -0x5c]",
+        "006358a9  MOV dword ptr [EAX + 0x84],EDX",
+        "006358af  MOV ECX,dword ptr [EBP + -0x5c]",
+        "006358b2  ADD ECX,0x128"
+      ]
+    },
+    {
+      "path": "pass156/006353fc.asm",
+      "line": 412,
+      "context": [
+        "006359e4  MOV EAX,dword ptr [EBP + -0x5c]",
+        "006359e7  MOV ECX,dword ptr [EAX + 0x84]",
+        "006359ed  XOR ECX,0x4",
+        "006359f0  MOV EDX,dword ptr [EBP + -0x5c]",
+        "006359f3  MOV dword ptr [EDX + 0x84],ECX",
+        "006359f9  MOV ECX,dword ptr [EBP + -0x5c]",
+        "006359fc  ADD ECX,0x128"
+      ]
+    },
+    {
+      "path": "pass156/006353fc.asm",
+      "line": 484,
+      "context": [
+        "00635acf  MOV ECX,dword ptr [EBP + -0x5c]",
+        "00635ad2  MOV EDX,dword ptr [ECX + 0x84]",
+        "00635ad8  XOR EDX,0x4",
+        "00635adb  MOV EAX,dword ptr [EBP + -0x5c]",
+        "00635ade  MOV dword ptr [EAX + 0x84],EDX",
+        "00635ae4  MOV ECX,dword ptr [EBP + -0x5c]",
+        "00635ae7  ADD ECX,0x128"
+      ]
+    },
+    {
+      "path": "pass101/00637dc4.asm",
+      "line": 165,
+      "context": [
+        "00638009  MOV EAX,dword ptr [EBP + -0x3c]",
+        "0063800c  MOV ECX,dword ptr [EAX + 0x84]",
+        "00638012  OR ECX,0x100",
+        "00638018  MOV EDX,dword ptr [EBP + -0x3c]",
+        "0063801b  MOV dword ptr [EDX + 0x84],ECX",
+        "00638021  JMP 0x0063808c",
+        "00638023  MOV EAX,dword ptr [EBP + -0x3c]"
+      ]
+    },
+    {
+      "path": "pass101/00637dc4.asm",
+      "line": 245,
+      "context": [
+        "00638145  MOV ECX,dword ptr [EBP + -0x3c]",
+        "00638148  MOV EDX,dword ptr [ECX + 0x84]",
+        "0063814e  OR EDX,0x80",
+        "00638154  MOV EAX,dword ptr [EBP + -0x3c]",
+        "00638157  MOV dword ptr [EAX + 0x84],EDX",
+        "0063815d  JMP 0x006381c8",
+        "0063815f  MOV ECX,dword ptr [EBP + -0x3c]"
+      ]
+    },
+    {
+      "path": "pass101/00637dc4.asm",
+      "line": 325,
+      "context": [
+        "0063828a  MOV EDX,dword ptr [EBP + -0x3c]",
+        "0063828d  MOV EAX,dword ptr [EDX + 0x84]",
+        "00638293  OR EAX,0x80000",
+        "00638298  MOV ECX,dword ptr [EBP + -0x3c]",
+        "0063829b  MOV dword ptr [ECX + 0x84],EAX",
+        "006382a1  JMP 0x0063830a",
+        "006382a3  MOV EDX,dword ptr [EBP + -0x3c]"
+      ]
+    },
+    {
+      "path": "pass101/00637dc4.asm",
+      "line": 551,
+      "context": [
+        "006385e7  MOV ECX,dword ptr [EBP + -0x3c]",
+        "006385ea  MOV EDX,dword ptr [ECX + 0x84]",
+        "006385f0  OR EDX,EAX",
+        "006385f2  MOV EAX,dword ptr [EBP + -0x3c]",
+        "006385f5  MOV dword ptr [EAX + 0x84],EDX",
+        "006385fb  JMP 0x00638687",
+        "00638600  MOV EDX,0x40000"
+      ]
+    }
+  ],
+  "pattern": "(MOV|OR|AND) (dword|byte|word) ptr \\[[^]]+ \\+ 0x84\\],",
+  "files": {
+    "pass13/006283c0.asm": "72e7fdddb39365fb905c8090d2b7db351d8cfb99f2d7085d6f4636a99a77e2af",
+    "pass280/00629dbc.asm": "162669cf582731ba7da88e12a1b9f1ab56744fc5db0427db4bd414501f820322",
+    "pass160b/0062c679.asm": "187e3a2a4c23f37fda33a11d04746fee5091bcc96ed52bb582be48b0a88942a4",
+    "pass01b/0062e017.asm": "45a5b79062875ea294207f71a4f7589de8ab00122c680ca6df28f2670a7a0844",
+    "pass156/006353fc.asm": "afb0c65877b0ecb6e0f489c38cc940e64c05d99b899d69f162a2f42e6dc34e27",
+    "pass101/00637dc4.asm": "b0fbac47309b7b4cfbef3293d7fcabe9d2b67549185fa20a9ebe3e945d863996"
+  },
+  "conclusion": "No immediate OR-register-0x2 writer found within five lines of+84 in searched exports.19lexical write sites found;object ownership must be traced.0062e017 directly ORs car84bit8 and bodyf2bit4;not the unresolved bit2 setter."
+}

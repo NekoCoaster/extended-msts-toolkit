@@ -12,6 +12,9 @@ def sample(r):
     out.update(selected=selected,train=train)
     if not selected or not train:
         out['available']=False;return out
+    out['station_flags']=r.unpack(selected+0x1e,'H')[0]
+    out['recorded_arrival']=r.f(selected+8)
+    out['frame_dt']=r.f(0x828fb4)
     sentinel=r.u(0x80a10c);node=r.u(sentinel)
     if not node or node==sentinel:raise ValueError('No first route database')
     db=r.u(node+8);collection=r.u(db+0x20);array=r.u(collection);size=r.u(collection+8)
