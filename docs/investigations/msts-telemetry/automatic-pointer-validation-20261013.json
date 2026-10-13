@@ -1,0 +1,23 @@
+{
+  "model_checks": [
+    {
+      "pointer_changed": false,
+      "stable": true
+    },
+    {
+      "pointer_changed": true,
+      "stable": false
+    }
+  ],
+  "live_driver": {
+    "gate": 1,
+    "train": 56050328,
+    "service": 8427664,
+    "path": 55907200,
+    "control_type": 3,
+    "train_stable": true,
+    "service_stable": true,
+    "gate_stable": true
+  },
+  "limitation": "Offline fake-reader checks plus one live snapshot;does not retroactively repair old samples."
+}

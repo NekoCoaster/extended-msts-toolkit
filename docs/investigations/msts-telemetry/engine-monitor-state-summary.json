@@ -1,0 +1,132 @@
+{
+  "capture": "engine-monitor-state-01",
+  "clock": 73894.7265625,
+  "rows": [
+    {
+      "engine": 200223,
+      "monitor": "AWSMonitor",
+      "enable": 1,
+      "action": 0,
+      "reset_loaded_values": {
+        "monitor_limit": 0.0,
+        "alarm_limit": 0.0,
+        "penalty_limit": 0.0,
+        "alarm_before_overspeed": 0.0
+      },
+      "trigger_caches": {
+        "overspeed": 0,
+        "high_current": 0,
+        "low_main_reservoir": 0,
+        "over_rpm": 0,
+        "track_overspeed": 0
+      },
+      "configured_actions": {
+        "full_brake": 0,
+        "emergency_brake": 0,
+        "cuts_power": 0,
+        "shutdown_engine": 0
+      }
+    },
+    {
+      "engine": 200223,
+      "monitor": "VigilanceMonitor",
+      "enable": 1,
+      "action": 0,
+      "reset_loaded_values": {
+        "monitor_limit": 25.0,
+        "alarm_limit": 17.0,
+        "penalty_limit": 0.0,
+        "alarm_before_overspeed": 0.0
+      },
+      "trigger_caches": {
+        "overspeed": 0,
+        "high_current": 0,
+        "low_main_reservoir": 0,
+        "over_rpm": 0,
+        "track_overspeed": 0
+      },
+      "configured_actions": {
+        "full_brake": 1,
+        "emergency_brake": 0,
+        "cuts_power": 0,
+        "shutdown_engine": 0
+      }
+    },
+    {
+      "engine": 200223,
+      "monitor": "EmergencyStopMonitor",
+      "enable": 1,
+      "action": 0,
+      "reset_loaded_values": {
+        "monitor_limit": 0.0,
+        "alarm_limit": 0.0,
+        "penalty_limit": 0.0,
+        "alarm_before_overspeed": 0.0
+      },
+      "trigger_caches": {
+        "overspeed": 0,
+        "high_current": 0,
+        "low_main_reservoir": 0,
+        "over_rpm": 0,
+        "track_overspeed": 0
+      },
+      "configured_actions": {
+        "full_brake": 0,
+        "emergency_brake": 1,
+        "cuts_power": 1,
+        "shutdown_engine": 0
+      }
+    },
+    {
+      "engine": 200223,
+      "monitor": "unnamed_slot3",
+      "enable": 0,
+      "action": 0,
+      "reset_loaded_values": {
+        "monitor_limit": -1.0,
+        "alarm_limit": -1.0,
+        "penalty_limit": -1.0,
+        "alarm_before_overspeed": 0.0
+      },
+      "trigger_caches": {
+        "overspeed": 0,
+        "high_current": 0,
+        "low_main_reservoir": 0,
+        "over_rpm": 0,
+        "track_overspeed": 0
+      },
+      "configured_actions": {
+        "full_brake": 0,
+        "emergency_brake": 0,
+        "cuts_power": 0,
+        "shutdown_engine": 0
+      }
+    },
+    {
+      "engine": 200223,
+      "monitor": "OverspeedMonitor",
+      "enable": 0,
+      "action": 0,
+      "reset_loaded_values": {
+        "monitor_limit": 0.0,
+        "alarm_limit": 0.0,
+        "penalty_limit": 0.0,
+        "alarm_before_overspeed": 5.0
+      },
+      "trigger_caches": {
+        "overspeed": 0,
+        "high_current": 0,
+        "low_main_reservoir": 0,
+        "over_rpm": 0,
+        "track_overspeed": 0
+      },
+      "configured_actions": {
+        "full_brake": 1,
+        "emergency_brake": 1,
+        "cuts_power": 1,
+        "shutdown_engine": 0
+      }
+    }
+  ],
+  "limitations": "Reset-source and cached-trigger interpretation only;not timer countdown units,fresh conditions or actual penalty actions. Fifth slot remains unnamed."
+}

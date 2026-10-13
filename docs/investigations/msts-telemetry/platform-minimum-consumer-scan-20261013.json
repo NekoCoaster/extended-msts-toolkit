@@ -1,0 +1,574 @@
+{
+  "source": "captures/platform-offset-scan-20261013-02/scalar-references.tsv",
+  "sha256": "6e9d056a48157e91eb96f7b2e4b061cfeb92af5fb021524f1655576293d06f9f",
+  "scalar_hits": 1748,
+  "nonstack_float_hits": 112,
+  "station_activity_range": [
+    "00580000",
+    "005b0000"
+  ],
+  "station_range_float_hits": [],
+  "leads": [
+    {
+      "address": "0044da45",
+      "function": "0044d890",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0044dbab",
+      "function": "0044d890",
+      "instruction": "FMUL float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "004636e3",
+      "function": "004634c6",
+      "instruction": "FSUB float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "00491aec",
+      "function": "004918e0",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "00491fa3",
+      "function": "004918e0",
+      "instruction": "FSUB float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "00491fb2",
+      "function": "004918e0",
+      "instruction": "FSUB float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "004c10f1",
+      "function": "004c105d",
+      "instruction": "FMUL float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "004c6263",
+      "function": "004c6073",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "004c6736",
+      "function": "004c66fc",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "004c7f48",
+      "function": "004c7f37",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "004d137a",
+      "function": "004d1325",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "004e08cd",
+      "function": "004e0730",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "004eab5c",
+      "function": "004eab25",
+      "instruction": "FSUB float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "004eab6a",
+      "function": "004eab25",
+      "instruction": "FSUB float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "004f0bd5",
+      "function": "004f050c",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "004fd537",
+      "function": "004fd1f8",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "004fd54f",
+      "function": "004fd1f8",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "004fd6c1",
+      "function": "004fd1f8",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "00502577",
+      "function": "00502112",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0050257d",
+      "function": "00502112",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "00517327",
+      "function": "005172f9",
+      "instruction": "FADD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0051d0b7",
+      "function": "0051cfd5",
+      "instruction": "FCOMP float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0051d6b6",
+      "function": "0051d4e1",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "00529c18",
+      "function": "00529b7e",
+      "instruction": "FADD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0052c633",
+      "function": "0052c60e",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0052c662",
+      "function": "0052c60e",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0052c91d",
+      "function": "0052c8f8",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0052c94c",
+      "function": "0052c8f8",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0053f2df",
+      "function": "0053f153",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0053f3e1",
+      "function": "0053f153",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0053f892",
+      "function": "0053f153",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0053f8e6",
+      "function": "0053f153",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "00556f50",
+      "function": "00556942",
+      "instruction": "FADD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "0055d4b4",
+      "function": "0055d291",
+      "instruction": "FLD float ptr [EAX + EDX*0x4 + 0x38]"
+    },
+    {
+      "address": "00561806",
+      "function": "005617bc",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "0056460b",
+      "function": "0056440d",
+      "instruction": "FMUL float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "00564660",
+      "function": "0056440d",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "00566167",
+      "function": "0056609b",
+      "instruction": "FMUL float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "0056b3ef",
+      "function": "0056afaf",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0056b4f0",
+      "function": "0056afaf",
+      "instruction": "FMUL float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005734da",
+      "function": "0057341e",
+      "instruction": "FMUL float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "0057353b",
+      "function": "0057341e",
+      "instruction": "FMUL float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "00574050",
+      "function": "00573b82",
+      "instruction": "FMUL float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "0057b7e8",
+      "function": "0057b6b0",
+      "instruction": "FADD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "005ceb62",
+      "function": "005ce858",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "005cfd93",
+      "function": "005cfd7f",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005cfdc2",
+      "function": "005cfd7f",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "005d8815",
+      "function": "005d857d",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "005d8831",
+      "function": "005d857d",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "005d883d",
+      "function": "005d857d",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005e5c41",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005e5ce0",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "005e5d80",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005e5e1f",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "005e5ebf",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005e5f5e",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "005e5ffe",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005e609d",
+      "function": "005e5bed",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "005e8eaa",
+      "function": "005e8e70",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "005e8ebe",
+      "function": "005e8e70",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "005f1b00",
+      "function": "005f15fe",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "005f1b1c",
+      "function": "005f15fe",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005f1b38",
+      "function": "005f15fe",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "005f1f39",
+      "function": "005f1dc7",
+      "instruction": "FLD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "005f6793",
+      "function": "005f661a",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "005f6ae7",
+      "function": "005f6998",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "00603633",
+      "function": "00603582",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "00634021",
+      "function": "00633d3a",
+      "instruction": "FCOMP float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "0063470d",
+      "function": "006346a8",
+      "instruction": "FADD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006737a1",
+      "function": "0067360d",
+      "instruction": "FMUL float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "006737c9",
+      "function": "0067360d",
+      "instruction": "FMUL float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0069b00d",
+      "function": "",
+      "instruction": "FSUB float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "0069c645",
+      "function": "",
+      "instruction": "FSUB float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0069dc35",
+      "function": "",
+      "instruction": "FSUB float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0069dfa7",
+      "function": "",
+      "instruction": "FSUB float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0069f21a",
+      "function": "",
+      "instruction": "FSUB float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "0069f5a4",
+      "function": "",
+      "instruction": "FSUB float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006a0708",
+      "function": "",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006a09cd",
+      "function": "",
+      "instruction": "FADD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "006a0a09",
+      "function": "",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006a0af5",
+      "function": "006a0ab0",
+      "instruction": "FDIV float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006a0b1c",
+      "function": "006a0ab0",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006a0dd4",
+      "function": "",
+      "instruction": "FADD float ptr [EDX + 0x38]"
+    },
+    {
+      "address": "006b9d1c",
+      "function": "",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006b9d4f",
+      "function": "",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006b9d6e",
+      "function": "",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006c2f35",
+      "function": "006c2de0",
+      "instruction": "FLD float ptr [ECX + 0x38]"
+    },
+    {
+      "address": "006d78d9",
+      "function": "006d7720",
+      "instruction": "FLD float ptr [EDI + 0x38]"
+    },
+    {
+      "address": "006d7f1d",
+      "function": "006d7e10",
+      "instruction": "FLD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d7fa0",
+      "function": "006d7e10",
+      "instruction": "FSUB float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d7fa7",
+      "function": "006d7e10",
+      "instruction": "FADD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d7fec",
+      "function": "006d7e10",
+      "instruction": "FSUB float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d7ff1",
+      "function": "006d7e10",
+      "instruction": "FADD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d8069",
+      "function": "006d7e10",
+      "instruction": "FLD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d825f",
+      "function": "006d80c0",
+      "instruction": "FLD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d82e2",
+      "function": "006d80c0",
+      "instruction": "FSUB float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d82e9",
+      "function": "006d80c0",
+      "instruction": "FADD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d832e",
+      "function": "006d80c0",
+      "instruction": "FSUB float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d8333",
+      "function": "006d80c0",
+      "instruction": "FADD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006d83ab",
+      "function": "006d80c0",
+      "instruction": "FLD float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006e3d43",
+      "function": "006e32e0",
+      "instruction": "FSUB float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006e632e",
+      "function": "006e53c0",
+      "instruction": "FCOMP float ptr [EBX + 0x38]"
+    },
+    {
+      "address": "006e633b",
+      "function": "006e53c0",
+      "instruction": "FCOMP float ptr [EBX + 0x38]"
+    },
+    {
+      "address": "006e8f69",
+      "function": "006e8520",
+      "instruction": "FCOMP float ptr [EBX + 0x38]"
+    },
+    {
+      "address": "006e8f76",
+      "function": "006e8520",
+      "instruction": "FCOMP float ptr [EBX + 0x38]"
+    },
+    {
+      "address": "006ea0bd",
+      "function": "006e9f60",
+      "instruction": "FMUL float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006ea102",
+      "function": "006e9f60",
+      "instruction": "FMUL float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006ea11d",
+      "function": "006e9f60",
+      "instruction": "FMUL float ptr [ESI + 0x38]"
+    },
+    {
+      "address": "006f066f",
+      "function": "006f05b0",
+      "instruction": "FLD float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "006f1e75",
+      "function": "006f19f0",
+      "instruction": "FMUL float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "006f2244",
+      "function": "006f1ee0",
+      "instruction": "FMUL float ptr [EAX + 0x38]"
+    },
+    {
+      "address": "0070bbd3",
+      "function": "0070bb30",
+      "instruction": "FMUL float ptr [ECX + 0x38]"
+    }
+  ],
+  "limitations": "Ghidra recognized instructions only; scalar navigation, not typed references. Does not cover integer copies, adjusted base pointers, indirect consumers, undisassembled bytes or prove no gameplay use. Address range is a search boundary, not complete subsystem coverage."
+}

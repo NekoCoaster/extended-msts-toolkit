@@ -1,0 +1,10 @@
+[
+ ["reachable_graph","Track graph reachable from loaded service positions","bounded graph","node/pin relationships","Traverse type-specific links from [service+0x4c]; read_topology.py bounds graph at 10000 nodes and endpoint pins at 64"],
+ ["node_kind","Native track node kind","uint32","1 vector segment, 2 junction, 3 end","node+0; validate before interpreting subtype fields"],
+ ["links","Connected node pointers and traversal direction bytes","array of pointer32,uint8","session identities and native direction","Vector: inline pointer/direction pairs at node+8 and +0x10. Junction/end: array [node+0x14], stride8, pointer+0 direction byte+4"],
+ ["input_pin_count","Endpoint input-side pin count","uint32","count","node+0xc for kind2/3 only; vector layout differs"],
+ ["output_pin_count","Endpoint output-side pin count","uint32","count","node+0x10 for kind2/3 only; vector layout differs"],
+ ["selected_branch","Junction branch selector consumed by native track traversal","uint32","zero-based output branch index","kind2 node+0x50; observed selector in valid output range; native 0x5b2fc5"],
+ ["selected_connection","Junction connection selected when entering from input side","derived pointer32","session node identity","pin index=input_count+selected_branch; validate against total count, then read linked node. Native reverse traversal chooses input pin zero."],
+ ["route_node_id_candidate","TDB node ID derived by geometry and connectivity matching","derived uint32 or unavailable","route-build-specific ID","analyse_topology.py maps geometry signatures then adjacency; preserve ambiguity rather than assigning a guessed ID"]
+]

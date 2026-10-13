@@ -1,0 +1,153 @@
+{
+  "source": "captures\\player-cleared-passage-01\\details.jsonl",
+  "samples": 2383,
+  "errors": 0,
+  "signal_errors": 0,
+  "paused_samples": 2179,
+  "clock_crossings": 3,
+  "iterator_reread_differences": 0,
+  "day_range": [
+    74293.1015625,
+    74322.859375
+  ],
+  "signed_speed_range": [
+    -0.003109933575615287,
+    0.6323413252830505
+  ],
+  "throttle_values": [
+    0.0,
+    0.125,
+    0.375,
+    0.5
+  ],
+  "traction_current_range": [
+    0.0,
+    900.0000610351562
+  ],
+  "iterator_transitions": [],
+  "first": {
+    "utc": "2026-09-27T10:27:25.241102+00:00",
+    "sim_time": 74293.1015625,
+    "paused": 1,
+    "player": {
+      "train": 62598600,
+      "lead": 62619068,
+      "control_type": 2,
+      "speed": 3.902351454598829e-05,
+      "acceleration_candidate": 6.961652365689019e-10
+    },
+    "next_signal": {
+      "iterator": [
+        114971836,
+        0,
+        46,
+        46
+      ],
+      "distance": 699.42578125,
+      "heads": [
+        {
+          "address": 62412704,
+          "index": 46,
+          "definition": 53450808,
+          "function_type": 0,
+          "flags": 32768,
+          "direction": 0,
+          "aspect": 7,
+          "aspect_speed": -1.0,
+          "aspect_flags": 0
+        }
+      ],
+      "selected_normal": {
+        "address": 62412704,
+        "index": 46,
+        "definition": 53450808,
+        "function_type": 0,
+        "flags": 32768,
+        "direction": 0,
+        "aspect": 7,
+        "aspect_speed": -1.0,
+        "aspect_flags": 0
+      },
+      "selected_speed": null
+    },
+    "diesel_cab": {
+      "throttle": 0.0,
+      "reverser": 1.0,
+      "main_res_psi": 130.0,
+      "eq_res_psi": 0.0,
+      "brake_cyl_psi": 85.20243072509766,
+      "brake_pipe_psi": 0.0,
+      "current_traction_amps": 0.0,
+      "dynamic_braking_raw": 0.0,
+      "current_dynamic_amps": 0.0,
+      "fuel_raw": 5296.60498046875,
+      "engine_rotation_raw": 315.00006103515625,
+      "ammeter_amps": 0.0
+    },
+    "same_sim_time": true,
+    "iterator_stable": true
+  },
+  "last": {
+    "utc": "2026-09-27T10:31:25.249378+00:00",
+    "sim_time": 74322.859375,
+    "paused": 0,
+    "player": {
+      "train": 62598600,
+      "lead": 62619068,
+      "control_type": 2,
+      "speed": 0.6323413252830505,
+      "acceleration_candidate": 0.12890616059303284
+    },
+    "next_signal": {
+      "iterator": [
+        114971836,
+        0,
+        46,
+        46
+      ],
+      "distance": 697.8994140625,
+      "heads": [
+        {
+          "address": 62412704,
+          "index": 46,
+          "definition": 53450808,
+          "function_type": 0,
+          "flags": 32768,
+          "direction": 0,
+          "aspect": 7,
+          "aspect_speed": -1.0,
+          "aspect_flags": 0
+        }
+      ],
+      "selected_normal": {
+        "address": 62412704,
+        "index": 46,
+        "definition": 53450808,
+        "function_type": 0,
+        "flags": 32768,
+        "direction": 0,
+        "aspect": 7,
+        "aspect_speed": -1.0,
+        "aspect_flags": 0
+      },
+      "selected_speed": null
+    },
+    "diesel_cab": {
+      "throttle": 0.5,
+      "reverser": 1.0,
+      "main_res_psi": 130.0,
+      "eq_res_psi": 90.0,
+      "brake_cyl_psi": 0.0,
+      "brake_pipe_psi": 90.0,
+      "current_traction_amps": 900.0000610351562,
+      "dynamic_braking_raw": 0.0,
+      "current_dynamic_amps": 0.0,
+      "fuel_raw": 5296.2177734375,
+      "engine_rotation_raw": 607.4998779296875,
+      "ammeter_amps": 900.0000610351562
+    },
+    "same_sim_time": true,
+    "iterator_stable": true
+  },
+  "limitations": "External reads are asynchronous. Consecutive rows bracket observed iterator changes, not exact geometric crossing or native event time. Iterator indices are node-table-local. This stream does not capture speedpost or track-node topology transitions independently."
+}

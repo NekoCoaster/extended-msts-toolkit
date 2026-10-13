@@ -1,0 +1,202 @@
+[
+  {
+    "capture": "detail-clear-paused",
+    "samples": 1,
+    "legacy_current_units_corrected_samples": 1,
+    "errors": 0,
+    "signal_errors": 0,
+    "crossed_sim_step": 0,
+    "unstable_iterator": 0,
+    "signal_transitions": [
+      {
+        "sample": 0,
+        "utc": "2026-09-26T12:22:28.704091+00:00",
+        "sim_time": 74037.7421875,
+        "head": 94420804,
+        "aspect": 7,
+        "aspect_speed": -1.0,
+        "distance": 997.0888671875,
+        "player_speed": 0.0
+      }
+    ],
+    "diesel_ranges": {
+      "ammeter_amps": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "brake_cyl_psi": {
+        "min": 85.20245361328125,
+        "max": 85.20245361328125,
+        "first": 85.20245361328125,
+        "last": 85.20245361328125
+      },
+      "brake_pipe_psi": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "current_dynamic_amps": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "current_traction_amps": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "dynamic_braking_raw": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "engine_rotation_raw": {
+        "min": 461.24993896484375,
+        "max": 461.24993896484375,
+        "first": 461.24993896484375,
+        "last": 461.24993896484375
+      },
+      "eq_res_psi": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "fuel_raw": {
+        "min": 5295.90869140625,
+        "max": 5295.90869140625,
+        "first": 5295.90869140625,
+        "last": 5295.90869140625
+      },
+      "main_res_psi": {
+        "min": 130.0,
+        "max": 130.0,
+        "first": 130.0,
+        "last": 130.0
+      },
+      "reverser": {
+        "min": 1.0,
+        "max": 1.0,
+        "first": 1.0,
+        "last": 1.0
+      },
+      "throttle": {
+        "min": 0.25,
+        "max": 0.25,
+        "first": 0.25,
+        "last": 0.25
+      }
+    }
+  },
+  {
+    "capture": "signal-transition-01",
+    "samples": 958,
+    "legacy_current_units_corrected_samples": 958,
+    "errors": 0,
+    "signal_errors": 0,
+    "crossed_sim_step": 24,
+    "unstable_iterator": 0,
+    "signal_transitions": [
+      {
+        "sample": 40,
+        "utc": "2026-09-26T12:27:11.164292+00:00",
+        "sim_time": 73800.8828125,
+        "head": 94419796,
+        "aspect": 0,
+        "aspect_speed": 0.0,
+        "distance": 1142.62109375,
+        "player_speed": 10.918803215026855
+      },
+      {
+        "sample": 527,
+        "utc": "2026-09-26T12:29:13.322995+00:00",
+        "sim_time": 73923.046875,
+        "head": 94419796,
+        "aspect": 7,
+        "aspect_speed": -1.0,
+        "distance": 960.541015625,
+        "player_speed": 0.0
+      }
+    ],
+    "diesel_ranges": {
+      "ammeter_amps": {
+        "min": 0.0,
+        "max": 258.617431640625,
+        "first": 202.98699951171875,
+        "last": 0.0
+      },
+      "brake_cyl_psi": {
+        "min": 0.0,
+        "max": 85.20245361328125,
+        "first": 0.0,
+        "last": 85.20245361328125
+      },
+      "brake_pipe_psi": {
+        "min": 0.0,
+        "max": 90.0,
+        "first": 90.0,
+        "last": 0.0
+      },
+      "current_dynamic_amps": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "current_traction_amps": {
+        "min": 0.0,
+        "max": 258.617431640625,
+        "first": 202.98699951171875,
+        "last": 0.0
+      },
+      "dynamic_braking_raw": {
+        "min": 0.0,
+        "max": 0.0,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "engine_rotation_raw": {
+        "min": 335.0,
+        "max": 461.24993896484375,
+        "first": 335.0,
+        "last": 461.24993896484375
+      },
+      "eq_res_psi": {
+        "min": 0.0,
+        "max": 90.0,
+        "first": 90.0,
+        "last": 0.0
+      },
+      "fuel_raw": {
+        "min": 5296.50048828125,
+        "max": 5298.94921875,
+        "first": 5298.94921875,
+        "last": 5296.50048828125
+      },
+      "main_res_psi": {
+        "min": 93.12289428710938,
+        "max": 130.0,
+        "first": 93.12289428710938,
+        "last": 130.0
+      },
+      "reverser": {
+        "min": 1.0,
+        "max": 1.0,
+        "first": 1.0,
+        "last": 1.0
+      },
+      "throttle": {
+        "min": 0.25,
+        "max": 0.25,
+        "first": 0.25,
+        "last": 0.25
+      }
+    }
+  }
+]

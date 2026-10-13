@@ -1,0 +1,267 @@
+{
+  "source": "captures\\sky-layers-paused-01\\layers.json",
+  "sha256": "602ba4e03443fdcf55a4145880c6db61a5cc1473bcaf21eede3d503d9ab38e28",
+  "asset": "C:\\MSTS\\ROUTES\\USA2\\ENVFILES\\USA2snow.env",
+  "asset_sha256": "b002da2ebad3092cd4e5397561ea746b51173574ae228057cfe46ee80a5ea683",
+  "checks": [
+    {
+      "layer": 0,
+      "field": "top_faces",
+      "actual": 8,
+      "expected": 8.0,
+      "equal": true,
+      "note": "Face match does not prove token is consumed;parser initializes8."
+    },
+    {
+      "layer": 0,
+      "field": "top_radius",
+      "actual": 800.0,
+      "expected": 800.0,
+      "equal": true,
+      "note": "Loaded scaling ratio1 here,not universal."
+    },
+    {
+      "layer": 0,
+      "field": "top_height",
+      "actual": 300.0,
+      "expected": 300.0,
+      "equal": true,
+      "note": "Loaded scaling ratio1 here,not universal."
+    },
+    {
+      "layer": 0,
+      "field": "edge_count",
+      "actual": 1,
+      "expected": 1,
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 0,
+      "field": "edge_height",
+      "actual": [
+        0.0
+      ],
+      "expected": [
+        0.0
+      ],
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 0,
+      "field": "edge_radius",
+      "actual": [
+        1500.0
+      ],
+      "expected": [
+        1500.0
+      ],
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 0,
+      "field": "fadein",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "equal": true,
+      "note": "Absent pair remains zero-initialized;not proof of current opacity."
+    },
+    {
+      "layer": 0,
+      "field": "fadeout",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "equal": true,
+      "note": "Absent pair remains zero-initialized;not proof of current opacity."
+    },
+    {
+      "layer": 1,
+      "field": "top_faces",
+      "actual": 8,
+      "expected": 8.0,
+      "equal": true,
+      "note": "Face match does not prove token is consumed;parser initializes8."
+    },
+    {
+      "layer": 1,
+      "field": "top_radius",
+      "actual": 660.0,
+      "expected": 660.0,
+      "equal": true,
+      "note": "Loaded scaling ratio1 here,not universal."
+    },
+    {
+      "layer": 1,
+      "field": "top_height",
+      "actual": 1000.0,
+      "expected": 1000.0,
+      "equal": true,
+      "note": "Loaded scaling ratio1 here,not universal."
+    },
+    {
+      "layer": 1,
+      "field": "edge_count",
+      "actual": 1,
+      "expected": 1,
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 1,
+      "field": "edge_height",
+      "actual": [
+        0.0
+      ],
+      "expected": [
+        0.0
+      ],
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 1,
+      "field": "edge_radius",
+      "actual": [
+        1400.0
+      ],
+      "expected": [
+        1400.0
+      ],
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 1,
+      "field": "fadein",
+      "actual": [
+        64800.0,
+        72000.0
+      ],
+      "expected": [
+        64800.0,
+        72000.0
+      ],
+      "equal": true,
+      "note": "Absent pair remains zero-initialized;not proof of current opacity."
+    },
+    {
+      "layer": 1,
+      "field": "fadeout",
+      "actual": [
+        21600.0,
+        28800.0
+      ],
+      "expected": [
+        21600.0,
+        28800.0
+      ],
+      "equal": true,
+      "note": "Absent pair remains zero-initialized;not proof of current opacity."
+    },
+    {
+      "layer": 2,
+      "field": "top_faces",
+      "actual": 8,
+      "expected": 8.0,
+      "equal": true,
+      "note": "Face match does not prove token is consumed;parser initializes8."
+    },
+    {
+      "layer": 2,
+      "field": "top_radius",
+      "actual": 800.0,
+      "expected": 800.0,
+      "equal": true,
+      "note": "Loaded scaling ratio1 here,not universal."
+    },
+    {
+      "layer": 2,
+      "field": "top_height",
+      "actual": 800.0,
+      "expected": 800.0,
+      "equal": true,
+      "note": "Loaded scaling ratio1 here,not universal."
+    },
+    {
+      "layer": 2,
+      "field": "edge_count",
+      "actual": 2,
+      "expected": 2,
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 2,
+      "field": "edge_height",
+      "actual": [
+        500.0,
+        240.0
+      ],
+      "expected": [
+        500.0,
+        240.0
+      ],
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 2,
+      "field": "edge_radius",
+      "actual": [
+        1400.0,
+        1650.0
+      ],
+      "expected": [
+        1400.0,
+        1650.0
+      ],
+      "equal": true,
+      "note": ""
+    },
+    {
+      "layer": 2,
+      "field": "fadein",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "equal": true,
+      "note": "Absent pair remains zero-initialized;not proof of current opacity."
+    },
+    {
+      "layer": 2,
+      "field": "fadeout",
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "equal": true,
+      "note": "Absent pair remains zero-initialized;not proof of current opacity."
+    }
+  ],
+  "check_count": 24,
+  "mismatches": [],
+  "limitations": "Scoped literal comparison,not complete SIMIS grammar. Geometry/time parameters are not current opacity/UV/render output. Face count8 is initialized by native parser;all declarations8 cannot distinguish parsing from default. Loader scale and edge ordering preserved."
+}

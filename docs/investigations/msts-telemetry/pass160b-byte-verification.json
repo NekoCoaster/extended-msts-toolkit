@@ -1,0 +1,184 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass160b",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "00401aa0",
+      "instructions": 1,
+      "bytes": 5,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005e143c",
+      "instructions": 49,
+      "bytes": 160,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005e17a0",
+      "instructions": 51,
+      "bytes": 149,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005f653d",
+      "instructions": 76,
+      "bytes": 221,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "005f892d",
+      "instructions": 421,
+      "bytes": 1692,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "006283c0",
+      "instructions": 577,
+      "bytes": 2377,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "006283c0",
+          "expected": "55",
+          "actual": "e9"
+        },
+        {
+          "address": "006283c1",
+          "expected": "8bec",
+          "actual": "4986"
+        },
+        {
+          "address": "006283c3",
+          "expected": "81ec4c010000",
+          "actual": "5f1c90909090"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "0062924c",
+      "instructions": 735,
+      "bytes": 2814,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062a2be",
+      "instructions": 604,
+      "bytes": 2658,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062ad6a",
+      "instructions": 917,
+      "bytes": 3810,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "0062ad6a",
+          "expected": "55",
+          "actual": "e9"
+        },
+        {
+          "address": "0062ad6b",
+          "expected": "8bec",
+          "actual": "9f5e"
+        },
+        {
+          "address": "0062ad6d",
+          "expected": "81ec90030000",
+          "actual": "5f1c90909090"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "function": "0062bc4c",
+      "instructions": 317,
+      "bytes": 1198,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062c270",
+      "instructions": 155,
+      "bytes": 556,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062c679",
+      "instructions": 642,
+      "bytes": 2501,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062d335",
+      "instructions": 196,
+      "bytes": 657,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062d5c6",
+      "instructions": 213,
+      "bytes": 711,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062d88d",
+      "instructions": 107,
+      "bytes": 389,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062da84",
+      "instructions": 378,
+      "bytes": 1427,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062e634",
+      "instructions": 31,
+      "bytes": 84,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0062e80f",
+      "instructions": 22,
+      "bytes": 54,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    }
+  ]
+}

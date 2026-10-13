@@ -1,0 +1,84 @@
+{
+  "baseline_commit": "5339af7",
+  "previous_sources": 127,
+  "current_sources": 144,
+  "changed_previous_sources": [],
+  "missing_previous_sources": [],
+  "added_sources": {
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\CabView\\TGV2N.cvf": {
+      "sha256": "cf0734af71daed78e1f24f0cd7f33032b2c8ace9b693ca4e25f51d8abccb9cdf",
+      "bytes": 25864
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot.eng": {
+      "sha256": "90073f2a5b667f48cfe06045fdd37d70a2695f416473e238e1f610f61a722fd3",
+      "bytes": 30330
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NMot2.eng": {
+      "sha256": "c3ab744241a4c7d90427c92b85e81a17b9932b263388a59adf9083516dcf2eef",
+      "bytes": 28448
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR1.wag": {
+      "sha256": "bb49a71ba42f90e7125849c38f8db031cf9f16b0c859b8f3b032ae25154b5905",
+      "bytes": 3614
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR1D.wag": {
+      "sha256": "d770b636566963955f9a343dca94e0783f346336c88c23ba81906df820d227eb",
+      "bytes": 3622
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR2.wag": {
+      "sha256": "cb35ad1e2545bd67e50f1baae5137c40812236f784d8fedf24aa862991f628aa",
+      "bytes": 3254
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR2D.wag": {
+      "sha256": "2f2c5b0620dd1b8cece514c7b61a2613010db5ec4329f47d6fae0e173a937139",
+      "bytes": 3264
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR4.wag": {
+      "sha256": "1db24535e1996140cc82f0b6c1e1381203814bf423ba2da5bcd784ffe3f076bd",
+      "bytes": 3596
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR4D.wag": {
+      "sha256": "9ecf48e256ae31b8908478c3f790f45c75f4f9350ca4ece23e3dc848731f40e7",
+      "bytes": 3608
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR5.wag": {
+      "sha256": "01f39e73a16f3546e95a1d3ab7bbf4f6bdf517001d953335552f98f248f1f686",
+      "bytes": 3256
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR5D.wag": {
+      "sha256": "88f8ecf54a642c359571b57d075cb50ec2b91c142f65c747e0ff33d2bfa53344",
+      "bytes": 3264
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR8.wag": {
+      "sha256": "9c56055f0e7304ac219ab38c26c4c82b69075933f0f25c99a9253637c6e8553d",
+      "bytes": 3262
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\TGV2NR8D.wag": {
+      "sha256": "df2bda3de46b8e8beb489f40e076d55483c5502604c22ed8a2ccfc099bf23f88",
+      "bytes": 3274
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\vue1ere\\TGV2NR1.wag": {
+      "sha256": "bb49a71ba42f90e7125849c38f8db031cf9f16b0c859b8f3b032ae25154b5905",
+      "bytes": 3614
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\vue1ere\\TGV2NR1D.wag": {
+      "sha256": "d770b636566963955f9a343dca94e0783f346336c88c23ba81906df820d227eb",
+      "bytes": 3622
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\vuebar\\TGV2NR1.wag": {
+      "sha256": "1ea3b5806ec122870069c280648d9f1884214763987f4b0a703c6883a71316b3",
+      "bytes": 3248
+    },
+    "C:\\MSTS\\TRAINS\\TRAINSET\\TGV2N\\vuebar\\TGV2NR1D.wag": {
+      "sha256": "1fb7e90ab84a0c908baeb6f7ecd55b582441a2ca983e45f243144fc48771d5e5",
+      "bytes": 3256
+    }
+  },
+  "added_candidate_ids": [
+    "config..eng:Engine.Skip",
+    "config..eng:Wagon.Lights.Light.Conditions.Service",
+    "config..eng:Wagon.Lights.Light.Conditions.TimeOfDay",
+    "config..eng:Wagon.Skip"
+  ],
+  "interpretation": "Installed TGV2N files were encountered by the existing inventory scan on resumption. No files were installed or edited by this research run. New configuration syntax paths are not runtime validation; Skip payloads have no established active simulation meaning."
+}

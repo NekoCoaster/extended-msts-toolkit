@@ -1,0 +1,19 @@
+# Configuration coverage correction
+
+audit_config_coverage.py inspected126 recorded assets. It found3 distinct non-CVF leaf paths with more than20 tokens,37 mixed-content node paths and4 balance diagnostics. The latter arise from two anonymous parenthesized annotations in310.eng andpendennis.eng: an opening parenthesis has no preceding node name, and the old parser let its closing parenthesis terminate Engine early. Consequently EngineVariables appeared as a false top-level path.
+
+The builder now consumes anonymous parenthesized groups as nested annotations, preserving the surrounding Engine context. Their raw source text remains in the original assets; diagnostics preserve file/line evidence. Anonymous groups are not claimed to be a general recognized SIMIS comment syntax. Named Comment/_Skip behavior is unchanged. No installed files were edited.
+
+The arbitrary20-token leaf cutoff is removed. Long text and configuration sequences are retained as configured data; this is not a runtime support claim. In particular default.wag's ExtraParameters contains25 strings describing solver/contact/derailment/coupling-related settings. Their native consumers and actual defaults remain to trace; embedded comments are asset evidence, not instructions or established runtime semantics.
+
+config-parser-diff.json records the changes: added Engine.EngineOperatingProcedures and Wagon.ExtraParameters; removed the incorrectly scoped top-level EngineVariables. Correct Engine.EngineVariables already existed from other assets and now receives the formerly misparsed occurrences. Engine.Description already existed from shorter declarations; its longer examples are now eligible. This is parser correction, not a telemetry keep/drop decision.
+
+The before-correction inventory is preserved at captures/config-parser-audit-01/inventory-before.json. Focused checks confirmed quoted parentheses remain inside strings, anonymous annotation nesting preserves following EngineVariables, ExtraParameters retains25 values, and all769 IDs are unique. The local inventory audit passes with173 evidence paths present and126 source hashes unchanged. Configuration count is474, total769.
+
+The follow-up mixed-node pass retains direct values beside child blocks, including controller ranges, notch counts, vehicle identifiers, activity service names and path-node counts. It found37 mixed paths; four already existed as leaf paths in other files, so the same path key merges both forms and33 new rows are added. Counts are now507 configuration paths and802 total candidates. These configured declarations do not establish33 new live values.
+
+The three-example cap now reserves evidence for both leaf and mixed syntax when both occur, replacing the last duplicate-form example if necessary. config-mixed-validation.json verifies all37 mixed paths have mixed evidence and all four overlapping paths retain both forms. config-mixed-diff.json records33 additions and zero removals against captures/config-mixed-audit-01/inventory-before.json. The inventory audit passes with802 unique IDs,173 evidence paths present and126 unchanged source hashes.
+
+The scanner preserves unusual source nesting, including Lights beneath Wagon.Friction in380tender.wag; it does not silently repair the source or claim that nesting is consumed by the game. One node can hold several semantically distinct values, so configuration path count is not a count of independent numeric fields.
+
+Remaining parser boundaries: string concatenation and legacy text encoding need explicit handling; current examples can contain replacement characters. The diagnostic shares lexical assumptions with the builder and is not an independent complete grammar validator. Native semantics and default resolution remain open. The source files and hashes allow later correction. New findings remain local after285a0ff.

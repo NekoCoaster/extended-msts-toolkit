@@ -1,0 +1,247 @@
+{
+  "source": "C:\\MSTS\\saves\\USA2\\evegrain_27092026_051532.sav",
+  "bytes": 124746,
+  "sha256": "787f435189dcd5b645c3f448070d5d94e42330f8bca5275555d8e75b1b915a9d",
+  "action": "Native Save Activity button; UI reports success",
+  "previous_sav_count": 0,
+  "blocks": [
+    {
+      "offset": 32,
+      "token": "0x40495",
+      "label": "SaveHeader",
+      "payload_bytes": 734,
+      "end": 774
+    },
+    {
+      "offset": 774,
+      "token": "0x4049e",
+      "label": "SaveObj",
+      "payload_bytes": 33645,
+      "end": 34427,
+      "children": [
+        {
+          "offset": 783,
+          "token": "0x404a3",
+          "label": "SaveEngine",
+          "payload_bytes": 2466,
+          "end": 3257
+        },
+        {
+          "offset": 3257,
+          "token": "0x404a3",
+          "label": "SaveEngine",
+          "payload_bytes": 2466,
+          "end": 5731
+        },
+        {
+          "offset": 5731,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 7084
+        },
+        {
+          "offset": 7084,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 8437
+        },
+        {
+          "offset": 8437,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 9790
+        },
+        {
+          "offset": 9790,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 11143
+        },
+        {
+          "offset": 11143,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 12496
+        },
+        {
+          "offset": 12496,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 13849
+        },
+        {
+          "offset": 13849,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 15202
+        },
+        {
+          "offset": 15202,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 16555
+        },
+        {
+          "offset": 16555,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 17908
+        },
+        {
+          "offset": 17908,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 19261
+        },
+        {
+          "offset": 19261,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 20614
+        },
+        {
+          "offset": 20614,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 21967
+        },
+        {
+          "offset": 21967,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 23320
+        },
+        {
+          "offset": 23320,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 24673
+        },
+        {
+          "offset": 24673,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 26026
+        },
+        {
+          "offset": 26026,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 27379
+        },
+        {
+          "offset": 27379,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 28732
+        },
+        {
+          "offset": 28732,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 30085
+        },
+        {
+          "offset": 30085,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 31438
+        },
+        {
+          "offset": 31438,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 32791
+        },
+        {
+          "offset": 32791,
+          "token": "0x404a2",
+          "label": "SaveWagon",
+          "payload_bytes": 1345,
+          "end": 34144
+        },
+        {
+          "offset": 34144,
+          "token": "0x404a4",
+          "label": "SaveTrain",
+          "payload_bytes": 275,
+          "end": 34427
+        }
+      ]
+    },
+    {
+      "offset": 34427,
+      "token": "0x40496",
+      "label": "SaveTDBs",
+      "payload_bytes": 76081,
+      "end": 110516
+    },
+    {
+      "offset": 110516,
+      "token": "0x4049b",
+      "label": "SaveTrItems",
+      "payload_bytes": 100,
+      "end": 110624
+    },
+    {
+      "offset": 110624,
+      "token": "0x404a6",
+      "label": "SaveActivity",
+      "payload_bytes": 13465,
+      "end": 124097
+    },
+    {
+      "offset": 124097,
+      "token": "0x404af",
+      "label": null,
+      "payload_bytes": 244,
+      "end": 124349
+    },
+    {
+      "offset": 124349,
+      "token": "0x404a5",
+      "label": "SaveController",
+      "payload_bytes": 389,
+      "end": 124746
+    }
+  ],
+  "exact_partition": true,
+  "train_check": {
+    "raw_bytes": 226,
+    "raw_matches_retained_pre_save_source": true,
+    "saved_car_reference_ids": [
+      200223,
+      200245,
+      200223,
+      4294967295
+    ],
+    "retained_source_ids": [
+      200223,
+      200245,
+      200223,
+      4294967295
+    ],
+    "reference_ids_match": true
+  },
+  "limitation": "Top-level/object structural partition plus one train raw range/reference comparison; other payloads not decoded."
+}

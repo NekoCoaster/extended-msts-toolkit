@@ -1,0 +1,109 @@
+{
+  "source": "captures\\paired-player-crossing-01\\samples.jsonl",
+  "sha256": "53b7a4d6185bebe405e4ac189bbefb742c8d7577ec4e242fe104e8aa77d07d82",
+  "samples": 601,
+  "nested_errors": [],
+  "max_read_seconds": 0.15628120000474155,
+  "unstable_origins": 0,
+  "unstable_iterators": 0,
+  "signal_join_counts": {
+    "1": 601
+  },
+  "signal_aspect_disagreements": [],
+  "distinct_monitor_states": [
+    {
+      "database_index": 318,
+      "distance": 882.1513671875,
+      "head": {
+        "address": 94419988,
+        "aspect": 7,
+        "aspect_flags": 0,
+        "aspect_speed": -1.0,
+        "definition": 51529832,
+        "direction": 0,
+        "flags": 32768,
+        "function_type": 0,
+        "index": 46
+      },
+      "iterator": [
+        113455676,
+        0,
+        46,
+        46
+      ]
+    }
+  ],
+  "player_speed_range": [
+    0.0,
+    0.0
+  ],
+  "cab_ranges": {
+    "throttle": [
+      0.0,
+      0.25
+    ],
+    "reverser": [
+      1.0,
+      1.0
+    ],
+    "main_res_psi": [
+      130.0,
+      130.0
+    ],
+    "eq_res_psi": [
+      0.0,
+      0.0
+    ],
+    "brake_cyl_psi": [
+      85.20245361328125,
+      85.20245361328125
+    ],
+    "brake_pipe_psi": [
+      0.0,
+      0.0
+    ],
+    "current_traction_amps": [
+      0.0,
+      0.0
+    ],
+    "dynamic_braking_raw": [
+      0.0,
+      0.0
+    ],
+    "current_dynamic_amps": [
+      0.0,
+      0.0
+    ],
+    "fuel_raw": [
+      5295.47216796875,
+      5296.49072265625
+    ],
+    "engine_rotation_raw": [
+      315.00006103515625,
+      461.24993896484375
+    ],
+    "ammeter_amps": [
+      0.0,
+      0.0
+    ]
+  },
+  "physical_count_transitions": [
+    {
+      "before": {
+        "sample": 158,
+        "time": 74059.328125,
+        "time_after": 74059.4375,
+        "physical_cars": 45,
+        "physical_trains": 2
+      },
+      "after": {
+        "sample": 159,
+        "time": 74059.8203125,
+        "time_after": 74059.9375,
+        "physical_cars": 23,
+        "physical_trains": 1
+      }
+    }
+  ],
+  "limitations": "Infrastructure, monitor and physical tracks are successive phases, not an atomic snapshot. Pointer/clock rereads cannot exclude intermediate mutations or pointer reuse. Stationary monitor continuity does not validate moving distance updates or node crossing. Read duration is not a measurement of gameplay performance impact."
+}

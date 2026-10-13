@@ -1,0 +1,44 @@
+{
+  "pid": 33612,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "table_address": "0x7a09b0",
+  "table_live": "d33c4000f3354000",
+  "table_disk": "d33c4000f3354000",
+  "table_equal": true,
+  "table_stable": true,
+  "callbacks": [
+    {
+      "address": "0x403cd3",
+      "live": "e93cd71d00",
+      "disk": "e93cd71d00",
+      "equal": true,
+      "stable": true,
+      "rel32_target": "0x5e1414"
+    },
+    {
+      "address": "0x4035f3",
+      "live": "e944de1d00",
+      "disk": "e944de1d00",
+      "equal": true,
+      "stable": true,
+      "rel32_target": "0x5e143c"
+    },
+    {
+      "address": "0x402bc6",
+      "live": "e95de81d00",
+      "disk": "e95de81d00",
+      "equal": true,
+      "stable": true,
+      "rel32_target": "0x5e1428"
+    },
+    {
+      "address": "0x401dbb",
+      "live": "e940f61d00",
+      "disk": "e940f61d00",
+      "equal": true,
+      "stable": true,
+      "rel32_target": "0x5e1400"
+    }
+  ],
+  "limitation": "Registration/save encoding and thunk targets only;not callback invocation or physical meaning."
+}

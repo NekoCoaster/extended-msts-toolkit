@@ -1,0 +1,106 @@
+{
+  "capture": "ai-systems-moving-01",
+  "samples": 567,
+  "errors": 0,
+  "clock_crossings": 187,
+  "trains": [
+    {
+      "id": 400007,
+      "is_player": true,
+      "samples": 567,
+      "car_counts": [
+        23
+      ],
+      "speed": [
+        5.384169578552246,
+        10.999792098999023
+      ],
+      "service": {
+        "speed": [
+          5.384169578552246,
+          10.999792098999023
+        ],
+        "target": [
+          0.0,
+          0.0
+        ],
+        "acceleration": [
+          -0.22711041569709778,
+          0.0029167940374463797
+        ]
+      },
+      "unstable_trains": 0,
+      "unstable_cars": 1396,
+      "car_fields": {
+        "0x1bc": [
+          5.380477428436279,
+          11.079179763793945
+        ],
+        "0x1c0": [
+          -0.2887726128101349,
+          0.15144802629947662
+        ],
+        "0x198": [
+          0.0,
+          0.0
+        ],
+        "0x19c": [
+          0.0,
+          0.0
+        ],
+        "0x224": [
+          90.0,
+          90.0
+        ],
+        "0x228": [
+          90.0,
+          90.0
+        ],
+        "0x22c": [
+          0.0,
+          0.0
+        ],
+        "0x230": [
+          0.0,
+          0.0
+        ],
+        "0x234": [
+          90.0,
+          90.0
+        ],
+        "0x238": [
+          90.0,
+          90.0
+        ],
+        "0x268": [
+          0.0,
+          0.0
+        ]
+      },
+      "powered_fields": {
+        "0x29e": [
+          10844.1669921875,
+          151550.78125
+        ],
+        "0x2a2": [
+          192361.828125,
+          1274608.875
+        ],
+        "0x2c2": [
+          0.0,
+          419.2597961425781
+        ]
+      },
+      "flags84": [
+        0
+      ]
+    }
+  ],
+  "paused_samples": 93,
+  "sim_time_range": [
+    73800.6875,
+    73850.9453125
+  ],
+  "ai_stable_subset": [],
+  "limitations": "Ranges combine vehicles and samples; not per-car transitions. Sequential reads, not atomic. Stability failure combines owner/definition/body checks and cannot uniquely diagnose a lifecycle change. No inference that zero/unmoving fields mean actual zero force or pressure."
+}

@@ -1,0 +1,1480 @@
+{
+  "capture": "infrastructure-ai-clearance-01",
+  "sha256": "a9703d64aa044339199c3ed8b2a28841861f2dc70b2c445b854127e9ddb1a18f",
+  "samples": 421,
+  "errors": [],
+  "paused_samples": 43,
+  "time_range": [
+    73800.6796875,
+    73989.90625
+  ],
+  "max_read_seconds": 0.16147799999453127,
+  "map_changes": 0,
+  "event_counts": {
+    "junctions": 5,
+    "signals": 15,
+    "vectors": 7,
+    "presence": 34
+  },
+  "events": [
+    {
+      "kind": "junctions",
+      "address": 52142192,
+      "id": 302,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "branch": 0,
+        "owner": 0,
+        "flags": 0
+      },
+      "after": {
+        "branch": 0,
+        "owner": 53693104,
+        "flags": 0
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "signals",
+      "address": 54666876,
+      "id": 336,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "aspect": 4,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 4,
+        "associated_service": 53693104,
+        "flags": 49200
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "signals",
+      "address": 94420516,
+      "id": 299,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "signals",
+      "address": 94421716,
+      "id": 301,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "after": {
+        "aspect": 7,
+        "associated_service": 53693104,
+        "flags": 32769
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "signals",
+      "address": 94421956,
+      "id": 306,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "after": {
+        "aspect": 0,
+        "associated_service": 53693104,
+        "flags": 32769
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "vectors",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "constraint": 3,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 3,
+        "state": 1,
+        "services": [
+          53693104
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "vectors",
+      "address": 113455676,
+      "id": 305,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "constraint": 1,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 1,
+        "state": 1,
+        "services": [
+          8427664
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "vectors",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73800.6796875,
+      "time0_after": 73800.78125,
+      "time1": 73801.125,
+      "time1_after": 73801.2578125,
+      "before": {
+        "constraint": 0,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 0,
+        "state": 0,
+        "services": [
+          53693104
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": false
+    },
+    {
+      "kind": "signals",
+      "address": 94421764,
+      "id": 300,
+      "time0": 73804.6328125,
+      "time0_after": 73804.75,
+      "time1": 73805.1328125,
+      "time1_after": 73805.2578125,
+      "before": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421716,
+      "id": 301,
+      "time0": 73904.203125,
+      "time0_after": 73904.3203125,
+      "time1": 73904.71875,
+      "time1_after": 73904.8203125,
+      "before": {
+        "aspect": 7,
+        "associated_service": 53693104,
+        "flags": 32769
+      },
+      "after": {
+        "aspect": 0,
+        "associated_service": 53693104,
+        "flags": 32769
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73905.2109375,
+      "time0_after": 73905.3203125,
+      "time1": 73905.71875,
+      "time1_after": 73905.8203125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 22
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 21
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73905.2109375,
+      "time0_after": 73905.3203125,
+      "time1": 73905.71875,
+      "time1_after": 73905.8203125,
+      "before": null,
+      "after": {
+        "service_car_counts": {
+          "53693104": 1
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73906.2109375,
+      "time0_after": 73906.328125,
+      "time1": 73906.7109375,
+      "time1_after": 73906.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 21
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 20
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73906.2109375,
+      "time0_after": 73906.328125,
+      "time1": 73906.7109375,
+      "time1_after": 73906.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 1
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 2
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73907.21875,
+      "time0_after": 73907.328125,
+      "time1": 73907.7109375,
+      "time1_after": 73907.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 20
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 19
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73907.21875,
+      "time0_after": 73907.328125,
+      "time1": 73907.7109375,
+      "time1_after": 73907.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 2
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 3
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73908.2109375,
+      "time0_after": 73908.328125,
+      "time1": 73908.7109375,
+      "time1_after": 73908.875,
+      "before": {
+        "service_car_counts": {
+          "53693104": 19
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 17
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73908.2109375,
+      "time0_after": 73908.328125,
+      "time1": 73908.7109375,
+      "time1_after": 73908.875,
+      "before": {
+        "service_car_counts": {
+          "53693104": 3
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 5
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 54665868,
+      "id": 341,
+      "time0": 73908.2109375,
+      "time0_after": 73908.328125,
+      "time1": 73908.7109375,
+      "time1_after": 73908.875,
+      "before": {
+        "aspect": 4,
+        "associated_service": 0,
+        "flags": 32
+      },
+      "after": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 32
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 54666924,
+      "id": 337,
+      "time0": 73908.2109375,
+      "time0_after": 73908.328125,
+      "time1": 73908.7109375,
+      "time1_after": 73908.875,
+      "before": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73909.21875,
+      "time0_after": 73909.375,
+      "time1": 73909.71875,
+      "time1_after": 73909.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 17
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 16
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73909.21875,
+      "time0_after": 73909.375,
+      "time1": 73909.71875,
+      "time1_after": 73909.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 5
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 6
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73910.2109375,
+      "time0_after": 73910.3359375,
+      "time1": 73910.71875,
+      "time1_after": 73910.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 16
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 14
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73910.2109375,
+      "time0_after": 73910.3359375,
+      "time1": 73910.71875,
+      "time1_after": 73910.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 6
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 8
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73911.21875,
+      "time0_after": 73911.34375,
+      "time1": 73911.7265625,
+      "time1_after": 73911.8203125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 14
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 13
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73911.21875,
+      "time0_after": 73911.34375,
+      "time1": 73911.7265625,
+      "time1_after": 73911.8203125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 8
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 9
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73912.21875,
+      "time0_after": 73912.3203125,
+      "time1": 73912.71875,
+      "time1_after": 73912.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 13
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 12
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73912.21875,
+      "time0_after": 73912.3203125,
+      "time1": 73912.71875,
+      "time1_after": 73912.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 9
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 10
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73913.2265625,
+      "time0_after": 73913.3359375,
+      "time1": 73913.7265625,
+      "time1_after": 73913.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 12
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 10
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73913.2265625,
+      "time0_after": 73913.3359375,
+      "time1": 73913.7265625,
+      "time1_after": 73913.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 10
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 12
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73914.2265625,
+      "time0_after": 73914.3359375,
+      "time1": 73914.71875,
+      "time1_after": 73914.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 10
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 9
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73914.2265625,
+      "time0_after": 73914.3359375,
+      "time1": 73914.71875,
+      "time1_after": 73914.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 12
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 13
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73915.21875,
+      "time0_after": 73915.328125,
+      "time1": 73915.7265625,
+      "time1_after": 73915.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 9
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 8
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73915.21875,
+      "time0_after": 73915.328125,
+      "time1": 73915.7265625,
+      "time1_after": 73915.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 13
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 14
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73916.2265625,
+      "time0_after": 73916.3359375,
+      "time1": 73916.71875,
+      "time1_after": 73916.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 8
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 6
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73916.2265625,
+      "time0_after": 73916.3359375,
+      "time1": 73916.71875,
+      "time1_after": 73916.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 14
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 16
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73917.2265625,
+      "time0_after": 73917.34375,
+      "time1": 73917.7109375,
+      "time1_after": 73917.84375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 6
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 5
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73917.2265625,
+      "time0_after": 73917.34375,
+      "time1": 73917.7109375,
+      "time1_after": 73917.84375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 16
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 17
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73918.2265625,
+      "time0_after": 73918.3359375,
+      "time1": 73918.7265625,
+      "time1_after": 73918.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 5
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 4
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73918.2265625,
+      "time0_after": 73918.3359375,
+      "time1": 73918.7265625,
+      "time1_after": 73918.828125,
+      "before": {
+        "service_car_counts": {
+          "53693104": 17
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 18
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73919.2265625,
+      "time0_after": 73919.3515625,
+      "time1": 73919.71875,
+      "time1_after": 73919.859375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 4
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 2
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73919.2265625,
+      "time0_after": 73919.3515625,
+      "time1": 73919.71875,
+      "time1_after": 73919.859375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 18
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 20
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73920.2265625,
+      "time0_after": 73920.3515625,
+      "time1": 73920.71875,
+      "time1_after": 73920.84375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 2
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 1
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73920.2265625,
+      "time0_after": 73920.3515625,
+      "time1": 73920.71875,
+      "time1_after": 73920.84375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 20
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 21
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "junctions",
+      "address": 52142192,
+      "id": 302,
+      "time0": 73921.21875,
+      "time0_after": 73921.3515625,
+      "time1": 73921.7265625,
+      "time1_after": 73921.8359375,
+      "before": {
+        "branch": 0,
+        "owner": 53693104,
+        "flags": 0
+      },
+      "after": {
+        "branch": 0,
+        "owner": 0,
+        "flags": 0
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73921.21875,
+      "time0_after": 73921.3515625,
+      "time1": 73921.7265625,
+      "time1_after": 73921.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 1
+        }
+      },
+      "after": null,
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "presence",
+      "address": 113455804,
+      "id": 310,
+      "time0": 73921.21875,
+      "time0_after": 73921.3515625,
+      "time1": 73921.7265625,
+      "time1_after": 73921.8359375,
+      "before": {
+        "service_car_counts": {
+          "53693104": 21
+        }
+      },
+      "after": {
+        "service_car_counts": {
+          "53693104": 22
+        }
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94420516,
+      "id": 299,
+      "time0": 73921.21875,
+      "time0_after": 73921.3515625,
+      "time1": 73921.7265625,
+      "time1_after": 73921.8359375,
+      "before": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421716,
+      "id": 301,
+      "time0": 73921.21875,
+      "time0_after": 73921.3515625,
+      "time1": 73921.7265625,
+      "time1_after": 73921.8359375,
+      "before": {
+        "aspect": 0,
+        "associated_service": 53693104,
+        "flags": 32769
+      },
+      "after": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421956,
+      "id": 306,
+      "time0": 73921.21875,
+      "time0_after": 73921.3515625,
+      "time1": 73921.7265625,
+      "time1_after": 73921.8359375,
+      "before": {
+        "aspect": 0,
+        "associated_service": 53693104,
+        "flags": 32769
+      },
+      "after": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "vectors",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73921.21875,
+      "time0_after": 73921.3515625,
+      "time1": 73921.7265625,
+      "time1_after": 73921.8359375,
+      "before": {
+        "constraint": 3,
+        "state": 1,
+        "services": [
+          53693104
+        ]
+      },
+      "after": {
+        "constraint": 3,
+        "state": 3,
+        "services": []
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "vectors",
+      "address": 113455228,
+      "id": 292,
+      "time0": 73921.7265625,
+      "time0_after": 73921.8359375,
+      "time1": 73922.21875,
+      "time1_after": 73922.3359375,
+      "before": {
+        "constraint": 0,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 0,
+        "state": 0,
+        "services": [
+          8427664
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "vectors",
+      "address": 113455420,
+      "id": 300,
+      "time0": 73921.7265625,
+      "time0_after": 73921.8359375,
+      "time1": 73922.21875,
+      "time1_after": 73922.3359375,
+      "before": {
+        "constraint": 3,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 3,
+        "state": 0,
+        "services": [
+          8427664
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "vectors",
+      "address": 113455484,
+      "id": 295,
+      "time0": 73921.7265625,
+      "time0_after": 73921.8359375,
+      "time1": 73922.21875,
+      "time1_after": 73922.3359375,
+      "before": {
+        "constraint": 0,
+        "state": 3,
+        "services": []
+      },
+      "after": {
+        "constraint": 0,
+        "state": 0,
+        "services": [
+          8427664
+        ]
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "junctions",
+      "address": 52142192,
+      "id": 302,
+      "time0": 73922.7265625,
+      "time0_after": 73922.8359375,
+      "time1": 73923.2265625,
+      "time1_after": 73923.34375,
+      "before": {
+        "branch": 0,
+        "owner": 0,
+        "flags": 0
+      },
+      "after": {
+        "branch": 1,
+        "owner": 8427664,
+        "flags": 0
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "junctions",
+      "address": 52152968,
+      "id": 284,
+      "time0": 73922.7265625,
+      "time0_after": 73922.8359375,
+      "time1": 73923.2265625,
+      "time1_after": 73923.34375,
+      "before": {
+        "branch": 0,
+        "owner": 0,
+        "flags": 1
+      },
+      "after": {
+        "branch": 0,
+        "owner": 8427664,
+        "flags": 1
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "junctions",
+      "address": 52184376,
+      "id": 249,
+      "time0": 73922.7265625,
+      "time0_after": 73922.8359375,
+      "time1": 73923.2265625,
+      "time1_after": 73923.34375,
+      "before": {
+        "branch": 1,
+        "owner": 0,
+        "flags": 0
+      },
+      "after": {
+        "branch": 0,
+        "owner": 8427664,
+        "flags": 0
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94419988,
+      "id": 318,
+      "time0": 73922.7265625,
+      "time0_after": 73922.8359375,
+      "time1": 73923.2265625,
+      "time1_after": 73923.34375,
+      "before": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 0
+      },
+      "after": {
+        "aspect": 7,
+        "associated_service": 8427664,
+        "flags": 32768
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421188,
+      "id": 297,
+      "time0": 73922.7265625,
+      "time0_after": 73922.8359375,
+      "time1": 73923.2265625,
+      "time1_after": 73923.34375,
+      "before": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "after": {
+        "aspect": 0,
+        "associated_service": 8427664,
+        "flags": 32769
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421620,
+      "id": 298,
+      "time0": 73922.7265625,
+      "time0_after": 73922.8359375,
+      "time1": 73923.2265625,
+      "time1_after": 73923.34375,
+      "before": {
+        "aspect": 0,
+        "associated_service": 0,
+        "flags": 1
+      },
+      "after": {
+        "aspect": 3,
+        "associated_service": 8427664,
+        "flags": 32769
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 94421764,
+      "id": 300,
+      "time0": 73922.7265625,
+      "time0_after": 73922.8359375,
+      "time1": 73923.2265625,
+      "time1_after": 73923.34375,
+      "before": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 4,
+        "associated_service": 8427664,
+        "flags": 32816
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    }
+  ],
+  "presence_distance_ranges": [
+    {
+      "node": 113455676,
+      "route_id": 305,
+      "service": 8427664,
+      "first": {
+        "time": 73800.6796875,
+        "count": 23,
+        "min": 10273.908203125,
+        "max": 10712.8369140625
+      },
+      "last": {
+        "time": 73989.78125,
+        "count": 23,
+        "min": 10536.568359375,
+        "max": 10973.1484375
+      },
+      "observations": 421,
+      "min_seen": 10273.908203125,
+      "max_seen": 10973.1484375
+    },
+    {
+      "node": 113455420,
+      "route_id": 300,
+      "service": 53693104,
+      "first": {
+        "time": 73800.6796875,
+        "count": 22,
+        "min": 3388.540771484375,
+        "max": 3776.43994140625
+      },
+      "last": {
+        "time": 73921.21875,
+        "count": 1,
+        "min": 6097.11474609375,
+        "max": 6097.11474609375
+      },
+      "observations": 284,
+      "min_seen": 3388.540771484375,
+      "max_seen": 6103.04150390625
+    },
+    {
+      "node": 113455804,
+      "route_id": 310,
+      "service": 53693104,
+      "first": {
+        "time": 73905.71875,
+        "count": 1,
+        "min": 11876.701171875,
+        "max": 11876.701171875
+      },
+      "last": {
+        "time": 73989.78125,
+        "count": 22,
+        "min": 10199.8671875,
+        "max": 10587.7705078125
+      },
+      "observations": 169,
+      "min_seen": 10199.8671875,
+      "max_seen": 11886.173828125
+    }
+  ],
+  "first_trains": [
+    {
+      "id": 400007,
+      "address": 58694560,
+      "is_player": true,
+      "speed": 11.002593040466309,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    }
+  ],
+  "last_trains": [
+    {
+      "id": 400007,
+      "address": 58694560,
+      "is_player": true,
+      "speed": 0.0,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    },
+    {
+      "id": 400005,
+      "address": 69582892,
+      "is_player": false,
+      "speed": 15.646395683288574,
+      "service": 53693104,
+      "cars": 22,
+      "derailed": 0
+    }
+  ],
+  "service_identities": [
+    {
+      "address": 8427664,
+      "id": 0,
+      "is_player": true
+    },
+    {
+      "address": 53693104,
+      "id": 2,
+      "is_player": false
+    },
+    {
+      "address": 53696140,
+      "id": 3,
+      "is_player": false
+    }
+  ],
+  "limitations": "Changes bracketed between sequential snapshots;not exact transition times,atomic states or causal proof. Errors/map changes break continuity. Event counts include presence membership/count changes but exclude continuously varying distances,which are summarized separately. Presence reports per-service record counts,not physical occupancy;list duplicates preserved. Signal index is database item index,not universal asset ID. Complete route map checked each row;no lifecycle identity guarantee."
+}

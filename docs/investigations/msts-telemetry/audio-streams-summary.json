@@ -1,0 +1,128 @@
+{
+  "captures": [
+    {
+      "capture": "audio-streams-paused-01",
+      "sha256": "166f6210c8ab210f5fd149502f31cce36fefcba8dde4ba41dee7f69cf5739945",
+      "time": 74360.5859375,
+      "time_after": 74360.5859375,
+      "paused": 1,
+      "receiver_count": 33,
+      "stream_count": 67,
+      "list_stable": true,
+      "errors": [
+        {
+          "label": "traf_m_m.sms",
+          "index": 2,
+          "error": "Queue cycle/research bound"
+        }
+      ],
+      "completed_queues": 66,
+      "completed_queue_nodes": 6,
+      "incomplete_queues": [],
+      "stability_counts": {
+        "stable_state": {
+          "True": 66,
+          "unavailable": 1
+        },
+        "stable_definition": {
+          "True": 66,
+          "unavailable": 1
+        },
+        "stable_queue_links": {
+          "True": 66,
+          "unavailable": 1
+        },
+        "stable_owner": {
+          "True": 66,
+          "unavailable": 1
+        }
+      },
+      "lock_pairs": {
+        "(0, 0)": 66,
+        "(None, None)": 1
+      },
+      "native_bit2_count": 6,
+      "native_bit2_with_buffer": 1,
+      "native_bit2_without_buffer": 5,
+      "all_buffer_interfaces": 17,
+      "all_spatial_interfaces": 3,
+      "player_associated_streams": 50,
+      "ai_associated_streams": 0,
+      "trigger_counts": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        33
+      ]
+    },
+    {
+      "capture": "audio-streams-paused-02",
+      "sha256": "5ba20b837b8c4d51a9270fb5858ae6b5009a70dd869f8235475a430459c86140",
+      "time": 74360.5859375,
+      "time_after": 74360.5859375,
+      "paused": 1,
+      "receiver_count": 33,
+      "stream_count": 67,
+      "list_stable": true,
+      "errors": [],
+      "completed_queues": 66,
+      "completed_queue_nodes": 6,
+      "incomplete_queues": [
+        {
+          "label": "traf_m_m.sms",
+          "index": 2,
+          "observed_nodes": 256,
+          "stop": {
+            "reason": "research_bound",
+            "address": 72666776
+          }
+        }
+      ],
+      "stability_counts": {
+        "stable_state": {
+          "True": 67
+        },
+        "stable_definition": {
+          "True": 67
+        },
+        "stable_queue_links": {
+          "True": 67
+        },
+        "stable_owner": {
+          "True": 67
+        }
+      },
+      "lock_pairs": {
+        "(0, 0)": 67
+      },
+      "native_bit2_count": 7,
+      "native_bit2_with_buffer": 1,
+      "native_bit2_without_buffer": 6,
+      "all_buffer_interfaces": 17,
+      "all_spatial_interfaces": 3,
+      "player_associated_streams": 50,
+      "ai_associated_streams": 0,
+      "trigger_counts": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        33
+      ]
+    }
+  ],
+  "limitations": "Native flag is not measured audibility. Bounded linked records are not a complete queue count; no time duration/backlog or sample identity inferred. Two paused snapshots do not prove stable lifetime or AI coverage."
+}

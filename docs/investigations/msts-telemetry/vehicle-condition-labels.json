@@ -1,0 +1,46 @@
+{
+  "resource_path": "C:\\MSTS\\string.dll",
+  "resource_sha256": "3512ee02a388cfcb1e9fc97a5e80e194e0b4cdc088488ee290ab6578d1fda112",
+  "labels": {
+    "1085": [
+      {
+        "language_id": 1033,
+        "text": "You exceeded passenger comfort levels 1 time.  Forces within the train jostled the passengers beyond acceptable limits.\n"
+      }
+    ],
+    "1086": [
+      {
+        "language_id": 1033,
+        "text": "You exceeded passenger comfort levels %d times.  Forces within the train jostled the passengers beyond acceptable limits.\n"
+      }
+    ],
+    "1088": [
+      {
+        "language_id": 1033,
+        "text": "You exceeded freight durability levels 1 time.  Forces within the train could have damaged freight.\n"
+      }
+    ],
+    "1089": [
+      {
+        "language_id": 1033,
+        "text": "You exceeded freight durability levels %d times.  Forces within the train could have damaged freight.\n"
+      }
+    ],
+    "1895": [
+      {
+        "language_id": 1033,
+        "text": "Passenger comfort levels were maintained."
+      }
+    ],
+    "1896": [
+      {
+        "language_id": 1033,
+        "text": "Freight durability limits were met."
+      }
+    ]
+  },
+  "mapping": {
+    "report+0x3c": "freight durability; display0043d268/0043d28b",
+    "report+0x40": "passenger comfort; display0043d423/0043d446"
+  }
+}

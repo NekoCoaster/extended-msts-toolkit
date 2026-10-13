@@ -1,0 +1,96 @@
+{
+  "samples": 1397,
+  "errors": 0,
+  "day_range": [
+    74229.078125,
+    74293.1015625
+  ],
+  "paused_samples": 526,
+  "changes": [
+    {
+      "day": 74229.078125,
+      "words": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stable": true
+    },
+    {
+      "day": 74254.03125,
+      "words": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "stable": true
+    }
+  ],
+  "unstable_context": 0,
+  "unstable_monitors": {
+    "aws": 0,
+    "vigilance": 0,
+    "emergency": 0,
+    "unnamed": 0,
+    "overspeed": 0
+  },
+  "speed_range": [
+    0.0,
+    0.005252300761640072
+  ],
+  "final": {
+    "day": 74293.1015625,
+    "paused": 1,
+    "speed": 0.0,
+    "brake_flags": 524288
+  },
+  "effort_snapshots": [
+    {
+      "day": 74229.078125,
+      "paused": 1,
+      "values": {
+        "engine_flags296": 1026,
+        "throttle": 0.0,
+        "reverser": 1.0,
+        "controller370": 1,
+        "traction_current": 0.0,
+        "effort_cache496": 650650.0,
+        "brake_cylinder": 85.20243072509766,
+        "engine_type14a": 1,
+        "force_scale102": 650650.0,
+        "current_scale1da": 1800.0,
+        "brake_cutoff63c": 0.0,
+        "brake_cutoff_threshold640": 6.0,
+        "emergency_action": 1,
+        "emergency_definition": 55510564
+      },
+      "cut_gate": true,
+      "stable": true
+    },
+    {
+      "day": 74281.765625,
+      "paused": 0,
+      "values": {
+        "engine_flags296": 1026,
+        "throttle": 0.125,
+        "reverser": 1.0,
+        "controller370": 1,
+        "traction_current": 225.00001525878906,
+        "effort_cache496": 650650.0,
+        "brake_cylinder": 85.20243072509766,
+        "engine_type14a": 1,
+        "force_scale102": 650650.0,
+        "current_scale1da": 1800.0,
+        "brake_cutoff63c": 0.0,
+        "brake_cutoff_threshold640": 6.0,
+        "emergency_action": 0,
+        "emergency_definition": 55510564
+      },
+      "cut_gate": false,
+      "stable": true
+    }
+  ],
+  "limitations": "Semicolon toContinuousService thenZ,thenN1 with brakes held,Idle,Pause. Monitor stream does not sample controller370 or current;separate guarded snapshots do. After-ack snapshot is running despite legacy boilerplate sayingPaused;its paused0 field and UI are authoritative. Exact Z event time and prior rollback cause not established;current is not wheel force."
+}

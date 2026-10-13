@@ -1,0 +1,163 @@
+[
+  {
+    "channel": "CUTOFF",
+    "base": "controller",
+    "offset": 140,
+    "type": "float",
+    "display": "raw controller value; shared with REVERSER_PLATE"
+  },
+  {
+    "channel": "REGULATOR",
+    "base": "controller",
+    "offset": 84,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "TRAIN_BRAKE",
+    "base": "controller",
+    "offset": 252,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "ENGINE_BRAKE",
+    "base": "controller",
+    "offset": 196,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "CYL_COCKS",
+    "base": "controller",
+    "offset": 612,
+    "type": "uint",
+    "display": "raw integer display state"
+  },
+  {
+    "channel": "BLOWER",
+    "base": "controller",
+    "offset": 400,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "FIREHOLE",
+    "base": "controller",
+    "offset": 660,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "STEAM_INJ1",
+    "base": "controller",
+    "offset": 704,
+    "type": "uint",
+    "display": "nonzero converted to boolean"
+  },
+  {
+    "channel": "STEAM_INJ2",
+    "base": "controller",
+    "offset": 740,
+    "type": "uint",
+    "display": "nonzero converted to boolean"
+  },
+  {
+    "channel": "DAMPERS_FRONT",
+    "base": "controller",
+    "offset": 512,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "DAMPERS_BACK",
+    "base": "controller",
+    "offset": 568,
+    "type": "float",
+    "display": "raw controller value; not declared in surveyed installed cabs"
+  },
+  {
+    "channel": "WATER_INJECTOR1",
+    "base": "controller",
+    "offset": 788,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "WATER_INJECTOR2",
+    "base": "controller",
+    "offset": 844,
+    "type": "float",
+    "display": "raw controller value"
+  },
+  {
+    "channel": "SMALL_EJECTOR",
+    "base": "controller",
+    "offset": 1052,
+    "type": "uint",
+    "display": "nonzero converted to boolean"
+  },
+  {
+    "channel": "BELL",
+    "base": "controller",
+    "offset": 1088,
+    "type": "uint",
+    "display": "nonzero converted to boolean"
+  },
+  {
+    "channel": "WHISTLE",
+    "base": "controller",
+    "offset": 888,
+    "type": "uint",
+    "display": "raw integer display state"
+  },
+  {
+    "channel": "SANDERS",
+    "base": "controller",
+    "offset": 352,
+    "type": "uint",
+    "display": "nonzero converted to boolean"
+  },
+  {
+    "channel": "REVERSER_PLATE",
+    "base": "controller",
+    "offset": 140,
+    "type": "float",
+    "display": "raw controller value; same source as CUTOFF"
+  },
+  {
+    "channel": "STEAM_PR",
+    "base": "lead",
+    "offset": 722,
+    "type": "float",
+    "display": "raw pressure; cab conversion factors consistent with PSI"
+  },
+  {
+    "channel": "STEAMCHEST_PR",
+    "base": "lead",
+    "offset": 842,
+    "type": "float",
+    "display": "raw pressure; cab conversion factors consistent with PSI"
+  },
+  {
+    "channel": "STEAMHEAT_PRESSURE",
+    "base": "lead",
+    "offset": 846,
+    "type": "float",
+    "display": "raw pressure; cab conversion factors consistent with PSI"
+  },
+  {
+    "channel": "TENDER_WATER",
+    "base": "lead",
+    "offset": 734,
+    "type": "float",
+    "display": "raw lb by native debug label; cab unit14 divides raw by10, unit15 additionally multiplies4.546090126"
+  },
+  {
+    "channel": "BOILER_WATER",
+    "base": "lead",
+    "offset": 730,
+    "type": "float",
+    "display": "cab clamps raw value to0..1; raw value retained by probe"
+  }
+]

@@ -1,0 +1,96 @@
+{
+  "pid": 33612,
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "label": "Wheelset",
+  "token": "0x40260",
+  "definition_offset": "0x4e8",
+  "declaration_flag_offset": "0x8c",
+  "declaration_flag": "0x10",
+  "table_checks": [
+    {
+      "address": "0x795d88",
+      "bytes": "4c0a760060020400"
+    },
+    {
+      "address": "0x760a4c",
+      "bytes": "57006800650065006c007300650074000000"
+    }
+  ],
+  "parser_instructions": [
+    {
+      "address": "00614f7a",
+      "bytes": "81bdc8f7ffff60020400"
+    },
+    {
+      "address": "00614f84",
+      "bytes": "0f84561c0000"
+    },
+    {
+      "address": "00616be0",
+      "bytes": "8b95ccf7ffff"
+    },
+    {
+      "address": "00616be6",
+      "bytes": "81c2e8040000"
+    },
+    {
+      "address": "00616bec",
+      "bytes": "8b4d08"
+    },
+    {
+      "address": "00616bef",
+      "bytes": "e881a7deff"
+    },
+    {
+      "address": "00616bf4",
+      "bytes": "85c0"
+    },
+    {
+      "address": "00616bf6",
+      "bytes": "7505"
+    },
+    {
+      "address": "00616bf8",
+      "bytes": "e97e030000"
+    },
+    {
+      "address": "00616bfd",
+      "bytes": "33d2"
+    },
+    {
+      "address": "00616bff",
+      "bytes": "85d2"
+    },
+    {
+      "address": "00616c01",
+      "bytes": "75dd"
+    },
+    {
+      "address": "00616c03",
+      "bytes": "8b85ccf7ffff"
+    },
+    {
+      "address": "00616c09",
+      "bytes": "8b888c000000"
+    },
+    {
+      "address": "00616c0f",
+      "bytes": "83c910"
+    },
+    {
+      "address": "00616c12",
+      "bytes": "8b95ccf7ffff"
+    },
+    {
+      "address": "00616c18",
+      "bytes": "898a8c000000"
+    },
+    {
+      "address": "00616c1e",
+      "bytes": "e909030000"
+    }
+  ],
+  "source_asset": "C:\\MSTS\\TRAINS\\TRAINSET\\DEFAULT\\default.wag",
+  "source_asset_sha256": "727da147e8c1c076fe10dd5838d2a5cbb47d023df30a67f4d4f68e5784342cc4",
+  "limitation": "Selected instruction/table/string equality only. No parsing invocation, evaluated expression value, loaded definition, phase units or rendering was observed."
+}

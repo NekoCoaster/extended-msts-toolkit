@@ -1,0 +1,68 @@
+{
+  "calls": [
+    {
+      "site": "0x4950b0",
+      "thunk": "0x402559",
+      "destination": "0x49eae5",
+      "thunk_bytes": "e987c50900",
+      "live_matches": true
+    },
+    {
+      "site": "0x4956a4",
+      "thunk": "0x402644",
+      "destination": "0x49f18a",
+      "thunk_bytes": "e941cb0900",
+      "live_matches": true
+    },
+    {
+      "site": "0x495bdf",
+      "thunk": "0x402f27",
+      "destination": "0x4a40cb",
+      "thunk_bytes": "e99f110a00",
+      "live_matches": true
+    },
+    {
+      "site": "0x495c5d",
+      "thunk": "0x401159",
+      "destination": "0x487254",
+      "thunk_bytes": "e9f6600800",
+      "live_matches": true
+    },
+    {
+      "site": "0x495c71",
+      "thunk": "0x403959",
+      "destination": "0x5f212d",
+      "thunk_bytes": "e9cfe71e00",
+      "live_matches": true
+    },
+    {
+      "site": "0x495c86",
+      "thunk": "0x401159",
+      "destination": "0x487254",
+      "thunk_bytes": "e9f6600800",
+      "live_matches": true
+    },
+    {
+      "site": "0x495c9a",
+      "thunk": "0x403959",
+      "destination": "0x5f212d",
+      "thunk_bytes": "e9cfe71e00",
+      "live_matches": true
+    },
+    {
+      "site": "0x495caf",
+      "thunk": "0x401159",
+      "destination": "0x487254",
+      "thunk_bytes": "e9f6600800",
+      "live_matches": true
+    },
+    {
+      "site": "0x495cc3",
+      "thunk": "0x403959",
+      "destination": "0x5f212d",
+      "thunk_bytes": "e9cfe71e00",
+      "live_matches": true
+    }
+  ],
+  "limitation": "Static call sites and thunk resolution; no historical execution trace."
+}

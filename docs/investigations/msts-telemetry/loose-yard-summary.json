@@ -1,0 +1,665 @@
+{
+  "activity": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\yard_one.act",
+  "activity_sha256": "fc252534188e07dccb7053df00ab70c43c8afe9a774e04b08f94afdda796dd06",
+  "retained_activity": "captures\\loose-fixture-provenance-01\\yard_one.act",
+  "source": "captures\\loose-yard-notebook-01\\registry.json",
+  "source_sha256": "4fa9ea3c08146bbf14d593e4cfc418e3d2a6fd6ad61e00a53d71d7b3af40d5ad",
+  "paused": 1,
+  "time": 39600.76953125,
+  "time_after": 39600.76953125,
+  "configured": [
+    {
+      "id": [
+        "32768"
+      ],
+      "tile": [
+        "-12584",
+        "14767",
+        "-401.07",
+        "705.892"
+      ],
+      "direction": [
+        "0"
+      ],
+      "wagons": [
+        {
+          "uid": [
+            "0"
+          ],
+          "asset": [
+            "US2FCarRF2",
+            "US2FCarRF2"
+          ]
+        },
+        {
+          "uid": [
+            "1"
+          ],
+          "asset": [
+            "US2FCarRF2",
+            "US2FCarRF2"
+          ]
+        },
+        {
+          "uid": [
+            "2"
+          ],
+          "asset": [
+            "US2Freight8",
+            "US2Freight8"
+          ]
+        },
+        {
+          "uid": [
+            "3"
+          ],
+          "asset": [
+            "US2Freight8",
+            "US2Freight8"
+          ]
+        },
+        {
+          "uid": [
+            "4"
+          ],
+          "asset": [
+            "US2HopperCar",
+            "US2HopperCar"
+          ]
+        }
+      ],
+      "engines": [],
+      "count": 5
+    },
+    {
+      "id": [
+        "32769"
+      ],
+      "tile": [
+        "-12584",
+        "14767",
+        "-394.813",
+        "678.865"
+      ],
+      "direction": [
+        "0"
+      ],
+      "wagons": [
+        {
+          "uid": [
+            "0"
+          ],
+          "asset": [
+            "US2Freight8",
+            "US2Freight8"
+          ]
+        },
+        {
+          "uid": [
+            "1"
+          ],
+          "asset": [
+            "US2BNSFCar",
+            "US2BNSFCar"
+          ]
+        },
+        {
+          "uid": [
+            "2"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        }
+      ],
+      "engines": [],
+      "count": 3
+    },
+    {
+      "id": [
+        "32770"
+      ],
+      "tile": [
+        "-12584",
+        "14767",
+        "-480.596",
+        "710.4"
+      ],
+      "direction": [
+        "0"
+      ],
+      "wagons": [],
+      "engines": [
+        {
+          "uid": [
+            "0"
+          ],
+          "asset": [
+            "GP38",
+            "Gp38"
+          ]
+        }
+      ],
+      "count": 1
+    },
+    {
+      "id": [
+        "32771"
+      ],
+      "tile": [
+        "-12584",
+        "14767",
+        "-384.903",
+        "752.217"
+      ],
+      "direction": [
+        "0"
+      ],
+      "wagons": [
+        {
+          "uid": [
+            "0"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "1"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "2"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "3"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "4"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "5"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "6"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "7"
+          ],
+          "asset": [
+            "US2WoodChipper",
+            "US2WoodChipper"
+          ]
+        },
+        {
+          "uid": [
+            "8"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        },
+        {
+          "uid": [
+            "9"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        },
+        {
+          "uid": [
+            "10"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        },
+        {
+          "uid": [
+            "11"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        },
+        {
+          "uid": [
+            "12"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        },
+        {
+          "uid": [
+            "13"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        },
+        {
+          "uid": [
+            "14"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        },
+        {
+          "uid": [
+            "15"
+          ],
+          "asset": [
+            "US2EmpLoggerCar",
+            "US2EmpLoggerCar"
+          ]
+        }
+      ],
+      "engines": [],
+      "count": 16
+    },
+    {
+      "id": [
+        "32772"
+      ],
+      "tile": [
+        "-12584",
+        "14767",
+        "145.391",
+        "755.089"
+      ],
+      "direction": [
+        "0"
+      ],
+      "wagons": [
+        {
+          "uid": [
+            "0"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "1"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "2"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "3"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "4"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "5"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "6"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "7"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "8"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "9"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "10"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "11"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        },
+        {
+          "uid": [
+            "12"
+          ],
+          "asset": [
+            "US2Freightcar3",
+            "US2Freightcar3"
+          ]
+        }
+      ],
+      "engines": [],
+      "count": 13
+    },
+    {
+      "id": [
+        "32773"
+      ],
+      "tile": [
+        "-12584",
+        "14767",
+        "109.401",
+        "913.831"
+      ],
+      "direction": [
+        "0"
+      ],
+      "wagons": [
+        {
+          "uid": [
+            "0"
+          ],
+          "asset": [
+            "US2FullLoggerCar",
+            "US2FullLoggerCar"
+          ]
+        }
+      ],
+      "engines": [],
+      "count": 1
+    }
+  ],
+  "configured_count": 39,
+  "physical_count": 40,
+  "outside_count": 39,
+  "connected_trains": [
+    {
+      "address": 63073680,
+      "id": 400000,
+      "is_player": true,
+      "cars": [
+        63322752
+      ]
+    }
+  ],
+  "components": [
+    {
+      "addresses": [
+        63634732,
+        63653204,
+        63654356,
+        63655180,
+        63658940
+      ],
+      "count": 5,
+      "object_ids": [
+        200058,
+        200061,
+        200060,
+        200059,
+        200057
+      ],
+      "owners": [
+        0
+      ],
+      "native_kinds": [
+        262157
+      ],
+      "endpoints": 2,
+      "reciprocal": true
+    },
+    {
+      "addresses": [
+        63699376,
+        63801896,
+        63808148
+      ],
+      "count": 3,
+      "object_ids": [
+        200062,
+        200063,
+        200064
+      ],
+      "owners": [
+        0
+      ],
+      "native_kinds": [
+        262157
+      ],
+      "endpoints": 2,
+      "reciprocal": true
+    },
+    {
+      "addresses": [
+        63944920
+      ],
+      "count": 1,
+      "object_ids": [
+        200065
+      ],
+      "owners": [
+        0
+      ],
+      "native_kinds": [
+        262158
+      ],
+      "endpoints": 0,
+      "reciprocal": true
+    },
+    {
+      "addresses": [
+        64046640,
+        64047792,
+        64055516,
+        64057844,
+        64185312,
+        64261500,
+        64262912,
+        64263580,
+        64334476,
+        64335888,
+        64337040,
+        64367020,
+        64368556,
+        64395084,
+        64396620,
+        64397896
+      ],
+      "count": 16,
+      "object_ids": [
+        200068,
+        200067,
+        200066,
+        200069,
+        200070,
+        200073,
+        200072,
+        200071,
+        200076,
+        200075,
+        200074,
+        200078,
+        200077,
+        200081,
+        200080,
+        200079
+      ],
+      "owners": [
+        0
+      ],
+      "native_kinds": [
+        262157
+      ],
+      "endpoints": 2,
+      "reciprocal": true
+    },
+    {
+      "addresses": [
+        64385096,
+        64386248,
+        64387888,
+        64389424,
+        64390960,
+        64392496,
+        64393548,
+        64521520,
+        64581024,
+        64582176,
+        64597336,
+        64598612,
+        64599764
+      ],
+      "count": 13,
+      "object_ids": [
+        200084,
+        200083,
+        200088,
+        200087,
+        200086,
+        200085,
+        200082,
+        200089,
+        200091,
+        200090,
+        200094,
+        200093,
+        200092
+      ],
+      "owners": [
+        0
+      ],
+      "native_kinds": [
+        262157
+      ],
+      "endpoints": 2,
+      "reciprocal": true
+    },
+    {
+      "addresses": [
+        64607712
+      ],
+      "count": 1,
+      "object_ids": [
+        200095
+      ],
+      "owners": [
+        0
+      ],
+      "native_kinds": [
+        262157
+      ],
+      "endpoints": 0,
+      "reciprocal": true
+    }
+  ],
+  "component_sizes_match": true,
+  "registered_outside": 39,
+  "stable_outside": 39,
+  "outside_kinds": {
+    "0x4000d": 38,
+    "0x4000e": 1
+  },
+  "outside_zero_linear_velocity": 39,
+  "outside_resting_flags": 39,
+  "outside_derailed_flags": 0,
+  "limitations": "Matching component size multiset and fixture context support loose-stock coverage; no exact activity-ID-to-native-ID or per-group asset identity mapping is established. Paused initial loading is not coupling, detachment, moving loose-stock or remote unphysicalized coverage."
+}

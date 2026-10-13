@@ -1,0 +1,759 @@
+{
+  "sources": {
+    "captures\\loose-yard-track-01\\context.json": "c94665396cf90da301af09790220e6d801d89c8d0d80fbd2f5b45fa2969a8e45",
+    "captures\\loose-yard-topology-01\\topology.json": "c41ed63ae39ee2c38e5bb248cdcca1d7a478e001294fa0fc0f8f8d64560e1fb1"
+  },
+  "time": 39600.76953125,
+  "end_time": 39600.76953125,
+  "paused": 1,
+  "origin_stable": true,
+  "count": 40,
+  "loose_count": 39,
+  "checks": [
+    {
+      "address": 63658940,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        3.0517578125e-05,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 63634732,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 63655180,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.83331298828125,
+        0.0
+      ]
+    },
+    {
+      "address": 63654356,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.83331298828125,
+        0.0
+      ]
+    },
+    {
+      "address": 63653204,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        3.0517578125e-05,
+        2.634033203125,
+        0.0
+      ]
+    },
+    {
+      "address": 63699376,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -0.000335693359375,
+        2.83331298828125,
+        0.00115966796875
+      ]
+    },
+    {
+      "address": 63801896,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.15509033203125,
+        0.0
+      ]
+    },
+    {
+      "address": 63808148,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 63944920,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -3.0517578125e-05,
+        2.65399169921875,
+        0.0
+      ]
+    },
+    {
+      "address": 64055516,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.635009765625,
+        0.0
+      ]
+    },
+    {
+      "address": 64047792,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.635009765625,
+        0.0
+      ]
+    },
+    {
+      "address": 64046640,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.635009765625,
+        0.0
+      ]
+    },
+    {
+      "address": 64057844,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        3.0517578125e-05,
+        2.635009765625,
+        0.0
+      ]
+    },
+    {
+      "address": 64185312,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -0.0001220703125,
+        2.635009765625,
+        0.00048828125
+      ]
+    },
+    {
+      "address": 64263580,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.635009765625,
+        -6.103515625e-05
+      ]
+    },
+    {
+      "address": 64262912,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -3.0517578125e-05,
+        2.635009765625,
+        0.0
+      ]
+    },
+    {
+      "address": 64261500,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.635009765625,
+        0.0
+      ]
+    },
+    {
+      "address": 64337040,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        1.52587890625e-05,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 64335888,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 64334476,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -1.52587890625e-05,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 64368556,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 64367020,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 64397896,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -0.00020599365234375,
+        1.97003173828125,
+        -0.00048828125
+      ]
+    },
+    {
+      "address": 64396620,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 64395084,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 64393548,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -1.52587890625e-05,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64386248,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.00029754638671875,
+        2.77001953125,
+        -0.0009765625
+      ]
+    },
+    {
+      "address": 64385096,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -7.62939453125e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64392496,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -7.62939453125e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64390960,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -2.288818359375e-05,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64389424,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -7.62939453125e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64387888,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -7.62939453125e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64521520,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -7.62939453125e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64582176,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        7.152557373046875e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64581024,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64599764,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        7.62939453125e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64598612,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        3.814697265625e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64597336,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        -7.62939453125e-06,
+        2.77001953125,
+        0.0
+      ]
+    },
+    {
+      "address": 64607712,
+      "loose": true,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        1.97003173828125,
+        0.0
+      ]
+    },
+    {
+      "address": 63322752,
+      "loose": false,
+      "valid_node": true,
+      "section_in_bounds": true,
+      "section_pointer_matches": true,
+      "node_distance_in_bounds": true,
+      "owner_stable": true,
+      "body_track_delta": [
+        0.0,
+        2.65399169921875,
+        0.0
+      ]
+    }
+  ],
+  "failed_checks": [],
+  "nearest_loose": {
+    "address": 64607712,
+    "node": 112890584,
+    "centre_distance": 91.6756782363592,
+    "same_node": false
+  },
+  "player": {
+    "address": 63322752,
+    "object_id": 200000,
+    "owner": 63073680,
+    "kind": 262158,
+    "body": 55915027,
+    "links": [
+      0,
+      0
+    ],
+    "position": [
+      199.7853240966797,
+      914.9099731445312,
+      898.5143432617188
+    ],
+    "length": 18.878999710083008,
+    "track": {
+      "address": 63323048,
+      "node": 112890136,
+      "section_index": 7,
+      "section": 54035284,
+      "direction": 1,
+      "node_distance": 392.66595458984375,
+      "section_distance": 212.37571716308594,
+      "angles_candidate": [
+        0.0,
+        4.415550231933594,
+        0.0
+      ],
+      "position_candidate": [
+        199.7853240966797,
+        912.2559814453125,
+        898.5143432617188
+      ],
+      "raw_hex": "1891ba060700000054833803010000003e55c4432f60544300000000304c8d400000000063c295be00000000d8cd743f000000000000803f00000000d8cd74bf0000008063c295be0bc9474362106444eba0604400000000000000000000000000000000000080bf",
+      "section_origin_tile": [
+        -12584,
+        14767
+      ],
+      "section_origin_offset": [
+        402.87298583984375,
+        912.2559814453125,
+        960.6339721679688
+      ],
+      "section_definition_index": 4,
+      "geometry_definition": {
+        "address": 53522440,
+        "raw_hex": "0000fa4300000000000000000000c03f0000000000000000",
+        "length": 500.0,
+        "radius_candidate": 0.0,
+        "curve_angle_candidate": 0.0,
+        "configured_width": 1.5,
+        "skew_angle": 0.0,
+        "flags_raw": 0
+      },
+      "section_angles_candidate": [
+        0.0,
+        4.415550231933594,
+        0.0
+      ],
+      "node_length": 1222.535400390625,
+      "node_section_count": 16,
+      "section_pointer_matches": true
+    },
+    "owner_stable": true
+  },
+  "target_component": {
+    "addresses": [
+      63634732,
+      63653204,
+      63654356,
+      63655180,
+      63658940
+    ],
+    "count": 5,
+    "object_ids": [
+      200058,
+      200061,
+      200060,
+      200059,
+      200057
+    ],
+    "owners": [
+      0
+    ],
+    "native_kinds": [
+      262157
+    ],
+    "endpoints": 2,
+    "reciprocal": true
+  },
+  "topology_path": [
+    {
+      "address": 112890136,
+      "kind": 1,
+      "links": [
+        {
+          "node": 54015008,
+          "direction": 0
+        },
+        {
+          "node": 54035864,
+          "direction": 0
+        }
+      ],
+      "raw_header": "010000000000000020343803000000009885380300000000",
+      "length": 1222.535400390625,
+      "section_count": 16,
+      "first_section_signature": {
+        "definition": 183,
+        "tile": [
+          -12584,
+          14767
+        ],
+        "offset": [
+          577.1900024414062,
+          912.2559814453125,
+          1005.1099853515625
+        ]
+      }
+    },
+    {
+      "address": 54015008,
+      "kind": 2,
+      "links": [
+        {
+          "node": 112890200,
+          "direction": 0
+        },
+        {
+          "node": 112203216,
+          "direction": 1
+        },
+        {
+          "node": 112890136,
+          "direction": 1
+        }
+      ],
+      "input_count": 1,
+      "output_count": 2,
+      "pins": 74918656,
+      "raw_header": "0200000000000000000000000100000002000000002b7704",
+      "selected_branch": 0,
+      "selected_pin_index": 1,
+      "selection_in_bounds": true,
+      "selected_node": 112203216
+    },
+    {
+      "address": 112203216,
+      "kind": 1,
+      "links": [
+        {
+          "node": 54015008,
+          "direction": 0
+        },
+        {
+          "node": 54034736,
+          "direction": 0
+        }
+      ],
+      "raw_header": "010000000000000020343803000000003081380300000000",
+      "length": 1269.8651123046875,
+      "section_count": 8,
+      "first_section_signature": {
+        "definition": 179,
+        "tile": [
+          -12584,
+          14767
+        ],
+        "offset": [
+          577.1900024414062,
+          912.2559814453125,
+          1005.1099853515625
+        ]
+      }
+    }
+  ],
+  "limitations": "Shortest unweighted graph path is not a drivable route or clearance. A turnout path between two output pins needs a reversal through its input leg; switch selection alone does not connect the output pins directly. Centre distance is not along-track distance or coupler gap. Captures are separately paused snapshots,not atomic. No coupling/uncoupling or turnout action has occurred."
+}

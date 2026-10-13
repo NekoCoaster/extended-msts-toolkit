@@ -1,0 +1,12 @@
+[
+ ["car.brake_cylinder_pressure","Per-car brake cylinder pressure","float32","PSI","car+0x230; cab producer corroborated on lead; wagon population observed"],
+ ["car.brake_pipe_pressure","Per-car brake-pipe pressure","float32","PSI","car+0x238; cab producer corroborated on lead; uncoupler resets it"],
+ ["car.brake_force_candidate","Per-car requested brake-force quantity before adhesion limiting","float32","N candidate","car+0x22c; consumed by 0x62c679 and 0x62c49c"],
+ ["car.max_brake_force","Loaded MaxBrakeForce configuration","float32","N","[car+0x94]+0x918; native writer token0x40196"],
+ ["car.brake_reference_pressure_candidate","Brake pressure used to scale configured force","float32","PSI candidate","[car+0x94]+0x954; used by 0x635dfb"],
+ ["car.connection_force_candidate","Connection-force quantity at one consist end","float32","N candidate","car+0x1a0; 0x62ad6a derives from coupling force vector and compares with definition+0x210; full sign/end convention unresolved"],
+ ["car.connection_break_threshold_candidate","Coupling-force threshold used to uncouple","float32","N candidate","[car+0x94]+0x210; 0x62ad6a invokes 0x635dfb when exceeded"],
+ ["body.force_accumulator_candidate","Body force accumulator","3 float32","N candidate","body+0xa0; force paths add contributions; full producer/integration cadence remains to trace"],
+ ["body.torque_accumulator_candidate","Body torque accumulator","3 float32","N m candidate","body+0xac; integration semantics need further confirmation"],
+ ["body.inverse_inertia_world","World inverse inertia tensor","9 float32","1/(kg m^2)","body+0x64; native 0x5f6368 transforms angular momentum to angular velocity"]
+]

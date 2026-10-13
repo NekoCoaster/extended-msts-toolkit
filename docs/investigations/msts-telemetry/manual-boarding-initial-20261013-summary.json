@@ -1,0 +1,20 @@
+{
+  "source_sha256": "d267e67a8d53105edb0688b3c90998febfb59ef7fe8f80f1c24cdc789a1ca322",
+  "samples": 1200,
+  "errors": 0,
+  "guard_qualified": 1198,
+  "positive_timer_samples": 0,
+  "fraction_matches": 1198,
+  "count_pairs": [
+    [
+      6,
+      6
+    ]
+  ],
+  "clock_range": [
+    64801.2265625,
+    64820.1015625
+  ],
+  "paused_samples": 1014,
+  "limitations": "First station already marked completed loading,not a manual onset capture. Directory name expresses intended test. Stored fraction agreement is current snapshot correspondence,not proof of producer execution."
+}

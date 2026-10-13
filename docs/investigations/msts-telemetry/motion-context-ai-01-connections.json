@@ -1,0 +1,56 @@
+{
+  "capture": "motion-context-ai-01",
+  "sha256": "4904c67b8f9f31e2b54c17911f585d6ea27f958dee0672013e5681214cb5813d",
+  "trains": {
+    "400005": {
+      "is_player": false,
+      "eligible_pairs": 1736,
+      "cross_clock_pairs": 1505,
+      "gap": {
+        "min": 0.00526070054691981,
+        "median": 0.20002529358631835,
+        "p95": 0.20640153242675582,
+        "max": 0.48825348467413343
+      },
+      "stored_state_rate": {
+        "min": -11.368922617108147,
+        "median": 0.0,
+        "p95": 0.12391490832818905,
+        "max": 1.1391842204881668
+      },
+      "gap_difference_rate": {
+        "min": -2.8370397654588784,
+        "median": 0.0,
+        "p95": 0.010223828940977635,
+        "max": 2.894567785348688
+      },
+      "absolute_rate_difference": {
+        "min": 0.0,
+        "median": 0.0010949457868149287,
+        "p95": 0.5440395902203291,
+        "max": 11.368943033325452
+      },
+      "same_clock_absolute_rate_difference": {
+        "min": 0.0,
+        "median": 0.0007811553036124073,
+        "p95": 0.11368158465935968,
+        "max": 0.48125873266071667
+      },
+      "worst": {
+        "pair": [
+          68256672,
+          68316576
+        ],
+        "time0": 73902.4921875,
+        "time1": 73902.5859375,
+        "gap0": 0.2015737930927076,
+        "gap1": 0.20157570898224042,
+        "rate": -11.368922617108147,
+        "finite_difference": 2.0416217304615216e-05,
+        "error": 11.368943033325452,
+        "same_clock": false
+      }
+    }
+  },
+  "limitations": "Adjacent unpaused samples with elapsed delta0..1s,unchanged origin,stable reciprocal car pairs/definitions and train speed>0.5 at either end. Endpoint formulas reconstructed in double precision;epsilon1e-7 approximate. Non-atomic reads and asynchronous placement can create apparent gap jumps. No force/slack truth claim;no sign-agreement guarantee or tolerances inferred from these distributions."
+}

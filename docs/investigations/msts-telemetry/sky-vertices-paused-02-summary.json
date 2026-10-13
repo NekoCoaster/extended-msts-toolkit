@@ -1,0 +1,324 @@
+{
+  "source": "captures\\sky-vertices-paused-02\\samples.jsonl",
+  "sha256": "e2a4eef46d8cf3989adfd220c3688b4cb3e988b44f04a4eaadd989a15b63edf7",
+  "samples": 61,
+  "errors": [],
+  "unstable": [
+    {
+      "sample": 8,
+      "object": "layer:0:53760164:53758520"
+    },
+    {
+      "sample": 22,
+      "object": "layer:2:53761020:53752416"
+    },
+    {
+      "sample": 39,
+      "object": "satellite:1:53864209:53846732"
+    },
+    {
+      "sample": 54,
+      "object": "layer:1:53760592:53756376"
+    },
+    {
+      "sample": 59,
+      "object": "layer:0:53760164:53758520"
+    }
+  ],
+  "paused_samples": 61,
+  "time_range": [
+    74360.5859375,
+    74360.5859375
+  ],
+  "delta_range": [
+    0.008017200045287609,
+    0.015243499539792538
+  ],
+  "max_read_seconds": 0.0011483000125735998,
+  "objects": [
+    {
+      "identity": "layer:0:53760164:53758520",
+      "observations": 61,
+      "vertex_counts": [
+        41
+      ],
+      "frame_counts": [
+        1
+      ],
+      "selected_frames": [
+        0
+      ],
+      "clock_range": [
+        2571.04541015625,
+        2601.05615234375
+      ],
+      "diffuse_values": [
+        1381680,
+        4279571760
+      ],
+      "changes_between_observations": {
+        "uv": 60,
+        "diffuse": 0,
+        "secondary": 0,
+        "position": 0,
+        "selected_frame": 0,
+        "clock_raw": 60
+      },
+      "first_vertex": {
+        "index": 0,
+        "position": [
+          0.0,
+          300.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 4278190080,
+        "uv": [
+          0.5,
+          13.355323791503906
+        ]
+      },
+      "last_vertex": {
+        "index": 0,
+        "position": [
+          0.0,
+          300.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 4278190080,
+        "uv": [
+          0.5,
+          13.50544261932373
+        ]
+      }
+    },
+    {
+      "identity": "layer:1:53760592:53756376",
+      "observations": 61,
+      "vertex_counts": [
+        41
+      ],
+      "frame_counts": [
+        1
+      ],
+      "selected_frames": [
+        0
+      ],
+      "clock_range": [
+        2571.04541015625,
+        2601.05615234375
+      ],
+      "diffuse_values": [
+        1381680,
+        4279571760
+      ],
+      "changes_between_observations": {
+        "uv": 0,
+        "diffuse": 0,
+        "secondary": 0,
+        "position": 0,
+        "selected_frame": 0,
+        "clock_raw": 60
+      },
+      "first_vertex": {
+        "index": 0,
+        "position": [
+          0.0,
+          1000.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 4278190080,
+        "uv": [
+          0.9999999403953552,
+          0.9999999403953552
+        ]
+      },
+      "last_vertex": {
+        "index": 0,
+        "position": [
+          0.0,
+          1000.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 4278190080,
+        "uv": [
+          0.9999999403953552,
+          0.9999999403953552
+        ]
+      }
+    },
+    {
+      "identity": "layer:2:53761020:53752416",
+      "observations": 61,
+      "vertex_counts": [
+        73
+      ],
+      "frame_counts": [
+        1
+      ],
+      "selected_frames": [
+        0
+      ],
+      "clock_range": [
+        2571.04541015625,
+        2601.05615234375
+      ],
+      "diffuse_values": [
+        1381680,
+        4279571760
+      ],
+      "changes_between_observations": {
+        "uv": 60,
+        "diffuse": 0,
+        "secondary": 0,
+        "position": 0,
+        "selected_frame": 0,
+        "clock_raw": 60
+      },
+      "first_vertex": {
+        "index": 0,
+        "position": [
+          0.0,
+          800.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 4278190080,
+        "uv": [
+          1.0,
+          13.855366706848145
+        ]
+      },
+      "last_vertex": {
+        "index": 0,
+        "position": [
+          0.0,
+          800.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 4278190080,
+        "uv": [
+          1.0,
+          14.005485534667969
+        ]
+      }
+    },
+    {
+      "identity": "satellite:0:53863748:53749592",
+      "observations": 61,
+      "vertex_counts": [
+        4
+      ],
+      "frame_counts": [
+        1
+      ],
+      "selected_frames": [
+        4294967295
+      ],
+      "clock_range": [
+        0.0,
+        0.0
+      ],
+      "diffuse_values": [
+        4294967295
+      ],
+      "changes_between_observations": {
+        "uv": 0,
+        "diffuse": 0,
+        "secondary": 0,
+        "position": 0,
+        "selected_frame": 0,
+        "clock_raw": 0
+      },
+      "first_vertex": {
+        "index": 0,
+        "position": [
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "diffuse": 4294967295,
+        "secondary": 4278190080,
+        "uv": [
+          0.0,
+          1.6815581571897805e-43
+        ]
+      },
+      "last_vertex": {
+        "index": 0,
+        "position": [
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "diffuse": 4294967295,
+        "secondary": 4278190080,
+        "uv": [
+          0.0,
+          1.6815581571897805e-43
+        ]
+      }
+    },
+    {
+      "identity": "satellite:1:53864209:53846732",
+      "observations": 61,
+      "vertex_counts": [
+        4
+      ],
+      "frame_counts": [
+        1
+      ],
+      "selected_frames": [
+        0
+      ],
+      "clock_range": [
+        2571.04541015625,
+        2601.05615234375
+      ],
+      "diffuse_values": [
+        4279571760
+      ],
+      "changes_between_observations": {
+        "uv": 0,
+        "diffuse": 0,
+        "secondary": 0,
+        "position": 0,
+        "selected_frame": 0,
+        "clock_raw": 60
+      },
+      "first_vertex": {
+        "index": 0,
+        "position": [
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 1610612736,
+        "uv": [
+          0.0,
+          0.0
+        ]
+      },
+      "last_vertex": {
+        "index": 0,
+        "position": [
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "diffuse": 4279571760,
+        "secondary": 1610612736,
+        "uv": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "limitations": "Non-atomic reads;sampled buffer retention/change is not active visibility,draw calls or exact producer cadence. Same pointers across this bounded capture are not persistent lifetime identity. Changed UVs alone do not establish wall/simulation time units."
+}

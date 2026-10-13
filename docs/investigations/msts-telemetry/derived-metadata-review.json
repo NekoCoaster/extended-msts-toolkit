@@ -1,0 +1,251 @@
+{
+  "car.mass": {
+    "extraction": "1/body.inverse_mass only for finite strictly positive inverse mass and validated car/body ownership",
+    "evidence_status": "Implemented in read_live.py; bounded consist aggregate observation retained",
+    "limitations": "Zero,negative,nonfinite or unavailable inverse mass yields unavailable mass,not zero or infinite mass. Body mass provenance differs from definition mass. Do not infer dynamic fuel/load effects from one reciprocal value.",
+    "evidence": [
+      "read_live.py",
+      "CONSIST-AGGREGATE-FINDINGS.md"
+    ]
+  },
+  "train.total_mass": {
+    "extraction": "Sum finite positive reciprocal body masses over one complete validated connected-car traversal; unavailable if any member/ownership/link is invalid",
+    "evidence_status": "23-car player physics-body sum2551687.039209917 observed beside stored definition aggregate2551687.0",
+    "limitations": "Not the native definition-mass aggregate train+9a. Inverse-mass and summation rounding differ; dynamic load/fuel inclusion and physical AI equivalence are unvalidated. Partial traversal must not be reported as a full total.",
+    "evidence": [
+      "CONSIST-AGGREGATE-FINDINGS.md",
+      "probe_consist_totals.py"
+    ]
+  },
+  "train.car_count": {
+    "extraction": "Count one complete bounded connected-car chain with reciprocal links and train ownership verified; unavailable on partial traversal,error,cycle or inconsistent roots",
+    "evidence_status": "Player coupling/separation fixture validates connected chain1->6->1 while physical-list count remains40",
+    "limitations": "Connected membership differs from physical-object count and persistent AI-service count. Stable count/root alone is not a coherent snapshot; five incomplete reads occurred in coupling evidence. Null owner may represent valid loose stock.",
+    "evidence": [
+      "COUPLING-LIFECYCLE-FINDINGS.md"
+    ]
+  },
+  "car.acceleration": {
+    "extraction": "Difference of finite stored body-velocity vectors divided by a separately justified positive producer-time interval,with stable body/car identity and coordinate frame",
+    "evidence_status": "Derived hypothesis; distinct player/AI clock comparisons invalidate assuming one universal gameplay-time denominator",
+    "limitations": "Reject resets,nonpositive/nonfinite deltas,identity or origin/frame discontinuities and inconsistent endpoint reads. Player physics and AI gameplay clocks gave different agreement in a historical captured configuration;that is not universal clock selection or validation in current no-NEMT instance. No automatic fallback to wall time. Not train+96 stored filtered acceleration or proof of physical longitudinal acceleration.",
+    "evidence": [
+      "INTEGRATOR-TIME-FINDINGS.md",
+      "TRAIN-ACCELERATION-FINDINGS.md",
+      "EXTRACTION-HANDOFF.md"
+    ]
+  },
+  "train.lifecycle_events": {
+    "extraction": "Compare complete validated registry and ownership snapshots within one session,retaining sample brackets and explicit unavailable states;rebuild identity associations across reload",
+    "evidence_status": "Representative player coupling/separation,AI physical removal and player reload identity behavior observed",
+    "limitations": "A failed or partial traversal is unavailable,not despawn. Physical removal is distinct from persistent service deletion or activity completion. Polling may miss intermediate changes;addresses/IDs can be reused. Observed sample brackets are not exact native event timestamps.",
+    "evidence": [
+      "COUPLING-LIFECYCLE-FINDINGS.md",
+      "AI-STATION-RESET-FINDINGS.md",
+      "SAVE-RELOAD-RUNTIME-FINDINGS.md"
+    ]
+  },
+  "car.longitudinal_speed": {
+    "extraction": "Dot finite stored body velocity with the validated body forward basis;retain the original basis and its normalization check",
+    "evidence_status": "Implemented stored-vector projection in read_live.py;moving player/AI comparisons retained,not universal trajectory speed validation",
+    "limitations": "Projection is signed along the supplied body axis,not automatically cab reverser or route direction. Nonunit or malformed bases invalidate a speed interpretation;do not silently normalize a corrupt record. Stored velocity can disagree with track-following position derivatives.",
+    "evidence": [
+      "read_live.py",
+      "VEHICLE-MOTION-EVALUATION.md",
+      "INTEGRATOR-TIME-FINDINGS.md"
+    ]
+  },
+  "car.speed_magnitude": {
+    "extraction": "Euclidean norm of finite stored body.velocity components in their validated common frame",
+    "evidence_status": "Mathematical stored-vector magnitude;moving comparisons expose producer-phase and clock differences",
+    "limitations": "Unsigned 3D magnitude is not along-track speed,train+92 signed speed or proof of actual displacement rate. Intermediate body reset values and differing clocks can disagree with moving track state.",
+    "evidence": [
+      "VEHICLE-MOTION-EVALUATION.md",
+      "INTEGRATOR-TIME-FINDINGS.md"
+    ]
+  },
+  "car.heading_pitch_roll": {
+    "extraction": "Proposed Euler decomposition of validated orthonormal body basis with explicitly chosen handedness,axis order,angle units and singularity/wrap policy",
+    "evidence_status": "Orientation-angle hypothesis;no universal Euler convention or HUD agreement established",
+    "limitations": "Raw basis vectors remain authoritative evidence. Do not report a numeric Euler tuple without a documented convention. Degenerate/nonfinite bases are unavailable;gimbal lock and angle wrapping are representational,not native discontinuities. World,body and track orientation are distinct.",
+    "evidence": [
+      "VEHICLE-MOTION-EVALUATION.md",
+      "EXTRACTION-HANDOFF.md"
+    ]
+  },
+  "train.relative_motion": {
+    "extraction": "Proposed pairwise position difference in a proven common origin/frame;distance=norm(delta),closing speed=-dot(relative velocity,unit(delta)) for nonzero distance with a defined A-to-B ordering",
+    "evidence_status": "Derived relative-motion hypothesis;origin rebase and stored-vector discrepancies constrain interpretation",
+    "limitations": "Specify reference points and identities for both trains. Zero separation has undefined radial direction;do not divide by zero. Do not combine abstract AI service positions and physical body positions without a validated frame/time mapping. Stored-vector closing speed is not automatically separation derivative.",
+    "evidence": [
+      "MOVING-PLAYER-ORIGIN-FINDINGS.md",
+      "INTEGRATOR-TIME-FINDINGS.md"
+    ]
+  },
+  "car.wheel_rotation_estimate": {
+    "extraction": "Ideal no-slip angular speed=validated longitudinal speed divided by finite strictly positive wheel radius in matching metre units",
+    "evidence_status": "Kinematic hypothesis only;native stored wheel rate and animation callbacks are separately traced",
+    "limitations": "Requires the radius corresponding to the actual wheel set,not any engine radius field. Slip,gearing,eligibility/sign conventions and animation branches can differ. This estimates angular speed,not phase or actual rail adhesion;zero/missing radius is unavailable.",
+    "evidence": [
+      "WHEEL-ADHESION-FINDINGS.md"
+    ]
+  },
+  "session.elapsed_candidate": {
+    "extraction": "Literal wrapped day clock minus activity start;retain as an arithmetic candidate known to fail as general elapsed time across midnight",
+    "evidence_status": "Observed -82799.921875 after Explore midnight versus native elapsed3600.074951171875",
+    "limitations": "Do not repair by adding86400 without establishing day count,reset and save semantics. Native elapsed is separate storage;this failed arithmetic candidate remains documented without a keep/drop decision.",
+    "evidence": [
+      "CLOCK-FINDINGS.md",
+      "midnight-clock-20261010-summary.json"
+    ]
+  },
+  "track.curvature_magnitude": {
+    "extraction": "zero for straight radius=0; otherwise 1/abs(radius). Not signed vehicle-relative turn or measured physics curvature.",
+    "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
+    "limitations": "Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable.",
+    "evidence": [
+      "TRACK-GEOMETRY-FINDINGS.md",
+      "TRACK-TOPOLOGY-FINDINGS.md",
+      "INFRASTRUCTURE-FINDINGS.md",
+      "MOVING-PLAYER-ORIGIN-FINDINGS.md"
+    ]
+  },
+  "track.straight_grade_candidate": {
+    "extraction": "-100*tan(section_pitch), section_pitch=[section+0x2c]. Car Y/node-distance comparison supports slope in observed straight sections; direction reversal, curves and HUD sign remain unverified.",
+    "evidence_status": "native geometry parser/traversal traced and bytes verified; four definitions matched installed assets; grade remains a scoped derived candidate",
+    "limitations": "Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable.",
+    "evidence": [
+      "TRACK-GEOMETRY-FINDINGS.md",
+      "TRACK-TOPOLOGY-FINDINGS.md",
+      "INFRASTRUCTURE-FINDINGS.md",
+      "MOVING-PLAYER-ORIGIN-FINDINGS.md"
+    ]
+  },
+  "track.route_position_candidate": {
+    "extraction": "X=localX+2048*originTileX; Z=localZ+2048*originTileZ; Y retained; usefloat64 and stable origin/body identities.",
+    "evidence_status": "Native conversion traced;two runs of the same originX+1boundary retain45matched player/AIcar-body identities and stable origin rereads;other boundaries/geographic conversion remain unvalidated",
+    "limitations": "Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable.",
+    "evidence": [
+      "TRACK-GEOMETRY-FINDINGS.md",
+      "TRACK-TOPOLOGY-FINDINGS.md",
+      "INFRASTRUCTURE-FINDINGS.md",
+      "MOVING-PLAYER-ORIGIN-FINDINGS.md"
+    ]
+  },
+  "topology.selected_connection": {
+    "extraction": "pin index=input_count+selected_branch; validate against total count, then read linked node. Native reverse traversal chooses input pin zero.",
+    "evidence_status": "Native direction-dependent pin selection traced;earlier726-node traversal superseded by full732-node registry and route-ID validation;selected branch remains distinct from authority/occupancy",
+    "limitations": "Full732-node registry resolves earlier disconnected-component and eight ambiguous-ID limitations for this route build. Selected connection is a direction-dependent traversal result,not reservation,occupancy,permission or visible switch blade state;do not interpret it as a universal straight/diverging enum.",
+    "evidence": [
+      "TRACK-GEOMETRY-FINDINGS.md",
+      "TRACK-TOPOLOGY-FINDINGS.md",
+      "INFRASTRUCTURE-FINDINGS.md",
+      "MOVING-PLAYER-ORIGIN-FINDINGS.md"
+    ]
+  },
+  "topology.route_node_id_candidate": {
+    "extraction": "Registry index+1 in database node table; all 732 IDs corroborated against current TDB kinds, pins and vector geometry. Preserve route-build provenance.",
+    "evidence_status": "all 732 registry-derived route IDs validated in current route; earlier geometry ambiguity resolved",
+    "limitations": "Reviewed against track geometry,topology,full-registry and origin findings;existing scope limitations remain applicable.",
+    "evidence": [
+      "TRACK-GEOMETRY-FINDINGS.md",
+      "TRACK-TOPOLOGY-FINDINGS.md",
+      "INFRASTRUCTURE-FINDINGS.md",
+      "MOVING-PLAYER-ORIGIN-FINDINGS.md"
+    ]
+  },
+  "activity.event.horizontal_distance": {
+    "extraction": "Convert event tile/offset using current origin and2048m tiles; subtract first car+0x170 X/Z; sqrt horizontal squared distance",
+    "evidence_status": "Finite reconstruction supports event13 radius crossing and stop-event32 distance41.41465m",
+    "limitations": "Horizontal geometric reconstruction is independent of activation,latch and evaluator scheduling. Use first player car event-position source,not camera or body centre;retain origin and first-car identity checks.",
+    "evidence": [
+      "ACTIVITY-EVALUATOR-FINDINGS.md",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md"
+    ]
+  },
+  "activity.event.location_condition": {
+    "extraction": "distance squared < radius squared AND (TriggerOnStop=0 OR abs(player train+0x92)<double[0x7706d8])",
+    "evidence_status": "Event13 moving radius crossing and event32 stop-required predicate/latch transitions corroborated",
+    "limitations": "A true reconstructed predicate is not proof of event firing:activation,latch,reversible state and evaluator scheduling remain separate. Ordinary finite reconstruction is not bit-exact x87 boundary/nonfinite emulation.",
+    "evidence": [
+      "ACTIVITY-EVALUATOR-FINDINGS.md",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md"
+    ]
+  },
+  "electric.voltage_consist_condition": {
+    "extraction": "bounded lead then+a8 traversal; car flags80/84 and helper0040bad4 indirect value/bounds; see read_electric_voltage.py",
+    "evidence_status": "native display consumers traced; Acela pantograph-down transition and separate restored snapshot",
+    "limitations": "This reconstructs a conditional cab-display rule. A skipped helper is unavailable for this predicate,not false;route supply,pantograph command,derived display and actual traction current remain distinct.",
+    "evidence": [
+      "ELECTRIC-CAB-FINDINGS.md"
+    ]
+  },
+  "car.connection_endpoints": {
+    "extraction": "00634b49 local(0,1-definition414,+/-0.5*definition400);005ad370/005aaa39 transform using bodyc..30",
+    "evidence_status": "native geometry path traced;8paused connections reconstructed at approximately0.14942..0.15048m; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers",
+    "limitations": "Solver end0/end1 are not universally locomotive front/rear labels. Definition and body transforms must belong to the same validated pair;changing body buffers invalidates cross-sample comparisons.",
+    "evidence": [
+      "COUPLING-GEOMETRY-FINDINGS.md",
+      "INTEGRATOR-TIME-FINDINGS.md"
+    ]
+  },
+  "car.connection_endpoint_distance": {
+    "extraction": "car+a8 paired vehicle;norm(transformed following end1-current end0)",
+    "evidence_status": "native geometry path traced;8paused connections reconstructed at approximately0.14942..0.15048m; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers",
+    "limitations": "Nonnegative solver-point distance is not signed slack or spring compression. Do not subtract an assumed rest length or infer force without the validated spring branch and definition inputs.",
+    "evidence": [
+      "COUPLING-GEOMETRY-FINDINGS.md",
+      "INTEGRATOR-TIME-FINDINGS.md"
+    ]
+  },
+  "car.connection_endpoint_velocity": {
+    "extraction": "005e17a0:body88 + cross(body94,endpoint-body30)",
+    "evidence_status": "native vector helpers traced;8paused pairs yield near-zero residual rates,all angular velocity zero;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers; combined moving player/AI comparison supports distinct motion time bases",
+    "limitations": "Stored-state rigid-body formula is not universally the measured endpoint trajectory derivative. Keep cross-product ordering,coordinate frame and producer-phase limitations explicit.",
+    "evidence": [
+      "COUPLING-GEOMETRY-FINDINGS.md",
+      "MOTION-DIFFERENCE-FINDINGS.md",
+      "INTEGRATOR-TIME-FINDINGS.md"
+    ]
+  },
+  "car.connection_separation_rate": {
+    "extraction": "0062d335:dot(following endpoint velocity-current endpoint velocity,unit(following endpoint-current endpoint));zero direction below native epsilon",
+    "evidence_status": "native vector helpers traced;8paused pairs yield near-zero residual rates,all angular velocity zero;preserved moving player/AI observations reveal orientation changes with zero stored angular velocity and nonzero position/velocity discrepancies; combined moving player/AI endpoint analysis preserves discrepancies and phase-sensitive outliers; combined moving player/AI comparison supports distinct motion time bases",
+    "limitations": "Algebraic opening sign follows defined endpoint ordering;not proof of observed gap change. Native near-zero-direction epsilon and finite-input guards must be retained;historical clock comparisons are not a universal timing correction.",
+    "evidence": [
+      "COUPLING-GEOMETRY-FINDINGS.md",
+      "MOTION-DIFFERENCE-FINDINGS.md",
+      "INTEGRATOR-TIME-FINDINGS.md"
+    ]
+  },
+  "service.physicalization_endpoint_distances": {
+    "extraction": "sqrt(sum((service+94/fc vector - view+38 vector)^2));retain endpoint/view inputs and service gates",
+    "evidence_status": "native comparison/removal paths traced;paused distance inputs and disk/live threshold match",
+    "limitations": "Geometric threshold satisfaction is only part of the creation/removal decision. Null or uninitialized endpoints and inactive service gates are not valid spawning predictions;strict inequalities and both endpoint conditions matter.",
+    "evidence": [
+      "AI-LIFECYCLE-FINDINGS.md"
+    ]
+  },
+  "audio.stream.queue_count": {
+    "extraction": "bounded traversal from[state+4] following node+8;unavailable on bound/cycle/error",
+    "evidence_status": "native consumer/helper instruction ranges match disk/live;33receivers67streams captured;bounded chain exception preserved",
+    "limitations": "A research traversal cap is not the native queue capacity. A truncated queue is unavailable as a full count;record count is not playing voices,audio duration or audibility.",
+    "evidence": [
+      "AUDIO-STREAM-FINDINGS.md"
+    ]
+  },
+  "audio.pending.nested_child_count": {
+    "extraction": "count children only on successful return to wrapper;unavailable on null/type/cycle/bound/error",
+    "evidence_status": "verified native construction rule;4wrappers3children each with stable full-record rereads",
+    "limitations": "Returning to the type2 wrapper is valid termination;arbitrary child cycles are errors. Child count is not distinct sample count because references may share sample objects.",
+    "evidence": [
+      "AUDIO-NESTED-FINDINGS.md"
+    ]
+  }
+}

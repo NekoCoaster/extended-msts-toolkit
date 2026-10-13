@@ -1,0 +1,63 @@
+{
+  "save_sha256": "787f435189dcd5b645c3f448070d5d94e42330f8bca5275555d8e75b1b915a9d",
+  "matched_engine_blocks": 2,
+  "monitor_payloads": [
+    {
+      "vehicle_id": 200223,
+      "slot": "0x4ba",
+      "file_offset": 3001,
+      "raw60_matches": true,
+      "definition_index": 0
+    },
+    {
+      "vehicle_id": 200223,
+      "slot": "0x4fa",
+      "file_offset": 3065,
+      "raw60_matches": true,
+      "definition_index": 1
+    },
+    {
+      "vehicle_id": 200223,
+      "slot": "0x53a",
+      "file_offset": 3129,
+      "raw60_matches": true,
+      "definition_index": 2
+    },
+    {
+      "vehicle_id": 200223,
+      "slot": "0x57a",
+      "file_offset": 3193,
+      "raw60_matches": true,
+      "definition_index": 3
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x4ba",
+      "file_offset": 5475,
+      "raw60_matches": true,
+      "definition_index": 4294967295
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x4fa",
+      "file_offset": 5539,
+      "raw60_matches": true,
+      "definition_index": 4294967295
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x53a",
+      "file_offset": 5603,
+      "raw60_matches": true,
+      "definition_index": 4294967295
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x57a",
+      "file_offset": 5667,
+      "raw60_matches": true,
+      "definition_index": 4294967295
+    }
+  ],
+  "limits": "Fixed tail layout from005f2d65/006106e2;engine identity joined by unique full876byte source match. Monitor payloads and indexes match pre-save source. Does not identify when later load/UI updates changed state;not general save-schema validation."
+}

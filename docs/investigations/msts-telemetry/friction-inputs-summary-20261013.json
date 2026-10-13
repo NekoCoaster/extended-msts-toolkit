@@ -1,0 +1,48 @@
+{
+  "capture": "captures/friction-inputs-20261013-01/accumulators.json",
+  "sha256": "5d7694a267abdc76ca817afde11a85c11ac612474baeb4caf0d623406f129198",
+  "clock": 64965.1015625,
+  "paused": 1,
+  "comparison_guards_pass": true,
+  "groups": [
+    {
+      "player": true,
+      "vehicles": 8,
+      "definitions": 4,
+      "values": [
+        [
+          150.0,
+          1.0,
+          -0.44703999161720276,
+          0.0,
+          1.0,
+          5.099999904632568,
+          1.0,
+          -1.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "player": false,
+      "vehicles": 11,
+      "definitions": 9,
+      "values": [
+        [
+          150.0,
+          1.0,
+          -0.44703999161720276,
+          0.0,
+          1.0,
+          5.099999904632568,
+          1.0,
+          -1.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "limitations": "Ten loaded Friction scalars, not ten known physical quantities. Retained five-element coefficients key is the first half. Rereads and same-clock guards do not make sequential observations atomic; no force reconstruction or parser execution claim."
+}

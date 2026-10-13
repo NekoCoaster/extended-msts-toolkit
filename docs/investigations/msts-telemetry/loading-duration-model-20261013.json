@@ -1,0 +1,64 @@
+{
+  "source_sha256": "0f4873ffa12950fa0e78654971c33e756c4482ada665566ed52bd79bac7c0978",
+  "trace": [
+    {
+      "index": 0,
+      "eligible": false
+    },
+    {
+      "index": 1,
+      "eligible": true,
+      "remaining": 77.81401062011719,
+      "counted": true
+    },
+    {
+      "index": 2,
+      "eligible": true,
+      "remaining": 65.51400756835938,
+      "counted": true
+    },
+    {
+      "index": 3,
+      "eligible": true,
+      "remaining": 53.31400680541992,
+      "counted": true
+    },
+    {
+      "index": 4,
+      "eligible": true,
+      "remaining": 41.014007568359375,
+      "counted": true
+    },
+    {
+      "index": 5,
+      "eligible": true,
+      "remaining": 28.6140079498291,
+      "counted": true
+    },
+    {
+      "index": 6,
+      "eligible": true,
+      "remaining": 16.41400909423828,
+      "counted": true
+    },
+    {
+      "index": 7,
+      "eligible": true,
+      "remaining": 3.9140090942382812,
+      "counted": true
+    },
+    {
+      "index": 8,
+      "eligible": true,
+      "remaining": -8.285990715026855,
+      "counted": false
+    }
+  ],
+  "counted_vehicles": 7,
+  "initial_duration": 42.85714340209961,
+  "after_assumed_quarter_step": 42.60714340209961,
+  "captured_first_positive": 42.60714340209961,
+  "exact_float32_match": true,
+  "minimum_wait_not_read_by_inspected_branch": 180.0,
+  "limits": "Later input snapshot,not simultaneous with onset. Quarter-step hypothesis agrees exactly but is not an instruction trace. Models finite captured inputs and camera-nonnull branch only;does not validate every definition kind,override or other loading path."
+}

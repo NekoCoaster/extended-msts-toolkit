@@ -1,0 +1,190 @@
+{
+  "brake-release-02": {
+    "samples": 1739,
+    "errors": 0,
+    "sim_time_range": [
+      36372.03515625,
+      36452.0078125
+    ],
+    "mode_transitions": [
+      {
+        "time": 36372.03515625,
+        "mode": "0x1000",
+        "handle": 0.8365000486373901
+      },
+      {
+        "time": 36449.7265625,
+        "mode": "0x10",
+        "handle": 0.20000000298023224
+      },
+      {
+        "time": 36450.09375,
+        "mode": "0x4",
+        "handle": 0.0
+      }
+    ],
+    "paused_end": 0,
+    "speed_range": [
+      0.0,
+      0.0
+    ],
+    "cylinder_ranges": [
+      [
+        28.352333068847656,
+        52.71233367919922
+      ],
+      [
+        28.352333068847656,
+        52.71233367919922
+      ],
+      [
+        28.352333068847656,
+        52.71233367919922
+      ],
+      [
+        28.352333068847656,
+        52.71233367919922
+      ],
+      [
+        28.352333068847656,
+        52.71233367919922
+      ],
+      [
+        28.352333068847656,
+        52.71233367919922
+      ],
+      [
+        28.352333068847656,
+        52.71233367919922
+      ],
+      [
+        28.352333068847656,
+        52.71233367919922
+      ]
+    ],
+    "final_cylinders": [
+      28.352333068847656,
+      28.352333068847656,
+      28.352333068847656,
+      28.352333068847656,
+      28.352333068847656,
+      28.352333068847656,
+      28.352333068847656,
+      28.352333068847656
+    ],
+    "final_pipe": [
+      96.03333282470703,
+      96.03333282470703,
+      96.03333282470703,
+      96.03333282470703,
+      96.03333282470703,
+      96.03333282470703,
+      96.03333282470703,
+      96.03333282470703
+    ],
+    "fall_latch_values": [
+      0,
+      1
+    ],
+    "fall_timer_range": [
+      0.0,
+      1.5
+    ],
+    "lead_reference_range": [
+      28.352333068847656,
+      53.704307556152344
+    ],
+    "unequal_pipe_samples": 0,
+    "unequal_cylinder_samples": 0,
+    "crossed_time_reads": 183
+  },
+  "brake-release-settling-01": {
+    "samples": 580,
+    "errors": 0,
+    "sim_time_range": [
+      36464.9375,
+      36494.90234375
+    ],
+    "mode_transitions": [
+      {
+        "time": 36464.9375,
+        "mode": "0x4",
+        "handle": 0.0
+      }
+    ],
+    "paused_end": 0,
+    "speed_range": [
+      0.0,
+      0.0
+    ],
+    "cylinder_ranges": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "final_cylinders": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "final_pipe": [
+      110.0,
+      110.0,
+      110.0,
+      110.0,
+      110.0,
+      110.0,
+      110.0,
+      110.0
+    ],
+    "fall_latch_values": [
+      0
+    ],
+    "fall_timer_range": [
+      0.0,
+      0.0
+    ],
+    "lead_reference_range": [
+      0.9473342895507812,
+      0.9473342895507812
+    ],
+    "unequal_pipe_samples": 0,
+    "unequal_cylinder_samples": 0,
+    "crossed_time_reads": 81
+  },
+  "limitations": "Separate bounded captures have an unobserved gap; do not concatenate as continuous. Sequential50ms reads do not measure physical propagation speed. Modes4/10hex/1000hex validated for this player Acela; AI and other brake types untested. Latch transitions are not proof of audible playback."
+}

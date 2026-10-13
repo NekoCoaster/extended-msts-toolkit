@@ -1,0 +1,1324 @@
+{
+  "files": [
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\after the storm (traffic).pat",
+      "sha256": "d1929369022658c55d2da5747f1472299c0a022c7cd678c9d81bac469991c809",
+      "tokens": 25,
+      "parsed": 25
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\aftstorm.pat",
+      "sha256": "9bc7693f4aa1d7410efb94e836ee1ee1cc8359764d5432b06821284f94454068",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\carlisle - settle .pat",
+      "sha256": "46ace157d088c43a447ed2099473a2bfc7caf329c6f05470ce6cbac95edfba14",
+      "tokens": 31,
+      "parsed": 31
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\carlisle-settle winter (traffic).pat",
+      "sha256": "e3ce7f8a3ba06ba4e672717085c4218359df65a7db4a0845288a7dda25e3aff9",
+      "tokens": 28,
+      "parsed": 28
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\carlisle-settle winter (traffic04).pat",
+      "sha256": "b65a938aa305e059acb1ae02024a6084e2575b0db8b566c3aa25ce5affaa83e2",
+      "tokens": 27,
+      "parsed": 27
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\local service (traffic).pat",
+      "sha256": "d8b91e003fa305560ba9a4214e786eae2f3f29b420fe6243067098b3f9e7c588",
+      "tokens": 24,
+      "parsed": 24
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\local service (traffic01).pat",
+      "sha256": "5d1203389d1ee05ec8401391ea4899e1b68c9a1f8fc17cfc8530c2f1e75e3c85",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\local service.pat",
+      "sha256": "f10066f0a7e142bb9d871e9eab76efb8fe5afc9d32d09c4e5b09efbe16ec9095",
+      "tokens": 31,
+      "parsed": 31
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\lowwater.pat",
+      "sha256": "ab9b5addf376c7efa57b847c8e0a868829538977b41c1c30a12655bf6e4a726a",
+      "tokens": 26,
+      "parsed": 26
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\medemerg.pat",
+      "sha256": "86743b38f68a5b7c893fc0c5eb3d1c270cfbf11b8afb3978fa024c3bb78efda9",
+      "tokens": 27,
+      "parsed": 27
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\medical emergency (traffic).pat",
+      "sha256": "db3e05617ae4bb1179745e24a41ef405e8e0cf6932a4d964a2decd65ada043a7",
+      "tokens": 30,
+      "parsed": 30
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\royal scot rescue (traffic).pat",
+      "sha256": "29109b9600944e6d0fc3fc749954fc662793493d2b9b34e73880e75fad813182",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\rsrescue.pat",
+      "sha256": "97781b03ba2cff308af6b6360cb17e6592ac83c51857525a208c1c3433dd8dfc",
+      "tokens": 7,
+      "parsed": 7
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\settle - carlisle.pat",
+      "sha256": "dd340886f2020b5f0da66c4c3da79b5dc19132c209d9edd2e541a58cd1de5893",
+      "tokens": 28,
+      "parsed": 28
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\settle-carlisle summer (traffic).pat",
+      "sha256": "1b0965cdf8d714551fe2f6850b93e4b2330c489701c8d84c327825c530a742a2",
+      "tokens": 33,
+      "parsed": 33
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\short passenger run (traffic).pat",
+      "sha256": "33f53b7fc0ca7cf066f1403a6d25f26be46e225ad2e0a584ed4ca6cc70a04061",
+      "tokens": 12,
+      "parsed": 12
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\shrtpass.pat",
+      "sha256": "8a5201a3390d0b4402f76d3d9eeae842b892de3e6d8e34d9319797dc79d6b817",
+      "tokens": 7,
+      "parsed": 7
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\spdrecrd.pat",
+      "sha256": "2f3678b89b915e43f071452be17002bed13552c347b1a894ba384584343a278b",
+      "tokens": 7,
+      "parsed": 7
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\tut5path.pat",
+      "sha256": "1b5164504837e5085ed31e412684a447c6873c6d9da6a6bba2ba4d066bbb11e3",
+      "tokens": 3,
+      "parsed": 3
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\tut5trafficpath1.pat",
+      "sha256": "0c9c650a26f40e34f84b58092e73d60e6c666f2185c9d41dfce9821e208aa593",
+      "tokens": 5,
+      "parsed": 5
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE1\\PATHS\\tut5trafficpath2.pat",
+      "sha256": "cfbc88b60473f5fa8deaa471e624a92603b4be6ef38c47bd0eb3a17cc10e11f6",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\aioeinsa.pat",
+      "sha256": "55e7b8743bc14a602779e150f7cdc4a2ce13fd3efb4a39ac088eac25cf662f68",
+      "tokens": 112,
+      "parsed": 112
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\barcarso.pat",
+      "sha256": "635ec344dd271106ed17fdd7d46d1686a97d699529e73420ce33077ccb2c28d7",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\bride and groom (traffic).pat",
+      "sha256": "064ac95d34089a64da6a133278916e2f95e839dd4fdea2ceb504e30d8eccd2f0",
+      "tokens": 98,
+      "parsed": 98
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\bridegrm.pat",
+      "sha256": "c6c081552fc0a1afb349d03db1294576268c4a73b42013fe55d1b7e099ee8c33",
+      "tokens": 28,
+      "parsed": 28
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\innsasu.pat",
+      "sha256": "2dba72ce9ee29cfbc8cbaa6d705f10398bc87c089cc65b0281228149da3ab574",
+      "tokens": 104,
+      "parsed": 104
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\innsbruck - st anton .pat",
+      "sha256": "f1c63158473408364cf4d553befe81a11aeebf69e4738e6d642fa060d183eacd",
+      "tokens": 89,
+      "parsed": 89
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\innsbruck - st. anton summer (traffic).pat",
+      "sha256": "08bd3685a27accda3e43cca08e16d9140d2058fb49f1921886660e4ab8df9d94",
+      "tokens": 98,
+      "parsed": 98
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\itr (traffic).pat",
+      "sha256": "03188215c89fd60cf7c2475efb848070f69fe1cc2be43c7b825f4db45342627c",
+      "tokens": 76,
+      "parsed": 76
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\itr (traffic01).pat",
+      "sha256": "0ac0e8268f915618cca7928bcb963a6ec8429cee253d36a8688e85b15817372a",
+      "tokens": 26,
+      "parsed": 26
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\murder on the orient express (traffic).pat",
+      "sha256": "ee9b26543ac7029e164a2755f790bb89947d8b4d14933abd5285b00f93783e31",
+      "tokens": 67,
+      "parsed": 67
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\murder.pat",
+      "sha256": "9c819330d3c6434121b287ef280bda9cb8b2c5013fadf02ea8973cec14e0445f",
+      "tokens": 52,
+      "parsed": 52
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\replloco.pat",
+      "sha256": "a6d76f6448364478b5c68ddf26b25273d97daca3701b23e72fd5fa65fd13cc66",
+      "tokens": 12,
+      "parsed": 12
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\royalonb.pat",
+      "sha256": "88e3cbfe2e904c4c0f2b19e6461a6428c9915684412f7f6aa7819d98ae8a7f9b",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\royalty on board (traffic).pat",
+      "sha256": "2e60fb9c390bafdc9771c5d6a0c6e198f0cc84b82ddfb6cdbc9eb86c7a0f1974",
+      "tokens": 14,
+      "parsed": 14
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\sainnwn.pat",
+      "sha256": "2a009d7f682e4c1fb54587ad5a427cdaf6dee02759f026cb3ace97536857248a",
+      "tokens": 97,
+      "parsed": 97
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\short passenger run (traffic).pat",
+      "sha256": "4edf122638f07dbcd2dd575e0d8171711c25e66423c513910031a29cc7c2c4b8",
+      "tokens": 66,
+      "parsed": 66
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\shrtpass.pat",
+      "sha256": "817f5dd7a905a0b72f26cadfc7d42fcdfab503acf2ac84577d1135199f91079a",
+      "tokens": 20,
+      "parsed": 20
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\st anton - innsbruck.pat",
+      "sha256": "69d397a82460e48f6df3e0aae84fe41e1463ee602b71e6252ad8399afc3ef6c5",
+      "tokens": 100,
+      "parsed": 100
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\st. anton - innsbruck winter (traffic).pat",
+      "sha256": "8af464641e38cce56cacee84cb1cab45fcc94ce5c019baee95e421e840559685",
+      "tokens": 51,
+      "parsed": 51
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\strmsleep.pat",
+      "sha256": "550802ed8e5de325c9d79d6d16476903c2dcf9d5800fed9467ff2d89efee383e",
+      "tokens": 34,
+      "parsed": 34
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\EUROPE2\\PATHS\\tut4path.pat",
+      "sha256": "28d8155f450a74888d2218345a58f5103f82b8d1a24ea532e2b8d47aa9e44aed",
+      "tokens": 10,
+      "parsed": 10
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\hak-shinwinter (traffic 01).pat",
+      "sha256": "589efbd9747b5087b731134721fd4a2d4fc4c06f4668876b42fa65b3137b3433",
+      "tokens": 48,
+      "parsed": 48
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\hak-shinwinter (traffic 04).pat",
+      "sha256": "81471a2f3187ec112cd74b922a7e219ede39b80643c5df1b46fa2b64fdb626ff",
+      "tokens": 35,
+      "parsed": 35
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\hak-shinwinter (traffic).pat",
+      "sha256": "80ea21fb3bbeeb980838c787b0547c7d12f4ed852421d797a2d2a2abef883a90",
+      "tokens": 5,
+      "parsed": 5
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\hakone-shinjuku winter (traffic 03).pat",
+      "sha256": "f338653013966809cfff682a8d0bea5670c85fb785ec0b41dacbff34ffe2f180",
+      "tokens": 65,
+      "parsed": 65
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\hakone_yumoto - shinjuku.pat",
+      "sha256": "7c0718c8a7c0d01248e9bd091b159930238c833b09ba283ac269f5e25cfcbf73",
+      "tokens": 97,
+      "parsed": 97
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\hakshnwn.pat",
+      "sha256": "dac8c9f0c296ff2449df347adf47dc2fdac821762d445774a376a005203e5719",
+      "tokens": 94,
+      "parsed": 94
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\heavy delay day (traffic).pat",
+      "sha256": "2da938cd399bc5d09459dd36d67542dd1e98f831d9d2b7ad06f29aedd3e1b7be",
+      "tokens": 20,
+      "parsed": 20
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\hvydelay.pat",
+      "sha256": "7838cab21e854a5245d924921daf08ccabc05eacb0ba044fae8caeca46c107f9",
+      "tokens": 25,
+      "parsed": 25
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic 01).pat",
+      "sha256": "c5ac6b3d0b40c229b682a4334c01d4cd6ad891c93d8426bb877e553f88bbb42a",
+      "tokens": 70,
+      "parsed": 70
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic 02).pat",
+      "sha256": "3e4fdde29f5b576bd3fb1c1e7353e0685c693ea8f70e27841909f6a974d24681",
+      "tokens": 3,
+      "parsed": 3
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic 03).pat",
+      "sha256": "c185530761e71cb093cbe60bdbbd5eac2beeefbb59d6a2fda83199c8520ffa00",
+      "tokens": 67,
+      "parsed": 67
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic 05).pat",
+      "sha256": "edd16b9e5d06c9089f3baa91cb4ba02ec3f1c87c802abc7297fc27138bc3a26e",
+      "tokens": 10,
+      "parsed": 10
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic).pat",
+      "sha256": "b104bfb9d3949e0bdc850aa9dda8ec0466deb4a971b9f2ce1dbe50f869b6ad74",
+      "tokens": 5,
+      "parsed": 5
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\pubhol.pat",
+      "sha256": "bc57723138679f922ca9c4fdd55ba51276a0267072bc46ed18ccfbb232f5d7f4",
+      "tokens": 71,
+      "parsed": 71
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\public holiday (traffic).pat",
+      "sha256": "8a9ad043b25fd89531f1ef9a8a3ff05adcd271a379a920927447f35c4ba81f6e",
+      "tokens": 95,
+      "parsed": 95
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\shin-hakone summer (traffic).pat",
+      "sha256": "51b144e662b4aa6f664af7b9305111f22b51274abc56b1e6bd8e9dd75a0cab5d",
+      "tokens": 92,
+      "parsed": 92
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\shinhakwinter (traffic).pat",
+      "sha256": "7f7b969b3ff80e83ca0e2d046e861d58fdcae090bfe253dc5cf25128fa6ed8aa",
+      "tokens": 19,
+      "parsed": 19
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\shinhakwinter (traffic01).pat",
+      "sha256": "693bc7ada4502cfe5cb34efac06f9fb78d24c4252a687bf8f108efa0c45fb1c6",
+      "tokens": 40,
+      "parsed": 40
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\shinhakwinter.pat",
+      "sha256": "9e1c086c594bf67c27c972fa2e6580e854e348daf0dbb9f6a1360393d3e70de4",
+      "tokens": 26,
+      "parsed": 26
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\shinjuku - hakone_yumoto.pat",
+      "sha256": "fb354ca29a8a9d92fdd2cea8a3938fcd99f531b8974676a7b407054abf1fca93",
+      "tokens": 82,
+      "parsed": 82
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\shnghosu.pat",
+      "sha256": "b8fa79360059d2f6666d078aba7a5d6db81cd3241643321446831df7269767f4",
+      "tokens": 49,
+      "parsed": 49
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\short passenger run (traffic).pat",
+      "sha256": "3b89751a4fd3fcc2c05a686b86cbb235bf3803b3373a97e4ae422b858f8a098c",
+      "tokens": 19,
+      "parsed": 19
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\shrtpass.pat",
+      "sha256": "d777f801fd04ad03053e562a526606ada9bf780e7dfce23197e93635d08e814b",
+      "tokens": 4,
+      "parsed": 4
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\stmdam.pat",
+      "sha256": "53cb13dbe78963b05ee9d0607ed40d2ada42d74ab731ce713f0c9ee21d259809",
+      "tokens": 22,
+      "parsed": 22
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\storm damage (traffic).pat",
+      "sha256": "39e6d7bf6fc100a1f9b0cb0bb63cc2ce560fb93943d615e9c7491df90416e983",
+      "tokens": 21,
+      "parsed": 21
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\tut3path.pat",
+      "sha256": "636c524b6f56987160f334b2665595bf2f05f3ae6a8dc27ca21d17b785111544",
+      "tokens": 10,
+      "parsed": 10
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\tut3trafficpath1.pat",
+      "sha256": "b20ba97203055ced512a04d92b6ef38ddb686fdb0e92ba95308f109bc373b4c7",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\eastbound river winter (traffic).pat",
+      "sha256": "ff40328bf1f72f74905b455a1f34ddd6da20c9b6c3a7ff1d01e4608126553758",
+      "tokens": 7,
+      "parsed": 7
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\isabrscu.pat",
+      "sha256": "94130134c5204f206932fbab0426ab3db27d051500b7dba258b15d5b010f0952",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\isaburo (traffic 01).pat",
+      "sha256": "de35668cf59b56571af2db09af55f1420643041cf85a408b6532df5094fbbfff",
+      "tokens": 10,
+      "parsed": 10
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\isaburo (traffic).pat",
+      "sha256": "5daac7829e47fe3e7851754589bfab70cf973f3e5fe00dc7675a98f8e5ace02d",
+      "tokens": 18,
+      "parsed": 18
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\isaburo rescue (traffic).pat",
+      "sha256": "6c722c21fb3321e005162fc47303e9f79cfdb6c88f094878988c5e4615060b2b",
+      "tokens": 7,
+      "parsed": 7
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\isaburo.pat",
+      "sha256": "4b25b206a7f6d3cf456156143d74ec0a8de7f8f006fd2bbb673dc4704ea6f614",
+      "tokens": 32,
+      "parsed": 32
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\itr (traffic 01).pat",
+      "sha256": "b82d8990937b0799054f8be93a375fd3218c14b726451daf523b672c4c903b16",
+      "tokens": 3,
+      "parsed": 3
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\itr (traffic 02).pat",
+      "sha256": "62b6b8b7ba9f65f6024b651e425a916b017bbb9e8555e2e2c8ae54ee0689eeef",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\itr (traffic).pat",
+      "sha256": "24a14af8f693ad697167e2843a842d0d0a4dc1f9dba5839d1038cdfec8e5a4a1",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\low fuel (traffic).pat",
+      "sha256": "45819409d4a00f58cc9bab51178f5ae95ec1fd6bc81e66c6fb1d54143680f528",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\lowfuel.pat",
+      "sha256": "f44cc61a4d1f73e9677aa794d71fe62972fb842673fd11e53b350787c7901b75",
+      "tokens": 30,
+      "parsed": 30
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\nh-yat.pat",
+      "sha256": "8378bd2aa2a80ee4a7e30cf97b170e7322748bfc32179f70fa8132db9f45d75c",
+      "tokens": 24,
+      "parsed": 24
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\quake.pat",
+      "sha256": "30fc2cc8123fa6f84002ce5595768da44ea664fcd54cc7832fe1171b118374f5",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\shinpei (traffic 01).pat",
+      "sha256": "8719c7c67ad4ccbec925fa652af4ce231600d115590ad625081611f45fe68981",
+      "tokens": 3,
+      "parsed": 3
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\shinpei (traffic).pat",
+      "sha256": "15b261798f0f03821458559eac992afc1ce882f2b0a8eac0b31d4c3a91cdef93",
+      "tokens": 6,
+      "parsed": 6
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\shinpei.pat",
+      "sha256": "9612dc21a98ae7b18b16cd988cec9f26e16811c77c400f06f4de20a8a567be78",
+      "tokens": 33,
+      "parsed": 33
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\shrtpass.pat",
+      "sha256": "4d60db8eabf41d8e9d20bd556c754bb9ebe9c0eced53c6799c05d2967747600d",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\sunrise train (traffic).pat",
+      "sha256": "85509e7575a8e1b3bdb1c6161008427b2ca7b31269ee2e54a76f1fa9a5314eb1",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\sunrise.pat",
+      "sha256": "b33f03ecc170c1b608cb0c55a6232ac1a9b31858d0bfa293a1bfb00e1ecd10e2",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\tut1path.pat",
+      "sha256": "bb47c2b4467a67141fee19517bb23d8889b0163067c359199a42030dfa3326f7",
+      "tokens": 4,
+      "parsed": 4
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\westbound river (player).pat",
+      "sha256": "69d88c0d0a0f8bd569f1c998fec2268e8637f2e6f146f4a6fa95a7611c6fa9fc",
+      "tokens": 21,
+      "parsed": 21
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\westbound river (traffic 01).pat",
+      "sha256": "2f7ccf18c4e37e296ce80ba6d114ee80373eafd4405fd15498f98a765c989a0e",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\westbound river (traffic).pat",
+      "sha256": "674f5f49309e2f3120832161c37036a61bc005b52a296d428665313bad48293d",
+      "tokens": 7,
+      "parsed": 7
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\yat-nh.pat",
+      "sha256": "e11d2dc111d768e6561eb8e07123e618cadb3977d1aa434a0010c68a7dc59383",
+      "tokens": 25,
+      "parsed": 25
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\yatsushiro - yoshimatsu.pat",
+      "sha256": "5c739abd4c834a5271229e1116c5616a519a046d9ee837b2e9579fec6c3477b6",
+      "tokens": 55,
+      "parsed": 55
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\yoshimatsu - yatsushiro.pat",
+      "sha256": "352052021d757875dca35cb281277cc957fc59a052585c209d1e1f40d078fe9d",
+      "tokens": 53,
+      "parsed": 53
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\ysh-htoy.pat",
+      "sha256": "17871960a57928c161ef830059f7973247e4fd80ad71b24b962ee5e25eba48db",
+      "tokens": 30,
+      "parsed": 30
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Aix-Nimes.pat",
+      "sha256": "4e1443e8d958abce687d2e531037a0766296104902d7ee6bea4b5352ebcdb71d",
+      "tokens": 35,
+      "parsed": 35
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Aix-Valence direct.pat",
+      "sha256": "2f3833b205f89fc0ed005ce2b0859d0a4e3429e4a3f634dac57203d1e9d0ed8d",
+      "tokens": 44,
+      "parsed": 44
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Avignon-Marseille.pat",
+      "sha256": "2f9b7983ab345b00ac15a2c090b3d917d1eed1c317f8b5602e9d0496921027bb",
+      "tokens": 50,
+      "parsed": 50
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Avignon-Valence.pat",
+      "sha256": "20e2813578a498621ba21c1915d21e1ae4e4106677772c95ed6a224a8f40baf1",
+      "tokens": 34,
+      "parsed": 34
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Marseille-Aix.pat",
+      "sha256": "dbff8e30b3df349c77b046b588a008605a8237a9e4290e480e532db55ead8eb5",
+      "tokens": 36,
+      "parsed": 36
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Marseille-Avignon-Valence.pat",
+      "sha256": "81b3d0e2210cfafafd860fca473f64535ac34f2d848c2dcc07b878f5cdcdd7bf",
+      "tokens": 77,
+      "parsed": 77
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Marseille-Nimes direct.pat",
+      "sha256": "31f50cab23f4316220011bfade489513efa950234f7129c501727cfc3787119e",
+      "tokens": 65,
+      "parsed": 65
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Marseille-Nimes special.pat",
+      "sha256": "2db0a5968c409b33561dd3e01e016d4d72924d698b520f8415cb500e7ffba14e",
+      "tokens": 76,
+      "parsed": 76
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Marseille-Nimes standard.pat",
+      "sha256": "6eaa1ffb808f11c53bec544a1beabaeca6fb250c87fb596b57b358dc110683c0",
+      "tokens": 59,
+      "parsed": 59
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Marseille-Valence direct.pat",
+      "sha256": "8c4ae3911189f57ae46bf19893bd2f8280b5fc1a7a150da3e4897df47784afeb",
+      "tokens": 78,
+      "parsed": 78
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Marseille-Valence standard.pat",
+      "sha256": "d031c26838515b196568677e9da5f413c38112e35ba9e9e548409b6bb1adbbde",
+      "tokens": 79,
+      "parsed": 79
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Nimes-Marseille direct.pat",
+      "sha256": "72f19426451ac37a0aa41196fa891fea7c9a4341197d9e6a2524dda424046eb6",
+      "tokens": 67,
+      "parsed": 67
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Nimes-Marseille special.pat",
+      "sha256": "63b841c3cd23e84c12220a38e333c52c06982a047ae6c01ea8065b1188fafa3d",
+      "tokens": 94,
+      "parsed": 94
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Nimes-Marseille standard.pat",
+      "sha256": "a4f2f7e8c5319a8c5bf7de4b47da41b10ceefe59a54aff9d02f71027c7ffaf66",
+      "tokens": 71,
+      "parsed": 71
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Nimes-Valence.pat",
+      "sha256": "418efe440a31aec4b4697cf1e17a2be8c0949eef299b01739a4591b7f6b3d033",
+      "tokens": 48,
+      "parsed": 48
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Valence-Avignon-Marseille.pat",
+      "sha256": "00711265e612164f7b82c4b5676df434051812ac89e60a46e3048f66bef67b2c",
+      "tokens": 75,
+      "parsed": 75
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Valence-Marseille direct.pat",
+      "sha256": "4ca3d379ceaeab4447bc109ada8b0d25c113af12933c0e4fcb417cb8d7c879ce",
+      "tokens": 76,
+      "parsed": 76
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Valence-Marseille standard.pat",
+      "sha256": "c2499adfbd939ff87deb7f28fe019b44f91877de22ea8c7e1bffb4345cc25a55",
+      "tokens": 77,
+      "parsed": 77
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\LGVMed\\PATHS\\Valence-Nimes.pat",
+      "sha256": "795bfaf582f2363fd1121bd96cbd7a7c30015b31bc39e638c7b4af60497ff0fd",
+      "tokens": 43,
+      "parsed": 43
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\MegaCoaster\\PATHS\\Mega-Start accelerated.pat",
+      "sha256": "814a3a824054a651b2236c63706853b248df556641da705a5dc4f36a1270318a",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\MegaCoaster\\PATHS\\Mega-Start far.pat",
+      "sha256": "6b174eedf62659624cfb7997c8b52db8a4870c3bdca6169100f680f6ccfc381a",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\MegaCoaster\\PATHS\\Mega-Start near.pat",
+      "sha256": "e73796f6728d46c8efc2a0c589faa1807e8646f1c421f241dd37984f32dbb3ae",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\MegaCoaster\\PATHS\\Mini-Start far.pat",
+      "sha256": "8ce2215cebee49e1cf4671fbca73ced11aa84ef72c52475127973cf9421df6b0",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\MegaCoaster\\PATHS\\Mini-Start near.pat",
+      "sha256": "d127fcdae7ba901b5a0a25f1a674b4be26c74b3a48e065d913dec3550dbaeb93",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\TUTORIAL ROUTE\\PATHS\\dlesson1.pat",
+      "sha256": "68a18b32c8dbf2e58fc4bd91c48ce8b18a5f1f0b6d204f00b54e351917d550db",
+      "tokens": 3,
+      "parsed": 3
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\TUTORIAL ROUTE\\PATHS\\elesson1.pat",
+      "sha256": "3baa67915f916863ff7c062c6d3779b6343c531c532fd8a933241640c6e65c08",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\TUTORIAL ROUTE\\PATHS\\slesson1.pat",
+      "sha256": "1708ae3a9d82bd723a4c9d37a3c29afe702b764a76c693f331d2838c0d90b8fb",
+      "tokens": 3,
+      "parsed": 3
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\afstorm.pat",
+      "sha256": "dbd81605f04e1ccb4e34e5f42f7dc5e0785a7a706b43ceb652a68061ed331b44",
+      "tokens": 21,
+      "parsed": 21
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\after the storm (traffic04).pat",
+      "sha256": "645dd5e1744f2472c7dd4fbcf7ad0941487d0a7b9b87f5a94aab4c7f5f55e2c9",
+      "tokens": 3,
+      "parsed": 3
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\after the storm (traffic05).pat",
+      "sha256": "c68309e533bc0499a38ac1c087e867c08c6719817b5668fce131feb03282609d",
+      "tokens": 28,
+      "parsed": 28
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\aftstrm (traffic03).pat",
+      "sha256": "4418b1ef6e9691205fbe4bf7ff67a96ba89d556b86418b9a1086246a34b9408a",
+      "tokens": 24,
+      "parsed": 24
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\aftstrmtraffic.pat",
+      "sha256": "b9c7d02f07eb45a9aead0be5ac3f6a7fa2ea5ef8ebccead53b936a09ccace5c3",
+      "tokens": 32,
+      "parsed": 32
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\aftstrmtraffic01.pat",
+      "sha256": "07d505e52e50ca5139f91adb9d02e2922ff75db4922e964a53d49a35371bc402",
+      "tokens": 39,
+      "parsed": 39
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\aiphwne2.pat",
+      "sha256": "c48d0eea6b8e1003ab35c969d45d9a97b232f69f830890c1f7f94d98cc618848",
+      "tokens": 90,
+      "parsed": 90
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\aiwnphex.pat",
+      "sha256": "a5b5336d95bd7c4250af0b7f48e411ace670d56b91903b26d78d1c62cdbb3623",
+      "tokens": 99,
+      "parsed": 99
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\blizzard (traffic).pat",
+      "sha256": "e3a81591aec182264fbd9ab8f471823fb881833eb864bca147d152d09c529378",
+      "tokens": 119,
+      "parsed": 119
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\blzzrd (traffic01).pat",
+      "sha256": "c8fd5e6779185e8fda6f24415a91b5e78f950f57e1df61e8681e53179ce6ce07",
+      "tokens": 114,
+      "parsed": 114
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\blzzrd (traffic02).pat",
+      "sha256": "331c17face4c94cd1dabdfa1535b8c24c70be6d62bfe24516869abb0d9ecd0b8",
+      "tokens": 134,
+      "parsed": 134
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\blzzrd.pat",
+      "sha256": "36fb35b60d9f59d8260be971182617289783b49e8417fa19ea52bfa55c9d41ed",
+      "tokens": 84,
+      "parsed": 84
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\blzzrdtraffic01.pat",
+      "sha256": "41b86a0c883fe71d5701e9059fc01668a99a10bef3f3be78534567b5bb7622b2",
+      "tokens": 124,
+      "parsed": 124
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\brdgstrk.pat",
+      "sha256": "ecb08e77687dc02ba0c3895f856e537153347d9cca11787d699c2eccaaef0681",
+      "tokens": 29,
+      "parsed": 29
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\bridge strike (traffic).pat",
+      "sha256": "62198f0c8b4e3eb737da38e478cd19b799915931a353bc1cc4a28bc42233fffc",
+      "tokens": 53,
+      "parsed": 53
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\itr (traffic).pat",
+      "sha256": "0d23f55a2e0d481310b8b18e6cf7ad14d3c287633025b8928edae364b5df3d44",
+      "tokens": 125,
+      "parsed": 125
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\itr (traffic02).pat",
+      "sha256": "e674d7f74f6b246a929d0262b0bb7d1ebb2a6baecae977999c6e2e90ae135df7",
+      "tokens": 109,
+      "parsed": 109
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\itr (traffic03).pat",
+      "sha256": "f90a90d732f5ae74a0655e0eeafc3c1d9030141f19fcfdf24c1b952449f2be50",
+      "tokens": 25,
+      "parsed": 25
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\itr (traffic06).pat",
+      "sha256": "1fb98b3ba2a05a488a0d131c3897d1c822ebe87307cc129527e3504be59751c0",
+      "tokens": 5,
+      "parsed": 5
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\lclserv.pat",
+      "sha256": "e2ca6677f3b51d6a343850c8298760bcd52e11f206b8ecafae7e0fa18bc7a6ab",
+      "tokens": 42,
+      "parsed": 42
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\local service (traffic).pat",
+      "sha256": "7054c23200f51ce5bdd73999038bf495729bdb5895816bf76ae1c7ad6b7c9aac",
+      "tokens": 59,
+      "parsed": 59
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\marylandplayerpath.pat",
+      "sha256": "3e8b46e2c227eb72880769b0400163027f862dc06c061c8162be7dab904f503b",
+      "tokens": 24,
+      "parsed": 24
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\marylandtrafficpath.pat",
+      "sha256": "769056fa62733e75f3459e0adad99c39bfc61ffa2f21a611d743425442b4d3d8",
+      "tokens": 22,
+      "parsed": 22
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\philwash.pat",
+      "sha256": "010976e6f76702198a20eb18acc99de03d33d632f93f76dd2538b31f7596d116",
+      "tokens": 89,
+      "parsed": 89
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\rdngyllw.pat",
+      "sha256": "08a7895ee48e856d24833a0f374c9e9cd63053f16bc1e5151dfe705505ef6af6",
+      "tokens": 34,
+      "parsed": 34
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\riding the yellows (traffic 03).pat",
+      "sha256": "b862a8bb3db7c0a1a41a1b93d9023829de5bb507246b34523df941f06dddfdf6",
+      "tokens": 34,
+      "parsed": 34
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\riding the yellows (traffic).pat",
+      "sha256": "1890d7f94903d053fc178d4a8a1b407e1f75fdd6e71e1ee04b93a87301f38f6f",
+      "tokens": 24,
+      "parsed": 24
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\short passenger run (traffic).pat",
+      "sha256": "cd423dc6159d1fc6d26dba15ce05da0000edbe80b18dfb29b4ed6b55afedddba",
+      "tokens": 24,
+      "parsed": 24
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\shortpr.pat",
+      "sha256": "13649fd3110c9ddef2366b335a3c990a4bc1bfaf9f5f28cc84b71e496dfd9a98",
+      "tokens": 19,
+      "parsed": 19
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\smmrex.pat",
+      "sha256": "a7e7c2c2e171bdc91a3b419ea8821dc619fedf928e4c081c2876b91dcfaa9942",
+      "tokens": 119,
+      "parsed": 119
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\sprbowl.pat",
+      "sha256": "71b0edde076e96b678f733d5ae8c89016708d91a47f3a493b674b2eb9d073838",
+      "tokens": 128,
+      "parsed": 128
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\summer express (traffic).pat",
+      "sha256": "d8c1b80f4140c3841c11ae8662f7b727a7b28353fd6f877e0895b0307dfe51f3",
+      "tokens": 86,
+      "parsed": 86
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\superbowl train (traffic).pat",
+      "sha256": "7a14c2c974d0f78fe4cac47670f5142d1c93d441600b59388fd0a4a603f57166",
+      "tokens": 78,
+      "parsed": 78
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\tn rescue.pat",
+      "sha256": "f6be557e7f01aa43d9e7fb2325b8a6981cd441f65e08276a7d608eee8cdccf94",
+      "tokens": 37,
+      "parsed": 37
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\train rescue (traffic).pat",
+      "sha256": "415ed8370af3721d15d36d2456148dc7c4fadb8c909870394c2148e8a181818b",
+      "tokens": 23,
+      "parsed": 23
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\PATHS\\tut2path.pat",
+      "sha256": "05e511fc17e8705be8c4554f4995460aa684dd554258d2d72d15878194e5fe62",
+      "tokens": 14,
+      "parsed": 14
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\auto train with set-out (traffic).pat",
+      "sha256": "35a0c9f3fea24014f7f4d392031d31dfa12dc3dc500d58397844e94c4eb3cd17",
+      "tokens": 17,
+      "parsed": 17
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\autotrn.pat",
+      "sha256": "727edfbfd54cbc73d050488a1353d2e13d955a1c09822649bd38790d7cb16e0a",
+      "tokens": 24,
+      "parsed": 24
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\cfwfs.pat",
+      "sha256": "6a94b6a8867f101ec4411570015593a310a066878e4ccc092404d766fb20233f",
+      "tokens": 26,
+      "parsed": 26
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\columbia falls set out (traffic).pat",
+      "sha256": "1d04fcb6219e3b8b15e7e06d410e17d000a3b5898c6e9cccb195ce6bcc0ba72f",
+      "tokens": 17,
+      "parsed": 17
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\cutbank grain player path.pat",
+      "sha256": "f9b56469c3708e104d5d52bec54cb863eacf86b1cd541bcb117be25559eae15c",
+      "tokens": 34,
+      "parsed": 34
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\cutbank grain traffic ai path.pat",
+      "sha256": "9bac87cbc85add03129f87953abcd2e4defcb3ed93f534da4e602c2a0e3e5ede",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\cutbank intermodal ai traffic path.pat",
+      "sha256": "82034fa0451e1e6102f4a43740d3151a1731dc08defdcceb658c0c4ff0862021",
+      "tokens": 6,
+      "parsed": 6
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\cutbank mixed gds ai traffic path.pat",
+      "sha256": "8bb3ba1eee9d55213f5f2d3bb4e71cc2e393558370c452ed30b4cf163ee30114",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\dawn oil train (player).pat",
+      "sha256": "8812eb4d946ba7da40dda698c9b4e7c6defb29ed10ab7e7ca842b72789d3743d",
+      "tokens": 10,
+      "parsed": 10
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\dawn oil train (traffic).pat",
+      "sha256": "6e4f8f155dc41f1f0b244e97d84f0f8eeb6370920f2f23815c70f0f7d63a04c3",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\esxpincal.pat",
+      "sha256": "9c0c58e071f361dae3312feb2cd279ad2c3c608f9999017dbe74e4212a408c4c",
+      "tokens": 6,
+      "parsed": 6
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\evegrain (traffic).pat",
+      "sha256": "0f31988d99da1b72d8b917192e232f02f9e0bc1b3229291caa7338ba57ed977f",
+      "tokens": 9,
+      "parsed": 9
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\evegrain.pat",
+      "sha256": "2baca7ec00c4f1ee8a274978244e506ddf33dac0be00553306ece50fd1d70d52",
+      "tokens": 11,
+      "parsed": 11
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\hotbox.pat",
+      "sha256": "e78188ad5de625289c017d3100a91c391f4737d3067fa9e4a1d5ab5151167e0c",
+      "tokens": 32,
+      "parsed": 32
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\hotboxtrafficpath.pat",
+      "sha256": "64cf75eae43bc7d5714b94e0d386c6ae2bc76364743b3256567b3669bb7b14d2",
+      "tokens": 39,
+      "parsed": 39
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\hotboxtrafficpath02.pat",
+      "sha256": "c8c0cf94b48efc19c5748a55b56224ab561c38e996b3dbaf9cdd2d152a1d34c7",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\itr (traffic 01).pat",
+      "sha256": "3fd9b2492c98672bfe9f3c7222e7a0fd03f7cb3e80ef67937967a043792d26e3",
+      "tokens": 79,
+      "parsed": 79
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\itr (traffic 04).pat",
+      "sha256": "2ea486bd9a5da1b245faa6f7836b9ba42e278e9d3be59765c5f549e53b916e2e",
+      "tokens": 39,
+      "parsed": 39
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\itr (traffic).pat",
+      "sha256": "53fab2ec6bf8efc6c8248eb6b9e34e897b85059a454372aa2c11da70a9b7442d",
+      "tokens": 7,
+      "parsed": 7
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\kalispel to whitefish local run (player).pat",
+      "sha256": "e216c9da2761dbb1c66f646af17ca700333721d3c58d6c2fa6c2fb870dd3a072",
+      "tokens": 59,
+      "parsed": 59
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\kalispell to whitefish local run (traffic).pat",
+      "sha256": "bb0d29e87f28e88e6551ccdfb30c5cfab478d5aec3de47f3555b4bd7219df5aa",
+      "tokens": 62,
+      "parsed": 62
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\key night train (traffic).pat",
+      "sha256": "ffdf3be9dfe26cdf271b578219077ea91dc8579775cb96119b09ea0fe4bcafb2",
+      "tokens": 49,
+      "parsed": 49
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\keytrn.pat",
+      "sha256": "8d527fb96ac22027be82c264455d5d215ed6a27345f4998ea967e0dbb7e4236a",
+      "tokens": 23,
+      "parsed": 23
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\local_one.pat",
+      "sha256": "f16b7856df7bb512480a2cb216d3a99395f2d7f6f9bdda5b0bbd8f8a016a8878",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\local_one_playerpath.pat",
+      "sha256": "6da1d8e632f783a37d6c3fd8513559bf6151c224d95ca7b1dc5f405c39fc2e5a",
+      "tokens": 21,
+      "parsed": 21
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\local_one_traffic_path.pat",
+      "sha256": "2a9811a7dc8ebb1390ea7533341338e43b77ee54c5a90790a037fa489fe39f0d",
+      "tokens": 14,
+      "parsed": 14
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\local_two_path1.pat",
+      "sha256": "58d629d2b727f8478b86b15355219b5702f481e1e9102600108a7bcc2e81b8de",
+      "tokens": 14,
+      "parsed": 14
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\long haul east (traffic 01).pat",
+      "sha256": "d152ce6eeeddf19ce0b609a3754eead02b0e7c64235e991eea9becbb87746c5c",
+      "tokens": 64,
+      "parsed": 64
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\long haul east (traffic 03).pat",
+      "sha256": "285454eb8b1e5c3b57e9eb20b28763fe23d4b085ce9b3ebc3913092db299dc40",
+      "tokens": 62,
+      "parsed": 62
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\long haul east (traffic).pat",
+      "sha256": "7f35c413408f89de8dce0524f6c7c761961fa6bd14fa67acd6387360a42a4eb3",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\long haul west (traffic 01).pat",
+      "sha256": "1269c330a8f9fe1049e2be8023377ccd3db39fc3221012f92e0fa1cd5a5ee1aa",
+      "tokens": 51,
+      "parsed": 51
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\long haul west (traffic).pat",
+      "sha256": "63ad21b902bfbbcba495f16cdb2ce6de44766dd30e148c5aa25543d30537872f",
+      "tokens": 14,
+      "parsed": 14
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\long-haul east (summer).pat",
+      "sha256": "3dbb62c578826277e3ca30af47a56caf9af3e2e44bb0876f80ea827b9c390eb4",
+      "tokens": 104,
+      "parsed": 104
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\long-haul west (blizzard).pat",
+      "sha256": "fa503d2c1c4e86159e2f30dec4414359413c6f43eb68a277c36dd07346b41ed4",
+      "tokens": 65,
+      "parsed": 65
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\longhale.pat",
+      "sha256": "3a624e4d5889037b0ff6e7b3b19f05fdefdca663965fc93483f2c19b5cf24af8",
+      "tokens": 74,
+      "parsed": 74
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\longwest.pat",
+      "sha256": "8832fd4197105bad99bc154357078da7152d97b7a0989320f9df87f719f0afee",
+      "tokens": 79,
+      "parsed": 79
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\morning intermodal (traffic).pat",
+      "sha256": "2a20f04f6fcabe969d960854da6f5ffe01b3156b04cecafa40a2d9af8b12bd89",
+      "tokens": 62,
+      "parsed": 62
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\nnmxdgds.pat",
+      "sha256": "53ff04d8a53bbc219f1f4d7f44aa57d45465eecf489065f34676cc0f9f760fc5",
+      "tokens": 25,
+      "parsed": 25
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\noon mixed goods (traffic).pat",
+      "sha256": "b4290d09d1f3573420414a7c5904ea4590206648fa07311692a1946cb40bf229",
+      "tokens": 29,
+      "parsed": 29
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\noon mixed goods .pat",
+      "sha256": "086fa0f06d34e900f82512cbfdbb347d409509eb0fd746ae46a9e9663a4a761e",
+      "tokens": 26,
+      "parsed": 26
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\noon mixed goods train.pat",
+      "sha256": "216ee5c85adfd247ff2dbe6d810d84dcabb1bf4ee3cf9bea5eb4b51d080972fe",
+      "tokens": 26,
+      "parsed": 26
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\playtest_freight1_path.pat",
+      "sha256": "799164ee8f00b09dc0740637cb2fe5a97f81938f2b56ac0079a7bda6f1da0d81",
+      "tokens": 8,
+      "parsed": 8
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\setout.pat",
+      "sha256": "e517926183601635725f9a0ae3527dde578dbaebd45a0994f83f16c1c6cc742b",
+      "tokens": 17,
+      "parsed": 17
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\shelby - whitefish.pat",
+      "sha256": "c8dbb7167abf0a6b00f3aa229fefee618bda7451e15661cc4eacfe9062bb5e0b",
+      "tokens": 88,
+      "parsed": 88
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\tut6path.pat",
+      "sha256": "df126ed9d4c841e30b97a7ae7fc8a6f20613d516d69e7cafb62fa0807ff48318",
+      "tokens": 4,
+      "parsed": 4
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\whitefish - shelby.pat",
+      "sha256": "ef3b1758c73f9ac89f5e5a4a33275ba9404b55c0c060be7e66a30ec3a7b953e9",
+      "tokens": 79,
+      "parsed": 79
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\whitefish yard switching.pat",
+      "sha256": "dbe40d1aec6a393186a23a4c88f82ff3c8805dfd8909bef10c0ca1dd6d55b028",
+      "tokens": 72,
+      "parsed": 72
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\yard_one_playerpath.pat",
+      "sha256": "0686544c75aa15684b05e1c8384796783c91558f8980ad506e621b500902e599",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\yard_one_traffic2.pat",
+      "sha256": "99fca4a574f5a564a3a8745b247b4602c583e0012ab9bb995ace2ef8bbfae922",
+      "tokens": 13,
+      "parsed": 13
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\yard_one_traffic_path.pat",
+      "sha256": "fb23d8fbb9dd54041157a5abc96df4336fd30526af738716fb12835dbb605af8",
+      "tokens": 62,
+      "parsed": 62
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\yard_two_path1.pat",
+      "sha256": "bf60498f8369f8f28ce8e35ab274267bdd954b731742493fe43a53a49d157b1f",
+      "tokens": 2,
+      "parsed": 2
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA2\\PATHS\\yard_two_trafficpath.pat",
+      "sha256": "4cc20ab13bff01131d4858c473e22d85e5b1e16699b9ff97ffb0852fb4170571",
+      "tokens": 12,
+      "parsed": 12
+    }
+  ],
+  "file_count": 211,
+  "errors": [],
+  "candidates": [
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN1\\PATHS\\itr (traffic 01).pat",
+      "sha256": "c5ac6b3d0b40c229b682a4334c01d4cd6ad891c93d8426bb877e553f88bbb42a",
+      "index": 69,
+      "packed": "00000002",
+      "flags": 2,
+      "duration_candidate": 0,
+      "primary_successor": 68,
+      "secondary_successor": 4294967295,
+      "pdp_index": 69,
+      "reverse_bit_precedes_wait": false
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\isaburo rescue (traffic).pat",
+      "sha256": "6c722c21fb3321e005162fc47303e9f79cfdb6c88f094878988c5e4615060b2b",
+      "index": 6,
+      "packed": "00000002",
+      "flags": 2,
+      "duration_candidate": 0,
+      "primary_successor": 5,
+      "secondary_successor": 4294967295,
+      "pdp_index": 6,
+      "reverse_bit_precedes_wait": false
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\shinpei.pat",
+      "sha256": "9612dc21a98ae7b18b16cd988cec9f26e16811c77c400f06f4de20a8a567be78",
+      "index": 17,
+      "packed": "00000002",
+      "flags": 2,
+      "duration_candidate": 0,
+      "primary_successor": 14,
+      "secondary_successor": 4294967295,
+      "pdp_index": 22,
+      "reverse_bit_precedes_wait": false
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\JAPAN2\\PATHS\\shinpei.pat",
+      "sha256": "9612dc21a98ae7b18b16cd988cec9f26e16811c77c400f06f4de20a8a567be78",
+      "index": 28,
+      "packed": "00000002",
+      "flags": 2,
+      "duration_candidate": 0,
+      "primary_successor": 16,
+      "secondary_successor": 4294967295,
+      "pdp_index": 25,
+      "reverse_bit_precedes_wait": false
+    }
+  ],
+  "unparsed_tokens": 0,
+  "limits": "First packed word low bit2 candidates only. Other flag precedence,path validation,activity/service usage and runtime values remain to be checked. Lexical scan is not a full grammar parser; no files modified."
+}

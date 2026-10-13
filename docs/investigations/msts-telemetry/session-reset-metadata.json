@@ -1,0 +1,250 @@
+{
+  "simulation.time": {
+    "evidence_status": "Distinct day-clock storage traced;UI restart66012.6484375->64800 observed;old value persists into debrief; normal-speed Explore rollover86399.953125->0.078125 with elapsed advancing0.125s; helper00645540 rebuilds day clock from nonzero clock[-4] plus elapsed and subtracts86400 once, then recomputes HMS",
+    "update_or_lifecycle": "native clock update plus helper00645540;nonzero[80acb4] selects start-plus-elapsed day clock;initialization/restart and debrief lifecycle remain relevant",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Read with lifecycle context;nonzero clock or pause0 does not imply active simulation. One Explore Route midnight wrap validated; saved-game clock restoration remains open;Historical PID7160 had NEMT timing patches; current PID12888 has no NEMT loaded per user confirmation, and three checked clock/caller ranges match disk bytes. Precision behavior still requires measurement.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json",
+      "clock-helper-20261010-byte-verification.json",
+      "clock-helper-20261010/00645540.asm",
+      "captures/clock-dispatch-20261010-01/constants.json",
+      "captures/clock-dispatch-20261010-01/dispatch.json"
+    ]
+  },
+  "simulation.paused": {
+    "evidence_status": "Gameplay/menus observed;result dismissal1->0 precedes teardown;debrief/loading pause0 without active player;restarted briefing1",
+    "update_or_lifecycle": "UI/modal and gameplay transitions;flag is not a complete session readiness state",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Zero does not establish running gameplay or advancing clocks. Startup briefing and result alert both have1 in these observations;other modal/load paths remain open.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "player.control_type": {
+    "evidence_status": "Existing1steam/2diesel/3electric mapping;teardown3->0 and restart0->3 observed with controller clearing/rebuild",
+    "update_or_lifecycle": "player controller selection/construction and teardown",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Type0 during unload/loading is not a usable controller. New player pointer precedes controller/type in this capture;read pointer and type consistently and bound any dereference. AI is not controlled by this global.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "session.internal_calendar": {
+    "evidence_status": "Clock fields traced;3/6/2000 retained across observed Tokyo teardown and restart; remained3/6/2000 across captured Explore midnight while HMS wrapped; helper return-address replacement bypasses calendar carry;69helper instructions/207bytes match disk/live",
+    "update_or_lifecycle": "clock initialization/update;date unchanged in this restart experiment; date also unchanged across observed Explore midnight",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Internal date is not established as narrative activity date. Helper00645540 overwrites its return address with00645c8f, bypassing legacy calendar carry in the inspected update path; this explains the unchanged date at Explore midnight. Other callers and session modes are not all validated. Leap/calendar validity and initialization provenance unresolved. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json",
+      "clock-helper-20261010-byte-verification.json",
+      "clock-helper-20261010/00645540.asm",
+      "captures/clock-dispatch-20261010-01/constants.json",
+      "captures/clock-dispatch-20261010-01/dispatch.json"
+    ]
+  },
+  "session.clock_components": {
+    "evidence_status": "18:20:12->18:00:00->18:00:01 observed across normal UI restart; normal-speed Explore23:59:59->00:00:00 observed with same player/start and advancing native elapsed",
+    "update_or_lifecycle": "clock update and initialization/restart",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Components sampled with floats in one memory read,but atomicity is not guaranteed. One Explore HMS midnight wrap validated; internal date did not advance. Helper recomputes low16bits of HMS from wrapped day clock and skips legacy carry; high16bits must not be assumed rewritten. Other modes and saved-game restoration remain open. Historical NEMT timing patches belong to PID7160, not current PID12888; current checked clock/caller ranges match disk bytes. Precision behavior remains unmeasured.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json",
+      "clock-helper-20261010-byte-verification.json",
+      "clock-helper-20261010/00645540.asm",
+      "captures/clock-dispatch-20261010-01/constants.json",
+      "captures/clock-dispatch-20261010-01/dispatch.json"
+    ]
+  },
+  "service.ordered_operational_records": {
+    "evidence_status": "Player/AI list extraction,player boarding/departure,AI path-end reset and final-selected AllStops success validated;teardown leaves stale selection with null list;restart rebuilds records;winter AI platform countdown begins as selection advances,with hold at previous platform and unchanged station time/flag fields",
+    "update_or_lifecycle": "service load/schedule merge,station processing,AI path-end reset and teardown/reinitialization",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. Player final loading can trigger success with final selection nonnull,departure0 and earlier interrupted stop. After unload,old selection/previous may remain with root0;never dereference stale pointers or infer readiness/completion from selection alone. Tokyo AI9 reselection follows scheduler path-end reset with stale speed5.78689432144165;AI timetable adherence/recorded-time writers,rephysicalization and full identity reuse remain open. Record+24 is not automatically effective208;distance and schedule merge assumptions remain build-specific. Winter AI platform holds use210/214;selected already identifies the next stop. AI hold does not imply player-style station flag/time writes.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json",
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "evaluation.speed_episode_count": {
+    "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+    "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "evaluation.speed_episode_duration": {
+    "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+    "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "evaluation.speed_episode_active": {
+    "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+    "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "evaluation.speed_episode_records": {
+    "evidence_status": "Earlier active-to-closed22.4140625s episode validated;Tokyo debrief retains3closed records totaling47.125s matching UI3/47s;restart empties lists/count/duration and active details",
+    "update_or_lifecycle": "episode tracking/closure,capped40;report retained in debrief and cleared by next activity start",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. The new Tokyo snapshot validates retained totals and subsequent empty state,not emission timing or continuous reset timing. Active0 may retain old start/location/limit at debrief. Closed duration excludes ongoing episode;cap40 can suppress further updates. Adjusted speed=max(abs(activity+0x1b8)-0.8940799832344055,0),not raw peak. Restriction precedence,subtype names and marker interpolation beyond this UI example remain open;no AI equivalence.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "evaluation.operational_error_count": {
+    "evidence_status": "Installed code labels traced;prior vigilance code2 corroborated;Tokyo debrief code64/time65526.7734375/location5.3583502769470215 matches interrupted loading and UI;restart count0/list empty",
+    "update_or_lifecycle": "append on traced conditions;report retained through gameplay teardown and reset by restarted activity",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. No continuous code64 emission/reset trace in this experiment;retained timestamp matches earlier departure capture. Preserve raw codes and installed-resource provenance;4 and32 differ. km5.36/18:12:07 UI match is one example,not full marker conversion validation. Other writers/global bounds and AI applicability remain open.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "evaluation.operational_error_records": {
+    "evidence_status": "Installed code labels traced;prior vigilance code2 corroborated;Tokyo debrief code64/time65526.7734375/location5.3583502769470215 matches interrupted loading and UI;restart count0/list empty",
+    "update_or_lifecycle": "append on traced conditions;report retained through gameplay teardown and reset by restarted activity",
+    "limitations": "Supported MSTS Bin executable only;sequential external reads are not atomic and pointers can be reused. No continuous code64 emission/reset trace in this experiment;retained timestamp matches earlier departure capture. Preserve raw codes and installed-resource provenance;4 and32 differ. km5.36/18:12:07 UI match is one example,not full marker conversion validation. Other writers/global bounds and AI applicability remain open.",
+    "evidence": [
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/tokyo-final-evaluation-20261010-01/evaluation.json",
+      "captures/tokyo-restarted-evaluation-20261010-01/evaluation.json"
+    ]
+  },
+  "service.stop_timer_remaining": {
+    "evidence_status": "Winter Tokyo AI positive platform countdown,decrements,pause stability,active zero and expiry observed;all falling pairs1second in this fixture",
+    "update_or_lifecycle": "initialized at selected-stop distance transition,then update-interval decrement while214active;negative result clears value/gate",
+    "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Starts before speed reaches0 and selection already advances to next record. Zero may coexist with active gate. First positive sample is not exact initial duration;passenger/consist inputs and general cadence remain unvalidated. Distinct from player boarding and path-wait elapsed1ec/duration1f0.",
+    "evidence": [
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "service.stop_timer_active": {
+    "evidence_status": "Winter Tokyo AI0->1->0 platform holds captured with braking,stationary progress and movement resumption;physical and abstract service contexts observed",
+    "update_or_lifecycle": "set on stop selection transition;while active nonnegative remaining forces target0;negative remaining clears gate",
+    "limitations": "Supported MSTS Bin executable only;sequential read-only samples are not atomic. Gate1 does not mean already stationary or doors open. Read countdown,speed,target,progress,selected/previous and update context together. Not activity completion or AI timetable adherence;path-wait1e8 remains unvalidated.",
+    "evidence": [
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "session.elapsed_candidate": {
+    "evidence_status": "Derived day-clock minus activity start; observed to become negative at normal-speed Explore midnight while native elapsed continued",
+    "update_or_lifecycle": "Derived from wrapped day clock and session start; discontinuous at midnight and session reset",
+    "limitations": "Not a midnight-safe elapsed duration: observed -82799.921875 after rollover, versus native elapsed3600.074951171875. Retained as a documented derived candidate, not a validated general session timer. Multiple days and save restoration remain unvalidated. External reads are sequential, not atomic.",
+    "evidence": [
+      "CLOCK-FINDINGS.md",
+      "midnight-clock-20261010-summary.json",
+      "analyse_clock_series.py",
+      "captures/explore-midnight-20261010-01/samples.jsonl",
+      "captures/explore-midnight-20261010-01/completion.json"
+    ]
+  }
+}

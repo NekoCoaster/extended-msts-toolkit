@@ -1,0 +1,191 @@
+{
+  "source": "captures\\sky-vertices-paused-02\\samples.jsonl",
+  "sha256": "e2a4eef46d8cf3989adfd220c3688b4cb3e988b44f04a4eaadd989a15b63edf7",
+  "excluded": {
+    "frame_unavailable": 60,
+    "unstable_endpoints": 10
+  },
+  "objects": [
+    {
+      "identity": "('layer', 0, 53760164, 53758520)",
+      "scroll": [
+        0.0,
+        0.004999999888241291
+      ],
+      "sample_pairs": 56,
+      "vertices_per_pair": 41,
+      "shader_errors": {
+        "count": 4592,
+        "minimum": 0.0,
+        "median": 1.3348642369237496e-07,
+        "maximum": 7.61794472055044e-05
+      },
+      "wall_errors": {
+        "count": 4592,
+        "minimum": 0.0,
+        "median": 6.318182806280045e-07,
+        "maximum": 5.224279969168449e-05
+      },
+      "nonzero_scroll_shader_errors": {
+        "count": 2296,
+        "minimum": 2.669728473847499e-07,
+        "median": 4.9152373776450986e-05,
+        "maximum": 7.61794472055044e-05
+      },
+      "nonzero_scroll_wall_errors": {
+        "count": 2296,
+        "minimum": 1.263636561256009e-06,
+        "median": 2.0171035528784593e-05,
+        "maximum": 5.224279969168449e-05
+      },
+      "clock_steps": {
+        "count": 56,
+        "minimum": 0.48876953125,
+        "median": 0.5006103515625,
+        "maximum": 0.51171875
+      },
+      "wall_steps": {
+        "count": 56,
+        "minimum": 0.5000697000068612,
+        "median": 0.5003054999979213,
+        "maximum": 0.5006441000150517
+      }
+    },
+    {
+      "identity": "('layer', 1, 53760592, 53756376)",
+      "scroll": [
+        0.0,
+        0.0
+      ],
+      "sample_pairs": 58,
+      "vertices_per_pair": 41,
+      "shader_errors": {
+        "count": 4756,
+        "minimum": 0.0,
+        "median": 0.0,
+        "maximum": 0.0
+      },
+      "wall_errors": {
+        "count": 4756,
+        "minimum": 0.0,
+        "median": 0.0,
+        "maximum": 0.0
+      },
+      "nonzero_scroll_shader_errors": {
+        "count": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "nonzero_scroll_wall_errors": {
+        "count": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "clock_steps": {
+        "count": 58,
+        "minimum": 0.48876953125,
+        "median": 0.5006103515625,
+        "maximum": 0.51171875
+      },
+      "wall_steps": {
+        "count": 58,
+        "minimum": 0.5000697000068612,
+        "median": 0.5003289000014775,
+        "maximum": 0.5006441000150517
+      }
+    },
+    {
+      "identity": "('layer', 2, 53761020, 53752416)",
+      "scroll": [
+        0.0,
+        0.004999999888241291
+      ],
+      "sample_pairs": 58,
+      "vertices_per_pair": 73,
+      "shader_errors": {
+        "count": 8468,
+        "minimum": 0.0,
+        "median": 1.3348642369237496e-07,
+        "maximum": 7.61794472055044e-05
+      },
+      "wall_errors": {
+        "count": 8468,
+        "minimum": 0.0,
+        "median": 6.318182806280045e-07,
+        "maximum": 5.224279969168449e-05
+      },
+      "nonzero_scroll_shader_errors": {
+        "count": 4234,
+        "minimum": 2.669728473847499e-07,
+        "median": 4.882812390860636e-05,
+        "maximum": 7.61794472055044e-05
+      },
+      "nonzero_scroll_wall_errors": {
+        "count": 4234,
+        "minimum": 1.263636561256009e-06,
+        "median": 1.9237736410981096e-05,
+        "maximum": 5.224279969168449e-05
+      },
+      "clock_steps": {
+        "count": 58,
+        "minimum": 0.48876953125,
+        "median": 0.5006103515625,
+        "maximum": 0.511962890625
+      },
+      "wall_steps": {
+        "count": 58,
+        "minimum": 0.5000697000068612,
+        "median": 0.5003289000014775,
+        "maximum": 0.5006441000150517
+      }
+    },
+    {
+      "identity": "('satellite', 1, 53864209, 53846732)",
+      "scroll": [
+        0.0,
+        0.0
+      ],
+      "sample_pairs": 58,
+      "vertices_per_pair": 4,
+      "shader_errors": {
+        "count": 464,
+        "minimum": 0.0,
+        "median": 0.0,
+        "maximum": 0.0
+      },
+      "wall_errors": {
+        "count": 464,
+        "minimum": 0.0,
+        "median": 0.0,
+        "maximum": 0.0
+      },
+      "nonzero_scroll_shader_errors": {
+        "count": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "nonzero_scroll_wall_errors": {
+        "count": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "clock_steps": {
+        "count": 58,
+        "minimum": 0.48876953125,
+        "median": 0.5006103515625,
+        "maximum": 0.511962890625
+      },
+      "wall_steps": {
+        "count": 58,
+        "minimum": 0.5000697000068612,
+        "median": 0.5003289000014775,
+        "maximum": 0.5006441000150517
+      }
+    }
+  ],
+  "limitations": "Only consecutive stable-header/structure,constant-frame pairs retained. Vertex payloads still non-atomic. Prediction is a sampled-interval approximation,not per-render float32 replay. UV error is coordinate difference,not pixels. Shader time/wall time agreement does not prove universal clock equivalence or exact cadence. Zero-scroll cases are not timing discrimination."
+}

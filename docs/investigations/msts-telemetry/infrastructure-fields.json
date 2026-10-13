@@ -1,0 +1,10 @@
+[
+ ["route_databases","Loaded track database registry","bounded circular list","database pointers","sentinel=[0x80a10c]; list node+8 database object"],
+ ["all_nodes","All registered track nodes including disconnected components","bounded pointer array","node identities and indexes","array=[database+0]; iterate indexes zero through [database+0xc] inclusive with bounds; index+1 matches TDB IDs in tested route"],
+ ["track_items","Database-wide track-item registry","bounded pointer array","item identities","collection=[database+0x20]; array=[collection]; count=[collection+8]"],
+ ["item_kind","Native track-item subtype discriminator","uint32","native enum; signal=0, other meanings pending","item+0; validate before reading subtype layout"],
+ ["signal_service_association","Service associated with a signal object","pointer32 or null","service identity","signal item+0x24; release 0x5c4ecf requires matching service and clears bits 0xe000 in signal+0x1c"],
+ ["vector_presence","Abstract per-car position records linked to a vector track segment","bounded circular list","record identities","kind1 node+0x2c list; list node+8 record; record+0 backlinks to track node; 0x5d04d3 removes association"],
+ ["presence_service","Service identity attached to track-presence record","pointer32","service identity","presence record+0xc; observed player and offscreen active AI; validate against loaded service registry"],
+ ["presence_node_distance","Position of abstract car record along its track node","float32","metres candidate","presence record+4; service list record producer and physical-car reference convention need further tracing"]
+]

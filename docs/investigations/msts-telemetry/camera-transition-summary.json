@@ -1,0 +1,294 @@
+{
+  "samples": [
+    {
+      "capture": "camera-paused-01",
+      "observed_view": "cab initial",
+      "input_key": null,
+      "simulation_time_start": 74548.40625,
+      "view_pointer": 51680488,
+      "render_pointer": 51354640,
+      "mode_raw": 0,
+      "tracking_raw": 0,
+      "debug_tracking_label": "NOT TRACKING",
+      "render_basis": [
+        [
+          -0.6478624939918518,
+          0.0,
+          -0.7617573142051697
+        ],
+        [
+          0.12243971228599548,
+          0.9869979619979858,
+          -0.10413302481174469
+        ],
+        [
+          0.7518529295921326,
+          -0.1607332080602646,
+          -0.6394389271736145
+        ]
+      ],
+      "render_position": [
+        546.5737915039062,
+        1104.0667724609375,
+        512.9185791015625
+      ],
+      "basis_norms": [
+        1.000000008433208,
+        1.0000000734946464,
+        1.0000000667472775
+      ],
+      "basis_pair_dots": [
+        -4.064594882891015e-09,
+        -3.4318631492169516e-08,
+        1.7268729557429197e-08
+      ],
+      "pointers_stable": true,
+      "simulation_time_end": 74548.40625,
+      "pause_raw": 1
+    },
+    {
+      "capture": "camera-front-01",
+      "observed_view": "front exterior",
+      "input_key": "2",
+      "simulation_time_start": 74556.7734375,
+      "view_pointer": 51680060,
+      "render_pointer": 51354640,
+      "mode_raw": 1,
+      "tracking_raw": 1,
+      "debug_tracking_label": "TRACKING ON",
+      "render_basis": [
+        [
+          -0.8286702632904053,
+          0.0,
+          -0.5597370266914368
+        ],
+        [
+          0.16806599497795105,
+          0.9538577795028687,
+          -0.24881558120250702
+        ],
+        [
+          0.5339094996452332,
+          -0.3002588450908661,
+          -0.7904335856437683
+        ]
+      ],
+      "render_position": [
+        513.8855590820312,
+        1115.0914306640625,
+        558.8350219726562
+      ],
+      "basis_norms": [
+        0.9999999721555796,
+        1.0000000178176065,
+        0.9999999905901942
+      ],
+      "basis_pair_dots": [
+        1.3082503969030768e-09,
+        1.9381030114118403e-08,
+        -1.1954477407982722e-08
+      ],
+      "pointers_stable": true,
+      "simulation_time_end": 74556.7734375,
+      "pause_raw": 0
+    },
+    {
+      "capture": "camera-rear-01",
+      "observed_view": "rear exterior",
+      "input_key": "3",
+      "simulation_time_start": 74565.828125,
+      "view_pointer": 51679632,
+      "render_pointer": 51354640,
+      "mode_raw": 2,
+      "tracking_raw": 1,
+      "debug_tracking_label": "TRACKING ON",
+      "render_basis": [
+        [
+          -0.9107192158699036,
+          0.0,
+          -0.41302603483200073
+        ],
+        [
+          0.1188727393746376,
+          0.9576877355575562,
+          -0.262113481760025
+        ],
+        [
+          0.3955499827861786,
+          -0.2878093123435974,
+          -0.8721846342086792
+        ]
+      ],
+      "render_position": [
+        197.66659545898438,
+        1105.904541015625,
+        856.4654541015625
+      ],
+      "basis_norms": [
+        0.9999999978018685,
+        1.0000000021620765,
+        1.000000012651784
+      ],
+      "basis_pair_dots": [
+        4.055775715272603e-09,
+        -9.05177266474766e-09,
+        1.2612697330993683e-08
+      ],
+      "pointers_stable": true,
+      "simulation_time_end": 74565.828125,
+      "pause_raw": 0
+    },
+    {
+      "capture": "camera-trackside-01",
+      "observed_view": "trackside",
+      "input_key": "4",
+      "simulation_time_start": 74575.6015625,
+      "view_pointer": 51678776,
+      "render_pointer": 51354640,
+      "mode_raw": 3,
+      "tracking_raw": 1,
+      "debug_tracking_label": "TRACKING ON",
+      "render_basis": [
+        [
+          0.4406294822692871,
+          0.0,
+          0.8976890444755554
+        ],
+        [
+          -0.015256176702678204,
+          0.9998555779457092,
+          0.007488474249839783
+        ],
+        [
+          -0.897559404373169,
+          -0.01699494570493698,
+          0.4405658543109894
+        ]
+      ],
+      "render_position": [
+        650.3707885742188,
+        1105.1710205078125,
+        465.45623779296875
+      ],
+      "basis_norms": [
+        0.9999999806081676,
+        1.0000000024616609,
+        0.9999999922715017
+      ],
+      "basis_pair_dots": [
+        5.200861963317038e-11,
+        5.130109670403726e-09,
+        -3.303315398994755e-10
+      ],
+      "pointers_stable": true,
+      "simulation_time_end": 74575.6015625,
+      "pause_raw": 0
+    },
+    {
+      "capture": "camera-cab-return-01",
+      "observed_view": "cab return",
+      "input_key": "1",
+      "simulation_time_start": 74586.7578125,
+      "view_pointer": 51680488,
+      "render_pointer": 51354640,
+      "mode_raw": 0,
+      "tracking_raw": 0,
+      "debug_tracking_label": "NOT TRACKING",
+      "render_basis": [
+        [
+          -0.6478624939918518,
+          0.0,
+          -0.7617573142051697
+        ],
+        [
+          0.12243971228599548,
+          0.9869979619979858,
+          -0.10413302481174469
+        ],
+        [
+          0.7518529295921326,
+          -0.1607332080602646,
+          -0.6394389271736145
+        ]
+      ],
+      "render_position": [
+        546.5744018554688,
+        1104.068359375,
+        512.9176635742188
+      ],
+      "basis_norms": [
+        1.000000008433208,
+        1.0000000734946464,
+        1.0000000667472775
+      ],
+      "basis_pair_dots": [
+        -4.064594882891015e-09,
+        -3.4318631492169516e-08,
+        1.7268729557429197e-08
+      ],
+      "pointers_stable": true,
+      "simulation_time_end": 74586.7578125,
+      "pause_raw": 0
+    },
+    {
+      "capture": "camera-final-paused-01",
+      "observed_view": "cab paused",
+      "input_key": "Escape",
+      "simulation_time_start": 74600.2734375,
+      "view_pointer": 51680488,
+      "render_pointer": 51354640,
+      "mode_raw": 0,
+      "tracking_raw": 0,
+      "debug_tracking_label": "NOT TRACKING",
+      "render_basis": [
+        [
+          -0.6478624939918518,
+          0.0,
+          -0.7617573142051697
+        ],
+        [
+          0.12243971228599548,
+          0.9869979619979858,
+          -0.10413302481174469
+        ],
+        [
+          0.7518529295921326,
+          -0.1607332080602646,
+          -0.6394389271736145
+        ]
+      ],
+      "render_position": [
+        546.5744018554688,
+        1104.068359375,
+        512.9176635742188
+      ],
+      "basis_norms": [
+        1.000000008433208,
+        1.0000000734946464,
+        1.0000000667472775
+      ],
+      "basis_pair_dots": [
+        -4.064594882891015e-09,
+        -3.4318631492169516e-08,
+        1.7268729557429197e-08
+      ],
+      "pointers_stable": true,
+      "simulation_time_end": 74600.2734375,
+      "pause_raw": 1
+    }
+  ],
+  "observed_modes": {
+    "0": "cab initial",
+    "1": "front exterior",
+    "2": "rear exterior",
+    "3": "trackside"
+  },
+  "all_pointers_stable_within_read": true,
+  "all_same_step_reads": true,
+  "render_pointer_count": 1,
+  "view_pointer_count": 4,
+  "max_basis_norm_error": 7.349464636874359e-08,
+  "max_basis_pair_dot": 3.4318631492169516e-08,
+  "cab_return_displacement": 0.0019310659203560028,
+  "limitations": "Single installed diesel activity, stopped train, post-input snapshots rather than transition timing; visual observations recorded in task UI output. No independent AI viewpoints, tracking toggle, reload or origin-shift test."
+}

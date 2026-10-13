@@ -1,0 +1,116 @@
+{
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "tokens": [
+    {
+      "token": "0x40407",
+      "candidates": [
+        {
+          "entry": "0x796ac0",
+          "label": "TimeTable",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x40408",
+      "candidates": [
+        {
+          "entry": "0x796ac8",
+          "label": "StartInWorld",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x40409",
+      "candidates": [
+        {
+          "entry": "0x796ad0",
+          "label": "EndInWorld",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x4040a",
+      "candidates": [
+        {
+          "entry": "0x796ad8",
+          "label": "StationStop",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x4040b",
+      "candidates": [
+        {
+          "entry": "0x796ae0",
+          "label": "PlatformStartID",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x4040d",
+      "candidates": [
+        {
+          "entry": "0x796af0",
+          "label": "ArrivalTime",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x4040f",
+      "candidates": [
+        {
+          "entry": "0x796b00",
+          "label": "DepartTime",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x40410",
+      "candidates": [
+        {
+          "entry": "0x796b08",
+          "label": "DistanceDownPath",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x40411",
+      "candidates": [
+        {
+          "entry": "0x796b10",
+          "label": "Efficiency",
+          "disk_live_equal": true
+        }
+      ]
+    },
+    {
+      "token": "0x40412",
+      "candidates": [
+        {
+          "entry": "0x796b18",
+          "label": "SkipCount",
+          "disk_live_equal": true
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "C:/MSTS/ROUTES/USA1/ACTIVITIES/morningmaryland.act",
+      "sha256": "d165b04759890ba9810b6c8ea6ce5f867eb5807e3ef405f8e1bc098041fbb531"
+    },
+    {
+      "path": "C:/MSTS/ROUTES/USA2/SERVICES/evegrain.srv",
+      "sha256": "d50aefed9f044b2254b8f4cdee1a3d8329473fcf519e3ae483bcab1c1d667a5e"
+    }
+  ],
+  "limitations": "Label-pointer/token pairs checked disk/live; parser destinations require assembly evidence. Activity is a future test candidate, not a completed live validation."
+}

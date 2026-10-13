@@ -1,0 +1,2331 @@
+{
+  "source": "captures\\paired-moving-restart-01\\samples.jsonl",
+  "sha256": "d51d3720c7fbd8cbc8e6cb0c403670d537787f7025949aa5825b9fc932a654cb",
+  "samples": 181,
+  "paused_samples": 20,
+  "clock_range": [
+    73800.6875,
+    73881.078125
+  ],
+  "origins": [
+    [
+      -12560,
+      14766
+    ],
+    [
+      -12559,
+      14766
+    ]
+  ],
+  "monitor_distance_range": [
+    211.7138671875,
+    1145.7314453125
+  ],
+  "errors": [],
+  "section_or_node_transitions": 92,
+  "player_transitions": 62,
+  "node_transitions": 0,
+  "events": [
+    {
+      "train": 400007,
+      "car": 59202244,
+      "before": {
+        "node": 113455932,
+        "section": 91,
+        "distance": 10274.08203125,
+        "route": 305,
+        "is_player": true,
+        "body": 54145794,
+        "sample": 19,
+        "time": 73800.6875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 92,
+        "distance": 10281.1611328125,
+        "route": 305,
+        "is_player": true,
+        "body": 54145794,
+        "sample": 20,
+        "time": 73801.015625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59185792,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10623.3623046875,
+        "route": 305,
+        "is_player": true,
+        "body": 54139314,
+        "sample": 23,
+        "time": 73802.515625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10631.791015625,
+        "route": 305,
+        "is_player": true,
+        "body": 54139314,
+        "sample": 24,
+        "time": 73803.015625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59197392,
+      "before": {
+        "node": 113455932,
+        "section": 92,
+        "distance": 10444.763671875,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 23,
+        "time": 73802.515625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10453.1689453125,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 24,
+        "time": 73803.015625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59185124,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10620.345703125,
+        "route": 305,
+        "is_player": true,
+        "body": 54139719,
+        "sample": 25,
+        "time": 73803.515625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10628.537109375,
+        "route": 305,
+        "is_player": true,
+        "body": 54139719,
+        "sample": 26,
+        "time": 73804.015625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59196724,
+      "before": {
+        "node": 113455932,
+        "section": 92,
+        "distance": 10449.26953125,
+        "route": 305,
+        "is_player": true,
+        "body": 54143364,
+        "sample": 26,
+        "time": 73804.015625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10457.259765625,
+        "route": 305,
+        "is_player": true,
+        "body": 54143364,
+        "sample": 27,
+        "time": 73804.515625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59184456,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10624.4736328125,
+        "route": 305,
+        "is_player": true,
+        "body": 55072860,
+        "sample": 28,
+        "time": 73805.0234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10631.9111328125,
+        "route": 305,
+        "is_player": true,
+        "body": 55072860,
+        "sample": 29,
+        "time": 73805.515625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59195796,
+      "before": {
+        "node": 113455932,
+        "section": 92,
+        "distance": 10445.2578125,
+        "route": 305,
+        "is_player": true,
+        "body": 55076505,
+        "sample": 28,
+        "time": 73805.0234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10452.7744140625,
+        "route": 305,
+        "is_player": true,
+        "body": 55076505,
+        "sample": 29,
+        "time": 73805.515625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59194868,
+      "before": {
+        "node": 113455932,
+        "section": 92,
+        "distance": 10448.3974609375,
+        "route": 305,
+        "is_player": true,
+        "body": 54144174,
+        "sample": 31,
+        "time": 73806.5234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10455.8916015625,
+        "route": 305,
+        "is_player": true,
+        "body": 54144174,
+        "sample": 32,
+        "time": 73807.015625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59182452,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10624.3525390625,
+        "route": 305,
+        "is_player": true,
+        "body": 54141339,
+        "sample": 36,
+        "time": 73809.0234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10631.078125,
+        "route": 305,
+        "is_player": true,
+        "body": 54141339,
+        "sample": 37,
+        "time": 73809.5234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59193012,
+      "before": {
+        "node": 113455932,
+        "section": 92,
+        "distance": 10452.1845703125,
+        "route": 305,
+        "is_player": true,
+        "body": 54144984,
+        "sample": 37,
+        "time": 73809.5234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10458.904296875,
+        "route": 305,
+        "is_player": true,
+        "body": 54144984,
+        "sample": 38,
+        "time": 73810.0234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59181784,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10624.8564453125,
+        "route": 305,
+        "is_player": true,
+        "body": 55074480,
+        "sample": 39,
+        "time": 73810.5234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10631.4755859375,
+        "route": 305,
+        "is_player": true,
+        "body": 55074480,
+        "sample": 40,
+        "time": 73811.0234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59203172,
+      "before": {
+        "node": 113455932,
+        "section": 92,
+        "distance": 10445.8828125,
+        "route": 305,
+        "is_player": true,
+        "body": 55078125,
+        "sample": 39,
+        "time": 73810.5234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10452.5029296875,
+        "route": 305,
+        "is_player": true,
+        "body": 55078125,
+        "sample": 40,
+        "time": 73811.0234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59068500,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10873.671875,
+        "route": 305,
+        "is_player": true,
+        "body": 55069620,
+        "sample": 40,
+        "time": 73811.0234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10880.26171875,
+        "route": 305,
+        "is_player": true,
+        "body": 55069620,
+        "sample": 41,
+        "time": 73811.5234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59198060,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10623.427734375,
+        "route": 305,
+        "is_player": true,
+        "body": 54142554,
+        "sample": 45,
+        "time": 73813.5234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10629.4921875,
+        "route": 305,
+        "is_player": true,
+        "body": 54142554,
+        "sample": 46,
+        "time": 73814.0234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59197392,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10622.4560546875,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 48,
+        "time": 73815.03125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10628.4990234375,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 49,
+        "time": 73815.5234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59196724,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10625.8955078125,
+        "route": 305,
+        "is_player": true,
+        "body": 54143364,
+        "sample": 52,
+        "time": 73817.0234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10631.859375,
+        "route": 305,
+        "is_player": true,
+        "body": 54143364,
+        "sample": 53,
+        "time": 73817.5234375
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59195796,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10623.1416015625,
+        "route": 305,
+        "is_player": true,
+        "body": 54143769,
+        "sample": 55,
+        "time": 73818.53125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10628.9970703125,
+        "route": 305,
+        "is_player": true,
+        "body": 54143769,
+        "sample": 56,
+        "time": 73819.03125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59186460,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10873.6328125,
+        "route": 305,
+        "is_player": true,
+        "body": 54138909,
+        "sample": 57,
+        "time": 73819.5234375
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10879.0361328125,
+        "route": 305,
+        "is_player": true,
+        "body": 54138909,
+        "sample": 58,
+        "time": 73820.03125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59185792,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10875.859375,
+        "route": 305,
+        "is_player": true,
+        "body": 54139314,
+        "sample": 61,
+        "time": 73821.53125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10880.9951171875,
+        "route": 305,
+        "is_player": true,
+        "body": 54139314,
+        "sample": 62,
+        "time": 73822.0390625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59193940,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10622.2392578125,
+        "route": 305,
+        "is_player": true,
+        "body": 54144579,
+        "sample": 62,
+        "time": 73822.0390625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10627.6640625,
+        "route": 305,
+        "is_player": true,
+        "body": 54144579,
+        "sample": 63,
+        "time": 73822.53125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59193012,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10623.03125,
+        "route": 305,
+        "is_player": true,
+        "body": 55077720,
+        "sample": 66,
+        "time": 73824.03125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10627.93359375,
+        "route": 305,
+        "is_player": true,
+        "body": 55077720,
+        "sample": 67,
+        "time": 73824.53125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59203172,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10623.857421875,
+        "route": 305,
+        "is_player": true,
+        "body": 55078125,
+        "sample": 70,
+        "time": 73826.03125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10628.8310546875,
+        "route": 305,
+        "is_player": true,
+        "body": 55078125,
+        "sample": 71,
+        "time": 73826.53125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59202244,
+      "before": {
+        "node": 113455932,
+        "section": 93,
+        "distance": 10623.490234375,
+        "route": 305,
+        "is_player": true,
+        "body": 54145794,
+        "sample": 74,
+        "time": 73828.0390625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10628.2578125,
+        "route": 305,
+        "is_player": true,
+        "body": 54145794,
+        "sample": 75,
+        "time": 73828.5390625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59183120,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10876.248046875,
+        "route": 305,
+        "is_player": true,
+        "body": 55073670,
+        "sample": 77,
+        "time": 73829.53125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10881.1982421875,
+        "route": 305,
+        "is_player": true,
+        "body": 55073670,
+        "sample": 78,
+        "time": 73830.0390625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59181784,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10874.01171875,
+        "route": 305,
+        "is_player": true,
+        "body": 54141744,
+        "sample": 85,
+        "time": 73833.5390625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10878.5888671875,
+        "route": 305,
+        "is_player": true,
+        "body": 54141744,
+        "sample": 86,
+        "time": 73834.0390625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59068500,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11125.5146484375,
+        "route": 305,
+        "is_player": true,
+        "body": 55069620,
+        "sample": 87,
+        "time": 73834.546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11130.0166015625,
+        "route": 305,
+        "is_player": true,
+        "body": 55069620,
+        "sample": 88,
+        "time": 73835.0390625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59180856,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10875.5625,
+        "route": 305,
+        "is_player": true,
+        "body": 54142149,
+        "sample": 90,
+        "time": 73836.03125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10879.5703125,
+        "route": 305,
+        "is_player": true,
+        "body": 54142149,
+        "sample": 91,
+        "time": 73836.5390625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59198060,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10875.615234375,
+        "route": 305,
+        "is_player": true,
+        "body": 55075290,
+        "sample": 95,
+        "time": 73838.546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10880.3818359375,
+        "route": 305,
+        "is_player": true,
+        "body": 55075290,
+        "sample": 96,
+        "time": 73839.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59197392,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10873.6865234375,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 99,
+        "time": 73840.5390625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10878.35546875,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 100,
+        "time": 73841.0546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59165152,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11121.830078125,
+        "route": 305,
+        "is_player": true,
+        "body": 54138504,
+        "sample": 105,
+        "time": 73843.546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11126.4638671875,
+        "route": 305,
+        "is_player": true,
+        "body": 54138504,
+        "sample": 106,
+        "time": 73844.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59068500,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11224.49609375,
+        "route": 305,
+        "is_player": true,
+        "body": 55069620,
+        "sample": 109,
+        "time": 73845.546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11229.32421875,
+        "route": 305,
+        "is_player": true,
+        "body": 55069620,
+        "sample": 110,
+        "time": 73846.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59186460,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11121.5966796875,
+        "route": 305,
+        "is_player": true,
+        "body": 55071645,
+        "sample": 109,
+        "time": 73845.546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11126.4150390625,
+        "route": 305,
+        "is_player": true,
+        "body": 55071645,
+        "sample": 110,
+        "time": 73846.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59194868,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10872.626953125,
+        "route": 305,
+        "is_player": true,
+        "body": 55076910,
+        "sample": 111,
+        "time": 73846.546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10877.6435546875,
+        "route": 305,
+        "is_player": true,
+        "body": 55076910,
+        "sample": 112,
+        "time": 73847.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59165820,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11222.5068359375,
+        "route": 305,
+        "is_player": true,
+        "body": 55070025,
+        "sample": 113,
+        "time": 73847.5546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11227.2041015625,
+        "route": 305,
+        "is_player": true,
+        "body": 55070025,
+        "sample": 114,
+        "time": 73848.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59185792,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11121.7041015625,
+        "route": 305,
+        "is_player": true,
+        "body": 55072050,
+        "sample": 113,
+        "time": 73847.5546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11126.3984375,
+        "route": 305,
+        "is_player": true,
+        "body": 55072050,
+        "sample": 114,
+        "time": 73848.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59193940,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10872.5078125,
+        "route": 305,
+        "is_player": true,
+        "body": 54144579,
+        "sample": 115,
+        "time": 73848.5546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10877.478515625,
+        "route": 305,
+        "is_player": true,
+        "body": 54144579,
+        "sample": 116,
+        "time": 73849.046875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 58638132,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11225.716796875,
+        "route": 305,
+        "is_player": true,
+        "body": 54137694,
+        "sample": 118,
+        "time": 73850.0546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11230.6572265625,
+        "route": 305,
+        "is_player": true,
+        "body": 54137694,
+        "sample": 119,
+        "time": 73850.5546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59185124,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11126.0498046875,
+        "route": 305,
+        "is_player": true,
+        "body": 54139719,
+        "sample": 118,
+        "time": 73850.0546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11130.990234375,
+        "route": 305,
+        "is_player": true,
+        "body": 54139719,
+        "sample": 119,
+        "time": 73850.5546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59067832,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11221.193359375,
+        "route": 305,
+        "is_player": true,
+        "body": 54138099,
+        "sample": 121,
+        "time": 73851.5625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11226.4619140625,
+        "route": 305,
+        "is_player": true,
+        "body": 54138099,
+        "sample": 122,
+        "time": 73852.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59184456,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11121.494140625,
+        "route": 305,
+        "is_player": true,
+        "body": 54140124,
+        "sample": 121,
+        "time": 73851.5625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11126.7626953125,
+        "route": 305,
+        "is_player": true,
+        "body": 54140124,
+        "sample": 122,
+        "time": 73852.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59202244,
+      "before": {
+        "node": 113455932,
+        "section": 94,
+        "distance": 10875.099609375,
+        "route": 305,
+        "is_player": true,
+        "body": 55078530,
+        "sample": 127,
+        "time": 73854.5546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 10880.455078125,
+        "route": 305,
+        "is_player": true,
+        "body": 55078530,
+        "sample": 128,
+        "time": 73855.0546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59165820,
+      "before": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11321.0859375,
+        "route": 305,
+        "is_player": true,
+        "body": 54137289,
+        "sample": 132,
+        "time": 73857.0625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11326.640625,
+        "route": 305,
+        "is_player": true,
+        "body": 54137289,
+        "sample": 133,
+        "time": 73857.5625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59185792,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11225.853515625,
+        "route": 305,
+        "is_player": true,
+        "body": 54139314,
+        "sample": 133,
+        "time": 73857.5625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11231.291015625,
+        "route": 305,
+        "is_player": true,
+        "body": 54139314,
+        "sample": 134,
+        "time": 73858.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55434288,
+      "before": {
+        "node": 113455676,
+        "section": 58,
+        "distance": 5055.50244140625,
+        "route": 300,
+        "is_player": false,
+        "body": 55082580,
+        "sample": 135,
+        "time": 73858.5625
+      },
+      "after": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5068.1015625,
+        "route": 300,
+        "is_player": false,
+        "body": 55082580,
+        "sample": 136,
+        "time": 73859.0546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55985020,
+      "before": {
+        "node": 113455676,
+        "section": 57,
+        "distance": 4873.50048828125,
+        "route": 300,
+        "is_player": false,
+        "body": 55086630,
+        "sample": 135,
+        "time": 73858.5625
+      },
+      "after": {
+        "node": 113455676,
+        "section": 58,
+        "distance": 4886.099609375,
+        "route": 300,
+        "is_player": false,
+        "body": 55086630,
+        "sample": 136,
+        "time": 73859.0546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55403068,
+      "before": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5252.625,
+        "route": 300,
+        "is_player": false,
+        "body": 54146604,
+        "sample": 139,
+        "time": 73860.5546875
+      },
+      "after": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5265.0302734375,
+        "route": 300,
+        "is_player": false,
+        "body": 54146604,
+        "sample": 140,
+        "time": 73861.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55398852,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5159.72412109375,
+        "route": 300,
+        "is_player": false,
+        "body": 54148629,
+        "sample": 139,
+        "time": 73860.5546875
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5172.12939453125,
+        "route": 300,
+        "is_player": false,
+        "body": 54148629,
+        "sample": 140,
+        "time": 73861.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55431504,
+      "before": {
+        "node": 113455676,
+        "section": 58,
+        "distance": 5050.52294921875,
+        "route": 300,
+        "is_player": false,
+        "body": 54151059,
+        "sample": 139,
+        "time": 73860.5546875
+      },
+      "after": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5062.92822265625,
+        "route": 300,
+        "is_player": false,
+        "body": 54151059,
+        "sample": 140,
+        "time": 73861.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59067832,
+      "before": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11323.869140625,
+        "route": 305,
+        "is_player": true,
+        "body": 54138099,
+        "sample": 140,
+        "time": 73861.0625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11329.490234375,
+        "route": 305,
+        "is_player": true,
+        "body": 54138099,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59184456,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11224.1953125,
+        "route": 305,
+        "is_player": true,
+        "body": 54140124,
+        "sample": 140,
+        "time": 73861.0625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11229.7998046875,
+        "route": 305,
+        "is_player": true,
+        "body": 54140124,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59180856,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11124.6259765625,
+        "route": 305,
+        "is_player": true,
+        "body": 54142149,
+        "sample": 140,
+        "time": 73861.0625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11130.228515625,
+        "route": 305,
+        "is_player": true,
+        "body": 54142149,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55435884,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5153.92919921875,
+        "route": 300,
+        "is_player": false,
+        "body": 54149034,
+        "sample": 140,
+        "time": 73861.0625
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5166.52783203125,
+        "route": 300,
+        "is_player": false,
+        "body": 54149034,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59165820,
+      "before": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11370.4755859375,
+        "route": 305,
+        "is_player": true,
+        "body": 54137289,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "after": {
+        "node": 113455932,
+        "section": 99,
+        "distance": 11376.3173828125,
+        "route": 305,
+        "is_player": true,
+        "body": 54137289,
+        "sample": 142,
+        "time": 73862.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 54469120,
+      "before": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5257.52880859375,
+        "route": 300,
+        "is_player": false,
+        "body": 54147009,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "after": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5269.74072265625,
+        "route": 300,
+        "is_player": false,
+        "body": 54147009,
+        "sample": 142,
+        "time": 73862.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55435216,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5148.32763671875,
+        "route": 300,
+        "is_player": false,
+        "body": 54149439,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5160.53955078125,
+        "route": 300,
+        "is_player": false,
+        "body": 54149439,
+        "sample": 142,
+        "time": 73862.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55430576,
+      "before": {
+        "node": 113455676,
+        "section": 58,
+        "distance": 5057.32666015625,
+        "route": 300,
+        "is_player": false,
+        "body": 54151464,
+        "sample": 141,
+        "time": 73861.5546875
+      },
+      "after": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5069.53857421875,
+        "route": 300,
+        "is_player": false,
+        "body": 54151464,
+        "sample": 142,
+        "time": 73862.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 58638132,
+      "before": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11372.24609375,
+        "route": 305,
+        "is_player": true,
+        "body": 55070430,
+        "sample": 145,
+        "time": 73863.5625
+      },
+      "after": {
+        "node": 113455932,
+        "section": 99,
+        "distance": 11378.0185546875,
+        "route": 305,
+        "is_player": true,
+        "body": 55070430,
+        "sample": 146,
+        "time": 73864.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55399780,
+      "before": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5251.5869140625,
+        "route": 300,
+        "is_player": false,
+        "body": 55080960,
+        "sample": 145,
+        "time": 73863.5625
+      },
+      "after": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5263.466796875,
+        "route": 300,
+        "is_player": false,
+        "body": 55080960,
+        "sample": 146,
+        "time": 73864.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55987804,
+      "before": {
+        "node": 113455676,
+        "section": 58,
+        "distance": 5051.384765625,
+        "route": 300,
+        "is_player": false,
+        "body": 55085415,
+        "sample": 145,
+        "time": 73863.5625
+      },
+      "after": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5063.6337890625,
+        "route": 300,
+        "is_player": false,
+        "body": 55085415,
+        "sample": 146,
+        "time": 73864.0625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55400448,
+      "before": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5339.1962890625,
+        "route": 300,
+        "is_player": false,
+        "body": 54147819,
+        "sample": 151,
+        "time": 73866.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5350.42822265625,
+        "route": 300,
+        "is_player": false,
+        "body": 54147819,
+        "sample": 152,
+        "time": 73867.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55429648,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5157.1943359375,
+        "route": 300,
+        "is_player": false,
+        "body": 54151869,
+        "sample": 151,
+        "time": 73866.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5168.42626953125,
+        "route": 300,
+        "is_player": false,
+        "body": 54151869,
+        "sample": 152,
+        "time": 73867.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59165152,
+      "before": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11373.720703125,
+        "route": 305,
+        "is_player": true,
+        "body": 55071240,
+        "sample": 152,
+        "time": 73867.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 99,
+        "distance": 11379.5859375,
+        "route": 305,
+        "is_player": true,
+        "body": 55071240,
+        "sample": 153,
+        "time": 73867.5625
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59185124,
+      "before": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11325.7646484375,
+        "route": 305,
+        "is_player": true,
+        "body": 54139719,
+        "sample": 154,
+        "time": 73868.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11331.958984375,
+        "route": 305,
+        "is_player": true,
+        "body": 54139719,
+        "sample": 155,
+        "time": 73868.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59181784,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11226.1884765625,
+        "route": 305,
+        "is_player": true,
+        "body": 54141744,
+        "sample": 154,
+        "time": 73868.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11232.376953125,
+        "route": 305,
+        "is_player": true,
+        "body": 54141744,
+        "sample": 155,
+        "time": 73868.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55987804,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5153.56640625,
+        "route": 300,
+        "is_player": false,
+        "body": 54152679,
+        "sample": 154,
+        "time": 73868.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5164.2177734375,
+        "route": 300,
+        "is_player": false,
+        "body": 54152679,
+        "sample": 155,
+        "time": 73868.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59186460,
+      "before": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11371.8359375,
+        "route": 305,
+        "is_player": true,
+        "body": 54138909,
+        "sample": 155,
+        "time": 73868.5703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 99,
+        "distance": 11377.916015625,
+        "route": 305,
+        "is_player": true,
+        "body": 54138909,
+        "sample": 156,
+        "time": 73869.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55398852,
+      "before": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5346.2197265625,
+        "route": 300,
+        "is_player": false,
+        "body": 54148629,
+        "sample": 155,
+        "time": 73868.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5356.73486328125,
+        "route": 300,
+        "is_player": false,
+        "body": 54148629,
+        "sample": 156,
+        "time": 73869.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55432432,
+      "before": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5255.21875,
+        "route": 300,
+        "is_player": false,
+        "body": 54150654,
+        "sample": 155,
+        "time": 73868.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5266.060546875,
+        "route": 300,
+        "is_player": false,
+        "body": 54150654,
+        "sample": 156,
+        "time": 73869.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55435884,
+      "before": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5338.53466796875,
+        "route": 300,
+        "is_player": false,
+        "body": 54149034,
+        "sample": 156,
+        "time": 73869.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5349.0751953125,
+        "route": 300,
+        "is_player": false,
+        "body": 54149034,
+        "sample": 157,
+        "time": 73869.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55986876,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5156.859375,
+        "route": 300,
+        "is_player": false,
+        "body": 54153084,
+        "sample": 156,
+        "time": 73869.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5167.39501953125,
+        "route": 300,
+        "is_player": false,
+        "body": 54153084,
+        "sample": 157,
+        "time": 73869.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55985020,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5151.01806640625,
+        "route": 300,
+        "is_player": false,
+        "body": 54153894,
+        "sample": 159,
+        "time": 73870.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5160.986328125,
+        "route": 300,
+        "is_player": false,
+        "body": 54153894,
+        "sample": 160,
+        "time": 73871.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55433360,
+      "before": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5344.166015625,
+        "route": 300,
+        "is_player": false,
+        "body": 54150249,
+        "sample": 162,
+        "time": 73872.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5353.72802734375,
+        "route": 300,
+        "is_player": false,
+        "body": 54150249,
+        "sample": 163,
+        "time": 73872.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55428720,
+      "before": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5253.1650390625,
+        "route": 300,
+        "is_player": false,
+        "body": 54152274,
+        "sample": 162,
+        "time": 73872.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5262.72705078125,
+        "route": 300,
+        "is_player": false,
+        "body": 54152274,
+        "sample": 163,
+        "time": 73872.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59183120,
+      "before": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11323.353515625,
+        "route": 305,
+        "is_player": true,
+        "body": 54140934,
+        "sample": 163,
+        "time": 73872.5703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11329.9736328125,
+        "route": 305,
+        "is_player": true,
+        "body": 54140934,
+        "sample": 164,
+        "time": 73873.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59197392,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11223.7744140625,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 163,
+        "time": 73872.5703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11230.408203125,
+        "route": 305,
+        "is_player": true,
+        "body": 54142959,
+        "sample": 164,
+        "time": 73873.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59193012,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11124.447265625,
+        "route": 305,
+        "is_player": true,
+        "body": 54144984,
+        "sample": 163,
+        "time": 73872.5703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11131.0810546875,
+        "route": 305,
+        "is_player": true,
+        "body": 54144984,
+        "sample": 164,
+        "time": 73873.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55403068,
+      "before": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5519.4296875,
+        "route": 300,
+        "is_player": false,
+        "body": 54146604,
+        "sample": 163,
+        "time": 73872.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 63,
+        "distance": 5528.85546875,
+        "route": 300,
+        "is_player": false,
+        "body": 54146604,
+        "sample": 164,
+        "time": 73873.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55983164,
+      "before": {
+        "node": 113455676,
+        "section": 59,
+        "distance": 5153.52587890625,
+        "route": 300,
+        "is_player": false,
+        "body": 54154704,
+        "sample": 163,
+        "time": 73872.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5162.95166015625,
+        "route": 300,
+        "is_player": false,
+        "body": 54154704,
+        "sample": 164,
+        "time": 73873.0703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59182452,
+      "before": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11323.4716796875,
+        "route": 305,
+        "is_player": true,
+        "body": 54141339,
+        "sample": 166,
+        "time": 73874.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11330.2587890625,
+        "route": 305,
+        "is_player": true,
+        "body": 54141339,
+        "sample": 167,
+        "time": 73874.578125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59196724,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11223.9375,
+        "route": 305,
+        "is_player": true,
+        "body": 54143364,
+        "sample": 166,
+        "time": 73874.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11230.724609375,
+        "route": 305,
+        "is_player": true,
+        "body": 54143364,
+        "sample": 167,
+        "time": 73874.578125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59203172,
+      "before": {
+        "node": 113455932,
+        "section": 95,
+        "distance": 11124.68359375,
+        "route": 305,
+        "is_player": true,
+        "body": 54145389,
+        "sample": 166,
+        "time": 73874.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11131.4775390625,
+        "route": 305,
+        "is_player": true,
+        "body": 54145389,
+        "sample": 167,
+        "time": 73874.578125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55431504,
+      "before": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5345.33837890625,
+        "route": 300,
+        "is_player": false,
+        "body": 54151059,
+        "sample": 166,
+        "time": 73874.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5354.21337890625,
+        "route": 300,
+        "is_player": false,
+        "body": 54151059,
+        "sample": 167,
+        "time": 73874.578125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55986876,
+      "before": {
+        "node": 113455676,
+        "section": 60,
+        "distance": 5254.33740234375,
+        "route": 300,
+        "is_player": false,
+        "body": 54153084,
+        "sample": 166,
+        "time": 73874.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 61,
+        "distance": 5263.21240234375,
+        "route": 300,
+        "is_player": false,
+        "body": 54153084,
+        "sample": 167,
+        "time": 73874.578125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55403068,
+      "before": {
+        "node": 113455676,
+        "section": 63,
+        "distance": 5556.3154296875,
+        "route": 300,
+        "is_player": false,
+        "body": 54146604,
+        "sample": 167,
+        "time": 73874.578125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 64,
+        "distance": 5565.4716796875,
+        "route": 300,
+        "is_player": false,
+        "body": 54146604,
+        "sample": 168,
+        "time": 73875.078125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55401116,
+      "before": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5518.01513671875,
+        "route": 300,
+        "is_player": false,
+        "body": 54147414,
+        "sample": 167,
+        "time": 73874.578125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 63,
+        "distance": 5527.17138671875,
+        "route": 300,
+        "is_player": false,
+        "body": 54147414,
+        "sample": 168,
+        "time": 73875.078125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59180856,
+      "before": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11325.1220703125,
+        "route": 305,
+        "is_player": true,
+        "body": 54142149,
+        "sample": 172,
+        "time": 73877.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11332.23046875,
+        "route": 305,
+        "is_player": true,
+        "body": 54142149,
+        "sample": 173,
+        "time": 73877.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59194868,
+      "before": {
+        "node": 113455932,
+        "section": 96,
+        "distance": 11225.6748046875,
+        "route": 305,
+        "is_player": true,
+        "body": 54144174,
+        "sample": 172,
+        "time": 73877.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 97,
+        "distance": 11232.7734375,
+        "route": 305,
+        "is_player": true,
+        "body": 54144174,
+        "sample": 173,
+        "time": 73877.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55401116,
+      "before": {
+        "node": 113455676,
+        "section": 63,
+        "distance": 5561.18603515625,
+        "route": 300,
+        "is_player": false,
+        "body": 54147414,
+        "sample": 172,
+        "time": 73877.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 64,
+        "distance": 5569.3837890625,
+        "route": 300,
+        "is_player": false,
+        "body": 54147414,
+        "sample": 173,
+        "time": 73877.5703125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59182452,
+      "before": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11371.9951171875,
+        "route": 305,
+        "is_player": true,
+        "body": 54141339,
+        "sample": 173,
+        "time": 73877.5703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 99,
+        "distance": 11379.1572265625,
+        "route": 305,
+        "is_player": true,
+        "body": 54141339,
+        "sample": 174,
+        "time": 73878.078125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55398852,
+      "before": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5514.783203125,
+        "route": 300,
+        "is_player": false,
+        "body": 54148629,
+        "sample": 173,
+        "time": 73877.5703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 63,
+        "distance": 5522.7197265625,
+        "route": 300,
+        "is_player": false,
+        "body": 54148629,
+        "sample": 174,
+        "time": 73878.078125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400007,
+      "car": 59181784,
+      "before": {
+        "node": 113455932,
+        "section": 98,
+        "distance": 11374.1337890625,
+        "route": 305,
+        "is_player": true,
+        "body": 54141744,
+        "sample": 176,
+        "time": 73879.0703125
+      },
+      "after": {
+        "node": 113455932,
+        "section": 99,
+        "distance": 11381.3896484375,
+        "route": 305,
+        "is_player": true,
+        "body": 54141744,
+        "sample": 177,
+        "time": 73879.578125
+      },
+      "node_changed": false
+    },
+    {
+      "train": 400005,
+      "car": 55435884,
+      "before": {
+        "node": 113455676,
+        "section": 62,
+        "distance": 5520.35888671875,
+        "route": 300,
+        "is_player": false,
+        "body": 54149034,
+        "sample": 176,
+        "time": 73879.0703125
+      },
+      "after": {
+        "node": 113455676,
+        "section": 63,
+        "distance": 5527.89306640625,
+        "route": 300,
+        "is_player": false,
+        "body": 54149034,
+        "sample": 177,
+        "time": 73879.578125
+      },
+      "node_changed": false
+    }
+  ],
+  "limitations": "Sequential samples with matching train/car/body identities within one run. Section changes can skip intermediates; brackets are not exact event times. No global identity guarantee, full-vehicle occupancy or origin-shift validation."
+}

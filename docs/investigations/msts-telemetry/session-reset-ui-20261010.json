@@ -1,0 +1,35 @@
+{
+  "documented_utc": "2026-10-10T01:13:31.705863+00:00",
+  "pid": 12888,
+  "fixture": "C:\\MSTS\\ROUTES\\JAPAN1\\ACTIVITIES\\tokyohakonetutorial.act",
+  "fixture_sha256": "353461954973c3b264dff7f3b3ffd8af4b6401d04d5fa095210e5ca0ff341a44",
+  "method": "Computer-use skill @oai/sky UI observations;no screenshot saved",
+  "actions": [
+    "Dismiss Activity complete alert",
+    "View Details",
+    "Back to evaluation summary",
+    "Restart Activity"
+  ],
+  "summary": {
+    "activity": "Passenger Activity Tutorial",
+    "completed_duration": "20 minutes and 13 seconds",
+    "minor_errors": 1,
+    "late_stations": 4,
+    "total_lateness": "9 minutes and 25 seconds",
+    "speed_episodes": 3,
+    "speed_duration": "47 seconds"
+  },
+  "details": {
+    "error_time": "18:12:07",
+    "location": "km post 5.36",
+    "error": "left a station while loading passengers",
+    "missed_stations": "You did not fail to stop at any stations."
+  },
+  "restart": {
+    "screen": "Operations Notebook briefing",
+    "paused": 1,
+    "day_seconds": 64801.2265625,
+    "player_speed": 0
+  },
+  "limits": "Qualitative UI phase observations;sample clock values from separate read-only snapshots,not screenshot timestamps. No evaluation save or game save requested."
+}

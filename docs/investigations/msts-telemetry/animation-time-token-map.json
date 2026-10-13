@@ -1,0 +1,55 @@
+{
+  "pid": 33612,
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "labels": [
+    {
+      "token": "0x15",
+      "label": "linear_pos",
+      "table": "0x794260",
+      "bytes": "a0ad760015000000",
+      "string_address": "0x76ada0"
+    },
+    {
+      "token": "0x16",
+      "label": "tcb_pos",
+      "table": "0x794268",
+      "bytes": "8cad760016000000",
+      "string_address": "0x76ad8c"
+    },
+    {
+      "token": "0x17",
+      "label": "slerp_rot",
+      "table": "0x794270",
+      "bytes": "74ad760017000000",
+      "string_address": "0x76ad74"
+    },
+    {
+      "token": "0x18",
+      "label": "tcb_rot",
+      "table": "0x794278",
+      "bytes": "60ad760018000000",
+      "string_address": "0x76ad60"
+    },
+    {
+      "token": "0x1b",
+      "label": "anim_nodes",
+      "table": "0x794290",
+      "bytes": "10ad76001b000000",
+      "string_address": "0x76ad10"
+    },
+    {
+      "token": "0x1c",
+      "label": "animation",
+      "table": "0x794298",
+      "bytes": "f8ac76001c000000",
+      "string_address": "0x76acf8"
+    }
+  ],
+  "format_reference": {
+    "url": "https://raw.githubusercontent.com/openrails/openrails/master/Source/Orts.Formats.Msts/ShapeFile.cs",
+    "observed_date": "2026-09-27",
+    "lines": "1307-1318,1367-1446",
+    "interpretation": "Open Rails names the animation integers FrameCount then FrameRate and key integer Frame; format corroboration only, not native execution proof."
+  },
+  "limitation": "Selected label/table bytes only. Native arithmetic is recorded in pass243; no loaded animation descriptor or visual comparison sampled."
+}

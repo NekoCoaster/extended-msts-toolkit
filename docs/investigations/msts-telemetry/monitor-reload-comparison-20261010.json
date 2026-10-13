@@ -1,0 +1,171 @@
+{
+  "sources": [
+    {
+      "path": "captures\\save-object-sources-paused-01\\sources.json",
+      "sha256": "0b4a8647925125dedbfd8bcded410b6f1e0d1aedfd1a9ceea110fdfb19def522"
+    },
+    {
+      "path": "captures\\after-reload-object-sources-01\\sources.json",
+      "sha256": "e1098b7bea1eef5dbf04a17c6d2317aa6f238fd5a96a02fcfbd941b5cc42455f"
+    }
+  ],
+  "clocks": [
+    74360.5859375,
+    74361.2734375
+  ],
+  "paused": [
+    1,
+    1
+  ],
+  "rows": [
+    {
+      "vehicle_id": 200223,
+      "slot": "0x4ba",
+      "enable_before": 1,
+      "enable_after": 1,
+      "changed_nonpointer_words": [],
+      "changed_values": [],
+      "definition_index_before": 0,
+      "definition_index_after": 0,
+      "definition_pointer_changed": true,
+      "source_checks_stable": true
+    },
+    {
+      "vehicle_id": 200223,
+      "slot": "0x4fa",
+      "enable_before": 1,
+      "enable_after": 1,
+      "changed_nonpointer_words": [],
+      "changed_values": [],
+      "definition_index_before": 1,
+      "definition_index_after": 1,
+      "definition_pointer_changed": true,
+      "source_checks_stable": true
+    },
+    {
+      "vehicle_id": 200223,
+      "slot": "0x53a",
+      "enable_before": 1,
+      "enable_after": 1,
+      "changed_nonpointer_words": [
+        "0x4",
+        "0x8",
+        "0xc"
+      ],
+      "changed_values": [
+        {
+          "offset": "0x4",
+          "before_u32": 1,
+          "after_u32": 0,
+          "before_f32": 1.401298464324817e-45,
+          "after_f32": 0.0
+        },
+        {
+          "offset": "0x8",
+          "before_u32": 1,
+          "after_u32": 0,
+          "before_f32": 1.401298464324817e-45,
+          "after_f32": 0.0
+        },
+        {
+          "offset": "0xc",
+          "before_u32": 1,
+          "after_u32": 0,
+          "before_f32": 1.401298464324817e-45,
+          "after_f32": 0.0
+        }
+      ],
+      "definition_index_before": 2,
+      "definition_index_after": 2,
+      "definition_pointer_changed": true,
+      "source_checks_stable": true
+    },
+    {
+      "vehicle_id": 200223,
+      "slot": "0x57a",
+      "enable_before": 0,
+      "enable_after": 0,
+      "changed_nonpointer_words": [
+        "0x10",
+        "0x14",
+        "0x18"
+      ],
+      "changed_values": [
+        {
+          "offset": "0x10",
+          "before_u32": 0,
+          "after_u32": 3212836864,
+          "before_f32": 0.0,
+          "after_f32": -1.0
+        },
+        {
+          "offset": "0x14",
+          "before_u32": 0,
+          "after_u32": 3212836864,
+          "before_f32": 0.0,
+          "after_f32": -1.0
+        },
+        {
+          "offset": "0x18",
+          "before_u32": 0,
+          "after_u32": 3212836864,
+          "before_f32": 0.0,
+          "after_f32": -1.0
+        }
+      ],
+      "definition_index_before": 3,
+      "definition_index_after": 3,
+      "definition_pointer_changed": true,
+      "source_checks_stable": true
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x4ba",
+      "enable_before": 0,
+      "enable_after": 0,
+      "changed_nonpointer_words": [],
+      "changed_values": [],
+      "definition_index_before": 4294967295,
+      "definition_index_after": 4294967295,
+      "definition_pointer_changed": false,
+      "source_checks_stable": true
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x4fa",
+      "enable_before": 0,
+      "enable_after": 0,
+      "changed_nonpointer_words": [],
+      "changed_values": [],
+      "definition_index_before": 4294967295,
+      "definition_index_after": 4294967295,
+      "definition_pointer_changed": false,
+      "source_checks_stable": true
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x53a",
+      "enable_before": 0,
+      "enable_after": 0,
+      "changed_nonpointer_words": [],
+      "changed_values": [],
+      "definition_index_before": 4294967295,
+      "definition_index_after": 4294967295,
+      "definition_pointer_changed": false,
+      "source_checks_stable": true
+    },
+    {
+      "vehicle_id": 200224,
+      "slot": "0x57a",
+      "enable_before": 0,
+      "enable_after": 0,
+      "changed_nonpointer_words": [],
+      "changed_values": [],
+      "definition_index_before": 4294967295,
+      "definition_index_after": 4294967295,
+      "definition_pointer_changed": false,
+      "source_checks_stable": true
+    }
+  ],
+  "limits": "Historical single player reload fixture;not instantaneous. Compares four saved slots only,excluding raw pointer bytes from value comparison and comparing rebuilt definition indexes instead. Not a controlled active countdown/intervention restoration test;no AI or overspeed-slot restoration proof."
+}

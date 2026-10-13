@@ -1,0 +1,1153 @@
+{
+  "capture": "tokyo-activity-outcome-20261010-01",
+  "samples": 6044,
+  "errors": 0,
+  "clock_crossings": 190,
+  "unstable_event_roots": 0,
+  "unstable_services": 0,
+  "split_result_reads": 0,
+  "success_samples": 1033,
+  "first_success": {
+    "time": 66012.6484375,
+    "time_after": 66012.6484375,
+    "paused": 1,
+    "speed": 0.0,
+    "activity": {
+      "boarding_active": 0,
+      "remaining": 0.0,
+      "stop": 1,
+      "success": 1
+    },
+    "event_latch": 1,
+    "event_activation": 1,
+    "event_type": 2,
+    "outcomes": [
+      [
+        6,
+        0,
+        0
+      ]
+    ],
+    "second_stop": 1,
+    "second_success": 1,
+    "selected": 56244880,
+    "previous": 56244800,
+    "selected_platform": 481,
+    "all_stops_model": true,
+    "records": [
+      {
+        "address": 56244520,
+        "platform": 9,
+        "flags": 106,
+        "scheduled_arrival": 64805.0,
+        "recorded_arrival": 64805.0,
+        "scheduled_departure": 64880.0,
+        "recorded_departure": 64897.1484375
+      },
+      {
+        "address": 56244560,
+        "platform": 29,
+        "flags": 106,
+        "scheduled_arrival": 64962.0,
+        "recorded_arrival": 65044.7734375,
+        "scheduled_departure": 64997.0,
+        "recorded_departure": 65113.7734375
+      },
+      {
+        "address": 56244720,
+        "platform": 70,
+        "flags": 26,
+        "scheduled_arrival": 65153.0,
+        "recorded_arrival": 65508.6484375,
+        "scheduled_departure": 65189.0,
+        "recorded_departure": 65526.7734375
+      },
+      {
+        "address": 56244800,
+        "platform": 464,
+        "flags": 106,
+        "scheduled_arrival": 65263.0,
+        "recorded_arrival": 65667.0234375,
+        "scheduled_departure": 65323.0,
+        "recorded_departure": 65883.1484375
+      },
+      {
+        "address": 56244880,
+        "platform": 481,
+        "flags": 98,
+        "scheduled_arrival": 65414.0,
+        "recorded_arrival": 65979.2734375,
+        "scheduled_departure": 65447.0,
+        "recorded_departure": 0.0
+      }
+    ]
+  },
+  "changes": [
+    {
+      "before": null,
+      "after": {
+        "time": 65562.3984375,
+        "time_after": 65562.3984375,
+        "paused": 1,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244800,
+        "previous": 56244720,
+        "selected_platform": 464,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 0,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "time": 65666.8984375,
+        "time_after": 65667.0234375,
+        "paused": 0,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244800,
+        "previous": 56244720,
+        "selected_platform": 464,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 0,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "time": 65667.0234375,
+        "time_after": 65667.0234375,
+        "paused": 0,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 1,
+          "remaining": 179.875,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244800,
+        "previous": 56244720,
+        "selected_platform": 464,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 2,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "time": 65846.8984375,
+        "time_after": 65846.8984375,
+        "paused": 0,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 1,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244800,
+        "previous": 56244720,
+        "selected_platform": 464,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 2,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "time": 65847.0234375,
+        "time_after": 65847.0234375,
+        "paused": 0,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244800,
+        "previous": 56244720,
+        "selected_platform": 464,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 98,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "time": 65883.0234375,
+        "time_after": 65883.0234375,
+        "paused": 0,
+        "speed": 0.10562764108181,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244800,
+        "previous": 56244720,
+        "selected_platform": 464,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 98,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "time": 65883.1484375,
+        "time_after": 65883.1484375,
+        "paused": 0,
+        "speed": 0.14720144867897034,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244880,
+        "previous": 56244800,
+        "selected_platform": 481,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 106,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 65883.1484375
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "time": 65979.1484375,
+        "time_after": 65979.1484375,
+        "paused": 0,
+        "speed": 3.1495559937866346e-08,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244880,
+        "previous": 56244800,
+        "selected_platform": 481,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 106,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 65883.1484375
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 0,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 0.0,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "time": 65979.2734375,
+        "time_after": 65979.2734375,
+        "paused": 0,
+        "speed": 2.854826419707024e-08,
+        "activity": {
+          "boarding_active": 1,
+          "remaining": 33.20833206176758,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244880,
+        "previous": 56244800,
+        "selected_platform": 481,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 106,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 65883.1484375
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 2,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 65979.2734375,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "time": 66012.3984375,
+        "time_after": 66012.3984375,
+        "paused": 0,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 1,
+          "remaining": 0.08333206176757812,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244880,
+        "previous": 56244800,
+        "selected_platform": 481,
+        "all_stops_model": false,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 106,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 65883.1484375
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 2,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 65979.2734375,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "time": 66012.5234375,
+        "time_after": 66012.5234375,
+        "paused": 0,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244880,
+        "previous": 56244800,
+        "selected_platform": 481,
+        "all_stops_model": true,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 106,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 65883.1484375
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 98,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 65979.2734375,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "time": 66012.5234375,
+        "time_after": 66012.5234375,
+        "paused": 0,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "event_latch": 0,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 0,
+        "second_success": 0,
+        "selected": 56244880,
+        "previous": 56244800,
+        "selected_platform": 481,
+        "all_stops_model": true,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 106,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 65883.1484375
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 98,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 65979.2734375,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "time": 66012.6484375,
+        "time_after": 66012.6484375,
+        "paused": 1,
+        "speed": 0.0,
+        "activity": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 1,
+          "success": 1
+        },
+        "event_latch": 1,
+        "event_activation": 1,
+        "event_type": 2,
+        "outcomes": [
+          [
+            6,
+            0,
+            0
+          ]
+        ],
+        "second_stop": 1,
+        "second_success": 1,
+        "selected": 56244880,
+        "previous": 56244800,
+        "selected_platform": 481,
+        "all_stops_model": true,
+        "records": [
+          {
+            "address": 56244520,
+            "platform": 9,
+            "flags": 106,
+            "scheduled_arrival": 64805.0,
+            "recorded_arrival": 64805.0,
+            "scheduled_departure": 64880.0,
+            "recorded_departure": 64897.1484375
+          },
+          {
+            "address": 56244560,
+            "platform": 29,
+            "flags": 106,
+            "scheduled_arrival": 64962.0,
+            "recorded_arrival": 65044.7734375,
+            "scheduled_departure": 64997.0,
+            "recorded_departure": 65113.7734375
+          },
+          {
+            "address": 56244720,
+            "platform": 70,
+            "flags": 26,
+            "scheduled_arrival": 65153.0,
+            "recorded_arrival": 65508.6484375,
+            "scheduled_departure": 65189.0,
+            "recorded_departure": 65526.7734375
+          },
+          {
+            "address": 56244800,
+            "platform": 464,
+            "flags": 106,
+            "scheduled_arrival": 65263.0,
+            "recorded_arrival": 65667.0234375,
+            "scheduled_departure": 65323.0,
+            "recorded_departure": 65883.1484375
+          },
+          {
+            "address": 56244880,
+            "platform": 481,
+            "flags": 98,
+            "scheduled_arrival": 65414.0,
+            "recorded_arrival": 65979.2734375,
+            "scheduled_departure": 65447.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      }
+    }
+  ],
+  "final": {
+    "time": 66012.6484375,
+    "time_after": 66012.6484375,
+    "paused": 1,
+    "speed": 0.0,
+    "activity": {
+      "boarding_active": 0,
+      "remaining": 0.0,
+      "stop": 1,
+      "success": 1
+    },
+    "event_latch": 1,
+    "event_activation": 1,
+    "event_type": 2,
+    "outcomes": [
+      [
+        6,
+        0,
+        0
+      ]
+    ],
+    "second_stop": 1,
+    "second_success": 1,
+    "selected": 56244880,
+    "previous": 56244800,
+    "selected_platform": 481,
+    "all_stops_model": true,
+    "records": [
+      {
+        "address": 56244520,
+        "platform": 9,
+        "flags": 106,
+        "scheduled_arrival": 64805.0,
+        "recorded_arrival": 64805.0,
+        "scheduled_departure": 64880.0,
+        "recorded_departure": 64897.1484375
+      },
+      {
+        "address": 56244560,
+        "platform": 29,
+        "flags": 106,
+        "scheduled_arrival": 64962.0,
+        "recorded_arrival": 65044.7734375,
+        "scheduled_departure": 64997.0,
+        "recorded_departure": 65113.7734375
+      },
+      {
+        "address": 56244720,
+        "platform": 70,
+        "flags": 26,
+        "scheduled_arrival": 65153.0,
+        "recorded_arrival": 65508.6484375,
+        "scheduled_departure": 65189.0,
+        "recorded_departure": 65526.7734375
+      },
+      {
+        "address": 56244800,
+        "platform": 464,
+        "flags": 106,
+        "scheduled_arrival": 65263.0,
+        "recorded_arrival": 65667.0234375,
+        "scheduled_departure": 65323.0,
+        "recorded_departure": 65883.1484375
+      },
+      {
+        "address": 56244880,
+        "platform": 481,
+        "flags": 98,
+        "scheduled_arrival": 65414.0,
+        "recorded_arrival": 65979.2734375,
+        "scheduled_departure": 65447.0,
+        "recorded_departure": 0.0
+      }
+    ]
+  },
+  "limitations": "Read-only sequential observations. Native success is not proof of perfect timetable/loading performance or every completion path;UI result separately observed. No failure/reload/reset validation."
+}

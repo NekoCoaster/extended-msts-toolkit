@@ -1,0 +1,18 @@
+{
+  "source": "captures\\paired-moving-restart-01\\samples.jsonl",
+  "sha256": "d51d3720c7fbd8cbc8e6cb0c403670d537787f7025949aa5825b9fc932a654cb",
+  "samples": 181,
+  "unique_records": 45,
+  "counts_by_service": {
+    "8427664": [
+      23
+    ],
+    "53772400": [
+      22
+    ]
+  },
+  "problems": [],
+  "crossing_count": 0,
+  "crossings": [],
+  "limitations": "Same record/configuration/service pointers across sequential samples are a bounded identity check,not a lifetime guarantee. Count sets omit absent services. Brackets are sample windows,not exact crossing instants. Nodes need not be adjacent if sampling skips intermediate state. Presence is abstract per-car state,not physical vehicle extent or block occupancy."
+}

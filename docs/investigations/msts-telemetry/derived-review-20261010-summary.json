@@ -1,0 +1,42 @@
+{
+  "scope": "Semantic prerequisite and evidence-scope review of26derived inventory candidates;not universal runtime validation",
+  "reviewed_ids": [
+    "car.mass",
+    "train.total_mass",
+    "train.car_count",
+    "car.acceleration",
+    "train.lifecycle_events",
+    "car.longitudinal_speed",
+    "car.speed_magnitude",
+    "car.heading_pitch_roll",
+    "train.relative_motion",
+    "car.wheel_rotation_estimate",
+    "session.elapsed_candidate",
+    "track.curvature_magnitude",
+    "track.straight_grade_candidate",
+    "track.route_position_candidate",
+    "topology.selected_connection",
+    "topology.route_node_id_candidate",
+    "activity.event.horizontal_distance",
+    "activity.event.location_condition",
+    "electric.voltage_consist_condition",
+    "car.connection_endpoints",
+    "car.connection_endpoint_distance",
+    "car.connection_endpoint_velocity",
+    "car.connection_separation_rate",
+    "service.physicalization_endpoint_distances",
+    "audio.stream.queue_count",
+    "audio.pending.nested_child_count"
+  ],
+  "count": 26,
+  "unreviewed_derived_ids": [],
+  "remaining_limits": [
+    "Euler/frame conventions",
+    "clock and producer-phase applicability",
+    "positive-duration and unsampled event transitions",
+    "nonfinite and x87 boundary equivalence",
+    "AI physical reappearance thresholds",
+    "audibility and incomplete queues"
+  ],
+  "goal_complete": false
+}

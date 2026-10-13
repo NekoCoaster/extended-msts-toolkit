@@ -1,0 +1,30 @@
+{
+  "disk_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "pid": 7160,
+  "pass_name": "pass82",
+  "limitation": "Only exported instruction ranges checked; missing function chunks, data tables, relocations and future process writes need separate consideration.",
+  "functions": [
+    {
+      "function": "005fdd6b",
+      "instructions": 24,
+      "bytes": 59,
+      "disk_mismatches": [],
+      "live_mismatches": [],
+      "errors": []
+    },
+    {
+      "function": "0060997a",
+      "instructions": 2765,
+      "bytes": 12326,
+      "disk_mismatches": [],
+      "live_mismatches": [
+        {
+          "address": "0060c996",
+          "expected": "e8551d0a00",
+          "actual": "e8ad2a2302"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

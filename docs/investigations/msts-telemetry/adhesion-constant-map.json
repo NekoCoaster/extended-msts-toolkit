@@ -1,0 +1,48 @@
+{
+  "pid": 33612,
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "labels": [
+    {
+      "address": "0x795470",
+      "token": "0x4013d",
+      "label": "WheelRadius"
+    },
+    {
+      "address": "0x795658",
+      "token": "0x4017a",
+      "label": "Adheasion"
+    }
+  ],
+  "constants": [
+    {
+      "address": "0x753c38",
+      "raw": "0000803f",
+      "value": 1.0
+    },
+    {
+      "address": "0x76e798",
+      "raw": "d00f4940",
+      "value": 3.141590118408203
+    },
+    {
+      "address": "0x76cbe0",
+      "raw": "3333733f",
+      "value": 0.949999988079071
+    },
+    {
+      "address": "0x7732b4",
+      "raw": "cdcc1cc1",
+      "value": -9.800000190734863
+    }
+  ],
+  "callback": {
+    "vtable": "0x773280",
+    "slot": "0x20",
+    "table_entry": "0x7732a0",
+    "thunk": "0x40419c",
+    "bytes": "e9c96b2200",
+    "target": "0x62ad6a",
+    "limitation": "Static/live table and jump bytes; no loaded object or callback invocation observed."
+  },
+  "limitation": "Exact selected constants/table/string bytes only; no loaded vehicle or physics behavior validation."
+}

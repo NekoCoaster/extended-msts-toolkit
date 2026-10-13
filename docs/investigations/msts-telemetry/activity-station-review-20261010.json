@@ -1,0 +1,208 @@
+{
+  "baseline_commit": "fec7342",
+  "comparison_view": "published inventory on both sides;sync intentionally strips decompiler_excerpt from canonical cab metadata",
+  "baseline_inventory_sha256": "aa0baeee772d64502869b1d002f5fe574cdce105d3156de916244ad72b8fe11c",
+  "reviewed_candidates": 27,
+  "total_candidates": 1044,
+  "outside_scope_unchanged": 1017,
+  "lost_original_evidence": {},
+  "identity_meaning_type_preserved": true,
+  "changed_fields": {
+    "activity.event.activation_level": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.category": [
+      "applicability",
+      "units",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.horizontal_distance": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.id": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.location_condition": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.location_offset": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.location_radius": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.location_tile": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.outcome_count": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.outcomes": [
+      "applicability",
+      "extraction",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.reversible_candidate": [
+      "applicability",
+      "extraction",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.state_10": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.state_20": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.time_threshold": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.trigger_on_stop": [
+      "applicability",
+      "units",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event.type": [
+      "applicability",
+      "units",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event_evaluation_stop": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event_outcome_success": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.event_registry": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "activity.time_event_clock": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "station.boarding_active": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "station.boarding_remaining": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "station.recorded_arrival": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "station.recorded_departure": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "station.scheduled_arrival": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "station.scheduled_departure": [
+      "applicability",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ],
+    "station.state_flags": [
+      "applicability",
+      "units",
+      "evidence",
+      "evidence_status",
+      "update_or_lifecycle",
+      "limitations"
+    ]
+  },
+  "limitation": "Deterministic scope/provenance check only;semantic dispositions and unresolved limits are in ACTIVITY-STATION-METADATA-REVIEW.md."
+}

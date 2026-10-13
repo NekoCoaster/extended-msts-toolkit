@@ -1,0 +1,963 @@
+{
+  "capture": "tokyo-stop-activation-20261010-01",
+  "samples": 5566,
+  "errors": 0,
+  "clock_crossings": 129,
+  "unstable_origin": 0,
+  "unstable_player": 0,
+  "unstable_sentinel": 0,
+  "origins": [
+    [
+      -145,
+      14084
+    ],
+    [
+      -145,
+      14085
+    ],
+    [
+      -144,
+      14085
+    ]
+  ],
+  "changes": [
+    {
+      "id": 14,
+      "before": {
+        "sim_time": 65350.2734375,
+        "sim_time_after": 65350.2734375,
+        "event_clock": 550.2750244140625,
+        "paused": 0,
+        "speed": 13.890725135803223,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 55283316,
+          "category": 2,
+          "type": 1,
+          "id": 14,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              943.260986328125,
+              154.27699279785156
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              55287864
+            ]
+          ]
+        },
+        "condition": {
+          "id": 14,
+          "target_local_xz": [
+            943.260986328125,
+            154.27699279785156
+          ],
+          "delta_xz": [
+            5.9185791015625,
+            6.6179046630859375
+          ],
+          "distance_squared_native_candidate": 78.82624053955078,
+          "horizontal_distance": 8.878414303216019,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 0,
+          "activation_level": 1
+        }
+      },
+      "after": {
+        "sim_time": 65350.3984375,
+        "sim_time_after": 65350.3984375,
+        "event_clock": 550.4000244140625,
+        "paused": 1,
+        "speed": 13.945001602172852,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 55283316,
+          "category": 2,
+          "type": 1,
+          "id": 14,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              943.260986328125,
+              154.27699279785156
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              55287864
+            ]
+          ]
+        },
+        "condition": {
+          "id": 14,
+          "target_local_xz": [
+            943.260986328125,
+            154.27699279785156
+          ],
+          "delta_xz": [
+            4.681640625,
+            5.2934722900390625
+          ],
+          "distance_squared_native_candidate": 49.93860626220703,
+          "horizontal_distance": 7.066725285604856,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 1,
+          "activation_level": 1
+        }
+      }
+    },
+    {
+      "id": 47,
+      "before": {
+        "sim_time": 65372.8984375,
+        "sim_time_after": 65372.8984375,
+        "event_clock": 572.9000244140625,
+        "paused": 0,
+        "speed": 12.429811477661133,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56962760,
+          "category": 2,
+          "type": 1,
+          "id": 47,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              760.9760131835938,
+              -178.93299865722656
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56962364
+            ]
+          ]
+        },
+        "condition": {
+          "id": 47,
+          "target_local_xz": [
+            760.9760131835938,
+            -178.93299865722656
+          ],
+          "delta_xz": [
+            4.80523681640625,
+            6.9206390380859375
+          ],
+          "distance_squared_native_candidate": 70.98554229736328,
+          "horizontal_distance": 8.42529182268266,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 0,
+          "activation_level": 1
+        }
+      },
+      "after": {
+        "sim_time": 65373.0234375,
+        "sim_time_after": 65373.0234375,
+        "event_clock": 573.0250244140625,
+        "paused": 1,
+        "speed": 12.186578750610352,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56962760,
+          "category": 2,
+          "type": 1,
+          "id": 47,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              760.9760131835938,
+              -178.93299865722656
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56962364
+            ]
+          ]
+        },
+        "condition": {
+          "id": 47,
+          "target_local_xz": [
+            760.9760131835938,
+            -178.93299865722656
+          ],
+          "delta_xz": [
+            3.86376953125,
+            5.623321533203125
+          ],
+          "distance_squared_native_candidate": 46.55046081542969,
+          "horizontal_distance": 6.822789811758067,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 1,
+          "activation_level": 1
+        }
+      }
+    },
+    {
+      "id": 48,
+      "before": {
+        "sim_time": 65417.8984375,
+        "sim_time_after": 65417.8984375,
+        "event_clock": 617.9000244140625,
+        "paused": 0,
+        "speed": 6.60371732711792,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56963804,
+          "category": 0,
+          "type": 0,
+          "id": 48,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 0,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "outcomes_raw": []
+        },
+        "condition": null
+      },
+      "after": {
+        "sim_time": 65418.0234375,
+        "sim_time_after": 65418.0234375,
+        "event_clock": 618.0250244140625,
+        "paused": 0,
+        "speed": 6.647166728973389,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56963804,
+          "category": 0,
+          "type": 0,
+          "id": 48,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 0,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "outcomes_raw": []
+        },
+        "condition": null
+      }
+    },
+    {
+      "id": 52,
+      "before": {
+        "sim_time": 65427.8984375,
+        "sim_time_after": 65427.8984375,
+        "event_clock": 627.9000244140625,
+        "paused": 0,
+        "speed": 9.964187622070312,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56963392,
+          "category": 2,
+          "type": 1,
+          "id": 52,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              670.9169921875,
+              -356.22601318359375
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56962900
+            ]
+          ]
+        },
+        "condition": {
+          "id": 52,
+          "target_local_xz": [
+            670.9169921875,
+            -356.22601318359375
+          ],
+          "delta_xz": [
+            4.42193603515625,
+            8.827239990234375
+          ],
+          "distance_squared_native_candidate": 97.47368621826172,
+          "horizontal_distance": 9.8728762890184,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 0,
+          "activation_level": 1
+        }
+      },
+      "after": {
+        "sim_time": 65428.0234375,
+        "sim_time_after": 65428.0234375,
+        "event_clock": 628.0250244140625,
+        "paused": 1,
+        "speed": 10.00474739074707,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56963392,
+          "category": 2,
+          "type": 1,
+          "id": 52,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              670.9169921875,
+              -356.22601318359375
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56962900
+            ]
+          ]
+        },
+        "condition": {
+          "id": 52,
+          "target_local_xz": [
+            670.9169921875,
+            -356.22601318359375
+          ],
+          "delta_xz": [
+            3.84014892578125,
+            7.665740966796875
+          ],
+          "distance_squared_native_candidate": 73.51033020019531,
+          "horizontal_distance": 8.573816548083784,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 1,
+          "activation_level": 1
+        }
+      }
+    },
+    {
+      "id": 30,
+      "before": {
+        "sim_time": 65476.7734375,
+        "sim_time_after": 65476.7734375,
+        "event_clock": 676.7750244140625,
+        "paused": 0,
+        "speed": 14.918981552124023,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56971672,
+          "category": 2,
+          "type": 1,
+          "id": 30,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              347.239013671875,
+              -989.3099975585938
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              52326644
+            ]
+          ]
+        },
+        "condition": {
+          "id": 30,
+          "target_local_xz": [
+            347.239013671875,
+            -989.3099975585938
+          ],
+          "delta_xz": [
+            4.35418701171875,
+            7.68121337890625
+          ],
+          "distance_squared_native_candidate": 77.9599838256836,
+          "horizontal_distance": 8.829495105932365,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 0,
+          "activation_level": 1
+        }
+      },
+      "after": {
+        "sim_time": 65476.8984375,
+        "sim_time_after": 65476.8984375,
+        "event_clock": 676.9000244140625,
+        "paused": 1,
+        "speed": 14.907273292541504,
+        "origin": [
+          -145,
+          14085
+        ],
+        "event": {
+          "address": 56971672,
+          "category": 2,
+          "type": 1,
+          "id": 30,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14085
+            ],
+            "offset": [
+              347.239013671875,
+              -989.3099975585938
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              52326644
+            ]
+          ]
+        },
+        "condition": {
+          "id": 30,
+          "target_local_xz": [
+            347.239013671875,
+            -989.3099975585938
+          ],
+          "delta_xz": [
+            3.40869140625,
+            5.98626708984375
+          ],
+          "distance_squared_native_candidate": 47.45457077026367,
+          "horizontal_distance": 6.8887278049189655,
+          "inside_radius": true,
+          "stop_condition": false,
+          "predicate": true,
+          "latched_raw": 1,
+          "activation_level": 1
+        }
+      }
+    },
+    {
+      "id": 32,
+      "before": {
+        "sim_time": 65501.5234375,
+        "sim_time_after": 65501.5234375,
+        "event_clock": 701.5250244140625,
+        "paused": 0,
+        "speed": 0.021127935498952866,
+        "origin": [
+          -145,
+          14084
+        ],
+        "event": {
+          "address": 56970908,
+          "category": 2,
+          "type": 1,
+          "id": 32,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 3,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14084
+            ],
+            "offset": [
+              124.19200134277344,
+              854.52197265625
+            ],
+            "radius": 60.0,
+            "trigger_on_stop": 1
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56970360
+            ],
+            [
+              2,
+              42,
+              0
+            ],
+            [
+              2,
+              44,
+              0
+            ]
+          ]
+        },
+        "condition": {
+          "id": 32,
+          "target_local_xz": [
+            124.19200134277344,
+            854.52197265625
+          ],
+          "delta_xz": [
+            34.58091735839844,
+            22.78948974609375
+          ],
+          "distance_squared_native_candidate": 1715.20068359375,
+          "horizontal_distance": 41.4149813907208,
+          "inside_radius": true,
+          "stop_condition": true,
+          "predicate": true,
+          "latched_raw": 0,
+          "activation_level": 1
+        }
+      },
+      "after": {
+        "sim_time": 65501.6484375,
+        "sim_time_after": 65501.6484375,
+        "event_clock": 701.6500244140625,
+        "paused": 1,
+        "speed": -6.984416813793359e-07,
+        "origin": [
+          -145,
+          14084
+        ],
+        "event": {
+          "address": 56970908,
+          "category": 2,
+          "type": 1,
+          "id": 32,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 3,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14084
+            ],
+            "offset": [
+              124.19200134277344,
+              854.52197265625
+            ],
+            "radius": 60.0,
+            "trigger_on_stop": 1
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56970360
+            ],
+            [
+              2,
+              42,
+              0
+            ],
+            [
+              2,
+              44,
+              0
+            ]
+          ]
+        },
+        "condition": {
+          "id": 32,
+          "target_local_xz": [
+            124.19200134277344,
+            854.52197265625
+          ],
+          "delta_xz": [
+            34.58064270019531,
+            22.789306640625
+          ],
+          "distance_squared_native_candidate": 1715.17333984375,
+          "horizontal_distance": 41.414651270338496,
+          "inside_radius": true,
+          "stop_condition": true,
+          "predicate": true,
+          "latched_raw": 1,
+          "activation_level": 1
+        }
+      }
+    },
+    {
+      "id": 42,
+      "before": {
+        "sim_time": 65501.5234375,
+        "sim_time_after": 65501.5234375,
+        "event_clock": 701.5250244140625,
+        "paused": 0,
+        "speed": 0.021127935498952866,
+        "origin": [
+          -145,
+          14084
+        ],
+        "event": {
+          "address": 56964892,
+          "category": 0,
+          "type": 0,
+          "id": 42,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 0,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "outcomes_raw": []
+        },
+        "condition": null
+      },
+      "after": {
+        "sim_time": 65501.6484375,
+        "sim_time_after": 65501.6484375,
+        "event_clock": 701.6500244140625,
+        "paused": 1,
+        "speed": -6.984416813793359e-07,
+        "origin": [
+          -145,
+          14084
+        ],
+        "event": {
+          "address": 56964892,
+          "category": 0,
+          "type": 0,
+          "id": 42,
+          "state_10": 1,
+          "state_20": 1,
+          "activation_level": 0,
+          "outcome_count": 0,
+          "reversible_candidate": 0,
+          "activation_positive": false,
+          "outcomes_raw": []
+        },
+        "condition": null
+      }
+    },
+    {
+      "id": 44,
+      "before": {
+        "sim_time": 65501.5234375,
+        "sim_time_after": 65501.5234375,
+        "event_clock": 701.5250244140625,
+        "paused": 0,
+        "speed": 0.021127935498952866,
+        "origin": [
+          -145,
+          14084
+        ],
+        "event": {
+          "address": 56964628,
+          "category": 2,
+          "type": 1,
+          "id": 44,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 1,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": true,
+          "location": {
+            "tile": [
+              -145,
+              14084
+            ],
+            "offset": [
+              1.714359998703003,
+              773.8079833984375
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56964160
+            ]
+          ]
+        },
+        "condition": {
+          "id": 44,
+          "target_local_xz": [
+            1.714359998703003,
+            773.8079833984375
+          ],
+          "delta_xz": [
+            157.05856323242188,
+            103.50347900390625
+          ],
+          "distance_squared_native_candidate": 35380.36328125,
+          "horizontal_distance": 188.09668599220456,
+          "inside_radius": false,
+          "stop_condition": true,
+          "predicate": false,
+          "latched_raw": 0,
+          "activation_level": 1
+        }
+      },
+      "after": {
+        "sim_time": 65501.6484375,
+        "sim_time_after": 65501.6484375,
+        "event_clock": 701.6500244140625,
+        "paused": 1,
+        "speed": -6.984416813793359e-07,
+        "origin": [
+          -145,
+          14084
+        ],
+        "event": {
+          "address": 56964628,
+          "category": 2,
+          "type": 1,
+          "id": 44,
+          "state_10": 0,
+          "state_20": 1,
+          "activation_level": 0,
+          "outcome_count": 1,
+          "reversible_candidate": 0,
+          "activation_positive": false,
+          "location": {
+            "tile": [
+              -145,
+              14084
+            ],
+            "offset": [
+              1.714359998703003,
+              773.8079833984375
+            ],
+            "radius": 10.0,
+            "trigger_on_stop": 0
+          },
+          "outcomes_raw": [
+            [
+              5,
+              0,
+              56964160
+            ]
+          ]
+        },
+        "condition": {
+          "id": 44,
+          "target_local_xz": [
+            1.714359998703003,
+            773.8079833984375
+          ],
+          "delta_xz": [
+            157.05828857421875,
+            103.5032958984375
+          ],
+          "distance_squared_native_candidate": 35380.23828125,
+          "horizontal_distance": 188.09635371598782,
+          "inside_radius": false,
+          "stop_condition": true,
+          "predicate": false,
+          "latched_raw": 0,
+          "activation_level": 0
+        }
+      }
+    }
+  ],
+  "stop_sources": {
+    "31": {
+      "inside_moving_unlatched": 0,
+      "true_predicate_samples": 0,
+      "final": {
+        "id": 31,
+        "target_local_xz": [
+          42.48509979248047,
+          800.677001953125
+        ],
+        "delta_xz": [
+          91.86290740966797,
+          60.53802490234375
+        ],
+        "distance_squared_native_candidate": 12103.646484375,
+        "horizontal_distance": 110.01657368040054,
+        "inside_radius": false,
+        "stop_condition": true,
+        "predicate": false,
+        "latched_raw": 0,
+        "activation_level": 1
+      }
+    },
+    "32": {
+      "inside_moving_unlatched": 49,
+      "true_predicate_samples": 2963,
+      "final": {
+        "id": 32,
+        "target_local_xz": [
+          124.19200134277344,
+          854.52197265625
+        ],
+        "delta_xz": [
+          10.156005859375,
+          6.69305419921875
+        ],
+        "distance_squared_native_candidate": 147.94143676757812,
+        "horizontal_distance": 12.163117888418993,
+        "inside_radius": true,
+        "stop_condition": true,
+        "predicate": true,
+        "latched_raw": 1,
+        "activation_level": 1
+      }
+    },
+    "33": {
+      "inside_moving_unlatched": 38,
+      "true_predicate_samples": 0,
+      "final": {
+        "id": 33,
+        "target_local_xz": [
+          191.70899963378906,
+          899.0170288085938
+        ],
+        "delta_xz": [
+          -57.360992431640625,
+          -37.802001953125
+        ],
+        "distance_squared_native_candidate": 4719.27490234375,
+        "horizontal_distance": 68.6969788443695,
+        "inside_radius": false,
+        "stop_condition": true,
+        "predicate": false,
+        "latched_raw": 0,
+        "activation_level": 1
+      }
+    }
+  },
+  "final": {
+    "sim_time": 65562.3984375,
+    "paused": 1,
+    "speed": 0.0
+  },
+  "limitations": "Sequential samples;reconstructed finite-input conditions are not native invocations. No atomicity or universal cadence claim. Target latch and activation have different semantics."
+}

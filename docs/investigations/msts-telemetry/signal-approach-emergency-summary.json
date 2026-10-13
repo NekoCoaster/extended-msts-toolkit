@@ -1,0 +1,69 @@
+{
+  "capture": "signal-approach-emergency-01",
+  "samples": 1268,
+  "errors": 0,
+  "paused_samples": 808,
+  "day_range": [
+    73871.1953125,
+    73905.859375
+  ],
+  "speed_range": [
+    0.0,
+    5.6277618408203125
+  ],
+  "mode_transitions": [
+    {
+      "day": 73871.1953125,
+      "mode": "0x4",
+      "handle": 0.0
+    },
+    {
+      "day": 73879.7109375,
+      "mode": "0x100000",
+      "handle": 0.949999988079071
+    }
+  ],
+  "first_sampled_stop": 73885.953125,
+  "crossed_clock_reads": 170,
+  "groups": {
+    "player:62598600": {
+      "samples": 1268,
+      "car_counts": [
+        23
+      ],
+      "unstable_owners": 0,
+      "cylinder_range": [
+        0.0,
+        85.20245361328125
+      ],
+      "pipe_range": [
+        0.0,
+        90.0
+      ]
+    },
+    "AI:53145076": {
+      "samples": 1268,
+      "car_counts": [
+        22
+      ],
+      "unstable_owners": 0,
+      "cylinder_range": [
+        0.0,
+        0.0
+      ],
+      "pipe_range": [
+        90.0,
+        90.0
+      ]
+    }
+  },
+  "final": {
+    "sim_time": 73905.859375,
+    "paused": 1,
+    "speed": 0.0,
+    "selected_mode": 1048576,
+    "train_brake": 0.949999988079071,
+    "pipe_command": 0.0
+  },
+  "limitation": "Normal UI Backspace followed by cab view and Escape pause. Input wall time not logged in sampler. Sequential reads not atomic;first sampled zero not exact stop time. Paused final signal snapshot separate. No successful signal crossing,brake release,AI intervention or physical propagation timing claim."
+}

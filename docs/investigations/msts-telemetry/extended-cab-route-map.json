@@ -1,0 +1,241 @@
+{
+  "executable_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "controller": "[[player train+0x72]+8]",
+  "lead": "[player train+0x6a]",
+  "routes": [
+    {
+      "enum": 256,
+      "enum_hex": "0x100",
+      "name": "DOORS_LEFT",
+      "route_kind": "no_update",
+      "source": null,
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "No value write in inspected helper branch",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm"
+      ]
+    },
+    {
+      "enum": 257,
+      "enum_hex": "0x101",
+      "name": "DOORS_RIGHT",
+      "route_kind": "no_update",
+      "source": null,
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "No value write in inspected helper branch",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm"
+      ]
+    },
+    {
+      "enum": 258,
+      "enum_hex": "0x102",
+      "name": "PANTOGRAPH2",
+      "route_kind": "controller_boolean",
+      "source": "controller+0x410",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Electric extension remaps control events to record440;selector450 updates paired commands264/410 through gated toggle helpers. Diesel offsets are not semantically interchangeable.",
+      "status": "Named parser/display route and electric selector/control producer traced statically;no live extension channel validation",
+      "limitations": "Static electric-layout mapping only;diesel field meanings are not interchangeable. No installed CVF declares these extension types. Secondary410 is a paired control value and450 a selector;no physical front/rear identity,roof animation,wire contact,current or live state-transition claim. The102style-dependent fallthrough must be preserved. Four-position107wrap and nonwrap paths differ;five-position path accepts0..4. Assignments to264/410 precede separately gated toggles and cannot be reported as unconditional final state. Dispatch kind5 points tocccccccc,not verified support. Post-selector0048bc8e handles shared control interlocks and does not directly consume these three fields. Full initialization,availability,indirect effects and reset/save lifecycle remain unvalidated.",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm",
+        "extended-cab-pantograph-state-20261010-byte-verification.json",
+        "extended-cab-selector-output-20261010-byte-verification.json",
+        "captures/extended-cab-pantograph-tables-20261010-01/tables.json",
+        "extended-cab-command-consumer-20261010-byte-verification.json"
+      ]
+    },
+    {
+      "enum": 259,
+      "enum_hex": "0x103",
+      "name": "CABLIGHT",
+      "route_kind": "no_update",
+      "source": null,
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "No value write in inspected helper branch",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm"
+      ]
+    },
+    {
+      "enum": 260,
+      "enum_hex": "0x104",
+      "name": "SPEEDLIMIT",
+      "route_kind": "service_limit_selection",
+      "source": "service/global limit fields",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "Do not substitute for verified service+220 effective cap; unusual stack/control flow remains qualified",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm"
+      ]
+    },
+    {
+      "enum": 261,
+      "enum_hex": "0x105",
+      "name": "SPEED_PROJECTED",
+      "route_kind": "derived_display",
+      "source": "abs(train+0x92)+(train+0x96/60)*3600, clamped below at0",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "m/s before cab display conversion; train+96 is native-labelled m/s squared",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "Nominal60-second linear extrapolation from absolute train speed and stored aggregate acceleration;player aggregate is history-filtered/rate-limited. Not measured future speed or AI target. Physical prediction and live display validity remain unvalidated.",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm",
+        "TRAIN-ACCELERATION-FINDINGS.md"
+      ]
+    },
+    {
+      "enum": 262,
+      "enum_hex": "0x106",
+      "name": "DOORS_DISPLAY",
+      "route_kind": "consist_flag_test",
+      "source": "car+0x84 mask0x3f00 OR car+0x88 mask0x3f000",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "Activity-associated train traversal; names do not independently establish door animation state",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm"
+      ]
+    },
+    {
+      "enum": 263,
+      "enum_hex": "0x107",
+      "name": "PANTOGRAPHS_4C",
+      "route_kind": "controller_word",
+      "source": "controller+0x450",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Electric extension remaps control events to record440;selector450 updates paired commands264/410 through gated toggle helpers. Diesel offsets are not semantically interchangeable.",
+      "status": "Named parser/display route and electric selector/control producer traced statically;no live extension channel validation",
+      "limitations": "Static electric-layout mapping only;diesel field meanings are not interchangeable. No installed CVF declares these extension types. Secondary410 is a paired control value and450 a selector;no physical front/rear identity,roof animation,wire contact,current or live state-transition claim. The102style-dependent fallthrough must be preserved. Four-position107wrap and nonwrap paths differ;five-position path accepts0..4. Assignments to264/410 precede separately gated toggles and cannot be reported as unconditional final state. Dispatch kind5 points tocccccccc,not verified support. Post-selector0048bc8e handles shared control interlocks and does not directly consume these three fields. Full initialization,availability,indirect effects and reset/save lifecycle remain unvalidated.",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm",
+        "extended-cab-pantograph-state-20261010-byte-verification.json",
+        "extended-cab-selector-output-20261010-byte-verification.json",
+        "captures/extended-cab-pantograph-tables-20261010-01/tables.json",
+        "extended-cab-command-consumer-20261010-byte-verification.json"
+      ]
+    },
+    {
+      "enum": 264,
+      "enum_hex": "0x108",
+      "name": "PANTOGRAPHS_4",
+      "route_kind": "controller_word",
+      "source": "controller+0x450",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Electric extension remaps control events to record440;selector450 updates paired commands264/410 through gated toggle helpers. Diesel offsets are not semantically interchangeable.",
+      "status": "Named parser/display route and electric selector/control producer traced statically;no live extension channel validation",
+      "limitations": "Static electric-layout mapping only;diesel field meanings are not interchangeable. No installed CVF declares these extension types. Secondary410 is a paired control value and450 a selector;no physical front/rear identity,roof animation,wire contact,current or live state-transition claim. The102style-dependent fallthrough must be preserved. Four-position107wrap and nonwrap paths differ;five-position path accepts0..4. Assignments to264/410 precede separately gated toggles and cannot be reported as unconditional final state. Dispatch kind5 points tocccccccc,not verified support. Post-selector0048bc8e handles shared control interlocks and does not directly consume these three fields. Full initialization,availability,indirect effects and reset/save lifecycle remain unvalidated.",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm",
+        "extended-cab-pantograph-state-20261010-byte-verification.json",
+        "extended-cab-selector-output-20261010-byte-verification.json",
+        "captures/extended-cab-pantograph-tables-20261010-01/tables.json",
+        "extended-cab-command-consumer-20261010-byte-verification.json"
+      ]
+    },
+    {
+      "enum": 265,
+      "enum_hex": "0x109",
+      "name": "PANTOGRAPHS_5",
+      "route_kind": "controller_word",
+      "source": "controller+0x450",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Electric extension remaps control events to record440;selector450 updates paired commands264/410 through gated toggle helpers. Diesel offsets are not semantically interchangeable.",
+      "status": "Named parser/display route and electric selector/control producer traced statically;no live extension channel validation",
+      "limitations": "Static electric-layout mapping only;diesel field meanings are not interchangeable. No installed CVF declares these extension types. Secondary410 is a paired control value and450 a selector;no physical front/rear identity,roof animation,wire contact,current or live state-transition claim. The102style-dependent fallthrough must be preserved. Four-position107wrap and nonwrap paths differ;five-position path accepts0..4. Assignments to264/410 precede separately gated toggles and cannot be reported as unconditional final state. Dispatch kind5 points tocccccccc,not verified support. Post-selector0048bc8e handles shared control interlocks and does not directly consume these three fields. Full initialization,availability,indirect effects and reset/save lifecycle remain unvalidated.",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm",
+        "extended-cab-pantograph-state-20261010-byte-verification.json",
+        "extended-cab-selector-output-20261010-byte-verification.json",
+        "captures/extended-cab-pantograph-tables-20261010-01/tables.json",
+        "extended-cab-command-consumer-20261010-byte-verification.json"
+      ]
+    },
+    {
+      "enum": 266,
+      "enum_hex": "0x10a",
+      "name": "AMMETER_ABS",
+      "route_kind": "conditional_lead_value",
+      "source": "lead+0x472>0 ? lead+0x476 : lead+0x2c2",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "Cab unit0x10 bypasses multiplier; not actual wheel/rail force; engine-type-specific offsets",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm"
+      ]
+    },
+    {
+      "enum": 267,
+      "enum_hex": "0x10b",
+      "name": "RPM",
+      "route_kind": "lead_value",
+      "source": "lead+0x2d2",
+      "applicability": "Inspected player electric/diesel cab helper call paths; no live extension fixture",
+      "units": "Source/display dependent; unresolved unless separately evidenced",
+      "lifecycle": "Display dispatch path; producer cadence and loaded declaration reachability not validated",
+      "status": "Named parser mapping and static display branch; no measured live channel claim",
+      "limitations": "Diesel monitor calls this RPM; same offset is steam pressure in another layout; electric invocation does not establish electric RPM meaning",
+      "evidence": [
+        "EXTENDED-CAB-FINDINGS.md",
+        "captures/extended-cab-names-20261010-01/names.json",
+        "extended-cab-parser-native-20261010-byte-verification.json",
+        "pass60c/range.asm"
+      ]
+    }
+  ],
+  "limits": "These are12display-route mappings,not12independent runtime quantities. Base cab map and source-field inventory remain separate; do not invoke unsupported enums."
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "applicability": "Registered player and AI service interactions; current two services joined to physical player and AI trains",
+    "evidence": [
+      "TRACK-INTERACTION-FINDINGS.md",
+      "read_track_interaction_records.py",
+      "test_track_interaction_records.py",
+      "captures/track-interaction-records-20261013-01/records.json",
+      "captures/track-interaction-dispatch-20261013-01-byte-verification.json",
+      "captures/track-interaction-update-20261013-01-byte-verification.json",
+      "captures/interaction-threshold-inputs-20261013-01/inputs.json"
+    ],
+    "evidence_status": "Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass",
+    "update_or_lifecycle": "Updater005bb2bb refreshes paired distances before dispatch and can remove records; capture order may differ from handler evaluation",
+    "limitations": "Supported image only; sequential non-atomic reads. Same pointers/clock can hide in-place updates. No nonzero live state transition or exact crossing proof; finite inputs only. Item kind and service identity must be retained; list presence is not a reservation or occupancy claim.",
+    "id": "interaction.endpoint_distance_history",
+    "meaning": "Previous and current paired endpoint horizontal-distance estimates",
+    "value_type": "float32[4]",
+    "units": "native geometry distance, approximate",
+    "extraction": "record+4 previous service4c endpoint,+8 current;record+c previous serviceb4 endpoint,+10 current;record+0 service pointer. Approximate horizontal norm,not along-track distance."
+  },
+  {
+    "applicability": "Registered player and AI service interactions; current two services joined to physical player and AI trains",
+    "evidence": [
+      "TRACK-INTERACTION-FINDINGS.md",
+      "read_track_interaction_records.py",
+      "test_track_interaction_records.py",
+      "captures/track-interaction-records-20261013-01/records.json",
+      "captures/track-interaction-dispatch-20261013-01-byte-verification.json",
+      "captures/track-interaction-update-20261013-01-byte-verification.json",
+      "captures/interaction-threshold-inputs-20261013-01/inputs.json"
+    ],
+    "evidence_status": "Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass",
+    "update_or_lifecycle": "Updater005bb2bb refreshes paired distances before dispatch and can remove records; capture order may differ from handler evaluation",
+    "limitations": "Supported image only; sequential non-atomic reads. Same pointers/clock can hide in-place updates. No nonzero live state transition or exact crossing proof; finite inputs only. Item kind and service identity must be retained; list presence is not a reservation or occupancy claim.",
+    "id": "interaction.conditional_dispatch_state",
+    "meaning": "Conditional dispatcher state derived from sampled finite inputs",
+    "value_type": "derived uint32",
+    "units": "enum0..3",
+    "extraction": "state1 if currentA<threshold AND currentB<threshold;else0 if either previous==-1 or currentA==previousA;else2 if currentA<previousA;else3. Suppress on guard failure."
+  },
+  {
+    "applicability": "Registered player and AI service interactions; current two services joined to physical player and AI trains",
+    "evidence": [
+      "TRACK-INTERACTION-FINDINGS.md",
+      "read_track_interaction_records.py",
+      "test_track_interaction_records.py",
+      "captures/track-interaction-records-20261013-01/records.json",
+      "captures/track-interaction-dispatch-20261013-01-byte-verification.json",
+      "captures/track-interaction-update-20261013-01-byte-verification.json",
+      "captures/service-interaction-threshold-20261013-01-byte-verification.json",
+      "captures/service-interaction-threshold-20261013-01/thunk.json",
+      "captures/interaction-threshold-inputs-20261013-01/inputs.json",
+      "read_interaction_threshold_inputs.py",
+      "captures/service-threshold-callers-20261013-01-byte-verification.json"
+    ],
+    "evidence_status": "Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass;guarded player8definition and AI11definition float32 reconstructions exactly match stored thresholds;all extra208 gates selected;current-byte verified definition-record transfer/removal callers recompute threshold",
+    "update_or_lifecycle": "Initialized by005a5eb1; definition-record transfer005adfae refreshes old/new services and removal005ae098 refreshes former service. Live coupling timing and exhaustive writers unresolved.",
+    "limitations": "Supported image only; sequential non-atomic reads. Same pointers/clock can hide in-place updates. No nonzero live state transition or exact crossing proof; finite inputs only. Item kind and service identity must be retained; list presence is not a reservation or occupancy claim. Conditional definition208 contribution is not yet assigned an exact coupling parameter name. Captured model agreement does not validate disabled-extra branches or runtime coupling refresh.",
+    "id": "service.interaction_length_threshold",
+    "meaning": "Stored length-based threshold for paired endpoint proximity",
+    "value_type": "float32",
+    "units": "native length units",
+    "extraction": "service+128;005a635d sums definition400 and conditionally208 under byte1e4/nonzero and1e5mask10;initializer005a5eb1 passes destination"
+  }
+]

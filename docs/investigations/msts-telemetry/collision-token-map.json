@@ -1,0 +1,25 @@
+{
+  "pid": 33612,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "labels": [
+    {
+      "label": "CollideFlags",
+      "entry": "0x794dd0",
+      "pointer": "0x76749c",
+      "token": "0x40069",
+      "pair": "9c74760069000400",
+      "string": "43006f006c006c0069006400650046006c006100670073000000",
+      "disk_live_equal": true
+    },
+    {
+      "label": "CollideFunction",
+      "entry": "0x794dd8",
+      "pointer": "0x767474",
+      "token": "0x4006a",
+      "pair": "747476006a000400",
+      "string": "43006f006c006c00690064006500460075006e006300740069006f006e000000",
+      "disk_live_equal": true
+    }
+  ],
+  "limitation": "Native token labels and parser linkage;not a complete flag-bit dictionary or callback invocation proof."
+}

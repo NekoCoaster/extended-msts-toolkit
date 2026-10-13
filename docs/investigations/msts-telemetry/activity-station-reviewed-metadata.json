@@ -1,0 +1,502 @@
+{
+  "activity.event_registry": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "enumerate on activity load/state inspection;reread root and bound traversal;root clears at observed teardown and changes on restart",
+    "evidence_status": "Tokyo baseline50events:14time,34location,2action;representative time/location and event0 AllStops success transitions observed",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. List and node bounds are defensive reader limits. Stable root alone does not prove complete or consistent enumeration; action predicates are not validated by their presence.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json",
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+    ]
+  },
+  "activity.event.id": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Tokyo IDs connect loaded definitions to the ACT fixture; native lookup and outcome2 target changes corroborated",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Activity-local identifier; uniqueness across loads/activities and reuse are untested.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.category": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Tokyo loaded category0/time,1/action,2/location matches fixture categories",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. This is the runtime enum,not the ACT parser token; mapping outside observed categories is unproven.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ],
+    "units": "native enum:0 time,1 action,2 location observed in Tokyo"
+  },
+  "activity.event.type": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Dispatcher0059b083 selects time0/location1;type2 AllStops predicate0059b27b and event0 final-loading success validated;raw type3 present",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Type and category are distinct fields. Type2 final-selected AllStops path validated;type3 and other action predicates remain unvalidated.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json"
+    ],
+    "units": "native predicate enum:0 time,1 location,2 AllStops validated;other mappings require separate evidence"
+  },
+  "activity.event.state_10": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "set during enabled predicate evaluation; retained until applicable reset/reversal/load path; exact evaluation cadence unmeasured",
+    "evidence_status": "Time/location latches0->1 and non-reversible location persistence;AllStops event0 latches after final loading expiry and alongside success result;UI restart reconstructs event0/32/42/44 with latch0",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not an objective-completion count. Current geometry can be true before latch changes. UI restart reinitialization observed;event outcome4,reversible clearing and saved-game restoration remain unvalidated.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json",
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+    ]
+  },
+  "activity.event.state_20": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "loaded/saved reset baseline; outcome4 copies it into current activation statically",
+    "evidence_status": "Native reset source traced; targets42/44 retain baseline1 while activation1->0",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Baseline is not current activation. Actual outcome4 reset and non-default/negative baselines remain untested.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.activation_level": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "changed by outcome processing; positive gates initial evaluation; exact writer cadence unmeasured",
+    "evidence_status": "Source32 decrements targets42/44 from1 to0 while their latches and baseline are unchanged;UI restart restores42/44 activation1 with latch0 and baseline1",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Signed value; zero/negative disable initial gate but do not automatically clear a set latch. Increment,negative level,reset and reverse transitions remain unvalidated. Restart reinitialization is distinct from outcome4 activation reset and does not validate that outcome.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+    ]
+  },
+  "activity.event.location_tile": {
+    "applicability": "player location events, category2/type1; geometry uses first player car, not AI or camera",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Signed tile pair read from installed location definitions and joined with current origin",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read only the location subtype extension. Full coordinate-origin boundary invariance,negative/invalid radii and nonfinite behavior remain unvalidated.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.location_offset": {
+    "applicability": "player location events, category2/type1; geometry uses first player car, not AI or camera",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Float X/Z offsets match fixture and feed horizontal reconstruction",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read only the location subtype extension. Full coordinate-origin boundary invariance,negative/invalid radii and nonfinite behavior remain unvalidated.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.location_radius": {
+    "applicability": "player location events, category2/type1; geometry uses first player car, not AI or camera",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "10m event13 crossing and60m stop-event32 fixture corroborate radius use",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read only the location subtype extension. Full coordinate-origin boundary invariance,negative/invalid radii and nonfinite behavior remain unvalidated.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.trigger_on_stop": {
+    "applicability": "player location events, category2/type1; geometry uses first player car, not AI or camera",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Event13 fires while moving with flag0;event32 remains unlatched inside radius while moving and fires after slowing with flag1",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Native predicate uses absolute train speed below about0.1m/s. Sampled transition is not an exact threshold crossing or a universal one-frame delay.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ],
+    "units": "zero bypasses speed test;nonzero requires native stop predicate"
+  },
+  "activity.event.outcome_count": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Tokyo baseline contains0..3inline outcomes; native handler loops stored count",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Reader rejects counts above5 based on common layout. Zero outcomes can still accompany a triggered event; count is not number of successful dispatches.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.outcomes": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Stored types2/5/6 observed;type2 activation decrement,type5 message and type6 ActivitySuccess executed in representative Tokyo tests",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Decode argument/payload by type; payload references are session-local and messages are not decoded by the raw reader. Types1/3/4/7 execution and universal result lifecycle remain unvalidated.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json"
+    ],
+    "extraction": "inline event+0x2a,stride12: type+0,argument+4,payload+8;bound count to5 from common layout;0059ae8e dispatches by type"
+  },
+  "activity.event.reversible_candidate": {
+    "applicability": "loaded activity event metadata/state; Tokyo includes time, location and action categories; representative time/location and AllStops action transitions validated",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "Native nonzero branch permits reevaluation/clearing;Tokyo event13 has0 and retains latch after exit",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Only the non-reversible case is live-validated. Native reversal does not undo every outcome;actual reversible clearing remains open.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ],
+    "extraction": "event+0x6a;0059a7d3 reevaluates nonzero reversible latch and invokes0059ad81 on false predicate"
+  },
+  "activity.event_evaluation_stop": {
+    "applicability": "shared loaded activity result context;not independent per-event/player/AI result",
+    "update_or_lifecycle": "outcome processing and activity lifecycle;observed success sets1,dismissal/teardown clears0,and UI restart retains0",
+    "evidence_status": "Native guard/outcome writers traced;0->1 with event0 ActivitySuccess,retained while Activity complete alert is open;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. One nonzero success transition validated;failure,saved-game restoration and other termination paths remain unvalidated. Event-evaluation stop is not the general pause flag or proof of UI closure. Result0 outside gameplay is not failure;these fields are not the retained debrief report.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json",
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl"
+    ]
+  },
+  "activity.event_outcome_success": {
+    "applicability": "shared loaded activity result context;not independent per-event/player/AI result",
+    "update_or_lifecycle": "outcome processing and activity lifecycle;observed success sets1,dismissal/teardown clears0,and UI restart retains0",
+    "evidence_status": "Outcome6 native write1 corroborated by0->1 alongside stop1 and Activity complete UI;earlier interrupted station loading remains0x1a;dismissal/teardown clears0 while debrief retains independent evaluation records;UI restart0",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Read together with evaluation-stop;zero alone is not failure. Success and Activity complete UI observed;failure and saved-game restoration remain unvalidated. Success does not certify every station loading or timetable performance. User confirms NEMT is not loaded in current PID12888; do not attribute this run to historical NEMT activity-end modifications. Result0 outside gameplay is not failure;these fields are not the retained debrief report.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json",
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "CLOCK-FINDINGS.md",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "activity.time_event_clock": {
+    "applicability": "shared elapsed activity clock used by time predicates",
+    "update_or_lifecycle": "native00645af0 advances accumulator by dt;00645d12 resets it;pause stops observed simulation advance;historical PID7160 additions had NEMT timing patches; current PID12888 clock update/setter/caller ranges match disk bytes and user confirms no NEMT loaded",
+    "evidence_status": "Producer/reset traced;time45 and48 latches cross declared elapsed thresholds468 and618;normal UI restart captures1212.6500244140625->0 alongside day-clock64800; native elapsed continues3599.949951171875->3600.074951171875 across normal-speed Explore midnight",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Independent from day-clock minus start-time. Normal UI restart reset observed;One Explore midnight continuity is validated; other modes,saved-game restoration,calendar provenance and long-run precision remain unvalidated. Not a location-derived value.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "CLOCK-FINDINGS.md",
+      "event-transition-20261010-summary.json",
+      "event-activation-20261010-summary.json",
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "captures/midnight-clock-native-20261010-01-byte-verification.json",
+      "captures/midnight-caller-native-20261010-01-byte-verification.json",
+      "midnight-clock-20261010-summary.json",
+      "captures/explore-midnight-20261010-01/samples.jsonl"
+    ],
+    "extraction": "[0x80acd0]; native00645af0 adds dt;00645d12 resets to0; historical PID7160 additions patched by NEMT UnlockFPS; current PID12888 inspected producer/setter/caller ranges match disk bytes"
+  },
+  "activity.event.horizontal_distance": {
+    "applicability": "player location events, category2/type1; geometry uses first player car, not AI or camera",
+    "update_or_lifecycle": "derived on each sample from event definition,current origin and first-car position",
+    "evidence_status": "Finite reconstruction supports event13 radius crossing and stop-event32 distance41.41465m",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Derived geometry,not a native stored distance or proof of evaluator invocation. Floating-point boundaries,origin handover and nonfinite values require care;no full x87 emulation.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.location_condition": {
+    "applicability": "player location events, category2/type1; geometry uses first player car, not AI or camera",
+    "update_or_lifecycle": "derived on each sample;native evaluator cadence is independent",
+    "evidence_status": "Event13 moving radius crossing and event32 stop-required predicate/latch transitions corroborated",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Condition excludes activation,latch,reversal and evaluation-stop gates. A true condition is not proof of firing;already-latched non-reversible events can have false current conditions. No full x87 or nonfinite emulation.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "activity.event.time_threshold": {
+    "applicability": "time events,category0/type0",
+    "update_or_lifecycle": "loaded event definition; stable in captured session; mutation/reload/identity-reuse lifecycle not validated",
+    "evidence_status": "14stored thresholds read;468matches time45 fixture and captured elapsed-clock transition",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Threshold read after transition,not atomically with it. Strict comparison is threshold<elapsed;exact equality boundary and reset behavior untested.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "captures/tokyo-events-baseline-20261010-01/activity.json",
+      "EVENT-TRANSITION-FINDINGS.md",
+      "STOP-ACTIVATION-FINDINGS.md",
+      "captures/tokyo-time-thresholds-20261010-01/time-events.json",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json"
+    ]
+  },
+  "station.recorded_arrival": {
+    "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
+    "update_or_lifecycle": "written by accepted loading or native synthesis branches;retained in record",
+    "evidence_status": "Accepted loading writes arrival in representative Tokyo stops,including final65979.2734375;alternate native synthesis branches retained;restarted initial record has synthetic64805 while clock64801.2265625;all five winter AI services retain0 through observed platform countdown/stop/resumption",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not necessarily physical stop time. Zero/unset and synthesis must be interpreted with flags/state;AI event timing and midnight remain open.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STATION-TIME-FINDINGS.md",
+      "STATION-DEPARTURE-FINDINGS.md",
+      "STATION-BOARDING-FINDINGS.md",
+      "EARLY-DEPARTURE-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json",
+      "SESSION-RESET-FINDINGS.md",
+      "session-reset-20261010-summary.json",
+      "session-reset-ui-20261010.json",
+      "captures/tokyo-result-reset-20261010-01/samples.jsonl",
+      "captures/tokyo-restarted-outcome-20261010-01/samples.jsonl",
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "station.recorded_departure": {
+    "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
+    "update_or_lifecycle": "written by departure branches;selection can advance in a later sampled frame",
+    "evidence_status": "Normal and unfinished-loading departure writes observed;final-stop success retains recorded departure0 with final record still selected;all five winter AI services retain0 through observed platform countdown/stop/resumption",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Not exact platform-crossing time or proof loading finished. Zero alone is not a universal missing-value rule;AI timing and midnight remain open.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STATION-TIME-FINDINGS.md",
+      "STATION-DEPARTURE-FINDINGS.md",
+      "STATION-BOARDING-FINDINGS.md",
+      "EARLY-DEPARTURE-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json",
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "station.scheduled_arrival": {
+    "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
+    "update_or_lifecycle": "schedule load/merge;later editing,offset and reset paths unvalidated",
+    "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STATION-TIME-FINDINGS.md",
+      "STATION-DEPARTURE-FINDINGS.md",
+      "STATION-BOARDING-FINDINGS.md",
+      "EARLY-DEPARTURE-FINDINGS.md",
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "station.scheduled_departure": {
+    "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
+    "update_or_lifecycle": "schedule load/merge;later editing,offset and reset paths unvalidated",
+    "evidence_status": "Native loader/merge traced;Maryland and Tokyo player schedules match declarations;Tokyo AI fields are0;winter AI IDs1/2 retain repeated60120/60600 schedules,IDs70/71/72 retain0,matching TRF groups throughout platform holds",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Schedule differs from recorded event time. Tokyo AI fixture omits explicit arrival/departure declarations,so0 is not evidence of a real midnight stop. Full AI schedule merging and mutation remain open.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STATION-TIME-FINDINGS.md",
+      "STATION-DEPARTURE-FINDINGS.md",
+      "STATION-BOARDING-FINDINGS.md",
+      "EARLY-DEPARTURE-FINDINGS.md",
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "station.state_flags": {
+    "applicability": "player and loaded AI station records;player writes validated;AI platform holds captured with unchanged record fields;writer equivalence unproven",
+    "update_or_lifecycle": "station processing writes bits and successor selection may clear cue bit;read with same record identity",
+    "evidence_status": "Arrival2,normal expiry/cue0x62,normal departure0x6a,interruption0x1a;final0x62 precedes AllStops success while still selected and without departure;winter AI IDs1/2 flags1 and70/71/72 flags0 remain unchanged through platform holds",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Partial branch meanings:0x10 moving while loading,0x40 dispatch attempt rather than audible cue or movement authority. Full bit combinations and AI semantics unvalidated. Selection/fields are sampled sequentially. AllStops tests the last selected record bit0x20 rather than every earlier record;not a perfect-run indicator.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STATION-TIME-FINDINGS.md",
+      "STATION-DEPARTURE-FINDINGS.md",
+      "STATION-BOARDING-FINDINGS.md",
+      "EARLY-DEPARTURE-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json",
+      "AI-PLATFORM-COUNTDOWN-FINDINGS.md",
+      "ai-platform-countdown-20261010-summary.json",
+      "ai-platform-countdown-ui-20261010.json",
+      "captures/winter-ai-stops-20261010-01/samples.jsonl",
+      "captures/winter-ai-baseline-20261010-01/services.jsonl",
+      "captures/winter-ai-fixture-20261010-01/provenance.json",
+      "captures/ai-platform-countdown-native-20261010-01-byte-verification.json"
+    ],
+    "units": "uint16 bitmask;partial player branch meanings,not a universal activity result"
+  },
+  "station.boarding_active": {
+    "applicability": "player activity boarding state;AI equivalence unvalidated",
+    "update_or_lifecycle": "set on accepted loading;cleared on expiry or moving-while-loading branch;pause retained active state",
+    "evidence_status": "Tokyo0->1->0 for normal expiry and interruption;final expiry observed before AllStops result;paused active samples stable",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero means inactive,not successful loading. Pair with remaining,record flags and record identity;no AI applicability established.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STATION-TIME-FINDINGS.md",
+      "STATION-DEPARTURE-FINDINGS.md",
+      "STATION-BOARDING-FINDINGS.md",
+      "EARLY-DEPARTURE-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json"
+    ]
+  },
+  "station.boarding_remaining": {
+    "applicability": "player activity boarding state;AI equivalence unvalidated",
+    "update_or_lifecycle": "subtract frame delta while active;clamp on expiry or clear on cancellation;pause retains observed value",
+    "evidence_status": "Positive/decreasing/paused/expired/cancelled values;final first-positive33.20833206176758 reaches0 before event0 success;first read is not necessarily initial duration",
+    "limitations": "MSTS Bin SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only. Sequential external reads are not atomic; session-local IDs/pointers may be reused after unload. Zero alone cannot distinguish completion,cancellation or inactivity. First positive read need not equal initialization;duration formula factors and AI applicability unvalidated.",
+    "evidence": [
+      "ACTIVITY-STATION-METADATA-REVIEW.md",
+      "STATION-TIME-FINDINGS.md",
+      "STATION-DEPARTURE-FINDINGS.md",
+      "STATION-BOARDING-FINDINGS.md",
+      "EARLY-DEPARTURE-FINDINGS.md",
+      "ACTIVITY-OUTCOME-FINDINGS.md",
+      "activity-outcome-20261010-summary.json",
+      "activity-outcome-ui-20261010.json",
+      "captures/tokyo-activity-outcome-20261010-01/samples.jsonl",
+      "captures/all-stops-native-20261010-01-byte-verification.json"
+    ]
+  }
+}

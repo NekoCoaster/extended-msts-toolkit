@@ -1,0 +1,92 @@
+{
+  "pid": 33612,
+  "image_sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "registrations": [
+    {
+      "address": "0x7a3dec",
+      "name": "WHEELS1",
+      "string_address": "0x773804",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "04387700cf90630000080000"
+    },
+    {
+      "address": "0x7a3df8",
+      "name": "WHEELS2",
+      "string_address": "0x7737f0",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "f0377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e04",
+      "name": "WHEELS3",
+      "string_address": "0x7737dc",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "dc377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e10",
+      "name": "WHEELS4",
+      "string_address": "0x7737c8",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "c8377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e1c",
+      "name": "ROD01",
+      "string_address": "0x7737b8",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "b8377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e28",
+      "name": "ROD02",
+      "string_address": "0x7737a8",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "a8377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e34",
+      "name": "ROD03",
+      "string_address": "0x773798",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "98377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e40",
+      "name": "ROD04",
+      "string_address": "0x773788",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "88377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e4c",
+      "name": "ROD05",
+      "string_address": "0x773778",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "78377700cf90630000080000"
+    },
+    {
+      "address": "0x7a3e58",
+      "name": "ROD06",
+      "string_address": "0x773768",
+      "callback": "0x6390cf",
+      "flag": "0x800",
+      "bytes": "68377700cf90630000080000"
+    }
+  ],
+  "comparison_epsilon": {
+    "address": "0x753e38",
+    "bytes": "95bfd633",
+    "value": 1.0000000116860974e-07
+  },
+  "limitation": "Selected table/string byte equality; no shape instance, callback execution or visual motion observed."
+}

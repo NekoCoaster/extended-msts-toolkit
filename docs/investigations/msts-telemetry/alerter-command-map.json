@@ -1,0 +1,15 @@
+{
+  "pid": 33612,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "label_address": "0x76d5b4",
+  "label_bytes": "61006c00650072007400650072000000",
+  "binding_file": "C:\\MSTS\\GLOBAL\\common.txt",
+  "binding_sha256": "c1f93dbc19d6c92887dad8dd22c4a0ea72735e7390d372ac33cb19ed7f87a071",
+  "bindings": [
+    {
+      "line": 76,
+      "text": "io_map ( PAD_4      \"alerter\"                           ALL_UP CTRL_DOWN )"
+    }
+  ],
+  "limitation": "Installed declaration and native registration evidence;not proof current input bindings dispatch this shortcut."
+}

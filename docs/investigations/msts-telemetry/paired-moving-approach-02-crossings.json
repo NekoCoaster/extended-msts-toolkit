@@ -1,0 +1,18 @@
+{
+  "source": "captures\\paired-moving-approach-02\\samples.jsonl",
+  "sha256": "49ae13a0bf9e3ad947cc980c8526ad0e9e3a66396bd2a89fe6f15cefdce96ef0",
+  "samples": 241,
+  "unique_records": 45,
+  "counts_by_service": {
+    "8427664": [
+      23
+    ],
+    "53772400": [
+      22
+    ]
+  },
+  "problems": [],
+  "crossing_count": 0,
+  "crossings": [],
+  "limitations": "Same record/configuration/service pointers across sequential samples are a bounded identity check,not a lifetime guarantee. Count sets omit absent services. Brackets are sample windows,not exact crossing instants. Nodes need not be adjacent if sampling skips intermediate state. Presence is abstract per-car state,not physical vehicle extent or block occupancy."
+}

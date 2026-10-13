@@ -1,0 +1,761 @@
+{
+  "tokyo-boarding-20261010-01": {
+    "samples": 2971,
+    "errors": 0,
+    "sim_time_range": [
+      64802.0234375,
+      65132.6484375
+    ],
+    "paused_samples": 1334,
+    "clock_crossings": 20,
+    "unstable_services": 0,
+    "active_samples": 339,
+    "remaining_range": [
+      0.0,
+      49.75
+    ],
+    "active_time_range": [
+      65044.8984375,
+      65094.6484375
+    ],
+    "falling_pairs": 247,
+    "decrement_range": [
+      0.125,
+      0.25
+    ],
+    "paused_active_pairs": 90,
+    "paused_remaining_changes": 0,
+    "final_paused": 1,
+    "changes": [
+      {
+        "index": 0,
+        "prior_observation_start": null,
+        "start": 64802.0234375,
+        "end": 64802.0234375,
+        "remaining": 0.0,
+        "speed": 0.0,
+        "state": {
+          "active": 0,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244520,
+              "previous": 0,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 34,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 0,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 56245280,
+              "previous": 0,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "index": 819,
+        "prior_observation_start": 64879.8984375,
+        "start": 64880.1484375,
+        "end": 64880.1484375,
+        "remaining": 0.0,
+        "speed": 0.0,
+        "state": {
+          "active": 0,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244520,
+              "previous": 0,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 98,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 0,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 56245280,
+              "previous": 0,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "index": 904,
+        "prior_observation_start": 64897.0234375,
+        "start": 64897.2734375,
+        "end": 64897.2734375,
+        "remaining": 0.0,
+        "speed": 0.2077624648809433,
+        "state": {
+          "active": 0,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244560,
+              "previous": 56244520,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 106,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 64897.1484375
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 0,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 56245280,
+              "previous": 0,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "index": 1965,
+        "prior_observation_start": 64983.6484375,
+        "start": 64983.8984375,
+        "end": 64983.8984375,
+        "remaining": 0.0,
+        "speed": 0.6250247359275818,
+        "state": {
+          "active": 0,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244560,
+              "previous": 56244520,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 106,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 64897.1484375
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 0,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 0,
+              "previous": 56245280,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "index": 2323,
+        "prior_observation_start": 65041.3984375,
+        "start": 65041.6484375,
+        "end": 65041.6484375,
+        "remaining": 0.0,
+        "speed": 3.948272109255413e-08,
+        "state": {
+          "active": 0,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244560,
+              "previous": 56244520,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 106,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 64897.1484375
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 56245120,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 0,
+              "previous": 56245280,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "index": 2339,
+        "prior_observation_start": 65044.6484375,
+        "start": 65044.8984375,
+        "end": 65044.8984375,
+        "remaining": 49.75,
+        "speed": 0.0,
+        "state": {
+          "active": 1,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244560,
+              "previous": 56244520,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 106,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 64897.1484375
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 2,
+                  "recorded_arrival": 65044.7734375,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 56245120,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 0,
+              "previous": 56245280,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "index": 2678,
+        "prior_observation_start": 65094.6484375,
+        "start": 65094.8984375,
+        "end": 65094.8984375,
+        "remaining": 0.0,
+        "speed": 0.0,
+        "state": {
+          "active": 0,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244560,
+              "previous": 56244520,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 106,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 64897.1484375
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 98,
+                  "recorded_arrival": 65044.7734375,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 56245120,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 0,
+              "previous": 56245280,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "index": 2825,
+        "prior_observation_start": 65113.6484375,
+        "start": 65113.7734375,
+        "end": 65113.7734375,
+        "remaining": 0.0,
+        "speed": 0.17916513979434967,
+        "state": {
+          "active": 0,
+          "stop": 0,
+          "success": 0,
+          "services": [
+            {
+              "address": 8427664,
+              "player": true,
+              "selected": 56244720,
+              "previous": 56244560,
+              "efficiency": 1.0,
+              "records": [
+                {
+                  "address": 56244520,
+                  "platform": 9,
+                  "flags": 106,
+                  "recorded_arrival": 64805.0,
+                  "recorded_departure": 64897.1484375
+                },
+                {
+                  "address": 56244560,
+                  "platform": 29,
+                  "flags": 106,
+                  "recorded_arrival": 65044.7734375,
+                  "recorded_departure": 65113.7734375
+                },
+                {
+                  "address": 56244720,
+                  "platform": 70,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244800,
+                  "platform": 464,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                },
+                {
+                  "address": 56244880,
+                  "platform": 481,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55282476,
+              "player": false,
+              "selected": 56245120,
+              "previous": 56245120,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245120,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            },
+            {
+              "address": 55277172,
+              "player": false,
+              "selected": 0,
+              "previous": 56245280,
+              "efficiency": 0.75,
+              "records": [
+                {
+                  "address": 56245280,
+                  "platform": 459,
+                  "flags": 0,
+                  "recorded_arrival": 0.0,
+                  "recorded_departure": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "limitations": "Capture streams are separate and gaps must not be joined. Record and global fields are sequential reads; stable checks do not prove atomicity. Timer decrements may contain multiple native updates. Zero AI schedule/event times have no universal interpretation. UI input times are not embedded in the sample stream."
+}

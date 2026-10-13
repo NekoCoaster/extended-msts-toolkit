@@ -1,0 +1,160 @@
+{
+  "utc": "2026-10-10T02:27:32.112221+00:00",
+  "time": 43341.69921875,
+  "rows": [
+    {
+      "id": 187,
+      "address": 56315588,
+      "speed": 4.799999713897705,
+      "active": 1,
+      "cursor_index": 1,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 3,
+      "start": 37960.0
+    },
+    {
+      "id": 188,
+      "address": 56314992,
+      "speed": 5.359950065612793,
+      "active": 1,
+      "cursor_index": 1,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 3,
+      "start": 38280.0
+    },
+    {
+      "id": 189,
+      "address": 56314396,
+      "speed": 0.9599999785423279,
+      "active": 1,
+      "cursor_index": 65,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 38460.0
+    },
+    {
+      "id": 190,
+      "address": 56354752,
+      "speed": 0.0,
+      "active": 1,
+      "cursor_index": 60,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 38760.0
+    },
+    {
+      "id": 191,
+      "address": 56354156,
+      "speed": 7.826244354248047,
+      "active": 1,
+      "cursor_index": 60,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 39000.0
+    },
+    {
+      "id": 192,
+      "address": 56353560,
+      "speed": 16.357526779174805,
+      "active": 1,
+      "cursor_index": 54,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 39300.0
+    },
+    {
+      "id": 193,
+      "address": 56352964,
+      "speed": 23.128732681274414,
+      "active": 1,
+      "cursor_index": 44,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 39600.0
+    },
+    {
+      "id": 194,
+      "address": 56366328,
+      "speed": 1.7857389450073242,
+      "active": 1,
+      "cursor_index": 37,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 40500.0
+    },
+    {
+      "id": 195,
+      "address": 56365732,
+      "speed": 21.54247283935547,
+      "active": 1,
+      "cursor_index": 20,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 41400.0
+    },
+    {
+      "id": 196,
+      "address": 56365136,
+      "speed": 18.223831176757812,
+      "active": 1,
+      "cursor_index": 8,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 1,
+      "start": 42300.0
+    },
+    {
+      "id": 198,
+      "address": 56378120,
+      "speed": 0.0,
+      "active": 0,
+      "cursor_index": 1,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 3,
+      "start": 43500.0
+    },
+    {
+      "id": 199,
+      "address": 56377524,
+      "speed": 0.0,
+      "active": 0,
+      "cursor_index": 1,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 3,
+      "start": 43800.0
+    },
+    {
+      "id": 203,
+      "address": 56403072,
+      "speed": 0.0,
+      "active": 0,
+      "cursor_index": 1,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 3,
+      "start": 46800.0
+    },
+    {
+      "id": 204,
+      "address": 56402476,
+      "speed": 0.0,
+      "active": 0,
+      "cursor_index": 1,
+      "cursor_aligned": true,
+      "event": 0,
+      "iterator_type": 3,
+      "start": 47700.0
+    }
+  ]
+}

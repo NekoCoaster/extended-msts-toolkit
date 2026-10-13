@@ -1,0 +1,123 @@
+{
+  "source": "C:\\MSTS\\ROUTES\\USA2\\ACTIVITIES\\evegrain.asv",
+  "sha256": "0c6ac34f45c65ae00890d9efaa5552df8d844281e52f76a273a1e5c5e441d443",
+  "labels": {
+    "0x404c9": [
+      {
+        "entry": "0x7970d0",
+        "label": "Version_Path",
+        "disk_live_equal": true
+      }
+    ],
+    "0x404c8": [
+      {
+        "entry": "0x7970c8",
+        "label": "Version_Consist",
+        "disk_live_equal": true
+      }
+    ],
+    "0x404cb": [
+      {
+        "entry": "0x7970e0",
+        "label": "Version_Service",
+        "disk_live_equal": true
+      }
+    ],
+    "0x404ca": [
+      {
+        "entry": "0x7970d8",
+        "label": "Version_Traffic",
+        "disk_live_equal": true
+      }
+    ],
+    "0x40068": [
+      {
+        "entry": "0x794dc8",
+        "label": "StaticFlags",
+        "disk_live_equal": true
+      }
+    ],
+    "0x4026f": [
+      {
+        "entry": "0x795e00",
+        "label": "TrItemSData",
+        "disk_live_equal": true
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "token": "0x404c9",
+      "entries": [
+        {
+          "offset": 292,
+          "name": "EveGrain",
+          "word": 2
+        },
+        {
+          "offset": 323,
+          "name": "EveGrain (Traffic)",
+          "word": 1
+        }
+      ]
+    },
+    {
+      "token": "0x404c8",
+      "entries": [
+        {
+          "offset": 383,
+          "name": "Dash921gran",
+          "word": 2
+        },
+        {
+          "offset": 420,
+          "name": "2 x Dash 9, 20 Intermodal",
+          "word": 2
+        },
+        {
+          "offset": 485,
+          "name": "D9gds",
+          "word": 0
+        }
+      ]
+    },
+    {
+      "token": "0x404cb",
+      "entries": [
+        {
+          "offset": 519,
+          "name": "EveGrain",
+          "word": 9
+        },
+        {
+          "offset": 550,
+          "name": "EveGrain (Traffic)",
+          "word": 1
+        },
+        {
+          "offset": 601,
+          "name": "EveGrain (Traffic01)",
+          "word": 1
+        }
+      ]
+    },
+    {
+      "token": "0x404ca",
+      "entries": [
+        {
+          "name": "EveGrain (Traffic)",
+          "word": 14
+        }
+      ]
+    },
+    {
+      "token": "0x40068",
+      "entries": [
+        {
+          "word": 0
+        }
+      ]
+    }
+  ],
+  "limitation": "Stored names and raw words only;numeric words are not assigned checksum/version/ID semantics. Writer omits services without loaded+130resource. Not a complete installed-resource inventory or current saved-game snapshot."
+}

@@ -1,0 +1,14 @@
+{
+  "mixed_paths": 37,
+  "overlapping_leaf_paths": [
+    "config..eng:Engine.EngineControllers.Brake_Dynamic.NumNotches",
+    "config..eng:Engine.EngineControllers.Gear.NumNotches",
+    "config..eng:Engine.EngineControllers.Throttle.NumNotches",
+    "config..wag:Wagon.Friction"
+  ],
+  "all_mixed_paths_have_mixed_evidence": true,
+  "all_overlap_paths_have_both_syntax_examples": true,
+  "added": 33,
+  "removed": 0,
+  "limitations": "Checks catalogue provenance and merging only; does not validate native consumers or runtime availability."
+}

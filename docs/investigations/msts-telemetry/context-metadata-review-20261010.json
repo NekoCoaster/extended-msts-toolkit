@@ -1,0 +1,244 @@
+{
+  "changed": [
+    {
+      "id": "train.registry",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "train.first_car",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "train.last_car",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "train.lead_car",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "train.service_pointer",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "car.train_owner",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "car.links",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "car.definition",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "body.position",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "engine.definition",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "monitor.distance",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "service.train_pointer",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "service.physicalized_raw",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.geometry_length",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.geometry_radius",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.geometry_curve_angle",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.geometry_width",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.geometry_skew",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.geometry_flags_raw",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.section_angles",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.curvature_magnitude",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.straight_grade_candidate",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.origin_tile",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.node",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.section_index",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.section",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.direction",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.node_distance",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.section_distance",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.local_position",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.angles_candidate",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.section_origin_tile",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.section_origin_offset",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.section_definition_index",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.node_length",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.node_section_count",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "track.route_position_candidate",
+      "fields": [
+        "limitations"
+      ]
+    },
+    {
+      "id": "car.shape_animation_time",
+      "fields": [
+        "evidence",
+        "limitations"
+      ]
+    },
+    {
+      "id": "car.shape_animation_processed_time",
+      "fields": [
+        "evidence",
+        "limitations"
+      ]
+    }
+  ],
+  "unchanged": 1020,
+  "ids_preserved": true,
+  "original_evidence_preserved": true,
+  "meaning_type_units_extraction_preserved": true
+}

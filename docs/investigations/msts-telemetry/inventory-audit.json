@@ -1,0 +1,13 @@
+{
+  "inventory_sha256": "0ec2b5a3c83592a1b61217689ca3d38baa9a92c5751b24f9f2f7d176ede39f90",
+  "candidate_count": 1074,
+  "unique_ids": 1074,
+  "duplicate_ids": [],
+  "empty_required_fields": [],
+  "evidence_paths_checked": 1053,
+  "missing_evidence": {},
+  "unrecognized_evidence": [],
+  "source_files_checked": 151,
+  "source_hash_mismatches": [],
+  "limitations": "Local path/structure/hash audit only. Does not verify meanings, offsets, units, update cadence, coverage or runtime behavior. Published clone intentionally omits raw evidence; run in canonical workspace."
+}

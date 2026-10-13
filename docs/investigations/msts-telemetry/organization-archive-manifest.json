@@ -1,0 +1,20 @@
+[
+  {
+    "source": "NEW-CHAT-HANDOFF.md",
+    "archive": "NEW-CHAT-HANDOFF-ARCHIVE-20261010.md",
+    "sha256": "547d2b33f17bcabd20c95ead7c355d6557aef8c5c2c1de9f904a2b3e8a643fef",
+    "bytes": 34918
+  },
+  {
+    "source": "DISCOVERY-COVERAGE.md",
+    "archive": "DISCOVERY-COVERAGE-ARCHIVE-20261010.md",
+    "sha256": "f79e7a723591508a069333bd186b680f8b92bfc2e863b2ffec5c7b60d2522981",
+    "bytes": 21606
+  },
+  {
+    "source": "README.md",
+    "archive": "README-ARCHIVE-20261010.md",
+    "sha256": "1a3b2fe39c6921f401d3f79ad4285fe3317ef24d18a8438ab704a5a1306f6c24",
+    "bytes": 52031
+  }
+]

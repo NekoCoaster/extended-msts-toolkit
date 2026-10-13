@@ -1,0 +1,74 @@
+{
+  "source": "captures\\keyboard-shift-paused-01\\samples.jsonl",
+  "sha256": "2881ff41f400e3e0b7f3b9628e0ce2b12a5429a6a2d5e17880cdf27c9be8d49f",
+  "samples": 5394,
+  "errors": 0,
+  "first_t": 0.0005464000278152525,
+  "last_t": 29.99687830003677,
+  "paused_values": [
+    1
+  ],
+  "dayclock_values": [
+    74360.5859375
+  ],
+  "observed_held_edges": [
+    {
+      "t": 0.0005464000278152525,
+      "held": [],
+      "stable_bits": true
+    }
+  ],
+  "held_sample_count": 0,
+  "buffer_nonempty_samples": 3,
+  "distinct_buffer_records": [
+    {
+      "words": [
+        65578,
+        1,
+        386589937,
+        888
+      ],
+      "first_t": 14.854812800011132,
+      "last_t": 14.865919500007294,
+      "observations": 3,
+      "stable_header_observations": 3
+    },
+    {
+      "words": [
+        65578,
+        0,
+        386589937,
+        889
+      ],
+      "first_t": 14.854812800011132,
+      "last_t": 14.865919500007294,
+      "observations": 3,
+      "stable_header_observations": 3
+    }
+  ],
+  "nonempty_buffer_headers": [
+    {
+      "t": 14.854812800011132,
+      "cursor": 2,
+      "count": 2,
+      "capacity": 12
+    },
+    {
+      "t": 14.860351000039373,
+      "cursor": 2,
+      "count": 2,
+      "capacity": 12
+    },
+    {
+      "t": 14.865919500007294,
+      "cursor": 2,
+      "count": 2,
+      "capacity": 12
+    }
+  ],
+  "unstable_headers": 0,
+  "unstable_bits": 0,
+  "max_read_s": 0.0007960000075399876,
+  "max_sample_gap_s": 0.006897300016134977,
+  "limitations": "One Shift_L press issued through computer-use while pause dialog visible. Sequential samples can miss edges/events; distinct raw buffer records are not a guaranteed event log. No gameplay command dispatch or timing/overhead guarantee inferred."
+}

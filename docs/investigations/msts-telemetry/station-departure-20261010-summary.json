@@ -1,0 +1,128 @@
+{
+  "capture": "maryland-resume-departure-20261010-01",
+  "samples": 2351,
+  "errors": 0,
+  "sim_time_range": [
+    28801.275390625,
+    28862.025390625
+  ],
+  "paused_samples": 1755,
+  "clock_crossings": 5,
+  "unstable_services": 0,
+  "speed_range": [
+    -0.0003532061818987131,
+    0.2280087172985077
+  ],
+  "final_paused": 1,
+  "transitions": [
+    {
+      "index": 0,
+      "previous_observation_start": null,
+      "observation_start": 28801.275390625,
+      "observation_end": 28801.275390625,
+      "speed": 0.0,
+      "state": {
+        "selected": 56431416,
+        "previous": 0,
+        "efficiency": 0.75,
+        "boarding": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "records": [
+          {
+            "address": 56431416,
+            "platform": 962,
+            "flags": 34,
+            "recorded_arrival": 28801.0,
+            "recorded_departure": 0.0,
+            "efficiency": 0.75
+          },
+          {
+            "address": 56431456,
+            "platform": 1510,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0,
+            "efficiency": 0.2890630066394806
+          }
+        ]
+      }
+    },
+    {
+      "index": 194,
+      "previous_observation_start": 28810.900390625,
+      "observation_start": 28811.025390625,
+      "observation_end": 28811.025390625,
+      "speed": 0.0,
+      "state": {
+        "selected": 56431416,
+        "previous": 0,
+        "efficiency": 0.75,
+        "boarding": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "records": [
+          {
+            "address": 56431416,
+            "platform": 962,
+            "flags": 98,
+            "recorded_arrival": 28801.0,
+            "recorded_departure": 0.0,
+            "efficiency": 0.75
+          },
+          {
+            "address": 56431456,
+            "platform": 1510,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0,
+            "efficiency": 0.2890630066394806
+          }
+        ]
+      }
+    },
+    {
+      "index": 628,
+      "previous_observation_start": 28855.275390625,
+      "observation_start": 28855.400390625,
+      "observation_end": 28855.400390625,
+      "speed": 0.10368768125772476,
+      "state": {
+        "selected": 56431456,
+        "previous": 56431416,
+        "efficiency": 0.75,
+        "boarding": {
+          "boarding_active": 0,
+          "remaining": 0.0,
+          "stop": 0,
+          "success": 0
+        },
+        "records": [
+          {
+            "address": 56431416,
+            "platform": 962,
+            "flags": 106,
+            "recorded_arrival": 28801.0,
+            "recorded_departure": 28855.400390625,
+            "efficiency": 0.75
+          },
+          {
+            "address": 56431456,
+            "platform": 1510,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0,
+            "efficiency": 0.2890630066394806
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": "Sequential external reads, not atomic events. Stored departure time is a native record value, not an independently measured physical platform crossing. No nonzero boarding countdown or populated AI stop is established. Selection and effective efficiency are distinct fields."
+}

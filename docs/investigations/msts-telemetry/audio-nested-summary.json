@@ -1,0 +1,215 @@
+{
+  "source": "captures\\audio-nested-paused-01\\nested.json",
+  "sha256": "fb243e5d4cf8ecdb5fb6bb168689b0277227e267c11373ae61f82819404f7bbf",
+  "time": 74360.5859375,
+  "paused": 1,
+  "top_level_nodes": 262,
+  "groups": [
+    {
+      "wrapper": 69551248,
+      "label": "D9Eng.sms",
+      "index": 0,
+      "children": 3,
+      "returned_to_wrapper": true,
+      "stable_wrapper": true,
+      "stable_children": true,
+      "error": null
+    },
+    {
+      "wrapper": 69554128,
+      "label": "D9Eng.sms",
+      "index": 0,
+      "children": 3,
+      "returned_to_wrapper": true,
+      "stable_wrapper": true,
+      "stable_children": true,
+      "error": null
+    },
+    {
+      "wrapper": 69552368,
+      "label": "d9cab.sms",
+      "index": 0,
+      "children": 3,
+      "returned_to_wrapper": true,
+      "stable_wrapper": true,
+      "stable_children": true,
+      "error": null
+    },
+    {
+      "wrapper": 69551456,
+      "label": "gen_mont_rur2.sms",
+      "index": 0,
+      "children": 3,
+      "returned_to_wrapper": true,
+      "stable_wrapper": true,
+      "stable_children": true,
+      "error": null
+    }
+  ],
+  "total_resolved_nodes": 274,
+  "node_errors": [],
+  "sample_rows": [
+    {
+      "address": 57511960,
+      "name": "x_d9_power_cruise1.wav",
+      "reference_count": 6,
+      "observed_references": 6,
+      "sources": [
+        {
+          "receiver": 58605456,
+          "index": 0,
+          "label": "D9Eng.sms",
+          "associations": [
+            {
+              "train": 58694560,
+              "train_id": 400007,
+              "is_player": true,
+              "car": 58701044,
+              "source_offset": "0x25c",
+              "handle": 450
+            }
+          ]
+        },
+        {
+          "receiver": 59212012,
+          "index": 0,
+          "label": "D9Eng.sms",
+          "associations": [
+            {
+              "train": 58694560,
+              "train_id": 400007,
+              "is_player": true,
+              "car": 59186872,
+              "source_offset": "0x25c",
+              "handle": 451
+            }
+          ]
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    },
+    {
+      "address": 63753504,
+      "name": "d9_power_cruise1.wav",
+      "reference_count": 3,
+      "observed_references": 3,
+      "sources": [
+        {
+          "receiver": 59802800,
+          "index": 0,
+          "label": "d9cab.sms",
+          "associations": [
+            {
+              "train": 58694560,
+              "train_id": 400007,
+              "is_player": true,
+              "car": 58701044,
+              "source_offset": "0x4b6",
+              "handle": 5744
+            }
+          ]
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    },
+    {
+      "address": 64457400,
+      "name": "gen_mont_rur2.wav",
+      "reference_count": 3,
+      "observed_references": 3,
+      "sources": [
+        {
+          "receiver": 61229480,
+          "index": 0,
+          "label": "gen_mont_rur2.sms",
+          "associations": []
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    },
+    {
+      "address": 68773004,
+      "name": "obj_veh3_moving.wav",
+      "reference_count": 1,
+      "observed_references": 1,
+      "sources": [
+        {
+          "receiver": 64440624,
+          "index": 0,
+          "label": "traf_m_m.sms",
+          "associations": []
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    },
+    {
+      "address": 68773076,
+      "name": "obj_veh2_moving.wav",
+      "reference_count": 1,
+      "observed_references": 1,
+      "sources": [
+        {
+          "receiver": 64440624,
+          "index": 1,
+          "label": "traf_m_m.sms",
+          "associations": []
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    },
+    {
+      "address": 68773148,
+      "name": "obj_veh2_random_b.wav",
+      "reference_count": 152,
+      "observed_references": 86,
+      "sources": [
+        {
+          "receiver": 64440624,
+          "index": 2,
+          "label": "traf_m_m.sms",
+          "associations": []
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    },
+    {
+      "address": 68773196,
+      "name": "obj_veh4_random_a.wav",
+      "reference_count": 151,
+      "observed_references": 85,
+      "sources": [
+        {
+          "receiver": 64440624,
+          "index": 2,
+          "label": "traf_m_m.sms",
+          "associations": []
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    },
+    {
+      "address": 68773172,
+      "name": "obj_veh3_random_b.wav",
+      "reference_count": 150,
+      "observed_references": 85,
+      "sources": [
+        {
+          "receiver": 64440624,
+          "index": 2,
+          "label": "traf_m_m.sms",
+          "associations": []
+        }
+      ],
+      "stable_header": true,
+      "stable_pair": true
+    }
+  ],
+  "limitations": "Nested rings preserve parent identity; sample objects may be shared. Counts are partial for the bounded top-level traffic chain. No playback, AI lifetime or sequence-index interpretation inferred."
+}

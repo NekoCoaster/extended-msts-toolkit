@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-10T02:31:58.289026+00:00",
+  "time": 43607.82421875,
+  "service": {
+    "address": 56314396,
+    "is_player": false,
+    "service_id": 189,
+    "train_id": 400005,
+    "train": 0,
+    "physicalized_raw": 0,
+    "flags_raw": 18,
+    "speed": 11.110800743103027,
+    "target_speed": 11.110800743103027,
+    "acceleration": 0.0,
+    "efficiency_candidate": 0.75,
+    "strings": {
+      "service_key": "ITR (Traffic 01)",
+      "display_name": "ITR (Traffic 01)",
+      "train_config": "2000Std",
+      "path_id": "ITR (Traffic 01)"
+    },
+    "stop_state_words": {
+      "0x1dc": 1,
+      "0x1e0": 0,
+      "0x1e4": 0,
+      "0x1e8": 0,
+      "0x214": 0
+    },
+    "update_candidate_words": {
+      "0x144": 1,
+      "0x148": 1,
+      "0x154": 4021
+    },
+    "update_candidate_floats": {
+      "0x24": 38460.0,
+      "0x14c": 1.0,
+      "0x150": 43607.0
+    }
+  },
+  "service_context_raw": "00000000000000000000000000000000b47f3d030000000000000000d7c5314104db1e0300000000b096c10411000000ec8e4d03ffffffff1c4a5b0301000000b096c10401000000f3a448430000704300007043000000000000000018fd5b03000000002bed02003cfd5b03000000000100000007266c47dc266d4754da5b0301000000010000000000000000000000",
+  "iterator_raw": "ec8e4d03ffffffff1c4a5b0301000000b094c104010000000000000028a9114428a911440000000000000000d0fc5b03",
+  "progress": 60710.859375,
+  "segment_sum": 60454.02734375,
+  "iterator_words": [
+    55414508,
+    4294967295,
+    56314396,
+    1,
+    79795376,
+    1,
+    0,
+    1142008104,
+    1142008104,
+    0,
+    0,
+    56360144
+  ],
+  "iterator_positions": [
+    0.0,
+    582.64306640625,
+    582.64306640625
+  ]
+}

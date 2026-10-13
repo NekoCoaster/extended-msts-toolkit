@@ -1,0 +1,197 @@
+{
+  "capture": "paired-player-crossing-01",
+  "sha256": "53b7a4d6185bebe405e4ac189bbefb742c8d7577ec4e242fe104e8aa77d07d82",
+  "samples": 601,
+  "errors": [],
+  "paused_samples": 35,
+  "time_range": [
+    73997.5390625,
+    74280.59375
+  ],
+  "max_read_seconds": 0.15628120000474155,
+  "map_changes": 0,
+  "event_counts": {
+    "signals": 4
+  },
+  "events": [
+    {
+      "kind": "signals",
+      "address": 54665868,
+      "id": 341,
+      "time0": 74069.328125,
+      "time0_after": 74069.4453125,
+      "time1": 74069.828125,
+      "time1_after": 74069.9453125,
+      "before": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 32
+      },
+      "after": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 32
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 54666876,
+      "id": 336,
+      "time0": 74069.328125,
+      "time0_after": 74069.4453125,
+      "time1": 74069.828125,
+      "time1_after": 74069.9453125,
+      "before": {
+        "aspect": 4,
+        "associated_service": 53693104,
+        "flags": 49200
+      },
+      "after": {
+        "aspect": 2,
+        "associated_service": 53693104,
+        "flags": 49200
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 54666876,
+      "id": 336,
+      "time0": 74095.34375,
+      "time0_after": 74095.46875,
+      "time1": 74095.8515625,
+      "time1_after": 74095.96875,
+      "before": {
+        "aspect": 2,
+        "associated_service": 53693104,
+        "flags": 49200
+      },
+      "after": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    },
+    {
+      "kind": "signals",
+      "address": 54666924,
+      "id": 337,
+      "time0": 74095.34375,
+      "time0_after": 74095.46875,
+      "time1": 74095.8515625,
+      "time1_after": 74095.96875,
+      "before": {
+        "aspect": 2,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "after": {
+        "aspect": 3,
+        "associated_service": 0,
+        "flags": 48
+      },
+      "pointer_checks_pass": true,
+      "same_clock_reads": false,
+      "both_unpaused": true
+    }
+  ],
+  "presence_distance_ranges": [
+    {
+      "node": 113455676,
+      "route_id": 305,
+      "service": 8427664,
+      "first": {
+        "time": 73997.5390625,
+        "count": 23,
+        "min": 10536.568359375,
+        "max": 10973.1484375
+      },
+      "last": {
+        "time": 74280.484375,
+        "count": 23,
+        "min": 10536.568359375,
+        "max": 10973.1484375
+      },
+      "observations": 601,
+      "min_seen": 10536.568359375,
+      "max_seen": 10973.1484375
+    },
+    {
+      "node": 113455804,
+      "route_id": 310,
+      "service": 53693104,
+      "first": {
+        "time": 73997.5390625,
+        "count": 22,
+        "min": 10090.341796875,
+        "max": 10478.2451171875
+      },
+      "last": {
+        "time": 74280.484375,
+        "count": 22,
+        "min": 5646.75,
+        "max": 6034.65380859375
+      },
+      "observations": 601,
+      "min_seen": 5646.75,
+      "max_seen": 10478.2451171875
+    }
+  ],
+  "first_trains": [
+    {
+      "id": 400007,
+      "address": 58694560,
+      "is_player": true,
+      "speed": 0.0,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    },
+    {
+      "id": 400005,
+      "address": 69582892,
+      "is_player": false,
+      "speed": 15.646395683288574,
+      "service": 53693104,
+      "cars": 22,
+      "derailed": 0
+    }
+  ],
+  "last_trains": [
+    {
+      "id": 400007,
+      "address": 58694560,
+      "is_player": true,
+      "speed": 0.0,
+      "service": 8427664,
+      "cars": 23,
+      "derailed": 0
+    }
+  ],
+  "service_identities": [
+    {
+      "address": 8427664,
+      "id": 0,
+      "is_player": true
+    },
+    {
+      "address": 53693104,
+      "id": 2,
+      "is_player": false
+    },
+    {
+      "address": 53696140,
+      "id": 3,
+      "is_player": false
+    }
+  ],
+  "limitations": "Changes bracketed between sequential snapshots;not exact transition times,atomic states or causal proof. Errors/map changes break continuity. Event counts include presence membership/count changes but exclude continuously varying distances,which are summarized separately. Presence reports per-service record counts,not physical occupancy;list duplicates preserved. Signal index is database item index,not universal asset ID. Complete route map checked each row;no lifecycle identity guarantee."
+}

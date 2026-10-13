@@ -1,0 +1,117 @@
+{
+  "capture": "monitor-alerter-enabled-01",
+  "samples": 1397,
+  "events": [
+    {
+      "before": {
+        "day": 73814.3203125,
+        "physics_time": 17.165250778198242,
+        "speed": 8.357035636901855,
+        "brake_cylinder": 0.0,
+        "brake_pipe": 90.0,
+        "equalizing_reservoir": 90.0
+      },
+      "after": {
+        "day": 73814.40625,
+        "physics_time": 17.270248413085938,
+        "speed": 8.341334342956543,
+        "brake_cylinder": 0.0,
+        "brake_pipe": 90.0,
+        "equalizing_reservoir": 90.0
+      },
+      "state_before": [
+        1,
+        0,
+        0,
+        0,
+        8.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "state_after": [
+        1,
+        0,
+        1,
+        0,
+        7.75,
+        -0.25,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "before": {
+        "day": 73821.09375,
+        "physics_time": 25.179988861083984,
+        "speed": 7.442442417144775,
+        "brake_cylinder": 0.0,
+        "brake_pipe": 90.0,
+        "equalizing_reservoir": 90.0
+      },
+      "after": {
+        "day": 73821.15625,
+        "physics_time": 25.249984741210938,
+        "speed": 7.435178756713867,
+        "brake_cylinder": 29.89795684814453,
+        "brake_pipe": 66.0,
+        "equalizing_reservoir": 66.0
+      },
+      "state_before": [
+        1,
+        0,
+        1,
+        0,
+        0.0,
+        -8.0,
+        0.0,
+        0.0
+      ],
+      "state_after": [
+        1,
+        1,
+        1,
+        0,
+        -0.25,
+        -8.25,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "monitor_delta_counts": {
+    "-0.25": 188
+  },
+  "alarm_delta_counts": {
+    "-0.25": 188
+  },
+  "field_ranges": {
+    "speed": [
+      0.005248295143246651,
+      11.07985782623291
+    ],
+    "brake_cylinder": [
+      0.0,
+      86.67639923095703
+    ],
+    "brake_pipe": [
+      2.0,
+      90.0
+    ],
+    "equalizing_reservoir": [
+      2.0,
+      90.0
+    ]
+  },
+  "final": {
+    "day": 73840.1953125,
+    "paused": 1,
+    "vigilance_global": 0,
+    "aws_global": 0,
+    "speed": 0.005248296074569225,
+    "brake_cylinder": 86.67639923095703,
+    "brake_pipe": 2.0,
+    "equalizing_reservoir": 2.0
+  },
+  "limitations": "Observed ordering and physical response in one player run,not a universal causal isolation test;50ms sampling can miss intermediate writes. No warning audio recorded,acknowledgement or AI case."
+}

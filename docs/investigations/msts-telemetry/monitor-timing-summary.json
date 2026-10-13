@@ -1,0 +1,74 @@
+{
+  "capture": "captures/engine-monitor-timing-paused-01/monitors.json",
+  "clock": 73894.7265625,
+  "paused": 1,
+  "timing": {
+    "player_train": 85797404,
+    "interval": 0.25,
+    "accumulator": 0.0050064027309417725,
+    "stable": true
+  },
+  "rows": [
+    {
+      "engine": 200223,
+      "monitor": "AWSMonitor",
+      "enable": 1,
+      "state_input": 0.0,
+      "critical_level": -1.0,
+      "reset_level": -1.0,
+      "speed": 6.1342058181762695,
+      "speed_times_native_mph_factor": 13.721826392745697,
+      "state_stable": true,
+      "definition_stable": true
+    },
+    {
+      "engine": 200223,
+      "monitor": "VigilanceMonitor",
+      "enable": 1,
+      "state_input": 0.0,
+      "critical_level": 0.0,
+      "reset_level": 0.0,
+      "speed": 6.1342058181762695,
+      "speed_times_native_mph_factor": 13.721826392745697,
+      "state_stable": true,
+      "definition_stable": true
+    },
+    {
+      "engine": 200223,
+      "monitor": "EmergencyStopMonitor",
+      "enable": 1,
+      "state_input": 0.0,
+      "critical_level": 0.0,
+      "reset_level": 0.0,
+      "speed": 6.1342058181762695,
+      "speed_times_native_mph_factor": 13.721826392745697,
+      "state_stable": true,
+      "definition_stable": true
+    },
+    {
+      "engine": 200223,
+      "monitor": "unnamed_slot3",
+      "enable": 0,
+      "state_input": 0.0,
+      "critical_level": -1.0,
+      "reset_level": -1.0,
+      "speed": 6.1342058181762695,
+      "speed_times_native_mph_factor": 13.721826392745697,
+      "state_stable": true,
+      "definition_stable": true
+    },
+    {
+      "engine": 200223,
+      "monitor": "OverspeedMonitor",
+      "enable": 0,
+      "state_input": 13.720528602600098,
+      "critical_level": 76.0,
+      "reset_level": 0.10000000149011612,
+      "speed": 6.1342058181762695,
+      "speed_times_native_mph_factor": 13.721826392745697,
+      "state_stable": true,
+      "definition_stable": true
+    }
+  ],
+  "limitations": "Paused sequential snapshot; only diesel overspeed input producer traced here. Speed and cached input need not refer to the same integration step. Seconds interpretation inherits prior scheduler runtime corroboration; no monitor running-rate or penalty test."
+}

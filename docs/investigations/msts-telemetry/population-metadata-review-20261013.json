@@ -1,0 +1,60 @@
+{
+  "car.brake_cylinder_pressure": {
+    "applicability": "Physical player and AI cars have retained reads;independent AI brake simulation is not established",
+    "evidence_status": "Native sources traced;Acela release and diesel emergency/reset observations retained. Diesel stop series covers23player and22AI cars;player pressures change while sampled AI pipe90/cylinder0 remain unchanged.",
+    "evidence": [
+      "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+      "signal-approach-emergency-summary.json",
+      "ai-systems-moving-02-summary.json"
+    ]
+  },
+  "car.brake_pipe_pressure": {
+    "applicability": "Physical player and AI cars have retained reads;independent AI brake simulation is not established",
+    "evidence_status": "Native sources traced;Acela release and diesel emergency/reset observations retained. Diesel stop series covers23player and22AI cars;player pressures change while sampled AI pipe90/cylinder0 remain unchanged.",
+    "evidence": [
+      "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
+      "signal-approach-emergency-summary.json",
+      "ai-systems-moving-02-summary.json"
+    ]
+  },
+  "car.brake_force_candidate": {
+    "applicability": "Physical player and AI cars have retained reads;requested-force semantics and AI freshness remain qualified",
+    "evidence_status": "Native request/adhesion consumers traced;player brake release observations retained. Moving AI400005 series includes zero requested-force values alongside changing service speed;zero is not absence of AI braking.",
+    "evidence": [
+      "AI-SYSTEM-UPDATE-FINDINGS.md",
+      "ai-systems-moving-02-summary.json"
+    ]
+  },
+  "car.wheel_rate_stored": {
+    "applicability": "Physical player and AI vehicle samples retained;producer eligibility,rate interpretation and freshness remain branch-specific",
+    "evidence_status": "Native producers and selected constants traced;populated player/AI snapshots and short moving sequences retained. Engine rates vary;sampled player adhesion cache668360.0625 and AI0 do not establish delivered force or slip.",
+    "evidence": [
+      "WHEEL-ADHESION-FINDINGS.md",
+      "wheel-runtime-summary.json"
+    ]
+  },
+  "engine.driver_rotation_rate": {
+    "applicability": "Physical player and AI vehicle samples retained;producer eligibility,rate interpretation and freshness remain branch-specific",
+    "evidence_status": "Native producers and selected constants traced;populated player/AI snapshots and short moving sequences retained. Engine rates vary;sampled player adhesion cache668360.0625 and AI0 do not establish delivered force or slip.",
+    "evidence": [
+      "WHEEL-ADHESION-FINDINGS.md",
+      "wheel-runtime-summary.json"
+    ]
+  },
+  "engine.adhesion_force_limit": {
+    "applicability": "Physical player and AI vehicle samples retained;producer eligibility,rate interpretation and freshness remain branch-specific",
+    "evidence_status": "Native producers and selected constants traced;populated player/AI snapshots and short moving sequences retained. Engine rates vary;sampled player adhesion cache668360.0625 and AI0 do not establish delivered force or slip.",
+    "evidence": [
+      "WHEEL-ADHESION-FINDINGS.md",
+      "wheel-runtime-summary.json"
+    ]
+  },
+  "body.torque_accumulator_candidate": {
+    "applicability": "Physical player,AI and ownerless bodies sampled;zero stored torque does not prove zero physical torque",
+    "evidence_status": "Paused and unpaused population reads plus181sample moving series retained. Guard-qualified torque vectors remainzero;15clock-crossing samples excluded. Current native entry/clear predicates traced without execution attribution.",
+    "evidence": [
+      "WHEEL-ADHESION-FINDINGS.md",
+      "body-accumulators-series-20261013-summary.json"
+    ]
+  }
+}

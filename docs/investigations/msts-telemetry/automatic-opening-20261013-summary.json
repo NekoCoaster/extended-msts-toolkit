@@ -1,0 +1,268 @@
+{
+  "source": "captures/automatic-opening-20261013-01/samples.jsonl",
+  "source_sha256": "882a9405abe2f880b1891bf48d6f8fb714ed099f346f57480c83de418797c67f",
+  "samples": 872,
+  "errors": 0,
+  "unavailable": 345,
+  "player_samples": 527,
+  "positive_countdown_samples": 362,
+  "first": {
+    "sample": 345,
+    "time": 43200.0,
+    "speed": 0.0,
+    "driver_gate": 1,
+    "control_type": 0,
+    "selected": 116638772,
+    "previous": 0,
+    "remaining": 0.0,
+    "gate": 0,
+    "records": [
+      {
+        "platform": 66,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 444,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 1829,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      }
+    ]
+  },
+  "last": {
+    "sample": 871,
+    "time": 43261.57421875,
+    "speed": 10.816287994384766,
+    "driver_gate": 1,
+    "control_type": 3,
+    "selected": 56038736,
+    "previous": 116638772,
+    "remaining": 0.0,
+    "gate": 0,
+    "records": [
+      {
+        "platform": 66,
+        "flags": 2,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 444,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 1829,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      }
+    ]
+  },
+  "first_positive": {
+    "sample": 348,
+    "time": 43200.30078125,
+    "speed": 0.0,
+    "driver_gate": 1,
+    "control_type": 3,
+    "selected": 56038736,
+    "previous": 116638772,
+    "remaining": 42.60714340209961,
+    "gate": 1,
+    "records": [
+      {
+        "platform": 66,
+        "flags": 2,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 444,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 1829,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      }
+    ]
+  },
+  "last_positive": {
+    "sample": 709,
+    "time": 43241.32421875,
+    "speed": 0.0,
+    "driver_gate": 1,
+    "control_type": 3,
+    "selected": 56038736,
+    "previous": 116638772,
+    "remaining": 0.10714340209960938,
+    "gate": 1,
+    "records": [
+      {
+        "platform": 66,
+        "flags": 2,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 444,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      },
+      {
+        "platform": 1829,
+        "flags": 0,
+        "recorded_arrival": 0.0,
+        "recorded_departure": 0.0
+      }
+    ]
+  },
+  "edges": [
+    {
+      "before": {
+        "sample": 347,
+        "time": 43200.0,
+        "speed": 0.0,
+        "driver_gate": 1,
+        "control_type": 3,
+        "selected": 116638772,
+        "previous": 0,
+        "remaining": 0.0,
+        "gate": 0,
+        "records": [
+          {
+            "platform": 66,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 444,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 1829,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "sample": 348,
+        "time": 43200.30078125,
+        "speed": 0.0,
+        "driver_gate": 1,
+        "control_type": 3,
+        "selected": 56038736,
+        "previous": 116638772,
+        "remaining": 42.60714340209961,
+        "gate": 1,
+        "records": [
+          {
+            "platform": 66,
+            "flags": 2,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 444,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 1829,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "adjacent": true
+    },
+    {
+      "before": {
+        "sample": 709,
+        "time": 43241.32421875,
+        "speed": 0.0,
+        "driver_gate": 1,
+        "control_type": 3,
+        "selected": 56038736,
+        "previous": 116638772,
+        "remaining": 0.10714340209960938,
+        "gate": 1,
+        "records": [
+          {
+            "platform": 66,
+            "flags": 2,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 444,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 1829,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "after": {
+        "sample": 710,
+        "time": 43241.44921875,
+        "speed": 0.0,
+        "driver_gate": 1,
+        "control_type": 3,
+        "selected": 56038736,
+        "previous": 116638772,
+        "remaining": 0.0,
+        "gate": 0,
+        "records": [
+          {
+            "platform": 66,
+            "flags": 2,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 444,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          },
+          {
+            "platform": 1829,
+            "flags": 0,
+            "recorded_arrival": 0.0,
+            "recorded_departure": 0.0
+          }
+        ]
+      },
+      "adjacent": true
+    }
+  ],
+  "station_guard_failures": 0,
+  "clock_crossings": 39,
+  "limitations": "Opening initialization/hold, not arrival after a journey. service_stable is invalid in this archived probe because a loop variable shadows the numeric service pointer; excluded. Other equal rereads do not prove atomicity. No instruction execution trace."
+}

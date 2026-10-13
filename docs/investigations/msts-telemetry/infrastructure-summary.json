@@ -1,0 +1,69 @@
+{
+  "source": {
+    "path": "C:\\MSTS\\ROUTES\\USA2\\marias.tdb",
+    "sha256": "5dadec878daecadeae5e9c5096ed7e7e19e3c6fa3dd053cf99b5c9aca7a08e98"
+  },
+  "native_nodes": 732,
+  "asset_nodes": 732,
+  "node_set_complete": true,
+  "errors": [],
+  "matched_prior_derived_ids": 718,
+  "presence": [
+    {
+      "route_id": 305,
+      "entries": 23,
+      "services": [
+        0
+      ],
+      "bad_node_backlinks": 0
+    },
+    {
+      "route_id": 281,
+      "entries": 55,
+      "services": [
+        3
+      ],
+      "bad_node_backlinks": 0
+    }
+  ],
+  "signal_count": 292,
+  "signals_with_service": [
+    {
+      "address": 94420996,
+      "service_pointer": 53749784,
+      "service_id": 3
+    },
+    {
+      "address": 94420660,
+      "service_pointer": 53749784,
+      "service_id": 3
+    },
+    {
+      "address": 94419652,
+      "service_pointer": 53749784,
+      "service_id": 3
+    },
+    {
+      "address": 94419844,
+      "service_pointer": 8427664,
+      "service_id": 0
+    },
+    {
+      "address": 94421572,
+      "service_pointer": 8427664,
+      "service_id": 0
+    },
+    {
+      "address": 94420420,
+      "service_pointer": 8427664,
+      "service_id": 0
+    },
+    {
+      "address": 94419796,
+      "service_pointer": 8427664,
+      "service_id": 0
+    }
+  ],
+  "sim_time_stable": true,
+  "limitations": "Route index plus one verified only for this loaded route build; presence records are abstract car positions, not physical train objects or track-block occupancy booleans. Signal ownership meaning still requires acquisition-path validation."
+}

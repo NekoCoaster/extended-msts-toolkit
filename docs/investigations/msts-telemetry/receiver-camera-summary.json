@@ -1,0 +1,457 @@
+{
+  "captures": [
+    "receiver-distance-paused-01",
+    "receiver-external-camera-01",
+    "receiver-cab-restored-01"
+  ],
+  "times": [
+    36193.43359375,
+    36206.50390625,
+    36224.8046875
+  ],
+  "stable": [
+    true,
+    true,
+    true
+  ],
+  "listener_positions": [
+    [
+      638.232421875,
+      24.613201141357422,
+      -37.0494384765625
+    ],
+    [
+      684.3838500976562,
+      36.71320343017578,
+      -65.87544250488281
+    ],
+    [
+      638.232421875,
+      24.613201141357422,
+      -37.0494384765625
+    ]
+  ],
+  "rows": [
+    {
+      "handle": 6166,
+      "label": "AcelaEng.sms",
+      "flags": [
+        1282,
+        1280,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        61.81269073486328,
+        2495.689208984375,
+        61.81269073486328
+      ]
+    },
+    {
+      "handle": 6167,
+      "label": "AcelaWag.sms",
+      "flags": [
+        1282,
+        1280,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        953.582763671875,
+        892.1243896484375,
+        953.582763671875
+      ]
+    },
+    {
+      "handle": 6168,
+      "label": "AcelaWag.sms",
+      "flags": [
+        1282,
+        1280,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        3235.85009765625,
+        423.4991760253906,
+        3235.85009765625
+      ]
+    },
+    {
+      "handle": 6169,
+      "label": "AcelaWag.sms",
+      "flags": [
+        1282,
+        1280,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        6963.7001953125,
+        1347.690185546875,
+        6963.7001953125
+      ]
+    },
+    {
+      "handle": 6170,
+      "label": "AcelaWag.sms",
+      "flags": [
+        1282,
+        1282,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        true,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        12106.6337890625,
+        3686.995361328125,
+        12106.6337890625
+      ]
+    },
+    {
+      "handle": 6171,
+      "label": "AcelaWag.sms",
+      "flags": [
+        1282,
+        1282,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        true,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        18528.1796875,
+        7357.6787109375,
+        18528.1796875
+      ]
+    },
+    {
+      "handle": 6172,
+      "label": "AcelaWag.sms",
+      "flags": [
+        1282,
+        1282,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        true,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        26312.30078125,
+        12390.8681640625,
+        26312.30078125
+      ]
+    },
+    {
+      "handle": 6173,
+      "label": "AcelaEng.sms",
+      "flags": [
+        1282,
+        1280,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        34564.625,
+        18144.1640625,
+        34564.625
+      ]
+    },
+    {
+      "handle": 6174,
+      "label": "USATrack0Ex.sms",
+      "flags": [
+        1282,
+        1280,
+        1282
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": false,
+      "squared_distances": [
+        14.786498069763184,
+        415.4214782714844,
+        14.786498069763184
+      ]
+    },
+    {
+      "handle": 6175,
+      "label": "USATrack0In.sms",
+      "flags": [
+        1024,
+        1026,
+        1024
+      ],
+      "inactive_bits": [
+        false,
+        true,
+        false
+      ],
+      "restored_flags": true,
+      "positions_unchanged": false,
+      "squared_distances": [
+        14.786498069763184,
+        415.4214782714844,
+        14.786498069763184
+      ]
+    },
+    {
+      "handle": 6225,
+      "label": "AcelaPas.sms",
+      "flags": [
+        1026,
+        1026,
+        1026
+      ],
+      "inactive_bits": [
+        true,
+        true,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        3235.85009765625,
+        423.4991760253906,
+        3235.85009765625
+      ]
+    },
+    {
+      "handle": 6226,
+      "label": "AcelaCab.sms",
+      "flags": [
+        1024,
+        1026,
+        1024
+      ],
+      "inactive_bits": [
+        false,
+        true,
+        false
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        61.81269073486328,
+        2495.689208984375,
+        61.81269073486328
+      ]
+    },
+    {
+      "handle": 6228,
+      "label": "clear_in.sms",
+      "flags": [
+        0,
+        2,
+        0
+      ],
+      "inactive_bits": [
+        false,
+        true,
+        false
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        409319.09375,
+        474068.65625,
+        409319.09375
+      ]
+    },
+    {
+      "handle": 6229,
+      "label": "clear_ex.sms",
+      "flags": [
+        2,
+        0,
+        2
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        409319.09375,
+        474068.65625,
+        409319.09375
+      ]
+    },
+    {
+      "handle": 6230,
+      "label": "ingame.sms",
+      "flags": [
+        260,
+        260,
+        260
+      ],
+      "inactive_bits": [
+        false,
+        false,
+        false
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "handle": 5827,
+      "label": "sta_dc_lite2.sms",
+      "flags": [
+        2,
+        2,
+        2
+      ],
+      "inactive_bits": [
+        true,
+        true,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        4546492.5,
+        4746240.5,
+        4546492.5
+      ]
+    },
+    {
+      "handle": 5828,
+      "label": "gen_dc_ind1.sms",
+      "flags": [
+        2,
+        2,
+        2
+      ],
+      "inactive_bits": [
+        true,
+        true,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        2950211.5,
+        3104160.5,
+        2950211.5
+      ]
+    },
+    {
+      "handle": 5829,
+      "label": "sta_dc_ful2.sms",
+      "flags": [
+        2,
+        0,
+        2
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        8592.908203125,
+        1759.0572509765625,
+        8592.908203125
+      ]
+    },
+    {
+      "handle": 5423,
+      "label": "gen_dc_res2.sms",
+      "flags": [
+        2,
+        0,
+        2
+      ],
+      "inactive_bits": [
+        true,
+        false,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        286927.0,
+        232710.859375,
+        286927.0
+      ]
+    },
+    {
+      "handle": 5424,
+      "label": "gen_dc_ind1.sms",
+      "flags": [
+        2,
+        2,
+        2
+      ],
+      "inactive_bits": [
+        true,
+        true,
+        true
+      ],
+      "restored_flags": true,
+      "positions_unchanged": true,
+      "squared_distances": [
+        4881139.0,
+        4657518.0,
+        4881139.0
+      ]
+    }
+  ],
+  "limitations": "Separate paused snapshots around normal camera controls; no transition latency, actual playback, or independent listener units validation."
+}

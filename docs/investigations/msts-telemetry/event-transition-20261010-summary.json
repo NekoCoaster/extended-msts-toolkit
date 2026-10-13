@@ -1,0 +1,251 @@
+{
+  "time_event45_edges": [
+    {
+      "before": {
+        "sim_time": 65267.8984375,
+        "sim_time_after": 65267.8984375,
+        "event_clock": 467.8999938964844,
+        "latch": 0,
+        "activation": 1,
+        "outcome_count": 0
+      },
+      "after": {
+        "sim_time": 65268.0234375,
+        "sim_time_after": 65268.0234375,
+        "event_clock": 468.0249938964844,
+        "latch": 1,
+        "activation": 1,
+        "outcome_count": 0
+      }
+    }
+  ],
+  "capture": "tokyo-event-transition-20261010-01",
+  "samples": 5184,
+  "errors": 0,
+  "clock_crossings": 67,
+  "unstable_origin": 0,
+  "unstable_player": 0,
+  "unstable_event_sentinel": 0,
+  "split_latch_reads": 0,
+  "outside_latched_samples": 4151,
+  "stop_success_values": [
+    [
+      0,
+      0
+    ]
+  ],
+  "changes": [
+    {
+      "before": null,
+      "after": {
+        "time": 65242.0234375,
+        "time_after": 65242.0234375,
+        "paused": 1,
+        "speed": 0.0,
+        "distance": 10.358187370059577,
+        "predicate": false,
+        "latch": 0,
+        "activation": 1,
+        "second_latch": 0,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      }
+    },
+    {
+      "before": {
+        "time": 65242.0234375,
+        "time_after": 65242.0234375,
+        "paused": 1,
+        "speed": 0.0,
+        "distance": 10.358187370059577,
+        "predicate": false,
+        "latch": 0,
+        "activation": 1,
+        "second_latch": 0,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      },
+      "after": {
+        "time": 65242.1484375,
+        "time_after": 65242.1484375,
+        "paused": 0,
+        "speed": 0.0,
+        "distance": 10.358187370059577,
+        "predicate": false,
+        "latch": 0,
+        "activation": 1,
+        "second_latch": 0,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      }
+    },
+    {
+      "before": {
+        "time": 65269.3984375,
+        "time_after": 65269.3984375,
+        "paused": 0,
+        "speed": 0.45045211911201477,
+        "distance": 10.042325284471751,
+        "predicate": false,
+        "latch": 0,
+        "activation": 1,
+        "second_latch": 0,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      },
+      "after": {
+        "time": 65269.5234375,
+        "time_after": 65269.5234375,
+        "paused": 0,
+        "speed": 0.4918740391731262,
+        "distance": 9.98130576847288,
+        "predicate": true,
+        "latch": 0,
+        "activation": 1,
+        "second_latch": 0,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      }
+    },
+    {
+      "before": {
+        "time": 65269.5234375,
+        "time_after": 65269.5234375,
+        "paused": 0,
+        "speed": 0.4918740391731262,
+        "distance": 9.98130576847288,
+        "predicate": true,
+        "latch": 0,
+        "activation": 1,
+        "second_latch": 0,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      },
+      "after": {
+        "time": 65269.6484375,
+        "time_after": 65269.6484375,
+        "paused": 1,
+        "speed": 0.5332815647125244,
+        "distance": 9.914721215311289,
+        "predicate": true,
+        "latch": 1,
+        "activation": 1,
+        "second_latch": 1,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      }
+    },
+    {
+      "before": {
+        "time": 65269.6484375,
+        "time_after": 65269.6484375,
+        "paused": 1,
+        "speed": 0.5332815647125244,
+        "distance": 9.914721215311289,
+        "predicate": true,
+        "latch": 1,
+        "activation": 1,
+        "second_latch": 1,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      },
+      "after": {
+        "time": 65269.6484375,
+        "time_after": 65269.6484375,
+        "paused": 0,
+        "speed": 0.5332815647125244,
+        "distance": 9.914721215311289,
+        "predicate": true,
+        "latch": 1,
+        "activation": 1,
+        "second_latch": 1,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      }
+    },
+    {
+      "before": {
+        "time": 65278.8984375,
+        "time_after": 65278.8984375,
+        "paused": 0,
+        "speed": 3.5484778881073,
+        "distance": 9.799938544255847,
+        "predicate": true,
+        "latch": 1,
+        "activation": 1,
+        "second_latch": 1,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      },
+      "after": {
+        "time": 65279.0234375,
+        "time_after": 65279.0234375,
+        "paused": 0,
+        "speed": 3.5885696411132812,
+        "distance": 10.26394820780483,
+        "predicate": false,
+        "latch": 1,
+        "activation": 1,
+        "second_latch": 1,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      }
+    },
+    {
+      "before": {
+        "time": 65311.3984375,
+        "time_after": 65311.3984375,
+        "paused": 0,
+        "speed": 0.0,
+        "distance": 79.4341899143168,
+        "predicate": false,
+        "latch": 1,
+        "activation": 1,
+        "second_latch": 1,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      },
+      "after": {
+        "time": 65311.3984375,
+        "time_after": 65311.3984375,
+        "paused": 1,
+        "speed": 0.0,
+        "distance": 79.4341899143168,
+        "predicate": false,
+        "latch": 1,
+        "activation": 1,
+        "second_latch": 1,
+        "reversible": 0,
+        "stop": 0,
+        "success": 0
+      }
+    }
+  ],
+  "final": {
+    "time": 65311.3984375,
+    "time_after": 65311.3984375,
+    "paused": 1,
+    "speed": 0.0,
+    "distance": 79.4341899143168,
+    "predicate": false,
+    "latch": 1,
+    "activation": 1,
+    "second_latch": 1,
+    "reversible": 0,
+    "stop": 0,
+    "success": 0
+  },
+  "limitations": "Sequential reads and sampled bounds, not atomic events. Reconstructed finite-input geometry does not fully emulate x87 boundaries. Message UI separately observed;no success/failure/reversal or activation transition established."
+}

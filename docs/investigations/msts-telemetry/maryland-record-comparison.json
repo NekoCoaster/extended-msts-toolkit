@@ -1,0 +1,66 @@
+{
+  "sim_time": 28809.5703125,
+  "selected_is_first": true,
+  "player_efficiency": {
+    "address": 8427664,
+    "id": 0,
+    "baseline": 0.75,
+    "effective": 0.75,
+    "selected_record": 111689260,
+    "selected_value": 0.75,
+    "selected_stable": true,
+    "start_speed_candidate": 0.0,
+    "configured_cap": 60.350399017333984
+  },
+  "records": [
+    {
+      "index": 0,
+      "platform": 962,
+      "platform_matches": true,
+      "skip_count": 0,
+      "skip_matches": true,
+      "efficiency": 0.75,
+      "efficiency_float32_matches": true,
+      "declared_distance": 215.863,
+      "live_distance": 215.86279296875,
+      "distance_delta": -0.00020703124999954525,
+      "timestamp_candidates": {
+        "record04": 28801.0,
+        "record08": 28801.0,
+        "record0c": 28811.0,
+        "declared_arrival": 28801.0,
+        "declared_departure": 28811.0
+      }
+    },
+    {
+      "index": 1,
+      "platform": 1510,
+      "platform_matches": true,
+      "skip_count": 1,
+      "skip_matches": true,
+      "efficiency": 0.2890630066394806,
+      "efficiency_float32_matches": true,
+      "declared_distance": 30323.6,
+      "live_distance": 30323.611328125,
+      "distance_delta": 0.011328125001455192,
+      "timestamp_candidates": {
+        "record04": 30607.0,
+        "record08": 0.0,
+        "record0c": 30627.0,
+        "declared_arrival": 30607.0,
+        "declared_departure": 30627.0
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\ACTIVITIES\\morningmaryland.act",
+      "sha256": "d165b04759890ba9810b6c8ea6ce5f867eb5807e3ef405f8e1bc098041fbb531"
+    },
+    {
+      "path": "C:\\MSTS\\ROUTES\\USA1\\SERVICES\\MarylandPlayerService.srv",
+      "sha256": "0800b74e957e102cafbc11092c3fff492bee7ffb281ab63c2ee3afca69e25141"
+    }
+  ],
+  "limitations": "Static declaration comparison and one paused state. Matching numeric timestamps alone do not establish scheduled/actual semantics. Distance is not an exact asset copy; writer/recomputation unresolved. No selected-record transition observed."
+}

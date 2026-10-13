@@ -1,0 +1,345 @@
+{
+  "source": "captures/steam-scotsman-controls-01/samples.jsonl",
+  "samples": 180,
+  "errors": [],
+  "unstable_contexts": 0,
+  "cross_step_reads": 14,
+  "paused_samples": 30,
+  "time_range": [
+    36012.6640625,
+    36087.62109375
+  ],
+  "speed_range": [
+    0.0,
+    1.4837961316516157e-05
+  ],
+  "channels": {
+    "CUTOFF": {
+      "min": 0.0,
+      "max": 0.009999999776482582,
+      "first": 0.0,
+      "last": 0.009999999776482582,
+      "changes": 1,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        },
+        {
+          "index": 43,
+          "time": 36019.5859375,
+          "value": 0.009999999776482582
+        }
+      ]
+    },
+    "REGULATOR": {
+      "min": 0.0,
+      "max": 0.02500000037252903,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 2,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        },
+        {
+          "index": 58,
+          "time": 36027.08984375,
+          "value": 0.02500000037252903
+        },
+        {
+          "index": 149,
+          "time": 36072.61328125,
+          "value": 0.0
+        }
+      ]
+    },
+    "TRAIN_BRAKE": {
+      "min": 0.6499999761581421,
+      "max": 0.6499999761581421,
+      "first": 0.6499999761581421,
+      "last": 0.6499999761581421,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.6499999761581421
+        }
+      ]
+    },
+    "ENGINE_BRAKE": {
+      "min": 0.0,
+      "max": 0.0,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        }
+      ]
+    },
+    "CYL_COCKS": {
+      "min": 0,
+      "max": 1,
+      "first": 1,
+      "last": 0,
+      "changes": 1,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 1
+        },
+        {
+          "index": 133,
+          "time": 36064.6015625,
+          "value": 0
+        }
+      ]
+    },
+    "BLOWER": {
+      "min": 0.19375000894069672,
+      "max": 0.19375000894069672,
+      "first": 0.19375000894069672,
+      "last": 0.19375000894069672,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.19375000894069672
+        }
+      ]
+    },
+    "FIREHOLE": {
+      "min": 0.0,
+      "max": 0.0,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        }
+      ]
+    },
+    "STEAM_INJ1": {
+      "min": 0,
+      "max": 0,
+      "first": 0,
+      "last": 0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0
+        }
+      ]
+    },
+    "STEAM_INJ2": {
+      "min": 0,
+      "max": 0,
+      "first": 0,
+      "last": 0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0
+        }
+      ]
+    },
+    "DAMPERS_FRONT": {
+      "min": 1.0,
+      "max": 1.0,
+      "first": 1.0,
+      "last": 1.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 1.0
+        }
+      ]
+    },
+    "DAMPERS_BACK": {
+      "min": 0.0,
+      "max": 0.0,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        }
+      ]
+    },
+    "WATER_INJECTOR1": {
+      "min": 0.0,
+      "max": 0.0,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        }
+      ]
+    },
+    "WATER_INJECTOR2": {
+      "min": 0.0,
+      "max": 0.0,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        }
+      ]
+    },
+    "SMALL_EJECTOR": {
+      "min": 1,
+      "max": 1,
+      "first": 1,
+      "last": 1,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 1
+        }
+      ]
+    },
+    "BELL": {
+      "min": 0,
+      "max": 0,
+      "first": 0,
+      "last": 0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0
+        }
+      ]
+    },
+    "WHISTLE": {
+      "min": 0,
+      "max": 0,
+      "first": 0,
+      "last": 0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0
+        }
+      ]
+    },
+    "SANDERS": {
+      "min": 0,
+      "max": 0,
+      "first": 0,
+      "last": 0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0
+        }
+      ]
+    },
+    "REVERSER_PLATE": {
+      "min": 0.0,
+      "max": 0.009999999776482582,
+      "first": 0.0,
+      "last": 0.009999999776482582,
+      "changes": 1,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        },
+        {
+          "index": 43,
+          "time": 36019.5859375,
+          "value": 0.009999999776482582
+        }
+      ]
+    },
+    "STEAM_PR": {
+      "min": 166.28082275390625,
+      "max": 179.75,
+      "first": 166.28082275390625,
+      "last": 179.75,
+      "changes": 52
+    },
+    "STEAMCHEST_PR": {
+      "min": 0.0,
+      "max": 2.180687427520752,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 25
+    },
+    "STEAMHEAT_PRESSURE": {
+      "min": 0.0,
+      "max": 0.0,
+      "first": 0.0,
+      "last": 0.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 0.0
+        }
+      ]
+    },
+    "TENDER_WATER": {
+      "min": 50000.0,
+      "max": 50000.0,
+      "first": 50000.0,
+      "last": 50000.0,
+      "changes": 0,
+      "transitions": [
+        {
+          "index": 0,
+          "time": 36012.6640625,
+          "value": 50000.0
+        }
+      ]
+    },
+    "BOILER_WATER": {
+      "min": 0.9665906429290771,
+      "max": 0.9737377166748047,
+      "first": 0.9737377166748047,
+      "last": 0.9665906429290771,
+      "changes": 150
+    }
+  },
+  "limitations": "External non-atomic reads. Later final paused snapshot is separate; constant channels are not actuator validation."
+}

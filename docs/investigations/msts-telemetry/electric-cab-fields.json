@@ -1,0 +1,145 @@
+[
+  {
+    "channel": "THROTTLE",
+    "base": "controller",
+    "offset": 140,
+    "type": "float",
+    "branch": "0x41f399",
+    "matched_instructions": [
+      "0041f3b3  MOV EDX,dword ptr [ECX + 0x8c]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "THROTTLE_DISPLAY",
+    "base": "controller",
+    "offset": 140,
+    "type": "float",
+    "branch": "0x41f3cc",
+    "matched_instructions": [
+      "0041f3de  MOV EAX,dword ptr [EDX + 0x8c]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "ACCELERATE_HILO",
+    "base": "controller",
+    "offset": 940,
+    "type": "float",
+    "branch": "0x41f4da",
+    "matched_instructions": [
+      "0041f4f4  MOV EAX,dword ptr [EDX + 0x3ac]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "DIRECTION",
+    "base": "controller",
+    "offset": 184,
+    "type": "uint32",
+    "branch": "0x41f705",
+    "matched_instructions": [
+      "0041f70b  MOV ECX,dword ptr [EAX + 0xb8]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "DIRECTION_DISPLAY",
+    "base": "controller",
+    "offset": 200,
+    "type": "float",
+    "branch": "0x41f738",
+    "matched_instructions": [
+      "0041f73e  MOV EAX,dword ptr [EDX + 0xc8]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "CP_HANDLE",
+    "base": "controller",
+    "offset": 80,
+    "type": "float",
+    "branch": "0x41f7b5",
+    "matched_instructions": [
+      "0041f7bb  MOV EDX,dword ptr [ECX + 0x50]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "CPH_DISPLAY",
+    "base": "controller",
+    "offset": 80,
+    "type": "float",
+    "branch": "0x41f7e5",
+    "matched_instructions": [
+      "0041f7eb  MOV ECX,dword ptr [EAX + 0x50]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "TRAIN_BRAKE",
+    "base": "controller",
+    "offset": 296,
+    "type": "float",
+    "branch": "0x41f911",
+    "matched_instructions": [
+      "0041f917  MOV EDX,dword ptr [ECX + 0x128]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "ENGINE_BRAKE",
+    "base": "controller",
+    "offset": 240,
+    "type": "float",
+    "branch": "0x41f93c",
+    "matched_instructions": [
+      "0041f942  MOV EAX,dword ptr [EDX + 0xf0]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "DYNAMIC_BRAKE",
+    "base": "controller",
+    "offset": 812,
+    "type": "float",
+    "branch": "0x41fa4a",
+    "matched_instructions": [
+      "0041fa50  MOV EAX,dword ptr [EDX + 0x32c]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "MAIN_RES",
+    "base": "lead",
+    "offset": 1042,
+    "type": "float",
+    "branch": "0x41fb6f",
+    "matched_instructions": [
+      "0041fb7a  MOV EAX,dword ptr [ECX + 0x412]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "BRAKE_PIPE",
+    "base": "lead",
+    "offset": 568,
+    "type": "float",
+    "branch": "0x41fef5",
+    "matched_instructions": [
+      "0041ff01  MOV EDX,dword ptr [EAX + 0x238]"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  },
+  {
+    "channel": "PANTOGRAPH",
+    "base": "controller",
+    "offset": 612,
+    "type": "uint32",
+    "branch": "0x420014",
+    "matched_instructions": [
+      "00420019  CMP dword ptr [ECX + 0x264],0x0"
+    ],
+    "meaning": "raw source; pantograph is displayed as nonzero boolean; pressure display has separate conversions"
+  }
+]

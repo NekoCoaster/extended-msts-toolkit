@@ -1,0 +1,67 @@
+{
+  "samples": 875,
+  "errors": 0,
+  "sim_time_range": [
+    36565.16796875,
+    36594.16796875
+  ],
+  "speed_range": [
+    0.369598925113678,
+    0.8733735680580139
+  ],
+  "owner_failures": 0,
+  "active_samples": 433,
+  "force_pair_max_abs_difference": 0.0,
+  "power_pair_max_abs_difference": 0.0,
+  "cars": [
+    {
+      "address": 54492752,
+      "type_words": [
+        15
+      ],
+      "flags80": [
+        93
+      ],
+      "flags296": [
+        2
+      ],
+      "force_range": [
+        0.0,
+        5015.00048828125
+      ],
+      "power_range": [
+        0.0,
+        230000.0
+      ],
+      "current_union_range": [
+        0.0,
+        45.590911865234375
+      ]
+    },
+    {
+      "address": 54575228,
+      "type_words": [
+        15
+      ],
+      "flags80": [
+        93
+      ],
+      "flags296": [
+        0
+      ],
+      "force_range": [
+        0.0,
+        5015.00048828125
+      ],
+      "power_range": [
+        0.0,
+        230000.0
+      ],
+      "current_union_range": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "limitations": "Two identical-definition Acela power cars only; sequential reads can catch producer phases. Current union is not proven independently maintained on rear. No AI or differing locomotive ratings; no actual wheel-force measurement."
+}

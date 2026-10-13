@@ -1,0 +1,77 @@
+{
+  "brake_samples": 5658,
+  "brake_errors": 0,
+  "signal_samples": 1788,
+  "signal_errors": 0,
+  "mode_transitions": [
+    {
+      "day": 74078.3359375,
+      "mode": "0x1000",
+      "handle": 0.8375000357627869
+    },
+    {
+      "day": 74122.3984375,
+      "mode": "0x4",
+      "handle": 0.0
+    },
+    {
+      "day": 74188.265625,
+      "mode": "0x100000",
+      "handle": 0.949999988079071
+    }
+  ],
+  "first_all_player_cylinders_zero": 74135.59375,
+  "brake_day_range": [
+    74078.3359375,
+    74229.078125
+  ],
+  "signal_day_range": [
+    74137.765625,
+    74229.078125
+  ],
+  "speed_range": [
+    -6.092225074768066,
+    0.00826698262244463
+  ],
+  "signal_distance_range": [
+    481.0546875,
+    699.42578125
+  ],
+  "signal_indices": [
+    46
+  ],
+  "signal_aspects": [
+    7
+  ],
+  "traction_current_range": [
+    0.0,
+    0.0
+  ],
+  "throttle_values": [
+    0.0,
+    0.125
+  ],
+  "brake_clock_crossings": 429,
+  "owner_reread_differences": 0,
+  "final": {
+    "day": 74229.078125,
+    "paused": 1,
+    "speed": 0.0,
+    "distance": 699.42578125,
+    "cab": {
+      "throttle": 0.0,
+      "reverser": 1.0,
+      "main_res_psi": 130.0,
+      "eq_res_psi": 0.0,
+      "brake_cyl_psi": 85.20243072509766,
+      "brake_pipe_psi": 0.0,
+      "current_traction_amps": 0.0,
+      "dynamic_braking_raw": 0.0,
+      "current_dynamic_amps": 0.0,
+      "fuel_raw": 5296.8369140625,
+      "engine_rotation_raw": 315.00006103515625,
+      "ammeter_amps": 0.0
+    }
+  },
+  "limitations": "Fixed44decrement sequence after one separate decrement,thenN1 after observed release. Backspace applied on negative-speed/increasing-distance evidence;thenIdle andPause. Input times not precisely logged. Grade causation and absent traction reason unresolved. No forward passage;capture series start at different times and must not be silently joined as simultaneous/atomic."
+}

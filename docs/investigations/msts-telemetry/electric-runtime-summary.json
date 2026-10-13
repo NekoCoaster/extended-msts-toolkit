@@ -1,0 +1,65 @@
+{
+  "samples": [
+    {
+      "source": "captures\\electric-acela-baseline-01\\electric.json",
+      "time": 36013.28125,
+      "paused": 1,
+      "stable": true,
+      "speed": 0.0,
+      "route_voltage": 25000.0,
+      "pantograph": 1,
+      "direction_enum": 1,
+      "direction_signed": 0.0,
+      "throttle": 0.0
+    },
+    {
+      "source": "captures\\electric-acela-pantograph-down-01\\electric.json",
+      "time": 36021.5,
+      "paused": 0,
+      "stable": true,
+      "speed": 0.0,
+      "route_voltage": 25000.0,
+      "pantograph": 0,
+      "direction_enum": 1,
+      "direction_signed": 0.0,
+      "throttle": 0.0
+    },
+    {
+      "source": "captures\\electric-acela-forward-01\\electric.json",
+      "time": 36029.6015625,
+      "paused": 0,
+      "stable": true,
+      "speed": 0.0,
+      "route_voltage": 25000.0,
+      "pantograph": 0,
+      "direction_enum": 2,
+      "direction_signed": 1.0,
+      "throttle": 0.0
+    },
+    {
+      "source": "captures\\electric-acela-throttle-01\\electric.json",
+      "time": 36037.5546875,
+      "paused": 0,
+      "stable": true,
+      "speed": 0.0,
+      "route_voltage": 25000.0,
+      "pantograph": 0,
+      "direction_enum": 2,
+      "direction_signed": 1.0,
+      "throttle": 0.02500000037252903
+    },
+    {
+      "source": "captures\\electric-acela-final-paused-01\\electric.json",
+      "time": 36057.609375,
+      "paused": 1,
+      "stable": true,
+      "speed": 0.0,
+      "route_voltage": 25000.0,
+      "pantograph": 1,
+      "direction_enum": 2,
+      "direction_signed": 1.0,
+      "throttle": 0.0
+    }
+  ],
+  "limitations": "Five separate asynchronous snapshots; no continuous cadence measurement; unactuated fields are positive reads only. Route voltage is not effective traction supply."
+}

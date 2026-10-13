@@ -1,0 +1,309 @@
+{
+  "pid": 33612,
+  "sha256": "2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843",
+  "labels": [
+    {
+      "token": "0x40475",
+      "label": "AWSMonitor",
+      "target": "0x61e204",
+      "definition_offset": "0xb0c"
+    },
+    {
+      "token": "0x40476",
+      "label": "VigilanceMonitor",
+      "target": "0x61e23c",
+      "definition_offset": "0xb78"
+    },
+    {
+      "token": "0x40477",
+      "label": "EmergencyStopMonitor",
+      "target": "0x61e273",
+      "definition_offset": "0xbe4"
+    },
+    {
+      "token": "0x40478",
+      "label": "OverspeedMonitor",
+      "target": "0x61e2ab",
+      "definition_offset": "0xcbc"
+    }
+  ],
+  "checks": [
+    {
+      "address": "0x796e30",
+      "bytes": "fcb9750075040400"
+    },
+    {
+      "address": "0x75b9fc",
+      "bytes": "4100570053004d006f006e00690074006f0072000000"
+    },
+    {
+      "address": "0x61f0ae",
+      "bytes": "00"
+    },
+    {
+      "address": "0x61f096",
+      "bytes": "04e26100"
+    },
+    {
+      "address": "0x796e38",
+      "bytes": "d4b9750076040400"
+    },
+    {
+      "address": "0x75b9d4",
+      "bytes": "56006900670069006c0061006e00630065004d006f006e00690074006f0072000000"
+    },
+    {
+      "address": "0x61f0af",
+      "bytes": "01"
+    },
+    {
+      "address": "0x61f09a",
+      "bytes": "3ce26100"
+    },
+    {
+      "address": "0x796e40",
+      "bytes": "a0b9750077040400"
+    },
+    {
+      "address": "0x75b9a0",
+      "bytes": "45006d0065007200670065006e0063007900530074006f0070004d006f006e00690074006f0072000000"
+    },
+    {
+      "address": "0x61f0b0",
+      "bytes": "02"
+    },
+    {
+      "address": "0x61f09e",
+      "bytes": "73e26100"
+    },
+    {
+      "address": "0x796e48",
+      "bytes": "78b9750078040400"
+    },
+    {
+      "address": "0x75b978",
+      "bytes": "4f00760065007200730070006500650064004d006f006e00690074006f0072000000"
+    },
+    {
+      "address": "0x61f0b1",
+      "bytes": "03"
+    },
+    {
+      "address": "0x61f0a2",
+      "bytes": "abe26100"
+    },
+    {
+      "address": "0x61982b",
+      "bytes": "8b85e0b7ffff"
+    },
+    {
+      "address": "0x619831",
+      "bytes": "2d75040400"
+    },
+    {
+      "address": "0x619836",
+      "bytes": "8985e0b7ffff"
+    },
+    {
+      "address": "0x61983c",
+      "bytes": "83bde0b7ffff5d"
+    },
+    {
+      "address": "0x619843",
+      "bytes": "0f87324f0000"
+    },
+    {
+      "address": "0x619849",
+      "bytes": "8b95e0b7ffff"
+    },
+    {
+      "address": "0x61984f",
+      "bytes": "33c9"
+    },
+    {
+      "address": "0x619851",
+      "bytes": "8a8aaef06100"
+    },
+    {
+      "address": "0x619857",
+      "bytes": "ff248d96f06100"
+    },
+    {
+      "address": "0x61e204",
+      "bytes": "8b4508"
+    },
+    {
+      "address": "0x61e207",
+      "bytes": "50"
+    },
+    {
+      "address": "0x61e208",
+      "bytes": "8b8de4b7ffff"
+    },
+    {
+      "address": "0x61e20e",
+      "bytes": "81c10c0b0000"
+    },
+    {
+      "address": "0x61e214",
+      "bytes": "e86839deff"
+    },
+    {
+      "address": "0x61e219",
+      "bytes": "8b8de4b7ffff"
+    },
+    {
+      "address": "0x61e21f",
+      "bytes": "8b91a8000000"
+    },
+    {
+      "address": "0x61e225",
+      "bytes": "81ca00008000"
+    },
+    {
+      "address": "0x61e22b",
+      "bytes": "8b85e4b7ffff"
+    },
+    {
+      "address": "0x61e231",
+      "bytes": "8990a8000000"
+    },
+    {
+      "address": "0x61e237",
+      "bytes": "e93f050000"
+    },
+    {
+      "address": "0x61e23c",
+      "bytes": "8b4d08"
+    },
+    {
+      "address": "0x61e23f",
+      "bytes": "51"
+    },
+    {
+      "address": "0x61e240",
+      "bytes": "8b8de4b7ffff"
+    },
+    {
+      "address": "0x61e246",
+      "bytes": "81c1780b0000"
+    },
+    {
+      "address": "0x61e24c",
+      "bytes": "e83039deff"
+    },
+    {
+      "address": "0x61e251",
+      "bytes": "8b95e4b7ffff"
+    },
+    {
+      "address": "0x61e257",
+      "bytes": "8b82a8000000"
+    },
+    {
+      "address": "0x61e25d",
+      "bytes": "0d00000001"
+    },
+    {
+      "address": "0x61e262",
+      "bytes": "8b8de4b7ffff"
+    },
+    {
+      "address": "0x61e268",
+      "bytes": "8981a8000000"
+    },
+    {
+      "address": "0x61e26e",
+      "bytes": "e908050000"
+    },
+    {
+      "address": "0x61e273",
+      "bytes": "8b5508"
+    },
+    {
+      "address": "0x61e276",
+      "bytes": "52"
+    },
+    {
+      "address": "0x61e277",
+      "bytes": "8b8de4b7ffff"
+    },
+    {
+      "address": "0x61e27d",
+      "bytes": "81c1e40b0000"
+    },
+    {
+      "address": "0x61e283",
+      "bytes": "e8f938deff"
+    },
+    {
+      "address": "0x61e288",
+      "bytes": "8b85e4b7ffff"
+    },
+    {
+      "address": "0x61e28e",
+      "bytes": "8b88a8000000"
+    },
+    {
+      "address": "0x61e294",
+      "bytes": "81c900000002"
+    },
+    {
+      "address": "0x61e29a",
+      "bytes": "8b95e4b7ffff"
+    },
+    {
+      "address": "0x61e2a0",
+      "bytes": "898aa8000000"
+    },
+    {
+      "address": "0x61e2a6",
+      "bytes": "e9d0040000"
+    },
+    {
+      "address": "0x61e2ab",
+      "bytes": "8b4508"
+    },
+    {
+      "address": "0x61e2ae",
+      "bytes": "50"
+    },
+    {
+      "address": "0x61e2af",
+      "bytes": "8b8de4b7ffff"
+    },
+    {
+      "address": "0x61e2b5",
+      "bytes": "81c1bc0c0000"
+    },
+    {
+      "address": "0x61e2bb",
+      "bytes": "e8c138deff"
+    },
+    {
+      "address": "0x61e2c0",
+      "bytes": "8b8de4b7ffff"
+    },
+    {
+      "address": "0x61e2c6",
+      "bytes": "8b9198000000"
+    },
+    {
+      "address": "0x61e2cc",
+      "bytes": "81ca00000040"
+    },
+    {
+      "address": "0x61e2d2",
+      "bytes": "8b85e4b7ffff"
+    },
+    {
+      "address": "0x61e2d8",
+      "bytes": "899098000000"
+    },
+    {
+      "address": "0x61e2de",
+      "bytes": "e998040000"
+    }
+  ],
+  "limitations": "Selected parser dispatch/destination proof;monitor behavior and runtime state require separate consumers."
+}

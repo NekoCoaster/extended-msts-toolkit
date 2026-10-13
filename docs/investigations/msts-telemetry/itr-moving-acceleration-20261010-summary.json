@@ -1,0 +1,60 @@
+{
+  "samples": 199,
+  "errors": 0,
+  "available": 199,
+  "speed_range": [
+    18.66397476196289,
+    24.941795349121094
+  ],
+  "acceleration_range": [
+    -0.6721569895744324,
+    0.46534234285354614
+  ],
+  "unfiltered_mean_range": [
+    -0.7763150334358215,
+    0.49815890192985535
+  ],
+  "car_counts": [
+    11
+  ],
+  "indexes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "root_changes": 0,
+  "unstable_aggregate": 0,
+  "unstable_history": 0,
+  "unstable_cars": 0,
+  "owner_mismatches": 0,
+  "incomplete": 0,
+  "invalid_index": 0,
+  "clock_crossings": 0,
+  "coherent_read_rows": 199,
+  "finite_difference_pairs": 160,
+  "max_abs_finite_difference_minus_stored": 0.6717820167541504,
+  "max_abs_stored_minus_unfiltered": 0.3755391240119934,
+  "max_sampled_mean_difference": 1.6255812207432996e-07,
+  "time": [
+    43917.94921875,
+    43937.94921875
+  ],
+  "paused_values": [
+    0
+  ],
+  "limits": "Sequential read consistency flags do not establish atomicity or exclude ABA reuse. Sampled car mean may differ from earlier producer input. Finite differences span observed clock intervals, not exact producer invocations; differences are descriptive,not a physical error estimate. No reset,AI freshness or exact cadence claim follows from this summary.",
+  "source": "msts-telemetry/captures/itr-moving-acceleration-20261010-01/samples.jsonl",
+  "sha256": "be712314b403be879ad63ca972ea69e09df328257d6dc1e9ddad58d33a350060",
+  "completion": {
+    "samples": 199,
+    "errors": 0,
+    "wall_elapsed": 20.0829469000455
+  }
+}
