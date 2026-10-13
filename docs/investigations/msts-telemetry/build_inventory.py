@@ -1445,6 +1445,15 @@ for row in rows:
         row['evidence']+=['captures/manual-boarding-baseline-20261013-01/samples.jsonl','captures/manual-boarding-onset-20261013-01/samples.jsonl','captures/manual-boarding-onset-20261013-01/ui-and-gate-observation.json','manual-boarding-initial-20261013-summary.json','captures/manual-boarding-code-20261013-01-byte-verification.json']
         row['evidence_status']+=';manual tutorial initial station has6eligible/6contributing and storedfraction1;first station already loaded,no positive timer'
         row['limitations']+=' Positive fraction correspondence does not validate onset duration:initial station flag20alreadyset. Following-station loading remains needed.'
+# Reconcile historical population boilerplate with retained later observations.
+population_review=json.loads((ROOT/'population-metadata-review-20261013.json').read_text())
+for row in rows:
+    if row['id'] in population_review:
+        review=population_review[row['id']]
+        row['applicability']=review['applicability']
+        row['evidence_status']=review['evidence_status']
+        row['evidence']=list(dict.fromkeys(row['evidence']+review['evidence']+['population-metadata-review-20261013.json']))
+        row['limitations']=row['limitations'].replace('Pressure/coupler transitions need dedicated tests; no coupling changes performed.','This brake/force evidence does not establish coupler-transition behavior;consult separate coupling lifecycle findings.')
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

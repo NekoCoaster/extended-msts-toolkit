@@ -4,11 +4,15 @@ Updated 13 October 2026. Research is incomplete. This organization checkpoint ad
 
 ## Current checkpoint
 
-Last published research checkpoint: `af4143b`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
+Last published research checkpoint: `73c0be1`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
 
-Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`. Published findings cover loading-duration, override and manual geometry. The manual reader and negative preflight are published. Local force-configuration metadata review corrects definition lifetimes for engine.max_force and car.max_brake_force; broader physics semantics remain open. Local force evidence now includes a37vehicle snapshot and181sample moving series:player force varies while moving AI force remains zero;15clock-crossing samples excluded. Read WHEEL-ADHESION-FINDINGS for limitations. New local force-clear predicates show8AI fail the inspected routine entry gate and18ownerless satisfy its explicit clear condition;this is eligibility,not execution proof. No sampler remains running.
+Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`.
 
-Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,028 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
+Published through `73c0be1`: automatic/manual loading-duration analysis, the guarded manual reader, force-configuration lifetime corrections, moving body-accumulator observations, and force-entry/clear predicates. These establish bounded observations and conditions, not independent AI force simulation or native execution of the inspected gates. See [station timing](STATION-TIME-FINDINGS.md) and [wheel/adhesion](WHEEL-ADHESION-FINDINGS.md).
+
+Pending checkpoint: seven existing inventory records now acknowledge retained player/AI or ownerless observations while preserving semantic, cadence and lifecycle limitations. See `population-metadata-review-20261013.json` and [vehicle systems](VEHICLE-SYSTEM-FINDINGS.md). The other 1,060 records are unchanged by that review.
+
+Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,029 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
 
 ## Start here
 
@@ -23,9 +27,9 @@ Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 5
 
 The local duration model counts seven eligible cars and reproduces the first timer value using later inputs and an assumed quarter-second update. This corroborates the formula without proving simultaneous onset inputs. Override lookup prefers the selected endpoint, then its pair, then the route count; the current empty override list provides no positive runtime validation. Manual boarding has a separate path.
 
-Manual duration is now traced to physical-vehicle endpoint membership and strict position bounds, distinct from automatic length-budget counting. Current bytes and constants match; contemporaneous onset counting remains unvalidated. Helper argument tracing now confirms the paired endpoint supplies the manual waiting count; the reader is corrected and seven synthetic tests pass. Next station question: capture the manual contributing count at timer onset, trace minimum-wait use, or obtain an appropriate positive override fixture. Broader gaps remain in the coverage matrix; this is not the whole research objective.
+Manual duration is now traced to physical-vehicle endpoint membership and strict position bounds, distinct from automatic length-budget counting. Current bytes and constants match; contemporaneous onset counting remains unvalidated. Helper argument tracing now confirms the paired endpoint supplies the manual waiting count; the reader is corrected and eight synthetic tests pass. Next station question: capture the manual contributing count at timer onset, trace minimum-wait use, or obtain an appropriate positive override fixture. Broader gaps remain in the coverage matrix; this is not the whole research objective.
 
-Current UI: Passenger Activity Tutorial paused on a late-arrival message;still at initial platform9 by selected record. PID39096. W inputs did not change neutral;mouse selected Reverse(-1),throttle0,speed0. User asked to set Forward and stop at Yoyogi Hachiman before loading. No sampler running. Reader now includes station flags/arrival/frame delta;8tests pass. Do not interpret tutorial message as an actual arrival.
+Last recorded simulator state (not refreshed by this documentation cleanup): Passenger Activity Tutorial, paused on a late-arrival message, still at initial platform 9 by selected record; PID 39096. Reverser was Reverse (-1), throttle 0 and speed 0. No sampler remained running. The proposed next fixture is Forward travel to Yoyogi Hachiman, stopping before pressing Enter. Recheck state before any future observation; the tutorial message does not prove arrival.
 
 ## Boundaries and history
 

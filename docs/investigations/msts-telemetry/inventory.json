@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-13T06:29:22.306554+00:00",
+  "generated_utc": "2026-10-13T06:39:52.342094+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -30780,7 +30780,7 @@
     {
       "id": "car.brake_cylinder_pressure",
       "meaning": "Per-car brake cylinder pressure",
-      "applicability": "physical player and AI vehicles; current detailed sample covers player only",
+      "applicability": "Physical player and AI cars have retained reads;independent AI brake simulation is not established",
       "value_type": "float32",
       "units": "PSI",
       "extraction": "car+0x230; cab producer corroborated on lead; wagon population observed",
@@ -30807,26 +30807,25 @@
         "emergency-binding-provenance.json",
         "captures/signal-approach-emergency-01/samples.jsonl",
         "captures/approach-stopped-signal-01/details.jsonl",
-        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
         "analyse_diesel_emergency_reset.py",
         "diesel-emergency-reset-summary.json",
         "diesel-brake-cab-provenance.json",
         "captures/diesel-emergency-reset-01/samples.jsonl",
         "captures/diesel-reset-signal-paused-01/details.jsonl",
-        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
         "analyse_diesel_release_rollback.py",
         "diesel-release-rollback-summary.json",
         "captures/diesel-keyboard-release-01/samples.jsonl",
-        "captures/cleared-player-approach-01/details.jsonl"
+        "captures/cleared-player-approach-01/details.jsonl",
+        "population-metadata-review-20261013.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5;preferred diesel fixture UI emergency stop captured across23player/22AI cars",
+      "evidence_status": "Native sources traced;Acela release and diesel emergency/reset observations retained. Diesel stop series covers23player and22AI cars;player pressures change while sampled AI pipe90/cylinder0 remain unchanged.",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No release in that emergency-stop capture;later keyboard series validates diesel release. Successful signal passage remains untested. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. No forward signal passage or exclusive grade causality claim."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. This brake/force evidence does not establish coupler-transition behavior;consult separate coupling lifecycle findings. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No release in that emergency-stop capture;later keyboard series validates diesel release. Successful signal passage remains untested. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. No forward signal passage or exclusive grade causality claim."
     },
     {
       "id": "car.brake_pipe_pressure",
       "meaning": "Per-car brake-pipe pressure",
-      "applicability": "physical player and AI vehicles; current detailed sample covers player only",
+      "applicability": "Physical player and AI cars have retained reads;independent AI brake simulation is not established",
       "value_type": "float32",
       "units": "PSI",
       "extraction": "car+0x238; cab producer corroborated on lead; uncoupler resets it",
@@ -30853,26 +30852,25 @@
         "emergency-binding-provenance.json",
         "captures/signal-approach-emergency-01/samples.jsonl",
         "captures/approach-stopped-signal-01/details.jsonl",
-        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
         "analyse_diesel_emergency_reset.py",
         "diesel-emergency-reset-summary.json",
         "diesel-brake-cab-provenance.json",
         "captures/diesel-emergency-reset-01/samples.jsonl",
         "captures/diesel-reset-signal-paused-01/details.jsonl",
-        "SIGNAL-APPROACH-BRAKING-FINDINGS.md",
         "analyse_diesel_release_rollback.py",
         "diesel-release-rollback-summary.json",
         "captures/diesel-keyboard-release-01/samples.jsonl",
-        "captures/cleared-player-approach-01/details.jsonl"
+        "captures/cleared-player-approach-01/details.jsonl",
+        "population-metadata-review-20261013.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5;preferred diesel fixture UI emergency stop captured across23player/22AI cars",
+      "evidence_status": "Native sources traced;Acela release and diesel emergency/reset observations retained. Diesel stop series covers23player and22AI cars;player pressures change while sampled AI pipe90/cylinder0 remain unchanged.",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No release in that emergency-stop capture;later keyboard series validates diesel release. Successful signal passage remains untested. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. No forward signal passage or exclusive grade causality claim."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. This brake/force evidence does not establish coupler-transition behavior;consult separate coupling lifecycle findings. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields. Emergency capture1268samples:player pipe90->0,cylinder0..85.20245PSI,speed reaches0;AI pipe90/cylinder0 unchanged. Owner rereads agree but170clock-crossing samples prevent atomicity/propagation timing claims. No release in that emergency-stop capture;later keyboard series validates diesel release. Successful signal passage remains untested. Stopped-player follow-up3316samples:brake selector reachesSelfLap98%,not release;732clock-crossing reads. Endpoint signal46 changes aspect0->7 while distance481.9824m and speed0 remain unchanged;AI visibly passed but exact clearance time/exclusive causality unmeasured. No successful player passage. Later diesel keyboard release yields mode4,pipe90/cylinder0 and negative signed motion while signal46distance increases;cab displays speed magnitude and forward reverser. Emergency reapplication stops rollback. Sampled traction current remains0 even withN1;cause unresolved. No forward signal passage or exclusive grade causality claim."
     },
     {
       "id": "car.brake_force_candidate",
       "meaning": "Per-car requested brake-force quantity before adhesion limiting",
-      "applicability": "physical player and AI vehicles; current detailed sample covers player only",
+      "applicability": "Physical player and AI cars have retained reads;requested-force semantics and AI freshness remain qualified",
       "value_type": "float32",
       "units": "N candidate",
       "extraction": "car+0x22c; consumed by 0x62c679 and 0x62c49c",
@@ -30892,11 +30890,12 @@
         "pass138-byte-verification.json",
         "ai-systems-moving-02-summary.json",
         "captures/ai-systems-moving-02/samples.jsonl",
-        "captures/ai-systems-alert-final-01/samples.jsonl"
+        "captures/ai-systems-alert-final-01/samples.jsonl",
+        "population-metadata-review-20261013.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested; subsequent Acela release-mode transition observed, eight cars settled cylinder0/pipe110 PSI; falling latch0/1 and timer0..1.5",
+      "evidence_status": "Native request/adhesion consumers traced;player brake release observations retained. Moving AI400005 series includes zero requested-force values alongside changing service speed;zero is not absence of AI braking.",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. This brake/force evidence does not establish coupler-transition behavior;consult separate coupling lifecycle findings. Release and settling captures have a12.93s simulation gap: exact time-to-zero and physical propagation speed unmeasured. Sound reference retains0.947PSI at actual pressure0; AI remains unvalidated. Traced engine/brake scheduler call005f947f explicitly loads player train from007c2ac0; it does not establish AI field refresh. Separate AI service motion and follower copies do not prove independent AI brake/force simulation; alternate writers remain open. AI400005 moving observation retains zero cylinder/brake-force/stored acceleration while service speed changes; reservoir/pipe fields remain90. Includes failure-alert paused tail and flagged unstable car reads; stable subset corroborates zeros. Not proof of absent AI braking or universal stale fields."
     },
     {
       "id": "car.max_brake_force",
@@ -31017,7 +31016,7 @@
     {
       "id": "body.torque_accumulator_candidate",
       "meaning": "Body torque accumulator",
-      "applicability": "physical player and AI vehicles; current detailed sample covers player only",
+      "applicability": "Physical player,AI and ownerless bodies sampled;zero stored torque does not prove zero physical torque",
       "value_type": "3 float32",
       "units": "N m candidate",
       "extraction": "body+0xac; integration semantics need further confirmation",
@@ -31041,11 +31040,11 @@
         "read_force_clear_inputs.py",
         "captures/force-clear-inputs-20261013-01/inputs.json",
         "captures/force-clear-native-20261013-01-byte-verification.json",
-        "WHEEL-ADHESION-FINDINGS.md"
+        "population-metadata-review-20261013.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads;181sample unpaused series retains zero torque on guard-qualified player,AI and ownerless bodies;15clock-crossing samples excluded;current0062ad6a entry and clear predicates traced:8AI fail entry,18ownerless satisfy clear,11player pass without clear;917instructions match current disk/live",
+      "evidence_status": "Paused and unpaused population reads plus181sample moving series retained. Guard-qualified torque vectors remainzero;15clock-crossing samples excluded. Current native entry/clear predicates traced without execution attribution.",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Zero sampled torque accumulator is not proof of zero physical torque or absent rotational dynamics. Each of37cars used two sampled body pointers;body identities must not be counted as separate cars. Native torque producer/clear cadence remains unresolved. Predicate snapshot is not native invocation or attribution of earlier zeros. This routine gates on car84bit2/body4bit2 and clears six vectors under bodyf2bit8 with car84bit8 or owner-null conditions;other writers and exact cadence remain unresolved."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. This brake/force evidence does not establish coupler-transition behavior;consult separate coupling lifecycle findings. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Zero sampled torque accumulator is not proof of zero physical torque or absent rotational dynamics. Each of37cars used two sampled body pointers;body identities must not be counted as separate cars. Native torque producer/clear cadence remains unresolved. Predicate snapshot is not native invocation or attribution of earlier zeros. This routine gates on car84bit2/body4bit2 and clears six vectors under bodyf2bit8 with car84bit8 or owner-null conditions;other writers and exact cadence remain unresolved."
     },
     {
       "id": "body.inverse_inertia_world",
@@ -36282,7 +36281,7 @@
     {
       "id": "car.wheel_rate_stored",
       "meaning": "Stored ordinary wheel angular-rate candidate",
-      "applicability": "physical vehicles;player/AI update applicability unvalidated",
+      "applicability": "Physical player and AI vehicle samples retained;producer eligibility,rate interpretation and freshness remain branch-specific",
       "value_type": "float32",
       "units": "rad/s from speed/radius producer and rate*frame_delta FSINCOS transform consumer",
       "extraction": "float32 car+0x1b0;ordinary branch divides longitudinal speed by definition+0x448;excess-braking branch can zero it",
@@ -36294,10 +36293,8 @@
         "pass229/0062c679.asm",
         "pass229/0062da12.asm",
         "pass58/00614c8e.asm",
-        "WHEEL-ADHESION-FINDINGS.md",
         "pass230-byte-verification.json",
         "pass232-byte-verification.json",
-        "adhesion-constant-map.json",
         "pass232/00637dc4.asm",
         "read_wheel_animation.py",
         "test_wheel_animation.py",
@@ -36316,16 +36313,17 @@
         "pass256/005d5684.asm",
         "pass256-byte-verification.json",
         "captures/wheel-hook-provenance-01/provenance.json",
-        "captures/current-hook-context-20261010-01/ranges.json"
+        "captures/current-hook-context-20261010-01/ranges.json",
+        "population-metadata-review-20261013.json"
       ],
-      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained",
+      "evidence_status": "Native producers and selected constants traced;populated player/AI snapshots and short moving sequences retained. Engine rates vary;sampled player adhesion cache668360.0625 and AI0 do not establish delivered force or slip.",
       "update_or_lifecycle": "vehicle force update;caller eligibility and AI refresh remain unvalidated",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence. Ordinary callback5d5381 reads car through callbackdata+4,negates by car84bit4,and when callbackdata byte2bit1 is set rotates supplied transform using rate*frame_delta. No accumulated angle stored here. Historical wheel callback entry was redirected; NEMT source has matching crawl hook sites and conditional temporary rate replacement for eligible derailed vehicles,but binary attribution/full hook execution remain unverified. Current PID12888 has no NEMT loaded per user;16-byte ranges at494bc1 and5d5381 match disk/live in the current-context capture. This does not revalidate historical behavior or every live instruction."
     },
     {
       "id": "engine.driver_rotation_rate",
       "meaning": "Stored powered driver rotation-rate candidate",
-      "applicability": "powered vehicles;player/AI update applicability unvalidated",
+      "applicability": "Physical player and AI vehicle samples retained;producer eligibility,rate interpretation and freshness remain branch-specific",
       "value_type": "float32",
       "units": "rev/s formula candidate;slip branches unvalidated",
       "extraction": "float32 engine+0x2b2;ordinary branch speed/(2*engine_definition112*pi);other branches zero or force-excess adjusted",
@@ -36337,10 +36335,8 @@
         "pass229/0062c679.asm",
         "pass229/0062da12.asm",
         "pass58/00614c8e.asm",
-        "WHEEL-ADHESION-FINDINGS.md",
         "pass230-byte-verification.json",
         "pass232-byte-verification.json",
-        "adhesion-constant-map.json",
         "pass232/00637dc4.asm",
         "engine-wheel-parser-map.json",
         "map_engine_wheel_parser.py",
@@ -36354,16 +36350,17 @@
         "captures/wheel-animation-loaded-01/wheel-animation.json",
         "captures/wheel-animation-after-motion-01/wheel-animation.json",
         "captures/wheel-moving-opening-01/samples.jsonl",
-        "captures/wheel-moving-player-ai-01/samples.jsonl"
+        "captures/wheel-moving-player-ai-01/samples.jsonl",
+        "population-metadata-review-20261013.json"
       ],
-      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained",
+      "evidence_status": "Native producers and selected constants traced;populated player/AI snapshots and short moving sequences retained. Engine rates vary;sampled player adhesion cache668360.0625 and AI0 do not establish delivered force or slip.",
       "update_or_lifecycle": "vehicle force update;caller eligibility and AI refresh remain unvalidated",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Selected engine parser dispatch confirms definition112 is WheelRadius and definition11a is native NumWheels;NumWheels is not established as axle count. Loaded values and short moving observations are now retained; see wheel-runtime-summary.json. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     },
     {
       "id": "engine.adhesion_force_limit",
       "meaning": "Stored powered-vehicle adhesion limit candidate",
-      "applicability": "powered vehicles;player/AI update applicability unvalidated",
+      "applicability": "Physical player and AI vehicle samples retained;producer eligibility,rate interpretation and freshness remain branch-specific",
       "value_type": "float32",
       "units": "N candidate from mass*gravity*coefficient",
       "extraction": "float32 engine+0x2aa;producer0062c679 includes coefficient and denominator max(engine_definition integer11a,1)",
@@ -36375,10 +36372,8 @@
         "pass229/0062c679.asm",
         "pass229/0062da12.asm",
         "pass58/00614c8e.asm",
-        "WHEEL-ADHESION-FINDINGS.md",
         "pass230-byte-verification.json",
         "pass232-byte-verification.json",
-        "adhesion-constant-map.json",
         "pass232/00637dc4.asm",
         "engine-wheel-parser-map.json",
         "map_engine_wheel_parser.py",
@@ -36392,9 +36387,10 @@
         "captures/wheel-animation-loaded-01/wheel-animation.json",
         "captures/wheel-animation-after-motion-01/wheel-animation.json",
         "captures/wheel-moving-opening-01/samples.jsonl",
-        "captures/wheel-moving-player-ai-01/samples.jsonl"
+        "captures/wheel-moving-player-ai-01/samples.jsonl",
+        "population-metadata-review-20261013.json"
       ],
-      "evidence_status": "native producers and selected constants verified;no live field or transition observation in this checkpoint; populated player/AI reads and short moving sequences retained",
+      "evidence_status": "Native producers and selected constants traced;populated player/AI snapshots and short moving sequences retained. Engine rates vary;sampled player adhesion cache668360.0625 and AI0 do not establish delivered force or slip.",
       "update_or_lifecycle": "vehicle force update;caller eligibility and AI refresh remain unvalidated",
       "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Formula evidence is not an actual wheel/rail force or visible rotation sensor. Ordinary wheel rate,driver rate and body velocity differ by branches/phase. Weather helper uses context definition separately from car definition;do not substitute source comments for sorted loaded Adheasion values. Follow-up confirms shared-simulation vtable callback context and powered-rate use in animation accumulator1dc;this does not establish all-callsite/AI eligibility or ordinary-wheel consumer semantics. Selected engine parser dispatch confirms definition112 is WheelRadius and definition11a is native NumWheels;NumWheels is not established as axle count. Loaded values and short moving observations are now retained; see wheel-runtime-summary.json. Standalone wheel probe has six synthetic coherence/rejection checks and a live manager-null availability capture;populated native reads now retained with stable sampled identities. Reread flags detect some changes,not atomic snapshots or ABA address reuse. Cab-view sequences: 80 samples (9 unpaused) then 50 (5 unpaused); unsampled motion tails precede final pauses. Player/AI engine rates changed; player adhesion cache 668360.0625 versus AI zero. All four engine driver accumulators stayed zero while shape times stayed near zero. These do not prove physical slip, visible wheel animation, zero AI force, or general update cadence."
     },
