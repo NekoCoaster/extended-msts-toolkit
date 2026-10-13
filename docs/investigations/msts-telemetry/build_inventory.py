@@ -1476,6 +1476,12 @@ for row in rows:
         row['limitations'] += ' '+change['limitations']
         row['evidence'] += ['SPEED-CAP-FINDINGS.md','speedpost-metadata-review-20261013.json']
 rows += json.loads((ROOT/'interaction-candidates-20261013.json').read_text())
+for row in rows:
+    if row['id']=='train.definition_length_sum':
+        row['meaning']='Stored definition-based train length cache'
+        row['extraction']='train+0xaa;00608800 sums connected definition+400. Alternate0060392e calls005a635d with this destination under its equality gate,using player-service definitions including conditional208 extras.'
+        row['evidence'] += ['TRACK-INTERACTION-FINDINGS.md','captures/service-threshold-callers-20261013-01-byte-verification.json']
+        row['limitations'] += ' The simple400sum is producer-specific; alternate helper output includes gated208 extras. No execution or timing validation for the alternate path.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

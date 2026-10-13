@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-13T07:27:20.528378+00:00",
+  "generated_utc": "2026-10-13T07:30:42.139385+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -28783,11 +28783,11 @@
     },
     {
       "id": "train.definition_length_sum",
-      "meaning": "Stored sum of connected vehicle definition lengths",
+      "meaning": "Stored definition-based train length cache",
       "applicability": "physical player/AI trains",
       "value_type": "float32",
       "units": "metres; both sampled definitions matched third Size component",
-      "extraction": "train+0xaa=sum(definition+0x400), producer00608800",
+      "extraction": "train+0xaa;00608800 sums connected definition+400. Alternate0060392e calls005a635d with this destination under its equality gate,using player-service definitions including conditional208 extras.",
       "evidence": [
         "CONSIST-AGGREGATE-FINDINGS.md",
         "captures/consist-totals-paused-01/snapshot.json",
@@ -28798,11 +28798,13 @@
         "pass58-byte-verification.json",
         "UPDATE-CADENCE-FINDINGS.md",
         "update-cadence-summary.json",
-        "captures/update-cadence-01/samples.jsonl"
+        "captures/update-cadence-01/samples.jsonl",
+        "TRACK-INTERACTION-FINDINGS.md",
+        "captures/service-threshold-callers-20261013-01-byte-verification.json"
       ],
       "evidence_status": "paused23-car player sum and two installed definitions matched exactly; coupling changes untested",
       "update_or_lifecycle": "callback0x10 registered by0060820c; pause/resume experiment shows repeated running updates via same-function+d6 accumulator at0.1s sampling; exact callback rate unresolved",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Definition totals differ in provenance from physics-body mass sums; dynamic load/fuel inclusion unproven. Empty car chain skips recalculation. No physical AI or coupling transition validated."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Definition totals differ in provenance from physics-body mass sums; dynamic load/fuel inclusion unproven. Empty car chain skips recalculation. No physical AI or coupling transition validated. The simple400sum is producer-specific; alternate helper output includes gated208 extras. No execution or timing validation for the alternate path."
     },
     {
       "id": "sound.region_count",
@@ -37751,10 +37753,11 @@
         "captures/service-interaction-threshold-20261013-01-byte-verification.json",
         "captures/service-interaction-threshold-20261013-01/thunk.json",
         "captures/interaction-threshold-inputs-20261013-01/inputs.json",
-        "read_interaction_threshold_inputs.py"
+        "read_interaction_threshold_inputs.py",
+        "captures/service-threshold-callers-20261013-01-byte-verification.json"
       ],
-      "evidence_status": "Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass;guarded player8definition and AI11definition float32 reconstructions exactly match stored thresholds;all extra208 gates selected",
-      "update_or_lifecycle": "Initialization producer traced; later writers and coupling/consist refresh cadence unresolved",
+      "evidence_status": "Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass;guarded player8definition and AI11definition float32 reconstructions exactly match stored thresholds;all extra208 gates selected;current-byte verified definition-record transfer/removal callers recompute threshold",
+      "update_or_lifecycle": "Initialized by005a5eb1; definition-record transfer005adfae refreshes old/new services and removal005ae098 refreshes former service. Live coupling timing and exhaustive writers unresolved.",
       "limitations": "Supported image only; sequential non-atomic reads. Same pointers/clock can hide in-place updates. No nonzero live state transition or exact crossing proof; finite inputs only. Item kind and service identity must be retained; list presence is not a reservation or occupancy claim. Conditional definition208 contribution is not yet assigned an exact coupling parameter name. Captured model agreement does not validate disabled-extra branches or runtime coupling refresh.",
       "id": "service.interaction_length_threshold",
       "meaning": "Stored length-based threshold for paired endpoint proximity",

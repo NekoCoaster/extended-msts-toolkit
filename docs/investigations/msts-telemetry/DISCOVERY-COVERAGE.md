@@ -1,6 +1,6 @@
 # Discovery coverage and open questions
 
-Status: **incomplete**. Published research through `73c0be1` includes manual geometry, activity overrides and qualified force observations; the handoff lists pending metadata cleanup. Inventory: 1,074 candidates; counts are not independent validated quantities or a completion percentage. This page retains the prior requirement matrix without its accumulated simulator-state diary.
+Status: **incomplete**. Published research through `2943bfd` includes manual geometry, activity overrides, physical-mode gates, loaded Friction inputs and guarded track interactions. The current handoff also records the retained threshold-refresh caller follow-up. Inventory: 1,074 candidates; counts are not independent validated quantities or a completion percentage. This page retains the prior requirement matrix without its accumulated simulator-state diary.
 
 Read only the row relevant to the next question; find full filenames and native entry points through `python research_index.py <topic>`. Latest current-state authority is [NEW-CHAT-HANDOFF.md](NEW-CHAT-HANDOFF.md). Original wording and chronology remain in [the coverage archive](DISCOVERY-COVERAGE-ARCHIVE-20261010.md).
 
@@ -20,7 +20,7 @@ Read only the row relevant to the next question; find full filenames and native 
 | Environment and rendering | ENVIRONMENT-SELECTION, SKY-LAYER, SKY-VERTEX and SKY-CLOCK findings cover active selection, loaded layers/satellites, CPU buffers and paused render-side changes. | Inactive buffers, satellite validity, animated frame/wrap/reload behavior and weather/physics coupling. This is no longer an entirely missing surface. |
 | Audio and input | AUDIO-STREAM/PENDING/NESTED and INPUT-BINDINGS/DISPATCH plus the retained short input test cover streams, queue/sample links, nested records, bindings and transient events. | Audibility, AI sound lifecycle, truncated traffic queue, peripherals and unnamed event words. Polling can miss brief events. |
 | Beyond the initial examples | Serializer survey, complete header partition, object raw ranges and loader-fixup findings. Actual player reload changed23addresses while preserving tested IDs/poses. | Unnamed saved fields/subobjects, optional branches and physical-AI reload. Raw copied bytes are not a semantic schema or portable pointers. |
-| Per-candidate metadata and reproducibility | Inventory has1,074unique IDs with required metadata. Latest experimental audit checks1,052 evidence paths and151source hashes, including the Tokyo fixture. Exact capture probes, byte reports and raw manifest retain provenance. | Structural checks do not prove each meaning/unit/lifecycle. Unknowns and disk/live differences remain explicit. |
+| Per-candidate metadata and reproducibility | Inventory has1,074unique IDs with required metadata. Latest experimental audit checks1,053 evidence paths and151source hashes, including the Tokyo fixture. Exact capture probes, byte reports and raw manifest retain provenance. | Structural checks do not prove each meaning/unit/lifecycle. Unknowns and disk/live differences remain explicit. |
 | Handoff and completion | EXTRACTION-HANDOFF documents build/read-validity assumptions, raw-evidence access and reproduction. Published CHECKPOINT-VALIDATION records checks. | Access recipe is now present; the former missing-handoff statement is obsolete. A scoped review corrected five stale monitor/wheel lifecycle entries; ACTIVITY-STATION-METADATA-REVIEW reconciles all27activity/station entries against current evidence while retaining explicit gaps;the other1017entries were unchanged. The inventory-wide semantic and objective completion audits remain incomplete. |
 
 ## Corrections and consolidated recent evidence
@@ -28,10 +28,13 @@ Read only the row relevant to the next question; find full filenames and native 
 - [Clock](CLOCK-FINDINGS.md): one midnight wrap was captured. Calendar remained unchanged; multi-day behavior remains open.
 - [AI platform/countdown](AI-PLATFORM-COUNTDOWN-FINDINGS.md): platform holds and one zero-duration path wait observed. Positive-duration path wait, reversal and rephysicalization remain open. Do not repeat zero-only fixtures as proof of positive dwell.
 - [Acceleration](TRAIN-ACCELERATION-FINDINGS.md): moving player aggregate/filter evidence is present; the earlier stationary-only description is historical. AI freshness and broader reset behavior remain open.
-- [Collision](COLLISION-CALLBACK-FINDINGS.md): populated buffers, dispatch and immediate null-body guards traced; sampled null-body records do not prove response execution. Accumulator baseline was all zero.
+- [Collision](COLLISION-CALLBACK-FINDINGS.md): populated buffers, dispatch and immediate null-body guards traced; sampled null-body records do not prove response execution. Guarded player and AI accumulator baselines were all zero; this does not establish collision response execution.
 - [Extended cab](EXTENDED-CAB-FINDINGS.md): secondary pantograph/selector routes mapped; current extension records unavailable. Physical operation and addon transitions remain unvalidated.
 - [Monitors](ENGINE-MONITOR-FINDINGS.md): emitted saved bytes match pre-save values; post-load latch/timer changes match initialization. Exact historical execution and active countdown continuity remain unproved.
 - [Station times](STATION-TIME-FINDINGS.md): schedule merge and temporary flags are distinct from recorded events. Automatic player driving differs from traffic AI. The completed introductory ride retained speed, selection and mode gate; a fresh opening capture observed positive countdown and selection advance. Later inputs reproduce the first timer value, with onset-input and archived pointer-check limitations. Override lookup is traced, but the live override list was empty.
+
+- [Track interactions](TRACK-INTERACTION-FINDINGS.md): guarded player/AI records and threshold models are retained. Static list-mutation callers refresh service thresholds; an alternate caller can write a physical train length cache. Nonzero live states, exact coupling timing and exhaustive writers remain open.
+- [Wheel and adhesion](WHEEL-ADHESION-FINDINGS.md): the full ten-float Friction declaration is captured for player and AI definitions. Final four consumers, exact branch units and live force contributions remain open.
 
 ## Completion requirements
 

@@ -3,8 +3,8 @@
   "scope": "Retained named assembly exports, not whole-executable coverage",
   "limitations": "Calls are literal direct CALL targets; single-instruction JMP thunks have a separate one-hop caller index. Edges are the union of retained variants, not one asserted build. No indirect edges or execution proof. Variants are retained; navigation choice is not a freshness or correctness claim. Documentation references are lexical leads, not semantic assertions. Raw exports are local-only in the published clone.",
   "counts": {
-    "functions": 2298,
-    "exports": 3263,
+    "functions": 2299,
+    "exports": 3269,
     "findings": 79,
     "variant_functions": 4
   },
@@ -681,6 +681,51 @@
         {
           "function": "00677f3b",
           "site": "00677f67"
+        }
+      ],
+      "callers_via_single_jump": []
+    },
+    "0040116d": {
+      "exports": [
+        {
+          "path": "captures/service-threshold-callers-20261013-01/0040116d.asm",
+          "sha256": "bd03ee624db807160610854761b766029097ef3f356d440f08999030334e8d75",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 70
+        }
+      ],
+      "calls": [],
+      "thunk_targets": [
+        "005a635d"
+      ],
+      "assembly_variants": 1,
+      "navigation_export": "captures/service-threshold-callers-20261013-01/0040116d.asm",
+      "callers": [
+        {
+          "function": "005a5eb1",
+          "site": "005a62d0"
+        },
+        {
+          "function": "005adfae",
+          "site": "005ae017"
+        },
+        {
+          "function": "005adfae",
+          "site": "005ae08d"
+        },
+        {
+          "function": "005ae098",
+          "site": "005ae0e5"
+        },
+        {
+          "function": "0060392e",
+          "site": "00603ccf"
         }
       ],
       "callers_via_single_jump": []
@@ -111312,6 +111357,12 @@
           "instruction_bytes": true
         },
         {
+          "path": "captures/service-threshold-callers-20261013-01/005a5eb1.asm",
+          "sha256": "d938e040b7649dd9d0ad645c722268a943d7470e3e9f68f7961d07f363f9bf55",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass142/005a5eb1.asm",
           "sha256": "d938e040b7649dd9d0ad645c722268a943d7470e3e9f68f7961d07f363f9bf55",
           "decompiled": true,
@@ -111483,9 +111534,19 @@
           "sha256": "338077479a976fa97d06462ddd098dd3f22ad88d40f83f2fde7fbc7b5258aac8",
           "decompiled": true,
           "instruction_bytes": true
+        },
+        {
+          "path": "captures/service-threshold-callers-20261013-01/005a635d.asm",
+          "sha256": "338077479a976fa97d06462ddd098dd3f22ad88d40f83f2fde7fbc7b5258aac8",
+          "decompiled": true,
+          "instruction_bytes": true
         }
       ],
       "references": [
+        {
+          "path": "CONSIST-AGGREGATE-FINDINGS.md",
+          "line": 26
+        },
         {
           "path": "TRACK-INTERACTION-FINDINGS.md",
           "line": 70
@@ -111545,7 +111606,33 @@
       "assembly_variants": 1,
       "navigation_export": "captures/service-interaction-threshold-20261013-01/005a635d.asm",
       "callers": [],
-      "callers_via_single_jump": []
+      "callers_via_single_jump": [
+        {
+          "function": "005a5eb1",
+          "site": "005a62d0",
+          "thunk": "0040116d"
+        },
+        {
+          "function": "005adfae",
+          "site": "005ae017",
+          "thunk": "0040116d"
+        },
+        {
+          "function": "005adfae",
+          "site": "005ae08d",
+          "thunk": "0040116d"
+        },
+        {
+          "function": "005ae098",
+          "site": "005ae0e5",
+          "thunk": "0040116d"
+        },
+        {
+          "function": "0060392e",
+          "site": "00603ccf",
+          "thunk": "0040116d"
+        }
+      ]
     },
     "005a662e": {
       "exports": [
@@ -114092,6 +114179,12 @@
     "005adfae": {
       "exports": [
         {
+          "path": "captures/service-threshold-callers-20261013-01/005adfae.asm",
+          "sha256": "143f2f29445165d6d110b1870cce93445e01f3a702a8ea2565201c9f3103e8e4",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass170/005adfae.asm",
           "sha256": "143f2f29445165d6d110b1870cce93445e01f3a702a8ea2565201c9f3103e8e4",
           "decompiled": true,
@@ -114104,7 +114197,12 @@
           "instruction_bytes": true
         }
       ],
-      "references": [],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 88
+        }
+      ],
       "calls": [
         {
           "site": "005adfea",
@@ -114137,12 +114235,18 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass170/005adfae.asm",
+      "navigation_export": "captures/service-threshold-callers-20261013-01/005adfae.asm",
       "callers": [],
       "callers_via_single_jump": []
     },
     "005ae098": {
       "exports": [
+        {
+          "path": "captures/service-threshold-callers-20261013-01/005ae098.asm",
+          "sha256": "27543b3b539bc1f49e52ea103a9c592ad8d553ac5890039b1e7ce7699264640c",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
         {
           "path": "pass170/005ae098.asm",
           "sha256": "27543b3b539bc1f49e52ea103a9c592ad8d553ac5890039b1e7ce7699264640c",
@@ -114150,7 +114254,12 @@
           "instruction_bytes": true
         }
       ],
-      "references": [],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 88
+        }
+      ],
       "calls": [
         {
           "site": "005ae0b3",
@@ -114167,7 +114276,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass170/005ae098.asm",
+      "navigation_export": "captures/service-threshold-callers-20261013-01/005ae098.asm",
       "callers": [],
       "callers_via_single_jump": []
     },
@@ -129341,6 +129450,12 @@
     "0060392e": {
       "exports": [
         {
+          "path": "captures/service-threshold-callers-20261013-01/0060392e.asm",
+          "sha256": "d76731a353092d0165ae2ae47a2c58f8b3b75ee0f1e39581893d1791dc9301f4",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass01b/0060392e.asm",
           "sha256": "d76731a353092d0165ae2ae47a2c58f8b3b75ee0f1e39581893d1791dc9301f4",
           "decompiled": true,
@@ -129355,8 +129470,16 @@
       ],
       "references": [
         {
+          "path": "CONSIST-AGGREGATE-FINDINGS.md",
+          "line": 26
+        },
+        {
           "path": "STEAM-PRODUCER-FINDINGS.md",
           "line": 31
+        },
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 90
         }
       ],
       "calls": [
@@ -129399,7 +129522,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass95/0060392e.asm",
+      "navigation_export": "captures/service-threshold-callers-20261013-01/0060392e.asm",
       "callers": [
         {
           "function": "00602bf0",
@@ -130470,6 +130593,10 @@
           "line": 7
         },
         {
+          "path": "CONSIST-AGGREGATE-FINDINGS.md",
+          "line": 26
+        },
+        {
           "path": "SPEED-CAP-FINDINGS.md",
           "line": 69
         },
@@ -130480,6 +130607,10 @@
         {
           "path": "TRACK-INTERACTION-FINDINGS.md",
           "line": 43
+        },
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 90
         },
         {
           "path": "TRAIN-ACCELERATION-FINDINGS.md",
@@ -156774,6 +156905,10 @@
           "site": "005a618e"
         },
         {
+          "function": "005adfae",
+          "site": "005ae055"
+        },
+        {
           "function": "005a2744",
           "site": "005a28b9"
         },
@@ -157072,10 +157207,6 @@
         {
           "function": "0059d965",
           "site": "0059da2a"
-        },
-        {
-          "function": "005adfae",
-          "site": "005ae055"
         },
         {
           "function": "00643715",
@@ -157893,6 +158024,14 @@
       "navigation_export": "pass170/006900b0.asm",
       "callers": [
         {
+          "function": "005adfae",
+          "site": "005adfea"
+        },
+        {
+          "function": "005ae098",
+          "site": "005ae0b3"
+        },
+        {
           "function": "00430edc",
           "site": "00430f9f"
         },
@@ -158203,14 +158342,6 @@
         {
           "function": "005adcf8",
           "site": "005add0d"
-        },
-        {
-          "function": "005adfae",
-          "site": "005adfea"
-        },
-        {
-          "function": "005ae098",
-          "site": "005ae0b3"
         },
         {
           "function": "005be525",

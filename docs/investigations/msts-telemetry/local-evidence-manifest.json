@@ -73675,6 +73675,156 @@
       "bytes": 81,
       "sha256": "9fdb30c578315358fd74036a50737d9d2fc5ad661f6545d54c4f2c9afc2e9933",
       "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01-byte-verification.json",
+      "bytes": 1407,
+      "sha256": "fe2d42b08084b132a5ded945fde8f7cca9b20d6823838d14c7b646db5ce7a17f",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/0040116d.asm",
+      "bytes": 26,
+      "sha256": "bd03ee624db807160610854761b766029097ef3f356d440f08999030334e8d75",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/0040116d.bytes.tsv",
+      "bytes": 21,
+      "sha256": "37b17869178d8b13d420aa021b432e7089c0fd6f4c216df8af443a4a8c555dfc",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/0040116d.c",
+      "bytes": 1523,
+      "sha256": "0dadbe242d76d142caf207856a55e58270f414a6c2106b3222790ad49d95f469",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005a5eb1.asm",
+      "bytes": 9757,
+      "sha256": "d938e040b7649dd9d0ad645c722268a943d7470e3e9f68f7961d07f363f9bf55",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005a5eb1.bytes.tsv",
+      "bytes": 5318,
+      "sha256": "11885c032c040e7494d08906dbf6001d84cff5a4c6f77e76eba07a81e0d47a77",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005a5eb1.c",
+      "bytes": 3052,
+      "sha256": "4f31fa6421438f2e171ad9598136f6f26de705bcea02a80fbdefe11d667d5b1c",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005a635d.asm",
+      "bytes": 3891,
+      "sha256": "338077479a976fa97d06462ddd098dd3f22ad88d40f83f2fde7fbc7b5258aac8",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005a635d.bytes.tsv",
+      "bytes": 1995,
+      "sha256": "53367eedecaef667a6a320b0a24f77168f7740e5d27943e92fbaf3fddf26a9bf",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005a635d.c",
+      "bytes": 1499,
+      "sha256": "1aaa4513cd40e55652176b8d8edbe561540e393b0b22f6edab3beee13a57cac0",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005adfae.asm",
+      "bytes": 2376,
+      "sha256": "143f2f29445165d6d110b1870cce93445e01f3a702a8ea2565201c9f3103e8e4",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005adfae.bytes.tsv",
+      "bytes": 1205,
+      "sha256": "44bc5f165c5cb53bd7ad281260c797abcfec69575251076f136d272b98716061",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005adfae.c",
+      "bytes": 762,
+      "sha256": "e499f86ae1deaa6d3736520a4147bfa4f363e22c959ff4df31c9466753df7ad3",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005ae098.asm",
+      "bytes": 984,
+      "sha256": "27543b3b539bc1f49e52ea103a9c592ad8d553ac5890039b1e7ce7699264640c",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005ae098.bytes.tsv",
+      "bytes": 511,
+      "sha256": "7194048549264dbf12e73ba3c86606ce7fdc7373dfdeb97f4491bcbfeb7560d3",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/005ae098.c",
+      "bytes": 233,
+      "sha256": "515a1801e5ed88a318eda41f66b6d13659118c5e39d5077abc72a95077ebc591",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/0060392e.asm",
+      "bytes": 10725,
+      "sha256": "d76731a353092d0165ae2ae47a2c58f8b3b75ee0f1e39581893d1791dc9301f4",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/0060392e.bytes.tsv",
+      "bytes": 5354,
+      "sha256": "f395515ce006021bbd1248ae29d32996ecf931190543d03efd87c2b2fa6d802a",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/0060392e.c",
+      "bytes": 4482,
+      "sha256": "1bf76782204599b0f1fc337417d8b70d2a3c46f144d9bf3011ab8d1ba84c2405",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/console.log",
+      "bytes": 6105,
+      "sha256": "a2c93471dc0326ce8786c030b487a7a0f727a9ebb5ef8d8489edbe246ba5907a",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/functions.tsv",
+      "bytes": 180,
+      "sha256": "72b3cf43024fad99205816d19c2a8d7bcd6b5e5b4920cae7c5a104dce04e762c",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/ghidra.log",
+      "bytes": 6121,
+      "sha256": "809eb781248afd43cae4ccb1370fdca7a844a1e39aa8aeb61cb7b4fbcf930171",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/references.tsv",
+      "bytes": 309,
+      "sha256": "9c93565f07e26dcd66748705e681f4d958eca115620779873b993621eafe1f24",
+      "included": false
+    },
+    {
+      "path": "captures/service-threshold-callers-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "70ed95ff696836bf28b680fcd58ea20382fd8d4d8204dbbbc7082ca8a451d458",
+      "included": false
     }
   ]
 }
