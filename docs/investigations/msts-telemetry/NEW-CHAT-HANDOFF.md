@@ -4,11 +4,11 @@ Updated 13 October 2026. Research is incomplete. This organization checkpoint ad
 
 ## Current checkpoint
 
-Last published research checkpoint: `24b41dd`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
+Last published research checkpoint: `44f5328`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
 
-Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`. Published findings cover loading-duration, override and manual geometry. New local read_manual_loading_inputs.py and its negative preflight prepare contemporaneous manual sampling.
+Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`. Published findings cover loading-duration, override and manual geometry. The manual reader and negative preflight are published. Local force-configuration metadata review corrects definition lifetimes for engine.max_force and car.max_brake_force; broader physics semantics remain open. Local force evidence now includes a37vehicle snapshot and181sample moving series:player force varies while moving AI force remains zero;15clock-crossing samples excluded. Read WHEEL-ADHESION-FINDINGS for limitations. No sampler remains running.
 
-Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,012 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
+Current local inventory: **1,067 candidates** (460 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,020 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
 
 ## Start here
 

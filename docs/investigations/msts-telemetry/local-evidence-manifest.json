@@ -72427,6 +72427,72 @@
       "bytes": 357,
       "sha256": "62149143afa0254e6713507b30c19011232f655a807224858976d09f3c8e682f",
       "included": false
+    },
+    {
+      "path": "captures/body-accumulators-automatic-20261013-01/accumulators.json",
+      "bytes": 26605,
+      "sha256": "2dbba3b82d8f3a68bbd2b73202ab9ae1a44c27d56cf2f61dd3fa8c1bc6d110d6",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-automatic-20261013-01/read_body_accumulators.py",
+      "bytes": 2357,
+      "sha256": "92de114a0a775e33e22528838d9661f99168c10e98ed2570fa849db2fec8f794",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-automatic-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-automatic-20261013-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-automatic-20261013-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-series-20261013-01/metadata.json",
+      "bytes": 816,
+      "sha256": "32e980bcde24c23495f71179cfd99da024d44b649e9a4a24790181708f0e12ea",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-series-20261013-01/read_body_accumulator_series.py",
+      "bytes": 3570,
+      "sha256": "83e70341b40058371355037529bbbcdb77a21d981e00cfd616235ca597ffd21e",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-series-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-series-20261013-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-series-20261013-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/body-accumulators-series-20261013-01/samples.jsonl",
+      "bytes": 2773581,
+      "sha256": "70952612d5760edaf6ddc34490d84dd08da528897e059b41ab320de443ad5cdf",
+      "included": false
     }
   ]
 }

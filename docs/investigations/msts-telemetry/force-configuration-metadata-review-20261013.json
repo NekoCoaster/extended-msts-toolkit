@@ -1,0 +1,20 @@
+{
+  "car.max_brake_force": {
+    "applicability": "Loaded vehicle definition for physical player or AI vehicles; detailed sampled values are player evidence",
+    "update_or_lifecycle": "Definition/configuration lifetime; parser writes definition+918. Reacquire car+94 after unload/reload; physics body swaps are not this field owner.",
+    "limitations": "Configured parameter,not actual brake force or a clamp on requested force. Native token0x40196 parser association and definition reads support the meaning. No independent AI definition population/update or complete load/reset lifecycle validation;availability does not prove AI brake simulation.",
+    "evidence": [
+      "VEHICLE-SYSTEM-FINDINGS.md",
+      "pass25/006171f8.asm"
+    ]
+  },
+  "engine.max_force": {
+    "applicability": "Loaded engine definition reached from powered player or AI vehicles; runtime force-generation applicability is separate",
+    "update_or_lifecycle": "Engine definition/configuration lifetime;reacquire car+29a after lifecycle changes. Sampling cadence is not native producer cadence.",
+    "limitations": "Definition+102 is distinct from car+102,whose semantic identity remains unresolved. Configured maximum is not delivered wheel force,adhesion limit or proof an AI engine updates a force model. Full parser-token provenance and reset/reload fidelity have not been revalidated in this metadata review.",
+    "evidence": [
+      "ELECTRIC-TRACTION-FINDINGS.md",
+      "pass58/0061949d.asm"
+    ]
+  }
+}

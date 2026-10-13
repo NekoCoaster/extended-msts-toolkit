@@ -1,0 +1,31 @@
+{
+  "source": "captures/body-accumulators-automatic-20261013-01/accumulators.json",
+  "sha256": "2dbba3b82d8f3a68bbd2b73202ab9ae1a44c27d56cf2f61dd3fa8c1bc6d110d6",
+  "day": 45001.94921875,
+  "day_after": 45001.94921875,
+  "paused": 0,
+  "groups": {
+    "ownerless": {
+      "vehicles": 18,
+      "nonzero_force": 0,
+      "nonzero_torque": 0,
+      "nonzero_velocity": 0,
+      "failed_guards": 0
+    },
+    "player": {
+      "vehicles": 11,
+      "nonzero_force": 11,
+      "nonzero_torque": 0,
+      "nonzero_velocity": 11,
+      "failed_guards": 0
+    },
+    "ai": {
+      "vehicles": 8,
+      "nonzero_force": 0,
+      "nonzero_torque": 0,
+      "nonzero_velocity": 8,
+      "failed_guards": 0
+    }
+  },
+  "limitations": "One unpaused sequential snapshot,not force decomposition,producer cadence,atomicity or absence of AI dynamics."
+}

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-13T06:08:35.799005+00:00",
+  "generated_utc": "2026-10-13T06:18:10.303585+00:00",
   "status": "WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions",
   "scope": "Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.",
   "counts": {
@@ -1099,7 +1099,7 @@
     {
       "id": "engine.max_force",
       "meaning": "Configured maximum force",
-      "applicability": "powered player and AI vehicles",
+      "applicability": "Loaded engine definition reached from powered player or AI vehicles; runtime force-generation applicability is separate",
       "value_type": "float32",
       "units": "N",
       "extraction": "[car+0x29a]+0x102",
@@ -1107,11 +1107,14 @@
         "captures/initial-briefing/samples.jsonl",
         "captures/first-running/samples.jsonl",
         "captures/registry-paused/registry.json",
-        "captures/ai-running-01/samples.jsonl"
+        "captures/ai-running-01/samples.jsonl",
+        "ELECTRIC-TRACTION-FINDINGS.md",
+        "pass58/0061949d.asm",
+        "force-configuration-metadata-review-20261013.json"
       ],
       "evidence_status": "readable in live captures; semantics partly inherited/static",
-      "update_or_lifecycle": "per sample; actual internal producer cadence not fully measured",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload."
+      "update_or_lifecycle": "Engine definition/configuration lifetime;reacquire car+29a after lifecycle changes. Sampling cadence is not native producer cadence.",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Definition+102 is distinct from car+102,whose semantic identity remains unresolved. Configured maximum is not delivered wheel force,adhesion limit or proof an AI engine updates a force model. Full parser-token provenance and reset/reload fidelity have not been revalidated in this metadata review."
     },
     {
       "id": "player.control_type",
@@ -30898,7 +30901,7 @@
     {
       "id": "car.max_brake_force",
       "meaning": "Loaded MaxBrakeForce configuration",
-      "applicability": "physical player and AI vehicles; current detailed sample covers player only",
+      "applicability": "Loaded vehicle definition for physical player or AI vehicles; detailed sampled values are player evidence",
       "value_type": "float32",
       "units": "N",
       "extraction": "[car+0x94]+0x918; native writer token0x40196",
@@ -30907,11 +30910,13 @@
         "pass24/00635dfb.c",
         "pass25/006171f8.asm",
         "pass26/0062c679.c",
-        "pass26/0062d335.c"
+        "pass26/0062d335.c",
+        "VEHICLE-SYSTEM-FINDINGS.md",
+        "force-configuration-metadata-review-20261013.json"
       ],
       "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI population untested",
-      "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed."
+      "update_or_lifecycle": "Definition/configuration lifetime; parser writes definition+918. Reacquire car+94 after unload/reload; physics body swaps are not this field owner.",
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Configured parameter,not actual brake force or a clamp on requested force. Native token0x40196 parser association and definition reads support the meaning. No independent AI definition population/update or complete load/reset lifecycle validation;availability does not prove AI brake simulation."
     },
     {
       "id": "car.brake_reference_pressure_candidate",
@@ -30976,7 +30981,7 @@
     {
       "id": "body.force_accumulator_candidate",
       "meaning": "Body force accumulator",
-      "applicability": "physical player and AI vehicles; current detailed sample covers player only",
+      "applicability": "Physical player,AI and ownerless vehicle bodies;availability is not independent force-simulation proof",
       "value_type": "3 float32",
       "units": "N candidate",
       "extraction": "body+0xa0; force paths add contributions; full producer/integration cadence remains to trace",
@@ -30992,11 +30997,18 @@
         "body-accumulators-summary.json",
         "captures/body-accumulators-paused-01/accumulators.json",
         "pass273/0062e5d6.asm",
-        "pass273-byte-verification.json"
+        "pass273-byte-verification.json",
+        "captures/body-accumulators-automatic-20261013-01/accumulators.json",
+        "body-accumulators-automatic-20261013-summary.json",
+        "read_body_accumulator_series.py",
+        "analyse_body_accumulator_series.py",
+        "captures/body-accumulators-series-20261013-01/samples.jsonl",
+        "captures/body-accumulators-series-20261013-01/metadata.json",
+        "body-accumulators-series-20261013-summary.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads;one unpaused37vehicle snapshot:11player nonzero force,8moving AI and18ownerless zero force;all guarded rereads agree;181sample unpaused series:15clock-crossing samples excluded;22player body identities vary in force,16AI vary in velocity but retain zero force,36ownerless remain zero;body swaps split car identities",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Unpaused population check is one sequential snapshot,not producer cadence or proof of absent AI dynamics. No sampled clock crossing does not guarantee atomicity. Twenty-second sampled variation is now observed for player accumulators;exact native force-update cadence,decomposition and AI force-model applicability remain unproved."
     },
     {
       "id": "body.torque_accumulator_candidate",
@@ -31017,11 +31029,15 @@
         "body-accumulators-summary.json",
         "captures/body-accumulators-paused-01/accumulators.json",
         "pass273/0062e5d6.asm",
-        "pass273-byte-verification.json"
+        "pass273-byte-verification.json",
+        "read_body_accumulator_series.py",
+        "analyse_body_accumulator_series.py",
+        "captures/body-accumulators-series-20261013-01/samples.jsonl",
+        "body-accumulators-series-20261013-summary.json"
       ],
-      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads",
+      "evidence_status": "static source tracing plus stopped-player values during running simulation; independent AI force evolution unvalidated;guarded paused capture covers23player and22AI bodies with stable local rereads;181sample unpaused series retains zero torque on guard-qualified player,AI and ownerless bodies;15clock-crossing samples excluded",
       "update_or_lifecycle": "vehicle physics step; body buffer swaps and solver scratch state can invalidate comparisons",
-      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic."
+      "limitations": "MSTS Bin image SHA256 2a1b52aa40a521df1e68b8df1610fe1e2e54caf4c581911481457e06c8187843 only; external samples are asynchronous; IDs/pointers can be reused after unload. Requested brake force can exceed configured MaxBrakeForce and is not proven actual wheel/rail force. Pressure/coupler transitions need dedicated tests; no coupling changes performed. Resistance contribution is summed into body+a0 alongside other force contributions;not a standalone drag measurement. All23player forces nonzero,22AI forces zero despite nonzero AI velocity;all45torques zero. These values do not establish absent AI resistance or physical torque. Moving cadence,solver phase,decomposition and AI dynamics remain unvalidated;sequential checks are not atomic. Zero sampled torque accumulator is not proof of zero physical torque or absent rotational dynamics. Each of37cars used two sampled body pointers;body identities must not be counted as separate cars. Native torque producer/clear cadence remains unresolved."
     },
     {
       "id": "body.inverse_inertia_world",

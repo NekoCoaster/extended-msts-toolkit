@@ -1,0 +1,44 @@
+{
+  "source_sha256": "70952612d5760edaf6ddc34490d84dd08da528897e059b41ab320de443ad5cdf",
+  "samples": 181,
+  "outer_errors": 0,
+  "clock_range": [
+    45142.32421875,
+    45162.44921875
+  ],
+  "paused_samples": 0,
+  "clock_crossing_samples": 15,
+  "excluded_vehicle_observations": {
+    "clock_crossing": 555
+  },
+  "groups": {
+    "ownerless": {
+      "body_identities": 36,
+      "accepted_observations": 2988,
+      "varying_force_identities": 0,
+      "varying_velocity_identities": 0,
+      "nonzero_force_identities": 0,
+      "nonzero_torque_identities": 0,
+      "nonzero_velocity_identities": 0
+    },
+    "player": {
+      "body_identities": 22,
+      "accepted_observations": 1826,
+      "varying_force_identities": 22,
+      "varying_velocity_identities": 22,
+      "nonzero_force_identities": 22,
+      "nonzero_torque_identities": 0,
+      "nonzero_velocity_identities": 22
+    },
+    "ai": {
+      "body_identities": 16,
+      "accepted_observations": 1328,
+      "varying_force_identities": 0,
+      "varying_velocity_identities": 16,
+      "nonzero_force_identities": 0,
+      "nonzero_torque_identities": 0,
+      "nonzero_velocity_identities": 16
+    }
+  },
+  "limitation": "Counts are body identities,not unique vehicles:buffer swaps can split one car. Guard-passing distinct stored values are sampled variation,not producer cadence,force decomposition or proof of independent AI dynamics. Ownerless label uses registry ownership mapping."
+}

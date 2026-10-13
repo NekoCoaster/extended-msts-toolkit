@@ -1409,6 +1409,32 @@ for ident,meaning,method in [
  ('eligible_vehicle_count','Reconstructed number of physical vehicles eligible for manual boarding','Traverse service+158 -> train+62,next+a8;count definition+88 byte==3 or definition+c08 float>0'),
  ('contributing_vehicle_count','Reconstructed eligible physical vehicles within selected platform endpoint interval','Eligible vehicles additionally require vehicle+128 item array(+20 pointer,+24 count) to contain either endpoint pointer and vehicle+138 strictly between endpoint+c distances')]:
     add('station.'+ident,meaning,'player physical consist;conditional manual processor input reconstruction','derived uint32 or unavailable','vehicles',method,manual_evidence,'Seven synthetic edge/guard tests pass;11negative live samples show10eligible and0contributing among11vehicles','Recompute per sample;invalidate on incomplete traversal,read error,nonfinite inputs,failed pointer guards or clock crossing',common+' Not a stored native counter or proof the processor executes. Earlier native geometry gates omitted;no door overlap or passenger occupancy claim. Stable rereads cannot prove atomicity. Positive manual onset validation pending. Do not transfer automatic length-budget semantics.')
+# Separate loaded force configuration from per-step physical state.
+force_config_review=json.loads((ROOT/'force-configuration-metadata-review-20261013.json').read_text())
+for row in rows:
+    if row['id'] in force_config_review:
+        review=force_config_review[row['id']]
+        row['applicability']=review['applicability']
+        row['update_or_lifecycle']=review['update_or_lifecycle']
+        row['limitations']=common+' '+review['limitations']
+        row['evidence']=list(dict.fromkeys(row['evidence']+review['evidence']+['force-configuration-metadata-review-20261013.json']))
+# Preserve force population evidence separately from dynamic interpretation.
+for row in rows:
+    if row['id']=='body.force_accumulator_candidate':
+        row['applicability']='Physical player,AI and ownerless vehicle bodies;availability is not independent force-simulation proof'
+        row['evidence']+=['captures/body-accumulators-automatic-20261013-01/accumulators.json','body-accumulators-automatic-20261013-summary.json']
+        row['evidence_status']+=';one unpaused37vehicle snapshot:11player nonzero force,8moving AI and18ownerless zero force;all guarded rereads agree'
+        row['limitations']+=' Unpaused population check is one sequential snapshot,not producer cadence or proof of absent AI dynamics. No sampled clock crossing does not guarantee atomicity.'
+for row in rows:
+    if row['id']=='body.force_accumulator_candidate':
+        row['evidence']+=['read_body_accumulator_series.py','analyse_body_accumulator_series.py','captures/body-accumulators-series-20261013-01/samples.jsonl','captures/body-accumulators-series-20261013-01/metadata.json','body-accumulators-series-20261013-summary.json']
+        row['evidence_status']+=';181sample unpaused series:15clock-crossing samples excluded;22player body identities vary in force,16AI vary in velocity but retain zero force,36ownerless remain zero;body swaps split car identities'
+        row['limitations']+=' Twenty-second sampled variation is now observed for player accumulators;exact native force-update cadence,decomposition and AI force-model applicability remain unproved.'
+for row in rows:
+    if row['id']=='body.torque_accumulator_candidate':
+        row['evidence']+=['read_body_accumulator_series.py','analyse_body_accumulator_series.py','captures/body-accumulators-series-20261013-01/samples.jsonl','body-accumulators-series-20261013-summary.json']
+        row['evidence_status']+=';181sample unpaused series retains zero torque on guard-qualified player,AI and ownerless bodies;15clock-crossing samples excluded'
+        row['limitations']+=' Zero sampled torque accumulator is not proof of zero physical torque or absent rotational dynamics. Each of37cars used two sampled body pointers;body identities must not be counted as separate cars. Native torque producer/clear cadence remains unresolved.'
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),
