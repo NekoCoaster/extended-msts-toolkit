@@ -1,0 +1,20 @@
+{
+  "id": "car.friction_definition_coefficients",
+  "meaning": "Ten loaded Friction declaration scalars; first five feed the inspected linear resistance helper and sixth has angular torque consumers",
+  "applicability": "Physical player and AI car definitions; nineteen cars in two current trains",
+  "value_type": "float32[10]",
+  "units": "mixed; retain declaration order, not a single force unit",
+  "extraction": "car+0x94 -> definition; read40bytes at+0x478 through+0x49c; parser00614c8e token4017c stores ten values and sets definition+0x8c mask80000",
+  "evidence": [
+    "WHEEL-ADHESION-FINDINGS.md",
+    "read_body_accumulators.py",
+    "captures/friction-parser-20261013-01/mapping.json",
+    "captures/friction-parser-20261013-01/angular-scale-constant.json",
+    "captures/friction-inputs-20261013-01/accumulators.json",
+    "friction-inputs-summary-20261013.json",
+    "captures/friction-writer-label-20261013-01/verification.json"
+  ],
+  "evidence_status": "Selected parser/token mapping current-byte verified; paused8player/11AI capture has stable finite ten-element values and same clock",
+  "update_or_lifecycle": "Loaded definition-owned configuration, not per-body force state. Reread definition pointer and block; do not assume immutability across loading or runtime definition changes.",
+  "limitations": "Supported executable only; sequential guards are not atomic. First-five helper has approximate norm and x87/power-domain qualifications. Sixth coefficient participates in branch-specific angular scaling; final four consumers remain unresolved. Same coefficients on AI/player do not establish identical simulation. Shared Default declaration differs from this capture; no fallback equivalence is assumed. Inspected definition writer emits token40165 Relaxation for this ten-value block while reader uses4017c Friction; do not assume symmetric serialization or infer a save-game defect without path/output validation."
+}

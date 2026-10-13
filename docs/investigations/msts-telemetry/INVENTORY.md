@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 463, 'runtime_derived': 28, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1070}
+{'runtime_direct': 464, 'runtime_derived': 28, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1071}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -1076,3 +1076,4 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | train.physical_simulation_mode | Stored physical train mode byte | Native writer and three callers traced/current-byte verified; paused player mode3 and AI mode1 correspondence observed |
 | car.simplified_physics_mode_bit | Stored car mask0x2 used by force and post-integration gates | Native writer and three callers traced/current-byte verified; paused player mode3 and AI mode1 correspondence observed |
 | body.simulation_flags_raw | Body simulation flag word, including response-set mask2 used by force and train-mode gates | Current-byte verified response sets mask2 and qualified placement clears word; paused8player/11AI body words are zero |
+| car.friction_definition_coefficients | Ten loaded Friction declaration scalars; first five feed the inspected linear resistance helper and sixth has angular torque consumers | Selected parser/token mapping current-byte verified; paused8player/11AI capture has stable finite ten-element values and same clock |

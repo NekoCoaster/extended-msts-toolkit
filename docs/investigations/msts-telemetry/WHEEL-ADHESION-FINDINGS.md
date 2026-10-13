@@ -204,3 +204,26 @@ Retainedpass01b/0062e017 starts by ORing body+f2 bit4 and car+84 bit8,and marks 
 
 
 Follow-up, 13 October 2026: AI-SYSTEM-UPDATE-FINDINGS now resolves a car+84 mask2 writer,0060ceee, and its physicalization/transition callers. The earlier bounded writer search was incomplete. Current player mode3/AI mode1 correspondence is captured; body+4 mask2 producer and live mode transitions remain unresolved.
+
+
+## Friction token producer and angular coefficient, 13 October 2026
+
+Native token table795668 maps UTF-16 string7651c0 `Friction` to token4017c. Parser00614c8e subtracts40164, looks up byte617138=4 and target6170e8=6165a8. That branch loops ten scalar-parser calls, storing at definition+478+4*i for i=0..9, then ORs definition+8c mask80000 on successful completion. This connects the five previously inspected linear-resistance coefficients to the first half of a ten-value declaration; do not treat all ten as the same five-parameter function. Failure branches do not establish a successful declaration.
+
+The sixth value,definition+48c,is also read in0062ad6a at62b1f1 and62b372. In the first selected path, helper62e7c6 scales body angular velocity+94 by constant771434(-2.0) times the current car definition+48c, then62e5d6 adds it into body torque+ac. Another selected path scales angular velocity by negative definition+48c times caller local-60 before adding to the same torque accumulator. Coefficient sign,branch eligibility and other torque sources matter; this is not a universal damping coefficient,complete torque model or runtime contribution measurement. Fields490..49c are loaded but their consumers remain unresolved here.
+
+Evidence: captures/friction-parser-20261013-01 verifies81selected instructions/351bytes plus token/string/switch-table data against disk and PID39096. Separate angular-scale-constant.json verifies771434 bitsc0000000 as-2.0. Exact source checks are retained. Previously retained helpers establish vector scaling and in-place accumulation. No new runtime field read,parser invocation or force/torque transition is claimed. Inventory unchanged; next useful extraction is the complete ten-value block with definition/body guards and explicit per-element semantics,not relabeling the aggregate force as resistance.
+
+
+## Complete loaded Friction block, 13 October 2026
+
+read_body_accumulators.py now retains friction_coefficients[10], raw40bytes, declaration flags and owner identity while preserving the existing coefficients[5] key as the first half. It rereads the full block,flags,definition/body/owner identity and accumulator/velocity state, and reports global population/manager/same-clock guards. The snapshot is still sequential,not atomic. Historical captured scripts are unchanged.
+
+friction-inputs-20261013-01 captures8player and11AI cars at paused64965.1015625, zero errors and all comparison guards passing. All have the tuple (150,1,-0.4470399916,0,1,5.0999999046,1,-1,0,1). friction-inputs-summary-20261013.json records source hash, populations and distinct definitions. This is loaded configuration correspondence,not equal physical simulation or evidence of current coefficient consumption. One ten-element configuration candidate is added; final four scalar consumers and precise branch-dependent units remain open.
+
+
+## Friction writer-label mismatch, 13 October 2026
+
+The indexed definition writer006171f8 tests definition+8c mask80000 at6179c9, then supplies token40165 at6179d4 and iterates ten scalar writes from definition+478+4*i. Native table7955b0 names40165 Relaxation; Friction is4017c at795668. The independently traced reader accepts the block under4017c. This is a concrete label mismatch in the inspected writer branch,not symmetric serialization proof. It does not establish that regular save-game output uses this writer, that a file was corrupted, or that the path executed in this session. No export/save was invoked or modified.
+
+friction-writer-label-20261013-01 verifies47instructions/142bytes and four token/string ranges against disk and PID39096,zero mismatches. The guard and ten-value loop are retained alongside the immediate token evidence. The targeted indexed consumer search has not resolved the final four coefficients: direct same-offset hits in train/controller structures are not definition-field consumers. Grouped writing preserves the block's extent but does not establish its physics use.

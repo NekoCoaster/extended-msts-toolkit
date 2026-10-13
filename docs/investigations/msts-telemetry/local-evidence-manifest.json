@@ -73117,6 +73117,90 @@
       "bytes": 77932,
       "sha256": "6e9d056a48157e91eb96f7b2e4b061cfeb92af5fb021524f1655576293d06f9f",
       "included": false
+    },
+    {
+      "path": "captures/friction-inputs-20261013-01/accumulators.json",
+      "bytes": 22018,
+      "sha256": "5d7694a267abdc76ca817afde11a85c11ac612474baeb4caf0d623406f129198",
+      "included": false
+    },
+    {
+      "path": "captures/friction-inputs-20261013-01/read_body_accumulators.py",
+      "bytes": 3283,
+      "sha256": "7c20305ccb8018705089f7a47153a1f060dab648c9cb3c45704c56980860304d",
+      "included": false
+    },
+    {
+      "path": "captures/friction-inputs-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/friction-inputs-20261013-01/read_physical_registry.py",
+      "bytes": 5896,
+      "sha256": "566e340f0d51b8536b487283a339391a999f267207cbd6cb046c951a1150af3b",
+      "included": false
+    },
+    {
+      "path": "captures/friction-inputs-20261013-01/read_wheel_animation.py",
+      "bytes": 5628,
+      "sha256": "15a34a19d3607c5ae79d7b12480688d6809983a1bf64c0ca0957cbe9c9b4d096",
+      "included": false
+    },
+    {
+      "path": "captures/friction-parser-20261013-01/angular-scale-constant.json",
+      "bytes": 173,
+      "sha256": "259d9fe54d333a1803e70489efffe6c470cd0f8b4941665d1b204b5defea620a",
+      "included": false
+    },
+    {
+      "path": "captures/friction-parser-20261013-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/friction-parser-20261013-01/mapping.json",
+      "bytes": 10673,
+      "sha256": "0ccb2446fb5b6fc006bd93cc374a889a062690dc9dd5fcd846a919b22c9b1e58",
+      "included": false
+    },
+    {
+      "path": "captures/friction-parser-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/friction-parser-20261013-01/verify_mapping.py",
+      "bytes": 1710,
+      "sha256": "eede5c947e44af45e01cf6d75d6959e3050eb8a900a301f6ab13193fb4d6f39a",
+      "included": false
+    },
+    {
+      "path": "captures/friction-writer-label-20261013-01/binary_fields.py",
+      "bytes": 2132,
+      "sha256": "74a24ca080d3f9eab003d9ab9d706b695e5beb65280189d0b23eed04e975a3da",
+      "included": false
+    },
+    {
+      "path": "captures/friction-writer-label-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/friction-writer-label-20261013-01/verification.json",
+      "bytes": 4111,
+      "sha256": "774bc5d97a55f9ddff019327b7c257826b6d91e3a75752fc87ddd321baa4b316",
+      "included": false
+    },
+    {
+      "path": "captures/friction-writer-label-20261013-01/verify_label.py",
+      "bytes": 1404,
+      "sha256": "bf2cc0861af12a5cd49d0a5e6b6e980ff8665338d107556c17829ca5e54d4a63",
+      "included": false
     }
   ]
 }
