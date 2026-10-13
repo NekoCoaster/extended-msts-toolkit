@@ -1,0 +1,11 @@
+{
+  "capture": "captures/collision-body-player-ai-20261013-01/samples.jsonl",
+  "sha256": "805f5531f89ccd7dce74ffd83b06e9b5a380fd6a204790fde5589f0b5d8501b0",
+  "clock": 64965.1015625,
+  "paused": 1,
+  "player": 8,
+  "ai": 11,
+  "stable_rows": 19,
+  "all_aggregates_zero": true,
+  "limitations": "One paused snapshot; no nonzero transition, producer execution, cadence, AI freshness or contact-event validation. Connected trains only; same-clock rereads not atomic."
+}

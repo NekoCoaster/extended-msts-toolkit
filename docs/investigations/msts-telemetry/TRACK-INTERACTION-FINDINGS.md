@@ -45,3 +45,39 @@ At its end,00608800 resets nearest-distance state+4 from train+aa. The same func
 The expanded probe bounds the region count at4096, reads only12-byte records and does not dereference the opaque handles. Capture sound-table-paused-01 found count10, region0 handles7065/7066, all other handles0, and all timestamps0. This agrees with default allocation but proves neither current playback nor actual expiry. The snapshot still had1804 items, zero errors, unchanged simulation time. Historic captures retain their original script versions.
 
 Pass56 checked4 functions/1037 instructions/4407 bytes, all matching disk and live memory. Pass55 was a rejected byte-pattern lead into an unrelated dialog function; no telemetry inferred from it. New candidates are region table count, per-region handle pair and last-interaction tick, bringing inventory to766. These updates remain local after published commit285a0ff.
+
+
+## Interaction distances and state predicates, 13 October 2026
+
+005bb2bb refreshes each per-service interaction record before005bafc0 dispatches it. Record+4 receives old+8;new+8 is005babf0(service+4c,item). Record+c receives old+10;new+10 is005babf0(service+b4,item). Thus these are previous/current paired endpoint distances,not four unrelated counters. The updater uses a2000distance culling threshold,or1000for item kind10,with previous-distance sentinel and direction-trend conditions;this is work-list lifetime logic,not a restriction range.
+
+005babf0 converts item tile/local x,z to the current origin through005bb43b (tile delta*2048 plus item local14/18). It fills the middle coordinate from endpoint+4c,then subtracts that vector from endpoint+48/+4c/+50. For finite inputs the middle component cancels,so the resulting norm is horizontal straight-line distance,not along-track distance or full3D separation.005bb54f sums three squared components;005bb4e1 rounds the sum tofloat32;005bb4fd reconstructs an approximate norm using exponent/mantissa bits and initialized table82b630. Do not replace it with exact sqrt for bit-exact reproduction. Current table contents and exceptional domains were not captured in this follow-up.
+
+For ordinary finite values,005bafc0 selects state1 when both current distances record+8/+10 are strictly below service+128. Otherwise state0 applies when either previous endpoint distance(+4/+c) equals sentinel-1 or current first distance equals its previous value. Remaining cases select state2 when first distance decreases andstate3 when it increases. It also passes the smaller current distance to the speedpost/crossing/pickup-related handlers. These are proximity/trend predicates,not proof of exact entry/overlap/exit or a node crossing. Service+128 remains an unqualified threshold here. Existing004f5862 consumes state1;independent initialization calls can also establish retained caps.
+
+Fresh evidence: track-interaction-update-20261013-01 verifies123instructions/384bytes;track-item-distance-20261013-01 36/101;distance-helpers71/194;distance-norm46/131;interaction-dispatch229/691. All match installed disk and PID39096,zero errors. The-1constant is separately disk/live verified in dispatcher sentinel.json. This is static native dataflow,not a live event transition or complete writer/caller survey.
+
+
+## Bounded interaction-record snapshot, 13 October 2026
+
+read_track_interaction_records.py traverses the registered item groups at80a01c and their per-service lists with cycle/node/total bounds. It retains previous/current endpoint distances,service128 threshold,and a conditional finite-value state. Root,list links,group pointers,record bytes,threshold and clock are reread;failed global guards suppress all conditional states. Equal checks cannot exclude pointer reuse or in-place mutation. No native handler is invoked.
+
+track-interaction-records-20261013-01 contains180records at paused64965.1015625,same before/after clock,all guards pass. Kinds:96sound-region,44speedpost,40crossing. Two service pointers occur:8427664 has87records and threshold159.30001831054688;54806160 has93records and threshold144.49998474121094. All conditional states are0. This validates structural access in this fixture,not dispatch execution,an exact crossing,nonzero transitions or threshold producer semantics. Service128's writer remains unresolved:the inspected005a7821+128store belongs to a different record type and must not be used as service provenance.
+
+
+## Threshold provenance and reader boundary tests, 13 October 2026
+
+Initializer005a5eb1 passes service+128 in EDX and service+124 on the stack to thunk0040116d->005a635d at005a62d0. Helper005a635d traverses service+12c definition records,adds each resolved definition+400 length with a float32 store after each addition,and additionally adds definition+208 when byte+1e4 is nonzero and byte+1e5 mask10 is set. The complete sum is stored through EDX,therefore service+128. The second output service+124 receives a separately adjusted sum;it must not be substituted for the interaction threshold. Exact coupling-parameter label,all later writers and dynamic-consist refresh remain unvalidated here.
+
+Fresh helper/caller verification covers377instructions/1583bytes,zero disk/live differences in PID39096. The explicit JMP thunk is independently checked in service-interaction-threshold-20261013-01/thunk.json because an unquoted PowerShell argument coerced its address during export. No missing export was counted as verification.
+
+Seven synthetic tests in test_track_interaction_records.py pass:strict threshold equality and both endpoints,sentinel/proximity precedence,approaching/receding/unchanged states,nonfinite rejection,clock-cross suppression,changed-record suppression,and cyclic-list rejection. Tests validate extraction/model boundaries,not native runtime execution. The earlier180record snapshot is unchanged and remains all state0.
+
+
+## Player and AI threshold reconstruction, 13 October 2026
+
+read_interaction_threshold_inputs.py discovers service pointers from a fresh guarded interaction traversal,then reads cached service12c definitions without invoking006212fd. It repeats cache/list/definition/threshold/physical-train checks and clock checks;suppresses model/match output if guards fail. A null definition cache is unavailable and never resolved by calling native code.
+
+interaction-threshold-inputs-20261013-01 at paused64965.1015625 matches both stored values exactly using float32 rounding after each native stored addition:player service8427664/train57038468 has8definitions and threshold159.30001831054688;AI service54806160/train69271584 has11definitions and threshold144.49998474121094. Every definition selects the extra208 term through the captured byte1e4/1e5 gates;player extras are0.1or0.15,AI extras about0.1. All guards pass. The physical-train join also identifies the two services in the previous interaction snapshot,without claiming atomic correspondence across captures.
+
+This corroborates the initializer formula for positive length/extra inputs in both populations. It does not prove actual initializer invocation,negative/disabled-extra branches,live proximity transitions,or later coupling-refresh behavior. Definitions and physical bodies remain distinct objects;the service threshold must not be replaced with the simpler physical train definition-length sum.

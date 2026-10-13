@@ -4,7 +4,7 @@ Updated 13 October 2026. Research is incomplete. This organization checkpoint ad
 
 ## Current checkpoint
 
-Last published research checkpoint: `7c9c67e`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
+Last published research checkpoint: `dba74b9`, branch `research/issue-7-msts-telemetry`, draft [PR 9](https://github.com/NekoCoaster/extended-msts-toolkit/pull/9).
 
 Canonical workspace: `C:/dev/Codex/2026-09-10/msts-telemetry`. Publication worktree: `C:/codex/worktrees/NEMT-telemetry-research`, under `docs/investigations/msts-telemetry`.
 
@@ -12,7 +12,7 @@ Published through `73c0be1`: automatic/manual loading-duration analysis, the gua
 
 Published metadata cleanup: seven existing inventory records now acknowledge retained player/AI or ownerless observations while preserving semantic, cadence and lifecycle limitations. See `population-metadata-review-20261013.json` and [vehicle systems](VEHICLE-SYSTEM-FINDINGS.md). The other 1,060 records are unchanged by that review.
 
-Current local inventory: **1,071 candidates** (464 direct, 28 derived, 68 cab, 511 configuration). Structural audit passes: 1,040 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
+Current local inventory: **1,074 candidates** (466 direct, 29 derived, 68 cab, 511 configuration). Structural audit passes: 1,052 evidence paths and 151 source hashes. These checks do not establish semantic correctness or completion.
 
 ## Start here
 
@@ -26,6 +26,8 @@ Local follow-up: platform loader defaults are now traced and current-byte verifi
 Local force follow-up: setter0060ceee and callers establish train mode1 sets car mask2; mode3 clears it. Current paused snapshot covers8player/11AI cars with matching mode/flag correspondence. Three candidates added. Collision response sets body mask2 and gated placement clears the body word; live transitions and exhaustive writers remain open. See AI-SYSTEM-UPDATE-FINDINGS.md.
 
 Local Friction follow-up: token4017c maps ten scalars at definition478..49c. Current guarded19car snapshot captures the full block; one candidate added. Final four consumers, exact branch units and runtime contributions remain open. See WHEEL-ADHESION-FINDINGS.md and friction-inputs-summary-20261013.json.
+
+Local interaction follow-up: paired horizontal-distance history and dispatcher predicates are traced. Bounded180record snapshot passes guards,all state0;seven synthetic tests pass. Service128 initializer sums definition lengths with a conditional208 addition. Three candidates added;nonzero transitions and later threshold writers remain open. Collision extraction also now covers8player/11AI cars;two speedpost records reconciled.
 
 ## Latest evidence and next decision
 

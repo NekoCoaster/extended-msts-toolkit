@@ -1463,6 +1463,19 @@ for row in rows:
         row['limitations'] += ' Loader defaults apply to absent fields after successful parsing; explicit-zero replacement, range clamping and current-session execution of defaults are not established. Minimum-wait gameplay use remains unresolved.'
 rows += json.loads((ROOT/'force-mode-candidates-20261013.json').read_text())
 rows.append(json.loads((ROOT/'friction-candidate-20261013.json').read_text()))
+for row in rows:
+    if row['id']=='car.collision_pass_accumulators':
+        row['applicability']='Physical player and AI bodies; retained live fixtures cover both populations'
+        row['evidence_status'] += ';paused20261013 snapshot8player/11AI cars,all identity/repeated-byte checks pass,all four aggregates zero'
+        row['evidence'] += ['captures/collision-body-player-ai-20261013-01/samples.jsonl','collision-body-player-ai-20261013-summary.json']
+speedpost_review=json.loads((ROOT/'speedpost-metadata-review-20261013.json').read_text())
+for row in rows:
+    if row['id'] in speedpost_review:
+        change=speedpost_review[row['id']]
+        row['extraction']=change['extraction'];row['evidence_status']=change['evidence_status']
+        row['limitations'] += ' '+change['limitations']
+        row['evidence'] += ['SPEED-CAP-FINDINGS.md','speedpost-metadata-review-20261013.json']
+rows += json.loads((ROOT/'interaction-candidates-20261013.json').read_text())
 payload=dict(generated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status='WORK IN PROGRESS; discovery inventory, no priorities or keep/drop decisions',
              scope='Runtime probes plus installed cab/rolling-stock and preferred-activity direct node declarations. Not comprehensive completion.',
              counts=dict(runtime_direct=sum(not r['id'].startswith(('cab.','config.')) and not r['value_type'].startswith('derived') for r in rows),runtime_derived=sum(r['value_type'].startswith('derived') for r in rows),cab_channels=len(native['channels']),installed_cab_channels=len(cab),config_paths=len(param),config_leaf_paths=len(leaf_paths),config_mixed_paths=len(mixed_paths),files_scanned=len(scanned),total=len(rows)),

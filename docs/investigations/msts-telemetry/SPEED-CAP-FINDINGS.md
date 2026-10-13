@@ -67,3 +67,11 @@ Pass47:11 functions,1365 instructions,5309 bytes; pass50:2 functions,3454 instru
 Inventory stays752; existing flags and cap metadata are refined. Outstanding: actual crossing transitions, non-freight runtime consist, post-coupling class refresh, subtype names for4/5, exact dispatcher event states, and speed restriction reset semantics. Current local checkpoint has not yet been published to PR9.
 
 Later correction: pass56/00608800 also clears/sets class bits0x2/0x4 while scanning physical cars, using the same type2 Freight rule. Class writing is therefore not exclusive to initialization. Its caller cadence and a coupling transition remain unverified. This supersedes any reading of the earlier initialization finding as the only producer.
+
+
+## Speed-post metadata reconciliation, 13 October 2026
+
+A bounded review of the four raw speed-post candidates reconciles the flags and float-payload records with existing findings above. The flags record now retains unit selection and established freight/default-non-freight applicability; the float record explicitly preserves its conditional serialization and absence from the inspected restriction consumer. Byte-value and angle records are unchanged. No new runtime crossing,subtype label,marker unit or display claim is made. speedpost-metadata-review-20261013.json preserves the exact two-record update; prior evidence and existing limitations are retained.
+
+
+Dispatcher follow-up,13October2026: TRACK-INTERACTION-FINDINGS now traces paired previous/current endpoint distances and state predicates. The distance is approximate horizontal straight-line separation,not track-path distance. State1 requires both current distances below service128;do not label it an exact crossing. Ordinary gameplay cap-transition validation remains open.

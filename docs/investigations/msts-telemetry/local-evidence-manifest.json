@@ -73201,6 +73201,480 @@
       "bytes": 1404,
       "sha256": "bf2cc0861af12a5cd49d0a5e6b6e980ff8665338d107556c17829ca5e54d4a63",
       "included": false
+    },
+    {
+      "path": "captures/collision-body-player-ai-20261013-01/metadata.json",
+      "bytes": 322,
+      "sha256": "f4b8e3432085b47890c657e2b44dc93865a3dd01c7b69b236bd8c6d2a9586687",
+      "included": false
+    },
+    {
+      "path": "captures/collision-body-player-ai-20261013-01/read_collision_body_accumulators.py",
+      "bytes": 2427,
+      "sha256": "f048cff61d63b102f1b0d780a784f041dcfa5708899ef484f368164fe69e07f1",
+      "included": false
+    },
+    {
+      "path": "captures/collision-body-player-ai-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/collision-body-player-ai-20261013-01/samples.jsonl",
+      "bytes": 3723,
+      "sha256": "805f5531f89ccd7dce74ffd83b06e9b5a380fd6a204790fde5589f0b5d8501b0",
+      "included": false
+    },
+    {
+      "path": "captures/interaction-threshold-inputs-20261013-01/inputs.json",
+      "bytes": 7757,
+      "sha256": "236a80a5b85cdb8dc533feb1150cb39d9bf45d69b2148dd56b1b02a3ad083508",
+      "included": false
+    },
+    {
+      "path": "captures/interaction-threshold-inputs-20261013-01/read_interaction_threshold_inputs.py",
+      "bytes": 3649,
+      "sha256": "cedc6f7044b955a021f48168d88120465dfed410bd57b47e42fcd40df820e7c7",
+      "included": false
+    },
+    {
+      "path": "captures/interaction-threshold-inputs-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/interaction-threshold-inputs-20261013-01/read_track_interaction_records.py",
+      "bytes": 3457,
+      "sha256": "b514f3a77e39788d141da3231a7671c4c259c5ba718e79024371e3effa034ee8",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01-byte-verification.json",
+      "bytes": 717,
+      "sha256": "00e010877777c0f633cc37bf12f7772dee2158910b7dbb7061a88dd1a5c7d74e",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/005a5eb1.asm",
+      "bytes": 9757,
+      "sha256": "d938e040b7649dd9d0ad645c722268a943d7470e3e9f68f7961d07f363f9bf55",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/005a5eb1.bytes.tsv",
+      "bytes": 5318,
+      "sha256": "11885c032c040e7494d08906dbf6001d84cff5a4c6f77e76eba07a81e0d47a77",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/005a5eb1.c",
+      "bytes": 3052,
+      "sha256": "4f31fa6421438f2e171ad9598136f6f26de705bcea02a80fbdefe11d667d5b1c",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/005a635d.asm",
+      "bytes": 3891,
+      "sha256": "338077479a976fa97d06462ddd098dd3f22ad88d40f83f2fde7fbc7b5258aac8",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/005a635d.bytes.tsv",
+      "bytes": 1995,
+      "sha256": "53367eedecaef667a6a320b0a24f77168f7740e5d27943e92fbaf3fddf26a9bf",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/005a635d.c",
+      "bytes": 1499,
+      "sha256": "1aaa4513cd40e55652176b8d8edbe561540e393b0b22f6edab3beee13a57cac0",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/console.log",
+      "bytes": 6136,
+      "sha256": "d42f41a888374c6158d01ddceaeb88618830ba02bbeb903595a4f0e591f45dfd",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/functions.tsv",
+      "bytes": 29,
+      "sha256": "43b3666cd550236228201b27e8fdc9cf59236ad1897b9f5c6b5db42baf8b3884",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/ghidra.log",
+      "bytes": 6152,
+      "sha256": "3d84671e314b5078009c8e936d9e41b9547e0fb1c5fa5804a9f1cb19cab6a8a2",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "12107754acf4a94d217fdd25dbbab3479c8ed2d8bb696c4118a0b416cd7fc816",
+      "included": false
+    },
+    {
+      "path": "captures/service-interaction-threshold-20261013-01/thunk.json",
+      "bytes": 298,
+      "sha256": "ab2fd1be9a7e7a93326543b618560eb1d865ff95dc69ba8a2e40a288a8e361ac",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-dispatch-20261013-01-byte-verification.json",
+      "bytes": 538,
+      "sha256": "c59cccab471b8b3ea9fcb3b7eb2d9a8741fdaaadb2b51201ddfa16c380460a28",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-dispatch-20261013-01/005bafc0.asm",
+      "bytes": 7937,
+      "sha256": "1674d7373cfea09f77517444109b629f02b1b420e39ed70ae2be9466af633b75",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-dispatch-20261013-01/005bafc0.bytes.tsv",
+      "bytes": 3901,
+      "sha256": "dc01eff637242bb979003df58d3a14e9267c806980352bd1e693c473487f247c",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-dispatch-20261013-01/005bafc0.c",
+      "bytes": 2106,
+      "sha256": "4e1eb67e263f431d2d1e9c57787f16ae3b8a740890957fbd38d59361a22f12c9",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-dispatch-20261013-01/sentinel.json",
+      "bytes": 175,
+      "sha256": "1e5f35bb155240305c252426a8e6fa3dca111cbf56a591b4ac03e71c7e5adf0c",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-records-20261013-01/read_live.py",
+      "bytes": 8186,
+      "sha256": "cf422fb9f635987373018a841c93edc43a05095d529ff8abf7b284b8396e2c41",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-records-20261013-01/read_track_interaction_records.py",
+      "bytes": 3457,
+      "sha256": "b514f3a77e39788d141da3231a7671c4c259c5ba718e79024371e3effa034ee8",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-records-20261013-01/records.json",
+      "bytes": 60338,
+      "sha256": "fd7293c1db1b20eaaa21cfa75c05b0d2189fc17ec00c5ba2bbdb9270243417fb",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01-byte-verification.json",
+      "bytes": 536,
+      "sha256": "218973bc17f9044e4504902061a4c132f16f346f01ec9ae23a46e25f46f5bdaf",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/005bb2bb.asm",
+      "bytes": 4395,
+      "sha256": "480812dce19988cc8d01386a674cbce1c6c388cb67102dccb9ea10a3ea93a16f",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/005bb2bb.bytes.tsv",
+      "bytes": 2121,
+      "sha256": "8eae121c0bff44356f8a938b3353f651cc24b687df7f73ee45e42d85d549e297",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/005bb2bb.c",
+      "bytes": 1707,
+      "sha256": "bd6c88be9a7541932cedaba848cd8fe8d7e14e02829b3ed3764b818f7ff26b37",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/console.log",
+      "bytes": 6118,
+      "sha256": "1ee214553a6ae53649b5a73b3f4ee2a7eafe24c9d9d2a3fb18a58d84742f4b5f",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/functions.tsv",
+      "bytes": 29,
+      "sha256": "7fef9a6f371e5415797de8c2fba014557a020e99e49cf8cc08781ff9e2bd5068",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/ghidra.log",
+      "bytes": 6134,
+      "sha256": "4fd739997e9f36b94ce9a1a2730bc986dd3c603be78332273a35b962782a4b53",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/track-interaction-update-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "027b08b6ccbcc875babf42ba360e74eaf9e3ff61a8fc64aae389fe796de655ca",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01-byte-verification.json",
+      "bytes": 530,
+      "sha256": "ea69a0b7c3775fbb41b08bf46d2cb39425a30e907b4d6405a0b7117c091a2d31",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/005babf0.asm",
+      "bytes": 1234,
+      "sha256": "b4803dab1a89146d63e4197ed8d1c000e4ef59a0d05062b7f36c310481343058",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/005babf0.bytes.tsv",
+      "bytes": 598,
+      "sha256": "4b64e920f142a74987d00fd038a8d613de89cfe17acbec9b3237d062f6b99d7b",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/005babf0.c",
+      "bytes": 634,
+      "sha256": "d1689e9400fd69301a3c7b452ff525e6954d10223129745fe9917e71d3d0ceca",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/console.log",
+      "bytes": 6108,
+      "sha256": "653f4f88894fc37d607c55e4d51fd4093d3b6c8b3831b270f88c38f71f2c544f",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/functions.tsv",
+      "bytes": 29,
+      "sha256": "bddd3b34161b1be6df4562f080ee20dbe529b047ae3cce76eac1add386ed0282",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/ghidra.log",
+      "bytes": 6124,
+      "sha256": "809ffab27e9e99a9c6cabfcbbba8053dc8b9e911808d7639d07fb35f7fc6b9b6",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "463810598f6e24bb887be6991dcec11065b3eb418f089ad1c744d29cc5221810",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01-byte-verification.json",
+      "bytes": 883,
+      "sha256": "67ff04d6fb2f5ecc0bd88c124749ecf48c64e0e869d8867c4ca24a0105b1f070",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb43b.asm",
+      "bytes": 983,
+      "sha256": "dfb8491d35a5e0d59fd9d9fed724d09e5933a58c4fe1e5df4675e578287eafb3",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb43b.bytes.tsv",
+      "bytes": 472,
+      "sha256": "39194b17f0703094a41d3d52d34b23096ea2ac98b4ee5980269947834e28ee62",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb43b.c",
+      "bytes": 310,
+      "sha256": "b27b5df0354afca551fd892d4cc285c9d7556456fb53e8333936dec067b1598e",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb48d.asm",
+      "bytes": 1127,
+      "sha256": "6deeb91744292d397f39997f253ebc9c0f1a5cdcab06027f89d72f2fd4a50412",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb48d.bytes.tsv",
+      "bytes": 509,
+      "sha256": "5cea26a0884e12e41ed197592f91ecbcb7d3d990f5e7956eb44c6b91e79e205e",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb48d.c",
+      "bytes": 367,
+      "sha256": "4be5604be6fecec416637cef2b4f238c61bdf119b5f3aad98588c42eb03eb27c",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb4e1.asm",
+      "bytes": 310,
+      "sha256": "54d719b2bcbb1b94c55f414cd794bf74320e44951506ea9661a5553850b6ebe2",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb4e1.bytes.tsv",
+      "bytes": 188,
+      "sha256": "e70323f7e671fdb129b3d4b363379400cec79993f52372fa16e04021d34cb2a1",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/005bb4e1.c",
+      "bytes": 169,
+      "sha256": "0f8dc60d9a760a89fb90160c5c8ba6a4ac4094d9bc3b19b971c0e7725d29a0f1",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/console.log",
+      "bytes": 6146,
+      "sha256": "06cfd537e184dd15a756b3c390cb6367d40e1fb790ad48d00818bbadbfb681cb",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/functions.tsv",
+      "bytes": 87,
+      "sha256": "5503e257d19ca3007ebbc2f4c59fd65323f772fb9997ad07ee0b1ffdecbaba74",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/ghidra.log",
+      "bytes": 6162,
+      "sha256": "45f81db02371eb66aca557f0ffa6a980a540039130b1bd5847a10f4594bd8491",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-helpers-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "4d17c6c6eedaee386492f2d10d07ea92d480cbe3be8b8225eaecb8ad6e0afa58",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01-byte-verification.json",
+      "bytes": 707,
+      "sha256": "e52a353b50898be18e693d247af1ffa2db756f5f74c781740713c6dc80f4d8ea",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/005bb4fd.asm",
+      "bytes": 811,
+      "sha256": "077a146d483e8ca404c4820e7dcbd19b5730be26dcab7dcf8510d11c961bce77",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/005bb4fd.bytes.tsv",
+      "bytes": 439,
+      "sha256": "7af9946e2c1a09a093e80a7c47cffe8c34556a0ab93e1084818c11bef13c439e",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/005bb4fd.c",
+      "bytes": 274,
+      "sha256": "4236ffa927ced3cc72d989a4ef6f59a3e2ab6e9bf50173d99dbdb9f75db33bf7",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/005bb54f.asm",
+      "bytes": 661,
+      "sha256": "62c5d6a514a80b36a5975bb131b663fe0f8c2efe7381464069f8dc96c6a5c11d",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/005bb54f.bytes.tsv",
+      "bytes": 329,
+      "sha256": "7da78141b25c995e40da194fcbdf51f69d5c9e939daf52e025c8cc0148ae3597",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/005bb54f.c",
+      "bytes": 208,
+      "sha256": "343e4ebf34e17606d86c3e1799da8c68342ccce1ee77daa7ceb5ef0444024a3c",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/console.log",
+      "bytes": 6129,
+      "sha256": "76b91ae09eb8177e6a8383c155503a2242b323407401f45ef3987e46937399cf",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/functions.tsv",
+      "bytes": 58,
+      "sha256": "2cd597e971ada9b647d051c751a682c0f91e2195f73cf504a5d730189fdd3148",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/ghidra.log",
+      "bytes": 6145,
+      "sha256": "435c994bae9eb6dbdfb376bf1077227725420d1bbc8a8be5d900211856b5b90d",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/program.txt",
+      "bytes": 194,
+      "sha256": "d2ad85f983f6ba822ada3bbbf342a472581ff89105f6470e96f9964bd63ede3c",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/references.tsv",
+      "bytes": 27,
+      "sha256": "130da765e500398c3f5b9e5c0f55abf2a5576270797ac0eb757cf0fc8340dad8",
+      "included": false
+    },
+    {
+      "path": "captures/track-item-distance-norm-20261013-01/script.log",
+      "bytes": 81,
+      "sha256": "9fdb30c578315358fd74036a50737d9d2fc5ad661f6545d54c4f2c9afc2e9933",
+      "included": false
     }
   ]
 }

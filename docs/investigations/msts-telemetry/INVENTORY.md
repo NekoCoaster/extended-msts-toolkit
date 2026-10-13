@@ -1,6 +1,6 @@
 # Telemetry discovery inventory (work in progress)
 
-{'runtime_direct': 464, 'runtime_derived': 28, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1071}
+{'runtime_direct': 466, 'runtime_derived': 29, 'cab_channels': 68, 'installed_cab_channels': 59, 'config_paths': 511, 'config_leaf_paths': 478, 'config_mixed_paths': 37, 'files_scanned': 143, 'total': 1074}
 
 No priorities or keep/drop decisions. See inventory.json for full provenance and per-field limitations.
 
@@ -744,9 +744,9 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | track_item.siding_name | Siding display name | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.siding_flags | Siding subtype flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | track_item.siding_paired_item | Other siding endpoint item ID | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
-| track_item.speedpost_flags | Speed-post subtype/control flags | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.speedpost_flags | Speed-post subtype/control flags | Serializer and installed-asset payloads traced;004f5862 subtype/unit/applicability gates and service class producers traced; crossing transitions remain unvalidated |
 | track_item.speedpost_byte_value | Conditional speed-post byte payload | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances; native restriction conversion traced, crossing transition untested |
-| track_item.speedpost_float_value | Conditional speed-post floating payload | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
+| track_item.speedpost_float_value | Conditional speed-post floating payload | Conditional serializer and installed asset values traced; no speed-limit use of this float in inspected004f5862; physical meaning/unit still subtype-dependent and unresolved |
 | track_item.speedpost_angle | Stored speed-post orientation angle | native serializer traced; all present platform/siding/speedpost payloads matched installed asset values within stated tolerances |
 | environment.pointer | Active render environment identity | inherited native research plus current paused read; scene transitions not tested in this phase |
 | environment.precipitation.flags | Precipitation type and screen-mode flags | inherited native research plus current paused read; scene transitions not tested in this phase |
@@ -1065,7 +1065,7 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | evaluation.unlatched_action_count | Final action summaries whose source trigger latch is zero | Native exported ranges match disk/live;0observed with no eligible actions;not universal incomplete-objective count |
 | evaluation.distance_unit_flag | Final report distance display unit selector | Native exported ranges match disk/live;0before finalization,1after Tokyo exit;not a route coordinate conversion |
 | train.stored_acceleration | Stored mean car acceleration, additionally history-filtered and rate-limited for player | Static producer and native unit label traced;current inspected code/constants match disk/live;stationary and moving runtime samples retained;199stationary unpaused samples,0errors,eight-car traversal,all10history indices observed;199moving samples,11cars,speed18.664..24.942m/s,stored acceleration-0.6722..0.4653,zero flagged read inconsistencies |
-| car.collision_pass_accumulators | Body collision preparation accumulators | Native reset/aggregation producer verified;100samples1100body rows11player cars,zero errors/unstable checks,all four accumulators zero |
+| car.collision_pass_accumulators | Body collision preparation accumulators | Native reset/aggregation producer verified;100samples1100body rows11player cars,zero errors/unstable checks,all four accumulators zero;paused20261013 snapshot8player/11AI cars,all identity/repeated-byte checks pass,all four aggregates zero |
 | electric.secondary_pantograph_control | Secondary electric pantograph command record | Static electric source/control routes traced;current bounded record snapshot zero-filled with gate0,not enabled transition validation |
 | electric.pantograph_selector | Electric multi-position pantograph selector record | Static electric source/control routes traced;current bounded record snapshot zero-filled with gate0,not enabled transition validation |
 | session.automatic_driver_enabled | Automatic player-driver mode gate | Set1/clear0/toggle and gated control dispatch traced;1 observed at ITR completion alert;automatic-player opening hold captures platform66flags0to2,countdown onset/release and unchanged zero recorded times |
@@ -1077,3 +1077,6 @@ No priorities or keep/drop decisions. See inventory.json for full provenance and
 | car.simplified_physics_mode_bit | Stored car mask0x2 used by force and post-integration gates | Native writer and three callers traced/current-byte verified; paused player mode3 and AI mode1 correspondence observed |
 | body.simulation_flags_raw | Body simulation flag word, including response-set mask2 used by force and train-mode gates | Current-byte verified response sets mask2 and qualified placement clears word; paused8player/11AI body words are zero |
 | car.friction_definition_coefficients | Ten loaded Friction declaration scalars; first five feed the inspected linear resistance helper and sixth has angular torque consumers | Selected parser/token mapping current-byte verified; paused8player/11AI capture has stable finite ten-element values and same clock |
+| interaction.endpoint_distance_history | Previous and current paired endpoint horizontal-distance estimates | Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass |
+| interaction.conditional_dispatch_state | Conditional dispatcher state derived from sampled finite inputs | Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass |
+| service.interaction_length_threshold | Stored length-based threshold for paired endpoint proximity | Current-byte verified dispatcher/update dataflow;180guard-qualified paused records;seven synthetic reader tests pass;guarded player8definition and AI11definition float32 reconstructions exactly match stored thresholds;all extra208 gates selected |

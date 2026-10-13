@@ -3,8 +3,8 @@
   "scope": "Retained named assembly exports, not whole-executable coverage",
   "limitations": "Calls are literal direct CALL targets; single-instruction JMP thunks have a separate one-hop caller index. Edges are the union of retained variants, not one asserted build. No indirect edges or execution proof. Variants are retained; navigation choice is not a freshness or correctness claim. Documentation references are lexical leads, not semantic assertions. Raw exports are local-only in the published clone.",
   "counts": {
-    "functions": 2290,
-    "exports": 3253,
+    "functions": 2298,
+    "exports": 3263,
     "findings": 79,
     "variant_functions": 4
   },
@@ -1853,12 +1853,12 @@
           "site": "00635cd6"
         },
         {
-          "function": "005a847d",
-          "site": "005a8853"
-        },
-        {
           "function": "005a5eb1",
           "site": "005a5ecc"
+        },
+        {
+          "function": "005a847d",
+          "site": "005a8853"
         },
         {
           "function": "005a3008",
@@ -4726,6 +4726,10 @@
         {
           "function": "004e0730",
           "site": "004e086a"
+        },
+        {
+          "function": "005a5eb1",
+          "site": "005a6325"
         },
         {
           "function": "005a1b1a",
@@ -7622,10 +7626,6 @@
         {
           "function": "0058aa22",
           "site": "0058ac65"
-        },
-        {
-          "function": "005a5eb1",
-          "site": "005a6325"
         },
         {
           "function": "0058bf90",
@@ -13029,12 +13029,12 @@
           "site": "005a3d93"
         },
         {
-          "function": "005a67af",
-          "site": "005a6a38"
-        },
-        {
           "function": "005a5eb1",
           "site": "005a6296"
+        },
+        {
+          "function": "005a67af",
+          "site": "005a6a38"
         }
       ],
       "callers_via_single_jump": []
@@ -13057,12 +13057,12 @@
       "navigation_export": "pass46/004035b2.asm",
       "callers": [
         {
-          "function": "005a6cf4",
-          "site": "005a6f49"
-        },
-        {
           "function": "005bafc0",
           "site": "005bb210"
+        },
+        {
+          "function": "005a6cf4",
+          "site": "005a6f49"
         }
       ],
       "callers_via_single_jump": []
@@ -13441,12 +13441,12 @@
           "site": "005a673f"
         },
         {
-          "function": "005a7202",
-          "site": "005a7218"
-        },
-        {
           "function": "005a5eb1",
           "site": "005a601e"
+        },
+        {
+          "function": "005a7202",
+          "site": "005a7218"
         },
         {
           "function": "0064a4d7",
@@ -64551,6 +64551,11 @@
           "thunk": "00402590"
         },
         {
+          "function": "005a5eb1",
+          "site": "005a6325",
+          "thunk": "00402590"
+        },
+        {
           "function": "005a1b1a",
           "site": "005a21ba",
           "thunk": "00402590"
@@ -68168,11 +68173,6 @@
         {
           "function": "0058aa22",
           "site": "0058ac65",
-          "thunk": "00402590"
-        },
-        {
-          "function": "005a5eb1",
-          "site": "005a6325",
           "thunk": "00402590"
         },
         {
@@ -83061,6 +83061,10 @@
         {
           "path": "SPEED-CAP-FINDINGS.md",
           "line": 63
+        },
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 56
         }
       ],
       "calls": [
@@ -83111,13 +83115,13 @@
       "callers": [],
       "callers_via_single_jump": [
         {
-          "function": "005a6cf4",
-          "site": "005a6f49",
+          "function": "005bafc0",
+          "site": "005bb210",
           "thunk": "004035b2"
         },
         {
-          "function": "005bafc0",
-          "site": "005bb210",
+          "function": "005a6cf4",
+          "site": "005a6f49",
           "thunk": "004035b2"
         }
       ]
@@ -110626,13 +110630,13 @@
           "thunk": "0040355d"
         },
         {
-          "function": "005a67af",
-          "site": "005a6a38",
+          "function": "005a5eb1",
+          "site": "005a6296",
           "thunk": "0040355d"
         },
         {
-          "function": "005a5eb1",
-          "site": "005a6296",
+          "function": "005a67af",
+          "site": "005a6a38",
           "thunk": "0040355d"
         }
       ]
@@ -111302,6 +111306,12 @@
     "005a5eb1": {
       "exports": [
         {
+          "path": "captures/service-interaction-threshold-20261013-01/005a5eb1.asm",
+          "sha256": "d938e040b7649dd9d0ad645c722268a943d7470e3e9f68f7961d07f363f9bf55",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass142/005a5eb1.asm",
           "sha256": "d938e040b7649dd9d0ad645c722268a943d7470e3e9f68f7961d07f363f9bf55",
           "decompiled": true,
@@ -111342,6 +111352,10 @@
         {
           "path": "SPEED-CAP-FINDINGS.md",
           "line": 55
+        },
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 70
         }
       ],
       "calls": [
@@ -111432,7 +111446,7 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass142/005a5eb1.asm",
+      "navigation_export": "captures/service-interaction-threshold-20261013-01/005a5eb1.asm",
       "callers": [],
       "callers_via_single_jump": [
         {
@@ -111461,6 +111475,77 @@
           "thunk": "00401fd7"
         }
       ]
+    },
+    "005a635d": {
+      "exports": [
+        {
+          "path": "captures/service-interaction-threshold-20261013-01/005a635d.asm",
+          "sha256": "338077479a976fa97d06462ddd098dd3f22ad88d40f83f2fde7fbc7b5258aac8",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 70
+        }
+      ],
+      "calls": [
+        {
+          "site": "005a63a5",
+          "target": "00402437"
+        },
+        {
+          "site": "005a63bc",
+          "target": "00402437"
+        },
+        {
+          "site": "005a63d3",
+          "target": "00402437"
+        },
+        {
+          "site": "005a63ed",
+          "target": "00402437"
+        },
+        {
+          "site": "005a6424",
+          "target": "004037e7"
+        },
+        {
+          "site": "005a6437",
+          "target": "00690120"
+        },
+        {
+          "site": "005a6445",
+          "target": "00402437"
+        },
+        {
+          "site": "005a6465",
+          "target": "00690130"
+        },
+        {
+          "site": "005a6473",
+          "target": "00402437"
+        },
+        {
+          "site": "005a6490",
+          "target": "00402437"
+        },
+        {
+          "site": "005a64a7",
+          "target": "00402437"
+        },
+        {
+          "site": "005a64c1",
+          "target": "00402437"
+        }
+      ],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/service-interaction-threshold-20261013-01/005a635d.asm",
+      "callers": [],
+      "callers_via_single_jump": []
     },
     "005a662e": {
       "exports": [
@@ -111766,12 +111851,12 @@
           "site": "005a400d"
         },
         {
-          "function": "005a67af",
-          "site": "005a6a4c"
-        },
-        {
           "function": "005a5eb1",
           "site": "005a62aa"
+        },
+        {
+          "function": "005a67af",
+          "site": "005a6a4c"
         }
       ],
       "callers_via_single_jump": []
@@ -112570,13 +112655,13 @@
           "thunk": "00401311"
         },
         {
-          "function": "005a847d",
-          "site": "005a8853",
+          "function": "005a5eb1",
+          "site": "005a5ecc",
           "thunk": "00401311"
         },
         {
-          "function": "005a5eb1",
-          "site": "005a5ecc",
+          "function": "005a847d",
+          "site": "005a8853",
           "thunk": "00401311"
         },
         {
@@ -117310,6 +117395,45 @@
       "callers": [],
       "callers_via_single_jump": []
     },
+    "005babf0": {
+      "exports": [
+        {
+          "path": "captures/track-item-distance-20261013-01/005babf0.asm",
+          "sha256": "b4803dab1a89146d63e4197ed8d1c000e4ef59a0d05062b7f36c310481343058",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 52
+        },
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 54
+        }
+      ],
+      "calls": [
+        {
+          "site": "005bac06",
+          "target": "004041bf"
+        },
+        {
+          "site": "005bac21",
+          "target": "005bb48d"
+        },
+        {
+          "site": "005bac4c",
+          "target": "005bb4e1"
+        }
+      ],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/track-item-distance-20261013-01/005babf0.asm",
+      "callers": [],
+      "callers_via_single_jump": []
+    },
     "005bad8e": {
       "exports": [
         {
@@ -117390,6 +117514,12 @@
     "005bafc0": {
       "exports": [
         {
+          "path": "captures/track-interaction-dispatch-20261013-01/005bafc0.asm",
+          "sha256": "1674d7373cfea09f77517444109b629f02b1b420e39ed70ae2be9466af633b75",
+          "decompiled": true,
+          "instruction_bytes": true
+        },
+        {
           "path": "pass46/005bafc0.asm",
           "sha256": "1674d7373cfea09f77517444109b629f02b1b420e39ed70ae2be9466af633b75",
           "decompiled": true,
@@ -117432,6 +117562,10 @@
         {
           "path": "TRACK-INTERACTION-FINDINGS.md",
           "line": 27
+        },
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 56
         }
       ],
       "calls": [
@@ -117482,8 +117616,202 @@
       ],
       "thunk_targets": [],
       "assembly_variants": 1,
-      "navigation_export": "pass46/005bafc0.asm",
+      "navigation_export": "captures/track-interaction-dispatch-20261013-01/005bafc0.asm",
       "callers": [],
+      "callers_via_single_jump": []
+    },
+    "005bb2bb": {
+      "exports": [
+        {
+          "path": "captures/track-interaction-update-20261013-01/005bb2bb.asm",
+          "sha256": "480812dce19988cc8d01386a674cbce1c6c388cb67102dccb9ea10a3ea93a16f",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 52
+        }
+      ],
+      "calls": [
+        {
+          "site": "005bb34f",
+          "target": "0040195b"
+        },
+        {
+          "site": "005bb376",
+          "target": "0040195b"
+        },
+        {
+          "site": "005bb3d2",
+          "target": "00690040"
+        },
+        {
+          "site": "005bb3da",
+          "target": "005bafa0"
+        },
+        {
+          "site": "005bb3f4",
+          "target": "00690040"
+        },
+        {
+          "site": "005bb3fc",
+          "target": "005bafa0"
+        },
+        {
+          "site": "005bb425",
+          "target": "00690040"
+        },
+        {
+          "site": "005bb42d",
+          "target": "005bad00"
+        }
+      ],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/track-interaction-update-20261013-01/005bb2bb.asm",
+      "callers": [
+        {
+          "function": "005bafc0",
+          "site": "005bafc6"
+        }
+      ],
+      "callers_via_single_jump": []
+    },
+    "005bb43b": {
+      "exports": [
+        {
+          "path": "captures/track-item-distance-helpers-20261013-01/005bb43b.asm",
+          "sha256": "dfb8491d35a5e0d59fd9d9fed724d09e5933a58c4fe1e5df4675e578287eafb3",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 54
+        }
+      ],
+      "calls": [],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/track-item-distance-helpers-20261013-01/005bb43b.asm",
+      "callers": [],
+      "callers_via_single_jump": []
+    },
+    "005bb48d": {
+      "exports": [
+        {
+          "path": "captures/track-item-distance-helpers-20261013-01/005bb48d.asm",
+          "sha256": "6deeb91744292d397f39997f253ebc9c0f1a5cdcab06027f89d72f2fd4a50412",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [],
+      "calls": [],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/track-item-distance-helpers-20261013-01/005bb48d.asm",
+      "callers": [
+        {
+          "function": "005babf0",
+          "site": "005bac21"
+        }
+      ],
+      "callers_via_single_jump": []
+    },
+    "005bb4e1": {
+      "exports": [
+        {
+          "path": "captures/track-item-distance-helpers-20261013-01/005bb4e1.asm",
+          "sha256": "54d719b2bcbb1b94c55f414cd794bf74320e44951506ea9661a5553850b6ebe2",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 54
+        }
+      ],
+      "calls": [
+        {
+          "site": "005bb4eb",
+          "target": "005bb54f"
+        },
+        {
+          "site": "005bb4f4",
+          "target": "005bb4fd"
+        }
+      ],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/track-item-distance-helpers-20261013-01/005bb4e1.asm",
+      "callers": [
+        {
+          "function": "005babf0",
+          "site": "005bac4c"
+        }
+      ],
+      "callers_via_single_jump": []
+    },
+    "005bb4fd": {
+      "exports": [
+        {
+          "path": "captures/track-item-distance-norm-20261013-01/005bb4fd.asm",
+          "sha256": "077a146d483e8ca404c4820e7dcbd19b5730be26dcab7dcf8510d11c961bce77",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 54
+        }
+      ],
+      "calls": [],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/track-item-distance-norm-20261013-01/005bb4fd.asm",
+      "callers": [
+        {
+          "function": "005bb4e1",
+          "site": "005bb4f4"
+        }
+      ],
+      "callers_via_single_jump": []
+    },
+    "005bb54f": {
+      "exports": [
+        {
+          "path": "captures/track-item-distance-norm-20261013-01/005bb54f.asm",
+          "sha256": "62c5d6a514a80b36a5975bb131b663fe0f8c2efe7381464069f8dc96c6a5c11d",
+          "decompiled": true,
+          "instruction_bytes": true
+        }
+      ],
+      "references": [
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 54
+        }
+      ],
+      "calls": [],
+      "thunk_targets": [],
+      "assembly_variants": 1,
+      "navigation_export": "captures/track-item-distance-norm-20261013-01/005bb54f.asm",
+      "callers": [
+        {
+          "function": "005bb4e1",
+          "site": "005bb4eb"
+        }
+      ],
       "callers_via_single_jump": []
     },
     "005bb952": {
@@ -117776,13 +118104,13 @@
           "thunk": "00403c10"
         },
         {
-          "function": "005a7202",
-          "site": "005a7218",
+          "function": "005a5eb1",
+          "site": "005a601e",
           "thunk": "00403c10"
         },
         {
-          "function": "005a5eb1",
-          "site": "005a601e",
+          "function": "005a7202",
+          "site": "005a7218",
           "thunk": "00403c10"
         },
         {
@@ -134346,6 +134674,10 @@
         {
           "path": "STATION-TIME-FINDINGS.md",
           "line": 106
+        },
+        {
+          "path": "TRACK-INTERACTION-FINDINGS.md",
+          "line": 79
         }
       ],
       "calls": [
@@ -156438,6 +156770,10 @@
           "site": "0059a23c"
         },
         {
+          "function": "005a5eb1",
+          "site": "005a618e"
+        },
+        {
           "function": "005a2744",
           "site": "005a28b9"
         },
@@ -156668,10 +157004,6 @@
         {
           "function": "00677f3b",
           "site": "00677fdb"
-        },
-        {
-          "function": "005a5eb1",
-          "site": "005a618e"
         },
         {
           "function": "005a2dc3",
@@ -157487,6 +157819,18 @@
         {
           "function": "005a1b1a",
           "site": "005a2319"
+        },
+        {
+          "function": "005bb2bb",
+          "site": "005bb3d2"
+        },
+        {
+          "function": "005bb2bb",
+          "site": "005bb3f4"
+        },
+        {
+          "function": "005bb2bb",
+          "site": "005bb425"
         },
         {
           "function": "00530bd5",

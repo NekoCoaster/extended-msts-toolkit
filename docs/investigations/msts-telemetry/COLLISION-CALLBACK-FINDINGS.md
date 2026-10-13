@@ -116,3 +116,10 @@ Accordingly the all-null samples are populated work records without demonstrated
 ## Body accumulator access baseline, 2026-10-10
 
 read_collision_body_accumulators.py captures body+f3/f4 bytes and+f5/f7 words through guarded train/car/body traversal. collision-body-accumulators-20261010-01 has100samples,1100body rows,11unique player cars,no read errors or failed local reread/ownership checks. All four accumulators remain0;body+f2 remains16 over10simulation seconds. No nonplayer rows were present. Added one structured raw candidate car.collision_pass_accumulators with reset semantics,modular overflow,per-side counting and incomplete applicability explicitly retained. This is access validation only,not nonzero contact behavior.
+
+
+## Player and AI accumulator extraction, 13 October 2026
+
+A single bounded read in collision-body-player-ai-20261013-01 extends the earlier player-only extraction fixture to8player and11physical AI cars. All body kind/backlink/owner and repeated-byte checks pass; clock remains64965.1015625 and pause1. All four pass accumulators are0 on every body. Body+f2 is16 for player and0 for AI,which must not be conflated with the four accumulators or body+4 simulation flags. collision-body-player-ai-20261013-summary.json retains raw source hash and counts.
+
+This establishes current structural extraction for both populations,not positive response activity,AI freshness or producer cadence. No collision was induced. The reader now accepts bounded0..120second duration (default10),validates capture name,and rejects invalid body kind/backlink before reading. Historical captured readers remain unchanged. Nonzero aggregates and their exact runtime phase remain open.

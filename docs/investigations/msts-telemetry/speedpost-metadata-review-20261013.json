@@ -1,0 +1,12 @@
+{
+  "track_item.speedpost_flags": {
+    "extraction": "kind8 item+0x28 uint16; low3bits select subtype. In004f5862 mask100 selects mph scaling; otherwise native approximate km/h scaling. For nonzero subtype,mask80 admits either class,mask40 freight,mask20 default non-freight.",
+    "evidence_status": "Serializer and installed-asset payloads traced;004f5862 subtype/unit/applicability gates and service class producers traced; crossing transitions remain unvalidated",
+    "limitations": "Default non-freight class does not prove passenger carriage or occupancy. Service class has both initialization and physical-consist update producers; coupling reclassification cadence remains unvalidated. Subtypes4/5 set/clear a route-cap gate; zone names are not established."
+  },
+  "track_item.speedpost_float_value": {
+    "extraction": "kind8 item+0x2c float32; serializer includes it when low3bits==0 OR mask10 is set. Inspected speed-limit consumer004f5862 does not read this payload.",
+    "evidence_status": "Conditional serializer and installed asset values traced; no speed-limit use of this float in inspected004f5862; physical meaning/unit still subtype-dependent and unresolved",
+    "limitations": "Do not interpret every float payload as speed. Numeric correspondence to a distance marker is insufficient to establish exact marker units or display behavior. Byte+2a is the converted restriction input in the inspected consumer; absence there is not proof of no other float consumers."
+  }
+}
